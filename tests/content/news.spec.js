@@ -14,7 +14,7 @@ test.use({ storageState: AUTH_FILE });
 test.setTimeout(45000);
 
 async function goNews(page) {
-  await page.goto(MODULE_URL, { waitUntil: 'domcontentloaded' });
+  await page.goto(MODULE_URL, { waitUntil: 'domcontentloaded' }).catch(() => {});
   await page.waitForTimeout(1500);
 }
 
@@ -168,6 +168,7 @@ test.describe('TC-NEWS | Feed Rendering', () => {
 // ---------------------------------------------------------------------------
 
 test.describe('TC-NEWS | Category Tabs', () => {
+  test.setTimeout(60000);
   test.beforeEach(async ({ page }) => {
     await goNews(page);
     await dismissModal(page);

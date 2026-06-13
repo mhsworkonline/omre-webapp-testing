@@ -653,7 +653,7 @@ test.describe('Feed Tabs', () => {
     // After clicking, the tab should become active
     const nowActive = page.locator('[role="tab"][aria-selected="true"], [role="tab"][data-state="active"]').first();
     const activeText = await nowActive.textContent().catch(() => '');
-    expect(activeText).toContain(tabText?.trim() ?? '');
+    expect(activeText.toLowerCase()).toContain((tabText?.trim() ?? '').toLowerCase());
   });
 
   test('TC-INTERACT-TABS-04: switching tabs does not break the page or throw errors', async ({ page }) => {

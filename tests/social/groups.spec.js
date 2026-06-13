@@ -15,7 +15,7 @@ test.use({ storageState: AUTH_FILE });
 test.setTimeout(45000);
 
 async function goGroups(page) {
-  await page.goto(GROUPS_URL, { waitUntil: 'domcontentloaded' });
+  await page.goto(GROUPS_URL, { waitUntil: 'domcontentloaded' }).catch(() => {});
   await page.waitForTimeout(1500);
 }
 

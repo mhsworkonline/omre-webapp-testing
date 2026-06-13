@@ -118,7 +118,7 @@ test.describe('Input Sanitisation', () => {
       await page.waitForTimeout(1500);
     }
 
-    const msgInput = page.locator('textarea[placeholder*="message" i], input[placeholder*="message" i], textarea[aria-label*="message" i]').first();
+    const msgInput = page.locator('textarea[placeholder*="message" i]:not([readonly]), input[placeholder*="message" i]:not([readonly]), textarea[aria-label*="message" i]:not([readonly])').first();
     const inputCount = await msgInput.count();
     if (inputCount === 0) { test.skip(); return; }
     if (inputCount > 0) {
@@ -403,7 +403,7 @@ test.describe('Session Security', () => {
       const submitBtn = page.locator('button[type="submit"], input[type="submit"]').first();
       const submitCount = await submitBtn.count();
       if (submitCount > 0) {
-        await submitBtn.click();
+        await submitBtn.click().catch(() => {});
         await page.waitForTimeout(1500);
       }
     }

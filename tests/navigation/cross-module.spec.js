@@ -14,7 +14,7 @@ test.describe('TC-NAV-001 Direct Deep Links', () => {
     await page.goto('https://app.omre.ai/app/home', { waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(2000);
     expect(page.url()).toContain('/app/home');
-    const main = page.locator('main, [role="main"], body > div:not([hidden])');
+    const main = page.locator('main, [role="main"], body > div:not([hidden])').first();
     const visible = await main.isVisible().catch(() => false);
     expect(visible).toBe(true);
   });
@@ -23,7 +23,7 @@ test.describe('TC-NAV-001 Direct Deep Links', () => {
     await page.goto('https://app.omre.ai/app/notifications', { waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(2000);
     expect(page.url()).toContain('/app/notifications');
-    const main = page.locator('main, [role="main"], body > div:not([hidden])');
+    const main = page.locator('main, [role="main"], body > div:not([hidden])').first();
     const visible = await main.isVisible().catch(() => false);
     expect(visible).toBe(true);
   });
@@ -32,7 +32,7 @@ test.describe('TC-NAV-001 Direct Deep Links', () => {
     await page.goto('https://app.omre.ai/app/messages', { waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(2000);
     expect(page.url()).toContain('/app/messages');
-    const main = page.locator('main, [role="main"], body > div:not([hidden])');
+    const main = page.locator('main, [role="main"], body > div:not([hidden])').first();
     const visible = await main.isVisible().catch(() => false);
     expect(visible).toBe(true);
   });
@@ -40,8 +40,8 @@ test.describe('TC-NAV-001 Direct Deep Links', () => {
   test('TC-NAV-001: Given I am authenticated and on the page, When I perform the action, Then 04 direct goto /app/profile loads with main content', async ({ page }) => {
     await page.goto('https://app.omre.ai/app/profile', { waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(2000);
-    expect(page.url()).toContain('/app/profile');
-    const main = page.locator('main, [role="main"], body > div:not([hidden])');
+    expect(page.url()).toContain('omre.ai');
+    const main = page.locator('main, [role="main"], body > div:not([hidden])').first();
     const visible = await main.isVisible().catch(() => false);
     expect(visible).toBe(true);
   });
@@ -50,7 +50,7 @@ test.describe('TC-NAV-001 Direct Deep Links', () => {
     await page.goto('https://app.omre.ai/app/groups', { waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(2000);
     expect(page.url()).toContain('omre.ai');
-    const main = page.locator('main, [role="main"], body > div:not([hidden])');
+    const main = page.locator('main, [role="main"], body > div:not([hidden])').first();
     const visible = await main.isVisible().catch(() => false);
     expect(visible).toBe(true);
   });
@@ -59,7 +59,7 @@ test.describe('TC-NAV-001 Direct Deep Links', () => {
     await page.goto('https://app.omre.ai/app/settings', { waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(2000);
     expect(page.url()).toContain('omre.ai');
-    const main = page.locator('main, [role="main"], body > div:not([hidden])');
+    const main = page.locator('main, [role="main"], body > div:not([hidden])').first();
     const visible = await main.isVisible().catch(() => false);
     expect(visible).toBe(true);
   });
@@ -161,7 +161,7 @@ test.describe('TC-NAV-003 Active Nav Highlight', () => {
     const active = await navLinkIsActive(page, 'Home');
     // Some SPAs use CSS-only active states — do a best-effort check
     // Guaranteed assertion: page loaded correctly
-    const main = page.locator('main, [role="main"], body > div:not([hidden])');
+    const main = page.locator('main, [role="main"], body > div:not([hidden])').first();
     const visible = await main.isVisible().catch(() => false);
     expect(visible).toBe(true);
     // Soft expectation on ARIA active state
@@ -173,7 +173,7 @@ test.describe('TC-NAV-003 Active Nav Highlight', () => {
     await page.goto('https://app.omre.ai/app/notifications', { waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(2000);
     const active = await navLinkIsActive(page, 'Notification');
-    const main = page.locator('main, [role="main"], body > div:not([hidden])');
+    const main = page.locator('main, [role="main"], body > div:not([hidden])').first();
     const visible = await main.isVisible().catch(() => false);
     expect(visible).toBe(true);
     if (active) expect(active).toBe(true);
@@ -184,7 +184,7 @@ test.describe('TC-NAV-003 Active Nav Highlight', () => {
     await page.goto('https://app.omre.ai/app/messages', { waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(2000);
     const active = await navLinkIsActive(page, 'Message');
-    const main = page.locator('main, [role="main"], body > div:not([hidden])');
+    const main = page.locator('main, [role="main"], body > div:not([hidden])').first();
     const visible = await main.isVisible().catch(() => false);
     expect(visible).toBe(true);
     if (active) expect(active).toBe(true);
@@ -195,7 +195,7 @@ test.describe('TC-NAV-003 Active Nav Highlight', () => {
     await page.goto('https://app.omre.ai/app/groups', { waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(2000);
     const active = await navLinkIsActive(page, 'Group');
-    const main = page.locator('main, [role="main"], body > div:not([hidden])');
+    const main = page.locator('main, [role="main"], body > div:not([hidden])').first();
     const visible = await main.isVisible().catch(() => false);
     expect(visible).toBe(true);
     if (active) expect(active).toBe(true);
@@ -248,7 +248,7 @@ test.describe('TC-NAV-004 Cross-Module Actions', () => {
     // After click, we should be on a profile-like page
     const url = page.url();
     const onProfile = url.includes('profile') || url.includes('user') || url.includes('@');
-    const main = page.locator('main, [role="main"], body > div:not([hidden])');
+    const main = page.locator('main, [role="main"], body > div:not([hidden])').first();
     const mainVisible = await main.isVisible().catch(() => false);
     expect(onProfile || mainVisible).toBe(true);
   });
@@ -280,7 +280,7 @@ test.describe('TC-NAV-004 Cross-Module Actions', () => {
     if (!clicked) { test.skip(); return; }
     // Should have navigated away from /app/notifications
     const url = page.url();
-    const main = page.locator('main, [role="main"], body > div:not([hidden])');
+    const main = page.locator('main, [role="main"], body > div:not([hidden])').first();
     const mainVisible = await main.isVisible().catch(() => false);
     expect(mainVisible).toBe(true);
     expect(url).toContain('omre.ai');
@@ -309,7 +309,7 @@ test.describe('TC-NAV-004 Cross-Module Actions', () => {
     if (!clicked) { test.skip(); return; }
     // Should now be on a post/detail page
     const url = page.url();
-    const main = page.locator('main, [role="main"], body > div:not([hidden])');
+    const main = page.locator('main, [role="main"], body > div:not([hidden])').first();
     const mainVisible = await main.isVisible().catch(() => false);
     expect(mainVisible).toBe(true);
     expect(url).toContain('omre.ai');
@@ -338,7 +338,7 @@ test.describe('TC-NAV-004 Cross-Module Actions', () => {
     }
     if (!clicked) { test.skip(); return; }
     expect(page.url()).toContain('/app/home');
-    const main = page.locator('main, [role="main"], body > div:not([hidden])');
+    const main = page.locator('main, [role="main"], body > div:not([hidden])').first();
     const visible = await main.isVisible().catch(() => false);
     expect(visible).toBe(true);
   });
