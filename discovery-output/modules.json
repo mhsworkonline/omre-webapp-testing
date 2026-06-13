@@ -1,0 +1,274 @@
+[
+  {
+    "section": "sidebar",
+    "name": "Home",
+    "url": "https://app.omre.ai/app/home",
+    "title": "Home — Omre",
+    "heading": "",
+    "screenshot": "discovery-output/sidebar_Home.png"
+  },
+  {
+    "section": "sidebar",
+    "name": "Explore",
+    "url": "https://app.omre.ai/app/explore",
+    "title": "Omre",
+    "heading": "",
+    "screenshot": "discovery-output/sidebar_Explore.png"
+  },
+  {
+    "section": "sidebar",
+    "name": "Shorts",
+    "url": "https://app.omre.ai/app/shorts",
+    "title": "Omre",
+    "heading": "",
+    "screenshot": "discovery-output/sidebar_Shorts.png"
+  },
+  {
+    "section": "sidebar",
+    "name": "Live",
+    "url": "https://app.omre.ai/app/live",
+    "title": "Omre",
+    "heading": "Live",
+    "screenshot": "discovery-output/sidebar_Live.png"
+  },
+  {
+    "section": "sidebar",
+    "name": "Messages",
+    "url": "https://app.omre.ai/app/messages",
+    "title": "Omre",
+    "heading": "Messages",
+    "screenshot": "discovery-output/sidebar_Messages.png"
+  },
+  {
+    "section": "sidebar",
+    "name": "Notifications",
+    "url": "https://app.omre.ai/app/notifications",
+    "title": "Omre",
+    "heading": "Notifications",
+    "screenshot": "discovery-output/sidebar_Notifications.png"
+  },
+  {
+    "section": "sidebar",
+    "name": "Profile",
+    "url": "https://app.omre.ai/app/profile/w4f01",
+    "title": "@w4f01 — Omre",
+    "heading": "",
+    "screenshot": "discovery-output/sidebar_Profile.png"
+  },
+  {
+    "section": "sidebar",
+    "name": "Reputation",
+    "url": "https://app.omre.ai/app/reputation",
+    "title": "Omre",
+    "heading": "w4f01",
+    "screenshot": "discovery-output/sidebar_Reputation.png"
+  },
+  {
+    "section": "sidebar",
+    "name": "Business Suite",
+    "url": "https://app.omre.ai/app/business-suite",
+    "title": "Omre",
+    "heading": "Business Suite",
+    "screenshot": "discovery-output/sidebar_Business_Suite.png"
+  },
+  {
+    "section": "sidebar",
+    "name": "Settings",
+    "url": "https://app.omre.ai/app/settings",
+    "title": "Omre",
+    "heading": "Settings",
+    "screenshot": "discovery-output/sidebar_Settings.png"
+  },
+  {
+    "section": "sidebar",
+    "name": "Omniknow",
+    "url": "https://app.omre.ai/app/omniknow",
+    "title": "Omre",
+    "heading": "The World Knowledge Library",
+    "screenshot": "discovery-output/sidebar_Omniknow.png"
+  },
+  {
+    "section": "sidebar",
+    "name": "Happy Corner",
+    "url": "https://app.omre.ai/app/happy-corner",
+    "title": "Omre",
+    "heading": "Happy Corner",
+    "screenshot": "discovery-output/sidebar_Happy_Corner.png"
+  },
+  {
+    "section": "sidebar",
+    "name": "Virtual World",
+    "url": "https://app.omre.ai/app/virtual-world",
+    "title": "Omre",
+    "heading": "Virtual World",
+    "screenshot": "discovery-output/sidebar_Virtual_World.png"
+  },
+  {
+    "section": "sidebar",
+    "name": "Digital Citizen",
+    "url": "https://app.omre.ai/app/digital-citizen",
+    "title": "Omre",
+    "heading": "Digital Citizen",
+    "screenshot": "discovery-output/sidebar_Digital_Citizen.png"
+  },
+  {
+    "section": "sidebar",
+    "name": "Omni AI",
+    "url": "https://app.omre.ai/app/omni-ai",
+    "title": "Omre",
+    "heading": "Omni AI",
+    "screenshot": "discovery-output/sidebar_Omni_AI.png"
+  },
+  {
+    "section": "sidebar",
+    "name": "Pages",
+    "url": "https://app.omre.ai/app/pages",
+    "title": "Omre",
+    "heading": "Pages",
+    "screenshot": "discovery-output/sidebar_Pages.png"
+  },
+  {
+    "section": "sidebar",
+    "name": "Groups",
+    "url": "https://app.omre.ai/app/groups?tab=feed",
+    "title": "Omre",
+    "heading": "Groups",
+    "screenshot": "discovery-output/sidebar_Groups.png"
+  },
+  {
+    "section": "sidebar",
+    "name": "Town Hall",
+    "url": "https://app.omre.ai/app/town-hall",
+    "title": "Omre",
+    "heading": "Town Hall",
+    "screenshot": "discovery-output/sidebar_Town_Hall.png"
+  },
+  {
+    "section": "sidebar",
+    "name": "Birthday",
+    "url": "https://app.omre.ai/app/birthday",
+    "title": "Omre",
+    "heading": "Birthdays",
+    "screenshot": "discovery-output/sidebar_Birthday.png"
+  },
+  {
+    "section": "sidebar",
+    "name": "Weather",
+    "url": "https://app.omre.ai/app/weather",
+    "title": "Omre",
+    "heading": "Weather",
+    "screenshot": "discovery-output/sidebar_Weather.png"
+  },
+  {
+    "section": "sidebar",
+    "name": "Images",
+    "url": "https://app.omre.ai/app/images",
+    "title": "Omre",
+    "heading": "Photos",
+    "screenshot": "discovery-output/sidebar_Images.png"
+  },
+  {
+    "section": "sidebar",
+    "name": "Friends",
+    "url": "https://app.omre.ai/app/friends",
+    "title": "Omre",
+    "heading": "People",
+    "screenshot": "discovery-output/sidebar_Friends.png"
+  },
+  {
+    "section": "header",
+    "name": "News",
+    "url": "https://app.omre.ai/app/news/home",
+    "title": "Omre",
+    "heading": "Welcome to News",
+    "screenshot": "discovery-output/header_News.png"
+  },
+  {
+    "section": "header",
+    "name": "Video",
+    "url": "https://app.omre.ai/app/live/create",
+    "title": "Omre",
+    "heading": "Create Live Stream",
+    "screenshot": "discovery-output/header_Video.png"
+  },
+  {
+    "section": "header",
+    "name": "Chat",
+    "url": "https://app.omre.ai/app/messages",
+    "title": "Omre",
+    "heading": "Messages",
+    "screenshot": "discovery-output/header_Chat.png"
+  },
+  {
+    "section": "header",
+    "name": "Biz",
+    "url": "https://app.omre.ai/biz",
+    "title": "Omre",
+    "heading": "What would you like to do?",
+    "screenshot": "discovery-output/header_Biz.png"
+  },
+  {
+    "section": "header",
+    "name": "Link",
+    "url": "https://app.omre.ai/jobs/home",
+    "title": "Omre",
+    "heading": "Welcome to Link",
+    "screenshot": "discovery-output/header_Link.png"
+  },
+  {
+    "section": "header",
+    "name": "Learn",
+    "url": "https://app.omre.ai/learn/home",
+    "title": "Omre",
+    "heading": "Welcome to Learn",
+    "screenshot": "discovery-output/header_Learn.png"
+  },
+  {
+    "section": "header",
+    "name": "Studio",
+    "url": "https://app.omre.ai/app/home",
+    "title": "Home — Omre",
+    "heading": "",
+    "screenshot": "discovery-output/header_Studio.png"
+  },
+  {
+    "section": "header",
+    "name": "Orbit",
+    "url": "https://app.omre.ai/app/orbit/home",
+    "title": "Omre",
+    "heading": "Welcome to Orbit",
+    "screenshot": "discovery-output/header_Orbit.png"
+  },
+  {
+    "section": "header",
+    "name": "Games",
+    "url": "https://app.omre.ai/app/games",
+    "title": "Omre",
+    "heading": "Welcome to Games",
+    "screenshot": "discovery-output/header_Games.png"
+  },
+  {
+    "section": "header",
+    "name": "Mart",
+    "url": "https://app.omre.ai/app/marketplace",
+    "title": "Omre",
+    "heading": "Welcome to OmreMart",
+    "screenshot": "discovery-output/header_Mart.png"
+  },
+  {
+    "section": "header",
+    "name": "Meetings",
+    "url": "https://app.omre.ai/app/meet/home",
+    "title": "Omre",
+    "heading": "Premium Video Conferencing\n\nfor the Modern Era.",
+    "screenshot": "discovery-output/header_Meetings.png"
+  },
+  {
+    "section": "header",
+    "name": "Wallet",
+    "url": "https://app.omre.ai/app/wallet",
+    "title": "Omre",
+    "heading": "My Wallet",
+    "screenshot": "discovery-output/header_Wallet.png"
+  }
+]
