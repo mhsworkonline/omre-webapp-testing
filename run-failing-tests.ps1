@@ -1,2 +1,2 @@
-Set-Location "C:\claude-folder\webapp-testing\omre-webapp"
+Set-Location $PSScriptRoot
 npx playwright test --last-failed --project=chromium --workers=8
