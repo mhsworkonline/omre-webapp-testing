@@ -2843,9 +2843,7 @@ test.describe('Group Conversation Creation Workflow', () => {
 test.describe('Message Edit Functionality', () => {
   test.beforeEach(async ({ page }) => {
     await goMessages(page);
-    await page.locator('[role="listitem"], ul li').first().click().catch(() => {});
-    if (page.isClosed()) { test.skip(); return; }
-    await page.waitForTimeout(1000).catch(() => { test.skip(); });
+    await openFirstConversation(page);
   });
 
   test('TC-MSG-174: Given I am on a sent message, When I hover to reveal the action menu, Then an Edit option may be available', async ({ page }) => {
@@ -2873,9 +2871,7 @@ test.describe('Message Edit Functionality', () => {
 test.describe('Message Emoji Reactions (TODO entry)', () => {
   test.beforeEach(async ({ page }) => {
     await goMessages(page);
-    await page.locator('[role="listitem"], ul li').first().click().catch(() => {});
-    if (page.isClosed()) { test.skip(); return; }
-    await page.waitForTimeout(1000).catch(() => { test.skip(); });
+    await openFirstConversation(page);
   });
 
   test('TC-MSG-175: Given I am on a message bubble, When I hover to reveal the reaction trigger, Then an emoji reaction panel is accessible', async ({ page }) => {
@@ -2908,9 +2904,7 @@ test.describe('Message Emoji Reactions (TODO entry)', () => {
 test.describe('File and Image Sharing', () => {
   test.beforeEach(async ({ page }) => {
     await goMessages(page);
-    await page.locator('[role="listitem"], ul li').first().click().catch(() => {});
-    if (page.isClosed()) { test.skip(); return; }
-    await page.waitForTimeout(1000).catch(() => { test.skip(); });
+    await openFirstConversation(page);
   });
 
   test('TC-MSG-176: Given I am in a chat, When I look for a file or image attach button, Then a file picker trigger is visible', async ({ page }) => {
@@ -2921,8 +2915,8 @@ test.describe('File and Image Sharing', () => {
     const found = await attachBtn.isVisible({ timeout: 5000 }).catch(() => false)
       || await plusBtn.isVisible({ timeout: 5000 }).catch(() => false);
     if (!found) { test.skip(); return; }
-    await expect(attachBtn.isVisible({ timeout: 3000 }).catch(() => false)
-      ? attachBtn : plusBtn).toBeVisible({ timeout: 5000 });
+    const btn = (await attachBtn.isVisible({ timeout: 3000 }).catch(() => false)) ? attachBtn : plusBtn;
+    await expect(btn).toBeVisible({ timeout: 5000 });
   });
 
   test('TC-MSG-177: Given the file picker trigger is visible, When I click it, Then a file type menu or OS file dialog is triggered', async ({ page }) => {
@@ -2966,9 +2960,7 @@ test.describe('Call Recording', () => {
 test.describe('Multiline Message Formatting', () => {
   test.beforeEach(async ({ page }) => {
     await goMessages(page);
-    await page.locator('[role="listitem"], ul li').first().click().catch(() => {});
-    if (page.isClosed()) { test.skip(); return; }
-    await page.waitForTimeout(1000).catch(() => { test.skip(); });
+    await openFirstConversation(page);
   });
 
   test('TC-MSG-181: Given I am in a chat, When I type a multiline message using Shift+Enter, Then the newlines are preserved in the input', async ({ page }) => {

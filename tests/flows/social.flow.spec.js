@@ -153,7 +153,7 @@ test.describe('TC-FLOW-NOTIF | Load → Read → Mark All Read', () => {
     await goTo(page, '/app/notifications');
     const markAllBtn = page.locator('button').filter({ hasText: /mark all|read all/i }).first();
     if (!(await markAllBtn.isVisible({ timeout: 8000 }).catch(() => false))) { test.skip(); return; }
-    await markAllBtn.click().catch(() => {});
+    await markAllBtn.click({ timeout: 5000 }).catch(() => {});
     if (page.isClosed()) { test.skip(); return; }
     await page.waitForTimeout(1500).catch(() => {});
     if (page.isClosed()) { test.skip(); return; }

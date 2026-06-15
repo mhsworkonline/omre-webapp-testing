@@ -25,6 +25,7 @@ export default defineConfig({
     ['list'],
     ['json',  { outputFile: `test-results/${ts}.json` }],
     ['junit', { outputFile: `test-results/${ts}.xml` }],
+    ['blob',  { outputDir: 'blob-report' }],
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
