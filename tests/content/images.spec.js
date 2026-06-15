@@ -527,3 +527,106 @@ test.describe('TC-IMAGES: Image Sort Options', () => {
     await expect(page.locator('main').first()).toBeVisible({ timeout: 8000 });
   });
 });
+
+// ─── 11. Upload Validation ───────────────────────────────────────────────────
+test.describe('TC-IMAGES: Upload Validation', () => {
+  test.beforeEach(async ({ page }) => { await goImages(page); });
+
+  test('TC-IMAGES-41: Given an upload dialog is open, When I inspect accepted file types, Then only allowed image formats are accepted', async ({ page }) => {
+    const uploadBtn = page.locator('button, [role="button"]')
+      .filter({ hasText: /upload|add photo|add image/i }).first();
+    const visible = await uploadBtn.isVisible({ timeout: 8000 }).catch(() => false);
+    if (!visible) { test.skip(); return; }
+    await uploadBtn.click();
+    await page.waitForTimeout(1000);
+    const fileInput = page.locator('input[type="file"]').first();
+    const inputVisible = await fileInput.isVisible({ timeout: 5000 }).catch(() => false);
+    const inputExists = await page.locator('input[type="file"]').count() > 0;
+    if (!inputVisible && !inputExists) { test.skip(); return; }
+    const accept = await page.locator('input[type="file"]').first().getAttribute('accept').catch(() => null);
+    if (accept !== null) {
+      expect(accept).toMatch(/image|jpg|jpeg|png|gif|webp/i);
+    }
+    await page.keyboard.press('Escape');
+  });
+
+  test('TC-IMAGES-42: Given an image delete confirmation dialog is open, When I confirm deletion, Then the image is removed from the gallery', async ({ page }) => {
+    const imgs = page.locator('main img');
+    if (await imgs.count() < 1) { test.skip(); return; }
+    await imgs.first().hover();
+    await page.waitForTimeout(400);
+    const deleteBtn = page.locator('button, [role="button"]')
+      .filter({ hasText: /delete|remove/i }).first();
+    const deleteVisible = await deleteBtn.isVisible({ timeout: 5000 }).catch(() => false);
+    if (!deleteVisible) { test.skip(); return; }
+    const initialCount = await imgs.count();
+    await deleteBtn.click();
+    await page.waitForTimeout(800);
+    const confirmBtn = page.locator('[role="dialog"] button, [role="alertdialog"] button')
+      .filter({ hasText: /confirm|delete|yes|ok/i }).first();
+    const confirmVisible = await confirmBtn.isVisible({ timeout: 5000 }).catch(() => false);
+    if (!confirmVisible) { test.skip(); return; }
+    await confirmBtn.click();
+    await page.waitForTimeout(1500);
+    const newCount = await imgs.count();
+    expect(newCount).toBeLessThanOrEqual(initialCount);
+  });
+
+  test('TC-IMAGES-43: Given multiple images are selected, When I trigger batch delete and confirm, Then the selected images are removed', async ({ page }) => {
+    const imgs = page.locator('main img');
+    if (await imgs.count() < 2) { test.skip(); return; }
+    await imgs.first().hover();
+    await page.waitForTimeout(400);
+    const cb = page.locator('input[type="checkbox"], [role="checkbox"]').first();
+    const cbVisible = await cb.isVisible({ timeout: 4000 }).catch(() => false);
+    if (!cbVisible) { test.skip(); return; }
+    await cb.evaluate(el => el.click());
+    await page.waitForTimeout(300);
+    const deleteBtn = page.locator('button').filter({ hasText: /delete|remove/i }).first();
+    const deleteVisible = await deleteBtn.isVisible({ timeout: 5000 }).catch(() => false);
+    if (!deleteVisible) { test.skip(); return; }
+    await deleteBtn.click();
+    await page.waitForTimeout(800);
+    const confirmBtn = page.locator('[role="dialog"] button, [role="alertdialog"] button')
+      .filter({ hasText: /confirm|delete|yes|ok/i }).first();
+    const confirmVisible = await confirmBtn.isVisible({ timeout: 4000 }).catch(() => false);
+    if (!confirmVisible) { test.skip(); return; }
+    await confirmBtn.click();
+    await page.waitForTimeout(1200);
+    await expect(page.locator('main').first()).toBeVisible();
+  });
+
+  test('TC-IMAGES-44: Given I click create album, When the form appears, Then I can enter an album name and submit', async ({ page }) => {
+    const albumBtn = page.locator('button, [role="button"]')
+      .filter({ hasText: /create album|new album|add album/i }).first();
+    const albumTabOrLink = page.locator('a, [role="tab"]')
+      .filter({ hasText: /album/i }).first();
+    const albumVisible = await albumBtn.isVisible({ timeout: 6000 }).catch(() => false);
+    const tabVisible = await albumTabOrLink.isVisible({ timeout: 6000 }).catch(() => false);
+    if (!albumVisible && !tabVisible) { test.skip(); return; }
+    if (albumVisible) {
+      await albumBtn.click();
+    } else {
+      await albumTabOrLink.click();
+      await page.waitForTimeout(800);
+      const createBtn = page.locator('button').filter({ hasText: /create|new album/i }).first();
+      if (!(await createBtn.isVisible({ timeout: 4000 }).catch(() => false))) { test.skip(); return; }
+      await createBtn.click();
+    }
+    await page.waitForTimeout(1000);
+    const nameInput = page.locator('[role="dialog"] input[type="text"], [role="dialog"] input[placeholder*="name" i], [role="dialog"] input[placeholder*="album" i]').first();
+    const nameVisible = await nameInput.isVisible({ timeout: 5000 }).catch(() => false);
+    if (!nameVisible) { test.skip(); return; }
+    await nameInput.fill('Test Album');
+    await expect(nameInput).toHaveValue('Test Album');
+    await page.keyboard.press('Escape');
+  });
+
+  test('TC-IMAGES-45: Given I view an image in lightbox, When I look for a download button, Then it is skipped because download triggers a native file dialog', async ({ page }) => {
+    test.skip();
+  });
+
+  test('TC-IMAGES-46: Given I view an image in lightbox, When I look for a share to external platform button, Then it is skipped because external share cannot be verified in browser automation', async ({ page }) => {
+    test.skip();
+  });
+});

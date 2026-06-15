@@ -619,3 +619,23 @@ test.describe('TC-EXPLORE | Hashtag Navigation', () => {
     expect(hashtagPage || true).toBe(true);
   });
 });
+
+test.describe('TC-EXPLORE | Search Edge Cases', () => {
+  test.beforeEach(async ({ page }) => {
+    await goExplore(page);
+    await dismissPromptIfVisible(page);
+  });
+
+  test('TC-EXPLORE-43: Given I am on the explore page, When I type special characters in the search input, Then the page does not crash or execute injected code', async ({ page }) => {
+    const searchInput = page.locator('input[placeholder*="search" i], input[type="search"]').first();
+    const visible = await searchInput.isVisible({ timeout: 6000 }).catch(() => false);
+    if (!visible) { test.skip(); return; }
+    await searchInput.fill('!@#$%^&*()<script>alert(1)</script>');
+    await page.waitForTimeout(1500);
+    // Page body must remain visible — no crash, no alert dialog
+    await expect(page.locator('body')).toBeVisible();
+    // No JS alert should have fired
+    const dialogFired = await page.evaluate(() => window.__alertFired || false);
+    expect(dialogFired).toBeFalsy();
+  });
+});

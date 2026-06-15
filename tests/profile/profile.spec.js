@@ -684,3 +684,30 @@ test.describe('Privacy from Profile', () => {
     expect(page.isClosed()).toBe(false);
   });
 });
+
+test.describe('TC-PROFILE | Edit Profile Save Flow', () => {
+  test('TC-PROFILE-50: Given I am on my own profile page and click Edit Profile, When I modify a field and click Save, Then the profile is updated and a success indicator or redirect occurs', async ({ page }) => {
+    await page.goto('https://app.omre.ai/app/profile', { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(1500);
+    const editBtn = page.locator('button, a').filter({ hasText: /edit profile/i }).first();
+    const editVisible = await editBtn.isVisible({ timeout: 6000 }).catch(() => false);
+    if (!editVisible) { test.skip(); return; }
+    await editBtn.click();
+    await page.waitForTimeout(1500);
+    const bioInput = page.locator('textarea[name*="bio" i], textarea[placeholder*="bio" i], textarea[placeholder*="about" i], input[name*="bio" i]').first();
+    const bioVisible = await bioInput.isVisible({ timeout: 5000 }).catch(() => false);
+    if (!bioVisible) { test.skip(); return; }
+    await bioInput.click();
+    const currentVal = await bioInput.inputValue().catch(() => '');
+    await bioInput.fill(currentVal || 'Automated test bio');
+    const saveBtn = page.locator('button[type="submit"], button').filter({ hasText: /save|update/i }).first();
+    const saveVisible = await saveBtn.isVisible({ timeout: 5000 }).catch(() => false);
+    if (!saveVisible) { test.skip(); return; }
+    await saveBtn.click();
+    await page.waitForTimeout(2000);
+    const success = page.locator('[role="alert"], [class*="toast" i], [class*="success" i]').first();
+    const successVisible = await success.isVisible({ timeout: 3000 }).catch(() => false);
+    const backOnProfile = !page.url().includes('edit');
+    expect(successVisible || backOnProfile).toBeTruthy();
+  });
+});

@@ -40,13 +40,27 @@ test.describe('Stories Bar', () => {
   });
 
   test('TC-STORY-BAR-01: stories bar or carousel is present on home feed', async ({ page }) => {
-    const bar = page.locator(
-      '[aria-label*="stories" i], [aria-label*="story" i]'
-    ).first();
-    if (await bar.isVisible({ timeout: 6000 }).catch(() => false)) {
-      await expect(bar).toBeVisible();
+    // Given the home page has loaded
+    // When we look for a clickable story item in the stories bar
+    // Then clicking it should open an overlay or change the URL
+    const storyItem = page.locator('[aria-label*="story" i], [aria-label*="stories" i]').nth(1);
+    const isPresent = await storyItem.isVisible({ timeout: 6000 }).catch(() => false);
+    if (!isPresent) { test.skip(); return; }
+
+    const urlBefore = page.url();
+    await storyItem.click();
+    await page.waitForTimeout(1000);
+
+    const dialog = page.locator('[role="dialog"]').first();
+    const dialogVisible = await dialog.isVisible({ timeout: 5000 }).catch(() => false);
+    const urlChanged = page.url() !== urlBefore;
+
+    expect(dialogVisible || urlChanged).toBe(true);
+
+    if (dialogVisible) await page.keyboard.press('Escape');
+    else if (urlChanged && !page.url().includes('/app/home')) {
+      await page.goBack({ waitUntil: 'domcontentloaded' });
     }
-    // Stories may not be available on all accounts — test passes either way
   });
 
   test('TC-STORY-BAR-02: stories bar contains at least one story item', async ({ page }) => {
@@ -58,24 +72,44 @@ test.describe('Stories Bar', () => {
   });
 
   test('TC-STORY-BAR-03: Add Story button is present in the stories bar', async ({ page }) => {
+    // Given the home page has loaded
+    // When we click the Add Story button
+    // Then a story creator dialog should open or the URL should contain "story" or "create"
     const addBtn = page.locator(
       '[aria-label*="add story" i], [aria-label*="create story" i], button:has-text("Add"), button:has-text("Your Story")'
     ).first();
-    const plusBtn = page.locator('main button:has(svg)').first();
-    if (await addBtn.isVisible({ timeout: 5000 }).catch(() => false)) {
-      await expect(addBtn).toBeVisible();
+    const isPresent = await addBtn.isVisible({ timeout: 5000 }).catch(() => false);
+    if (!isPresent) { test.skip(); return; }
+
+    await addBtn.click();
+    await page.waitForTimeout(1000);
+
+    const dialog = page.locator('[role="dialog"]').first();
+    const dialogVisible = await dialog.isVisible({ timeout: 5000 }).catch(() => false);
+    const urlHasStory = /story|create/i.test(page.url());
+
+    expect(dialogVisible || urlHasStory).toBe(true);
+
+    if (dialogVisible) await page.keyboard.press('Escape');
+    else if (!page.url().includes('/app/home')) {
+      await page.goBack({ waitUntil: 'domcontentloaded' });
     }
   });
 
   test('TC-STORY-BAR-04: story items show user avatars or thumbnails', async ({ page }) => {
+    // Given the home page has loaded
+    // When we inspect the story avatar or thumbnail image
+    // Then the src attribute must be a non-empty string that starts with http or /
     const storyImg = page.locator(
       '[aria-label*="story" i] img, [aria-label*="stories" i] img'
     ).first();
-    if (await storyImg.isVisible({ timeout: 5000 }).catch(() => false)) {
-      await expect(storyImg).toBeVisible();
-      const src = await storyImg.getAttribute('src');
-      expect(src).toBeTruthy();
-    }
+    const isPresent = await storyImg.isVisible({ timeout: 5000 }).catch(() => false);
+    if (!isPresent) { test.skip(); return; }
+
+    const src = await storyImg.getAttribute('src');
+    expect(src).toBeTruthy();
+    expect(src.trim().length).toBeGreaterThan(0);
+    expect(/^https?:\/\/|^\//.test(src.trim())).toBe(true);
   });
 
   test('TC-STORY-BAR-05: stories bar can be scrolled horizontally if overflowing', async ({ page }) => {
@@ -110,9 +144,20 @@ test.describe('Viewing Stories', () => {
   test('TC-STORY-VIEW-02: story viewer shows the story content (image or video)', async ({ page }) => {
     const opened = await openFirstStory(page);
     if (opened) {
-      const media = page.locator('[role="dialog"] img, [role="dialog"] video').first();
-      const fallback = page.locator('img[src]:not([src=""]), video').first();
-      await expect(media.or(fallback).first()).toBeVisible({ timeout: 8000 });
+      const media = page.locator('[role="dialog"] img').first();
+      const mediaVisible = await media.isVisible({ timeout: 5000 }).catch(() => false);
+      if (!mediaVisible) {
+        const videoMedia = page.locator('[role="dialog"] video').first();
+        const videoVisible = await videoMedia.isVisible({ timeout: 5000 }).catch(() => false);
+        if (!videoVisible) {
+          const fallback = page.locator('img[src]:not([src=""])').first();
+          await expect(fallback).toBeVisible({ timeout: 8000 });
+        } else {
+          await expect(videoMedia).toBeVisible();
+        }
+      } else {
+        await expect(media).toBeVisible();
+      }
       await page.keyboard.press('Escape');
     }
   });
@@ -180,29 +225,79 @@ test.describe('Viewing Stories', () => {
   });
 
   test('TC-STORY-VIEW-08: next story navigation button is present', async ({ page }) => {
+    // Given the story viewer is open
+    // When we click the Next button
+    // Then the story content (image src or visible text title) should differ from what was shown before
     const opened = await openFirstStory(page);
-    if (opened) {
-      const nextBtn = page.locator(
-        '[aria-label*="next" i], button:has-text("›"), button:has-text(">")'
-      ).first();
-      if (await nextBtn.isVisible({ timeout: 5000 }).catch(() => false)) {
-        await expect(nextBtn).toBeVisible();
-      }
-      await page.keyboard.press('Escape');
-    }
+    if (!opened) { test.skip(); return; }
+
+    const nextBtn = page.locator('[aria-label*="next" i], button:has-text("›"), button:has-text(">")').first();
+    const nextVisible = await nextBtn.isVisible({ timeout: 5000 }).catch(() => false);
+    if (!nextVisible) { test.skip(); return; }
+
+    const imgBefore = page.locator('[role="dialog"] img').first();
+    const srcBefore = await imgBefore.getAttribute('src').catch(() => '');
+    const titleBefore = await page.locator('[role="dialog"] h1, [role="dialog"] h2, [role="dialog"] h3').first()
+      .innerText().catch(() => '');
+
+    await nextBtn.click();
+    await page.waitForTimeout(800);
+
+    const imgAfter = page.locator('[role="dialog"] img').first();
+    const srcAfter = await imgAfter.getAttribute('src').catch(() => '');
+    const titleAfter = await page.locator('[role="dialog"] h1, [role="dialog"] h2, [role="dialog"] h3').first()
+      .innerText().catch(() => '');
+
+    // Story viewer closed (moved past last story) also counts as content change
+    const viewerGone = !(await page.locator('[role="dialog"]').first().isVisible({ timeout: 1000 }).catch(() => false));
+    const contentChanged = srcAfter !== srcBefore || titleAfter !== titleBefore;
+
+    expect(viewerGone || contentChanged).toBe(true);
+
+    if (!viewerGone) await page.keyboard.press('Escape');
   });
 
   test('TC-STORY-VIEW-09: previous story navigation button is present', async ({ page }) => {
+    // Given the story viewer is open and we have advanced to the second story
+    // When we click the Previous button
+    // Then the story content (image src or visible text title) should differ from what was shown before clicking Previous
     const opened = await openFirstStory(page);
-    if (opened) {
-      const prevBtn = page.locator(
-        '[aria-label*="prev" i], button:has-text("‹"), button:has-text("<")'
-      ).first();
-      if (await prevBtn.isVisible({ timeout: 5000 }).catch(() => false)) {
-        await expect(prevBtn).toBeVisible();
-      }
-      await page.keyboard.press('Escape');
+    if (!opened) { test.skip(); return; }
+
+    // Advance to second story first so Previous has somewhere to go
+    const nextBtn = page.locator('[aria-label*="next" i], button:has-text("›"), button:has-text(">")').first();
+    const nextVisible = await nextBtn.isVisible({ timeout: 4000 }).catch(() => false);
+    if (nextVisible) {
+      await nextBtn.click();
+      await page.waitForTimeout(600);
     }
+
+    const prevBtn = page.locator('[aria-label*="prev" i], button:has-text("‹"), button:has-text("<")').first();
+    const prevVisible = await prevBtn.isVisible({ timeout: 5000 }).catch(() => false);
+    if (!prevVisible) {
+      await page.keyboard.press('Escape');
+      test.skip(); return;
+    }
+
+    const imgBefore = page.locator('[role="dialog"] img').first();
+    const srcBefore = await imgBefore.getAttribute('src').catch(() => '');
+    const titleBefore = await page.locator('[role="dialog"] h1, [role="dialog"] h2, [role="dialog"] h3').first()
+      .innerText().catch(() => '');
+
+    await prevBtn.click();
+    await page.waitForTimeout(800);
+
+    const imgAfter = page.locator('[role="dialog"] img').first();
+    const srcAfter = await imgAfter.getAttribute('src').catch(() => '');
+    const titleAfter = await page.locator('[role="dialog"] h1, [role="dialog"] h2, [role="dialog"] h3').first()
+      .innerText().catch(() => '');
+
+    const viewerGone = !(await page.locator('[role="dialog"]').first().isVisible({ timeout: 1000 }).catch(() => false));
+    const contentChanged = srcAfter !== srcBefore || titleAfter !== titleBefore;
+
+    expect(viewerGone || contentChanged).toBe(true);
+
+    if (!viewerGone) await page.keyboard.press('Escape');
   });
 
   test('TC-STORY-VIEW-10: clicking next advances to the next story', async ({ page }) => {
@@ -224,9 +319,14 @@ test.describe('Viewing Stories', () => {
   test('TC-STORY-VIEW-11: story viewer shows timestamp of when story was posted', async ({ page }) => {
     const opened = await openFirstStory(page);
     if (opened) {
-      const time = page.locator('[role="dialog"] time')
-        .or(page.locator('[role="dialog"]').getByText(/\d+\s*(h|m|s|min|hour|day)/i)).first();
-      if (await time.isVisible({ timeout: 5000 }).catch(() => false)) {
+      const time = page.locator('[role="dialog"] time').first();
+      const timeVisible = await time.isVisible({ timeout: 5000 }).catch(() => false);
+      if (!timeVisible) {
+        const timeText = page.locator('[role="dialog"]').getByText(/\d+\s*(h|m|s|min|hour|day)/i).first();
+        if (await timeText.isVisible({ timeout: 5000 }).catch(() => false)) {
+          await expect(timeText).toBeVisible();
+        }
+      } else {
         await expect(time).toBeVisible();
       }
       await page.keyboard.press('Escape');
@@ -307,11 +407,27 @@ test.describe('Creating a Story', () => {
   });
 
   test('TC-STORY-CREATE-01: Add Story button is clickable', async ({ page }) => {
+    // Given the home page has loaded
+    // When we click the Add Story button
+    // Then a story creator dialog should open or the URL should contain "story" or "create"
     const addBtn = page.locator(
       '[aria-label*="add story" i], [aria-label*="create story" i], [aria-label*="your story" i]'
     ).first();
-    if (await addBtn.isVisible({ timeout: 6000 }).catch(() => false)) {
-      await expect(addBtn).toBeEnabled();
+    const isPresent = await addBtn.isVisible({ timeout: 6000 }).catch(() => false);
+    if (!isPresent) { test.skip(); return; }
+
+    await addBtn.click();
+    await page.waitForTimeout(1000);
+
+    const dialog = page.locator('[role="dialog"]').first();
+    const dialogVisible = await dialog.isVisible({ timeout: 5000 }).catch(() => false);
+    const urlHasStory = /story|create/i.test(page.url());
+
+    expect(dialogVisible || urlHasStory).toBe(true);
+
+    if (dialogVisible) await page.keyboard.press('Escape');
+    else if (!page.url().includes('/app/home')) {
+      await page.goBack({ waitUntil: 'domcontentloaded' });
     }
   });
 
@@ -424,17 +540,31 @@ test.describe('My Story Management', () => {
   });
 
   test('TC-STORY-MY-02: own story shows view count when opened', async ({ page }) => {
+    // Given the user has an active story
+    // When we open our own story
+    // Then the view count text must parse to a numeric value >= 0 (not merely visible)
     const myStory = page.locator('[aria-label*="your story" i], [aria-label*="my story" i]').first();
-    if (await myStory.isVisible({ timeout: 5000 }).catch(() => false)) {
-      await myStory.click();
-      await page.waitForTimeout(800);
-      const viewCount = page.locator('[aria-label*="view" i], [role="dialog"]')
-        .getByText(/\d+\s*(view|viewer)/i).first();
-      if (await viewCount.isVisible({ timeout: 5000 }).catch(() => false)) {
-        await expect(viewCount).toBeVisible();
-      }
+    const myStoryVisible = await myStory.isVisible({ timeout: 5000 }).catch(() => false);
+    if (!myStoryVisible) { test.skip(); return; }
+
+    await myStory.click();
+    await page.waitForTimeout(800);
+
+    const viewCount = page.locator('[aria-label*="view" i], [role="dialog"]')
+      .getByText(/\d+\s*(view|viewer)/i).first();
+    const viewCountVisible = await viewCount.isVisible({ timeout: 5000 }).catch(() => false);
+    if (!viewCountVisible) {
       await page.keyboard.press('Escape');
+      test.skip(); return;
     }
+
+    const rawText = await viewCount.innerText().catch(() => '');
+    const match = rawText.match(/(\d+)/);
+    expect(match).not.toBeNull();
+    const count = parseInt(match[1], 10);
+    expect(count >= 0).toBe(true);
+
+    await page.keyboard.press('Escape');
   });
 
   test('TC-STORY-MY-03: own story has a delete option', async ({ page }) => {
@@ -461,10 +591,14 @@ test.describe('My Story Management', () => {
   test('TC-STORY-MY-04: story shows 24h expiry indicator', async ({ page }) => {
     const storyItem = page.locator('[aria-label*="story" i]').first();
     if (await storyItem.isVisible({ timeout: 5000 }).catch(() => false)) {
-      // Expiry may show as "23h", "Expires in", etc.
-      const expiry = page.locator('[aria-label*="expire" i]')
-        .or(page.locator('span, p').filter({ hasText: /\d+h|expire|24/i })).first();
-      if (await expiry.isVisible({ timeout: 3000 }).catch(() => false)) {
+      const expiry = page.locator('[aria-label*="expire" i]').first();
+      const expiryVisible = await expiry.isVisible({ timeout: 3000 }).catch(() => false);
+      if (!expiryVisible) {
+        const expiryText = page.locator('span, p').filter({ hasText: /\d+h|expire|24/i }).first();
+        if (await expiryText.isVisible({ timeout: 3000 }).catch(() => false)) {
+          await expect(expiryText).toBeVisible();
+        }
+      } else {
         await expect(expiry).toBeVisible();
       }
     }

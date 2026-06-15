@@ -453,3 +453,84 @@ test.describe('Online Status', () => {
     await expect(content).toBeVisible({ timeout: 10000 });
   });
 });
+
+// ── Search Edge Cases ──────────────────────────────────────────────────────────
+
+test.describe('Search Edge Cases', () => {
+  test.beforeEach(async ({ page }) => { await goFriends(page); });
+
+  test('TC-FRIENDS-39: Given I am on the search input, When I type special characters !@#$%^, Then the page does not crash', async ({ page }) => {
+    const errors = [];
+    page.on('pageerror', e => errors.push(e.message));
+    const search = page.locator(
+      'input[placeholder*="search" i], input[placeholder*="people" i], input[type="search"]'
+    ).first();
+    if (!(await search.isVisible({ timeout: 5000 }).catch(() => false))) return;
+    await search.fill('!@#$%^');
+    await page.waitForTimeout(1000);
+    const appErrors = errors.filter(e =>
+      e.includes('TypeError') || e.includes('ReferenceError') || e.includes('app.omre.ai')
+    );
+    expect(appErrors).toHaveLength(0);
+    expect(page.isClosed()).toBe(false);
+    await search.fill('');
+  });
+});
+
+// ── Pagination ─────────────────────────────────────────────────────────────────
+
+test.describe('Pagination', () => {
+  test.beforeEach(async ({ page }) => { await goFriends(page); });
+
+  test('TC-FRIENDS-40: Given the friend list exceeds visible area, When I scroll to the bottom, Then additional friends load or a load-more button appears', async ({ page }) => {
+    const countBefore = await page.locator('main img').count();
+    await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+    await page.waitForTimeout(2000);
+    await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+    await page.waitForTimeout(1500);
+    const loadMoreBtn = page.locator('button').filter({ hasText: /load more|see more|show more/i }).first();
+    if (await loadMoreBtn.isVisible({ timeout: 3000 }).catch(() => false)) {
+      await loadMoreBtn.click();
+      await page.waitForTimeout(1500);
+    }
+    const countAfter = await page.locator('main img').count();
+    expect(countAfter).toBeGreaterThanOrEqual(countBefore);
+    expect(page.isClosed()).toBe(false);
+  });
+});
+
+// ── Block / Unblock ────────────────────────────────────────────────────────────
+
+test.describe('Block and Unblock', () => {
+  test.beforeEach(async ({ page }) => { await goFriends(page); });
+
+  test('TC-FRIENDS-41: Given I am on the friend card 3-dot menu, When I open it, Then I can see a Block option', async ({ page }) => {
+    const moreBtn = page.locator('[aria-label*="more" i], [aria-label*="option" i]').first();
+    const blockVisible = await moreBtn.isVisible({ timeout: 5000 }).catch(() => false);
+    if (!blockVisible) { test.skip(); return; }
+    await moreBtn.click();
+    await page.waitForTimeout(500);
+    const blockOpt = page.locator('[role="menuitem"]').filter({ hasText: /^block$/i }).first();
+    if (!(await blockOpt.isVisible({ timeout: 3000 }).catch(() => false))) {
+      await page.keyboard.press('Escape');
+      test.skip();
+      return;
+    }
+    await expect(blockOpt).toBeVisible();
+    await page.keyboard.press('Escape');
+  });
+});
+
+// ── Mutual Friends Count ───────────────────────────────────────────────────────
+
+test.describe('Mutual Friends Count', () => {
+  test.beforeEach(async ({ page }) => { await goFriends(page); });
+
+  test.skip('TC-FRIENDS-42: Given a friend card shows mutual friends count, When I view it, Then the count is accurate — untestable: requires specific data state with known mutual connections', () => {});
+});
+
+// ── Friend Request Timeout ─────────────────────────────────────────────────────
+
+test.describe('Friend Request Timeout', () => {
+  test.skip('TC-FRIENDS-43: Given a friend request has been sent, When it times out after the platform expiry period, Then the request is auto-cancelled — untestable: requires time manipulation and server-side timeout control', () => {});
+});

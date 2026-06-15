@@ -400,3 +400,72 @@ test.describe('Notification Management', () => {
     expect(page.isClosed()).toBe(false);
   });
 });
+
+// ── Real-Time Push Notification ────────────────────────────────────────────────
+
+test.describe('Real-Time Push Notification', () => {
+  test.skip('TC-NOTIF-33: Given the app is open, When a server push notification arrives in real-time, Then it appears without a page reload — untestable: requires a second active session triggering a real notification event', () => {});
+});
+
+// ── Batch Notifications ────────────────────────────────────────────────────────
+
+test.describe('Batch Notifications', () => {
+  test.beforeEach(async ({ page }) => { await goNotifications(page); });
+
+  test('TC-NOTIF-34: Given there are multiple similar notifications, When I view the list, Then grouped or batch notifications are displayed if the app supports them', async ({ page }) => {
+    const batchEl = page.locator('main li, main > div > div')
+      .filter({ hasText: /\d+\s*(people|others?)\s*(liked|commented|reacted)/i }).first();
+    if (!(await batchEl.isVisible({ timeout: 6000 }).catch(() => false))) {
+      test.skip();
+      return;
+    }
+    await expect(batchEl).toBeVisible();
+    const text = await batchEl.textContent();
+    expect(text).toMatch(/\d+/);
+  });
+});
+
+// ── Notification Badge Count Accuracy ─────────────────────────────────────────
+
+test.describe('Notification Badge Count Accuracy', () => {
+  test.skip('TC-NOTIF-35: Given unread notifications exist, When checking the badge count in the nav, Then the count matches the actual unread notification items — untestable: badge count is updated via real-time push; verifying accuracy requires controlling notification triggers from a second session', () => {});
+});
+
+// ── Notification Muting ────────────────────────────────────────────────────────
+
+test.describe('Notification Muting', () => {
+  test.beforeEach(async ({ page }) => { await goNotifications(page); });
+
+  test('TC-NOTIF-36: Given I am on the notifications page, When I look for a mute or settings option per notification type, Then a mute control is accessible', async ({ page }) => {
+    // Settings gear or mute option is often in the top-right of the notifications page
+    const settingsBtn = page.locator(
+      '[aria-label*="notification settings" i], [aria-label*="preferences" i], button[aria-label*="settings" i]'
+    ).first();
+    const muteOpt = page.locator('button').filter({ hasText: /mute|manage notifications/i }).first();
+    const found = await settingsBtn.isVisible({ timeout: 5000 }).catch(() => false)
+      || await muteOpt.isVisible({ timeout: 5000 }).catch(() => false);
+    if (!found) { test.skip(); return; }
+    await expect(
+      (await settingsBtn.isVisible({ timeout: 2000 }).catch(() => false)) ? settingsBtn : muteOpt
+    ).toBeVisible({ timeout: 5000 });
+  });
+});
+
+// ── Clear All Notifications ────────────────────────────────────────────────────
+
+test.describe('Clear All Notifications', () => {
+  test.beforeEach(async ({ page }) => { await goNotifications(page); });
+
+  test('TC-NOTIF-37: Given I am on the notifications page, When I look for a Clear All or Mark All Read button, Then it is accessible and clickable', async ({ page }) => {
+    const clearBtn = page.locator('button').filter({ hasText: /clear all|mark all (as )?read/i }).first();
+    if (!(await clearBtn.isVisible({ timeout: 5000 }).catch(() => false))) {
+      test.skip();
+      return;
+    }
+    await expect(clearBtn).toBeVisible();
+    if (await clearBtn.isDisabled().catch(() => false)) return;
+    await clearBtn.click();
+    await page.waitForTimeout(1000);
+    expect(page.isClosed()).toBe(false);
+  });
+});

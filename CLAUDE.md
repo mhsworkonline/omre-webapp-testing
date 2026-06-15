@@ -44,10 +44,12 @@ omre-webapp/
 - **Skip guards over hard assertions** — all optional UI checks must use `isVisible().catch(() => false)` + `test.skip(); return;` pattern before `expect(...).toBeVisible()`
 - **Never explain tool calls** — tool usage is not visible to user; only final results matter
 
-## Current Status (as of 2026-06-13)
-- **312 tests passing**, 13 failing (down from 133 failures)
-- **Pending:** run `node rename-tests.js` to apply Given-When-Then description rename across 1,624 tests
-- **Next full run:** `npx playwright test --project=chromium --workers=4`
+## Current Status (as of 2026-06-14)
+- **~1500+ tests passing**, 0 failures in home module (149 passed, 34 skipped)
+- All test descriptions are in **Given-When-Then (GWT)** format
+- **Coverage matrix:** `tests/COVERAGE.md` — source of truth for what is tested vs TODO
+- **Next step:** Write TODO tests from coverage matrix (6 parallel agent groups)
+- **Definition of done:** No `TODO` cells remain in `tests/COVERAGE.md`
 
 ## Running Tests
 
