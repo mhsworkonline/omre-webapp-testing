@@ -73,7 +73,7 @@ test.describe('Resource Efficiency', () => {
       !err.toLowerCase().includes('sw.js')
     );
 
-    expect(criticalErrors.length).toBe(0);
+    expect(criticalErrors, `Critical console errors:\n${criticalErrors.join('\n')}`).toHaveLength(0);
   });
 
   test('TC-PERF-006: Given I am on the page, When I inspect the content, Then first off-screen image in feed has lazy loading or is loaded lazily', async ({ page }) => {

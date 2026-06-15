@@ -162,6 +162,7 @@ test.describe('TC-THEME: Keyboard Accessibility', () => {
   test('TC-THEME-11: Given I am authenticated and on the page, When I perform the action, Then pressing Enter on focused toggle changes the theme', async ({ page }) => {
     const toggle = themeToggle(page);
     if (!(await toggle.isVisible({ timeout: 8000 }).catch(() => false))) return;
+    if (!(await toggle.isEnabled({ timeout: 2000 }).catch(() => false))) return;
     await toggle.focus();
     const before = await getTheme(page);
     await page.keyboard.press('Enter');

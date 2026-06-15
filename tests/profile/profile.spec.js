@@ -17,13 +17,14 @@ test.setTimeout(45000);
 async function goOwnProfile(page) {
   await page.goto(HOME_URL, { waitUntil: 'domcontentloaded' });
   await page.waitForTimeout(1200);
-  // Click own profile link in sidebar or avatar in header
-  const profileLink = page.locator('a[href*="/app/profile"]').first();
+  // Click own profile link in sidebar or avatar in header (must include username segment)
+  const profileLink = page.locator('a[href*="/app/profile/"]').first();
   if (await profileLink.isVisible({ timeout: 5000 }).catch(() => false)) {
     await profileLink.click({ force: true }).catch(() => {});
     await page.waitForURL(/\/app\/profile\//, { timeout: 10000 }).catch(() => {});
   } else {
     await page.goto(`${BASE_URL}/app/profile`, { waitUntil: 'domcontentloaded' });
+    await page.waitForURL(/\/app\/profile\//, { timeout: 10000 }).catch(() => {});
   }
   await page.waitForTimeout(1500);
 }
