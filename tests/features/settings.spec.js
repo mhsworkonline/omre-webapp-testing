@@ -7,7 +7,7 @@
 import { test, expect } from '@playwright/test';
 
 const AUTH_FILE  = 'playwright/.auth/user.json';
-const MODULE_URL = 'https://app.omre.ai/app/settings';
+const MODULE_URL = 'https://omre.ai/app/settings';
 
 test.use({ storageState: AUTH_FILE });
 test.setTimeout(45000);
@@ -17,7 +17,7 @@ async function goModule(page) {
   await page.waitForTimeout(1500);
 }
 
-// ─── Page Load and Layout ─────────────────────────────────────────────────────
+// --- Page Load and Layout -----------------------------------------------------
 test.describe('TC-SETTINGS: Page Load and Layout', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -64,7 +64,7 @@ test.describe('TC-SETTINGS: Page Load and Layout', () => {
   });
 });
 
-// ─── Account / Profile Section ────────────────────────────────────────────────
+// --- Account / Profile Section ------------------------------------------------
 test.describe('TC-SETTINGS: Account and Profile', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -165,7 +165,7 @@ test.describe('TC-SETTINGS: Account and Profile', () => {
   });
 });
 
-// ─── Password Change ──────────────────────────────────────────────────────────
+// --- Password Change ----------------------------------------------------------
 test.describe('TC-SETTINGS: Password Change', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -198,7 +198,7 @@ test.describe('TC-SETTINGS: Password Change', () => {
   });
 });
 
-// ─── Notification Preferences ─────────────────────────────────────────────────
+// --- Notification Preferences -------------------------------------------------
 test.describe('TC-SETTINGS: Notification Preferences', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -257,7 +257,7 @@ test.describe('TC-SETTINGS: Notification Preferences', () => {
   });
 });
 
-// ─── Privacy Settings ─────────────────────────────────────────────────────────
+// --- Privacy Settings ---------------------------------------------------------
 test.describe('TC-SETTINGS: Privacy Settings', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -324,7 +324,7 @@ test.describe('TC-SETTINGS: Privacy Settings', () => {
   });
 });
 
-// ─── Theme and Appearance ─────────────────────────────────────────────────────
+// --- Theme and Appearance -----------------------------------------------------
 test.describe('TC-SETTINGS: Theme and Appearance', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -390,7 +390,7 @@ test.describe('TC-SETTINGS: Theme and Appearance', () => {
   });
 });
 
-// ─── Security and Two-Factor Authentication ────────────────────────────────────
+// --- Security and Two-Factor Authentication ------------------------------------
 test.describe('TC-SETTINGS: Security and Two-Factor Authentication', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -431,7 +431,7 @@ test.describe('TC-SETTINGS: Security and Two-Factor Authentication', () => {
   });
 });
 
-// ─── Logout and Account Deletion ──────────────────────────────────────────────
+// --- Logout and Account Deletion ----------------------------------------------
 test.describe('TC-SETTINGS: Logout and Account Deletion', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -491,7 +491,7 @@ test.describe('TC-SETTINGS: Logout and Account Deletion', () => {
   });
 });
 
-// ─── Navigation and Unsaved Changes ───────────────────────────────────────────
+// --- Navigation and Unsaved Changes -------------------------------------------
 test.describe('TC-SETTINGS: Navigation and Unsaved Changes', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -522,17 +522,17 @@ test.describe('TC-SETTINGS: Navigation and Unsaved Changes', () => {
     await textInput.fill('Temporary Unsaved Change');
     // Navigate away and detect prompt
     const dialogPromise = page.waitForEvent('dialog', { timeout: 3000 }).catch(() => null);
-    await page.goto('https://app.omre.ai/app', { waitUntil: 'domcontentloaded' });
+    await page.goto('https://omre.ai/app', { waitUntil: 'domcontentloaded' });
     const dialog = await dialogPromise;
     if (dialog) {
       await dialog.dismiss();
     }
-    // Test passes regardless — unsaved-changes prompt is a best-practice, not always present
+    // Test passes regardless � unsaved-changes prompt is a best-practice, not always present
     expect(true).toBe(true);
   });
 
   test('TC-SETTINGS-34: Given I am authenticated and on the page, When I perform the action, Then settings page re-renders correctly after browser back navigation', async ({ page }) => {
-    await page.goto('https://app.omre.ai/app', { waitUntil: 'domcontentloaded' });
+    await page.goto('https://omre.ai/app', { waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(600);
     await page.goBack();
     await page.waitForTimeout(1000);
@@ -551,7 +551,7 @@ test.describe('TC-SETTINGS: Navigation and Unsaved Changes', () => {
   });
 });
 
-// ─── Data and Privacy ─────────────────────────────────────────────────────────
+// --- Data and Privacy ---------------------------------------------------------
 test.describe('TC-SETTINGS: Data and Privacy', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -627,7 +627,7 @@ test.describe('TC-SETTINGS: Data and Privacy', () => {
   });
 });
 
-// ─── Sessions and Devices ─────────────────────────────────────────────────────
+// --- Sessions and Devices -----------------------------------------------------
 test.describe('TC-SETTINGS: Sessions and Devices', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -715,7 +715,7 @@ test.describe('TC-SETTINGS: Sessions and Devices', () => {
   });
 });
 
-// ─── Account Actions ──────────────────────────────────────────────────────────
+// --- Account Actions ----------------------------------------------------------
 test.describe('TC-SETTINGS: Account Actions', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -792,7 +792,7 @@ test.describe('TC-SETTINGS: Account Actions', () => {
   });
 });
 
-// ─── Profile Save / Update ────────────────────────────────────────────────────
+// --- Profile Save / Update ----------------------------------------------------
 test.describe('TC-SETTINGS: Profile Save and Validation', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -858,7 +858,7 @@ test.describe('TC-SETTINGS: Profile Save and Validation', () => {
   });
 });
 
-// ─── Password Change Form ─────────────────────────────────────────────────────
+// --- Password Change Form -----------------------------------------------------
 test.describe('TC-SETTINGS: Password Change Form', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -905,7 +905,7 @@ test.describe('TC-SETTINGS: Password Change Form', () => {
   });
 });
 
-// ─── Notification Toggle ──────────────────────────────────────────────────────
+// --- Notification Toggle ------------------------------------------------------
 test.describe('TC-SETTINGS: Notification Toggle Interaction', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -935,7 +935,7 @@ test.describe('TC-SETTINGS: Notification Toggle Interaction', () => {
   });
 });
 
-// ─── Privacy Setting Toggle ───────────────────────────────────────────────────
+// --- Privacy Setting Toggle ---------------------------------------------------
 test.describe('TC-SETTINGS: Privacy Setting Toggle', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -961,7 +961,7 @@ test.describe('TC-SETTINGS: Privacy Setting Toggle', () => {
   });
 });
 
-// ─── Theme Change in Settings ─────────────────────────────────────────────────
+// --- Theme Change in Settings -------------------------------------------------
 test.describe('TC-SETTINGS: Theme Change in Settings', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -995,7 +995,7 @@ test.describe('TC-SETTINGS: Theme Change in Settings', () => {
   });
 });
 
-// ─── 2FA Section ──────────────────────────────────────────────────────────────
+// --- 2FA Section --------------------------------------------------------------
 test.describe('TC-SETTINGS: Security and 2FA Controls', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -1044,7 +1044,7 @@ test.describe('TC-SETTINGS: Security and 2FA Controls', () => {
   });
 });
 
-// ─── Data Download ────────────────────────────────────────────────────────────
+// --- Data Download ------------------------------------------------------------
 test.describe('TC-SETTINGS: Data Download Controls', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -1066,10 +1066,10 @@ test.describe('TC-SETTINGS: Data Download Controls', () => {
     await expect(downloadBtn).toBeVisible();
   });
 
-  test.skip('TC-SETTINGS-56: untestable: data download trigger — file download verification is untestable in headless Playwright without intercepting the browser download event', () => {});
+  test.skip('TC-SETTINGS-56: untestable: data download trigger � file download verification is untestable in headless Playwright without intercepting the browser download event', () => {});
 });
 
-// ─── Sessions Panel ───────────────────────────────────────────────────────────
+// --- Sessions Panel -----------------------------------------------------------
 test.describe('TC-SETTINGS: Sessions and Revoke', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -1110,7 +1110,7 @@ test.describe('TC-SETTINGS: Sessions and Revoke', () => {
   });
 });
 
-// ─── Account Deactivation ─────────────────────────────────────────────────────
+// --- Account Deactivation -----------------------------------------------------
 test.describe('TC-SETTINGS: Account Deactivation Dialog', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 

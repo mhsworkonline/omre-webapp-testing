@@ -3,7 +3,7 @@ import { writeFileSync, mkdirSync } from 'fs';
 
 test.setTimeout(600_000); // 10 minutes
 
-const BASE = 'https://app.omre.ai';
+const BASE = 'https://omre.ai';
 const OUT_DIR = 'discovery-output';
 const results = [];
 
@@ -67,7 +67,7 @@ async function captureModule(page, name, section) {
   await page.screenshot({ path: file, fullPage: false });
   const entry = { section, name, url, title, heading, screenshot: file };
   results.push(entry);
-  console.log(`  ✓  ${name.padEnd(20)} → ${url}`);
+  console.log(`  ?  ${name.padEnd(20)} ? ${url}`);
   return entry;
 }
 
@@ -77,7 +77,7 @@ async function visitModule(page, name, section) {
 
   const el = await findNavItem(page, name);
   if (!el) {
-    console.log(`  ✗  ${name.padEnd(20)} → nav item not found`);
+    console.log(`  ?  ${name.padEnd(20)} ? nav item not found`);
     results.push({ section, name, url: null, error: 'nav item not found' });
     return;
   }
@@ -92,21 +92,21 @@ test('discover all 34 modules', async ({ page }) => {
 
   // Login
   await login(page);
-  console.log(`\nLogged in → ${page.url()}\n`);
+  console.log(`\nLogged in ? ${page.url()}\n`);
 
-  // ── Left Sidebar ──
-  console.log('─── LEFT SIDEBAR ───────────────────────────');
+  // -- Left Sidebar --
+  console.log('--- LEFT SIDEBAR ---------------------------');
   for (const name of SIDEBAR) {
     await visitModule(page, name, 'sidebar');
   }
 
-  // ── Top Header ──
-  console.log('\n─── TOP HEADER ─────────────────────────────');
+  // -- Top Header --
+  console.log('\n--- TOP HEADER -----------------------------');
   for (const name of HEADER) {
     await visitModule(page, name, 'header');
   }
 
-  // ── Write reports ──
+  // -- Write reports --
   writeFileSync(`${OUT_DIR}/modules.json`, JSON.stringify(results, null, 2));
 
   const found = results.filter(r => r.url);
@@ -122,11 +122,11 @@ test('discover all 34 modules', async ({ page }) => {
       `| ${i + 1} | ${m.section} | **${m.name}** | \`${m.url}\` | ${m.heading || m.title || '-'} |`
     ),
     '\n## Not Found\n',
-    missed.map(m => `- ${m.section} → **${m.name}**`).join('\n'),
+    missed.map(m => `- ${m.section} ? **${m.name}**`).join('\n'),
   ].join('\n');
 
   writeFileSync(`${OUT_DIR}/modules.md`, md);
 
-  console.log(`\n✅ Done — ${found.length}/${results.length} modules found`);
-  console.log(`   Report saved → ${OUT_DIR}/modules.md`);
+  console.log(`\n? Done � ${found.length}/${results.length} modules found`);
+  console.log(`   Report saved ? ${OUT_DIR}/modules.md`);
 });

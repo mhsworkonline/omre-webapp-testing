@@ -1,12 +1,12 @@
 /**
  * Video module deep-dive tests
- * URL: https://app.omre.ai/app/videos
+ * URL: https://omre.ai/app/videos
  * Covers: page load, sidebar nav, video feed, upload, playback, sub-navigation, categories
  */
 import { test, expect } from '@playwright/test';
 
 const AUTH_FILE  = 'playwright/.auth/user.json';
-const MODULE_URL = 'https://app.omre.ai/app/videos';
+const MODULE_URL = 'https://omre.ai/app/videos';
 
 test.use({ storageState: AUTH_FILE });
 test.setTimeout(45000);
@@ -16,7 +16,7 @@ async function goVideo(page) {
   await page.waitForTimeout(2000);
 }
 
-// ── Page Load and Layout ──────────────────────────────────────────────────────
+// -- Page Load and Layout ------------------------------------------------------
 
 test.describe('TC-VIDEO: Page Load and Layout', () => {
   test.beforeEach(async ({ page }) => { await goVideo(page); });
@@ -40,13 +40,13 @@ test.describe('TC-VIDEO: Page Load and Layout', () => {
     await page.reload({ waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(2000);
     const appErrors = errors.filter(e =>
-      e.includes('TypeError') || e.includes('ReferenceError') || e.includes('app.omre.ai')
+      e.includes('TypeError') || e.includes('ReferenceError') || e.includes('omre.ai')
     );
     expect(appErrors).toHaveLength(0);
   });
 });
 
-// ── Sidebar Navigation ────────────────────────────────────────────────────────
+// -- Sidebar Navigation --------------------------------------------------------
 
 test.describe('TC-VIDEO: Sidebar Navigation', () => {
   test.beforeEach(async ({ page }) => { await goVideo(page); });
@@ -91,7 +91,7 @@ test.describe('TC-VIDEO: Sidebar Navigation', () => {
   });
 });
 
-// ── Video Feed ────────────────────────────────────────────────────────────────
+// -- Video Feed ----------------------------------------------------------------
 
 test.describe('TC-VIDEO: Video Feed', () => {
   test.beforeEach(async ({ page }) => { await goVideo(page); });
@@ -136,7 +136,7 @@ test.describe('TC-VIDEO: Video Feed', () => {
   });
 });
 
-// ── Upload Flow ───────────────────────────────────────────────────────────────
+// -- Upload Flow ---------------------------------------------------------------
 
 test.describe('TC-VIDEO: Upload Flow', () => {
   test.beforeEach(async ({ page }) => { await goVideo(page); });
@@ -161,7 +161,7 @@ test.describe('TC-VIDEO: Upload Flow', () => {
   });
 });
 
-// ── Video Playback ────────────────────────────────────────────────────────────
+// -- Video Playback ------------------------------------------------------------
 
 test.describe('TC-VIDEO: Video Playback', () => {
   test.beforeEach(async ({ page }) => { await goVideo(page); });
@@ -198,7 +198,7 @@ test.describe('TC-VIDEO: Video Playback', () => {
   });
 });
 
-// ── Sub-navigation ────────────────────────────────────────────────────────────
+// -- Sub-navigation ------------------------------------------------------------
 
 test.describe('TC-VIDEO: Sub-navigation', () => {
   test.beforeEach(async ({ page }) => { await goVideo(page); });
@@ -235,7 +235,7 @@ test.describe('TC-VIDEO: Sub-navigation', () => {
   });
 });
 
-// ── Upload Validation ─────────────────────────────────────────────────────────
+// -- Upload Validation ---------------------------------------------------------
 
 test.describe('TC-VIDEO: Upload Flow Validation', () => {
   test.beforeEach(async ({ page }) => { await goVideo(page); });
@@ -257,10 +257,10 @@ test.describe('TC-VIDEO: Upload Flow Validation', () => {
     expect(formatVisible || fileInputVisible).toBe(true);
   });
 
-  test.skip('TC-VIDEO-26: untestable: upload network interruption recovery — simulating mid-upload network failure requires route interception at the exact moment of upload, which is not reliably testable without a real file upload in progress', () => {});
+  test.skip('TC-VIDEO-26: untestable: upload network interruption recovery � simulating mid-upload network failure requires route interception at the exact moment of upload, which is not reliably testable without a real file upload in progress', () => {});
 });
 
-// ── Video Playback Edge Cases ─────────────────────────────────────────────────
+// -- Video Playback Edge Cases -------------------------------------------------
 
 test.describe('TC-VIDEO: Video Playback Edge Cases', () => {
   test.beforeEach(async ({ page }) => { await goVideo(page); });
@@ -320,7 +320,7 @@ test.describe('TC-VIDEO: Video Playback Edge Cases', () => {
   });
 });
 
-// ── Feed Pagination and Category Filter ──────────────────────────────────────
+// -- Feed Pagination and Category Filter --------------------------------------
 
 test.describe('TC-VIDEO: Feed Pagination and Category Filter', () => {
   test.beforeEach(async ({ page }) => { await goVideo(page); });

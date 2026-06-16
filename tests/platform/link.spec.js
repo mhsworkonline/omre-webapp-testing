@@ -1,10 +1,10 @@
-﻿// TC-LINK — Jobs & Connections Tests
-// URL: https://app.omre.ai/jobs/home
+// TC-LINK � Jobs & Connections Tests
+// URL: https://omre.ai/jobs/home
 
 import { test, expect } from '@playwright/test';
 
 const AUTH_FILE = 'playwright/.auth/user.json';
-const MODULE_URL = 'https://app.omre.ai/jobs/home';
+const MODULE_URL = 'https://omre.ai/jobs/home';
 
 test.use({ storageState: AUTH_FILE });
 test.setTimeout(45000);
@@ -14,10 +14,10 @@ async function goModule(page) {
   await page.waitForTimeout(1500);
 }
 
-// ─────────────────────────────────────────────
-// TC-LINK-01 to TC-LINK-04 — Page Load & Layout
-// ─────────────────────────────────────────────
-test.describe('TC-LINK — Page Load and Layout', () => {
+// ---------------------------------------------
+// TC-LINK-01 to TC-LINK-04 � Page Load & Layout
+// ---------------------------------------------
+test.describe('TC-LINK � Page Load and Layout', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
   test('TC-LINK-01: Given I am authenticated, When I navigate to the page, Then and URL is correct', async ({ page }) => {
@@ -43,10 +43,10 @@ test.describe('TC-LINK — Page Load and Layout', () => {
   });
 });
 
-// ─────────────────────────────────────────────
-// TC-LINK-05 to TC-LINK-09 — Job Listings
-// ─────────────────────────────────────────────
-test.describe('TC-LINK — Job Listings', () => {
+// ---------------------------------------------
+// TC-LINK-05 to TC-LINK-09 � Job Listings
+// ---------------------------------------------
+test.describe('TC-LINK � Job Listings', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
   test('TC-LINK-05: Given I am authenticated and on the page, When I perform the action, Then job listing items render on page', async ({ page }) => {
@@ -91,10 +91,10 @@ test.describe('TC-LINK — Job Listings', () => {
   });
 });
 
-// ─────────────────────────────────────────────
-// TC-LINK-10 to TC-LINK-14 — Search & Filters
-// ─────────────────────────────────────────────
-test.describe('TC-LINK — Search and Filters', () => {
+// ---------------------------------------------
+// TC-LINK-10 to TC-LINK-14 � Search & Filters
+// ---------------------------------------------
+test.describe('TC-LINK � Search and Filters', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
   test('TC-LINK-10: Given I am authenticated and on the page, When I perform the action, Then search input is present on jobs page', async ({ page }) => {
@@ -129,7 +129,7 @@ test.describe('TC-LINK — Search and Filters', () => {
       'input[aria-label*="location" i], input[placeholder*="location" i], select[aria-label*="location" i], [aria-label*="location" i]'
     ).first();
     const visible = await locationFilter.isVisible({ timeout: 8000 }).catch(() => false);
-    // Soft guard — location filter may be behind a dropdown
+    // Soft guard � location filter may be behind a dropdown
     expect(typeof visible).toBe('boolean');
   });
 
@@ -156,10 +156,10 @@ test.describe('TC-LINK — Search and Filters', () => {
   });
 });
 
-// ─────────────────────────────────────────────
-// TC-LINK-15 to TC-LINK-18 — Job Detail & Apply
-// ─────────────────────────────────────────────
-test.describe('TC-LINK — Job Detail and Apply', () => {
+// ---------------------------------------------
+// TC-LINK-15 to TC-LINK-18 � Job Detail & Apply
+// ---------------------------------------------
+test.describe('TC-LINK � Job Detail and Apply', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
   test('TC-LINK-15: Given the job card is present, When I click the job card, Then it opens a detail view', async ({ page }) => {
@@ -213,10 +213,10 @@ test.describe('TC-LINK — Job Detail and Apply', () => {
   });
 });
 
-// ─────────────────────────────────────────────
-// TC-LINK-19 to TC-LINK-22 — Connections Section
-// ─────────────────────────────────────────────
-test.describe('TC-LINK — Connections Section', () => {
+// ---------------------------------------------
+// TC-LINK-19 to TC-LINK-22 � Connections Section
+// ---------------------------------------------
+test.describe('TC-LINK � Connections Section', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
   test('TC-LINK-19: Given I am authenticated and on the page, When I perform the action, Then connections section or tab is present on the page', async ({ page }) => {
@@ -224,7 +224,7 @@ test.describe('TC-LINK — Connections Section', () => {
       '[role="tab"], nav a, a[href*="connection"], button'
     ).filter({ hasText: /connect/i }).first();
     const visible = await connectionsEl.isVisible({ timeout: 8000 }).catch(() => false);
-    // Connections may be a separate tab or sidebar — soft check
+    // Connections may be a separate tab or sidebar � soft check
     expect(typeof visible).toBe('boolean');
   });
 
@@ -278,10 +278,10 @@ test.describe('TC-LINK — Connections Section', () => {
   });
 });
 
-// ─────────────────────────────────────────────
-// TC-LINK-23 to TC-LINK-29 — Application Form, Bookmark Persistence, Accept/Reject, Sort, Apply Behavior
-// ─────────────────────────────────────────────
-test.describe('TC-LINK — Application Form, Sorting and Apply Behavior', () => {
+// ---------------------------------------------
+// TC-LINK-23 to TC-LINK-29 � Application Form, Bookmark Persistence, Accept/Reject, Sort, Apply Behavior
+// ---------------------------------------------
+test.describe('TC-LINK � Application Form, Sorting and Apply Behavior', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
   test('TC-LINK-23: Given a job application form is open, When I submit without filling required fields, Then validation errors appear', async ({ page }) => {
@@ -317,7 +317,7 @@ test.describe('TC-LINK — Application Form, Sorting and Apply Behavior', () => 
     if (!visible) { test.skip(); return; }
     await applyBtn.evaluate(el => el.click());
     await page.waitForTimeout(1000);
-    // After clicking apply, page should show a form, modal or redirect — not crash
+    // After clicking apply, page should show a form, modal or redirect � not crash
     const bodyText = await page.locator('body').innerText();
     expect(bodyText).not.toMatch(/unexpected error|500/i);
     expect(bodyText.trim().length).toBeGreaterThan(0);

@@ -1,7 +1,7 @@
-OMRE WEBAPP — PLAYWRIGHT TEST SUITE
+OMRE WEBAPP � PLAYWRIGHT TEST SUITE
 =====================================
-A plain-English guide for running the automated tests on app.omre.ai.
-No technical background needed — just follow the steps in order.
+A plain-English guide for running the automated tests on omre.ai.
+No technical background needed � just follow the steps in order.
 
 
 BEFORE YOU START (one-time setup)
@@ -14,18 +14,18 @@ Make sure you have a file called ".env" in this folder with these two lines:
 If the file is missing, create it. Without it, the tests cannot log in.
 
 
-STEP 1 — CHECK THE SERVER IS UP
+STEP 1 � CHECK THE SERVER IS UP
 ---------------------------------
 Before running any tests, confirm the website is responding:
 
-  curl.exe https://app.omre.ai --max-time 10
+  curl.exe https://omre.ai --max-time 10
 
-If you see a wall of HTML text, the server is up — proceed to Step 2.
+If you see a wall of HTML text, the server is up � proceed to Step 2.
 If you see "502 Bad Gateway" or a Cloudflare error, stop and wait.
-The server being down will cause tests to fail — it is not a test problem.
+The server being down will cause tests to fail � it is not a test problem.
 
 
-STEP 2 — LOG IN (auth setup)
+STEP 2 � LOG IN (auth setup)
 ------------------------------
 Run this once before every fresh test session, or whenever you get
 "session expired" errors:
@@ -36,7 +36,7 @@ Wait for it to finish. It should print "1 passed". If it fails, check
 that the server is up (Step 1) and the .env file exists.
 
 
-STEP 3 — RUN ALL TESTS
+STEP 3 � RUN ALL TESTS
 ------------------------
 This runs the full test suite (~1900 tests) across all modules:
 
@@ -49,7 +49,7 @@ You will see tests scrolling by. At the end it prints a summary like:
   1504 passed, 19 failed, 409 skipped
 
 
-STEP 4 — RE-RUN ONLY THE FAILED TESTS
+STEP 4 � RE-RUN ONLY THE FAILED TESTS
 ----------------------------------------
 After the full run finishes, run this to retry only what failed:
 
@@ -58,12 +58,12 @@ After the full run finishes, run this to retry only what failed:
 This is much faster (a few minutes). Most failures caused by the server
 being briefly slow will pass on the second try.
 
-Run this a second time if some still fail — transient failures clear up
+Run this a second time if some still fail � transient failures clear up
 within 2-3 attempts. If the same tests keep failing every time, they are
 real bugs that need investigation.
 
 
-STEP 5 — GENERATE THE EXCEL REPORT
+STEP 5 � GENERATE THE EXCEL REPORT
 -------------------------------------
 After you are happy with the results (Steps 3 + 4 both done), run:
 
@@ -80,9 +80,9 @@ Open that file in Excel. It has two tabs:
 
 WHAT THE RESULTS MEAN
 ----------------------
-  PASS  — test completed successfully
-  FAIL  — test found a problem (see Remarks column in Excel for details)
-  SKIP  — feature was not visible on this test account (not a failure)
+  PASS  � test completed successfully
+  FAIL  � test found a problem (see Remarks column in Excel for details)
+  SKIP  � feature was not visible on this test account (not a failure)
 
 A small number of failures (~5-10) after re-runs are normal if the server
 is having a bad day. Anything above that warrants investigation.
@@ -123,5 +123,5 @@ FILE LOCATIONS
 SPEED REFERENCE
 ----------------
   --workers=4   Slower machines / safe default (~1.5 hours)
-  --workers=8   12-core machines — recommended (~1 hour)
-  --workers=12  Not recommended — leaves no headroom for browser processes
+  --workers=8   12-core machines � recommended (~1 hour)
+  --workers=12  Not recommended � leaves no headroom for browser processes

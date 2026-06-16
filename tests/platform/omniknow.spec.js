@@ -1,5 +1,5 @@
-﻿/**
- * Omniknow — knowledge base module deep-dive tests
+/**
+ * Omniknow � knowledge base module deep-dive tests
  * Covers: page load & layout, knowledge base content renders, search functionality,
  *         categories/topics, article/entry click and detail view, back navigation,
  *         error-free load
@@ -8,7 +8,7 @@
 import { test, expect } from '@playwright/test';
 
 const AUTH_FILE  = 'playwright/.auth/user.json';
-const MODULE_URL = 'https://app.omre.ai/app/omniknow';
+const MODULE_URL = 'https://omre.ai/app/omniknow';
 
 test.use({ storageState: AUTH_FILE });
 test.setTimeout(45000);
@@ -18,7 +18,7 @@ async function goModule(page) {
   await page.waitForTimeout(1500);
 }
 
-// ── 1. Page Load and Layout ───────────────────────────────────────────────────
+// -- 1. Page Load and Layout ---------------------------------------------------
 
 test.describe('Page Load and Layout', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
@@ -52,13 +52,13 @@ test.describe('Page Load and Layout', () => {
     await page.reload({ waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(1500);
     const appErrors = errors.filter(e =>
-      e.includes('TypeError') || e.includes('ReferenceError') || e.includes('app.omre.ai')
+      e.includes('TypeError') || e.includes('ReferenceError') || e.includes('omre.ai')
     );
     expect(appErrors).toHaveLength(0);
   });
 });
 
-// ── 2. Knowledge Base Content ─────────────────────────────────────────────────
+// -- 2. Knowledge Base Content -------------------------------------------------
 
 test.describe('Knowledge Base Content', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
@@ -95,7 +95,7 @@ test.describe('Knowledge Base Content', () => {
   });
 });
 
-// ── 3. Search Functionality ───────────────────────────────────────────────────
+// -- 3. Search Functionality ---------------------------------------------------
 
 test.describe('Search Functionality', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
@@ -140,7 +140,7 @@ test.describe('Search Functionality', () => {
   });
 });
 
-// ── 4. Categories and Topics ──────────────────────────────────────────────────
+// -- 4. Categories and Topics --------------------------------------------------
 
 test.describe('Categories and Topics', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
@@ -171,7 +171,7 @@ test.describe('Categories and Topics', () => {
   });
 });
 
-// ── 5. Article Detail and Navigation ─────────────────────────────────────────
+// -- 5. Article Detail and Navigation -----------------------------------------
 
 test.describe('Article Detail and Back Navigation', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
@@ -233,7 +233,7 @@ test.describe('Article Detail and Back Navigation', () => {
   });
 });
 
-// ── 6. XSS Safety, Empty Results, Multi-Category, Filter Persistence, Share, Bookmark ──
+// -- 6. XSS Safety, Empty Results, Multi-Category, Filter Persistence, Share, Bookmark --
 
 test.describe('Advanced Search, Categories and Article Actions', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });

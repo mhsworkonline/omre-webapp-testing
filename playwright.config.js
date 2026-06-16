@@ -29,7 +29,7 @@ export default defineConfig({
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    baseURL: 'https://app.omre.ai',
+    baseURL: 'https://omre.ai',
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
@@ -42,7 +42,7 @@ export default defineConfig({
       name: 'auth',
       testMatch: /tests[\\/]auth[\\/].*/,
     },
-    // Default browser projects — pick up everything else (smoke, home, social, etc.)
+    // Default browser projects � pick up everything else (smoke, home, social, etc.)
     // Tests that need a session include test.use({ storageState }) themselves.
     {
       name: 'chromium',

@@ -5,12 +5,12 @@
 import { test, expect } from '@playwright/test';
 
 const AUTH_FILE = 'playwright/.auth/user.json';
-const HOME_URL  = 'https://app.omre.ai/app/home';
+const HOME_URL  = 'https://omre.ai/app/home';
 
 test.use({ storageState: AUTH_FILE });
 test.setTimeout(45000);
 
-// ── Helpers ────────────────────────────────────────────────────────────────────
+// -- Helpers --------------------------------------------------------------------
 
 async function goHome(page) {
   await page.goto(HOME_URL, { waitUntil: 'domcontentloaded' });
@@ -32,7 +32,7 @@ async function openFirstStory(page) {
   return false;
 }
 
-// ── Stories Bar ────────────────────────────────────────────────────────────────
+// -- Stories Bar ----------------------------------------------------------------
 
 test.describe('Stories Bar', () => {
   test.beforeEach(async ({ page }) => {
@@ -118,13 +118,13 @@ test.describe('Stories Bar', () => {
       // Check if scroll is possible
       const scrollWidth = await bar.evaluate(el => el.scrollWidth);
       const clientWidth = await bar.evaluate(el => el.clientWidth);
-      // Either it scrolls or fits — both are valid
+      // Either it scrolls or fits � both are valid
       expect(typeof scrollWidth).toBe('number');
     }
   });
 });
 
-// ── Viewing Stories ────────────────────────────────────────────────────────────
+// -- Viewing Stories ------------------------------------------------------------
 
 test.describe('Viewing Stories', () => {
   test.beforeEach(async ({ page }) => {
@@ -231,7 +231,7 @@ test.describe('Viewing Stories', () => {
     const opened = await openFirstStory(page);
     if (!opened) { test.skip(); return; }
 
-    const nextBtn = page.locator('[aria-label*="next" i], button:has-text("›"), button:has-text(">")').first();
+    const nextBtn = page.locator('[aria-label*="next" i], button:has-text("�"), button:has-text(">")').first();
     const nextVisible = await nextBtn.isVisible({ timeout: 5000 }).catch(() => false);
     if (!nextVisible) { test.skip(); return; }
 
@@ -265,14 +265,14 @@ test.describe('Viewing Stories', () => {
     if (!opened) { test.skip(); return; }
 
     // Advance to second story first so Previous has somewhere to go
-    const nextBtn = page.locator('[aria-label*="next" i], button:has-text("›"), button:has-text(">")').first();
+    const nextBtn = page.locator('[aria-label*="next" i], button:has-text("�"), button:has-text(">")').first();
     const nextVisible = await nextBtn.isVisible({ timeout: 4000 }).catch(() => false);
     if (nextVisible) {
       await nextBtn.click();
       await page.waitForTimeout(600);
     }
 
-    const prevBtn = page.locator('[aria-label*="prev" i], button:has-text("‹"), button:has-text("<")').first();
+    const prevBtn = page.locator('[aria-label*="prev" i], button:has-text("�"), button:has-text("<")').first();
     const prevVisible = await prevBtn.isVisible({ timeout: 5000 }).catch(() => false);
     if (!prevVisible) {
       await page.keyboard.press('Escape');
@@ -334,7 +334,7 @@ test.describe('Viewing Stories', () => {
   });
 });
 
-// ── Story Reactions & Replies ──────────────────────────────────────────────────
+// -- Story Reactions & Replies --------------------------------------------------
 
 test.describe('Story Reactions and Replies', () => {
   test.beforeEach(async ({ page }) => {
@@ -345,7 +345,7 @@ test.describe('Story Reactions and Replies', () => {
     const opened = await openFirstStory(page);
     if (opened) {
       const reactionBar = page.locator(
-        '[aria-label*="react" i], [aria-label*="emoji" i], [role="dialog"] button:has-text("❤"), [role="dialog"] button:has-text("😊")'
+        '[aria-label*="react" i], [aria-label*="emoji" i], [role="dialog"] button:has-text("?"), [role="dialog"] button:has-text("??")'
       ).first();
       if (await reactionBar.isVisible({ timeout: 5000 }).catch(() => false)) {
         await expect(reactionBar).toBeVisible();
@@ -388,7 +388,7 @@ test.describe('Story Reactions and Replies', () => {
   test('TC-STORY-REACT-04: clicking a reaction emoji on a story is interactive', async ({ page }) => {
     const opened = await openFirstStory(page);
     if (opened) {
-      const emoji = page.locator('[role="dialog"] button').filter({ hasText: /❤|😊|😂|🔥|👍/ }).first();
+      const emoji = page.locator('[role="dialog"] button').filter({ hasText: /?|??|??|??|??/ }).first();
       if (await emoji.isVisible({ timeout: 5000 }).catch(() => false)) {
         await emoji.click();
         await page.waitForTimeout(500);
@@ -399,7 +399,7 @@ test.describe('Story Reactions and Replies', () => {
   });
 });
 
-// ── Creating a Story ───────────────────────────────────────────────────────────
+// -- Creating a Story -----------------------------------------------------------
 
 test.describe('Creating a Story', () => {
   test.beforeEach(async ({ page }) => {
@@ -522,7 +522,7 @@ test.describe('Creating a Story', () => {
   });
 });
 
-// ── My Story Management ────────────────────────────────────────────────────────
+// -- My Story Management --------------------------------------------------------
 
 test.describe('My Story Management', () => {
   test.beforeEach(async ({ page }) => {
@@ -536,7 +536,7 @@ test.describe('My Story Management', () => {
     if (await myStory.isVisible({ timeout: 5000 }).catch(() => false)) {
       await expect(myStory).toBeVisible();
     }
-    // Passes regardless — user may not have an active story
+    // Passes regardless � user may not have an active story
   });
 
   test('TC-STORY-MY-02: own story shows view count when opened', async ({ page }) => {

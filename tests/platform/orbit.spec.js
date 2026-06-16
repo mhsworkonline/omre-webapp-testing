@@ -1,5 +1,5 @@
-﻿/**
- * Orbit module — deep-dive tests
+/**
+ * Orbit module � deep-dive tests
  * Covers: page load & layout, orbit/satellite/space-themed content renders,
  *         navigation between sections, interactive elements,
  *         join/subscribe button, content cards, error-free load
@@ -8,7 +8,7 @@
 import { test, expect } from '@playwright/test';
 
 const AUTH_FILE  = 'playwright/.auth/user.json';
-const MODULE_URL = 'https://app.omre.ai/app/orbit/home';
+const MODULE_URL = 'https://omre.ai/app/orbit/home';
 
 test.use({ storageState: AUTH_FILE });
 test.setTimeout(45000);
@@ -18,7 +18,7 @@ async function goModule(page) {
   await page.waitForTimeout(1500);
 }
 
-// ── 1. Page Load and Layout ───────────────────────────────────────────────────
+// -- 1. Page Load and Layout ---------------------------------------------------
 
 test.describe('Page Load and Layout', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
@@ -51,13 +51,13 @@ test.describe('Page Load and Layout', () => {
     await page.reload({ waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(1500);
     const appErrors = errors.filter(e =>
-      e.includes('TypeError') || e.includes('ReferenceError') || e.includes('app.omre.ai')
+      e.includes('TypeError') || e.includes('ReferenceError') || e.includes('omre.ai')
     );
     expect(appErrors).toHaveLength(0);
   });
 });
 
-// ── 2. Space-Themed Content Renders ──────────────────────────────────────────
+// -- 2. Space-Themed Content Renders ------------------------------------------
 
 test.describe('Space-Themed Content Renders', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
@@ -100,7 +100,7 @@ test.describe('Space-Themed Content Renders', () => {
   });
 });
 
-// ── 3. Section Navigation ─────────────────────────────────────────────────────
+// -- 3. Section Navigation -----------------------------------------------------
 
 test.describe('Section Navigation', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
@@ -142,14 +142,14 @@ test.describe('Section Navigation', () => {
   });
 });
 
-// ── 4. Interactive Elements ────────────────────────────────────────────────────
+// -- 4. Interactive Elements ----------------------------------------------------
 
 test.describe('Interactive Elements', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
   test('TC-ORBIT-15: Given I am authenticated and on the page, When I perform the action, Then like or upvote button is present on content items', async ({ page }) => {
     const like = page.locator('button[aria-label*="like" i], button[aria-label*="upvote" i]')
-      .or(page.locator('main button').filter({ hasText: /like|upvote|👍/i }))
+      .or(page.locator('main button').filter({ hasText: /like|upvote|??/i }))
       .first();
     if (!(await like.isVisible({ timeout: 8000 }).catch(() => false))) return;
     await expect(like).toBeVisible();
@@ -188,7 +188,7 @@ test.describe('Interactive Elements', () => {
   });
 });
 
-// ── 5. Join / Subscribe Button ────────────────────────────────────────────────
+// -- 5. Join / Subscribe Button ------------------------------------------------
 
 test.describe('Join and Subscribe', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
@@ -235,14 +235,14 @@ test.describe('Join and Subscribe', () => {
   });
 });
 
-// ── 6. Like Toggle, Share Modal, Comment Input, Follow Persistence, Join Toast ─
+// -- 6. Like Toggle, Share Modal, Comment Input, Follow Persistence, Join Toast -
 
 test.describe('Like, Share, Comment and Follow Interactions', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
   test('TC-ORBIT-24: Given a like button is present, When I click it multiple times, Then the count updates or toggles each time', async ({ page }) => {
     const likeBtn = page.locator('button[aria-label*="like" i], button[aria-label*="upvote" i]').first();
-    const likeBtnText = page.locator('main button').filter({ hasText: /like|upvote|👍/i }).first();
+    const likeBtnText = page.locator('main button').filter({ hasText: /like|upvote|??/i }).first();
     const btn = (await likeBtn.isVisible({ timeout: 5000 }).catch(() => false)) ? likeBtn : likeBtnText;
     const visible = await btn.isVisible({ timeout: 8000 }).catch(() => false);
     if (!visible) { test.skip(); return; }

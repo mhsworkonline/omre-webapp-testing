@@ -7,7 +7,7 @@
 import { test, expect } from '@playwright/test';
 
 const AUTH_FILE = 'playwright/.auth/user.json';
-const MODULE_URL = 'https://app.omre.ai/app/explore';
+const MODULE_URL = 'https://omre.ai/app/explore';
 
 test.use({ storageState: AUTH_FILE });
 test.setTimeout(45000);
@@ -237,7 +237,7 @@ test.describe('TC-EXPLORE | Reel Card Interactions', () => {
     await likeBtn.evaluate((el) => el.click());
     await page.waitForTimeout(800);
     const afterLabel = await likeBtn.getAttribute('aria-label');
-    // Either label changed or data-state changed — some change should occur
+    // Either label changed or data-state changed � some change should occur
     const stateChanged =
       beforeLabel !== afterLabel ||
       (await likeBtn.getAttribute('data-state')) !== null;
@@ -291,7 +291,7 @@ test.describe('TC-EXPLORE | Reel Card Interactions', () => {
       .getByRole('button', { name: /not interested|later|dismiss|not now/i })
       .first();
     if (!(await dismissBtn.isVisible({ timeout: 3000 }).catch(() => false))) {
-      // prompt not present — test passes trivially
+      // prompt not present � test passes trivially
       expect(true).toBe(true);
       return;
     }
@@ -332,7 +332,7 @@ test.describe('TC-EXPLORE | Reel Detail and Video Player', () => {
     await page.waitForTimeout(2000);
     const videoEl = page.locator('video').first();
     const visible = await videoEl.isVisible({ timeout: 5000 }).catch(() => false);
-    // Video may be present before click too — just confirm it exists on page
+    // Video may be present before click too � just confirm it exists on page
     expect(visible).toBe(true);
   });
 
@@ -632,7 +632,7 @@ test.describe('TC-EXPLORE | Search Edge Cases', () => {
     if (!visible) { test.skip(); return; }
     await searchInput.fill('!@#$%^&*()<script>alert(1)</script>');
     await page.waitForTimeout(1500);
-    // Page body must remain visible — no crash, no alert dialog
+    // Page body must remain visible � no crash, no alert dialog
     await expect(page.locator('body')).toBeVisible();
     // No JS alert should have fired
     const dialogFired = await page.evaluate(() => window.__alertFired || false);

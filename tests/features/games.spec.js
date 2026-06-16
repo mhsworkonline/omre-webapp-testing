@@ -7,7 +7,7 @@
 import { test, expect } from '@playwright/test';
 
 const AUTH_FILE  = 'playwright/.auth/user.json';
-const MODULE_URL = 'https://app.omre.ai/app/games';
+const MODULE_URL = 'https://omre.ai/app/games';
 
 test.use({ storageState: AUTH_FILE });
 test.setTimeout(45000);
@@ -17,7 +17,7 @@ async function goGames(page) {
   await page.waitForTimeout(1500);
 }
 
-// ─── 1. Page Load and Layout ────────────────────────────────────────────────
+// --- 1. Page Load and Layout ------------------------------------------------
 test.describe('TC-GAMES: Page Load and Layout', () => {
   test.beforeEach(async ({ page }) => { await goGames(page); });
 
@@ -39,7 +39,7 @@ test.describe('TC-GAMES: Page Load and Layout', () => {
   });
 });
 
-// ─── 2. Game Listing and Cards ───────────────────────────────────────────────
+// --- 2. Game Listing and Cards -----------------------------------------------
 test.describe('TC-GAMES: Game Listing and Cards', () => {
   test.beforeEach(async ({ page }) => { await goGames(page); });
 
@@ -86,7 +86,7 @@ test.describe('TC-GAMES: Game Listing and Cards', () => {
   });
 });
 
-// ─── 3. Category Filter Tabs ─────────────────────────────────────────────────
+// --- 3. Category Filter Tabs -------------------------------------------------
 test.describe('TC-GAMES: Category Filter Tabs', () => {
   test.beforeEach(async ({ page }) => { await goGames(page); });
 
@@ -122,7 +122,7 @@ test.describe('TC-GAMES: Category Filter Tabs', () => {
   });
 });
 
-// ─── 4. Search ───────────────────────────────────────────────────────────────
+// --- 4. Search ---------------------------------------------------------------
 test.describe('TC-GAMES: Search', () => {
   test.beforeEach(async ({ page }) => { await goGames(page); });
 
@@ -149,7 +149,7 @@ test.describe('TC-GAMES: Search', () => {
   });
 });
 
-// ─── 5. Game Detail ──────────────────────────────────────────────────────────
+// --- 5. Game Detail ----------------------------------------------------------
 test.describe('TC-GAMES: Game Detail', () => {
   test.beforeEach(async ({ page }) => { await goGames(page); });
 
@@ -226,7 +226,7 @@ test.describe('TC-GAMES: Game Detail', () => {
   });
 });
 
-// ─── 6. Featured / Popular / Recently Played ─────────────────────────────────
+// --- 6. Featured / Popular / Recently Played ---------------------------------
 test.describe('TC-GAMES: Featured, Popular and Recently Played', () => {
   test.beforeEach(async ({ page }) => { await goGames(page); });
 
@@ -254,7 +254,7 @@ test.describe('TC-GAMES: Featured, Popular and Recently Played', () => {
   });
 });
 
-// ─── 7. Leaderboard and Ratings ──────────────────────────────────────────────
+// --- 7. Leaderboard and Ratings ----------------------------------------------
 test.describe('TC-GAMES: Leaderboard, Ratings and Favourites', () => {
   test.beforeEach(async ({ page }) => { await goGames(page); });
 
@@ -317,7 +317,7 @@ test.describe('TC-GAMES: Leaderboard, Ratings and Favourites', () => {
   });
 });
 
-// ─── 8. Achievement and Badge Section ────────────────────────────────────────
+// --- 8. Achievement and Badge Section ----------------------------------------
 test.describe('TC-GAMES: Achievements and Badges', () => {
   test.beforeEach(async ({ page }) => { await goGames(page); });
 
@@ -349,7 +349,7 @@ test.describe('TC-GAMES: Achievements and Badges', () => {
   });
 });
 
-// ─── 9. Invite Friend to Game ─────────────────────────────────────────────────
+// --- 9. Invite Friend to Game -------------------------------------------------
 test.describe('TC-GAMES: Invite Friend to Game', () => {
   test.beforeEach(async ({ page }) => { await goGames(page); });
 
@@ -378,7 +378,7 @@ test.describe('TC-GAMES: Invite Friend to Game', () => {
   });
 });
 
-// ─── 10. Tournament Section ───────────────────────────────────────────────────
+// --- 10. Tournament Section ---------------------------------------------------
 test.describe('TC-GAMES: Tournament Section', () => {
   test.beforeEach(async ({ page }) => { await goGames(page); });
 
@@ -393,7 +393,7 @@ test.describe('TC-GAMES: Tournament Section', () => {
   });
 });
 
-// ─── 11. Rewards and Points Earned ────────────────────────────────────────────
+// --- 11. Rewards and Points Earned --------------------------------------------
 test.describe('TC-GAMES: Rewards and Points', () => {
   test.beforeEach(async ({ page }) => { await goGames(page); });
 
@@ -413,7 +413,7 @@ test.describe('TC-GAMES: Rewards and Points', () => {
   });
 });
 
-// ─── 12. High Score Display ───────────────────────────────────────────────────
+// --- 12. High Score Display ---------------------------------------------------
 test.describe('TC-GAMES: High Score Display', () => {
   test.beforeEach(async ({ page }) => { await goGames(page); });
 
@@ -436,14 +436,14 @@ test.describe('TC-GAMES: High Score Display', () => {
   });
 });
 
-// ─── 13. Favourites State Change ──────────────────────────────────────────────
+// --- 13. Favourites State Change ----------------------------------------------
 test.describe('TC-GAMES: Favourites State and Persistence', () => {
   test.beforeEach(async ({ page }) => { await goGames(page); });
 
   test('TC-GAMES-38: Given a favourite button is present, When I click it, Then the button appearance changes to indicate toggled state', async ({ page }) => {
     // Try game listing first, then drill into detail
     let favBtn = page.locator('[aria-label*="favourite" i], [aria-label*="favorite" i]').first();
-    let heartBtn = page.locator('button').filter({ hasText: /♥|♡|favorite|favourite/i }).first();
+    let heartBtn = page.locator('button').filter({ hasText: /?|?|favorite|favourite/i }).first();
     let favVisible = await favBtn.isVisible({ timeout: 5000 }).catch(() => false);
     let heartVisible = await heartBtn.isVisible({ timeout: 5000 }).catch(() => false);
     if (!favVisible && !heartVisible) {
@@ -452,7 +452,7 @@ test.describe('TC-GAMES: Favourites State and Persistence', () => {
       await card.click();
       await page.waitForTimeout(1500);
       favBtn = page.locator('[aria-label*="favourite" i], [aria-label*="favorite" i]').first();
-      heartBtn = page.locator('button').filter({ hasText: /♥|♡|favorite|favourite/i }).first();
+      heartBtn = page.locator('button').filter({ hasText: /?|?|favorite|favourite/i }).first();
       favVisible = await favBtn.isVisible({ timeout: 5000 }).catch(() => false);
       heartVisible = await heartBtn.isVisible({ timeout: 5000 }).catch(() => false);
     }
@@ -519,17 +519,17 @@ test.describe('TC-GAMES: Favourites State and Persistence', () => {
     const reloadedVisible = await reloadedFavBtn.isVisible({ timeout: 6000 }).catch(() => false);
     if (!reloadedVisible) { test.skip(); return; }
     const stateAfterReload = await reloadedFavBtn.getAttribute('aria-pressed') ?? await reloadedFavBtn.getAttribute('data-state') ?? '';
-    // Persistence is app-dependent — we just verify the page renders without error
+    // Persistence is app-dependent � we just verify the page renders without error
     expect(stateAfterClick !== undefined || stateAfterReload !== undefined || true).toBe(true);
     await expect(page.locator('main').first()).toBeVisible();
   });
 });
 
-// ─── 14. Invite Friend ────────────────────────────────────────────────────────
+// --- 14. Invite Friend --------------------------------------------------------
 test.describe('TC-GAMES: Invite Friend Send and Friend Selector', () => {
   test.beforeEach(async ({ page }) => { await goGames(page); });
 
-  test.skip('TC-GAMES-41: untestable: send invite creates notification/message — real-time notification delivery and message creation in a friend\'s inbox cannot be verified within a single Playwright session', () => {});
+  test.skip('TC-GAMES-41: untestable: send invite creates notification/message � real-time notification delivery and message creation in a friend\'s inbox cannot be verified within a single Playwright session', () => {});
 
   test('TC-GAMES-42: Given I open the invite dialog, When it renders, Then the friend selector populates with the user\'s friends list', async ({ page }) => {
     const card = page.locator('main article, main li').first();
@@ -548,7 +548,7 @@ test.describe('TC-GAMES: Invite Friend Send and Friend Selector', () => {
     const friendSearch = dialog.locator('input[type="search"], input[placeholder*="search" i], input[placeholder*="friend" i]').first();
     const listVisible = await friendList.isVisible({ timeout: 4000 }).catch(() => false);
     const searchVisible = await friendSearch.isVisible({ timeout: 4000 }).catch(() => false);
-    // Dialog is open with either a friend list or search input — both are valid
+    // Dialog is open with either a friend list or search input � both are valid
     expect(dialogVisible && (listVisible || searchVisible || true)).toBe(true);
     await page.keyboard.press('Escape');
   });

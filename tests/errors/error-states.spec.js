@@ -1,4 +1,4 @@
-// TC-ERR — Error States spec for app.omre.ai
+// TC-ERR � Error States spec for omre.ai
 // Covers 404, error pages, offline simulation, and validation errors.
 
 const { test, expect } = require('@playwright/test');
@@ -11,19 +11,19 @@ test.setTimeout(45000);
 // ---------------------------------------------------------------------------
 test.describe('TC-ERR-001 404 Page', () => {
   test('TC-ERR-001: Given I am authenticated and on the page, When I perform the action, Then 01 navigating to a non-existent route shows 404 or redirect', async ({ page }) => {
-    const response = await page.goto('https://app.omre.ai/app/nonexistent-page-xyz');
+    const response = await page.goto('https://omre.ai/app/nonexistent-page-xyz');
     // Accept: HTTP 404, or a redirect to home/error page, or a client-side 404
     const status = response?.status() ?? 200;
     const url = page.url();
     const bodyText = await page.locator('body').textContent().catch(() => '');
     const is404Response = status === 404;
     const hasErrorContent = /404|not found|page.*not.*found|doesn't exist/i.test(bodyText);
-    const isRedirected = url !== 'https://app.omre.ai/app/nonexistent-page-xyz';
+    const isRedirected = url !== 'https://omre.ai/app/nonexistent-page-xyz';
     expect(is404Response || hasErrorContent || isRedirected).toBe(true);
   });
 
   test('TC-ERR-001: Given I am on the page, When I inspect the content, Then 02 404 page has a home or back navigation link', async ({ page }) => {
-    await page.goto('https://app.omre.ai/app/nonexistent-page-xyz');
+    await page.goto('https://omre.ai/app/nonexistent-page-xyz');
     await page.waitForTimeout(1500);
     // Look for a link back to home or a "go back" button
     const homeLink = page.locator('a[href="/"], a[href="/app/home"], a[href*="home"]');
@@ -32,7 +32,7 @@ test.describe('TC-ERR-001 404 Page', () => {
     const backBtnCount = await backBtn.count().catch(() => 0);
     // Also check if we got redirected (which is itself a valid recovery path)
     const url = page.url();
-    const wasRedirected = url !== 'https://app.omre.ai/app/nonexistent-page-xyz';
+    const wasRedirected = url !== 'https://omre.ai/app/nonexistent-page-xyz';
     // Accept any navigable link on the page as a recovery path
     const anyLinkCount = await page.locator('a[href]').count().catch(() => 0);
     // Accept a page that visually shows a 404 indicator (even without nav links)
@@ -42,14 +42,14 @@ test.describe('TC-ERR-001 404 Page', () => {
   });
 
   test('TC-ERR-001: Given I am on the page, When I inspect the content, Then 03 404 page or redirect target has a heading', async ({ page }) => {
-    await page.goto('https://app.omre.ai/app/nonexistent-page-xyz');
+    await page.goto('https://omre.ai/app/nonexistent-page-xyz');
     await page.waitForTimeout(1500);
     const headingCount = await page.locator('h1, h2, h3, [role="heading"]').count().catch(() => 0);
     expect(headingCount).toBeGreaterThan(0);
   });
 
   test('TC-ERR-001: Given I am authenticated and on the page, When I perform the action, Then 04 URL after navigating to bad route is a valid app URL', async ({ page }) => {
-    await page.goto('https://app.omre.ai/app/nonexistent-page-xyz');
+    await page.goto('https://omre.ai/app/nonexistent-page-xyz');
     await page.waitForTimeout(1500);
     const url = page.url();
     // Should still be on the omre.ai domain
@@ -69,7 +69,7 @@ test.describe('TC-ERR-002 App Error Boundaries', () => {
         criticalErrors.push(msg);
       }
     });
-    await page.goto('https://app.omre.ai/app/home', { waitUntil: 'domcontentloaded' });
+    await page.goto('https://omre.ai/app/home', { waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(1500);
     expect(criticalErrors).toHaveLength(0);
   });
@@ -82,7 +82,7 @@ test.describe('TC-ERR-002 App Error Boundaries', () => {
         criticalErrors.push(msg);
       }
     });
-    await page.goto('https://app.omre.ai/app/notifications', { waitUntil: 'domcontentloaded' });
+    await page.goto('https://omre.ai/app/notifications', { waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(1500);
     expect(criticalErrors).toHaveLength(0);
   });
@@ -95,7 +95,7 @@ test.describe('TC-ERR-002 App Error Boundaries', () => {
         criticalErrors.push(msg);
       }
     });
-    await page.goto('https://app.omre.ai/app/messages', { waitUntil: 'domcontentloaded' });
+    await page.goto('https://omre.ai/app/messages', { waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(1500);
     expect(criticalErrors).toHaveLength(0);
   });
@@ -108,7 +108,7 @@ test.describe('TC-ERR-002 App Error Boundaries', () => {
         criticalErrors.push(msg);
       }
     });
-    await page.goto('https://app.omre.ai/app/profile', { waitUntil: 'domcontentloaded' });
+    await page.goto('https://omre.ai/app/profile', { waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(1500);
     expect(criticalErrors).toHaveLength(0);
   });
@@ -119,7 +119,7 @@ test.describe('TC-ERR-002 App Error Boundaries', () => {
 // ---------------------------------------------------------------------------
 test.describe('TC-ERR-003 Form Validation Errors', () => {
   test('TC-ERR-003: Given I am authenticated and on the page, When I perform the action, Then 01 submitting create-post with empty content shows error or keeps button disabled', async ({ page }) => {
-    await page.goto('https://app.omre.ai/app/home', { waitUntil: 'domcontentloaded' });
+    await page.goto('https://omre.ai/app/home', { waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(1500);
     // Locate a post compose area
     const composeSelectors = [
@@ -135,7 +135,7 @@ test.describe('TC-ERR-003 Form Validation Errors', () => {
       const vis = await el.isVisible().catch(() => false);
       if (vis) {
         await el.click();
-        // Leave it empty — try to submit
+        // Leave it empty � try to submit
         const submitBtn = page.locator('button[type="submit"]').first();
         const submitVis = await submitBtn.isVisible().catch(() => false);
         if (submitVis) {
@@ -159,8 +159,8 @@ test.describe('TC-ERR-003 Form Validation Errors', () => {
   });
 
   test('TC-ERR-003: Given I am on the 02 login with invalid email format, When I view it, Then it shows validation feedback', async ({ page }) => {
-    // Navigate to login page (works even when authenticated — checks form behaviour)
-    await page.goto('https://app.omre.ai/login', { waitUntil: 'domcontentloaded' });
+    // Navigate to login page (works even when authenticated � checks form behaviour)
+    await page.goto('https://omre.ai/login', { waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(1500);
     const emailInput = page.locator('input[type="email"], input[name="email"], input[placeholder*="email" i]').first();
     const emailVis = await emailInput.isVisible().catch(() => false);
@@ -180,9 +180,9 @@ test.describe('TC-ERR-003 Form Validation Errors', () => {
   test('TC-ERR-003: Given I am authenticated and on the page, When I perform the action, Then 03 wallet send with non-numeric amount shows an error', async ({ page }) => {
     // Try common wallet/send routes
     const walletRoutes = [
-      'https://app.omre.ai/app/wallet',
-      'https://app.omre.ai/app/wallet/send',
-      'https://app.omre.ai/app/send',
+      'https://omre.ai/app/wallet',
+      'https://omre.ai/app/wallet/send',
+      'https://omre.ai/app/send',
     ];
     let found = false;
     for (const route of walletRoutes) {
@@ -209,14 +209,14 @@ test.describe('TC-ERR-003 Form Validation Errors', () => {
   });
 
   test('TC-ERR-003: Given I am on the 04 messages page with empty content, When I view it, Then it shows error or prevents send', async ({ page }) => {
-    await page.goto('https://app.omre.ai/app/messages', { waitUntil: 'domcontentloaded' });
+    await page.goto('https://omre.ai/app/messages', { waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(1500);
     // Find the message input
     const msgInput = page.locator('textarea, input[placeholder*="message" i], input[placeholder*="type" i]').first();
     const inputVis = await msgInput.isVisible().catch(() => false);
     if (!inputVis) { test.skip(); return; }
     await msgInput.click();
-    // Do not type anything — try to submit
+    // Do not type anything � try to submit
     const sendBtn = page.locator('button[type="submit"], button[aria-label*="send" i]').first();
     const sendVis = await sendBtn.isVisible().catch(() => false);
     if (!sendVis) { test.skip(); return; }
@@ -238,7 +238,7 @@ test.describe('TC-ERR-003 Form Validation Errors', () => {
 // ---------------------------------------------------------------------------
 test.describe('TC-ERR-004 Network Resilience', () => {
   test('TC-ERR-004: Given I am on the 01 home page, When I view it, Then it shows content after a full reload', async ({ page }) => {
-    await page.goto('https://app.omre.ai/app/home', { waitUntil: 'domcontentloaded' });
+    await page.goto('https://omre.ai/app/home', { waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(1500);
     await page.reload({ waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(1500);
@@ -249,20 +249,20 @@ test.describe('TC-ERR-004 Network Resilience', () => {
   });
 
   test('TC-ERR-004: Given I am on the 02 simulated offline then back online, When I view it, Then it shows appropriate state', async ({ page }) => {
-    await page.goto('https://app.omre.ai/app/home', { waitUntil: 'domcontentloaded' });
+    await page.goto('https://omre.ai/app/home', { waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(1500);
     // Block all network requests to simulate offline
     await page.route('**/*', route => route.abort());
-    // Attempt a navigation — expect a graceful state (not a blank white page)
+    // Attempt a navigation � expect a graceful state (not a blank white page)
     try {
-      await page.goto('https://app.omre.ai/app/home', { timeout: 5000 });
+      await page.goto('https://omre.ai/app/home', { timeout: 5000 });
     } catch {
-      // Expected — network is blocked
+      // Expected � network is blocked
     }
     // Unblock network
     await page.unroute('**/*');
     // Navigate back online
-    await page.goto('https://app.omre.ai/app/home', { waitUntil: 'domcontentloaded' });
+    await page.goto('https://omre.ai/app/home', { waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(1500);
     const main = page.locator('main, [role="main"], body > div:not([hidden])').first();
     const visible = await main.isVisible().catch(() => false);
@@ -279,7 +279,7 @@ test.describe('TC-ERR-004 Network Resilience', () => {
         route.continue();
       }
     });
-    await page.goto('https://app.omre.ai/app/home', { waitUntil: 'domcontentloaded' });
+    await page.goto('https://omre.ai/app/home', { waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(1500);
     await page.waitForTimeout(2000);
     // The page should NOT be showing an infinite spinner as its only content

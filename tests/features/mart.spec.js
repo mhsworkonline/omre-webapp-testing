@@ -7,7 +7,7 @@
 import { test, expect } from '@playwright/test';
 
 const AUTH_FILE  = 'playwright/.auth/user.json';
-const MODULE_URL = 'https://app.omre.ai/app/mart';
+const MODULE_URL = 'https://omre.ai/app/mart';
 
 test.use({ storageState: AUTH_FILE });
 test.setTimeout(45000);
@@ -17,7 +17,7 @@ async function goMart(page) {
   await page.waitForTimeout(1500);
 }
 
-// ─── 1. Page Load and Layout ────────────────────────────────────────────────
+// --- 1. Page Load and Layout ------------------------------------------------
 test.describe('TC-MART: Page Load and Layout', () => {
   test.beforeEach(async ({ page }) => { await goMart(page); });
 
@@ -48,7 +48,7 @@ test.describe('TC-MART: Page Load and Layout', () => {
   });
 });
 
-// ─── 2. Product Listing ──────────────────────────────────────────────────────
+// --- 2. Product Listing ------------------------------------------------------
 test.describe('TC-MART: Product Listing', () => {
   test.beforeEach(async ({ page }) => { await goMart(page); });
 
@@ -75,7 +75,7 @@ test.describe('TC-MART: Product Listing', () => {
 
   test('TC-MART-08: Given I am on the product card, When I view it, Then it shows a price', async ({ page }) => {
     const price = page.locator('main article, main li').first()
-      .getByText(/\$|£|€|USD|price/i).first();
+      .getByText(/\$|�|�|USD|price/i).first();
     if (!(await price.isVisible({ timeout: 8000 }).catch(() => false))) return;
     await expect(price).toBeVisible();
   });
@@ -88,7 +88,7 @@ test.describe('TC-MART: Product Listing', () => {
   });
 });
 
-// ─── 3. Category Sidebar / Tabs ──────────────────────────────────────────────
+// --- 3. Category Sidebar / Tabs ----------------------------------------------
 test.describe('TC-MART: Category Sidebar and Tabs', () => {
   test.beforeEach(async ({ page }) => { await goMart(page); });
 
@@ -115,7 +115,7 @@ test.describe('TC-MART: Category Sidebar and Tabs', () => {
   });
 });
 
-// ─── 4. Search ───────────────────────────────────────────────────────────────
+// --- 4. Search ---------------------------------------------------------------
 test.describe('TC-MART: Search', () => {
   test.beforeEach(async ({ page }) => { await goMart(page); });
 
@@ -140,7 +140,7 @@ test.describe('TC-MART: Search', () => {
   });
 });
 
-// ─── 5. Product Detail ───────────────────────────────────────────────────────
+// --- 5. Product Detail -------------------------------------------------------
 test.describe('TC-MART: Product Detail', () => {
   test.beforeEach(async ({ page }) => { await goMart(page); });
 
@@ -196,7 +196,7 @@ test.describe('TC-MART: Product Detail', () => {
   });
 });
 
-// ─── 6. Cart and Buy ─────────────────────────────────────────────────────────
+// --- 6. Cart and Buy ---------------------------------------------------------
 test.describe('TC-MART: Cart and Buy', () => {
   test.beforeEach(async ({ page }) => { await goMart(page); });
 
@@ -253,7 +253,7 @@ test.describe('TC-MART: Cart and Buy', () => {
   });
 });
 
-// ─── 7. Seller Profile ───────────────────────────────────────────────────────
+// --- 7. Seller Profile -------------------------------------------------------
 test.describe('TC-MART: Seller Profile', () => {
   test.beforeEach(async ({ page }) => { await goMart(page); });
 
@@ -281,7 +281,7 @@ test.describe('TC-MART: Seller Profile', () => {
   });
 });
 
-// ─── 8. Filters, Sort and Wishlist ───────────────────────────────────────────
+// --- 8. Filters, Sort and Wishlist -------------------------------------------
 test.describe('TC-MART: Filters, Sort and Wishlist', () => {
   test.beforeEach(async ({ page }) => { await goMart(page); });
 
@@ -332,7 +332,7 @@ test.describe('TC-MART: Filters, Sort and Wishlist', () => {
   });
 });
 
-// ─── 9. Product Reviews ──────────────────────────────────────────────────────
+// --- 9. Product Reviews ------------------------------------------------------
 test.describe('TC-MART: Product Reviews', () => {
   test.beforeEach(async ({ page }) => { await goMart(page); });
 
@@ -421,7 +421,7 @@ test.describe('TC-MART: Product Reviews', () => {
   });
 });
 
-// ─── 10. Order History ───────────────────────────────────────────────────────
+// --- 10. Order History -------------------------------------------------------
 test.describe('TC-MART: Order History', () => {
   test.beforeEach(async ({ page }) => { await goMart(page); });
 
@@ -509,7 +509,7 @@ test.describe('TC-MART: Order History', () => {
   });
 });
 
-// ─── 11. Checkout Flow ───────────────────────────────────────────────────────
+// --- 11. Checkout Flow -------------------------------------------------------
 test.describe('TC-MART: Checkout Flow', () => {
   test.beforeEach(async ({ page }) => { await goMart(page); });
 
@@ -601,7 +601,7 @@ test.describe('TC-MART: Checkout Flow', () => {
   });
 });
 
-// ─── 12. Returns ─────────────────────────────────────────────────────────────
+// --- 12. Returns -------------------------------------------------------------
 test.describe('TC-MART: Returns', () => {
   test.beforeEach(async ({ page }) => { await goMart(page); });
 
@@ -678,7 +678,7 @@ test.describe('TC-MART: Returns', () => {
   });
 });
 
-// ─── 13. Cart Item Removal and Quantity Adjustment ───────────────────────────
+// --- 13. Cart Item Removal and Quantity Adjustment ---------------------------
 test.describe('TC-MART: Cart Removal and Quantity', () => {
   test.beforeEach(async ({ page }) => { await goMart(page); });
 
@@ -690,7 +690,7 @@ test.describe('TC-MART: Cart Removal and Quantity', () => {
       await cartLink.click();
       await page.waitForTimeout(1500);
     }
-    const removeBtn = page.locator('button').filter({ hasText: /remove|delete|×|trash/i }).first();
+    const removeBtn = page.locator('button').filter({ hasText: /remove|delete|�|trash/i }).first();
     const removeIcon = page.locator('[aria-label*="remove" i], [aria-label*="delete" i]').first();
     const removeBtnVisible = await removeBtn.isVisible({ timeout: 6000 }).catch(() => false);
     const removeIconVisible = await removeIcon.isVisible({ timeout: 6000 }).catch(() => false);
@@ -732,7 +732,7 @@ test.describe('TC-MART: Cart Removal and Quantity', () => {
   });
 });
 
-// ─── 14. Checkout Validation ──────────────────────────────────────────────────
+// --- 14. Checkout Validation --------------------------------------------------
 test.describe('TC-MART: Checkout Required Fields Validation', () => {
   test.beforeEach(async ({ page }) => { await goMart(page); });
 
@@ -758,10 +758,10 @@ test.describe('TC-MART: Checkout Required Fields Validation', () => {
     await expect(page.locator('main').first()).toBeVisible();
   });
 
-  test.skip('TC-MART-52: untestable: place order success/failure states — real payment processing cannot be exercised in automated tests as it requires valid payment credentials and live transaction systems', () => {});
+  test.skip('TC-MART-52: untestable: place order success/failure states � real payment processing cannot be exercised in automated tests as it requires valid payment credentials and live transaction systems', () => {});
 });
 
-// ─── 15. Wishlist Persistence ─────────────────────────────────────────────────
+// --- 15. Wishlist Persistence -------------------------------------------------
 test.describe('TC-MART: Wishlist Persistence', () => {
   test.beforeEach(async ({ page }) => { await goMart(page); });
 
@@ -772,7 +772,7 @@ test.describe('TC-MART: Wishlist Persistence', () => {
     await page.waitForTimeout(600);
     const stateAfterAdd = await favBtn.getAttribute('data-state') ?? await favBtn.getAttribute('aria-pressed') ?? '';
     // Navigate away and back
-    await page.goto('https://app.omre.ai/app/mart', { waitUntil: 'domcontentloaded' });
+    await page.goto('https://omre.ai/app/mart', { waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(1500);
     const reloadedFavBtn = page.locator('[aria-label*="wishlist" i], [aria-label*="favourite" i], [aria-label*="favorite" i]').first();
     const reloadedVisible = await reloadedFavBtn.isVisible({ timeout: 6000 }).catch(() => false);
@@ -784,7 +784,7 @@ test.describe('TC-MART: Wishlist Persistence', () => {
   });
 });
 
-// ─── 16. Product Review Submission ───────────────────────────────────────────
+// --- 16. Product Review Submission -------------------------------------------
 test.describe('TC-MART: Product Review Writing and Rating', () => {
   test.beforeEach(async ({ page }) => { await goMart(page); });
 
@@ -832,7 +832,7 @@ test.describe('TC-MART: Product Review Writing and Rating', () => {
   });
 });
 
-// ─── 17. Return Reason Validation ────────────────────────────────────────────
+// --- 17. Return Reason Validation --------------------------------------------
 test.describe('TC-MART: Return Reason Validation', () => {
   test.beforeEach(async ({ page }) => { await goMart(page); });
 

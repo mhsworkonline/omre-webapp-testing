@@ -5,10 +5,10 @@ export class HomePage extends BasePage {
   constructor(page) {
     super(page);
 
-    // Feed container — app may omit <main>; fall back to body > div
+    // Feed container � app may omit <main>; fall back to body > div
     this.feedContainer = page.locator('main, [role="main"], body > div:not([hidden])').first();
 
-    // Post cards — structural selectors, no class reliance
+    // Post cards � structural selectors, no class reliance
     this.postItems = page.locator('main article, main > div > div > div').first();
 
     // Create post
@@ -41,7 +41,7 @@ export class HomePage extends BasePage {
   }
 
   async goto() {
-    await this.page.goto('https://app.omre.ai/app/home', { waitUntil: 'domcontentloaded' });
+    await this.page.goto('https://omre.ai/app/home', { waitUntil: 'domcontentloaded' });
     // waitForURL can timeout on slow networks; soft-catch so beforeEach doesn't kill the test
     await this.page.waitForURL(/\/app\/home/, { timeout: 30000 }).catch(() => {});
     await this.page.waitForTimeout(1500);

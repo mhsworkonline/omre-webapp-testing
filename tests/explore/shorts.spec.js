@@ -7,7 +7,7 @@
 import { test, expect } from '@playwright/test';
 
 const AUTH_FILE = 'playwright/.auth/user.json';
-const MODULE_URL = 'https://app.omre.ai/app/shorts';
+const MODULE_URL = 'https://omre.ai/app/shorts';
 
 test.use({ storageState: AUTH_FILE });
 test.setTimeout(45000);
@@ -92,7 +92,7 @@ test.describe('TC-SHORTS | Vertical Video Player', () => {
       (el) => el.src || el.currentSrc || el.getAttribute('src') || ''
     );
     const hasSrc = src.length > 0;
-    // src may be empty if using MediaSource — check readyState instead
+    // src may be empty if using MediaSource � check readyState instead
     const readyState = await video.evaluate((el) => el.readyState);
     expect(hasSrc || readyState >= 0).toBe(true);
   });
@@ -133,7 +133,7 @@ test.describe('TC-SHORTS | Vertical Video Player', () => {
     const found =
       (await progressBar.isVisible({ timeout: 8000 }).catch(() => false)) ||
       (await seekBar.isVisible({ timeout: 8000 }).catch(() => false));
-    // Progress bar may be a thin div line — conditional pass
+    // Progress bar may be a thin div line � conditional pass
     expect(found || true).toBe(true); // lenient since many short players use custom CSS bars
   });
 
@@ -385,7 +385,7 @@ test.describe('TC-SHORTS | Scroll Navigation', () => {
 
 test.describe('TC-SHORTS | Access via Explore Tab', () => {
   test('TC-SHORTS-27: Given I am authenticated and on the page, When I perform the action, Then shorts are accessible from the explore page tab', async ({ page }) => {
-    await page.goto('https://app.omre.ai/app/explore', { waitUntil: 'domcontentloaded' });
+    await page.goto('https://omre.ai/app/explore', { waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(1500);
     const shortsTab = page
       .locator('[role="tab"]')
@@ -405,13 +405,13 @@ test.describe('TC-SHORTS | Access via Explore Tab', () => {
   });
 
   test('TC-SHORTS-28: Given I am on the page, When I inspect the content, Then bottom or side navigation has a shorts link', async ({ page }) => {
-    await page.goto('https://app.omre.ai/app/explore', { waitUntil: 'domcontentloaded' });
+    await page.goto('https://omre.ai/app/explore', { waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(1500);
     const shortsLink = page
       .locator('nav a[href*="short"]')
       .first();
     if (!(await shortsLink.isVisible({ timeout: 5000 }).catch(() => false))) {
-      // Not present in nav — still a valid product decision
+      // Not present in nav � still a valid product decision
       expect(true).toBe(true);
       return;
     }
@@ -598,5 +598,5 @@ test.describe('TC-SHORTS | Playback Speed Edge Cases', () => {
     expect(newText).not.toBe(initialText);
   });
 
-  test.skip('TC-SHORTS-39: Given I click the Download button on a short, When the download is triggered, Then a video file is saved to the filesystem — untestable: file system write operations cannot be verified in a headless automated test context', () => {});
+  test.skip('TC-SHORTS-39: Given I click the Download button on a short, When the download is triggered, Then a video file is saved to the filesystem � untestable: file system write operations cannot be verified in a headless automated test context', () => {});
 });

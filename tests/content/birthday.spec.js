@@ -7,7 +7,7 @@
 import { test, expect } from '@playwright/test';
 
 const AUTH_FILE  = 'playwright/.auth/user.json';
-const MODULE_URL = 'https://app.omre.ai/app/birthday';
+const MODULE_URL = 'https://omre.ai/app/birthday';
 
 test.use({ storageState: AUTH_FILE });
 test.setTimeout(45000);
@@ -17,9 +17,9 @@ async function goBirthday(page) {
   await page.waitForTimeout(1500);
 }
 
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 // 1. Page Load and Layout
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 test.describe('TC-BIRTHDAY: Page Load and Layout', () => {
   test.beforeEach(async ({ page }) => { await goBirthday(page); });
 
@@ -44,9 +44,9 @@ test.describe('TC-BIRTHDAY: Page Load and Layout', () => {
   });
 });
 
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 // 2. Birthday Reminders List
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 test.describe('TC-BIRTHDAY: Birthday Reminders List', () => {
   test.beforeEach(async ({ page }) => { await goBirthday(page); });
 
@@ -109,9 +109,9 @@ test.describe('TC-BIRTHDAY: Birthday Reminders List', () => {
   });
 });
 
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 // 3. Send Wish Flow
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 test.describe('TC-BIRTHDAY: Send Wish Flow', () => {
   test.beforeEach(async ({ page }) => { await goBirthday(page); });
 
@@ -220,9 +220,9 @@ test.describe('TC-BIRTHDAY: Send Wish Flow', () => {
   });
 });
 
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 // 4. Birthday Sections
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 test.describe('TC-BIRTHDAY: Birthday Sections', () => {
   test.beforeEach(async ({ page }) => { await goBirthday(page); });
 
@@ -269,15 +269,15 @@ test.describe('TC-BIRTHDAY: Birthday Sections', () => {
     if (visible) {
       await expect(countText).toBeVisible();
     } else {
-      // Count may be inline in a section heading — just verify content loaded
+      // Count may be inline in a section heading � just verify content loaded
       await expect(page.locator('main > div').first()).toBeVisible({ timeout: 6000 });
     }
   });
 });
 
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 // 5. Sorting and Empty State
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 test.describe('TC-BIRTHDAY: Sorting and Empty State', () => {
   test.beforeEach(async ({ page }) => { await goBirthday(page); });
 
@@ -295,10 +295,10 @@ test.describe('TC-BIRTHDAY: Sorting and Empty State', () => {
   test('TC-BIRTHDAY-18: Given I am authenticated and on the page, When I perform the action, Then empty state renders when no friend birthdays exist', async ({ page }) => {
     const cards = page.locator('main ul li, main article, main [role="listitem"], main [class*="card"], main [class*="birthday"]');
     const count = await cards.count();
-    if (count > 0) return; // has birthdays — skip
+    if (count > 0) return; // has birthdays � skip
 
     const mainText = await page.locator('main').textContent({ timeout: 3000 }).catch(() => '');
-    if (mainText.trim().length > 150) return; // page has content but different DOM — skip
+    if (mainText.trim().length > 150) return; // page has content but different DOM � skip
 
     const emptyMsg = page.locator('main').getByText(/no birthday|no upcoming|add friend|no friend/i).first();
     const isEmpty = await emptyMsg.isVisible({ timeout: 8000 }).catch(() => false);
@@ -330,9 +330,9 @@ test.describe('TC-BIRTHDAY: Sorting and Empty State', () => {
   });
 });
 
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 // 8. Composer Interactions
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 test.describe('TC-BIRTHDAY: Composer Interactions', () => {
   test.beforeEach(async ({ page }) => { await goBirthday(page); });
 
@@ -378,7 +378,7 @@ test.describe('TC-BIRTHDAY: Composer Interactions', () => {
     const textArea = page.locator('[role="dialog"] textarea, [role="dialog"] [contenteditable="true"]').first();
     const areaVisible = await textArea.isVisible({ timeout: 5000 }).catch(() => false);
     if (!areaVisible) { test.skip(); return; }
-    const specialText = 'Happy Birthday! 🎂 <>&"\'';
+    const specialText = 'Happy Birthday! ?? <>&"\'';
     await textArea.fill(specialText);
     await page.waitForTimeout(500);
     const val = await textArea.inputValue().catch(async () => await textArea.textContent());

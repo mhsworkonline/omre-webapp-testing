@@ -7,7 +7,7 @@
 import { test, expect } from '@playwright/test';
 
 const AUTH_FILE  = 'playwright/.auth/user.json';
-const MODULE_URL = 'https://app.omre.ai/app/weather';
+const MODULE_URL = 'https://omre.ai/app/weather';
 
 test.use({ storageState: AUTH_FILE });
 test.setTimeout(45000);
@@ -17,9 +17,9 @@ async function goWeather(page) {
   await page.waitForTimeout(2000);
 }
 
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 // 1. Page Load and Layout
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 test.describe('TC-WEATHER: Page Load and Layout', () => {
   test.beforeEach(async ({ page }) => { await goWeather(page); });
 
@@ -54,9 +54,9 @@ test.describe('TC-WEATHER: Page Load and Layout', () => {
   });
 });
 
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 // 2. Current Weather Widget
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 test.describe('TC-WEATHER: Current Weather Widget', () => {
   test.beforeEach(async ({ page }) => { await goWeather(page); });
 
@@ -68,7 +68,7 @@ test.describe('TC-WEATHER: Current Weather Widget', () => {
   });
 
   test('TC-WEATHER-06: Given I am authenticated and on the page, When I perform the action, Then temperature value with degree symbol is displayed', async ({ page }) => {
-    const tempText = page.locator('main').getByText(/\d+\s*°[CF]?/i).first();
+    const tempText = page.locator('main').getByText(/\d+\s*�[CF]?/i).first();
     const visible = await tempText.isVisible({ timeout: 10000 }).catch(() => false);
     if (visible) {
       await expect(tempText).toBeVisible();
@@ -129,9 +129,9 @@ test.describe('TC-WEATHER: Current Weather Widget', () => {
   });
 });
 
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 // 3. Forecasts
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 test.describe('TC-WEATHER: Forecasts', () => {
   test.beforeEach(async ({ page }) => { await goWeather(page); });
 
@@ -142,7 +142,7 @@ test.describe('TC-WEATHER: Forecasts', () => {
     if (visible) {
       await expect(hourly).toBeVisible();
     } else {
-      // Hourly may be a scroll strip — look for time labels like "2PM", "3AM"
+      // Hourly may be a scroll strip � look for time labels like "2PM", "3AM"
       const timeLabel = page.locator('main').getByText(/\d{1,2}\s*(AM|PM|:00)/i).first();
       const timeLabelVisible = await timeLabel.isVisible({ timeout: 6000 }).catch(() => false);
       expect(timeLabelVisible || !visible).toBeTruthy();
@@ -177,23 +177,23 @@ test.describe('TC-WEATHER: Forecasts', () => {
   });
 
   test('TC-WEATHER-15: Given I am on the forecast cards, When I view it, Then it shows high and low temperatures', async ({ page }) => {
-    // Look for patterns like "24° / 18°" or "H:24 L:18"
-    const tempRange = page.locator('main').getByText(/\d+°.*\/.*\d+°|\bH\b.*\d+|\bL\b.*\d+|high|low/i).first();
+    // Look for patterns like "24� / 18�" or "H:24 L:18"
+    const tempRange = page.locator('main').getByText(/\d+�.*\/.*\d+�|\bH\b.*\d+|\bL\b.*\d+|high|low/i).first();
     const visible = await tempRange.isVisible({ timeout: 8000 }).catch(() => false);
     if (visible) {
       await expect(tempRange).toBeVisible();
     } else {
       // Multiple temperature values may exist across forecast cards
-      const temps = page.locator('main').getByText(/\d+°/);
+      const temps = page.locator('main').getByText(/\d+�/);
       const tempCount = await temps.count();
       expect(tempCount).toBeGreaterThanOrEqual(0);
     }
   });
 });
 
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 // 4. Location Controls
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 test.describe('TC-WEATHER: Location Controls', () => {
   test.beforeEach(async ({ page }) => { await goWeather(page); });
 
@@ -258,7 +258,7 @@ test.describe('TC-WEATHER: Location Controls', () => {
     if (cityVisible) {
       await expect(cityText).toBeVisible();
     } else {
-      // Location updated but city name may differ — just verify content reloaded
+      // Location updated but city name may differ � just verify content reloaded
       await expect(page.locator('main > div').first()).toBeVisible({ timeout: 8000 });
     }
   });
@@ -277,16 +277,16 @@ test.describe('TC-WEATHER: Location Controls', () => {
   });
 });
 
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 // 5. Temperature Unit Toggle
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 test.describe('TC-WEATHER: Temperature Unit Toggle', () => {
   test.beforeEach(async ({ page }) => { await goWeather(page); });
 
-  test('TC-WEATHER-20: Given I am authenticated and on the page, When I perform the action, Then temperature unit toggle (°C/°F) is present', async ({ page }) => {
-    const toggle = page.getByRole('button', { name: /°C|°F|celsius|fahrenheit/i })
+  test('TC-WEATHER-20: Given I am authenticated and on the page, When I perform the action, Then temperature unit toggle (�C/�F) is present', async ({ page }) => {
+    const toggle = page.getByRole('button', { name: /�C|�F|celsius|fahrenheit/i })
       .or(page.locator('[aria-label*="celsius" i], [aria-label*="fahrenheit" i], [aria-label*="unit" i]'))
-      .or(page.getByText(/°C|°F/).first())
+      .or(page.getByText(/�C|�F/).first())
       .first();
     const visible = await toggle.isVisible({ timeout: 6000 }).catch(() => false);
     if (visible) {
@@ -297,7 +297,7 @@ test.describe('TC-WEATHER: Temperature Unit Toggle', () => {
   });
 
   test('TC-WEATHER-21: Given the page is loaded, When I click unit toggle switches temperature display, Then it responds correctly', async ({ page }) => {
-    const toggle = page.getByRole('button', { name: /°C|°F|celsius|fahrenheit/i })
+    const toggle = page.getByRole('button', { name: /�C|�F|celsius|fahrenheit/i })
       .or(page.locator('[aria-label*="celsius" i], [aria-label*="fahrenheit" i]'))
       .first();
     const visible = await toggle.isVisible({ timeout: 6000 }).catch(() => false);
@@ -312,9 +312,9 @@ test.describe('TC-WEATHER: Temperature Unit Toggle', () => {
   });
 });
 
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 // 6. Alerts and Metadata
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 test.describe('TC-WEATHER: Alerts and Metadata', () => {
   test.beforeEach(async ({ page }) => { await goWeather(page); });
 
@@ -322,7 +322,7 @@ test.describe('TC-WEATHER: Alerts and Metadata', () => {
     const alertSection = page.locator('main').getByText(/alert|warning|advisory|watch/i).first()
       .or(page.locator('[aria-label*="alert" i]').first());
     const visible = await alertSection.isVisible({ timeout: 6000 }).catch(() => false);
-    // Alerts are conditional on current weather — pass regardless
+    // Alerts are conditional on current weather � pass regardless
     expect(visible || !visible).toBeTruthy();
   });
 

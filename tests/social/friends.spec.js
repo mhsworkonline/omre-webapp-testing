@@ -1,5 +1,5 @@
 /**
- * Friends module — deep-dive
+ * Friends module � deep-dive
  * Covers: page layout, friends list, friend requests (send/accept/decline/cancel),
  *         search users, suggested friends, friend actions, filter tabs,
  *         unfriend, block, online status, friend profile navigation
@@ -7,7 +7,7 @@
 import { test, expect } from '@playwright/test';
 
 const AUTH_FILE   = 'playwright/.auth/user.json';
-const FRIENDS_URL = 'https://app.omre.ai/app/friends';
+const FRIENDS_URL = 'https://omre.ai/app/friends';
 
 test.use({ storageState: AUTH_FILE });
 test.setTimeout(45000);
@@ -17,7 +17,7 @@ async function goFriends(page) {
   await page.waitForTimeout(1500);
 }
 
-// ── Page Load & Layout ─────────────────────────────────────────────────────────
+// -- Page Load & Layout ---------------------------------------------------------
 
 test.describe('Page Load and Layout', () => {
   test.beforeEach(async ({ page }) => { await goFriends(page); });
@@ -44,13 +44,13 @@ test.describe('Page Load and Layout', () => {
     await page.reload({ waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(1500);
     const appErrors = errors.filter(e =>
-      e.includes('TypeError') || e.includes('ReferenceError') || e.includes('app.omre.ai')
+      e.includes('TypeError') || e.includes('ReferenceError') || e.includes('omre.ai')
     );
     expect(appErrors).toHaveLength(0);
   });
 });
 
-// ── Filter Tabs ────────────────────────────────────────────────────────────────
+// -- Filter Tabs ----------------------------------------------------------------
 
 test.describe('Filter Tabs', () => {
   test.beforeEach(async ({ page }) => { await goFriends(page); });
@@ -96,7 +96,7 @@ test.describe('Filter Tabs', () => {
   });
 });
 
-// ── Friends List ───────────────────────────────────────────────────────────────
+// -- Friends List ---------------------------------------------------------------
 
 test.describe('Friends List', () => {
   test.beforeEach(async ({ page }) => { await goFriends(page); });
@@ -151,7 +151,7 @@ test.describe('Friends List', () => {
   });
 });
 
-// ── Friend Requests ────────────────────────────────────────────────────────────
+// -- Friend Requests ------------------------------------------------------------
 
 test.describe('Friend Requests', () => {
   test.beforeEach(async ({ page }) => { await goFriends(page); });
@@ -221,7 +221,7 @@ test.describe('Friend Requests', () => {
   });
 });
 
-// ── Search Users ───────────────────────────────────────────────────────────────
+// -- Search Users ---------------------------------------------------------------
 
 test.describe('Search Users', () => {
   test.beforeEach(async ({ page }) => { await goFriends(page); });
@@ -289,7 +289,7 @@ test.describe('Search Users', () => {
   });
 });
 
-// ── Send Friend Request ────────────────────────────────────────────────────────
+// -- Send Friend Request --------------------------------------------------------
 
 test.describe('Send Friend Request', () => {
   test.beforeEach(async ({ page }) => { await goFriends(page); });
@@ -335,7 +335,7 @@ test.describe('Send Friend Request', () => {
   });
 });
 
-// ── Friend Actions ─────────────────────────────────────────────────────────────
+// -- Friend Actions -------------------------------------------------------------
 
 test.describe('Friend Actions', () => {
   test.beforeEach(async ({ page }) => { await goFriends(page); });
@@ -387,7 +387,7 @@ test.describe('Friend Actions', () => {
   });
 });
 
-// ── Suggested Friends ──────────────────────────────────────────────────────────
+// -- Suggested Friends ----------------------------------------------------------
 
 test.describe('Suggested Friends', () => {
   test.beforeEach(async ({ page }) => { await goFriends(page); });
@@ -417,7 +417,7 @@ test.describe('Suggested Friends', () => {
   });
 });
 
-// ── Online Status ──────────────────────────────────────────────────────────────
+// -- Online Status --------------------------------------------------------------
 
 test.describe('Online Status', () => {
   test.beforeEach(async ({ page }) => { await goFriends(page); });
@@ -427,7 +427,7 @@ test.describe('Online Status', () => {
     if (await onlineDot.isVisible({ timeout: 5000 }).catch(() => false)) {
       await expect(onlineDot).toBeVisible();
     }
-    // Optional feature — passes regardless
+    // Optional feature � passes regardless
     expect(page.isClosed()).toBe(false);
   });
 
@@ -439,7 +439,7 @@ test.describe('Online Status', () => {
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
     await page.waitForTimeout(1500);
     const appErrors = errors.filter(e =>
-      e.includes('TypeError') || e.includes('ReferenceError') || e.includes('app.omre.ai')
+      e.includes('TypeError') || e.includes('ReferenceError') || e.includes('omre.ai')
     );
     expect(appErrors).toHaveLength(0);
     expect(page.isClosed()).toBe(false);
@@ -454,7 +454,7 @@ test.describe('Online Status', () => {
   });
 });
 
-// ── Search Edge Cases ──────────────────────────────────────────────────────────
+// -- Search Edge Cases ----------------------------------------------------------
 
 test.describe('Search Edge Cases', () => {
   test.beforeEach(async ({ page }) => { await goFriends(page); });
@@ -469,7 +469,7 @@ test.describe('Search Edge Cases', () => {
     await search.fill('!@#$%^');
     await page.waitForTimeout(1000);
     const appErrors = errors.filter(e =>
-      e.includes('TypeError') || e.includes('ReferenceError') || e.includes('app.omre.ai')
+      e.includes('TypeError') || e.includes('ReferenceError') || e.includes('omre.ai')
     );
     expect(appErrors).toHaveLength(0);
     expect(page.isClosed()).toBe(false);
@@ -477,7 +477,7 @@ test.describe('Search Edge Cases', () => {
   });
 });
 
-// ── Pagination ─────────────────────────────────────────────────────────────────
+// -- Pagination -----------------------------------------------------------------
 
 test.describe('Pagination', () => {
   test.beforeEach(async ({ page }) => { await goFriends(page); });
@@ -499,7 +499,7 @@ test.describe('Pagination', () => {
   });
 });
 
-// ── Block / Unblock ────────────────────────────────────────────────────────────
+// -- Block / Unblock ------------------------------------------------------------
 
 test.describe('Block and Unblock', () => {
   test.beforeEach(async ({ page }) => { await goFriends(page); });
@@ -521,16 +521,16 @@ test.describe('Block and Unblock', () => {
   });
 });
 
-// ── Mutual Friends Count ───────────────────────────────────────────────────────
+// -- Mutual Friends Count -------------------------------------------------------
 
 test.describe('Mutual Friends Count', () => {
   test.beforeEach(async ({ page }) => { await goFriends(page); });
 
-  test.skip('TC-FRIENDS-42: Given a friend card shows mutual friends count, When I view it, Then the count is accurate — untestable: requires specific data state with known mutual connections', () => {});
+  test.skip('TC-FRIENDS-42: Given a friend card shows mutual friends count, When I view it, Then the count is accurate � untestable: requires specific data state with known mutual connections', () => {});
 });
 
-// ── Friend Request Timeout ─────────────────────────────────────────────────────
+// -- Friend Request Timeout -----------------------------------------------------
 
 test.describe('Friend Request Timeout', () => {
-  test.skip('TC-FRIENDS-43: Given a friend request has been sent, When it times out after the platform expiry period, Then the request is auto-cancelled — untestable: requires time manipulation and server-side timeout control', () => {});
+  test.skip('TC-FRIENDS-43: Given a friend request has been sent, When it times out after the platform expiry period, Then the request is auto-cancelled � untestable: requires time manipulation and server-side timeout control', () => {});
 });

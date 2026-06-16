@@ -7,7 +7,7 @@
 import { test, expect } from '@playwright/test';
 
 const AUTH_FILE  = 'playwright/.auth/user.json';
-const MODULE_URL = 'https://app.omre.ai/app/images';
+const MODULE_URL = 'https://omre.ai/app/images';
 
 test.use({ storageState: AUTH_FILE });
 test.setTimeout(45000);
@@ -17,7 +17,7 @@ async function goImages(page) {
   await page.waitForTimeout(1500);
 }
 
-// ─── 1. Page Load and Layout ────────────────────────────────────────────────
+// --- 1. Page Load and Layout ------------------------------------------------
 test.describe('TC-IMAGES: Page Load and Layout', () => {
   test.beforeEach(async ({ page }) => { await goImages(page); });
 
@@ -43,7 +43,7 @@ test.describe('TC-IMAGES: Page Load and Layout', () => {
   });
 });
 
-// ─── 2. Gallery Grid ────────────────────────────────────────────────────────
+// --- 2. Gallery Grid --------------------------------------------------------
 test.describe('TC-IMAGES: Gallery Grid', () => {
   test.beforeEach(async ({ page }) => { await goImages(page); });
 
@@ -59,7 +59,7 @@ test.describe('TC-IMAGES: Gallery Grid', () => {
   test('TC-IMAGES-06: Given I am authenticated and on the page, When I perform the action, Then empty state message is shown when no images exist', async ({ page }) => {
     const img = page.locator('main img').first();
     const hasImages = await img.isVisible({ timeout: 8000 }).catch(() => false);
-    if (hasImages) return; // Gallery is populated — skip empty-state check
+    if (hasImages) return; // Gallery is populated � skip empty-state check
     const noImages = page.getByText(/no images?|no photos?|empty|upload your first/i).first();
     const emptyVisible = await noImages.isVisible({ timeout: 8000 }).catch(() => false);
     if (!emptyVisible) { test.skip(); return; } // Gallery may use different empty state text
@@ -69,12 +69,12 @@ test.describe('TC-IMAGES: Gallery Grid', () => {
   test('TC-IMAGES-07: Given I am on the page, When I inspect the content, Then gallery contains multiple thumbnail images', async ({ page }) => {
     const imgs = page.locator('main img');
     const count = await imgs.count();
-    if (count === 0) return; // Empty gallery — valid state
+    if (count === 0) return; // Empty gallery � valid state
     expect(count).toBeGreaterThanOrEqual(1);
   });
 });
 
-// ─── 3. Upload ───────────────────────────────────────────────────────────────
+// --- 3. Upload ---------------------------------------------------------------
 test.describe('TC-IMAGES: Upload', () => {
   test.beforeEach(async ({ page }) => { await goImages(page); });
 
@@ -100,7 +100,7 @@ test.describe('TC-IMAGES: Upload', () => {
   });
 });
 
-// ─── 4. Lightbox ─────────────────────────────────────────────────────────────
+// --- 4. Lightbox -------------------------------------------------------------
 test.describe('TC-IMAGES: Lightbox / Full-Size View', () => {
   test.beforeEach(async ({ page }) => { await goImages(page); });
 
@@ -162,7 +162,7 @@ test.describe('TC-IMAGES: Lightbox / Full-Size View', () => {
   });
 });
 
-// ─── 5. Delete ───────────────────────────────────────────────────────────────
+// --- 5. Delete ---------------------------------------------------------------
 test.describe('TC-IMAGES: Delete Image', () => {
   test.beforeEach(async ({ page }) => { await goImages(page); });
 
@@ -216,7 +216,7 @@ test.describe('TC-IMAGES: Delete Image', () => {
   });
 });
 
-// ─── 6. Metadata, Albums and Download ────────────────────────────────────────
+// --- 6. Metadata, Albums and Download ----------------------------------------
 test.describe('TC-IMAGES: Metadata, Albums, Download and Share', () => {
   test.beforeEach(async ({ page }) => { await goImages(page); });
 
@@ -273,7 +273,7 @@ test.describe('TC-IMAGES: Metadata, Albums, Download and Share', () => {
   });
 });
 
-// ─── 7. Multi-Select and Batch Operations ────────────────────────────────────
+// --- 7. Multi-Select and Batch Operations ------------------------------------
 test.describe('TC-IMAGES: Multi-Select and Batch Operations', () => {
   test.beforeEach(async ({ page }) => { await goImages(page); });
 
@@ -367,7 +367,7 @@ test.describe('TC-IMAGES: Multi-Select and Batch Operations', () => {
   });
 });
 
-// ─── 8. Image Editor from Lightbox ───────────────────────────────────────────
+// --- 8. Image Editor from Lightbox -------------------------------------------
 test.describe('TC-IMAGES: Image Editor', () => {
   test.beforeEach(async ({ page }) => { await goImages(page); });
 
@@ -399,7 +399,7 @@ test.describe('TC-IMAGES: Image Editor', () => {
   });
 });
 
-// ─── 9. Image Caption Edit Field ─────────────────────────────────────────────
+// --- 9. Image Caption Edit Field ---------------------------------------------
 test.describe('TC-IMAGES: Image Caption Edit', () => {
   test.beforeEach(async ({ page }) => { await goImages(page); });
 
@@ -431,7 +431,7 @@ test.describe('TC-IMAGES: Image Caption Edit', () => {
   });
 });
 
-// ─── 10. Geo-Location Tag ─────────────────────────────────────────────────────
+// --- 10. Geo-Location Tag -----------------------------------------------------
 test.describe('TC-IMAGES: Geo-Location Tag', () => {
   test.beforeEach(async ({ page }) => { await goImages(page); });
 
@@ -441,13 +441,13 @@ test.describe('TC-IMAGES: Geo-Location Tag', () => {
     await thumb.click();
     await page.waitForTimeout(1000);
     const geoTag = page.locator('[aria-label*="location" i], [aria-label*="geo" i]')
-      .or(page.locator('[role="dialog"]').getByText(/location|lat|long|\d+°/i)).first();
+      .or(page.locator('[role="dialog"]').getByText(/location|lat|long|\d+�/i)).first();
     if (!(await geoTag.isVisible({ timeout: 5000 }).catch(() => false))) return;
     await expect(geoTag).toBeVisible();
   });
 });
 
-// ─── 11. Select All Images Checkbox ──────────────────────────────────────────
+// --- 11. Select All Images Checkbox ------------------------------------------
 test.describe('TC-IMAGES: Select All Checkbox', () => {
   test.beforeEach(async ({ page }) => { await goImages(page); });
 
@@ -476,7 +476,7 @@ test.describe('TC-IMAGES: Select All Checkbox', () => {
   });
 });
 
-// ─── 12. Image Sort Options ───────────────────────────────────────────────────
+// --- 12. Image Sort Options ---------------------------------------------------
 test.describe('TC-IMAGES: Image Sort Options', () => {
   test.beforeEach(async ({ page }) => { await goImages(page); });
 
@@ -528,7 +528,7 @@ test.describe('TC-IMAGES: Image Sort Options', () => {
   });
 });
 
-// ─── 11. Upload Validation ───────────────────────────────────────────────────
+// --- 11. Upload Validation ---------------------------------------------------
 test.describe('TC-IMAGES: Upload Validation', () => {
   test.beforeEach(async ({ page }) => { await goImages(page); });
 

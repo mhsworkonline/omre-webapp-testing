@@ -6,7 +6,7 @@
 import { test, expect } from '@playwright/test';
 
 const AUTH_FILE = 'playwright/.auth/user.json';
-const BASE = 'https://app.omre.ai';
+const BASE = 'https://omre.ai';
 
 test.use({ storageState: AUTH_FILE });
 test.setTimeout(30000);

@@ -1,5 +1,5 @@
 /**
- * Posts module — deep-dive tests
+ * Posts module � deep-dive tests
  * Covers: post card layout (author, avatar, timestamp), like/comment/share/bookmark
  *         action buttons, like toggle, comment section, comment submission, share modal,
  *         bookmark toggle, 3-dot options menu, delete confirmation, report option,
@@ -9,7 +9,7 @@
 import { test, expect } from '@playwright/test';
 
 const AUTH_FILE = 'playwright/.auth/user.json';
-const HOME_URL  = 'https://app.omre.ai/app/home';
+const HOME_URL  = 'https://omre.ai/app/home';
 
 test.use({ storageState: AUTH_FILE });
 test.setTimeout(45000);
@@ -19,7 +19,7 @@ async function goHome(page) {
   await page.waitForTimeout(1500);
 }
 
-// ── Post Card Layout ──────────────────────────────────────────────────────────
+// -- Post Card Layout ----------------------------------------------------------
 
 test.describe('Post Card Layout', () => {
   test.beforeEach(async ({ page }) => { await goHome(page); });
@@ -74,7 +74,7 @@ test.describe('Post Card Layout', () => {
   });
 });
 
-// ── Action Buttons ────────────────────────────────────────────────────────────
+// -- Action Buttons ------------------------------------------------------------
 
 test.describe('Post Action Buttons', () => {
   test.beforeEach(async ({ page }) => { await goHome(page); });
@@ -119,7 +119,7 @@ test.describe('Post Action Buttons', () => {
   });
 });
 
-// ── Like Interaction ──────────────────────────────────────────────────────────
+// -- Like Interaction ----------------------------------------------------------
 
 test.describe('Like Interaction', () => {
   test.beforeEach(async ({ page }) => { await goHome(page); });
@@ -166,12 +166,12 @@ test.describe('Like Interaction', () => {
     await page.waitForTimeout(1500);
     const countAfter = await postCard.getByText(/\d+\s*(like|reaction)/i).first()
       .textContent().catch(() => '');
-    // Count may change or button state changes — page must be alive
+    // Count may change or button state changes � page must be alive
     expect(page.isClosed()).toBe(false);
   });
 });
 
-// ── Comment Interaction ───────────────────────────────────────────────────────
+// -- Comment Interaction -------------------------------------------------------
 
 test.describe('Comment Interaction', () => {
   test.beforeEach(async ({ page }) => { await goHome(page); });
@@ -257,7 +257,7 @@ test.describe('Comment Interaction', () => {
   });
 });
 
-// ── Share Interaction ─────────────────────────────────────────────────────────
+// -- Share Interaction ---------------------------------------------------------
 
 test.describe('Share Interaction', () => {
   test.beforeEach(async ({ page }) => { await goHome(page); });
@@ -297,7 +297,7 @@ test.describe('Share Interaction', () => {
   });
 });
 
-// ── Bookmark / Save ───────────────────────────────────────────────────────────
+// -- Bookmark / Save -----------------------------------------------------------
 
 test.describe('Bookmark and Save', () => {
   test.beforeEach(async ({ page }) => { await goHome(page); });
@@ -337,7 +337,7 @@ test.describe('Bookmark and Save', () => {
   });
 });
 
-// ── 3-dot Options Menu ────────────────────────────────────────────────────────
+// -- 3-dot Options Menu --------------------------------------------------------
 
 test.describe('Post Options Menu', () => {
   test.beforeEach(async ({ page }) => { await goHome(page); });
@@ -395,7 +395,7 @@ test.describe('Post Options Menu', () => {
     }
     await deleteOpt.click();
     await page.waitForTimeout(800);
-    // A confirmation dialog should appear — we don't confirm to avoid deleting data
+    // A confirmation dialog should appear � we don't confirm to avoid deleting data
     const confirmDialog = page.locator('[role="dialog"], [role="alertdialog"]').first();
     const confirmText   = page.getByText(/are you sure|confirm delete|this cannot be undone/i).first();
     if (await confirmDialog.isVisible({ timeout: 4000 }).catch(() => false)
@@ -422,7 +422,7 @@ test.describe('Post Options Menu', () => {
   });
 });
 
-// ── Post Media & Rich Content ─────────────────────────────────────────────────
+// -- Post Media & Rich Content -------------------------------------------------
 
 test.describe('Post Media and Rich Content', () => {
   test.beforeEach(async ({ page }) => { await goHome(page); });
@@ -484,7 +484,7 @@ test.describe('Post Media and Rich Content', () => {
   });
 });
 
-// ── Post Text Expansion & URL ─────────────────────────────────────────────────
+// -- Post Text Expansion & URL -------------------------------------------------
 
 test.describe('Post Text Expansion and URL', () => {
   test.beforeEach(async ({ page }) => { await goHome(page); });
@@ -523,12 +523,12 @@ test.describe('Post Text Expansion and URL', () => {
   });
 });
 
-// ── Post Edit on Own Posts ────────────────────────────────────────────────────
+// -- Post Edit on Own Posts ----------------------------------------------------
 
 test.describe('Post Edit on Own Posts', () => {
   test.beforeEach(async ({ page }) => { await goHome(page); });
 
-  test('TC-POSTS-36: Given I am on my own post, When I open the ••• menu and click Edit, Then an edit modal or inline editor opens', async ({ page }) => {
+  test('TC-POSTS-36: Given I am on my own post, When I open the ��� menu and click Edit, Then an edit modal or inline editor opens', async ({ page }) => {
     const moreBtn = page.locator(
       'main article button[aria-label*="more" i], main article button[aria-label*="options" i]'
     ).first();
@@ -552,12 +552,12 @@ test.describe('Post Edit on Own Posts', () => {
   });
 });
 
-// ── Post Delete with Confirmation ─────────────────────────────────────────────
+// -- Post Delete with Confirmation ---------------------------------------------
 
 test.describe('Post Delete with Confirmation', () => {
   test.beforeEach(async ({ page }) => { await goHome(page); });
 
-  test('TC-POSTS-37: Given I am on my own post, When I open the ••• menu and click Delete, Then a confirmation dialog appears before deletion', async ({ page }) => {
+  test('TC-POSTS-37: Given I am on my own post, When I open the ��� menu and click Delete, Then a confirmation dialog appears before deletion', async ({ page }) => {
     const moreBtn = page.locator(
       'main article button[aria-label*="more" i], main article button[aria-label*="options" i]'
     ).first();
@@ -581,7 +581,7 @@ test.describe('Post Delete with Confirmation', () => {
   });
 });
 
-// ── Nested Comments (Replies) ─────────────────────────────────────────────────
+// -- Nested Comments (Replies) -------------------------------------------------
 
 test.describe('Nested Comments Replies', () => {
   test.beforeEach(async ({ page }) => { await goHome(page); });
@@ -605,7 +605,7 @@ test.describe('Nested Comments Replies', () => {
   });
 });
 
-// ── @mention in Comment Shows Suggestion Dropdown ────────────────────────────
+// -- @mention in Comment Shows Suggestion Dropdown ----------------------------
 
 test.describe('Mention in Comment Suggestion Dropdown', () => {
   test.beforeEach(async ({ page }) => { await goHome(page); });
@@ -630,7 +630,7 @@ test.describe('Mention in Comment Suggestion Dropdown', () => {
   });
 });
 
-// ── Image Carousel Navigation ─────────────────────────────────────────────────
+// -- Image Carousel Navigation -------------------------------------------------
 
 test.describe('Image Carousel Navigation', () => {
   test.beforeEach(async ({ page }) => { await goHome(page); });
@@ -648,24 +648,24 @@ test.describe('Image Carousel Navigation', () => {
   });
 });
 
-// ── Share to External Platforms ───────────────────────────────────────────────
+// -- Share to External Platforms -----------------------------------------------
 
 test.describe('Share to External Platforms', () => {
-  test.skip('TC-POSTS-41: Given I open the share menu on a post, When I click "Share to Facebook/Twitter/WhatsApp", Then the external platform opens — untestable: triggers browser navigation to a third-party OAuth or share page outside the app', () => {});
+  test.skip('TC-POSTS-41: Given I open the share menu on a post, When I click "Share to Facebook/Twitter/WhatsApp", Then the external platform opens � untestable: triggers browser navigation to a third-party OAuth or share page outside the app', () => {});
 });
 
-// ── Copy Post Link to Clipboard ───────────────────────────────────────────────
+// -- Copy Post Link to Clipboard -----------------------------------------------
 
 test.describe('Copy Post Link to Clipboard', () => {
-  test.skip('TC-POSTS-42: Given I open the share menu on a post, When I click "Copy Link", Then the URL is written to the clipboard — untestable: clipboard write verification requires Clipboard API permissions not available in automated headless contexts', () => {});
+  test.skip('TC-POSTS-42: Given I open the share menu on a post, When I click "Copy Link", Then the URL is written to the clipboard � untestable: clipboard write verification requires Clipboard API permissions not available in automated headless contexts', () => {});
 });
 
-// ── Post Report Workflow ──────────────────────────────────────────────────────
+// -- Post Report Workflow ------------------------------------------------------
 
 test.describe('Post Report Workflow', () => {
   test.beforeEach(async ({ page }) => { await goHome(page); });
 
-  test('TC-POSTS-43: Given I am on a post I did not author, When I open the ••• menu and click Report, Then a report dialog or flow opens', async ({ page }) => {
+  test('TC-POSTS-43: Given I am on a post I did not author, When I open the ��� menu and click Report, Then a report dialog or flow opens', async ({ page }) => {
     const moreBtn = page.locator(
       'main article button[aria-label*="more" i], main article button[aria-label*="options" i]'
     ).first();
@@ -689,12 +689,12 @@ test.describe('Post Report Workflow', () => {
   });
 });
 
-// ── Post Visibility Toggle ────────────────────────────────────────────────────
+// -- Post Visibility Toggle ----------------------------------------------------
 
 test.describe('Post Visibility Toggle', () => {
   test.beforeEach(async ({ page }) => { await goHome(page); });
 
-  test('TC-POSTS-44: Given I am on my own post, When I open the ••• menu, Then a visibility option (public/friends/private) may be accessible', async ({ page }) => {
+  test('TC-POSTS-44: Given I am on my own post, When I open the ��� menu, Then a visibility option (public/friends/private) may be accessible', async ({ page }) => {
     const moreBtn = page.locator(
       'main article button[aria-label*="more" i], main article button[aria-label*="options" i]'
     ).first();
@@ -712,7 +712,7 @@ test.describe('Post Visibility Toggle', () => {
   });
 });
 
-// ── Link Preview in Post Text ─────────────────────────────────────────────────
+// -- Link Preview in Post Text -------------------------------------------------
 
 test.describe('Link Preview in Post Text', () => {
   test.beforeEach(async ({ page }) => { await goHome(page); });
@@ -727,7 +727,7 @@ test.describe('Link Preview in Post Text', () => {
   });
 });
 
-// ── Comment Sort Options ──────────────────────────────────────────────────────
+// -- Comment Sort Options ------------------------------------------------------
 
 test.describe('Comment Sort Options', () => {
   test.beforeEach(async ({ page }) => { await goHome(page); });

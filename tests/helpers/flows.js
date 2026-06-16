@@ -4,7 +4,7 @@
  * Pattern: isVisible().catch(() => false) guards before every interaction.
  */
 
-export const BASE = 'https://app.omre.ai';
+export const BASE = 'https://omre.ai';
 export const AUTH_FILE = 'playwright/.auth/user.json';
 
 // ── Navigation ────────────────────────────────────────────────────────────────

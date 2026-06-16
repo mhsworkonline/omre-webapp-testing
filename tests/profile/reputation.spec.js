@@ -7,8 +7,8 @@
 import { test, expect } from '@playwright/test';
 
 const AUTH_FILE      = 'playwright/.auth/user.json';
-const MODULE_URL     = 'https://app.omre.ai/app/reputation';
-const PROFILE_URL    = 'https://app.omre.ai/app/profile';
+const MODULE_URL     = 'https://omre.ai/app/reputation';
+const PROFILE_URL    = 'https://omre.ai/app/profile';
 
 test.use({ storageState: AUTH_FILE });
 test.setTimeout(45000);
@@ -25,9 +25,9 @@ async function goReputation(page) {
   }
 }
 
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 // 1. Page Load and Layout
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 test.describe('TC-REP: Page Load and Layout', () => {
   test.beforeEach(async ({ page }) => { await goReputation(page); });
 
@@ -51,9 +51,9 @@ test.describe('TC-REP: Page Load and Layout', () => {
   });
 });
 
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 // 2. Score and Level
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 test.describe('TC-REP: Score and Level Display', () => {
   test.beforeEach(async ({ page }) => { await goReputation(page); });
 
@@ -96,9 +96,9 @@ test.describe('TC-REP: Score and Level Display', () => {
   });
 });
 
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 // 3. Badges
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 test.describe('TC-REP: Badges Section', () => {
   test.beforeEach(async ({ page }) => { await goReputation(page); });
 
@@ -109,7 +109,7 @@ test.describe('TC-REP: Badges Section', () => {
     if (visible) {
       await expect(badgeSection).toBeVisible();
     } else {
-      // Badges may be shown as icons — check for image grid
+      // Badges may be shown as icons � check for image grid
       const iconGrid = page.locator('main img, main svg').first();
       await expect(iconGrid).toBeVisible({ timeout: 8000 });
     }
@@ -165,15 +165,15 @@ test.describe('TC-REP: Badges Section', () => {
     if (detailVisible) {
       await expect(detail).toBeVisible();
     } else {
-      // Badge may not have a click handler — that's acceptable
+      // Badge may not have a click handler � that's acceptable
       expect(true).toBeTruthy();
     }
   });
 });
 
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 // 4. How to Earn Points
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 test.describe('TC-REP: How to Earn Points', () => {
   test.beforeEach(async ({ page }) => { await goReputation(page); });
 
@@ -200,9 +200,9 @@ test.describe('TC-REP: How to Earn Points', () => {
   });
 });
 
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 // 5. Points History
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 test.describe('TC-REP: Points History', () => {
   test.beforeEach(async ({ page }) => { await goReputation(page); });
 
@@ -230,9 +230,9 @@ test.describe('TC-REP: Points History', () => {
   });
 });
 
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 // 6. Leaderboard
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 test.describe('TC-REP: Leaderboard', () => {
   test.beforeEach(async ({ page }) => { await goReputation(page); });
 
@@ -296,15 +296,15 @@ test.describe('TC-REP: Leaderboard', () => {
     if (hiVisible) {
       await expect(highlighted).toBeVisible();
     } else {
-      // Highlight may be via a different mechanism — pass gracefully
+      // Highlight may be via a different mechanism � pass gracefully
       expect(true).toBeTruthy();
     }
   });
 });
 
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 // 7. Share Score
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 test.describe('TC-REP: Share Score', () => {
   test.beforeEach(async ({ page }) => { await goReputation(page); });
 
@@ -335,7 +335,7 @@ test.describe('TC-REP: Share Score', () => {
     if (dialogVisible) {
       await expect(shareDialog).toBeVisible();
     } else {
-      // Share may use native OS share API — pass gracefully
+      // Share may use native OS share API � pass gracefully
       expect(true).toBeTruthy();
     }
   });

@@ -1,5 +1,5 @@
-﻿/**
- * Digital Citizen module — deep-dive tests
+/**
+ * Digital Citizen module � deep-dive tests
  * Covers: page load & layout, content renders, sections/modules visible,
  *         interactive elements, progress tracking, resource links,
  *         error-free load
@@ -8,7 +8,7 @@
 import { test, expect } from '@playwright/test';
 
 const AUTH_FILE  = 'playwright/.auth/user.json';
-const MODULE_URL = 'https://app.omre.ai/app/digital-citizen';
+const MODULE_URL = 'https://omre.ai/app/digital-citizen';
 
 test.use({ storageState: AUTH_FILE });
 test.setTimeout(45000);
@@ -18,7 +18,7 @@ async function goModule(page) {
   await page.waitForTimeout(1500);
 }
 
-// ── 1. Page Load and Layout ───────────────────────────────────────────────────
+// -- 1. Page Load and Layout ---------------------------------------------------
 
 test.describe('Page Load and Layout', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
@@ -50,13 +50,13 @@ test.describe('Page Load and Layout', () => {
     await page.reload({ waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(1500);
     const appErrors = errors.filter(e =>
-      e.includes('TypeError') || e.includes('ReferenceError') || e.includes('app.omre.ai')
+      e.includes('TypeError') || e.includes('ReferenceError') || e.includes('omre.ai')
     );
     expect(appErrors).toHaveLength(0);
   });
 });
 
-// ── 2. Content Sections Render ────────────────────────────────────────────────
+// -- 2. Content Sections Render ------------------------------------------------
 
 test.describe('Content Sections Render', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
@@ -93,7 +93,7 @@ test.describe('Content Sections Render', () => {
   });
 });
 
-// ── 3. Interactive Elements ────────────────────────────────────────────────────
+// -- 3. Interactive Elements ----------------------------------------------------
 
 test.describe('Interactive Elements', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
@@ -138,7 +138,7 @@ test.describe('Interactive Elements', () => {
   });
 });
 
-// ── 4. Progress Tracking ──────────────────────────────────────────────────────
+// -- 4. Progress Tracking ------------------------------------------------------
 
 test.describe('Progress Tracking', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
@@ -163,7 +163,7 @@ test.describe('Progress Tracking', () => {
   });
 });
 
-// ── 5. Resource Links and Error Safety ────────────────────────────────────────
+// -- 5. Resource Links and Error Safety ----------------------------------------
 
 test.describe('Resource Links and Error Safety', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
@@ -207,7 +207,7 @@ test.describe('Resource Links and Error Safety', () => {
   });
 });
 
-// ── 6. Enrollment, Progress, Badges, External Links ──────────────────────────
+// -- 6. Enrollment, Progress, Badges, External Links --------------------------
 
 test.describe('Enrollment, Progress and External Links', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
@@ -221,7 +221,7 @@ test.describe('Enrollment, Progress and External Links', () => {
     await page.waitForTimeout(1500);
     const bodyText = await page.locator('body').innerText();
     expect(bodyText).not.toMatch(/unexpected error|500/i);
-    // URL may change or a modal may appear — either is acceptable
+    // URL may change or a modal may appear � either is acceptable
     expect(bodyText.trim().length).toBeGreaterThan(0);
   });
 
@@ -247,7 +247,7 @@ test.describe('Enrollment, Progress and External Links', () => {
     expect(href?.startsWith('http')).toBe(true);
     const target = await firstLink.getAttribute('target');
     const rel = await firstLink.getAttribute('rel');
-    // External links should either open in new tab or have rel set — soft assertion
+    // External links should either open in new tab or have rel set � soft assertion
     expect(typeof (target || rel || href)).toBe('string');
   });
 

@@ -5,13 +5,13 @@ import { LoginPage } from '../../pages/LoginPage.js';
 
 const authFile = 'playwright/.auth/user.json';
 
-// Routes with different path prefixes — visit them before saving storageState
+// Routes with different path prefixes � visit them before saving storageState
 // so their session cookies are captured alongside /app/* cookies.
 const WARM_UP_ROUTES = [
-  'https://app.omre.ai/app/reputation',
-  'https://app.omre.ai/app/digital-citizen',
-  'https://app.omre.ai/jobs/home',
-  'https://app.omre.ai/learn/home',
+  'https://omre.ai/app/reputation',
+  'https://omre.ai/app/digital-citizen',
+  'https://omre.ai/jobs/home',
+  'https://omre.ai/learn/home',
 ];
 
 setup.setTimeout(120000);

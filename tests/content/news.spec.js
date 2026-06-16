@@ -8,7 +8,7 @@
 import { test, expect } from '@playwright/test';
 
 const AUTH_FILE = 'playwright/.auth/user.json';
-const MODULE_URL = 'https://app.omre.ai/app/news/home';
+const MODULE_URL = 'https://omre.ai/app/news/home';
 
 test.use({ storageState: AUTH_FILE });
 test.setTimeout(45000);
@@ -122,7 +122,7 @@ test.describe('TC-NEWS | Feed Rendering', () => {
     if (!(await article.isVisible({ timeout: 10000 }).catch(() => false))) return;
     const img = article.locator('img').first();
     const visible = await img.isVisible({ timeout: 5000 }).catch(() => false);
-    // Image may be lazy-loaded — conditional pass
+    // Image may be lazy-loaded � conditional pass
     expect(visible || true).toBe(true);
   });
 
@@ -137,7 +137,7 @@ test.describe('TC-NEWS | Feed Rendering', () => {
     const found =
       (await sourceEl.isVisible({ timeout: 8000 }).catch(() => false)) ||
       (await sourceText.isVisible({ timeout: 8000 }).catch(() => false));
-    expect(found || true).toBe(true); // lenient — source may be icon only
+    expect(found || true).toBe(true); // lenient � source may be icon only
   });
 
   test('TC-NEWS-09: Given I am on the article card, When I view it, Then it shows a publication date or timestamp', async ({ page }) => {
@@ -283,7 +283,7 @@ test.describe('TC-NEWS | Article Detail', () => {
     const initialUrl = page.url();
     await article.click();
     await page.waitForTimeout(1500);
-    if (page.url() === initialUrl) return; // didn't navigate — skip
+    if (page.url() === initialUrl) return; // didn't navigate � skip
     await page.goBack();
     await page.waitForTimeout(1500);
     await expect(page).toHaveURL(/\/app\/news/);
@@ -468,7 +468,7 @@ test.describe('TC-NEWS | Breaking News and Empty State', () => {
       const emptyVisible = await emptyMsg.isVisible({ timeout: 3000 }).catch(() => false);
       expect(emptyVisible || articleCount === 0).toBe(true);
     } else {
-      // Tab has content — that's also fine
+      // Tab has content � that's also fine
       expect(articleCount).toBeGreaterThan(0);
     }
   });
@@ -516,7 +516,7 @@ test.describe('TC-NEWS | Save and Bookmark Article', () => {
     await bookmarkBtn.evaluate(el => el.click());
     await page.waitForTimeout(800);
     const afterLabel = await bookmarkBtn.getAttribute('aria-label');
-    // Label changes OR data-state changes — some visual feedback occurs
+    // Label changes OR data-state changes � some visual feedback occurs
     const stateChanged = beforeLabel !== afterLabel
       || (await bookmarkBtn.getAttribute('data-state')) !== null;
     expect(stateChanged || true).toBe(true);
@@ -687,7 +687,7 @@ test.describe('TC-NEWS | Search Pagination', () => {
     }
     await page.waitForTimeout(800);
     // Navigate away and back
-    await page.goto('https://app.omre.ai/app/home', { waitUntil: 'domcontentloaded' });
+    await page.goto('https://omre.ai/app/home', { waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(1000);
     await goNews(page);
     // Check bookmarks section or saved tab

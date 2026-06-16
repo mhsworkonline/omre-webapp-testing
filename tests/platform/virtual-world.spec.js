@@ -1,5 +1,5 @@
-﻿/**
- * Virtual World module — deep-dive tests
+/**
+ * Virtual World module � deep-dive tests
  * Covers: page load & layout, 3D world or landing renders, enter/join button,
  *         avatar customisation options, world list, interactive elements,
  *         error-free load
@@ -8,7 +8,7 @@
 import { test, expect } from '@playwright/test';
 
 const AUTH_FILE  = 'playwright/.auth/user.json';
-const MODULE_URL = 'https://app.omre.ai/app/virtual-world';
+const MODULE_URL = 'https://omre.ai/app/virtual-world';
 
 test.use({ storageState: AUTH_FILE });
 test.setTimeout(45000);
@@ -18,7 +18,7 @@ async function goModule(page) {
   await page.waitForTimeout(1500);
 }
 
-// ── 1. Page Load and Layout ───────────────────────────────────────────────────
+// -- 1. Page Load and Layout ---------------------------------------------------
 
 test.describe('Page Load and Layout', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
@@ -50,13 +50,13 @@ test.describe('Page Load and Layout', () => {
     await page.reload({ waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(1500);
     const appErrors = errors.filter(e =>
-      e.includes('TypeError') || e.includes('ReferenceError') || e.includes('app.omre.ai')
+      e.includes('TypeError') || e.includes('ReferenceError') || e.includes('omre.ai')
     );
     expect(appErrors).toHaveLength(0);
   });
 });
 
-// ── 2. 3D World / Landing Experience ──────────────────────────────────────────
+// -- 2. 3D World / Landing Experience ------------------------------------------
 
 test.describe('3D World and Landing Render', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
@@ -93,7 +93,7 @@ test.describe('3D World and Landing Render', () => {
   });
 });
 
-// ── 3. Enter / Join Button ────────────────────────────────────────────────────
+// -- 3. Enter / Join Button ----------------------------------------------------
 
 test.describe('Enter and Join Actions', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
@@ -125,7 +125,7 @@ test.describe('Enter and Join Actions', () => {
   });
 });
 
-// ── 4. Avatar Customisation ───────────────────────────────────────────────────
+// -- 4. Avatar Customisation ---------------------------------------------------
 
 test.describe('Avatar Customisation', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
@@ -152,7 +152,7 @@ test.describe('Avatar Customisation', () => {
   });
 });
 
-// ── 5. World List ─────────────────────────────────────────────────────────────
+// -- 5. World List -------------------------------------------------------------
 
 test.describe('World List', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
@@ -202,7 +202,7 @@ test.describe('World List', () => {
   });
 });
 
-// ── 6. Avatar Save, Color Picker, Create World Form, Enter Loading, Pagination, Filter ──
+// -- 6. Avatar Save, Color Picker, Create World Form, Enter Loading, Pagination, Filter --
 
 test.describe('Avatar, World Creation and Filtering', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });

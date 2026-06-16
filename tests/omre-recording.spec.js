@@ -1,4 +1,4 @@
-import { test } from '@playwright/test';
+﻿import { test } from '@playwright/test';
 
 test('omre recorded flow', async ({ page }) => {
     await page.getByRole('textbox', { name: 'Password' }).click();
@@ -7,7 +7,7 @@ test('omre recorded flow', async ({ page }) => {
     await page.getByRole('button', { name: 'Log In' }).click();
     await page.locator('#radix-_r_3u_').click();
     await page.locator('html').click();
-    await page.goto('https://app.omre.ai/app/explore');
+    await page.goto('https://omre.ai/app/explore');
     await page.getByRole('tab', { name: 'Reels' }).click();
     await page.getByRole('button', { name: 'Later' }).click();
     await page.getByRole('link', { name: 'Shorts Shorts' }).click();
@@ -17,7 +17,7 @@ test('omre recorded flow', async ({ page }) => {
     await page.getByRole('link', { name: 'My Channel My Channel' }).click();
     await page.getByRole('link', { name: 'Social Post Share with your' }).click();
     await page.getByRole('button', { name: 'News News' }).click();
-    await page.goto('https://app.omre.ai/app/news/home');
+    await page.goto('https://omre.ai/app/news/home');
     await page.getByRole('button', { name: 'Mart Mart' }).click();
     await page.getByRole('button', { name: 'Games Games' }).click();
     await page.getByRole('button', { name: 'Meetings Meetings' }).click();
@@ -38,9 +38,9 @@ test('omre recorded flow', async ({ page }) => {
     await page.getByRole('button', { name: 'Join Community' }).first().click();
     await page.getByRole('button', { name: 'Social Social' }).click();
     await page.getByRole('link', { name: 'Weather Weather' }).click();
-    await page.goto('https://app.omre.ai/app/images');
+    await page.goto('https://omre.ai/app/images');
     await page.getByRole('link', { name: 'Friends Friends' }).click();
-    await page.goto('https://app.omre.ai/app/friends');
+    await page.goto('https://omre.ai/app/friends');
     await page.getByRole('button', { name: 'Messages' }).click();
     await page.getByRole('button', { name: 'System Toggle theme' }).click();
 });

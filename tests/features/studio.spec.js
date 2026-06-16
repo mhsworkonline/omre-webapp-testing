@@ -1,12 +1,12 @@
 /**
  * Studio Dashboard deep-dive tests
- * URL: https://app.omre.ai/app/videos/studio
+ * URL: https://omre.ai/app/videos/studio
  * Covers: page load, dashboard content, tabs, empty state, monetization, upload flow
  */
 import { test, expect } from '@playwright/test';
 
 const AUTH_FILE  = 'playwright/.auth/user.json';
-const MODULE_URL = 'https://app.omre.ai/app/videos/studio';
+const MODULE_URL = 'https://omre.ai/app/videos/studio';
 
 test.use({ storageState: AUTH_FILE });
 test.setTimeout(45000);
@@ -16,7 +16,7 @@ async function goStudio(page) {
   await page.waitForTimeout(2000);
 }
 
-// ── Page Load and Layout ──────────────────────────────────────────────────────
+// -- Page Load and Layout ------------------------------------------------------
 
 test.describe('TC-STUDIO: Page Load and Layout', () => {
   test.beforeEach(async ({ page }) => { await goStudio(page); });
@@ -43,13 +43,13 @@ test.describe('TC-STUDIO: Page Load and Layout', () => {
     await page.reload({ waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(2000);
     const appErrors = errors.filter(e =>
-      e.includes('TypeError') || e.includes('ReferenceError') || e.includes('app.omre.ai')
+      e.includes('TypeError') || e.includes('ReferenceError') || e.includes('omre.ai')
     );
     expect(appErrors).toHaveLength(0);
   });
 });
 
-// ── Dashboard Tabs ────────────────────────────────────────────────────────────
+// -- Dashboard Tabs ------------------------------------------------------------
 
 test.describe('TC-STUDIO: Dashboard Tabs', () => {
   test.beforeEach(async ({ page }) => { await goStudio(page); });
@@ -89,7 +89,7 @@ test.describe('TC-STUDIO: Dashboard Tabs', () => {
   });
 });
 
-// ── Empty State ───────────────────────────────────────────────────────────────
+// -- Empty State ---------------------------------------------------------------
 
 test.describe('TC-STUDIO: Empty State', () => {
   test.beforeEach(async ({ page }) => { await goStudio(page); });
@@ -100,7 +100,7 @@ test.describe('TC-STUDIO: Empty State', () => {
     await videosTab.click();
     await page.waitForTimeout(800);
     const hasVideos = await page.locator('a[href*="/app/videos/"]').first().isVisible({ timeout: 3000 }).catch(() => false);
-    if (hasVideos) { return; } // has content — skip empty state check
+    if (hasVideos) { return; } // has content � skip empty state check
     const empty = page.getByText(/no videos found|upload content|no content/i).first();
     const visible = await empty.isVisible({ timeout: 6000 }).catch(() => false);
     if (!visible) { test.skip(); return; }
@@ -121,7 +121,7 @@ test.describe('TC-STUDIO: Empty State', () => {
   });
 });
 
-// ── Monetization and Earnings ─────────────────────────────────────────────────
+// -- Monetization and Earnings -------------------------------------------------
 
 test.describe('TC-STUDIO: Monetization and Earnings', () => {
   test.beforeEach(async ({ page }) => { await goStudio(page); });
@@ -141,7 +141,7 @@ test.describe('TC-STUDIO: Monetization and Earnings', () => {
   });
 });
 
-// ── Upload Flow ───────────────────────────────────────────────────────────────
+// -- Upload Flow ---------------------------------------------------------------
 
 test.describe('TC-STUDIO: Upload Flow', () => {
   test.beforeEach(async ({ page }) => { await goStudio(page); });
@@ -173,7 +173,7 @@ test.describe('TC-STUDIO: Upload Flow', () => {
   });
 });
 
-// ── Monetization Settings Controls ───────────────────────────────────────────
+// -- Monetization Settings Controls -------------------------------------------
 
 test.describe('TC-STUDIO: Monetization Settings Controls', () => {
   test.beforeEach(async ({ page }) => { await goStudio(page); });
@@ -196,7 +196,7 @@ test.describe('TC-STUDIO: Monetization Settings Controls', () => {
   });
 });
 
-// ── Upload Validation ─────────────────────────────────────────────────────────
+// -- Upload Validation ---------------------------------------------------------
 
 test.describe('TC-STUDIO: Upload Flow Validation', () => {
   test.beforeEach(async ({ page }) => { await goStudio(page); });
@@ -218,9 +218,9 @@ test.describe('TC-STUDIO: Upload Flow Validation', () => {
     expect(formatVisible || fileInputVisible).toBe(true);
   });
 
-  test.skip('TC-STUDIO-18: untestable: upload file size validation — attaching a real oversized file requires filesystem access, which is not available in headless test environments', () => {});
+  test.skip('TC-STUDIO-18: untestable: upload file size validation � attaching a real oversized file requires filesystem access, which is not available in headless test environments', () => {});
 
-  test.skip('TC-STUDIO-19: untestable: upload progress tracking — progress indicator only appears during an active file upload, which requires a real file to be uploaded', () => {});
+  test.skip('TC-STUDIO-19: untestable: upload progress tracking � progress indicator only appears during an active file upload, which requires a real file to be uploaded', () => {});
 
-  test.skip('TC-STUDIO-20: untestable: upload completion and video appearing in list — requires a real file upload to complete successfully, which is not testable in headless without actual media files', () => {});
+  test.skip('TC-STUDIO-20: untestable: upload completion and video appearing in list � requires a real file upload to complete successfully, which is not testable in headless without actual media files', () => {});
 });

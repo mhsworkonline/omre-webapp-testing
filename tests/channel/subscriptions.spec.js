@@ -6,7 +6,7 @@
 import { test, expect } from '@playwright/test';
 
 const AUTH_FILE  = 'playwright/.auth/user.json';
-const MODULE_URL = 'https://app.omre.ai/app/subscriptions';
+const MODULE_URL = 'https://omre.ai/app/subscriptions';
 
 test.use({ storageState: AUTH_FILE });
 test.setTimeout(45000);
@@ -16,9 +16,9 @@ async function goSubscriptions(page) {
   await page.waitForTimeout(1500);
 }
 
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 // 1. Page Load and Layout
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 test.describe('TC-SUBS: Page Load and Layout', () => {
   test.beforeEach(async ({ page }) => { await goSubscriptions(page); });
 
@@ -43,9 +43,9 @@ test.describe('TC-SUBS: Page Load and Layout', () => {
   });
 });
 
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 // 2. Subscriptions List
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 test.describe('TC-SUBS: Subscriptions List', () => {
   test.beforeEach(async ({ page }) => { await goSubscriptions(page); });
 
@@ -103,16 +103,16 @@ test.describe('TC-SUBS: Subscriptions List', () => {
   });
 });
 
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 // 3. Empty State
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 test.describe('TC-SUBS: Empty State', () => {
   test.beforeEach(async ({ page }) => { await goSubscriptions(page); });
 
   test('TC-SUBS-08: Given I am authenticated and on the page, When I perform the action, Then empty state message is meaningful when no subscriptions', async ({ page }) => {
     const cards = page.locator('ul li, article, [role="listitem"]');
     const count = await cards.count();
-    if (count > 0) return; // has subscriptions — skip
+    if (count > 0) return; // has subscriptions � skip
 
     const emptyMsg = page.locator('body').getByText(/no subscription|not subscribed|no channel|discover|explore/i).first();
     if (!(await emptyMsg.isVisible({ timeout: 8000 }).catch(() => false))) { test.skip(); return; }
@@ -120,9 +120,9 @@ test.describe('TC-SUBS: Empty State', () => {
   });
 });
 
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 // 4. Unsubscribe
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 test.describe('TC-SUBS: Unsubscribe Flow', () => {
   test.beforeEach(async ({ page }) => { await goSubscriptions(page); });
 
@@ -171,7 +171,7 @@ test.describe('TC-SUBS: Unsubscribe Flow', () => {
       const cancelVisible = await cancelBtn.isVisible({ timeout: 3000 }).catch(() => false);
       if (cancelVisible) await cancelBtn.evaluate(el => el.click());
     } else {
-      // Instant removal — count may decrease or toast appears
+      // Instant removal � count may decrease or toast appears
       const toast = page.locator('[role="status"], [role="alert"]').first();
       const toastVisible = await toast.isVisible({ timeout: 3000 }).catch(() => false);
       expect(toastVisible || true).toBeTruthy();
@@ -179,9 +179,9 @@ test.describe('TC-SUBS: Unsubscribe Flow', () => {
   });
 });
 
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 // 5. Notification Bell
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 test.describe('TC-SUBS: Notification Bell', () => {
   test.beforeEach(async ({ page }) => { await goSubscriptions(page); });
 
@@ -242,9 +242,9 @@ test.describe('TC-SUBS: Notification Bell', () => {
   });
 });
 
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 // 6. Feed and Sort
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 test.describe('TC-SUBS: Feed and Sort Controls', () => {
   test.beforeEach(async ({ page }) => { await goSubscriptions(page); });
 
@@ -296,9 +296,9 @@ test.describe('TC-SUBS: Feed and Sort Controls', () => {
   });
 });
 
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 // 7. Search and Discover
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 test.describe('TC-SUBS: Search and Discover', () => {
   test.beforeEach(async ({ page }) => { await goSubscriptions(page); });
 

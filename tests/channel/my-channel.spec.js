@@ -6,7 +6,7 @@
 import { test, expect } from '@playwright/test';
 
 const AUTH_FILE  = 'playwright/.auth/user.json';
-const MODULE_URL = 'https://app.omre.ai/app/channel';
+const MODULE_URL = 'https://omre.ai/app/channel';
 
 test.use({ storageState: AUTH_FILE });
 test.setTimeout(45000);
@@ -16,9 +16,9 @@ async function goChannel(page) {
   await page.waitForTimeout(1500);
 }
 
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 // 1. Page Load and Layout
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 test.describe('TC-CHANNEL: Page Load and Layout', () => {
   test.beforeEach(async ({ page }) => { await goChannel(page); });
 
@@ -37,9 +37,9 @@ test.describe('TC-CHANNEL: Page Load and Layout', () => {
   });
 });
 
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 // 2. Channel Branding (Banner / Avatar)
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 test.describe('TC-CHANNEL: Channel Branding', () => {
   test.beforeEach(async ({ page }) => { await goChannel(page); });
 
@@ -90,9 +90,9 @@ test.describe('TC-CHANNEL: Channel Branding', () => {
   });
 });
 
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 // 3. Video / Content Grid
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 test.describe('TC-CHANNEL: Video Content Grid', () => {
   test.beforeEach(async ({ page }) => { await goChannel(page); });
 
@@ -110,7 +110,7 @@ test.describe('TC-CHANNEL: Video Content Grid', () => {
     const thumb = page.locator('main article img, main li img, main [role="listitem"] img').first();
     const visible = await thumb.isVisible({ timeout: 8000 }).catch(() => false);
     if (!visible) {
-      // Channel may be empty — that's acceptable
+      // Channel may be empty � that's acceptable
       const emptyState = page.locator('main').getByText(/no video|upload|get started|empty/i).first();
       const emptyVisible = await emptyState.isVisible({ timeout: 4000 }).catch(() => false);
       expect(emptyVisible || !visible).toBeTruthy();
@@ -128,7 +128,7 @@ test.describe('TC-CHANNEL: Video Content Grid', () => {
       const title = firstCard.locator('h2, h3, h4, p, span').first();
       await expect(title).toBeVisible({ timeout: 6000 });
     } else {
-      // Empty channel — skip gracefully
+      // Empty channel � skip gracefully
       expect(count).toBeGreaterThanOrEqual(0);
     }
   });
@@ -149,9 +149,9 @@ test.describe('TC-CHANNEL: Video Content Grid', () => {
   });
 });
 
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 // 4. Upload Video
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 test.describe('TC-CHANNEL: Upload Video', () => {
   test.beforeEach(async ({ page }) => { await goChannel(page); });
 
@@ -198,9 +198,9 @@ test.describe('TC-CHANNEL: Upload Video', () => {
   });
 });
 
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 // 5. Video Detail
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 test.describe('TC-CHANNEL: Video Detail', () => {
   test.beforeEach(async ({ page }) => { await goChannel(page); });
 
@@ -264,9 +264,9 @@ test.describe('TC-CHANNEL: Video Detail', () => {
   });
 });
 
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 // 6. Channel Tabs
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 test.describe('TC-CHANNEL: Channel Tabs', () => {
   test.beforeEach(async ({ page }) => { await goChannel(page); });
 
@@ -313,9 +313,9 @@ test.describe('TC-CHANNEL: Channel Tabs', () => {
   });
 });
 
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 // 7. Edit Channel
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 test.describe('TC-CHANNEL: Edit Channel', () => {
   test.beforeEach(async ({ page }) => { await goChannel(page); });
 
@@ -369,9 +369,9 @@ test.describe('TC-CHANNEL: Edit Channel', () => {
   });
 });
 
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 // 8. Sort and Search
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 test.describe('TC-CHANNEL: Sort and Search Controls', () => {
   test.beforeEach(async ({ page }) => { await goChannel(page); });
 
@@ -384,7 +384,7 @@ test.describe('TC-CHANNEL: Sort and Search Controls', () => {
     if (visible) {
       await expect(sortControl).toBeVisible();
     } else {
-      // Sort may only appear when there are videos — mark as pass
+      // Sort may only appear when there are videos � mark as pass
       expect(true).toBeTruthy();
     }
   });
@@ -422,15 +422,15 @@ test.describe('TC-CHANNEL: Sort and Search Controls', () => {
       const val = await searchInput.inputValue();
       expect(val).toBe('test');
     } else {
-      // Search may not be present on channel page — pass gracefully
+      // Search may not be present on channel page � pass gracefully
       expect(true).toBeTruthy();
     }
   });
 });
 
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 // 9. Analytics
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 test.describe('TC-CHANNEL: Analytics', () => {
   test.beforeEach(async ({ page }) => { await goChannel(page); });
 
@@ -443,7 +443,7 @@ test.describe('TC-CHANNEL: Analytics', () => {
     if (visible) {
       await expect(analyticsTab).toBeVisible();
     } else {
-      // Analytics may be under channel settings — pass gracefully
+      // Analytics may be under channel settings � pass gracefully
       expect(true).toBeTruthy();
     }
   });
@@ -481,9 +481,9 @@ test.describe('TC-CHANNEL: Analytics', () => {
   });
 });
 
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 // 10. Playlists
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 test.describe('TC-CHANNEL: Playlists', () => {
   test.beforeEach(async ({ page }) => { await goChannel(page); });
 
@@ -562,9 +562,9 @@ test.describe('TC-CHANNEL: Playlists', () => {
   });
 });
 
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 // 11. Community Posts
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 test.describe('TC-CHANNEL: Community Posts', () => {
   test.beforeEach(async ({ page }) => { await goChannel(page); });
 
@@ -617,9 +617,9 @@ test.describe('TC-CHANNEL: Community Posts', () => {
   });
 });
 
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 // 12. Monetization
-// ─────────────────────────────────────────────
+// ---------------------------------------------
 test.describe('TC-CHANNEL: Monetization', () => {
   test.beforeEach(async ({ page }) => { await goChannel(page); });
 

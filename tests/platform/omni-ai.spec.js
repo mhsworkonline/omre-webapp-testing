@@ -1,5 +1,5 @@
-﻿/**
- * Omni AI module — deep-dive tests
+/**
+ * Omni AI module � deep-dive tests
  * Covers: page load & layout, AI tool tiles/options render, tool selection,
  *         input field, generate/submit action, output area, settings,
  *         clear/reset, history, error-free load
@@ -8,7 +8,7 @@
 import { test, expect } from '@playwright/test';
 
 const AUTH_FILE  = 'playwright/.auth/user.json';
-const MODULE_URL = 'https://app.omre.ai/app/omni-ai';
+const MODULE_URL = 'https://omre.ai/app/omni-ai';
 
 test.use({ storageState: AUTH_FILE });
 test.setTimeout(45000);
@@ -18,7 +18,7 @@ async function goModule(page) {
   await page.waitForTimeout(1500);
 }
 
-// ── 1. Page Load and Layout ───────────────────────────────────────────────────
+// -- 1. Page Load and Layout ---------------------------------------------------
 
 test.describe('Page Load and Layout', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
@@ -50,13 +50,13 @@ test.describe('Page Load and Layout', () => {
     await page.reload({ waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(1500);
     const appErrors = errors.filter(e =>
-      e.includes('TypeError') || e.includes('ReferenceError') || e.includes('app.omre.ai')
+      e.includes('TypeError') || e.includes('ReferenceError') || e.includes('omre.ai')
     );
     expect(appErrors).toHaveLength(0);
   });
 });
 
-// ── 2. AI Tool Tiles and Options ──────────────────────────────────────────────
+// -- 2. AI Tool Tiles and Options ----------------------------------------------
 
 test.describe('AI Tool Tiles and Options', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
@@ -93,7 +93,7 @@ test.describe('AI Tool Tiles and Options', () => {
   });
 });
 
-// ── 3. Tool Selection ─────────────────────────────────────────────────────────
+// -- 3. Tool Selection ---------------------------------------------------------
 
 test.describe('Tool Selection', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
@@ -132,7 +132,7 @@ test.describe('Tool Selection', () => {
   });
 });
 
-// ── 4. Input Field and Generate Action ────────────────────────────────────────
+// -- 4. Input Field and Generate Action ----------------------------------------
 
 test.describe('Input Field and Generate Action', () => {
   test.beforeEach(async ({ page }) => {
@@ -176,7 +176,7 @@ test.describe('Input Field and Generate Action', () => {
   });
 });
 
-// ── 5. Settings, Clear, and History ──────────────────────────────────────────
+// -- 5. Settings, Clear, and History ------------------------------------------
 
 test.describe('Settings, Clear, and History', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
@@ -232,7 +232,7 @@ test.describe('Settings, Clear, and History', () => {
   });
 });
 
-// ── 6. Generate, Empty Prompt, Copy Output, History Clear, Model Switch ────────
+// -- 6. Generate, Empty Prompt, Copy Output, History Clear, Model Switch --------
 
 test.describe('Generate Action, Validation and Model Switching', () => {
   test.beforeEach(async ({ page }) => {
@@ -249,7 +249,7 @@ test.describe('Generate Action, Validation and Model Switching', () => {
     const input = page.locator('textarea, [contenteditable="true"], input[type="text"]').first();
     const visible = await input.isVisible({ timeout: 8000 }).catch(() => false);
     if (!visible) { test.skip(); return; }
-    test.skip(); return; // AI generation output requires live API response — conditionally skip
+    test.skip(); return; // AI generation output requires live API response � conditionally skip
     const generateBtn = page.locator('button').filter({ hasText: /generate|submit|send|create|ask/i }).first();
     const btnVisible = await generateBtn.isVisible({ timeout: 5000 }).catch(() => false);
     if (!btnVisible) { test.skip(); return; }
@@ -263,7 +263,7 @@ test.describe('Generate Action, Validation and Model Switching', () => {
     expect(typeof outputVisible).toBe('boolean');
   });
 
-  test.skip('TC-OMNIAI-26: untestable: error state when generation fails — requires backend to be down or quota exceeded, not reproducible in CI', () => {});
+  test.skip('TC-OMNIAI-26: untestable: error state when generation fails � requires backend to be down or quota exceeded, not reproducible in CI', () => {});
 
   test('TC-OMNIAI-27: Given the prompt input is empty, When I click Generate, Then the button is disabled or an error/validation message appears', async ({ page }) => {
     const input = page.locator('textarea, [contenteditable="true"], input[type="text"]').first();

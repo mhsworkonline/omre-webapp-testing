@@ -10,9 +10,9 @@ const AUTH_FILE = 'playwright/.auth/user.json';
 
 // Try primary URL; tests fall back gracefully if on alternate path
 const CANDIDATE_URLS = [
-  'https://app.omre.ai/app/ai-studio',
-  'https://app.omre.ai/app/studio',
-  'https://app.omre.ai/app/omni-ai',
+  'https://omre.ai/app/ai-studio',
+  'https://omre.ai/app/studio',
+  'https://omre.ai/app/omni-ai',
 ];
 
 test.use({ storageState: AUTH_FILE });
@@ -30,7 +30,7 @@ async function goAIStudio(page) {
   }
 }
 
-// ─── 1. Page Load and Layout ────────────────────────────────────────────────
+// --- 1. Page Load and Layout ------------------------------------------------
 test.describe('TC-AI: Page Load and Layout', () => {
   test.beforeEach(async ({ page }) => { await goAIStudio(page); });
 
@@ -47,7 +47,7 @@ test.describe('TC-AI: Page Load and Layout', () => {
     const main = page.locator('main, [role="main"], #main, [class*="content"], [class*="main"]').first();
     const visible = await main.isVisible({ timeout: 8000 }).catch(() => false);
     if (!visible) {
-      // Page rendered without a <main> element — verify any content div loaded
+      // Page rendered without a <main> element � verify any content div loaded
       const body = page.locator('body > div:not([hidden])').first();
       const bodyVisible = await body.isVisible({ timeout: 4000 }).catch(() => false);
       if (!bodyVisible) { test.skip(); return; }
@@ -58,7 +58,7 @@ test.describe('TC-AI: Page Load and Layout', () => {
   });
 
   test('TC-AI-04: Given I am authenticated and on the page, When I perform the action, Then AI Studio landing renders tools or option tiles', async ({ page }) => {
-    // Expect visible cards, buttons or list items (section removed — matches hidden notifications)
+    // Expect visible cards, buttons or list items (section removed � matches hidden notifications)
     const tools = page.locator('article, li, [role="button"], button').first();
     const visible = await tools.isVisible({ timeout: 10000 }).catch(() => false);
     if (!visible) { test.skip(); return; }
@@ -66,7 +66,7 @@ test.describe('TC-AI: Page Load and Layout', () => {
   });
 });
 
-// ─── 2. Text Generation ──────────────────────────────────────────────────────
+// --- 2. Text Generation ------------------------------------------------------
 test.describe('TC-AI: Text Generation Tool', () => {
   test.beforeEach(async ({ page }) => {
     await goAIStudio(page);
@@ -132,7 +132,7 @@ test.describe('TC-AI: Text Generation Tool', () => {
   });
 });
 
-// ─── 3. Image Generation ─────────────────────────────────────────────────────
+// --- 3. Image Generation -----------------------------------------------------
 test.describe('TC-AI: Image Generation Tool', () => {
   test.beforeEach(async ({ page }) => {
     await goAIStudio(page);
@@ -166,12 +166,12 @@ test.describe('TC-AI: Image Generation Tool', () => {
   test('TC-AI-14: Given I am authenticated and on the page, When I perform the action, Then generated image placeholder or container exists', async ({ page }) => {
     const imgContainer = page.locator('[aria-label*="generated" i], [aria-label*="result" i], main img, canvas').first();
     const count = await imgContainer.count();
-    // Container may be empty before generation — just check it exists in DOM
+    // Container may be empty before generation � just check it exists in DOM
     expect(count >= 0).toBeTruthy();
   });
 });
 
-// ─── 4. Other AI Tools and Settings ─────────────────────────────────────────
+// --- 4. Other AI Tools and Settings -----------------------------------------
 test.describe('TC-AI: Code Generation and Tool Settings', () => {
   test.beforeEach(async ({ page }) => { await goAIStudio(page); });
 
@@ -231,7 +231,7 @@ test.describe('TC-AI: Code Generation and Tool Settings', () => {
   });
 });
 
-// ─── 5. History ──────────────────────────────────────────────────────────────
+// --- 5. History --------------------------------------------------------------
 test.describe('TC-AI: Generation History', () => {
   test.beforeEach(async ({ page }) => { await goAIStudio(page); });
 
@@ -251,7 +251,7 @@ test.describe('TC-AI: Generation History', () => {
     if (!(await historySection.isVisible({ timeout: 6000 }).catch(() => false))) return;
     const items = historySection.locator('li, article, [role="listitem"]');
     const count = await items.count();
-    // Either items exist, or history is empty — both are valid states
+    // Either items exist, or history is empty � both are valid states
     expect(count >= 0).toBeTruthy();
   });
 
@@ -278,7 +278,7 @@ test.describe('TC-AI: Generation History', () => {
   });
 });
 
-// ─── 6. Prompt Templates and Presets ─────────────────────────────────────────
+// --- 6. Prompt Templates and Presets -----------------------------------------
 test.describe('TC-AI: Prompt Templates and Presets', () => {
   test.beforeEach(async ({ page }) => { await goAIStudio(page); });
 
@@ -306,7 +306,7 @@ test.describe('TC-AI: Prompt Templates and Presets', () => {
   });
 });
 
-// ─── 7. Download / Export Generated Text ─────────────────────────────────────
+// --- 7. Download / Export Generated Text -------------------------------------
 test.describe('TC-AI: Download and Export Generated Text', () => {
   test.beforeEach(async ({ page }) => { await goAIStudio(page); });
 
@@ -327,7 +327,7 @@ test.describe('TC-AI: Download and Export Generated Text', () => {
   });
 });
 
-// ─── 8. AI Chat Mode Tab ──────────────────────────────────────────────────────
+// --- 8. AI Chat Mode Tab ------------------------------------------------------
 test.describe('TC-AI: AI Chat Mode Tab', () => {
   test.beforeEach(async ({ page }) => { await goAIStudio(page); });
 
@@ -340,7 +340,7 @@ test.describe('TC-AI: AI Chat Mode Tab', () => {
   });
 });
 
-// ─── 9. Multiple Model Selector ───────────────────────────────────────────────
+// --- 9. Multiple Model Selector -----------------------------------------------
 test.describe('TC-AI: Multiple Model Selector', () => {
   test.beforeEach(async ({ page }) => { await goAIStudio(page); });
 
@@ -362,7 +362,7 @@ test.describe('TC-AI: Multiple Model Selector', () => {
   });
 });
 
-// ─── 10. Rate Limit / Quota Indicator ────────────────────────────────────────
+// --- 10. Rate Limit / Quota Indicator ----------------------------------------
 test.describe('TC-AI: Rate Limit and Quota Indicator', () => {
   test.beforeEach(async ({ page }) => { await goAIStudio(page); });
 
@@ -375,7 +375,7 @@ test.describe('TC-AI: Rate Limit and Quota Indicator', () => {
   });
 });
 
-// ─── 11. Save Generation to History ──────────────────────────────────────────
+// --- 11. Save Generation to History ------------------------------------------
 test.describe('TC-AI: Save Generation to History', () => {
   test.beforeEach(async ({ page }) => { await goAIStudio(page); });
 
@@ -396,7 +396,7 @@ test.describe('TC-AI: Save Generation to History', () => {
   });
 });
 
-// ─── 12. Generation Output Validation ────────────────────────────────────────
+// --- 12. Generation Output Validation ----------------------------------------
 test.describe('TC-AI: Generation Output and Validation', () => {
   test.beforeEach(async ({ page }) => {
     await goAIStudio(page);
@@ -453,7 +453,7 @@ test.describe('TC-AI: Generation Output and Validation', () => {
   });
 });
 
-// ─── 13. Image Generation Output ─────────────────────────────────────────────
+// --- 13. Image Generation Output ---------------------------------------------
 test.describe('TC-AI: Image Generation Output', () => {
   test.beforeEach(async ({ page }) => {
     await goAIStudio(page);
@@ -477,7 +477,7 @@ test.describe('TC-AI: Image Generation Output', () => {
   });
 });
 
-// ─── 14. Code Generation Output ──────────────────────────────────────────────
+// --- 14. Code Generation Output ----------------------------------------------
 test.describe('TC-AI: Code Generation Output', () => {
   test.beforeEach(async ({ page }) => {
     await goAIStudio(page);
@@ -504,7 +504,7 @@ test.describe('TC-AI: Code Generation Output', () => {
   });
 });
 
-// ─── 15. History Delete / Clear ──────────────────────────────────────────────
+// --- 15. History Delete / Clear ----------------------------------------------
 test.describe('TC-AI: History Delete and Clear', () => {
   test.beforeEach(async ({ page }) => { await goAIStudio(page); });
 
@@ -544,10 +544,10 @@ test.describe('TC-AI: History Delete and Clear', () => {
     await expect(page.locator('main').first()).toBeVisible();
   });
 
-  test.skip('TC-AI-41: untestable: history persistence across sessions — session storage and server-side state cannot be reliably verified in CI without controlling prior generation actions', () => {});
+  test.skip('TC-AI-41: untestable: history persistence across sessions � session storage and server-side state cannot be reliably verified in CI without controlling prior generation actions', () => {});
 });
 
-// ─── 16. Prompt Template Loading ─────────────────────────────────────────────
+// --- 16. Prompt Template Loading ---------------------------------------------
 test.describe('TC-AI: Prompt Template Loading and Substitution', () => {
   test.beforeEach(async ({ page }) => { await goAIStudio(page); });
 
@@ -574,14 +574,14 @@ test.describe('TC-AI: Prompt Template Loading and Substitution', () => {
   });
 });
 
-// ─── 17. Download / Export File ──────────────────────────────────────────────
+// --- 17. Download / Export File ----------------------------------------------
 test.describe('TC-AI: Download and Export File', () => {
   test.beforeEach(async ({ page }) => { await goAIStudio(page); });
 
-  test.skip('TC-AI-43: untestable: downloaded file format and content verification — file system access and download destination are not accessible in Playwright without special configuration that is unavailable in CI', () => {});
+  test.skip('TC-AI-43: untestable: downloaded file format and content verification � file system access and download destination are not accessible in Playwright without special configuration that is unavailable in CI', () => {});
 });
 
-// ─── 18. Chat Mode Interface ──────────────────────────────────────────────────
+// --- 18. Chat Mode Interface --------------------------------------------------
 test.describe('TC-AI: Chat Mode Interface Render', () => {
   test.beforeEach(async ({ page }) => { await goAIStudio(page); });
 

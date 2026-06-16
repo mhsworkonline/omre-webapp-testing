@@ -1,5 +1,5 @@
 /**
- * Messages module — deep-dive
+ * Messages module � deep-dive
  * Covers: page layout, conversation list, opening conversations, sending messages,
  *         message input toolbar, message actions, search conversations, search within chat,
  *         new conversation, unread state, message history, group chats (create/manage/leave),
@@ -8,7 +8,7 @@
 import { test, expect } from '@playwright/test';
 
 const AUTH_FILE = 'playwright/.auth/user.json';
-const MSG_URL   = 'https://app.omre.ai/app/messages';
+const MSG_URL   = 'https://omre.ai/app/messages';
 
 test.use({ storageState: AUTH_FILE });
 test.setTimeout(45000);
@@ -29,7 +29,7 @@ async function openFirstConversation(page) {
   return true;
 }
 
-// ── Page Load & Layout ─────────────────────────────────────────────────────────
+// -- Page Load & Layout ---------------------------------------------------------
 
 test.describe('Page Load and Layout', () => {
   test.beforeEach(async ({ page }) => { await goMessages(page); });
@@ -64,13 +64,13 @@ test.describe('Page Load and Layout', () => {
     await page.reload({ waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(1500);
     const appErrors = errors.filter(e =>
-      e.includes('TypeError') || e.includes('ReferenceError') || e.includes('app.omre.ai')
+      e.includes('TypeError') || e.includes('ReferenceError') || e.includes('omre.ai')
     );
     expect(appErrors).toHaveLength(0);
   });
 });
 
-// ── Conversation List ──────────────────────────────────────────────────────────
+// -- Conversation List ----------------------------------------------------------
 
 test.describe('Conversation List', () => {
   test.beforeEach(async ({ page }) => { await goMessages(page); });
@@ -111,7 +111,7 @@ test.describe('Conversation List', () => {
     // Unread items typically have a bold name or an unread dot badge
     const unreadBadge = page.locator('[aria-label*="unread" i], [data-unread="true"]').first();
     const boldName    = page.locator('[role="listitem"] strong, [role="listitem"] b').first();
-    // Either an unread indicator exists, or all convos are read — both valid
+    // Either an unread indicator exists, or all convos are read � both valid
     expect(page.isClosed()).toBe(false);
   });
 
@@ -133,7 +133,7 @@ test.describe('Conversation List', () => {
     await search.click();
     await page.waitForTimeout(600);
 
-    // After click, an editable input may appear — prefer it; fall back to keyboard.type
+    // After click, an editable input may appear � prefer it; fall back to keyboard.type
     const editable = page.locator(
       'input[placeholder*="search" i]:not([readonly]), input[type="search"]:not([readonly])'
     ).first();
@@ -169,7 +169,7 @@ test.describe('Conversation List', () => {
   });
 });
 
-// ── Opening a Conversation ─────────────────────────────────────────────────────
+// -- Opening a Conversation -----------------------------------------------------
 
 test.describe('Opening a Conversation', () => {
   test.beforeEach(async ({ page }) => { await goMessages(page); });
@@ -238,12 +238,12 @@ test.describe('Opening a Conversation', () => {
     if (await online.isVisible({ timeout: 3000 }).catch(() => false)) {
       await expect(online).toBeVisible();
     }
-    // Optional feature — passes either way
+    // Optional feature � passes either way
     expect(page.isClosed()).toBe(false);
   });
 });
 
-// ── Sending Messages ───────────────────────────────────────────────────────────
+// -- Sending Messages -----------------------------------------------------------
 
 test.describe('Sending Messages', () => {
   test.beforeEach(async ({ page }) => {
@@ -343,7 +343,7 @@ test.describe('Sending Messages', () => {
   });
 });
 
-// ── Message Input Toolbar ──────────────────────────────────────────────────────
+// -- Message Input Toolbar ------------------------------------------------------
 
 test.describe('Message Input Toolbar', () => {
   test.beforeEach(async ({ page }) => {
@@ -352,7 +352,7 @@ test.describe('Message Input Toolbar', () => {
   });
 
   test('TC-MSG-27: Given I am authenticated and on the page, When I perform the action, Then emoji button is present in the message input area', async ({ page }) => {
-    const emojiBtn = page.locator('[aria-label*="emoji" i], button:has-text("😊")').first();
+    const emojiBtn = page.locator('[aria-label*="emoji" i], button:has-text("??")').first();
     const iconBtn  = page.locator('main footer button:has(svg), main > div button:has(svg)').first();
     if (await emojiBtn.isVisible({ timeout: 5000 }).catch(() => false)) {
       await expect(emojiBtn).toBeVisible();
@@ -398,7 +398,7 @@ test.describe('Message Input Toolbar', () => {
   });
 });
 
-// ── Message Actions ────────────────────────────────────────────────────────────
+// -- Message Actions ------------------------------------------------------------
 
 test.describe('Message Actions', () => {
   test.beforeEach(async ({ page }) => {
@@ -469,7 +469,7 @@ test.describe('Message Actions', () => {
   });
 });
 
-// ── New Conversation / Compose ─────────────────────────────────────────────────
+// -- New Conversation / Compose -------------------------------------------------
 
 test.describe('New Conversation', () => {
   test.beforeEach(async ({ page }) => { await goMessages(page); });
@@ -523,7 +523,7 @@ test.describe('New Conversation', () => {
   });
 });
 
-// ── Unread State ───────────────────────────────────────────────────────────────
+// -- Unread State ---------------------------------------------------------------
 
 test.describe('Unread State', () => {
   test.beforeEach(async ({ page }) => { await goMessages(page); });
@@ -550,19 +550,19 @@ test.describe('Unread State', () => {
   });
 
   test('TC-MSG-40: Given I am on the messages nav link, When I view it, Then it shows unread badge on home page', async ({ page }) => {
-    await page.goto('https://app.omre.ai/app/home', { waitUntil: 'domcontentloaded' });
+    await page.goto('https://omre.ai/app/home', { waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(1500);
     const msgLink = page.locator('a[href*="/app/messages"]').first();
     if (await msgLink.isVisible({ timeout: 5000 }).catch(() => false)) {
       // Badge is a child element with a number
       const badge = msgLink.locator('span, [aria-label*="unread" i]').first();
-      // Whether badge exists or not depends on unread count — page must be alive
+      // Whether badge exists or not depends on unread count � page must be alive
       expect(page.isClosed()).toBe(false);
     }
   });
 });
 
-// ── Message History & Pagination ───────────────────────────────────────────────
+// -- Message History & Pagination -----------------------------------------------
 
 test.describe('Message History and Pagination', () => {
   test.beforeEach(async ({ page }) => {
@@ -598,7 +598,7 @@ test.describe('Message History and Pagination', () => {
   });
 });
 
-// ── Group Conversations ────────────────────────────────────────────────────────
+// -- Group Conversations --------------------------------------------------------
 
 test.describe('Group Conversations', () => {
   test.beforeEach(async ({ page }) => { await goMessages(page); });
@@ -630,7 +630,7 @@ test.describe('Group Conversations', () => {
   });
 });
 
-// ── Voice & Video Calls ────────────────────────────────────────────────────────
+// -- Voice & Video Calls --------------------------------------------------------
 
 test.describe('Voice and Video Calls', () => {
   test.beforeEach(async ({ page }) => {
@@ -645,7 +645,7 @@ test.describe('Voice and Video Calls', () => {
     if (await voiceBtn.isVisible({ timeout: 6000 }).catch(() => false)) {
       await expect(voiceBtn).toBeEnabled();
     }
-    // Feature may not be present for all conversation types — test passes either way
+    // Feature may not be present for all conversation types � test passes either way
     expect(page.isClosed()).toBe(false);
   });
 
@@ -771,7 +771,7 @@ test.describe('Voice and Video Calls', () => {
   });
 });
 
-// ── Search Within a Conversation ───────────────────────────────────────────────
+// -- Search Within a Conversation -----------------------------------------------
 
 test.describe('Search Within Conversation', () => {
   test.beforeEach(async ({ page }) => {
@@ -831,7 +831,7 @@ test.describe('Search Within Conversation', () => {
     await searchInput.fill('test');
     await page.waitForTimeout(400);
 
-    // Clear via keyboard events — fill('') bypasses React onChange; Ctrl+A + Delete fires proper events
+    // Clear via keyboard events � fill('') bypasses React onChange; Ctrl+A + Delete fires proper events
     await searchInput.click();
     await page.keyboard.press('Control+a');
     await page.keyboard.press('Delete');
@@ -854,7 +854,7 @@ test.describe('Search Within Conversation', () => {
   });
 });
 
-// ── Group Chat ─────────────────────────────────────────────────────────────────
+// -- Group Chat -----------------------------------------------------------------
 
 test.describe('Group Chat', () => {
   test.beforeEach(async ({ page }) => { await goMessages(page); });
@@ -1006,7 +1006,7 @@ test.describe('Group Chat', () => {
   });
 });
 
-// ── New Community ──────────────────────────────────────────────────────────────
+// -- New Community --------------------------------------------------------------
 
 test.describe('New Community', () => {
   test.beforeEach(async ({ page }) => { await goMessages(page); });
@@ -1167,7 +1167,7 @@ test.describe('New Community', () => {
   });
 });
 
-// ── Conversation List Context Menu ─────────────────────────────────────────────
+// -- Conversation List Context Menu ---------------------------------------------
 // The 3-dot / long-press menu on a conversation row in the list
 // Options: Archive, Mute notifications, Pin chat, Mark as unread,
 //          Add to favourites, Lock chat, Block, Clear chat, Delete chat
@@ -1332,7 +1332,7 @@ test.describe('Conversation List Context Menu', () => {
   });
 });
 
-// ── Attachment Menu ────────────────────────────────────────────────────────────
+// -- Attachment Menu ------------------------------------------------------------
 // The + button in the message input bar reveals:
 // Gallery | Audio | Poll | Location | Event | Document
 
@@ -1497,7 +1497,7 @@ test.describe('Attachment Menu', () => {
   });
 });
 
-// ── In-Chat Header Menu ────────────────────────────────────────────────────────
+// -- In-Chat Header Menu --------------------------------------------------------
 // The 3-dot menu inside an open conversation header
 // Options: View profile, Shared media, Mute notifications, Disappearing messages,
 //          Lock chat, Add to favorites, Search in conversation, Select messages,
@@ -1725,7 +1725,7 @@ test.describe('In-Chat Header Menu', () => {
   });
 });
 
-// ── Message Reactions ──────────────────────────────────────────────────────────
+// -- Message Reactions ----------------------------------------------------------
 // Hovering/long-pressing a message bubble reveals an emoji reaction strip
 
 test.describe('Message Reactions', () => {
@@ -1836,7 +1836,7 @@ test.describe('Message Reactions', () => {
   });
 });
 
-// ── Reply to a Message ─────────────────────────────────────────────────────────
+// -- Reply to a Message ---------------------------------------------------------
 // Hovering a bubble reveals a Reply action; selecting it shows a quoted-reply preview above the input
 
 test.describe('Reply to a Message', () => {
@@ -1971,7 +1971,7 @@ test.describe('Reply to a Message', () => {
   });
 });
 
-// ── Forward, Copy and Star a Message ──────────────────────────────────────────
+// -- Forward, Copy and Star a Message ------------------------------------------
 
 test.describe('Forward, Copy and Star a Message', () => {
   test.beforeEach(async ({ page }) => {
@@ -2108,7 +2108,7 @@ test.describe('Forward, Copy and Star a Message', () => {
   });
 });
 
-// ── In-Chat Visual States ──────────────────────────────────────────────────────
+// -- In-Chat Visual States ------------------------------------------------------
 // Online status, typing indicator, timestamps, read receipts, link preview
 
 test.describe('In-Chat Visual States', () => {
@@ -2215,7 +2215,7 @@ test.describe('In-Chat Visual States', () => {
     const typingEl = page.locator(
       '[aria-label*="typing" i], [data-typing], main span:has-text(/typing/i)'
     ).first();
-    // This test is best-effort — requires another active session to trigger reliably
+    // This test is best-effort � requires another active session to trigger reliably
     expect(page.isClosed()).toBe(false);
   });
 
@@ -2247,7 +2247,7 @@ test.describe('In-Chat Visual States', () => {
   });
 });
 
-// ── Group Management ───────────────────────────────────────────────────────────
+// -- Group Management -----------------------------------------------------------
 // Actions available inside a group conversation: members, add, remove, leave
 
 test.describe('Group Management', () => {
@@ -2420,7 +2420,7 @@ test.describe('Group Management', () => {
   });
 });
 
-// ── Archived and Favourite Conversations ──────────────────────────────────────
+// -- Archived and Favourite Conversations --------------------------------------
 
 test.describe('Archived and Favourite Conversations', () => {
   test.beforeEach(async ({ page }) => {
@@ -2535,7 +2535,7 @@ test.describe('Archived and Favourite Conversations', () => {
   });
 });
 
-// ── Message Scheduling ─────────────────────────────────────────────────────────
+// -- Message Scheduling ---------------------------------------------------------
 
 test.describe('Message Scheduling', () => {
   test.beforeEach(async ({ page }) => {
@@ -2598,12 +2598,12 @@ test.describe('Message Scheduling', () => {
     if (await scheduledSection.isVisible({ timeout: 5000 }).catch(() => false)) {
       await expect(scheduledSection).toBeVisible();
     }
-    // Test is advisory — feature may not be present; page must remain open
+    // Test is advisory � feature may not be present; page must remain open
     expect(page.isClosed()).toBe(false);
   });
 });
 
-// ── Disappearing Messages ──────────────────────────────────────────────────────
+// -- Disappearing Messages ------------------------------------------------------
 
 test.describe('Disappearing Messages', () => {
   test.beforeEach(async ({ page }) => {
@@ -2675,7 +2675,7 @@ test.describe('Disappearing Messages', () => {
   });
 });
 
-// ── Bulk Operations ────────────────────────────────────────────────────────────
+// -- Bulk Operations ------------------------------------------------------------
 
 test.describe('Bulk Operations', () => {
   test.beforeEach(async ({ page }) => { await goMessages(page); });
@@ -2771,7 +2771,7 @@ test.describe('Bulk Operations', () => {
   });
 });
 
-// ── Encryption ─────────────────────────────────────────────────────────────────
+// -- Encryption -----------------------------------------------------------------
 
 test.describe('Encryption', () => {
   test.beforeEach(async ({ page }) => {
@@ -2791,7 +2791,7 @@ test.describe('Encryption', () => {
     } else if (await lockIcon.isVisible({ timeout: 5000 }).catch(() => false)) {
       await expect(lockIcon).toBeVisible();
     }
-    // If no encryption indicator is present the feature may not be enabled — page must stay open
+    // If no encryption indicator is present the feature may not be enabled � page must stay open
     expect(page.isClosed()).toBe(false);
   });
 
@@ -2813,7 +2813,7 @@ test.describe('Encryption', () => {
   });
 });
 
-// ── Group Conversation Creation Workflow ───────────────────────────────────────
+// -- Group Conversation Creation Workflow ---------------------------------------
 
 test.describe('Group Conversation Creation Workflow', () => {
   test.beforeEach(async ({ page }) => { await goMessages(page); });
@@ -2838,7 +2838,7 @@ test.describe('Group Conversation Creation Workflow', () => {
   });
 });
 
-// ── Message Edit Functionality ─────────────────────────────────────────────────
+// -- Message Edit Functionality -------------------------------------------------
 
 test.describe('Message Edit Functionality', () => {
   test.beforeEach(async ({ page }) => {
@@ -2866,7 +2866,7 @@ test.describe('Message Edit Functionality', () => {
   });
 });
 
-// ── Message Emoji Reactions ────────────────────────────────────────────────────
+// -- Message Emoji Reactions ----------------------------------------------------
 
 test.describe('Message Emoji Reactions (TODO entry)', () => {
   test.beforeEach(async ({ page }) => {
@@ -2899,7 +2899,7 @@ test.describe('Message Emoji Reactions (TODO entry)', () => {
   });
 });
 
-// ── File / Image Sharing ───────────────────────────────────────────────────────
+// -- File / Image Sharing -------------------------------------------------------
 
 test.describe('File and Image Sharing', () => {
   test.beforeEach(async ({ page }) => {
@@ -2937,25 +2937,25 @@ test.describe('File and Image Sharing', () => {
   });
 });
 
-// ── Typing Indicator ───────────────────────────────────────────────────────────
+// -- Typing Indicator -----------------------------------------------------------
 
 test.describe('Typing Indicator', () => {
-  test.skip('TC-MSG-178: Given another user is typing, When the typing indicator appears, Then it is shown in the chat — untestable: requires a second active authenticated session sending real-time events', () => {});
+  test.skip('TC-MSG-178: Given another user is typing, When the typing indicator appears, Then it is shown in the chat � untestable: requires a second active authenticated session sending real-time events', () => {});
 });
 
-// ── Message Encryption / Security ─────────────────────────────────────────────
+// -- Message Encryption / Security ---------------------------------------------
 
 test.describe('Message Encryption Security', () => {
-  test.skip('TC-MSG-179: Given messages are transmitted, When inspecting network traffic, Then message payloads are encrypted in transit — untestable: requires network-level inspection outside browser context', () => {});
+  test.skip('TC-MSG-179: Given messages are transmitted, When inspecting network traffic, Then message payloads are encrypted in transit � untestable: requires network-level inspection outside browser context', () => {});
 });
 
-// ── Call Recording ─────────────────────────────────────────────────────────────
+// -- Call Recording -------------------------------------------------------------
 
 test.describe('Call Recording', () => {
-  test.skip('TC-MSG-180: Given a call is in progress, When the user records it, Then the recording is saved — untestable: requires two live call participants and media recording API access', () => {});
+  test.skip('TC-MSG-180: Given a call is in progress, When the user records it, Then the recording is saved � untestable: requires two live call participants and media recording API access', () => {});
 });
 
-// ── Multiline Message Formatting ───────────────────────────────────────────────
+// -- Multiline Message Formatting -----------------------------------------------
 
 test.describe('Multiline Message Formatting', () => {
   test.beforeEach(async ({ page }) => {

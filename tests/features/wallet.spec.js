@@ -6,7 +6,7 @@
 import { test, expect } from '@playwright/test';
 
 const AUTH_FILE  = 'playwright/.auth/user.json';
-const MODULE_URL = 'https://app.omre.ai/app/wallet';
+const MODULE_URL = 'https://omre.ai/app/wallet';
 
 test.use({ storageState: AUTH_FILE });
 test.setTimeout(45000);
@@ -16,7 +16,7 @@ async function goModule(page) {
   await page.waitForTimeout(1500);
 }
 
-// ─── Page Load and Layout ────────────────────────────────────────────────────
+// --- Page Load and Layout ----------------------------------------------------
 test.describe('TC-WALLET: Page Load and Layout', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -43,7 +43,7 @@ test.describe('TC-WALLET: Page Load and Layout', () => {
   });
 });
 
-// ─── Balance Display ─────────────────────────────────────────────────────────
+// --- Balance Display ---------------------------------------------------------
 test.describe('TC-WALLET: Balance Display', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -66,9 +66,9 @@ test.describe('TC-WALLET: Balance Display', () => {
   test('TC-WALLET-07: Given I am authenticated and on the page, When I perform the action, Then currency symbol or code is displayed alongside balance', async ({ page }) => {
     const currency = page
       .locator('main')
-      .getByText(/\$|€|£|USD|EUR|GBP|NGN|KES|GHS/i)
+      .getByText(/\$|�|�|USD|EUR|GBP|NGN|KES|GHS/i)
       .first();
-    const currencyFallback = page.locator('body > div:not([hidden])').getByText(/\$|€|£|USD|EUR|GBP|NGN|KES|GHS/i).first();
+    const currencyFallback = page.locator('body > div:not([hidden])').getByText(/\$|�|�|USD|EUR|GBP|NGN|KES|GHS/i).first();
     const visible = await currency.isVisible({ timeout: 5000 }).catch(() => false)
       || await currencyFallback.isVisible({ timeout: 3000 }).catch(() => false);
     if (visible) {
@@ -93,7 +93,7 @@ test.describe('TC-WALLET: Balance Display', () => {
   });
 });
 
-// ─── Transaction History ──────────────────────────────────────────────────────
+// --- Transaction History ------------------------------------------------------
 test.describe('TC-WALLET: Transaction History', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -122,7 +122,7 @@ test.describe('TC-WALLET: Transaction History', () => {
   test('TC-WALLET-11: Given I am on the each transaction item, When I view it, Then it shows an amount value', async ({ page }) => {
     const firstItem = page.locator('main li, main [role="listitem"]').first();
     if (!(await firstItem.isVisible({ timeout: 5000 }).catch(() => false))) return;
-    const amount = firstItem.getByText(/[\+\-]?\s*[\$€£]?\s*\d[\d,\.]+/);
+    const amount = firstItem.getByText(/[\+\-]?\s*[\$��]?\s*\d[\d,\.]+/);
     await expect(amount.first()).toBeVisible({ timeout: 5000 });
   });
 
@@ -160,7 +160,7 @@ test.describe('TC-WALLET: Transaction History', () => {
   });
 });
 
-// ─── Transaction Filters ──────────────────────────────────────────────────────
+// --- Transaction Filters ------------------------------------------------------
 test.describe('TC-WALLET: Transaction Filters', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -173,7 +173,7 @@ test.describe('TC-WALLET: Transaction Filters', () => {
     if (visible) {
       await expect(filter).toBeVisible();
     }
-    // No filter UI means list is unfiltered — still valid
+    // No filter UI means list is unfiltered � still valid
     else {
       const main = page.locator('main').first();
       await expect(main).toBeVisible({ timeout: 5000 });
@@ -214,7 +214,7 @@ test.describe('TC-WALLET: Transaction Filters', () => {
   });
 });
 
-// ─── Send Money ───────────────────────────────────────────────────────────────
+// --- Send Money ---------------------------------------------------------------
 test.describe('TC-WALLET: Send Money', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -326,7 +326,7 @@ test.describe('TC-WALLET: Send Money', () => {
   });
 });
 
-// ─── Add Funds ────────────────────────────────────────────────────────────────
+// --- Add Funds ----------------------------------------------------------------
 test.describe('TC-WALLET: Add Funds / Top Up', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -368,7 +368,7 @@ test.describe('TC-WALLET: Add Funds / Top Up', () => {
       .locator('[role="dialog"] [role="combobox"], [role="dialog"] select, [role="dialog"] [role="radiogroup"]')
       .first();
     const visible = await paymentMethod.isVisible({ timeout: 4000 }).catch(() => false);
-    // Not all wallets expose a method selector — assert the dialog itself is sufficient
+    // Not all wallets expose a method selector � assert the dialog itself is sufficient
     if (visible) {
       await expect(paymentMethod).toBeVisible();
     } else {
@@ -405,7 +405,7 @@ test.describe('TC-WALLET: Add Funds / Top Up', () => {
   });
 });
 
-// ─── Withdraw ─────────────────────────────────────────────────────────────────
+// --- Withdraw -----------------------------------------------------------------
 test.describe('TC-WALLET: Withdraw', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -418,7 +418,7 @@ test.describe('TC-WALLET: Withdraw', () => {
     if (visible) {
       await expect(withdrawBtn).toBeEnabled();
     }
-    // Withdraw is optional — pass if button is absent
+    // Withdraw is optional � pass if button is absent
     expect(true).toBe(true);
   });
 
@@ -435,7 +435,7 @@ test.describe('TC-WALLET: Withdraw', () => {
   });
 });
 
-// ─── Wallet Settings ──────────────────────────────────────────────────────────
+// --- Wallet Settings ----------------------------------------------------------
 test.describe('TC-WALLET: Wallet Settings / Preferences', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -448,7 +448,7 @@ test.describe('TC-WALLET: Wallet Settings / Preferences', () => {
     if (visible) {
       await expect(settingsLink).toBeVisible();
     }
-    // Accept if not present — optional feature
+    // Accept if not present � optional feature
     expect(true).toBe(true);
   });
 
@@ -465,7 +465,7 @@ test.describe('TC-WALLET: Wallet Settings / Preferences', () => {
   });
 });
 
-// ─── Edge Cases and Accessibility ────────────────────────────────────────────
+// --- Edge Cases and Accessibility --------------------------------------------
 test.describe('TC-WALLET: Edge Cases and Accessibility', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -479,7 +479,7 @@ test.describe('TC-WALLET: Edge Cases and Accessibility', () => {
     const emptyVisible = await emptyState.isVisible({ timeout: 4000 }).catch(() => false);
     const itemVisible  = await listItem.isVisible({ timeout: 4000 }).catch(() => false);
     const anyVisible   = await anyContent.isVisible({ timeout: 4000 }).catch(() => false);
-    // Either transactions are shown or an empty state is shown — both are valid
+    // Either transactions are shown or an empty state is shown � both are valid
     if (!emptyVisible && !itemVisible && !anyVisible) { test.skip(); return; }
     expect(emptyVisible || itemVisible || anyVisible).toBe(true);
   });
@@ -503,7 +503,7 @@ test.describe('TC-WALLET: Edge Cases and Accessibility', () => {
   });
 });
 
-// ─── QR Payment ───────────────────────────────────────────────────────────────
+// --- QR Payment ---------------------------------------------------------------
 test.describe('TC-WALLET: QR Payment', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -586,7 +586,7 @@ test.describe('TC-WALLET: QR Payment', () => {
   });
 });
 
-// ─── Transaction Detail ───────────────────────────────────────────────────────
+// --- Transaction Detail -------------------------------------------------------
 test.describe('TC-WALLET: Transaction Detail', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -638,7 +638,7 @@ test.describe('TC-WALLET: Transaction Detail', () => {
   });
 });
 
-// ─── Export Transactions ──────────────────────────────────────────────────────
+// --- Export Transactions ------------------------------------------------------
 test.describe('TC-WALLET: Export Transactions', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -699,7 +699,7 @@ test.describe('TC-WALLET: Export Transactions', () => {
   });
 });
 
-// ─── Balance Edge Cases ───────────────────────────────────────────────────────
+// --- Balance Edge Cases -------------------------------------------------------
 test.describe('TC-WALLET: Balance Display Edge Cases', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -719,7 +719,7 @@ test.describe('TC-WALLET: Balance Display Edge Cases', () => {
   });
 });
 
-// ─── Transaction Filter Edge Cases ───────────────────────────────────────────
+// --- Transaction Filter Edge Cases -------------------------------------------
 test.describe('TC-WALLET: Transaction Filter Edge Cases', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -762,7 +762,7 @@ test.describe('TC-WALLET: Transaction Filter Edge Cases', () => {
     const listItem = page.locator('main li, main [role="listitem"]').first();
     const itemVisible = await listItem.isVisible({ timeout: 4000 }).catch(() => false);
     if (itemVisible) {
-      // Has results — that's valid, test passes as guard
+      // Has results � that's valid, test passes as guard
       expect(true).toBe(true);
       return;
     }
@@ -778,7 +778,7 @@ test.describe('TC-WALLET: Transaction Filter Edge Cases', () => {
   });
 });
 
-// ─── Send Money Validation ────────────────────────────────────────────────────
+// --- Send Money Validation ----------------------------------------------------
 test.describe('TC-WALLET: Send Money Validation and Edge Cases', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -887,7 +887,7 @@ test.describe('TC-WALLET: Send Money Validation and Edge Cases', () => {
   });
 });
 
-// ─── Add Funds Validation ─────────────────────────────────────────────────────
+// --- Add Funds Validation -----------------------------------------------------
 test.describe('TC-WALLET: Add Funds Validation', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -929,10 +929,10 @@ test.describe('TC-WALLET: Add Funds Validation', () => {
     expect(page.isClosed()).toBe(false);
   });
 
-  test.skip('TC-WALLET-53: untestable: add funds successful UI update — completing a real payment requires actual payment gateway interaction, which is untestable in automated headless tests', () => {});
+  test.skip('TC-WALLET-53: untestable: add funds successful UI update � completing a real payment requires actual payment gateway interaction, which is untestable in automated headless tests', () => {});
 });
 
-// ─── QR Payment ───────────────────────────────────────────────────────────────
+// --- QR Payment ---------------------------------------------------------------
 test.describe('TC-WALLET: QR Code Visible', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -957,7 +957,7 @@ test.describe('TC-WALLET: QR Code Visible', () => {
   });
 });
 
-// ─── Export Transactions Edge Cases ──────────────────────────────────────────
+// --- Export Transactions Edge Cases ------------------------------------------
 test.describe('TC-WALLET: Export Transactions Edge Cases', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -987,5 +987,5 @@ test.describe('TC-WALLET: Export Transactions Edge Cases', () => {
     expect(pickerVisible || csvVisible || pdfVisible || dialogVisible).toBe(true);
   });
 
-  test.skip('TC-WALLET-56: untestable: export file format verification — verifying the downloaded file content (CSV/PDF structure) requires filesystem access to the browser download directory, which is not available in headless Playwright', () => {});
+  test.skip('TC-WALLET-56: untestable: export file format verification � verifying the downloaded file content (CSV/PDF structure) requires filesystem access to the browser download directory, which is not available in headless Playwright', () => {});
 });

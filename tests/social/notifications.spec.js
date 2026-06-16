@@ -1,5 +1,5 @@
 /**
- * Notifications module — deep-dive
+ * Notifications module � deep-dive
  * Covers: page layout, notification list, notification types, filter tabs,
  *         mark as read, notification navigation, friend requests in notifications,
  *         unread badge, notification management, empty state
@@ -7,8 +7,8 @@
 import { test, expect } from '@playwright/test';
 
 const AUTH_FILE  = 'playwright/.auth/user.json';
-const NOTIF_URL  = 'https://app.omre.ai/app/notifications';
-const HOME_URL   = 'https://app.omre.ai/app/home';
+const NOTIF_URL  = 'https://omre.ai/app/notifications';
+const HOME_URL   = 'https://omre.ai/app/home';
 
 test.use({ storageState: AUTH_FILE });
 test.setTimeout(45000);
@@ -18,7 +18,7 @@ async function goNotifications(page) {
   await page.waitForTimeout(1500);
 }
 
-// ── Page Load & Layout ─────────────────────────────────────────────────────────
+// -- Page Load & Layout ---------------------------------------------------------
 
 test.describe('Page Load and Layout', () => {
   test.beforeEach(async ({ page }) => { await goNotifications(page); });
@@ -46,13 +46,13 @@ test.describe('Page Load and Layout', () => {
     await page.reload({ waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(1500);
     const appErrors = errors.filter(e =>
-      e.includes('TypeError') || e.includes('ReferenceError') || e.includes('app.omre.ai')
+      e.includes('TypeError') || e.includes('ReferenceError') || e.includes('omre.ai')
     );
     expect(appErrors).toHaveLength(0);
   });
 });
 
-// ── Notification List & Items ──────────────────────────────────────────────────
+// -- Notification List & Items --------------------------------------------------
 
 test.describe('Notification List and Items', () => {
   test.beforeEach(async ({ page }) => { await goNotifications(page); });
@@ -97,7 +97,7 @@ test.describe('Notification List and Items', () => {
     if (await unreadDot.isVisible({ timeout: 5000 }).catch(() => false)) {
       await expect(unreadDot).toBeVisible();
     }
-    // Passes regardless — all notifs may already be read
+    // Passes regardless � all notifs may already be read
     expect(page.isClosed()).toBe(false);
   });
 
@@ -111,7 +111,7 @@ test.describe('Notification List and Items', () => {
   });
 });
 
-// ── Filter Tabs ────────────────────────────────────────────────────────────────
+// -- Filter Tabs ----------------------------------------------------------------
 
 test.describe('Filter Tabs', () => {
   test.beforeEach(async ({ page }) => { await goNotifications(page); });
@@ -141,7 +141,7 @@ test.describe('Filter Tabs', () => {
     const countBefore = await page.locator('main li, main > div > div').count();
     await secondTab.click();
     await page.waitForTimeout(1000);
-    // Content may change or show empty state — page should remain stable
+    // Content may change or show empty state � page should remain stable
     expect(page.isClosed()).toBe(false);
     await expect(page).toHaveURL(/\/app\/notifications/);
   });
@@ -170,7 +170,7 @@ test.describe('Filter Tabs', () => {
   });
 });
 
-// ── Mark as Read ───────────────────────────────────────────────────────────────
+// -- Mark as Read ---------------------------------------------------------------
 
 test.describe('Mark as Read', () => {
   test.beforeEach(async ({ page }) => { await goNotifications(page); });
@@ -214,7 +214,7 @@ test.describe('Mark as Read', () => {
   });
 });
 
-// ── Notification Navigation ────────────────────────────────────────────────────
+// -- Notification Navigation ----------------------------------------------------
 
 test.describe('Notification Navigation', () => {
   test.beforeEach(async ({ page }) => { await goNotifications(page); });
@@ -268,7 +268,7 @@ test.describe('Notification Navigation', () => {
   });
 });
 
-// ── Friend Requests in Notifications ──────────────────────────────────────────
+// -- Friend Requests in Notifications ------------------------------------------
 
 test.describe('Friend Requests in Notifications', () => {
   test.beforeEach(async ({ page }) => { await goNotifications(page); });
@@ -314,7 +314,7 @@ test.describe('Friend Requests in Notifications', () => {
   });
 });
 
-// ── Unread Badge on Navigation ─────────────────────────────────────────────────
+// -- Unread Badge on Navigation -------------------------------------------------
 
 test.describe('Unread Badge on Navigation', () => {
   test('TC-NOTIF-27: Given I am authenticated and on the page, When I perform the action, Then bell icon in home nav reflects unread notification count', async ({ page }) => {
@@ -322,7 +322,7 @@ test.describe('Unread Badge on Navigation', () => {
     await page.waitForTimeout(1500);
     const bellLink = page.locator('a[href*="/app/notifications"]').first();
     await expect(bellLink).toBeVisible({ timeout: 8000 });
-    // Badge may or may not be present — page must be alive
+    // Badge may or may not be present � page must be alive
     expect(page.isClosed()).toBe(false);
   });
 
@@ -337,7 +337,7 @@ test.describe('Unread Badge on Navigation', () => {
   });
 });
 
-// ── Notification Management ────────────────────────────────────────────────────
+// -- Notification Management ----------------------------------------------------
 
 test.describe('Notification Management', () => {
   test.beforeEach(async ({ page }) => { await goNotifications(page); });
@@ -377,7 +377,7 @@ test.describe('Notification Management', () => {
   });
 
   test('TC-NOTIF-31: Given I am authenticated and on the page, When I perform the action, Then empty state is shown when no notifications exist', async ({ page }) => {
-    // This test is conditional — if no notifications, verify the empty state renders
+    // This test is conditional � if no notifications, verify the empty state renders
     const items = await page.locator('main li').count();
     if (items === 0) {
       const empty = page.locator('main').getByText(/no notifications|all caught up|nothing to see/i).first();
@@ -401,13 +401,13 @@ test.describe('Notification Management', () => {
   });
 });
 
-// ── Real-Time Push Notification ────────────────────────────────────────────────
+// -- Real-Time Push Notification ------------------------------------------------
 
 test.describe('Real-Time Push Notification', () => {
-  test.skip('TC-NOTIF-33: Given the app is open, When a server push notification arrives in real-time, Then it appears without a page reload — untestable: requires a second active session triggering a real notification event', () => {});
+  test.skip('TC-NOTIF-33: Given the app is open, When a server push notification arrives in real-time, Then it appears without a page reload � untestable: requires a second active session triggering a real notification event', () => {});
 });
 
-// ── Batch Notifications ────────────────────────────────────────────────────────
+// -- Batch Notifications --------------------------------------------------------
 
 test.describe('Batch Notifications', () => {
   test.beforeEach(async ({ page }) => { await goNotifications(page); });
@@ -425,13 +425,13 @@ test.describe('Batch Notifications', () => {
   });
 });
 
-// ── Notification Badge Count Accuracy ─────────────────────────────────────────
+// -- Notification Badge Count Accuracy -----------------------------------------
 
 test.describe('Notification Badge Count Accuracy', () => {
-  test.skip('TC-NOTIF-35: Given unread notifications exist, When checking the badge count in the nav, Then the count matches the actual unread notification items — untestable: badge count is updated via real-time push; verifying accuracy requires controlling notification triggers from a second session', () => {});
+  test.skip('TC-NOTIF-35: Given unread notifications exist, When checking the badge count in the nav, Then the count matches the actual unread notification items � untestable: badge count is updated via real-time push; verifying accuracy requires controlling notification triggers from a second session', () => {});
 });
 
-// ── Notification Muting ────────────────────────────────────────────────────────
+// -- Notification Muting --------------------------------------------------------
 
 test.describe('Notification Muting', () => {
   test.beforeEach(async ({ page }) => { await goNotifications(page); });
@@ -451,7 +451,7 @@ test.describe('Notification Muting', () => {
   });
 });
 
-// ── Clear All Notifications ────────────────────────────────────────────────────
+// -- Clear All Notifications ----------------------------------------------------
 
 test.describe('Clear All Notifications', () => {
   test.beforeEach(async ({ page }) => { await goNotifications(page); });

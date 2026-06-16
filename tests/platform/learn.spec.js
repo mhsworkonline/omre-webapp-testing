@@ -1,10 +1,10 @@
-﻿// TC-LEARN — Learning / Courses Tests
-// URL: https://app.omre.ai/learn/home
+// TC-LEARN � Learning / Courses Tests
+// URL: https://omre.ai/learn/home
 
 import { test, expect } from '@playwright/test';
 
 const AUTH_FILE = 'playwright/.auth/user.json';
-const MODULE_URL = 'https://app.omre.ai/learn/home';
+const MODULE_URL = 'https://omre.ai/learn/home';
 
 test.use({ storageState: AUTH_FILE });
 test.setTimeout(45000);
@@ -14,10 +14,10 @@ async function goModule(page) {
   await page.waitForTimeout(1500);
 }
 
-// ─────────────────────────────────────────────
-// TC-LEARN-01 to TC-LEARN-04 — Page Load & Layout
-// ─────────────────────────────────────────────
-test.describe('TC-LEARN — Page Load and Layout', () => {
+// ---------------------------------------------
+// TC-LEARN-01 to TC-LEARN-04 � Page Load & Layout
+// ---------------------------------------------
+test.describe('TC-LEARN � Page Load and Layout', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
   test('TC-LEARN-01: Given I am authenticated, When I navigate to the page, Then and URL is correct', async ({ page }) => {
@@ -45,10 +45,10 @@ test.describe('TC-LEARN — Page Load and Layout', () => {
   });
 });
 
-// ─────────────────────────────────────────────
-// TC-LEARN-05 to TC-LEARN-09 — Course Listings
-// ─────────────────────────────────────────────
-test.describe('TC-LEARN — Course Listings', () => {
+// ---------------------------------------------
+// TC-LEARN-05 to TC-LEARN-09 � Course Listings
+// ---------------------------------------------
+test.describe('TC-LEARN � Course Listings', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
   test('TC-LEARN-05: Given I am authenticated and on the page, When I perform the action, Then course listing items render on page', async ({ page }) => {
@@ -93,10 +93,10 @@ test.describe('TC-LEARN — Course Listings', () => {
   });
 });
 
-// ─────────────────────────────────────────────
-// TC-LEARN-10 to TC-LEARN-13 — Search & Category Filters
-// ─────────────────────────────────────────────
-test.describe('TC-LEARN — Search and Category Filters', () => {
+// ---------------------------------------------
+// TC-LEARN-10 to TC-LEARN-13 � Search & Category Filters
+// ---------------------------------------------
+test.describe('TC-LEARN � Search and Category Filters', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
   test('TC-LEARN-10: Given I am authenticated and on the page, When I perform the action, Then search input is present on learn page', async ({ page }) => {
@@ -151,10 +151,10 @@ test.describe('TC-LEARN — Search and Category Filters', () => {
   });
 });
 
-// ─────────────────────────────────────────────
-// TC-LEARN-14 to TC-LEARN-18 — Course Detail & Enroll
-// ─────────────────────────────────────────────
-test.describe('TC-LEARN — Course Detail and Enroll', () => {
+// ---------------------------------------------
+// TC-LEARN-14 to TC-LEARN-18 � Course Detail & Enroll
+// ---------------------------------------------
+test.describe('TC-LEARN � Course Detail and Enroll', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
   test('TC-LEARN-14: Given the course card is present, When I click the course card, Then it navigates to detail view', async ({ page }) => {
@@ -211,10 +211,10 @@ test.describe('TC-LEARN — Course Detail and Enroll', () => {
   });
 });
 
-// ─────────────────────────────────────────────
-// TC-LEARN-19 to TC-LEARN-22 — Progress & Certificate
-// ─────────────────────────────────────────────
-test.describe('TC-LEARN — Progress and Certificate', () => {
+// ---------------------------------------------
+// TC-LEARN-19 to TC-LEARN-22 � Progress & Certificate
+// ---------------------------------------------
+test.describe('TC-LEARN � Progress and Certificate', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
   test('TC-LEARN-19: Given I am authenticated and on the page, When I perform the action, Then progress indicator exists on the learn page or enrolled course', async ({ page }) => {
@@ -253,7 +253,7 @@ test.describe('TC-LEARN — Progress and Certificate', () => {
       // Also check body text for certificate mention
       const bodyText = await page.locator('body').innerText();
       const hasCertText = /certificate|certification|badge/i.test(bodyText);
-      // Soft assertion — may not always be present
+      // Soft assertion � may not always be present
       expect(typeof hasCertText).toBe('boolean');
     } else {
       expect(visible).toBe(true);
@@ -292,10 +292,10 @@ test.describe('TC-LEARN — Progress and Certificate', () => {
   });
 });
 
-// ─────────────────────────────────────────────
-// TC-LEARN-23 to TC-LEARN-30 — Enrollment, Lesson Toggle, Completion, Certificate, Progress, Resume, Category Filter, Video Controls
-// ─────────────────────────────────────────────
-test.describe('TC-LEARN — Enrollment Flow and Lesson Interactions', () => {
+// ---------------------------------------------
+// TC-LEARN-23 to TC-LEARN-30 � Enrollment, Lesson Toggle, Completion, Certificate, Progress, Resume, Category Filter, Video Controls
+// ---------------------------------------------
+test.describe('TC-LEARN � Enrollment Flow and Lesson Interactions', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
   test('TC-LEARN-23: Given I am on a course detail page, When I click Enroll, Then an enrollment confirmation or form appears', async ({ page }) => {

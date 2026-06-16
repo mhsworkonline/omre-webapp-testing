@@ -1,5 +1,5 @@
 /**
- * Groups module — deep-dive tests
+ * Groups module � deep-dive tests
  * Covers: page load & layout, groups list, group cards, tab switching (My Groups / Discover),
  *         join functionality, join state change, create group modal & form fields,
  *         modal dismiss, search, empty state, group card navigation, group detail page,
@@ -8,8 +8,8 @@
 import { test, expect } from '@playwright/test';
 
 const AUTH_FILE  = 'playwright/.auth/user.json';
-const GROUPS_URL = 'https://app.omre.ai/app/groups';
-const HOME_URL   = 'https://app.omre.ai/app/home';
+const GROUPS_URL = 'https://omre.ai/app/groups';
+const HOME_URL   = 'https://omre.ai/app/home';
 
 test.use({ storageState: AUTH_FILE });
 test.setTimeout(45000);
@@ -19,7 +19,7 @@ async function goGroups(page) {
   await page.waitForTimeout(1500);
 }
 
-// ── Page Load & Layout ────────────────────────────────────────────────────────
+// -- Page Load & Layout --------------------------------------------------------
 
 test.describe('Page Load and Layout', () => {
   test.beforeEach(async ({ page }) => { await goGroups(page); });
@@ -52,7 +52,7 @@ test.describe('Page Load and Layout', () => {
     await page.reload({ waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(1500);
     const appErrors = errors.filter(e =>
-      e.includes('TypeError') || e.includes('ReferenceError') || e.includes('app.omre.ai')
+      e.includes('TypeError') || e.includes('ReferenceError') || e.includes('omre.ai')
     );
     expect(appErrors).toHaveLength(0);
   });
@@ -63,7 +63,7 @@ test.describe('Page Load and Layout', () => {
   });
 });
 
-// ── Tab Switching (My Groups / Discover) ──────────────────────────────────────
+// -- Tab Switching (My Groups / Discover) --------------------------------------
 
 test.describe('Tab Switching', () => {
   test.beforeEach(async ({ page }) => { await goGroups(page); });
@@ -118,7 +118,7 @@ test.describe('Tab Switching', () => {
   });
 });
 
-// ── Groups List & Cards ───────────────────────────────────────────────────────
+// -- Groups List & Cards -------------------------------------------------------
 
 test.describe('Groups List and Cards', () => {
   test.beforeEach(async ({ page }) => { await goGroups(page); });
@@ -176,7 +176,7 @@ test.describe('Groups List and Cards', () => {
   });
 });
 
-// ── Discover Tab & Join Functionality ─────────────────────────────────────────
+// -- Discover Tab & Join Functionality -----------------------------------------
 
 test.describe('Discover Tab and Join Functionality', () => {
   test.beforeEach(async ({ page }) => {
@@ -212,7 +212,7 @@ test.describe('Discover Tab and Join Functionality', () => {
     await joinBtn.evaluate(el => el.click()).catch(() => {});
     await page.waitForTimeout(1500);
     const newText = await joinBtn.textContent().catch(() => '');
-    // Button should either change text or disappear — state must change
+    // Button should either change text or disappear � state must change
     const stateChanged = !newText.match(/^join$/i) || !(await joinBtn.isVisible({ timeout: 1000 }).catch(() => false));
     expect(stateChanged || page.isClosed() === false).toBe(true);
   });
@@ -227,7 +227,7 @@ test.describe('Discover Tab and Join Functionality', () => {
   });
 });
 
-// ── Create Group ──────────────────────────────────────────────────────────────
+// -- Create Group --------------------------------------------------------------
 
 test.describe('Create Group', () => {
   test.beforeEach(async ({ page }) => { await goGroups(page); });
@@ -332,7 +332,7 @@ test.describe('Create Group', () => {
   });
 });
 
-// ── Search Groups ─────────────────────────────────────────────────────────────
+// -- Search Groups -------------------------------------------------------------
 
 test.describe('Search Groups', () => {
   test.beforeEach(async ({ page }) => { await goGroups(page); });
@@ -380,7 +380,7 @@ test.describe('Search Groups', () => {
   });
 });
 
-// ── Group Card Navigation & Group Detail ─────────────────────────────────────
+// -- Group Card Navigation & Group Detail -------------------------------------
 
 test.describe('Group Card Navigation and Detail', () => {
   test.beforeEach(async ({ page }) => { await goGroups(page); });
@@ -449,7 +449,7 @@ test.describe('Group Card Navigation and Detail', () => {
   });
 });
 
-// ── Empty State ───────────────────────────────────────────────────────────────
+// -- Empty State ---------------------------------------------------------------
 
 test.describe('Empty State', () => {
   test.beforeEach(async ({ page }) => { await goGroups(page); });
@@ -466,7 +466,7 @@ test.describe('Empty State', () => {
   });
 });
 
-// ── Group Rules Tab ───────────────────────────────────────────────────────────
+// -- Group Rules Tab -----------------------------------------------------------
 
 test.describe('Group Rules Tab', () => {
   test.beforeEach(async ({ page }) => {
@@ -501,7 +501,7 @@ test.describe('Group Rules Tab', () => {
   });
 });
 
-// ── Group Post Pin ────────────────────────────────────────────────────────────
+// -- Group Post Pin ------------------------------------------------------------
 
 test.describe('Group Post Pin', () => {
   test.beforeEach(async ({ page }) => {
@@ -539,7 +539,7 @@ test.describe('Group Post Pin', () => {
   });
 });
 
-// ── Group Events ──────────────────────────────────────────────────────────────
+// -- Group Events --------------------------------------------------------------
 
 test.describe('Group Events', () => {
   test.beforeEach(async ({ page }) => {
@@ -574,7 +574,7 @@ test.describe('Group Events', () => {
   });
 });
 
-// ── Group Files / Media Tab ───────────────────────────────────────────────────
+// -- Group Files / Media Tab ---------------------------------------------------
 
 test.describe('Group Files and Media Tab', () => {
   test.beforeEach(async ({ page }) => {
@@ -604,7 +604,7 @@ test.describe('Group Files and Media Tab', () => {
   });
 });
 
-// ── Member Role Badges ────────────────────────────────────────────────────────
+// -- Member Role Badges --------------------------------------------------------
 
 test.describe('Member Role Badges', () => {
   test.beforeEach(async ({ page }) => {
@@ -630,7 +630,7 @@ test.describe('Member Role Badges', () => {
   });
 });
 
-// ── Group Notification Settings ───────────────────────────────────────────────
+// -- Group Notification Settings -----------------------------------------------
 
 test.describe('Group Notification Settings', () => {
   test.beforeEach(async ({ page }) => {
@@ -674,7 +674,7 @@ test.describe('Group Notification Settings', () => {
   });
 });
 
-// ── Leave Group Confirmation Dialog ──────────────────────────────────────────
+// -- Leave Group Confirmation Dialog ------------------------------------------
 
 test.describe('Leave Group Confirmation Dialog', () => {
   test.beforeEach(async ({ page }) => {
@@ -727,7 +727,7 @@ test.describe('Leave Group Confirmation Dialog', () => {
   });
 });
 
-// ── Group Member List Display ─────────────────────────────────────────────────
+// -- Group Member List Display -------------------------------------------------
 
 test.describe('Group Member List Display', () => {
   test.beforeEach(async ({ page }) => {
@@ -753,25 +753,25 @@ test.describe('Group Member List Display', () => {
   });
 });
 
-// ── Group Admin Promote / Demote ──────────────────────────────────────────────
+// -- Group Admin Promote / Demote ----------------------------------------------
 
 test.describe('Group Admin Promote and Demote', () => {
-  test.skip('TC-GROUPS-50: Given I am an admin in a group, When I click the promote/demote option on a member, Then the member role changes — untestable: requires the test account to have admin role in a group with at least one other member', () => {});
+  test.skip('TC-GROUPS-50: Given I am an admin in a group, When I click the promote/demote option on a member, Then the member role changes � untestable: requires the test account to have admin role in a group with at least one other member', () => {});
 });
 
-// ── Group Post Moderation ─────────────────────────────────────────────────────
+// -- Group Post Moderation -----------------------------------------------------
 
 test.describe('Group Post Moderation', () => {
-  test.skip('TC-GROUPS-51: Given I am a moderator in a group, When I use the moderation controls on a post, Then I can approve, reject, or delete it — untestable: requires moderator/admin role which cannot be guaranteed for the test account', () => {});
+  test.skip('TC-GROUPS-51: Given I am a moderator in a group, When I use the moderation controls on a post, Then I can approve, reject, or delete it � untestable: requires moderator/admin role which cannot be guaranteed for the test account', () => {});
 });
 
-// ── Member Ban / Kick ─────────────────────────────────────────────────────────
+// -- Member Ban / Kick ---------------------------------------------------------
 
 test.describe('Member Ban and Kick', () => {
-  test.skip('TC-GROUPS-52: Given I am a group admin, When I ban or kick a member, Then they are removed from the group — untestable: requires admin role and would modify live data irreversibly', () => {});
+  test.skip('TC-GROUPS-52: Given I am a group admin, When I ban or kick a member, Then they are removed from the group � untestable: requires admin role and would modify live data irreversibly', () => {});
 });
 
-// ── Group Invite Link Generation ──────────────────────────────────────────────
+// -- Group Invite Link Generation ----------------------------------------------
 
 test.describe('Group Invite Link Generation', () => {
   test.beforeEach(async ({ page }) => {
@@ -816,7 +816,7 @@ test.describe('Group Invite Link Generation', () => {
   });
 });
 
-// ── Group Privacy Toggle ──────────────────────────────────────────────────────
+// -- Group Privacy Toggle ------------------------------------------------------
 
 test.describe('Group Privacy Toggle', () => {
   test.beforeEach(async ({ page }) => {
@@ -868,14 +868,14 @@ test.describe('Group Privacy Toggle', () => {
   });
 });
 
-// ── Group Join Request Approval ───────────────────────────────────────────────
+// -- Group Join Request Approval -----------------------------------------------
 
 test.describe('Group Join Request Approval', () => {
-  test.skip('TC-GROUPS-55: Given I am an admin of a private group and someone has requested to join, When I approve the request, Then the user is added to the group — untestable: requires a private group with a pending join request which cannot be set up deterministically', () => {});
+  test.skip('TC-GROUPS-55: Given I am an admin of a private group and someone has requested to join, When I approve the request, Then the user is added to the group � untestable: requires a private group with a pending join request which cannot be set up deterministically', () => {});
 });
 
-// ── Group Deletion by Admin ───────────────────────────────────────────────────
+// -- Group Deletion by Admin ---------------------------------------------------
 
 test.describe('Group Deletion by Admin', () => {
-  test.skip('TC-GROUPS-56: Given I am the admin/owner of a group, When I delete it, Then all members lose access — untestable: irreversible destructive action that would permanently destroy test data', () => {});
+  test.skip('TC-GROUPS-56: Given I am the admin/owner of a group, When I delete it, Then all members lose access � untestable: irreversible destructive action that would permanently destroy test data', () => {});
 });

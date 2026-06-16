@@ -1,10 +1,10 @@
-﻿// TC-BIZ — Business Directory Tests
-// URL: https://app.omre.ai/biz
+// TC-BIZ � Business Directory Tests
+// URL: https://omre.ai/biz
 
 import { test, expect } from '@playwright/test';
 
 const AUTH_FILE = 'playwright/.auth/user.json';
-const MODULE_URL = 'https://app.omre.ai/biz';
+const MODULE_URL = 'https://omre.ai/biz';
 
 test.use({ storageState: AUTH_FILE });
 test.setTimeout(45000);
@@ -14,10 +14,10 @@ async function goModule(page) {
   await page.waitForTimeout(1500);
 }
 
-// ─────────────────────────────────────────────
-// TC-BIZ-01 to TC-BIZ-04 — Page Load & Layout
-// ─────────────────────────────────────────────
-test.describe('TC-BIZ — Page Load and Layout', () => {
+// ---------------------------------------------
+// TC-BIZ-01 to TC-BIZ-04 � Page Load & Layout
+// ---------------------------------------------
+test.describe('TC-BIZ � Page Load and Layout', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
   test('TC-BIZ-01: Given I am authenticated, When I navigate to the page, Then and URL is correct', async ({ page }) => {
@@ -43,10 +43,10 @@ test.describe('TC-BIZ — Page Load and Layout', () => {
   });
 });
 
-// ─────────────────────────────────────────────
-// TC-BIZ-05 to TC-BIZ-09 — Business Listings
-// ─────────────────────────────────────────────
-test.describe('TC-BIZ — Business Listings', () => {
+// ---------------------------------------------
+// TC-BIZ-05 to TC-BIZ-09 � Business Listings
+// ---------------------------------------------
+test.describe('TC-BIZ � Business Listings', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
   test('TC-BIZ-05: Given I am authenticated and on the page, When I perform the action, Then business listing items render on page', async ({ page }) => {
@@ -91,10 +91,10 @@ test.describe('TC-BIZ — Business Listings', () => {
   });
 });
 
-// ─────────────────────────────────────────────
-// TC-BIZ-10 to TC-BIZ-13 — Search & Filters
-// ─────────────────────────────────────────────
-test.describe('TC-BIZ — Search and Filters', () => {
+// ---------------------------------------------
+// TC-BIZ-10 to TC-BIZ-13 � Search & Filters
+// ---------------------------------------------
+test.describe('TC-BIZ � Search and Filters', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
   test('TC-BIZ-10: Given I am authenticated and on the page, When I perform the action, Then search input is present', async ({ page }) => {
@@ -154,10 +154,10 @@ test.describe('TC-BIZ — Search and Filters', () => {
   });
 });
 
-// ─────────────────────────────────────────────
-// TC-BIZ-14 to TC-BIZ-18 — Business Detail
-// ─────────────────────────────────────────────
-test.describe('TC-BIZ — Business Detail View', () => {
+// ---------------------------------------------
+// TC-BIZ-14 to TC-BIZ-18 � Business Detail
+// ---------------------------------------------
+test.describe('TC-BIZ � Business Detail View', () => {
   test.setTimeout(90000);
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -201,7 +201,7 @@ test.describe('TC-BIZ — Business Detail View', () => {
       'a[href^="mailto:"], a[href^="tel:"], [aria-label*="contact" i], [aria-label*="email" i], [aria-label*="phone" i]'
     ).first();
     const visible = await contactEl.isVisible({ timeout: 8000 }).catch(() => false);
-    // Soft guard — not all businesses may have public contact
+    // Soft guard � not all businesses may have public contact
     expect(typeof visible).toBe('boolean');
   });
 
@@ -216,10 +216,10 @@ test.describe('TC-BIZ — Business Detail View', () => {
   });
 });
 
-// ─────────────────────────────────────────────
-// TC-BIZ-19 to TC-BIZ-22 — CTAs & Follow
-// ─────────────────────────────────────────────
-test.describe('TC-BIZ — CTAs and Follow Actions', () => {
+// ---------------------------------------------
+// TC-BIZ-19 to TC-BIZ-22 � CTAs & Follow
+// ---------------------------------------------
+test.describe('TC-BIZ � CTAs and Follow Actions', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
   test('TC-BIZ-19: Given I am authenticated and on the page, When I perform the action, Then create or add business CTA is present on listing page', async ({ page }) => {
@@ -265,7 +265,7 @@ test.describe('TC-BIZ — CTAs and Follow Actions', () => {
     await page.waitForTimeout(1500);
     // After clicking, either: text changes, button disables, or a toast appears
     const afterText = await followBtn.textContent().catch(() => beforeText);
-    // Something should have happened — page should not show a hard error
+    // Something should have happened � page should not show a hard error
     const bodyText = await page.locator('body').innerText();
     expect(bodyText).not.toMatch(/unexpected error|500/i);
     expect(typeof afterText).toBe('string');
@@ -286,10 +286,10 @@ test.describe('TC-BIZ — CTAs and Follow Actions', () => {
   });
 });
 
-// ─────────────────────────────────────────────
-// TC-BIZ-23 to TC-BIZ-27 — Form Validation, Follow Persistence, Business Creation & Empty Filter
-// ─────────────────────────────────────────────
-test.describe('TC-BIZ — Form Validation and Advanced Actions', () => {
+// ---------------------------------------------
+// TC-BIZ-23 to TC-BIZ-27 � Form Validation, Follow Persistence, Business Creation & Empty Filter
+// ---------------------------------------------
+test.describe('TC-BIZ � Form Validation and Advanced Actions', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
   test('TC-BIZ-23: Given a business create or edit form is open, When I submit with empty required fields, Then validation errors appear', async ({ page }) => {
@@ -378,7 +378,7 @@ test.describe('TC-BIZ — Form Validation and Advanced Actions', () => {
     await searchInput.fill('xyzxyzxyz_no_results_expected_12345');
     await page.waitForTimeout(1200);
     const bodyText = await page.locator('body').innerText();
-    // Either empty state text or zero results — page should not crash
+    // Either empty state text or zero results � page should not crash
     expect(bodyText).not.toMatch(/unexpected error|500/i);
     expect(bodyText.trim().length).toBeGreaterThan(0);
   });

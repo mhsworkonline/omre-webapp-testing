@@ -6,14 +6,14 @@
 import { test, expect } from '@playwright/test';
 
 const AUTH_FILE      = 'playwright/.auth/user.json';
-const HOME_URL       = 'https://app.omre.ai/app/home';
+const HOME_URL       = 'https://omre.ai/app/home';
 const FIXTURE_IMAGE  = 'tests/fixtures/test-image.jpg';
 const FIXTURE_VIDEO  = 'tests/fixtures/test-video.mp4';
 
 test.use({ storageState: AUTH_FILE });
 test.setTimeout(45000);
 
-// ── Helpers ────────────────────────────────────────────────────────────────────
+// -- Helpers --------------------------------------------------------------------
 
 async function openComposer(page) {
   await page.goto(HOME_URL, { waitUntil: 'domcontentloaded' });
@@ -22,7 +22,7 @@ async function openComposer(page) {
   if (await trigger.isVisible({ timeout: 10000 }).catch(() => false)) {
     await trigger.click();
   } else {
-    // FAB is inside overflow:hidden container — use JS click to bypass all Playwright visibility checks
+    // FAB is inside overflow:hidden container � use JS click to bypass all Playwright visibility checks
     await page.locator('button[aria-label*="create post" i]').first().evaluate(btn => btn.click());
   }
   await page.waitForTimeout(800);
@@ -39,7 +39,7 @@ async function closeComposer(page) {
   await page.waitForTimeout(300);
 }
 
-// ── Text Post ──────────────────────────────────────────────────────────────────
+// -- Text Post ------------------------------------------------------------------
 
 test.describe('Text Post', () => {
   test.beforeEach(async ({ page }) => {
@@ -63,7 +63,7 @@ test.describe('Text Post', () => {
     const textbox = page.locator('[role="dialog"] textarea, [role="dialog"] [contenteditable="true"], textarea').first();
     const submit  = page.locator('[role="dialog"] button[type="submit"]').first();
     if (await textbox.isVisible({ timeout: 5000 }).catch(() => false)) {
-      await textbox.fill('Automated test — please ignore');
+      await textbox.fill('Automated test � please ignore');
       await page.waitForTimeout(400);
       if (await submit.isVisible({ timeout: 3000 }).catch(() => false)) {
         await expect(submit).toBeEnabled();
@@ -126,7 +126,7 @@ test.describe('Text Post', () => {
   });
 });
 
-// ── Photo Post ─────────────────────────────────────────────────────────────────
+// -- Photo Post -----------------------------------------------------------------
 
 test.describe('Photo Post', () => {
   test.beforeEach(async ({ page }) => {
@@ -172,7 +172,7 @@ test.describe('Photo Post', () => {
     if (!(await photoBtn.isVisible({ timeout: 5000 }).catch(() => false))) { test.skip(); return; }
     await photoBtn.click();
     await page.waitForTimeout(800);
-    // file inputs are intentionally hidden in modern UIs — check existence, not visibility
+    // file inputs are intentionally hidden in modern UIs � check existence, not visibility
     const fileCount = await page.locator('input[type="file"]').count();
     if (fileCount > 0) {
       expect(fileCount).toBeGreaterThan(0);
@@ -229,7 +229,7 @@ test.describe('Photo Post', () => {
   });
 });
 
-// ── Video Post ─────────────────────────────────────────────────────────────────
+// -- Video Post -----------------------------------------------------------------
 
 test.describe('Video Post', () => {
   test.beforeEach(async ({ page }) => {
@@ -314,7 +314,7 @@ test.describe('Video Post', () => {
   });
 });
 
-// ── Feeling Post ───────────────────────────────────────────────────────────────
+// -- Feeling Post ---------------------------------------------------------------
 
 test.describe('Feeling Post', () => {
   test.beforeEach(async ({ page }) => {
@@ -469,7 +469,7 @@ test.describe('Feeling Post', () => {
   });
 });
 
-// ── Studio Post ────────────────────────────────────────────────────────────────
+// -- Studio Post ----------------------------------------------------------------
 
 test.describe('Studio Post', () => {
   test.beforeEach(async ({ page }) => {
@@ -515,8 +515,8 @@ test.describe('Studio Post', () => {
     const menuVisible  = await menuDropdown.isVisible({ timeout: 5000 }).catch(() => false);
 
     if (!menuVisible) {
-      // Studio may navigate directly instead of opening a dropdown — skip gracefully
-      if (page.url() !== 'https://app.omre.ai/app/home') {
+      // Studio may navigate directly instead of opening a dropdown � skip gracefully
+      if (page.url() !== 'https://omre.ai/app/home') {
         await page.goBack({ waitUntil: 'domcontentloaded' });
       }
       test.skip();
@@ -589,7 +589,7 @@ test.describe('Studio Post', () => {
     await studioBtn.click();
     await page.waitForTimeout(500);
     // Studio may navigate to /studio/overview directly rather than showing a dropdown
-    // Either outcome is valid — just verify the page is functional
+    // Either outcome is valid � just verify the page is functional
     expect(page.isClosed()).toBe(false);
     await expect(page).not.toHaveURL('about:blank');
     // Return to home if navigated away
@@ -601,7 +601,7 @@ test.describe('Studio Post', () => {
   });
 });
 
-// ── Live Streaming ─────────────────────────────────────────────────────────────
+// -- Live Streaming -------------------------------------------------------------
 
 test.describe('Live Streaming', () => {
   test.beforeEach(async ({ page }) => {
@@ -687,7 +687,7 @@ test.describe('Live Streaming', () => {
   });
 });
 
-// ── Post Privacy / Audience ────────────────────────────────────────────────────
+// -- Post Privacy / Audience ----------------------------------------------------
 
 test.describe('Post Privacy', () => {
   test.beforeEach(async ({ page }) => {
@@ -788,7 +788,7 @@ test.describe('Post Privacy', () => {
   });
 });
 
-// ── Photo / Video File Upload ───────────────────────────────────────────────────
+// -- Photo / Video File Upload ---------------------------------------------------
 
 test.describe('File Upload', () => {
   test.beforeEach(async ({ page }) => {
@@ -821,7 +821,7 @@ test.describe('File Upload', () => {
 
     await fileInput.setInputFiles(FIXTURE_IMAGE);
     await page.waitForTimeout(2000);
-    // Page should still be alive — upload may queue for server processing
+    // Page should still be alive � upload may queue for server processing
     expect(page.isClosed()).toBe(false);
     await page.keyboard.press('Escape');
   });
@@ -899,11 +899,11 @@ test.describe('File Upload', () => {
   });
 });
 
-// ── Network Failure State ──────────────────────────────────────────────────────
+// -- Network Failure State ------------------------------------------------------
 
 test.describe('Network Failure State', () => {
-  test('TC-POST-NETWORK-01: Given post submit network failure state, When the network is offline during submit, Then an error state or retry option is shown — untestable: simulating a controlled mid-submit network failure that produces a visible error UI requires intercepting the specific POST request at the moment of submission; the Playwright route API can abort requests but the app may silently fail or reload, making assertion of the exact error state unreliable across CI environments', async ({ page }) => {
-    test.skip('untestable: real network failure simulation during post submit is not reliably reproducible in automated E2E — the app may silently retry or show no visible error state');
+  test('TC-POST-NETWORK-01: Given post submit network failure state, When the network is offline during submit, Then an error state or retry option is shown � untestable: simulating a controlled mid-submit network failure that produces a visible error UI requires intercepting the specific POST request at the moment of submission; the Playwright route API can abort requests but the app may silently fail or reload, making assertion of the exact error state unreliable across CI environments', async ({ page }) => {
+    test.skip('untestable: real network failure simulation during post submit is not reliably reproducible in automated E2E � the app may silently retry or show no visible error state');
   });
 });
 
@@ -916,7 +916,7 @@ test.describe('Text Post Submission & Cleanup', () => {
     if (!(await textbox.isVisible({ timeout: 5000 }).catch(() => false))) return;
 
     await textbox.evaluate(el => { el.focus(); el.select(); });
-    await page.keyboard.type(`Automated QA test post — ${Date.now()}`, { delay: 15 });
+    await page.keyboard.type(`Automated QA test post � ${Date.now()}`, { delay: 15 });
     await page.waitForTimeout(400);
 
     const submit = page.locator('[role="dialog"] button[type="submit"]').first();
@@ -932,7 +932,7 @@ test.describe('Text Post Submission & Cleanup', () => {
     const textbox = page.locator('[role="dialog"] textarea, [role="dialog"] [contenteditable="true"], textarea').first();
     if (!(await textbox.isVisible({ timeout: 5000 }).catch(() => false))) return;
 
-    const uniqueText = `QA verify-feed — ${Date.now()}`;
+    const uniqueText = `QA verify-feed � ${Date.now()}`;
     // Use keyboard typing so React's onChange fires; fill() sets DOM value only
     await textbox.evaluate(el => { el.focus(); el.select(); });
     await page.keyboard.type(uniqueText, { delay: 15 });
@@ -943,7 +943,7 @@ test.describe('Text Post Submission & Cleanup', () => {
 
     await submit.click();
     await page.waitForTimeout(2000);
-    // Scroll to top — new posts appear at the top of the feed
+    // Scroll to top � new posts appear at the top of the feed
     await page.evaluate(() => window.scrollTo(0, 0));
     await page.waitForTimeout(1500);
 
@@ -957,13 +957,13 @@ test.describe('Text Post Submission & Cleanup', () => {
     await expect(postInFeed.first()).toBeVisible({ timeout: 15000 });
   });
 
-  test('TC-POST-SUBMIT-03: full create → delete cycle removes the post from feed', async ({ page }) => {
-    // Step 1 — create post
+  test('TC-POST-SUBMIT-03: full create ? delete cycle removes the post from feed', async ({ page }) => {
+    // Step 1 � create post
     await openComposer(page);
     const textbox = page.locator('[role="dialog"] textarea, [role="dialog"] [contenteditable="true"], textarea').first();
     if (!(await textbox.isVisible({ timeout: 5000 }).catch(() => false))) return;
 
-    const uniqueText = `QA delete-me — ${Date.now()}`;
+    const uniqueText = `QA delete-me � ${Date.now()}`;
     await textbox.evaluate(el => { el.focus(); el.select(); });
     await page.keyboard.type(uniqueText, { delay: 15 });
     await page.waitForTimeout(400);
@@ -973,11 +973,11 @@ test.describe('Text Post Submission & Cleanup', () => {
     await submit.click();
     await page.waitForTimeout(3000);
 
-    // Step 2 — find post in feed
+    // Step 2 � find post in feed
     const postInFeed = page.locator('main').getByText(uniqueText, { exact: false }).first();
     if (!(await postInFeed.isVisible({ timeout: 15000 }).catch(() => false))) return;
 
-    // Step 3 — open more-options menu on that post card
+    // Step 3 � open more-options menu on that post card
     const postCard = page.locator('article, main > div > div')
       .filter({ has: page.getByText(uniqueText, { exact: false }) }).first();
     const moreBtn = postCard.locator(
@@ -988,7 +988,7 @@ test.describe('Text Post Submission & Cleanup', () => {
     await moreBtn.click();
     await page.waitForTimeout(500);
 
-    // Step 4 — click Delete
+    // Step 4 � click Delete
     const deleteOpt = page.locator('[role="menuitem"], [role="option"], li')
       .filter({ hasText: /delete/i }).first();
     if (!(await deleteOpt.isVisible({ timeout: 3000 }).catch(() => false))) return;
@@ -1001,7 +1001,7 @@ test.describe('Text Post Submission & Cleanup', () => {
       await confirmBtn.click();
     }
 
-    // Step 5 — verify post is gone
+    // Step 5 � verify post is gone
     await page.waitForTimeout(2000);
     await expect(postInFeed).not.toBeVisible({ timeout: 10000 });
   });

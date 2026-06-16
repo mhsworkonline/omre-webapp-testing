@@ -1,5 +1,5 @@
 /**
- * Home module — Post Interactions deep-dive
+ * Home module � Post Interactions deep-dive
  * Covers: Comment flow, Reaction picker, Post detail view,
  *         Share flow, See More, Bookmark/Save, Feed tabs,
  *         Hashtags & Mentions, Infinite scroll loading state
@@ -7,12 +7,12 @@
 import { test, expect } from '@playwright/test';
 
 const AUTH_FILE = 'playwright/.auth/user.json';
-const HOME_URL  = 'https://app.omre.ai/app/home';
+const HOME_URL  = 'https://omre.ai/app/home';
 
 test.use({ storageState: AUTH_FILE });
 test.setTimeout(45000);
 
-// ── Helpers ────────────────────────────────────────────────────────────────────
+// -- Helpers --------------------------------------------------------------------
 
 async function goHome(page) {
   await page.goto(HOME_URL, { waitUntil: 'domcontentloaded' });
@@ -40,7 +40,7 @@ async function hoverReactButton(page) {
   return true;
 }
 
-// ── Comment Flow ───────────────────────────────────────────────────────────────
+// -- Comment Flow ---------------------------------------------------------------
 
 test.describe('Comment Flow', () => {
   test.beforeEach(async ({ page }) => {
@@ -225,7 +225,7 @@ test.describe('Comment Flow', () => {
     if (!opened) return;
     await page.waitForTimeout(1000);
 
-    // Locate a comment like button — try specific aria-label first, then nth(1) fallback
+    // Locate a comment like button � try specific aria-label first, then nth(1) fallback
     const commentLikeSpecific = page.locator(
       '[aria-label*="like comment" i], [aria-label*="comment like" i]'
     ).first();
@@ -265,7 +265,7 @@ test.describe('Comment Flow', () => {
   });
 });
 
-// ── Reaction Picker ────────────────────────────────────────────────────────────
+// -- Reaction Picker ------------------------------------------------------------
 
 test.describe('Reaction Picker', () => {
   test.beforeEach(async ({ page }) => {
@@ -279,7 +279,7 @@ test.describe('Reaction Picker', () => {
     const picker = page.locator(
       '[role="tooltip"], [data-slot*="reaction" i], [aria-label*="reaction" i]'
     ).first();
-    const emojiBar = page.locator('button').filter({ hasText: /❤️|😂|😮|😢|😡|👍/ }).first();
+    const emojiBar = page.locator('button').filter({ hasText: /??|??|??|??|??|??/ }).first();
     const pickerVisible  = await picker.isVisible({ timeout: 4000 }).catch(() => false);
     const emojiVisible   = await emojiBar.isVisible({ timeout: 4000 }).catch(() => false);
     if (!pickerVisible && !emojiVisible) return;
@@ -322,7 +322,7 @@ test.describe('Reaction Picker', () => {
   });
 
   test('TC-INTERACT-REACT-04: click reaction count, verify a reactions list/modal opens showing who reacted', async ({ page }) => {
-    // Find a clickable reaction count — button with a digit, or a labelled reactions element
+    // Find a clickable reaction count � button with a digit, or a labelled reactions element
     const countBtn = page.locator('main button').filter({ hasText: /^\d+$/ }).first();
     const reactLabel = page.locator('[aria-label*="reactions" i], [aria-label*="who reacted" i]').first();
 
@@ -335,7 +335,7 @@ test.describe('Reaction Picker', () => {
     await target.click();
     await page.waitForTimeout(800);
 
-    // A reactions list/modal should open — check for dialog, listbox, list, or named reaction container
+    // A reactions list/modal should open � check for dialog, listbox, list, or named reaction container
     const dialog  = page.locator('[role="dialog"]').first();
     const listbox = page.locator('[role="listbox"]').first();
     const list    = page.locator('[role="list"]').first();
@@ -397,7 +397,7 @@ test.describe('Reaction Picker', () => {
   });
 });
 
-// ── Post Detail View ───────────────────────────────────────────────────────────
+// -- Post Detail View -----------------------------------------------------------
 
 test.describe('Post Detail View', () => {
   test.beforeEach(async ({ page }) => {
@@ -405,7 +405,7 @@ test.describe('Post Detail View', () => {
   });
 
   test('TC-INTERACT-DETAIL-01: clicking on post content navigates to post detail page', async ({ page }) => {
-    // Post body text is clickable — targets the <p> or span inside the card
+    // Post body text is clickable � targets the <p> or span inside the card
     const postBody = page.locator('main p, main article p').first();
     if (!(await postBody.isVisible({ timeout: 8000 }).catch(() => false))) return;
     await postBody.click();
@@ -512,7 +512,7 @@ test.describe('Post Detail View', () => {
   });
 });
 
-// ── Share Flow ─────────────────────────────────────────────────────────────────
+// -- Share Flow -----------------------------------------------------------------
 
 test.describe('Share Flow', () => {
   test.beforeEach(async ({ page }) => {
@@ -641,19 +641,19 @@ test.describe('Share Flow', () => {
     await page.keyboard.press('Escape');
   });
 
-  test('TC-INTERACT-SHARE-07: copy link clipboard write verification — untestable: clipboard write access requires a browser permission grant that is not consistently available in all CI environments, and verifying the exact clipboard contents written by the app is not reliably achievable without mocking the clipboard API', async ({ page }) => {
+  test('TC-INTERACT-SHARE-07: copy link clipboard write verification � untestable: clipboard write access requires a browser permission grant that is not consistently available in all CI environments, and verifying the exact clipboard contents written by the app is not reliably achievable without mocking the clipboard API', async ({ page }) => {
     test.skip('untestable: clipboard write verification requires clipboard-write permission and navigator.clipboard.readText() access, which is not available in headless Chromium without explicit context-level permission grants that may not persist across all CI configurations');
   });
 });
 
-// ── See More (Long Post Truncation) ───────────────────────────────────────────
+// -- See More (Long Post Truncation) -------------------------------------------
 
-test.describe('See More — Long Post Truncation', () => {
+test.describe('See More � Long Post Truncation', () => {
   test.beforeEach(async ({ page }) => {
     await goHome(page);
   });
 
-  test('TC-INTERACT-SEERMORE-01: click See More, verify text expanded (element height increased or truncation removed — check that a "See Less" button appears or text length increased)', async ({ page }) => {
+  test('TC-INTERACT-SEERMORE-01: click See More, verify text expanded (element height increased or truncation removed � check that a "See Less" button appears or text length increased)', async ({ page }) => {
     const seeMore = page.locator('button, span, a')
       .filter({ hasText: /^see more$|^read more$|^show more$/i }).first();
     const seeMoreVisible = await seeMore.isVisible({ timeout: 8000 }).catch(() => false);
@@ -727,7 +727,7 @@ test.describe('See More — Long Post Truncation', () => {
   });
 });
 
-// ── Bookmark / Save Post ───────────────────────────────────────────────────────
+// -- Bookmark / Save Post -------------------------------------------------------
 
 test.describe('Bookmark / Save Post', () => {
   test.beforeEach(async ({ page }) => {
@@ -805,7 +805,7 @@ test.describe('Bookmark / Save Post', () => {
   });
 
   test('TC-INTERACT-SAVE-04: saved posts are accessible from profile or saved section', async ({ page }) => {
-    // Navigate to the saved posts section — typically under profile or a bookmark icon in nav
+    // Navigate to the saved posts section � typically under profile or a bookmark icon in nav
     const savedLink = page.locator(
       'a[href*="saved"], a[href*="bookmark"], [aria-label*="saved posts" i]'
     ).first();
@@ -816,12 +816,12 @@ test.describe('Bookmark / Save Post', () => {
       const navigated = !page.url().endsWith('/app/home');
       if (navigated) await page.goBack({ waitUntil: 'domcontentloaded' });
     }
-    // This is an existence check — no assertion failure if the feature is under profile
+    // This is an existence check � no assertion failure if the feature is under profile
     expect(page.isClosed()).toBe(false);
   });
 });
 
-// ── Feed Tabs ──────────────────────────────────────────────────────────────────
+// -- Feed Tabs ------------------------------------------------------------------
 
 test.describe('Feed Tabs', () => {
   test.beforeEach(async ({ page }) => {
@@ -869,13 +869,13 @@ test.describe('Feed Tabs', () => {
       await page.waitForTimeout(1500);
     }
     const appErrors = errors.filter(e =>
-      e.includes('TypeError') || e.includes('ReferenceError') || e.includes('app.omre.ai')
+      e.includes('TypeError') || e.includes('ReferenceError') || e.includes('omre.ai')
     );
     expect(appErrors).toHaveLength(0);
   });
 });
 
-// ── Hashtags & Mentions ────────────────────────────────────────────────────────
+// -- Hashtags & Mentions --------------------------------------------------------
 
 test.describe('Hashtags and Mentions', () => {
   test.beforeEach(async ({ page }) => {
@@ -891,7 +891,7 @@ test.describe('Hashtags and Mentions', () => {
       const href = await hashtag.getAttribute('href');
       expect(href).toBeTruthy();
     } else if (await hashSpan.isVisible({ timeout: 5000 }).catch(() => false)) {
-      // Hashtag present as text — check if clickable
+      // Hashtag present as text � check if clickable
       await expect(hashSpan).toBeVisible();
     }
   });
@@ -935,7 +935,7 @@ test.describe('Hashtags and Mentions', () => {
   });
 });
 
-// ── Infinite Scroll & Loading State ───────────────────────────────────────────
+// -- Infinite Scroll & Loading State -------------------------------------------
 
 test.describe('Infinite Scroll and Loading State', () => {
   test.beforeEach(async ({ page }) => {
@@ -954,7 +954,7 @@ test.describe('Infinite Scroll and Loading State', () => {
     const skeleton = page.locator('[aria-busy="true"], [data-loading="true"]').first();
     const hasLoader = await spinner.isVisible({ timeout: 3000 }).catch(() => false)
                    || await skeleton.isVisible({ timeout: 3000 }).catch(() => false);
-    // Loading indicator is optional — just verify the page stays alive
+    // Loading indicator is optional � just verify the page stays alive
     expect(page.isClosed()).toBe(false);
   });
 
@@ -979,7 +979,7 @@ test.describe('Infinite Scroll and Loading State', () => {
       await page.waitForTimeout(800);
     }
     const appErrors = errors.filter(e =>
-      e.includes('TypeError') || e.includes('ReferenceError') || e.includes('app.omre.ai')
+      e.includes('TypeError') || e.includes('ReferenceError') || e.includes('omre.ai')
     );
     expect(appErrors).toHaveLength(0);
     expect(page.isClosed()).toBe(false);
@@ -999,7 +999,7 @@ test.describe('Infinite Scroll and Loading State', () => {
       const scrollY = await page.evaluate(() => window.scrollY);
       expect(scrollY).toBeLessThan(300);
     }
-    // Optional feature — test passes if button doesn't exist
+    // Optional feature � test passes if button doesn't exist
   });
 
   test('TC-INTERACT-SCROLL-05: feed items are not duplicated after pagination', async ({ page }) => {

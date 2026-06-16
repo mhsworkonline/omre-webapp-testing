@@ -1,12 +1,12 @@
-// TC-MOBILE — Mobile responsive tests for app.omre.ai
+// TC-MOBILE � Mobile responsive tests for omre.ai
 const { test, expect } = require('@playwright/test');
 
 const AUTH_FILE = 'playwright/.auth/user.json';
-const BASE_URL = 'https://app.omre.ai';
+const BASE_URL = 'https://omre.ai';
 
 test.use({ storageState: AUTH_FILE, viewport: { width: 375, height: 812 } });
 
-// ─── Mobile Layout ────────────────────────────────────────────────────────────
+// --- Mobile Layout ------------------------------------------------------------
 test.describe('Mobile Layout', () => {
   test('TC-MOBILE-001: Given I am authenticated and on the page, When I perform the action, Then home loads at 375px without horizontal scroll', async ({ page }) => {
     test.setTimeout(45000);
@@ -79,7 +79,7 @@ test.describe('Mobile Layout', () => {
   });
 });
 
-// ─── Mobile Navigation ────────────────────────────────────────────────────────
+// --- Mobile Navigation --------------------------------------------------------
 test.describe('Mobile Navigation', () => {
   test('TC-MOBILE-006: Given I am authenticated and on the page, When I perform the action, Then tapping hamburger opens nav drawer', async ({ page }) => {
     test.setTimeout(45000);
@@ -155,7 +155,7 @@ test.describe('Mobile Navigation', () => {
   });
 });
 
-// ─── Mobile Feed ──────────────────────────────────────────────────────────────
+// --- Mobile Feed --------------------------------------------------------------
 test.describe('Mobile Feed', () => {
   test('TC-MOBILE-010: Given I am authenticated and on the page, When I perform the action, Then post card fits within viewport width', async ({ page }) => {
     test.setTimeout(45000);
@@ -217,7 +217,7 @@ test.describe('Mobile Feed', () => {
   });
 });
 
-// ─── Mobile Modals ────────────────────────────────────────────────────────────
+// --- Mobile Modals ------------------------------------------------------------
 test.describe('Mobile Modals', () => {
   test('TC-MOBILE-014: Given I am authenticated and on the page, When I perform the action, Then create post dialog opens and fits viewport width', async ({ page }) => {
     test.setTimeout(45000);
@@ -256,7 +256,7 @@ test.describe('Mobile Modals', () => {
     const isScrollable = await dialog.evaluate(el => {
       return el.scrollHeight >= el.clientHeight;
     });
-    // scrollHeight >= clientHeight is always true — content fits or overflows
+    // scrollHeight >= clientHeight is always true � content fits or overflows
     expect(isScrollable).toBe(true);
   });
 
@@ -307,7 +307,7 @@ test.describe('Mobile Modals', () => {
   });
 });
 
-// ─── Mobile Messages ──────────────────────────────────────────────────────────
+// --- Mobile Messages ----------------------------------------------------------
 test.describe('Mobile Messages', () => {
   test('TC-MOBILE-018: Given I am authenticated and on the page, When I perform the action, Then messages list loads on mobile', async ({ page }) => {
     test.setTimeout(45000);
@@ -330,7 +330,7 @@ test.describe('Mobile Messages', () => {
       const conversationView = page.locator('main, [role="main"], body > div:not([hidden])').first();
       await expect(conversationView).toBeVisible();
     } else {
-      // No conversations — empty state is valid
+      // No conversations � empty state is valid
       const mainContent = page.locator('main, [role="main"], body > div:not([hidden])').first();
       await expect(mainContent).toBeVisible();
     }

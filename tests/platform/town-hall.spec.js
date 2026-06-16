@@ -1,5 +1,5 @@
-﻿/**
- * Town Hall module — deep-dive tests
+/**
+ * Town Hall module � deep-dive tests
  * Covers: page load & layout, community discussions/polls render,
  *         voting on a poll, creating a post/topic, comment section,
  *         moderation controls, error-free load
@@ -8,7 +8,7 @@
 import { test, expect } from '@playwright/test';
 
 const AUTH_FILE  = 'playwright/.auth/user.json';
-const MODULE_URL = 'https://app.omre.ai/app/town-hall';
+const MODULE_URL = 'https://omre.ai/app/town-hall';
 
 test.use({ storageState: AUTH_FILE });
 test.setTimeout(45000);
@@ -18,7 +18,7 @@ async function goModule(page) {
   await page.waitForTimeout(1500);
 }
 
-// ── 1. Page Load and Layout ───────────────────────────────────────────────────
+// -- 1. Page Load and Layout ---------------------------------------------------
 
 test.describe('Page Load and Layout', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
@@ -50,13 +50,13 @@ test.describe('Page Load and Layout', () => {
     await page.reload({ waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(1500);
     const appErrors = errors.filter(e =>
-      e.includes('TypeError') || e.includes('ReferenceError') || e.includes('app.omre.ai')
+      e.includes('TypeError') || e.includes('ReferenceError') || e.includes('omre.ai')
     );
     expect(appErrors).toHaveLength(0);
   });
 });
 
-// ── 2. Discussions and Polls Render ───────────────────────────────────────────
+// -- 2. Discussions and Polls Render -------------------------------------------
 
 test.describe('Discussions and Polls Render', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
@@ -94,7 +94,7 @@ test.describe('Discussions and Polls Render', () => {
   });
 });
 
-// ── 3. Voting on a Poll ───────────────────────────────────────────────────────
+// -- 3. Voting on a Poll -------------------------------------------------------
 
 test.describe('Poll Voting', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
@@ -128,7 +128,7 @@ test.describe('Poll Voting', () => {
   });
 });
 
-// ── 4. Creating a Post or Topic ───────────────────────────────────────────────
+// -- 4. Creating a Post or Topic -----------------------------------------------
 
 test.describe('Create Post and Topic', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
@@ -177,7 +177,7 @@ test.describe('Create Post and Topic', () => {
   });
 });
 
-// ── 5. Comment Section ────────────────────────────────────────────────────────
+// -- 5. Comment Section --------------------------------------------------------
 
 test.describe('Comment Section', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
@@ -231,7 +231,7 @@ test.describe('Comment Section', () => {
   });
 });
 
-// ── 6. Poll Duplicate Vote, Post Validation, Long Content, Comment Char Limit, Edit, Delete, Moderator ──
+// -- 6. Poll Duplicate Vote, Post Validation, Long Content, Comment Char Limit, Edit, Delete, Moderator --
 
 test.describe('Advanced Poll, Post Validation and Comment Management', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
@@ -310,7 +310,7 @@ test.describe('Advanced Poll, Post Validation and Comment Management', () => {
     // Check for a character count indicator or truncation
     const charCount = page.locator('main').getByText(/\d+\s*\/\s*\d+|\d+\s*characters? remaining|\d+\s*left/i).first();
     const counterVisible = await charCount.isVisible({ timeout: 3000 }).catch(() => false);
-    // Soft assertion — counter may not always be shown
+    // Soft assertion � counter may not always be shown
     expect(typeof counterVisible).toBe('boolean');
   });
 

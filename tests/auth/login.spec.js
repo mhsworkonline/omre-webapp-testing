@@ -5,7 +5,7 @@ const EMAIL    = process.env.TEST_EMAIL || '';
 const PASSWORD = process.env.TEST_PASSWORD || '';
 const AUTH_FILE = 'playwright/.auth/user.json';
 
-test.describe('Authentication — form tests (no session needed)', () => {
+test.describe('Authentication � form tests (no session needed)', () => {
   test.setTimeout(30000);
   let loginPage;
 
@@ -52,13 +52,13 @@ test.describe('Authentication — form tests (no session needed)', () => {
   });
 
   test('TC-AUTH-08: Given I am authenticated and on the page, When I perform the action, Then unauthenticated access to /app/home redirects to login', async ({ page }) => {
-    await page.goto('https://app.omre.ai/app/home', { waitUntil: 'domcontentloaded' });
+    await page.goto('https://omre.ai/app/home', { waitUntil: 'domcontentloaded' });
     await page.waitForURL(/\/auth\/login/, { timeout: 10000 }).catch(() => {});
     await loginPage.expectOnLoginPage();
   });
 });
 
-test.describe('Authentication — requires login', () => {
+test.describe('Authentication � requires login', () => {
   test.setTimeout(90000);
   let loginPage;
 
@@ -78,13 +78,13 @@ test.describe('Authentication — requires login', () => {
   });
 });
 
-// Session tests — use saved storageState so login is instant
-test.describe('Authentication — session tests', () => {
+// Session tests � use saved storageState so login is instant
+test.describe('Authentication � session tests', () => {
   test.setTimeout(60000);
   test.use({ storageState: AUTH_FILE });
 
   test('TC-AUTH-09: Given I am authenticated, When a session action occurs, Then session persists after page reload', async ({ page }) => {
-    await page.goto('https://app.omre.ai/app/home', { waitUntil: 'domcontentloaded' });
+    await page.goto('https://omre.ai/app/home', { waitUntil: 'domcontentloaded' });
     await page.waitForURL(/\/app\/home/, { timeout: 10000 });
     await page.reload();
     await page.waitForLoadState('domcontentloaded');
@@ -93,7 +93,7 @@ test.describe('Authentication — session tests', () => {
 
   test('TC-AUTH-10: Given I am logged in, When I log out, Then clears session and redirects to login', async ({ page }) => {
     test.skip();
-    await page.goto('https://app.omre.ai/app/home', { waitUntil: 'domcontentloaded' });
+    await page.goto('https://omre.ai/app/home', { waitUntil: 'domcontentloaded' });
     const loginPage = new LoginPage(page);
     const loggedOut = await loginPage.logout().then(() => true).catch(() => false);
     if (!loggedOut) { test.skip(); return; }
@@ -104,7 +104,7 @@ test.describe('Authentication — session tests', () => {
   });
 });
 
-// ── Forgot Password ────────────────────────────────────────────────────────────
+// -- Forgot Password ------------------------------------------------------------
 
 test.describe('Forgot Password', () => {
   test.setTimeout(30000);
@@ -176,7 +176,7 @@ test.describe('Forgot Password', () => {
   });
 });
 
-// ── Social Login ───────────────────────────────────────────────────────────────
+// -- Social Login ---------------------------------------------------------------
 
 test.describe('Social Login', () => {
   test.setTimeout(30000);
@@ -222,7 +222,7 @@ test.describe('Social Login', () => {
   });
 });
 
-// ── Sign Up ────────────────────────────────────────────────────────────────────
+// -- Sign Up --------------------------------------------------------------------
 
 test.describe('Sign Up', () => {
   test.setTimeout(30000);
@@ -313,7 +313,7 @@ test.describe('Sign Up', () => {
   });
 });
 
-// ── Security ───────────────────────────────────────────────────────────────────
+// -- Security -------------------------------------------------------------------
 
 test.describe('Security', () => {
   test.setTimeout(60000);
@@ -324,7 +324,7 @@ test.describe('Security', () => {
   });
 
   test('TC-AUTH-26: Given I am on the multiple wrong password attempts, When I view it, Then it shows a lockout message or CAPTCHA', async ({ page }) => {
-    test.skip(); // lockout behaviour is optional — app does not enforce it
+    test.skip(); // lockout behaviour is optional � app does not enforce it
     const loginPage = new LoginPage(page);
     for (let i = 0; i < 3; i++) {
       if (page.isClosed()) { test.skip(); return; }

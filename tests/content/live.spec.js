@@ -8,7 +8,7 @@
 import { test, expect } from '@playwright/test';
 
 const AUTH_FILE = 'playwright/.auth/user.json';
-const MODULE_URL = 'https://app.omre.ai/app/live';
+const MODULE_URL = 'https://omre.ai/app/live';
 
 test.use({ storageState: AUTH_FILE });
 test.setTimeout(45000);
@@ -123,7 +123,7 @@ test.describe('TC-LIVE | Streams List', () => {
     if (!(await card.isVisible({ timeout: 10000 }).catch(() => false))) return;
     const img = card.locator('img').first();
     const visible = await img.isVisible({ timeout: 5000 }).catch(() => false);
-    expect(visible || true).toBe(true); // lenient — thumbnail may be replaced by live video
+    expect(visible || true).toBe(true); // lenient � thumbnail may be replaced by live video
   });
 
   test('TC-LIVE-09: Given I am on the live stream card, When I view it, Then it shows a title or description', async ({ page }) => {
@@ -145,7 +145,7 @@ test.describe('TC-LIVE | Streams List', () => {
     const found =
       (await viewerCount.isVisible({ timeout: 8000 }).catch(() => false)) ||
       (await countText.isVisible({ timeout: 8000 }).catch(() => false));
-    expect(found || true).toBe(true); // lenient — viewers shown inside player
+    expect(found || true).toBe(true); // lenient � viewers shown inside player
   });
 
   test('TC-LIVE-11: live badge or "LIVE" indicator is visible on active streams', async ({
@@ -501,7 +501,7 @@ test.describe('TC-LIVE | Leave and Host Controls', () => {
       .getByRole('button', { name: /end|stop|finish/i })
       .first();
     const endVisible = await endBtn.isVisible({ timeout: 3000 }).catch(() => false);
-    // End button may only appear once streaming starts — validate page is at least stable
+    // End button may only appear once streaming starts � validate page is at least stable
     await expect(page.locator('main, [role="main"]').first()).toBeVisible({ timeout: 5000 });
     // If end button is visible, validate it
     if (endVisible) {
@@ -530,7 +530,7 @@ test.describe('TC-LIVE | Emoji Reactions', () => {
     const emojiBtn = page
       .locator('[aria-label*="emoji" i], [aria-label*="reaction" i], [aria-label*="react" i]')
       .first();
-    const emojiPanel = page.locator('button').filter({ hasText: /😂|❤️|🔥|👏|😮/ }).first();
+    const emojiPanel = page.locator('button').filter({ hasText: /??|??|??|??|??/ }).first();
     const found = await emojiBtn.isVisible({ timeout: 5000 }).catch(() => false)
       || await emojiPanel.isVisible({ timeout: 5000 }).catch(() => false);
     if (!found) return;
@@ -690,7 +690,7 @@ test.describe('TC-LIVE | Chat Validation and Controls', () => {
     ).first();
     if (!(await chatInput.isVisible({ timeout: 5000 }).catch(() => false))) { test.skip(); return; }
     await chatInput.click({ force: true });
-    // Do NOT type anything — attempt to send empty
+    // Do NOT type anything � attempt to send empty
     const sendBtn = page.locator('button[type="submit"], button').filter({ hasText: /send|post/i }).first();
     const sendVisible = await sendBtn.isVisible({ timeout: 3000 }).catch(() => false);
     if (sendVisible) {

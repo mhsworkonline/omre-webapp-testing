@@ -1,5 +1,5 @@
 /**
- * Pages module — deep-dive tests
+ * Pages module � deep-dive tests
  * Covers: page load & layout, pages list, empty state, create page modal & form,
  *         field input, category selector, cancel/submit flow, page cards, card navigation,
  *         page detail (name, about, cover, actions), edit option, follow/like button,
@@ -8,7 +8,7 @@
 import { test, expect } from '@playwright/test';
 
 const AUTH_FILE = 'playwright/.auth/user.json';
-const PAGES_URL = 'https://app.omre.ai/app/pages';
+const PAGES_URL = 'https://omre.ai/app/pages';
 
 test.use({ storageState: AUTH_FILE });
 test.setTimeout(45000);
@@ -18,7 +18,7 @@ async function goPages(page) {
   await page.waitForTimeout(1500);
 }
 
-// ── Page Load & Layout ─────────────────────────────────────────────────────────
+// -- Page Load & Layout ---------------------------------------------------------
 
 test.describe('Page Load and Layout', () => {
   test.beforeEach(async ({ page }) => { await goPages(page); });
@@ -45,13 +45,13 @@ test.describe('Page Load and Layout', () => {
     await page.reload({ waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(1500);
     const appErrors = errors.filter(e =>
-      e.includes('TypeError') || e.includes('ReferenceError') || e.includes('app.omre.ai')
+      e.includes('TypeError') || e.includes('ReferenceError') || e.includes('omre.ai')
     );
     expect(appErrors).toHaveLength(0);
   });
 });
 
-// ── Pages List & Empty State ───────────────────────────────────────────────────
+// -- Pages List & Empty State ---------------------------------------------------
 
 test.describe('Pages List and Empty State', () => {
   test.beforeEach(async ({ page }) => { await goPages(page); });
@@ -103,7 +103,7 @@ test.describe('Pages List and Empty State', () => {
   });
 });
 
-// ── Create Page ───────────────────────────────────────────────────────────────
+// -- Create Page ---------------------------------------------------------------
 
 test.describe('Create Page', () => {
   test.beforeEach(async ({ page }) => { await goPages(page); });
@@ -252,7 +252,7 @@ test.describe('Create Page', () => {
   });
 });
 
-// ── Page Card Navigation ───────────────────────────────────────────────────────
+// -- Page Card Navigation -------------------------------------------------------
 
 test.describe('Page Card Navigation', () => {
   test.beforeEach(async ({ page }) => { await goPages(page); });
@@ -280,7 +280,7 @@ test.describe('Page Card Navigation', () => {
   });
 });
 
-// ── Page Detail ───────────────────────────────────────────────────────────────
+// -- Page Detail ---------------------------------------------------------------
 
 test.describe('Page Detail', () => {
   async function navigateToFirstPage(page) {
@@ -388,7 +388,7 @@ test.describe('Page Detail', () => {
   });
 });
 
-// ── Category Filtering ────────────────────────────────────────────────────────
+// -- Category Filtering --------------------------------------------------------
 
 test.describe('Category Filtering', () => {
   test.beforeEach(async ({ page }) => { await goPages(page); });
@@ -422,7 +422,7 @@ test.describe('Category Filtering', () => {
   });
 });
 
-// ── Page Name / Description Length Validation ─────────────────────────────────
+// -- Page Name / Description Length Validation ---------------------------------
 
 test.describe('Page Name and Description Length Validation', () => {
   test.beforeEach(async ({ page }) => { await goPages(page); });
@@ -448,13 +448,13 @@ test.describe('Page Name and Description Length Validation', () => {
   });
 });
 
-// ── Page Creation with Duplicate Name ─────────────────────────────────────────
+// -- Page Creation with Duplicate Name -----------------------------------------
 
 test.describe('Page Creation with Duplicate Name', () => {
-  test.skip('TC-PAGES-32: Given a page with a specific name already exists, When I try to create another page with the same name, Then the app shows a duplicate name error — untestable: requires knowing an existing page name in the test account', () => {});
+  test.skip('TC-PAGES-32: Given a page with a specific name already exists, When I try to create another page with the same name, Then the app shows a duplicate name error � untestable: requires knowing an existing page name in the test account', () => {});
 });
 
-// ── Page Edit Workflow ─────────────────────────────────────────────────────────
+// -- Page Edit Workflow ---------------------------------------------------------
 
 test.describe('Page Edit Workflow', () => {
   async function navigateToFirstPage(page) {
@@ -497,7 +497,7 @@ test.describe('Page Edit Workflow', () => {
   });
 });
 
-// ── Page Deletion Confirmation ─────────────────────────────────────────────────
+// -- Page Deletion Confirmation -------------------------------------------------
 
 test.describe('Page Deletion Confirmation', () => {
   async function navigateToFirstPage(page) {
@@ -534,7 +534,7 @@ test.describe('Page Deletion Confirmation', () => {
   });
 });
 
-// ── Page Visibility Toggle ─────────────────────────────────────────────────────
+// -- Page Visibility Toggle -----------------------------------------------------
 
 test.describe('Page Visibility Toggle', () => {
   async function navigateToFirstPage(page) {
@@ -564,7 +564,7 @@ test.describe('Page Visibility Toggle', () => {
   });
 });
 
-// ── Page Cover Photo Upload ────────────────────────────────────────────────────
+// -- Page Cover Photo Upload ----------------------------------------------------
 
 test.describe('Page Cover Photo Upload', () => {
   async function navigateToFirstPage(page) {
@@ -593,13 +593,13 @@ test.describe('Page Cover Photo Upload', () => {
   });
 });
 
-// ── Page Follow Count Increment ────────────────────────────────────────────────
+// -- Page Follow Count Increment ------------------------------------------------
 
 test.describe('Page Follow Count Increment', () => {
-  test.skip('TC-PAGES-37: Given a page has N followers, When another user follows the page, Then the count increments to N+1 — untestable: requires a second authenticated session and real-time count refresh', () => {});
+  test.skip('TC-PAGES-37: Given a page has N followers, When another user follows the page, Then the count increments to N+1 � untestable: requires a second authenticated session and real-time count refresh', () => {});
 });
 
-// ── Page Search by Name ────────────────────────────────────────────────────────
+// -- Page Search by Name --------------------------------------------------------
 
 test.describe('Page Search by Name', () => {
   test.beforeEach(async ({ page }) => { await goPages(page); });

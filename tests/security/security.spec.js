@@ -1,15 +1,15 @@
-// TC-SEC — Security tests for app.omre.ai
+// TC-SEC � Security tests for omre.ai
 const { test, expect } = require('@playwright/test');
 
 const AUTH_FILE = 'playwright/.auth/user.json';
-const BASE_URL = 'https://app.omre.ai';
+const BASE_URL = 'https://omre.ai';
 const XSS_PAYLOAD = '<script>alert(1)</script>';
 
 // Authenticated session required for input sanitisation and session tests.
 // Auth Protection tests create their own fresh (unauthenticated) contexts.
 test.use({ storageState: AUTH_FILE });
 
-// ─── Input Sanitisation ───────────────────────────────────────────────────────
+// --- Input Sanitisation -------------------------------------------------------
 test.describe('Input Sanitisation', () => {
   test('TC-SEC-001: Given I am authenticated and on the page, When I perform the action, Then post input does not execute injected script tag', async ({ page }) => {
     test.setTimeout(45000);
@@ -157,7 +157,7 @@ test.describe('Input Sanitisation', () => {
   });
 });
 
-// ─── Auth Protection ──────────────────────────────────────────────────────────
+// --- Auth Protection ----------------------------------------------------------
 test.describe('Auth Protection', () => {
   test('TC-SEC-006: Given I am authenticated and on the page, When I perform the action, Then unauthenticated access to /app/home redirects to login', async ({ browser }) => {
     test.setTimeout(45000);
@@ -239,7 +239,7 @@ test.describe('Auth Protection', () => {
   });
 });
 
-// ─── Content Security ─────────────────────────────────────────────────────────
+// --- Content Security ---------------------------------------------------------
 test.describe('Content Security', () => {
   test('TC-SEC-010: Given I am authenticated and on the page, When I perform the action, Then script count does not increase after loading feed content', async ({ page }) => {
     test.setTimeout(45000);
@@ -299,7 +299,7 @@ test.describe('Content Security', () => {
   });
 });
 
-// ─── Session Security ─────────────────────────────────────────────────────────
+// --- Session Security ---------------------------------------------------------
 test.describe('Session Security', () => {
   test('TC-SEC-013: Given I am logged in, When I log out, Then session cookie is cleared', async ({ page }) => {
     test.setTimeout(45000);

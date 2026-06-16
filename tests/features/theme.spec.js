@@ -8,8 +8,8 @@
 import { test, expect } from '@playwright/test';
 
 const AUTH_FILE  = 'playwright/.auth/user.json';
-const HOME_URL   = 'https://app.omre.ai/app/home';
-const NOTIF_URL  = 'https://app.omre.ai/app/notifications';
+const HOME_URL   = 'https://omre.ai/app/home';
+const NOTIF_URL  = 'https://omre.ai/app/notifications';
 
 test.use({ storageState: AUTH_FILE });
 test.setTimeout(45000);
@@ -34,7 +34,7 @@ function themeToggle(page) {
     .first();
 }
 
-// ─── 1. Toggle Visibility ────────────────────────────────────────────────────
+// --- 1. Toggle Visibility ----------------------------------------------------
 test.describe('TC-THEME: Toggle Visibility', () => {
   test.beforeEach(async ({ page }) => { await goHome(page); });
 
@@ -53,7 +53,7 @@ test.describe('TC-THEME: Toggle Visibility', () => {
   });
 });
 
-// ─── 2. Theme Switching ──────────────────────────────────────────────────────
+// --- 2. Theme Switching ------------------------------------------------------
 test.describe('TC-THEME: Theme Switching', () => {
   test.beforeEach(async ({ page }) => { await goHome(page); });
 
@@ -86,7 +86,7 @@ test.describe('TC-THEME: Theme Switching', () => {
     } else if (/light/i.test(before)) {
       expect(/light/i.test(after)).toBe(false);
     } else {
-      // Unknown initial state — just confirm it changed
+      // Unknown initial state � just confirm it changed
       expect(before).not.toEqual(after);
     }
   });
@@ -105,7 +105,7 @@ test.describe('TC-THEME: Theme Switching', () => {
   });
 });
 
-// ─── 3. Theme Persistence ────────────────────────────────────────────────────
+// --- 3. Theme Persistence ----------------------------------------------------
 test.describe('TC-THEME: Theme Persistence', () => {
   test.beforeEach(async ({ page }) => { await goHome(page); });
 
@@ -141,7 +141,7 @@ test.describe('TC-THEME: Theme Persistence', () => {
   });
 });
 
-// ─── 4. Keyboard Accessibility ───────────────────────────────────────────────
+// --- 4. Keyboard Accessibility -----------------------------------------------
 test.describe('TC-THEME: Keyboard Accessibility', () => {
   test.beforeEach(async ({ page }) => { await goHome(page); });
 
@@ -155,7 +155,7 @@ test.describe('TC-THEME: Keyboard Accessibility', () => {
       const active = await page.evaluate(() => document.activeElement?.getAttribute('aria-label') || '');
       if (/theme|dark|light/i.test(active)) { focused = true; break; }
     }
-    if (!focused) return; // toggle may not be in the natural tab order — skip gracefully
+    if (!focused) return; // toggle may not be in the natural tab order � skip gracefully
     expect(focused).toBe(true);
   });
 
@@ -173,7 +173,7 @@ test.describe('TC-THEME: Keyboard Accessibility', () => {
   });
 });
 
-// ─── 5. System Preference and Settings Page ──────────────────────────────────
+// --- 5. System Preference and Settings Page ----------------------------------
 test.describe('TC-THEME: System Preference and Settings Consistency', () => {
   test.beforeEach(async ({ page }) => { await goHome(page); });
 
@@ -222,7 +222,7 @@ test.describe('TC-THEME: System Preference and Settings Consistency', () => {
   });
 });
 
-// ─── 6. Theme Preference Persistence ────────────────────────────────────────
+// --- 6. Theme Preference Persistence ----------------------------------------
 test.describe('TC-THEME: Theme Preference Persistence', () => {
   test.beforeEach(async ({ page }) => { await goHome(page); });
 
@@ -259,7 +259,7 @@ test.describe('TC-THEME: Theme Preference Persistence', () => {
     expect(headerDarkVisible || headerLightVisible).toBe(true);
   });
 
-  test.skip('TC-THEME-18: untestable: OS dark mode preference — Playwright cannot read or simulate the operating system dark mode preference without emulation config set at project level', () => {});
+  test.skip('TC-THEME-18: untestable: OS dark mode preference � Playwright cannot read or simulate the operating system dark mode preference without emulation config set at project level', () => {});
 
   test('TC-THEME-19: Given I switch the theme, When I inspect the body element, Then the body or html element reflects the chosen theme via class or CSS variable', async ({ page }) => {
     const toggle = themeToggle(page);

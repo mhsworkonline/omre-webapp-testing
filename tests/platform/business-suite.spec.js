@@ -1,5 +1,5 @@
 /**
- * Business Suite module — deep-dive tests
+ * Business Suite module � deep-dive tests
  * Covers: page load & layout, heading, dashboard panels, analytics/stats display,
  *         navigation between sections, CTA buttons, empty state handling,
  *         sidebar/nav, error-free load
@@ -8,7 +8,7 @@
 import { test, expect } from '@playwright/test';
 
 const AUTH_FILE   = 'playwright/.auth/user.json';
-const MODULE_URL  = 'https://app.omre.ai/app/business-suite';
+const MODULE_URL  = 'https://omre.ai/app/business-suite';
 
 test.use({ storageState: AUTH_FILE });
 test.setTimeout(45000);
@@ -18,7 +18,7 @@ async function goModule(page) {
   await page.waitForTimeout(1500);
 }
 
-// ── 1. Page Load and Layout ───────────────────────────────────────────────────
+// -- 1. Page Load and Layout ---------------------------------------------------
 
 test.describe('Page Load and Layout', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
@@ -50,13 +50,13 @@ test.describe('Page Load and Layout', () => {
     await page.reload({ waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(1500);
     const appErrors = errors.filter(e =>
-      e.includes('TypeError') || e.includes('ReferenceError') || e.includes('app.omre.ai')
+      e.includes('TypeError') || e.includes('ReferenceError') || e.includes('omre.ai')
     );
     expect(appErrors).toHaveLength(0);
   });
 });
 
-// ── 2. Dashboard Panels and Stats ─────────────────────────────────────────────
+// -- 2. Dashboard Panels and Stats ---------------------------------------------
 
 test.describe('Dashboard Panels and Analytics', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
@@ -96,7 +96,7 @@ test.describe('Dashboard Panels and Analytics', () => {
   });
 });
 
-// ── 3. Navigation Between Sections ────────────────────────────────────────────
+// -- 3. Navigation Between Sections --------------------------------------------
 
 test.describe('Section Navigation', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
@@ -132,7 +132,7 @@ test.describe('Section Navigation', () => {
   });
 });
 
-// ── 4. CTA Buttons ────────────────────────────────────────────────────────────
+// -- 4. CTA Buttons ------------------------------------------------------------
 
 test.describe('CTA Buttons and Actions', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
@@ -167,7 +167,7 @@ test.describe('CTA Buttons and Actions', () => {
   });
 });
 
-// ── 5. Empty State Handling ────────────────────────────────────────────────────
+// -- 5. Empty State Handling ----------------------------------------------------
 
 test.describe('Empty State and Fallback UI', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
@@ -189,7 +189,7 @@ test.describe('Empty State and Fallback UI', () => {
     if (await spinner.isVisible({ timeout: 3000 }).catch(() => false)) {
       await expect(spinner).not.toBeVisible({ timeout: 12000 });
     } else {
-      // No spinner shown — content loaded directly
+      // No spinner shown � content loaded directly
       await expect(page.locator('main')).toBeVisible({ timeout: 8000 });
     }
   });
@@ -208,7 +208,7 @@ test.describe('Empty State and Fallback UI', () => {
   });
 });
 
-// ── 6. Analytics Filter, Chart Tooltip, Form Validation, API Error, Pagination ──
+// -- 6. Analytics Filter, Chart Tooltip, Form Validation, API Error, Pagination --
 
 test.describe('Advanced Analytics and Pagination', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
@@ -256,7 +256,7 @@ test.describe('Advanced Analytics and Pagination', () => {
     expect(typeof hasError).toBe('boolean');
   });
 
-  test.skip('TC-BIZ-SUITE-27: untestable: error state when API fails — cannot reliably simulate backend failure without mocking at network level', () => {});
+  test.skip('TC-BIZ-SUITE-27: untestable: error state when API fails � cannot reliably simulate backend failure without mocking at network level', () => {});
 
   test('TC-BIZ-SUITE-28: Given a panel contains multiple items, When I click next page or load more, Then more content is displayed', async ({ page }) => {
     const paginationEl = page.locator('button')

@@ -11,7 +11,7 @@ test.beforeEach(async ({ page }) => {
   await homePage.goto();
 });
 
-// ── Layout & Load ──────────────────────────────────────────────────────────────
+// -- Layout & Load --------------------------------------------------------------
 
 test('TC-HOME-01: Given I am authenticated and on the page, When I perform the action, Then home page loads with correct URL', async ({ page }) => {
   await expect(page).toHaveURL(/\/app\/home/);
@@ -36,7 +36,7 @@ test('TC-HOME-05: Given I am on the page, When the page renders, Then Home link 
   await expect(link).toBeVisible({ timeout: 10000 });
 });
 
-// ── Feed Content ───────────────────────────────────────────────────────────────
+// -- Feed Content ---------------------------------------------------------------
 
 test('TC-HOME-06: Given I am authenticated and on the page, When I perform the action, Then feed renders at least one post or content block', async ({ page }) => {
   await homePage.waitForFeed();
@@ -80,7 +80,7 @@ test('TC-HOME-08: Given I am authenticated and on the page, When I perform the a
   expect(after).toBeGreaterThan(before);
 });
 
-// ── Post Card Anatomy ──────────────────────────────────────────────────────────
+// -- Post Card Anatomy ----------------------------------------------------------
 
 test('TC-HOME-09: Given I am on the page, When I inspect the content, Then post card contains an author link or avatar', async ({ page }) => {
   await homePage.waitForFeed();
@@ -108,14 +108,14 @@ test('TC-HOME-10: Given I am on the post card, When I view it, Then it shows pos
 
 test('TC-HOME-11: Given I am on the post card, When I view it, Then it shows a timestamp or post-age indicator', async ({ page }) => {
   await homePage.waitForFeed();
-  // Scan the rendered text of the feed directly — avoids locator matching issues with
+  // Scan the rendered text of the feed directly � avoids locator matching issues with
   // text nodes split across nested spans
   const hasTimestamp = await page.evaluate(() => {
     const text = document.querySelector('main')?.innerText ?? '';
     return /(\d+\s*(s|m|h|d|w|sec|min|hour|day|week))|just\s*now|\bago\b|yesterday|today|\d{1,2}:\d{2}/i.test(text);
   });
   if (!hasTimestamp) {
-    // Timestamps may use a non-standard format or load lazily — skip rather than fail
+    // Timestamps may use a non-standard format or load lazily � skip rather than fail
     test.skip(true, 'No timestamp text detected in feed innerText');
     return;
   }
@@ -165,7 +165,7 @@ test('TC-HOME-13: Given I am authenticated and on the page, When I perform the a
   await page.keyboard.press('Escape');
 });
 
-// ── Post Interactions ──────────────────────────────────────────────────────────
+// -- Post Interactions ----------------------------------------------------------
 
 test('TC-HOME-14: Given I am authenticated and on the page, When I perform the action, Then like button is present on feed posts', async ({ page }) => {
   await homePage.waitForFeed();
@@ -337,7 +337,7 @@ test('TC-HOME-21: Given the author name is present, When I click the author name
   }
 });
 
-// ── Navigation from Home ───────────────────────────────────────────────────────
+// -- Navigation from Home -------------------------------------------------------
 
 test('TC-HOME-22: Given the Explore nav link is present, When I click the Explore nav link, Then it navigates to /app/explore', async ({ page }) => {
   const link = page.locator('a[href="/app/explore"], a[href*="/app/explore"]').first();
@@ -379,7 +379,7 @@ test('TC-HOME-26: Given I am on the page, When I inspect the content, Then sideb
   expect(count).toBeGreaterThanOrEqual(3);
 });
 
-// ── Create Post Composer ───────────────────────────────────────────────────────
+// -- Create Post Composer -------------------------------------------------------
 
 test('TC-HOME-27: Given the create-post is present, When I click the create-post, Then it trigger expands the composer', async ({ page }) => {
   const trigger = page.locator('[placeholder*="mind" i], [placeholder*="post" i], [placeholder*="share" i]').first();
@@ -404,7 +404,7 @@ test('TC-HOME-28: Given I am on the page, When I inspect the content, Then compo
   const dialog = page.locator('[role="dialog"], [aria-modal="true"]').first();
   if (await dialog.isVisible({ timeout: 5000 }).catch(() => false)) {
     // Radix Sheet renders the textarea as a descendant of the sheet-content div but
-    // the dialog locator may resolve to a sibling overlay — search page-wide instead
+    // the dialog locator may resolve to a sibling overlay � search page-wide instead
     const textbox = page.locator('textarea, [contenteditable="true"]')
       .filter({ hasNot: page.locator('[readonly]') }).first();
     await expect(textbox).toBeVisible({ timeout: 5000 });
@@ -462,7 +462,7 @@ test('TC-HOME-31: Given I am authenticated and on the page, When I perform the a
     const submit  = dialog.locator('button[type="submit"]').first();
     const submitLabel = dialog.locator('button').filter({ hasText: /^post$|^share$|^publish$/i }).first();
     if (await textbox.isVisible({ timeout: 3000 }).catch(() => false)) {
-      await textbox.fill('Automated test post — please ignore');
+      await textbox.fill('Automated test post � please ignore');
       await page.waitForTimeout(300);
       const submitVis = await submit.isVisible({ timeout: 2000 }).catch(() => false);
       if (submitVis) {
@@ -526,7 +526,7 @@ test('TC-HOME-33: Given I am on the page, When I inspect the content, Then compo
   await page.keyboard.press('Escape');
 });
 
-// ── Stories / Highlights ───────────────────────────────────────────────────────
+// -- Stories / Highlights -------------------------------------------------------
 
 test('TC-HOME-34: Given I am authenticated and on the page, When I perform the action, Then stories or highlights bar is present if feature is enabled', async ({ page }) => {
   await homePage.waitForFeed();
@@ -557,7 +557,7 @@ test('TC-HOME-35: Given the story is present, When I click the story, Then it op
   }
 });
 
-// ── Feed Filtering / Sorting ───────────────────────────────────────────────────
+// -- Feed Filtering / Sorting ---------------------------------------------------
 
 test('TC-HOME-36: Given I am authenticated and on the page, When I perform the action, Then feed filter or sort control is accessible if present', async ({ page }) => {
   await homePage.waitForFeed();
@@ -580,7 +580,7 @@ test('TC-HOME-36: Given I am authenticated and on the page, When I perform the a
   expect(feedChanged || dropdownVis || !page.isClosed()).toBe(true);
 });
 
-// ── Post with Media ────────────────────────────────────────────────────────────
+// -- Post with Media ------------------------------------------------------------
 
 test('TC-HOME-37: Given I am authenticated and on the page, When I perform the action, Then image posts render their media correctly', async ({ page }) => {
   await homePage.waitForFeed();
@@ -598,7 +598,7 @@ test('TC-HOME-37: Given I am authenticated and on the page, When I perform the a
   await expect(postImage).toBeVisible();
 });
 
-// ── Page State ─────────────────────────────────────────────────────────────────
+// -- Page State -----------------------------------------------------------------
 
 test('TC-HOME-38: Given I am authenticated and on the page, When I perform the action, Then page title reflects the app name', async ({ page }) => {
   const title = await page.title();
@@ -610,8 +610,8 @@ test('TC-HOME-39: Given I am on the page, When I inspect the content, Then page 
   page.on('pageerror', err => errors.push(err.message));
   await page.reload({ waitUntil: 'domcontentloaded' });
   await page.waitForTimeout(2000);
-  // Filter noise — only flag genuine app errors, not extension/ad errors
-  const appErrors = errors.filter(e => e.includes('app.omre.ai') || e.includes('TypeError') || e.includes('ReferenceError'));
+  // Filter noise � only flag genuine app errors, not extension/ad errors
+  const appErrors = errors.filter(e => e.includes('omre.ai') || e.includes('TypeError') || e.includes('ReferenceError'));
   expect(appErrors).toHaveLength(0);
 });
 
@@ -623,7 +623,7 @@ test('TC-HOME-40: Given I am on the page, When I reload the page, Then content r
   await expect(content).toBeVisible({ timeout: 10000 });
 });
 
-// ── Create Post Widget (inline) ────────────────────────────────────────────────
+// -- Create Post Widget (inline) ------------------------------------------------
 // Tests for the "What's on your mind?" widget visible directly on the home feed.
 // Buttons: Photo | Video | Studio | Live | Feeling | Post
 
@@ -637,7 +637,7 @@ test('TC-HOME-41: Given I am on the page, When the page renders, Then create pos
   if (!inputVis) { test.skip(); return; }
   // Type in the input and verify Post button becomes enabled
   await input.click();
-  await input.fill('Automated test post — please ignore');
+  await input.fill('Automated test post � please ignore');
   await page.waitForTimeout(500);
   const postBtn = page.locator('button').filter({ hasText: /^post$/i }).first();
   const postBtnVis = await postBtn.isVisible({ timeout: 3000 }).catch(() => false);
@@ -713,7 +713,7 @@ test('TC-HOME-45: Given the page is loaded, When I click Video button is interac
   if (await videoBtn.isVisible({ timeout: 5000 }).catch(() => false)) {
     await videoBtn.click();
     await page.waitForTimeout(800);
-    // Video may open a dialog, navigate, or expand inline — any response is valid
+    // Video may open a dialog, navigate, or expand inline � any response is valid
     // Core assertion: page is still alive and hasn't crashed
     expect(page.isClosed()).toBe(false);
     await page.keyboard.press('Escape');
@@ -746,7 +746,7 @@ test('TC-HOME-47: Given I am authenticated and on the page, When I perform the a
   await homePage.waitForFeed();
   const studioBtn = page.locator('button').filter({ hasText: /^studio$/i }).first();
   if (await studioBtn.isVisible({ timeout: 5000 }).catch(() => false)) {
-    // The chevron may be a sibling element, not inside the button — just verify click stability
+    // The chevron may be a sibling element, not inside the button � just verify click stability
     await studioBtn.click();
     await page.waitForTimeout(500);
     expect(page.isClosed()).toBe(false);
@@ -787,7 +787,7 @@ test('TC-HOME-48: Given I am authenticated and on the page, When I perform the a
 
 test('TC-HOME-49: Given the Live button is present, When I click the Live button, Then it navigates to or opens the live stream setup', async ({ page }) => {
   await homePage.waitForFeed();
-  // Live is a link, not a button — match by href
+  // Live is a link, not a button � match by href
   const liveLink = page.locator('a[href*="live"]').filter({ hasText: /live/i }).first();
   const liveBtn  = page.locator('button').filter({ hasText: /live/i }).first();
   const live = (await liveLink.isVisible({ timeout: 5000 }).catch(() => false)) ? liveLink : liveBtn;
@@ -847,7 +847,7 @@ test('TC-HOME-52: Given I am on the page, When the page renders, Then Post butto
   if (!inputVis) { test.skip(); return; }
   // Type text to trigger post submission flow
   await input.click();
-  await input.fill('Automated test post — please ignore');
+  await input.fill('Automated test post � please ignore');
   await page.waitForTimeout(500);
   const postBtn = page.locator('button').filter({ hasText: /^post$/i }).first();
   const postBtnVis = await postBtn.isVisible({ timeout: 5000 }).catch(() => false);
@@ -915,7 +915,7 @@ test('TC-HOME-55: Given I am on the create post widget, When I view it, Then it 
   await expect(anyAvatar).toBeVisible();
 });
 
-// ── Sidebar Navigation Links ───────────────────────────────────────────────────
+// -- Sidebar Navigation Links ---------------------------------------------------
 
 test('TC-HOME-56: Given I am on the home page, When I inspect the sidebar, Then Explore link is visible in sidebar', async ({ page }) => {
   await page.waitForLoadState('domcontentloaded');
@@ -944,14 +944,14 @@ test('TC-HOME-58: Given I am on the home page, When I inspect the sidebar, Then 
   await expect(notifLink).toBeVisible();
 });
 
-// ── Composer Emoji/Media Toolbar ───────────────────────────────────────────────
+// -- Composer Emoji/Media Toolbar -----------------------------------------------
 
 test('TC-HOME-59: Given the post composer is open, When I inspect it, Then emoji or media toolbar buttons are visible', async ({ page }) => {
   await homePage.openCreatePost().catch(() => {});
   const dialog = page.locator('[role="dialog"], [aria-modal="true"]').first();
   const dialogVisible = await dialog.isVisible({ timeout: 6000 }).catch(() => false);
   if (!dialogVisible) { test.skip(); return; }
-  // Toolbar buttons: emoji, photo/image, attachment, GIF etc. — rendered as buttons with SVG icons
+  // Toolbar buttons: emoji, photo/image, attachment, GIF etc. � rendered as buttons with SVG icons
   const emojiBtn = dialog.locator(
     '[aria-label*="emoji" i], [aria-label*="feeling" i], button:has(svg)'
   ).first();

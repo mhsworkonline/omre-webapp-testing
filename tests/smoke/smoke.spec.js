@@ -1,25 +1,25 @@
 /**
- * Smoke tests — all 34 modules
+ * Smoke tests � all 34 modules
  * Validates: page loads, correct URL reached, main content rendered.
- * Uses saved auth session — no UI login needed.
+ * Uses saved auth session � no UI login needed.
  */
 import { test, expect } from '@playwright/test';
 
 const AUTH_FILE = 'playwright/.auth/user.json';
-const BASE = 'https://app.omre.ai';
+const BASE = 'https://omre.ai';
 
 test.use({ storageState: AUTH_FILE });
 test.setTimeout(30000);
 
 /**
- * id        — TC number suffix
- * name      — human label
- * url       — full URL to navigate to
- * urlMatch  — regex the final URL must satisfy (handles redirects)
- * heading   — expected h1/h2 text from discovery (optional, used when stable)
+ * id        � TC number suffix
+ * name      � human label
+ * url       � full URL to navigate to
+ * urlMatch  � regex the final URL must satisfy (handles redirects)
+ * heading   � expected h1/h2 text from discovery (optional, used when stable)
  */
 const MODULES = [
-  // ── Sidebar ────────────────────────────────────────────────────────────────
+  // -- Sidebar ----------------------------------------------------------------
   { id: '01', name: 'Home',           url: `${BASE}/app/home`,            urlMatch: /\/app\/home/ },
   { id: '02', name: 'Explore',        url: `${BASE}/app/explore`,         urlMatch: /\/app\/explore/ },
   { id: '03', name: 'Shorts',         url: `${BASE}/app/shorts`,          urlMatch: /\/app\/shorts/ },
@@ -43,7 +43,7 @@ const MODULES = [
   { id: '21', name: 'Images',         url: `${BASE}/app/images`,          urlMatch: /\/app\/images/ },
   { id: '22', name: 'Friends',        url: `${BASE}/app/friends`,         urlMatch: /\/app\/friends/ },
 
-  // ── Top Header ─────────────────────────────────────────────────────────────
+  // -- Top Header -------------------------------------------------------------
   { id: '23', name: 'News',           url: `${BASE}/app/news/home`,       urlMatch: /\/app\/news/ },
   { id: '24', name: 'Video (Create)', url: `${BASE}/app/live/create`,     urlMatch: /\/app\/live/ },
   { id: '25', name: 'Chat',           url: `${BASE}/app/messages`,        urlMatch: /\/app\/messages/ },
@@ -58,7 +58,7 @@ const MODULES = [
   { id: '34', name: 'Studio',         url: `${BASE}/app/home`,            urlMatch: /\/app\/home/ },
 ];
 
-// ── Helpers ───────────────────────────────────────────────────────────────────
+// -- Helpers -------------------------------------------------------------------
 
 /** Returns true if the page shows a recognisable "access denied / login" screen */
 async function isAuthWall(page) {
@@ -66,12 +66,12 @@ async function isAuthWall(page) {
   return /\/auth\/login|\/login|\/signin/i.test(url);
 }
 
-/** Visible content check — at least one of these must be present */
+/** Visible content check � at least one of these must be present */
 function mainContent(page) {
   return page.locator('h1, h2, main, [role="main"]').first();
 }
 
-// ── Tests (data-driven) ───────────────────────────────────────────────────────
+// -- Tests (data-driven) -------------------------------------------------------
 
 for (const mod of MODULES) {
   test(`TC-SMOKE-${mod.id}: ${mod.name} loads`, async ({ page }) => {
@@ -82,7 +82,7 @@ for (const mod of MODULES) {
 
     // Must not have bounced to login (session expired / access denied)
     if (await isAuthWall(page)) {
-      throw new Error(`${mod.name} redirected to login — session may be expired or route requires different auth`);
+      throw new Error(`${mod.name} redirected to login � session may be expired or route requires different auth`);
     }
 
     // URL must match expected pattern

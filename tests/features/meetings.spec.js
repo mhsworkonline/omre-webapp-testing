@@ -6,7 +6,7 @@
 import { test, expect } from '@playwright/test';
 
 const AUTH_FILE  = 'playwright/.auth/user.json';
-const MODULE_URL = 'https://app.omre.ai/app/meet/home';
+const MODULE_URL = 'https://omre.ai/app/meet/home';
 
 test.use({ storageState: AUTH_FILE });
 test.setTimeout(45000);
@@ -16,7 +16,7 @@ async function goModule(page) {
   await page.waitForTimeout(1500);
 }
 
-// ─── Page Load and Layout ─────────────────────────────────────────────────────
+// --- Page Load and Layout -----------------------------------------------------
 test.describe('TC-MEETINGS: Page Load and Layout', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -49,7 +49,7 @@ test.describe('TC-MEETINGS: Page Load and Layout', () => {
   });
 });
 
-// ─── Meeting List / Calendar View ─────────────────────────────────────────────
+// --- Meeting List / Calendar View ---------------------------------------------
 test.describe('TC-MEETINGS: Meeting List or Calendar View', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -69,7 +69,7 @@ test.describe('TC-MEETINGS: Meeting List or Calendar View', () => {
     if (visible) {
       await expect(upcoming).toBeVisible();
     } else {
-      // Fallback — section headings or tab labels may differ
+      // Fallback � section headings or tab labels may differ
       const fallback = page.locator('main').getByText(/meeting/i).first();
       await expect(fallback).toBeVisible({ timeout: 5000 });
     }
@@ -115,7 +115,7 @@ test.describe('TC-MEETINGS: Meeting List or Calendar View', () => {
   });
 });
 
-// ─── Create Meeting ───────────────────────────────────────────────────────────
+// --- Create Meeting -----------------------------------------------------------
 test.describe('TC-MEETINGS: Create / Schedule Meeting', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -226,7 +226,7 @@ test.describe('TC-MEETINGS: Create / Schedule Meeting', () => {
     if (selectorVisible || labelVisible) {
       await expect(selectorVisible ? privacySelector : privacyLabel).toBeVisible();
     }
-    // Privacy selector is optional — pass either way
+    // Privacy selector is optional � pass either way
     expect(true).toBe(true);
   });
 
@@ -257,7 +257,7 @@ test.describe('TC-MEETINGS: Create / Schedule Meeting', () => {
   });
 });
 
-// ─── Join Meeting ─────────────────────────────────────────────────────────────
+// --- Join Meeting -------------------------------------------------------------
 test.describe('TC-MEETINGS: Join Meeting', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -270,7 +270,7 @@ test.describe('TC-MEETINGS: Join Meeting', () => {
     if (visible) {
       await expect(joinBtn).toBeVisible();
     }
-    // No meeting scheduled — valid empty state
+    // No meeting scheduled � valid empty state
     else {
       const emptyState = page
         .locator('main')
@@ -313,12 +313,12 @@ test.describe('TC-MEETINGS: Join Meeting', () => {
     if (visible) {
       await expect(target).toBeEnabled();
     }
-    // No meeting present — acceptable
+    // No meeting present � acceptable
     expect(true).toBe(true);
   });
 });
 
-// ─── Meeting Detail ───────────────────────────────────────────────────────────
+// --- Meeting Detail -----------------------------------------------------------
 test.describe('TC-MEETINGS: Meeting Detail', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -358,7 +358,7 @@ test.describe('TC-MEETINGS: Meeting Detail', () => {
     if (visible) {
       await expect(editBtn).toBeEnabled();
     }
-    // Edit is only shown for own meetings — optional
+    // Edit is only shown for own meetings � optional
     expect(true).toBe(true);
   });
 
@@ -397,7 +397,7 @@ test.describe('TC-MEETINGS: Meeting Detail', () => {
   });
 });
 
-// ─── Past Meetings and Filters ────────────────────────────────────────────────
+// --- Past Meetings and Filters ------------------------------------------------
 test.describe('TC-MEETINGS: Past Meetings and Filters', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -457,7 +457,7 @@ test.describe('TC-MEETINGS: Past Meetings and Filters', () => {
   });
 });
 
-// ─── Accessibility and Edge Cases ─────────────────────────────────────────────
+// --- Accessibility and Edge Cases ---------------------------------------------
 test.describe('TC-MEETINGS: Accessibility and Edge Cases', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -480,7 +480,7 @@ test.describe('TC-MEETINGS: Accessibility and Edge Cases', () => {
   });
 
   test('TC-MEETINGS-32: Given I am authenticated and on the page, When I perform the action, Then navigating away and back retains the meetings page structure', async ({ page }) => {
-    await page.goto('https://app.omre.ai/app', { waitUntil: 'domcontentloaded' });
+    await page.goto('https://omre.ai/app', { waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(800);
     await goModule(page);
     if (!/meet/i.test(page.url())) { test.skip(); return; }
@@ -491,7 +491,7 @@ test.describe('TC-MEETINGS: Accessibility and Edge Cases', () => {
   });
 });
 
-// ─── Recurring Meetings ───────────────────────────────────────────────────────
+// --- Recurring Meetings -------------------------------------------------------
 test.describe('TC-MEETINGS: Recurring Meetings', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -588,7 +588,7 @@ test.describe('TC-MEETINGS: Recurring Meetings', () => {
   });
 });
 
-// ─── In-Meeting Controls ──────────────────────────────────────────────────────
+// --- In-Meeting Controls ------------------------------------------------------
 test.describe('TC-MEETINGS: In-Meeting Controls', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -689,7 +689,7 @@ test.describe('TC-MEETINGS: In-Meeting Controls', () => {
   });
 });
 
-// ─── Calendar Export ──────────────────────────────────────────────────────────
+// --- Calendar Export ----------------------------------------------------------
 test.describe('TC-MEETINGS: Calendar Export', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -734,7 +734,7 @@ test.describe('TC-MEETINGS: Calendar Export', () => {
   });
 });
 
-// ─── Create Meeting: Submit and Verify ───────────────────────────────────────
+// --- Create Meeting: Submit and Verify ---------------------------------------
 test.describe('TC-MEETINGS: Create Meeting CRUD', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -775,7 +775,7 @@ test.describe('TC-MEETINGS: Create Meeting CRUD', () => {
   });
 });
 
-// ─── Create Meeting Form Validation ──────────────────────────────────────────
+// --- Create Meeting Form Validation ------------------------------------------
 test.describe('TC-MEETINGS: Create Form Validation', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -831,13 +831,13 @@ test.describe('TC-MEETINGS: Create Form Validation', () => {
     const errorText = page.getByText(/past date|invalid date|future.*date|date.*past/i).first();
     const errVisible = await errorMsg.isVisible({ timeout: 3000 }).catch(() => false);
     const textVisible = await errorText.isVisible({ timeout: 3000 }).catch(() => false);
-    // Validation is optional — some apps allow past dates; either outcome is acceptable
+    // Validation is optional � some apps allow past dates; either outcome is acceptable
     expect(errVisible || textVisible || true).toBe(true);
     await page.keyboard.press('Escape');
   });
 });
 
-// ─── Copy Link ────────────────────────────────────────────────────────────────
+// --- Copy Link ----------------------------------------------------------------
 test.describe('TC-MEETINGS: Copy Link', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -856,13 +856,13 @@ test.describe('TC-MEETINGS: Copy Link', () => {
     const successToast = page.locator('[role="alert"], [class*="toast" i]').getByText(/copied|link copied|success/i).first();
     const toastVisible = await successToast.isVisible({ timeout: 3000 }).catch(() => false);
     const textChanged = beforeText !== afterText;
-    // Either the text changed or a toast appeared — both are valid
+    // Either the text changed or a toast appeared � both are valid
     expect(toastVisible || textChanged || true).toBe(true);
     await expect(page.locator('main').first()).toBeVisible();
   });
 });
 
-// ─── Edit Meeting ─────────────────────────────────────────────────────────────
+// --- Edit Meeting -------------------------------------------------------------
 test.describe('TC-MEETINGS: Edit Meeting', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -894,7 +894,7 @@ test.describe('TC-MEETINGS: Edit Meeting', () => {
   });
 });
 
-// ─── Delete Meeting ───────────────────────────────────────────────────────────
+// --- Delete Meeting -----------------------------------------------------------
 test.describe('TC-MEETINGS: Delete Meeting', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -919,7 +919,7 @@ test.describe('TC-MEETINGS: Delete Meeting', () => {
   });
 });
 
-// ─── Recurring Meetings: Frequency Selector ──────────────────────────────────
+// --- Recurring Meetings: Frequency Selector ----------------------------------
 test.describe('TC-MEETINGS: Recurring Meeting Frequency', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
@@ -940,7 +940,7 @@ test.describe('TC-MEETINGS: Recurring Meeting Frequency', () => {
       await recurringToggle.evaluate(el => el.click());
       await page.waitForTimeout(600);
     } else if (!labelVisible) {
-      // Recurring feature not present — skip
+      // Recurring feature not present � skip
       await page.keyboard.press('Escape');
       test.skip();
       return;
@@ -959,9 +959,9 @@ test.describe('TC-MEETINGS: Recurring Meeting Frequency', () => {
   });
 });
 
-// ─── Calendar Export: .ics Download ──────────────────────────────────────────
+// --- Calendar Export: .ics Download ------------------------------------------
 test.describe('TC-MEETINGS: Calendar Export ICS', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
-  test.skip('TC-MEETINGS-50: untestable: .ics export file download — verifying file system writes and .ics file content requires access to the download destination which is not available in standard Playwright CI environments', () => {});
+  test.skip('TC-MEETINGS-50: untestable: .ics export file download � verifying file system writes and .ics file content requires access to the download destination which is not available in standard Playwright CI environments', () => {});
 });

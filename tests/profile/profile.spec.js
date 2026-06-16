@@ -1,5 +1,5 @@
 /**
- * Profile module — deep-dive
+ * Profile module � deep-dive
  * Covers: page layout, profile header, stats, tabs, posts/photos/about/friends tabs,
  *         edit profile, follow/message actions, post management, cover photo,
  *         other user profiles, block/report
@@ -7,7 +7,7 @@
 import { test, expect } from '@playwright/test';
 
 const AUTH_FILE = 'playwright/.auth/user.json';
-const BASE_URL  = 'https://app.omre.ai';
+const BASE_URL  = 'https://omre.ai';
 const HOME_URL  = `${BASE_URL}/app/home`;
 
 test.use({ storageState: AUTH_FILE });
@@ -43,7 +43,7 @@ async function goOtherProfile(page) {
   return false;
 }
 
-// ── Page Load & Header ─────────────────────────────────────────────────────────
+// -- Page Load & Header ---------------------------------------------------------
 
 test.describe('Page Load and Profile Header', () => {
   test.beforeEach(async ({ page }) => { await goOwnProfile(page); });
@@ -98,13 +98,13 @@ test.describe('Page Load and Profile Header', () => {
     await page.reload({ waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(1500);
     const appErrors = errors.filter(e =>
-      e.includes('TypeError') || e.includes('ReferenceError') || e.includes('app.omre.ai')
+      e.includes('TypeError') || e.includes('ReferenceError') || e.includes('omre.ai')
     );
     expect(appErrors).toHaveLength(0);
   });
 });
 
-// ── Profile Stats ──────────────────────────────────────────────────────────────
+// -- Profile Stats --------------------------------------------------------------
 
 test.describe('Profile Stats', () => {
   test.beforeEach(async ({ page }) => { await goOwnProfile(page); });
@@ -160,7 +160,7 @@ test.describe('Profile Stats', () => {
   });
 });
 
-// ── Profile Tabs ───────────────────────────────────────────────────────────────
+// -- Profile Tabs ---------------------------------------------------------------
 
 test.describe('Profile Tabs', () => {
   test.beforeEach(async ({ page }) => { await goOwnProfile(page); });
@@ -221,7 +221,7 @@ test.describe('Profile Tabs', () => {
   });
 });
 
-// ── Posts Tab ──────────────────────────────────────────────────────────────────
+// -- Posts Tab ------------------------------------------------------------------
 
 test.describe('Posts Tab', () => {
   test.beforeEach(async ({ page }) => { await goOwnProfile(page); });
@@ -286,7 +286,7 @@ test.describe('Posts Tab', () => {
   });
 });
 
-// ── Edit Profile ───────────────────────────────────────────────────────────────
+// -- Edit Profile ---------------------------------------------------------------
 
 test.describe('Edit Profile', () => {
   test.beforeEach(async ({ page }) => { await goOwnProfile(page); });
@@ -380,7 +380,7 @@ test.describe('Edit Profile', () => {
   });
 });
 
-// ── Other User Profile ─────────────────────────────────────────────────────────
+// -- Other User Profile ---------------------------------------------------------
 
 test.describe('Other User Profile', () => {
   test('TC-PROFILE-29: Given I am authenticated and on the page, When I perform the action, Then it shows Follow or Add Friend button', async ({ page }) => {
@@ -473,7 +473,7 @@ test.describe('Other User Profile', () => {
   });
 });
 
-// ── Block and Report ───────────────────────────────────────────────────────────
+// -- Block and Report -----------------------------------------------------------
 
 test.describe('Block and Report', () => {
   test('TC-PROFILE-36: Given I am authenticated and on the page, When I perform the action, Then block option is present in 3-dot menu on another user profile', async ({ page }) => {
@@ -575,7 +575,7 @@ test.describe('Block and Report', () => {
   });
 });
 
-// ── Profile Sharing ────────────────────────────────────────────────────────────
+// -- Profile Sharing ------------------------------------------------------------
 
 test.describe('Profile Sharing', () => {
   test.beforeEach(async ({ page }) => { await goOwnProfile(page); });
@@ -612,7 +612,7 @@ test.describe('Profile Sharing', () => {
   });
 });
 
-// ── Content Tabs Extended ──────────────────────────────────────────────────────
+// -- Content Tabs Extended ------------------------------------------------------
 
 test.describe('Content Tabs Extended', () => {
   test.beforeEach(async ({ page }) => { await goOwnProfile(page); });
@@ -655,7 +655,7 @@ test.describe('Content Tabs Extended', () => {
   });
 });
 
-// ── Privacy from Profile ───────────────────────────────────────────────────────
+// -- Privacy from Profile -------------------------------------------------------
 
 test.describe('Privacy from Profile', () => {
   test.beforeEach(async ({ page }) => { await goOwnProfile(page); });
@@ -688,7 +688,7 @@ test.describe('Privacy from Profile', () => {
 
 test.describe('TC-PROFILE | Edit Profile Save Flow', () => {
   test('TC-PROFILE-50: Given I am on my own profile page and click Edit Profile, When I modify a field and click Save, Then the profile is updated and a success indicator or redirect occurs', async ({ page }) => {
-    await page.goto('https://app.omre.ai/app/profile', { waitUntil: 'domcontentloaded' });
+    await page.goto('https://omre.ai/app/profile', { waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(1500);
     const editBtn = page.locator('button, a').filter({ hasText: /edit profile/i }).first();
     const editVisible = await editBtn.isVisible({ timeout: 6000 }).catch(() => false);

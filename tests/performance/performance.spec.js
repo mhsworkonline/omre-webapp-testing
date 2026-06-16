@@ -1,12 +1,12 @@
-// TC-PERF — Performance tests for app.omre.ai
+// TC-PERF � Performance tests for omre.ai
 const { test, expect } = require('@playwright/test');
 
 const AUTH_FILE = 'playwright/.auth/user.json';
-const BASE_URL = 'https://app.omre.ai';
+const BASE_URL = 'https://omre.ai';
 
 test.use({ storageState: AUTH_FILE });
 
-// ─── Page Load Times ──────────────────────────────────────────────────────────
+// --- Page Load Times ----------------------------------------------------------
 test.describe('Page Load Times', () => {
   test('TC-PERF-001: Given I navigate to home page, When the browser processes the request, Then home page DOMContentLoaded fires within 8000ms', async ({ page }) => {
     test.setTimeout(45000);
@@ -41,7 +41,7 @@ test.describe('Page Load Times', () => {
   });
 });
 
-// ─── Resource Efficiency ──────────────────────────────────────────────────────
+// --- Resource Efficiency ------------------------------------------------------
 test.describe('Resource Efficiency', () => {
   test('TC-PERF-005 home page has no console errors of type "error" on load', async ({ page }) => {
     test.setTimeout(45000);
@@ -85,7 +85,7 @@ test.describe('Resource Efficiency', () => {
     const count = await images.count();
 
     if (count === 0) {
-      // No images present — skip assertion
+      // No images present � skip assertion
       expect(true).toBe(true);
       return;
     }
@@ -118,12 +118,12 @@ test.describe('Resource Efficiency', () => {
     }
 
     if (checkedAny && !foundOffscreenLazy) {
-      // Images exist below fold but none use lazy loading — skip (framework-managed)
+      // Images exist below fold but none use lazy loading � skip (framework-managed)
       test.skip();
       return;
     }
     if (!checkedAny) {
-      // All images are above the fold (short feed) — acceptable
+      // All images are above the fold (short feed) � acceptable
       expect(count).toBeGreaterThan(0);
     }
   });
@@ -145,7 +145,7 @@ test.describe('Resource Efficiency', () => {
   });
 });
 
-// ─── Layout Stability ─────────────────────────────────────────────────────────
+// --- Layout Stability ---------------------------------------------------------
 test.describe('Layout Stability', () => {
   test('TC-PERF-008: Given I am authenticated and on the page, When I perform the action, Then home page Cumulative Layout Shift score is below 0.25', async ({ page }) => {
     test.setTimeout(45000);
@@ -165,7 +165,7 @@ test.describe('Layout Stability', () => {
         try {
           observer.observe({ type: 'layout-shift', buffered: true });
         } catch {
-          // Browser may not support layout-shift — resolve with 0
+          // Browser may not support layout-shift � resolve with 0
           resolve(0);
           return;
         }
@@ -207,7 +207,7 @@ test.describe('Layout Stability', () => {
       });
     });
 
-    // A "no visible" shift threshold — slightly more lenient than Google's "good" threshold
+    // A "no visible" shift threshold � slightly more lenient than Google's "good" threshold
     expect(clsScore).toBeLessThan(0.25);
   });
 
