@@ -17,14 +17,19 @@ const WARM_UP_ROUTES = [
 setup.setTimeout(120000);
 
 setup('authenticate', async ({ page }) => {
+  const { TEST_EMAIL, TEST_PASSWORD } = process.env;
+  if (!TEST_EMAIL || !TEST_PASSWORD) {
+    throw new Error(
+      'TEST_EMAIL and/or TEST_PASSWORD are not set. Create a .env file in the web/ ' +
+      'directory (see .env.example) before running the auth setup.'
+    );
+  }
+
   await mkdir(path.dirname(authFile), { recursive: true });
 
   const loginPage = new LoginPage(page);
   await loginPage.goto();
-  await loginPage.login(
-    process.env.TEST_EMAIL || '',
-    process.env.TEST_PASSWORD || ''
-  );
+  await loginPage.login(TEST_EMAIL, TEST_PASSWORD);
 
   // Confirm we landed in the app
   await page.waitForURL(/\/app\//, { timeout: 90000, waitUntil: 'domcontentloaded' });
