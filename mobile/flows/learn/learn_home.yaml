@@ -1,0 +1,55 @@
+appId: com.omre.app.posh
+---
+- launchApp:
+    clearState: false
+- assertVisible: "For You"
+- tapOn: "View all"
+- tapOn: "Learn"
+- assertVisible: "Welcome to Learn"
+- assertVisible: "Learn Without Limits"
+- assertVisible: "Browse Courses"
+- assertVisible: "My Learning"
+- assertVisible: "Expert Courses"
+- assertVisible: "Certificates"
+- assertVisible: "Track Progress"
+- assertVisible: "Hands-on Practice"
+- assertNotVisible: "Welcome back"
+- tapOn: "Browse Courses"
+- assertVisible: "Learn Without Limits"
+- assertVisible: "New courses added weekly"
+- assertVisible: "What do you want to learn?"
+- assertVisible: "Explore Courses"
+- assertVisible: "2M+"
+- assertVisible: "10K+"
+- assertVisible: "95%"
+- assertVisible: "Explore by Category"
+- assertVisible: "Development"
+- assertVisible: "Design"
+- assertVisible: "Marketing"
+- assertVisible: "Music"
+- assertVisible: "Business"
+- assertVisible: "Data Science"
+- assertVisible: "Photography"
+- assertVisible: "Writing"
+- assertVisible: "Recommended for you"
+- tapOn: "Development"
+- assertVisible: "Development"
+- scroll:
+    direction: DOWN
+- assertVisible: "Recommended for you"
+- scroll:
+    direction: UP
+- tapOn: "Explore Courses"
+- assertVisible: "Explore Courses"
+- assertVisible: "Discover new skills and advance your career"
+- assertVisible: "Search courses..."
+- assertVisible: "All Categories"
+- assertVisible: "All Levels"
+- tapOn: "Search courses..."
+- inputText: "Flutter"
+- assertVisible: "Flutter"
+- eraseText: 10
+- pressKey: Back
+- assertVisible: "Explore Courses"
+- tapOn: "My Learning"
+- assertVisible: "My Learning"

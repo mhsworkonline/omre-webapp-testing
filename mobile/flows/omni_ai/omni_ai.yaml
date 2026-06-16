@@ -1,0 +1,23 @@
+appId: com.omre.app.posh
+---
+- launchApp:
+    clearState: false
+- assertVisible: "For You"
+- tapOn: "Open navigation menu"
+- tapOn: "Omni AI"
+- assertVisible: "Image Generation"
+- assertVisible: "Video Editor"
+- assertVisible: "Translation"
+- assertVisible: "Summary"
+- assertNotVisible: "Welcome back"
+- tapOn: "Image Generation"
+- pressKey: Back
+- tapOn: "Video Editor"
+- pressKey: Back
+- tapOn: "Translation"
+- pressKey: Back
+- tapOn: "Summary"
+- pressKey: Back
+- assertVisible: "Image Generation"
+- pressKey: Back
+- assertVisible: "For You"

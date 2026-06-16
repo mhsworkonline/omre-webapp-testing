@@ -1,0 +1,28 @@
+appId: com.omre.app.posh
+---
+- launchApp:
+    clearState: false
+- assertVisible: "For You"
+- tapOn: "View all"
+- tapOn: "Orbit"
+- assertVisible: "Welcome to Orbit"
+- assertVisible: "Your social feed, amplified"
+- assertVisible: "Go to Feed"
+- assertVisible: "Explore"
+- assertVisible: "For You"
+- assertVisible: "Spaces"
+- assertVisible: "Connect"
+- assertVisible: "Save & Share"
+- assertNotVisible: "Welcome back"
+- tapOn: "Go to Feed"
+- assertVisible: "For You"
+- assertVisible: "Following"
+- assertVisible: "No orbit posts yet"
+- assertVisible: "Be the first to create one!"
+- tapOn: "Following"
+- assertVisible: "Following"
+- tapOn: "For You"
+- assertVisible: "For You"
+- tapOn: "+"
+- pressKey: Back
+- assertVisible: "For You"

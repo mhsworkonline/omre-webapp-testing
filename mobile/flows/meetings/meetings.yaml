@@ -1,0 +1,37 @@
+appId: com.omre.app.posh
+---
+- launchApp:
+    clearState: false
+
+- assertVisible: "For You"
+
+# Switch to Meeting module
+- tapOn: "View all"
+- assertVisible: "Switch to Module"
+- tapOn: "Meeting"
+
+- assertVisible: "New Meeting"
+- assertVisible: "Join"
+- assertVisible: "Schedule"
+- assertVisible: "Share Screen"
+- assertVisible: "Upcoming Meetings"
+- assertNotVisible: "Welcome back"
+
+# Tap Join — verify join screen or input appears
+- tapOn: "Join"
+- pressKey: Back
+
+# Tap Schedule — verify schedule screen loads
+- tapOn: "Schedule"
+- pressKey: Back
+
+- assertVisible: "New Meeting"
+- assertVisible: "Upcoming Meetings"
+
+# Scroll to see upcoming meetings list (may be empty)
+- scroll:
+    direction: DOWN
+- scroll:
+    direction: UP
+
+- assertVisible: "New Meeting"

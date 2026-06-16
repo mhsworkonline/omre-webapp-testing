@@ -1,0 +1,51 @@
+appId: com.omre.app.posh
+---
+- launchApp:
+    clearState: false
+
+- assertVisible: "For You"
+- assertVisible: "Following"
+- assertVisible: "Explore OMRE Modules"
+- assertVisible: "View all"
+- assertVisible: "Social"
+- assertVisible: "Chat"
+- assertVisible: "Biz"
+- assertVisible: "Learn"
+- assertNotVisible: "Welcome back"
+
+# Switch feed tabs
+- tapOn: "Following"
+- assertVisible: "Following"
+- tapOn: "For You"
+- assertVisible: "For You"
+
+# Open module switcher — verify all 12 modules visible
+- tapOn: "View all"
+- assertVisible: "Switch to Module"
+- assertVisible: "Social"
+- assertVisible: "Chat"
+- assertVisible: "Biz"
+- assertVisible: "Link"
+- assertVisible: "Learn"
+- assertVisible: "Studio"
+- assertVisible: "News"
+- assertVisible: "Video"
+- assertVisible: "Orbit"
+- assertVisible: "Games"
+- assertVisible: "Meeting"
+- assertVisible: "Mart"
+- pressKey: Back
+
+- assertVisible: "For You"
+
+# Scroll feed down — content loads
+- scroll:
+    direction: DOWN
+- scroll:
+    direction: DOWN
+
+# Scroll back up — header still present
+- scroll:
+    direction: UP
+- assertVisible: "For You"
+- assertVisible: "Explore OMRE Modules"

@@ -1,0 +1,61 @@
+appId: com.omre.app.posh
+---
+- launchApp:
+    clearState: false
+- assertVisible: "For You"
+- tapOn: "View all"
+- assertVisible: "Switch to Module"
+- tapOn: "Link"
+- assertVisible: "Welcome to Link"
+- assertVisible: "Your professional network & job hub"
+- assertVisible: "Explore Jobs"
+- assertVisible: "Browse Marketplace"
+- assertVisible: "Find Jobs"
+- assertVisible: "Build Network"
+- assertVisible: "Marketplace"
+- assertVisible: "Get Hired"
+- assertNotVisible: "Welcome back"
+- tapOn: "Explore Jobs"
+- assertVisible: "JOBS MODE"
+- assertVisible: "Jobs"
+- assertVisible: "Marketplace"
+- assertVisible: "Over 16 new opportunities today"
+- assertVisible: "Find your next dream job"
+- assertVisible: "Job title / keywords / company"
+- assertVisible: "City, state, or remote"
+- assertVisible: "Search Jobs"
+- assertVisible: "Trending"
+- assertVisible: "Remote"
+- assertVisible: "Frontend"
+- assertVisible: "Design"
+- assertVisible: "Active Jobs"
+- assertVisible: "Companies"
+- tapOn: "Remote"
+- assertVisible: "Remote"
+- tapOn: "Frontend"
+- assertVisible: "Frontend"
+- tapOn: "Job title / keywords / company"
+- inputText: "Flutter Developer"
+- assertVisible: "Flutter Developer"
+- eraseText: 20
+- tapOn: "City, state, or remote"
+- inputText: "Remote"
+- assertVisible: "Remote"
+- eraseText: 10
+- tapOn: "Search Jobs"
+- scroll:
+    direction: DOWN
+- scroll:
+    direction: UP
+- assertVisible: "Find your next dream job"
+- tapOn: "Open navigation menu"
+- assertVisible: "Job Search"
+- assertVisible: "Saved Jobs"
+- assertVisible: "Job Alerts"
+- assertVisible: "Company Pages"
+- assertVisible: "Salary Insights"
+- assertVisible: "My Network"
+- assertVisible: "Applications"
+- assertVisible: "Resume Builder"
+- pressKey: Back
+- assertVisible: "JOBS MODE"

@@ -1,11 +1,13 @@
-
-# Playwright
 node_modules/
-/test-results/
-/playwright-report/
-/blob-report/
-/playwright/.cache/
-/playwright/.auth/
 
-# Environment
-.env
+# Web (Playwright)
+web/test-results/
+web/playwright-report/
+web/blob-report/
+web/playwright/.cache/
+web/playwright/.auth/
+web/.env
+
+# Mobile (Maestro)
+mobile/test-results/
+mobile/playwright-report/

@@ -1,0 +1,65 @@
+appId: com.omre.app.posh
+---
+- launchApp:
+    clearState: false
+
+- assertVisible: "For You"
+
+# Open drawer → Town Hall
+- tapOn: "Open navigation menu"
+- tapOn: "Town Hall"
+
+- assertVisible: "Town Hall"
+- assertVisible: "LOCAL JURISDICTIONS: ACTIVE"
+- assertVisible: "Your digital center for civic engagement and transparency"
+- assertVisible: "Active Ballots"
+- assertVisible: "Community Forums"
+- assertVisible: "Search Topics..."
+- assertVisible: "New Topic"
+- assertVisible: "All"
+- assertVisible: "Development"
+- assertVisible: "Transport"
+- assertVisible: "Safety"
+- assertNotVisible: "Welcome back"
+
+# Stats
+- assertVisible: "TOPICS"
+- assertVisible: "MEMBERS"
+- assertVisible: "WEEKLY"
+- assertVisible: "1.2k"
+
+# Filter chips
+- tapOn: "Development"
+- assertVisible: "Development"
+- tapOn: "Transport"
+- assertVisible: "Transport"
+- tapOn: "Safety"
+- assertVisible: "Safety"
+- tapOn: "All"
+- assertVisible: "All"
+
+# Switch to Active Ballots tab
+- tapOn: "Active Ballots"
+- assertVisible: "Civic Ballot #5"
+- assertVisible: "Vote Aye"
+- assertVisible: "Vote Nay"
+- assertVisible: "62%"
+- assertVisible: "Civic Ballot #6"
+
+# Switch to Community Forums
+- tapOn: "Community Forums"
+- assertVisible: "Community Forums"
+
+# Search
+- tapOn: "Community Forums"
+- tapOn: "Active Ballots"
+- tapOn: "Search Topics..."
+- inputText: "OMRE"
+- assertVisible: "OMRE"
+- eraseText: 10
+- pressKey: Back
+
+- assertVisible: "Town Hall"
+
+- pressKey: Back
+- assertVisible: "For You"

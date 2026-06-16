@@ -1,0 +1,43 @@
+appId: com.omre.app.posh
+---
+- launchApp:
+    clearState: false
+
+- assertVisible: "For You"
+- assertNotVisible: "Welcome back"
+
+# Open create post via FAB
+- tapOn: "+"
+- assertVisible: "What's on your mind?"
+- assertVisible: "Social"
+
+# Dismiss post composer — back on feed
+- pressKey: Back
+- assertVisible: "For You"
+
+# Open again, verify media picker
+- tapOn: "+"
+- assertVisible: "What's on your mind?"
+
+# Tap camera/gallery area to open media picker
+- tapOn: "Camera"
+- assertVisible: "Camera"
+- assertVisible: "Gallery"
+- assertVisible: "Upload photo from gallery"
+- assertVisible: "Upload video from gallery"
+- assertVisible: "Record video"
+- assertVisible: "Back"
+
+# Close media picker
+- tapOn: "Back"
+- assertVisible: "What's on your mind?"
+
+# Type in post content
+- tapOn: "What's on your mind?"
+- inputText: "Deep dive test post — automated"
+- assertVisible: "Deep dive test post — automated"
+
+# Clear typed text and dismiss
+- eraseText: 50
+- pressKey: Back
+- assertVisible: "For You"

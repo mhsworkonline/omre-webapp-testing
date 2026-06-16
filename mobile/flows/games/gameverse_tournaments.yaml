@@ -1,0 +1,53 @@
+appId: com.omre.app.posh
+---
+- launchApp:
+    clearState: false
+
+- assertVisible: "For You"
+
+# Navigate to Games → lobby → Tournaments
+- tapOn: "View all"
+- assertVisible: "Switch to Module"
+- tapOn: "Games"
+- tapOn: "Play Games"
+- assertVisible: "GameVerse"
+
+- tapOn: "Tournaments"
+- assertVisible: "Tournaments"
+- assertVisible: "Join competitive events and win amazing prizes"
+- assertVisible: "$559,555"
+- assertVisible: "This month's prize pool"
+- assertVisible: "2 Events"
+- assertVisible: "Running this week"
+- assertVisible: "Join Now"
+- assertVisible: "No entry fee required"
+- assertNotVisible: "Welcome back"
+
+# Tournament tabs
+- assertVisible: "Upcoming"
+- assertVisible: "Live"
+- assertVisible: "Past"
+- tapOn: "Live"
+- assertVisible: "Live"
+- tapOn: "Past"
+- assertVisible: "Past"
+- tapOn: "Upcoming"
+- assertVisible: "Upcoming"
+
+# Tournament listing — at least one entry visible
+- assertVisible: "Join Tournament"
+
+# Host Tournament button
+- assertVisible: "Host Tournament"
+
+# Scroll to see more
+- scroll:
+    direction: DOWN
+- scroll:
+    direction: UP
+
+- assertVisible: "Tournaments"
+
+# Back to GameVerse
+- tapOn: "Back to GameVerse"
+- assertVisible: "GameVerse"

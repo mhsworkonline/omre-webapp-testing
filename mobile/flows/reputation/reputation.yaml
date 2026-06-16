@@ -1,0 +1,39 @@
+appId: com.omre.app.posh
+---
+- launchApp:
+    clearState: false
+- assertVisible: "For You"
+- tapOn: "Open navigation menu"
+- tapOn: "Reputation"
+- assertVisible: "Reputation"
+- assertVisible: "w4f01"
+- assertVisible: "@w4f01"
+- assertVisible: "Recruit"
+- assertVisible: "Progress to Captain"
+- assertVisible: "50 pts to go"
+- assertVisible: "Score Bre"
+- assertVisible: "Social"
+- assertVisible: "Orbit"
+- assertVisible: "Jobs"
+- assertVisible: "Mart"
+- assertVisible: "Recent Ac"
+- assertVisible: "No recent activity"
+- assertVisible: "How Reputation Works"
+- assertVisible: "View Leaderboard"
+- assertNotVisible: "Welcome back"
+- scroll:
+    direction: DOWN
+- assertVisible: "Earn reputation through helpful posts"
+- tapOn: "View Leaderboard"
+- assertVisible: "Leaderboard"
+- assertVisible: "Ashish rangavkar"
+- assertVisible: "@ashish.fs01_pns"
+- scroll:
+    direction: DOWN
+- scroll:
+    direction: UP
+- assertVisible: "Leaderboard"
+- pressKey: Back
+- assertVisible: "Reputation"
+- pressKey: Back
+- assertVisible: "For You"

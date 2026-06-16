@@ -1,0 +1,52 @@
+appId: com.omre.app.posh
+---
+- launchApp:
+    clearState: false
+
+- assertVisible: "For You"
+
+# Open drawer → Pages
+- tapOn: "Open navigation menu"
+- tapOn: "Pages"
+
+- assertVisible: "Pages"
+- assertVisible: "Discover and manage specialized hubs"
+- assertVisible: "Create Page"
+- assertVisible: "Search pages by name"
+- assertVisible: "All"
+- assertVisible: "Business"
+- assertVisible: "Communities"
+- assertVisible: "Discover"
+- assertVisible: "Following"
+- assertVisible: "Your Pages"
+- assertVisible: "Trending"
+- assertVisible: "All Pages"
+- assertNotVisible: "Welcome back"
+
+# Filter chips
+- tapOn: "Business"
+- assertVisible: "Business"
+- tapOn: "Communities"
+- assertVisible: "Communities"
+- tapOn: "All"
+- assertVisible: "All"
+
+# Tabs
+- tapOn: "Following"
+- assertVisible: "Following"
+- tapOn: "Your Pages"
+- assertVisible: "Your Pages"
+- tapOn: "Discover"
+- assertVisible: "Discover"
+
+# Scroll
+- scroll:
+    direction: DOWN
+- scroll:
+    direction: UP
+
+- assertVisible: "Trending"
+
+# Back
+- pressKey: Back
+- assertVisible: "For You"

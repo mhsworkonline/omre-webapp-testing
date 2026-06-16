@@ -1,0 +1,52 @@
+appId: com.omre.app.posh
+---
+- launchApp:
+    clearState: false
+
+# Setup: put a valid password in the password field so only email is the variable
+- tapOn: "Password"
+- eraseText: 200
+- inputText: "Password123"
+# Switch focus to email field (keyboard stays open on email)
+- tapOn: "name@example.com"
+- eraseText: 200
+
+# No @ symbol
+- inputText: "notanemail"
+- tapOn: "Log in"
+- assertVisible: "Log in"
+- assertNotVisible: "Feed"
+- eraseText: 200
+
+# No domain after @
+- inputText: "user@"
+- tapOn: "Log in"
+- assertVisible: "Log in"
+- assertNotVisible: "Feed"
+- eraseText: 200
+
+# No TLD
+- inputText: "user@domain"
+- tapOn: "Log in"
+- assertVisible: "Log in"
+- assertNotVisible: "Feed"
+- eraseText: 200
+
+# Spaces inside email
+- inputText: "user name@example.com"
+- tapOn: "Log in"
+- assertVisible: "Log in"
+- assertNotVisible: "Feed"
+- eraseText: 200
+
+# Double @ symbol
+- inputText: "user@@example.com"
+- tapOn: "Log in"
+- assertVisible: "Log in"
+- assertNotVisible: "Feed"
+- eraseText: 200
+
+# Field recovers — valid format accepted without error
+- inputText: "valid@example.com"
+- assertVisible: "valid@example.com"
+- eraseText: 200

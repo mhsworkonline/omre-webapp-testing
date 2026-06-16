@@ -1,0 +1,23 @@
+appId: com.omre.app.posh
+---
+- launchApp:
+    clearState: false
+- assertVisible: "For You"
+- tapOn: "Open navigation menu"
+- tapOn: "Digital Citizen"
+- assertVisible: "SOVEREIGNTY DASHBOARD"
+- assertVisible: "YOUR DIGITAL CITIZENSHIP."
+- assertVisible: "Every action resonates"
+- assertVisible: "Trust Wallet"
+- assertVisible: "TRUST QUOTIENT"
+- assertVisible: "780"
+- assertVisible: "ELDER PIONEER"
+- assertVisible: "Top 2.4% of global citizens"
+- assertNotVisible: "Welcome back"
+- scroll:
+    direction: DOWN
+- scroll:
+    direction: UP
+- assertVisible: "YOUR DIGITAL CITIZENSHIP."
+- pressKey: Back
+- assertVisible: "For You"

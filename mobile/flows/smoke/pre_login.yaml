@@ -1,0 +1,28 @@
+appId: com.omre.app.posh
+---
+- launchApp:
+    clearState: false
+
+# Branding (logo text is Flutter canvas-rendered, not semantic — skip OMRE/tagline assertions)
+- assertVisible: "Welcome back"
+- assertVisible: "Enter your credentials to access your account"
+
+# Input fields
+- assertVisible: "name@example.com"
+- assertVisible: "Password"
+
+# Actions
+- assertVisible: "Forgot password?"
+- assertVisible: "Log in"
+- assertVisible: "OR CONTINUE WITH"
+- assertVisible: "Google"
+- assertVisible: "Sign up"
+
+# Fields are interactive
+- tapOn: "name@example.com"
+- assertVisible: "name@example.com"
+- tapOn: "Password"
+- assertVisible: "Password"
+
+# Login screen stays put without credentials
+- assertNotVisible: "Feed"

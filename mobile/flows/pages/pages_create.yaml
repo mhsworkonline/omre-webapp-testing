@@ -1,0 +1,46 @@
+appId: com.omre.app.posh
+---
+- launchApp:
+    clearState: false
+
+- assertVisible: "For You"
+
+# Open drawer → Pages → Create
+- tapOn: "Open navigation menu"
+- tapOn: "Pages"
+- assertVisible: "Pages"
+
+- tapOn: "Create Page"
+- assertVisible: "Create a New Page"
+- assertVisible: "Establish a presence for your brand"
+- assertVisible: "Page Banner"
+- assertVisible: "Click to upload banner"
+- assertVisible: "Page Name"
+- assertVisible: "e.g. Future Tech Trends"
+- assertVisible: "Category"
+- assertVisible: "Business"
+- assertVisible: "Description"
+- assertVisible: "What is this page about?"
+- assertVisible: "Create Page"
+- assertNotVisible: "Welcome back"
+
+# Type page name
+- tapOn: "e.g. Future Tech Trends"
+- inputText: "Test Page AutoQA"
+- assertVisible: "Test Page AutoQA"
+- eraseText: 20
+
+# Type description
+- tapOn: "What is this page about?"
+- inputText: "Automated test description"
+- assertVisible: "Automated test description"
+- eraseText: 30
+
+# Close modal via X
+- tapOn: "X"
+- assertVisible: "Pages"
+- assertNotVisible: "Create a New Page"
+
+# Back to feed
+- pressKey: Back
+- assertVisible: "For You"

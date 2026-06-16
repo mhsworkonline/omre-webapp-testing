@@ -1,0 +1,26 @@
+appId: com.omre.app.posh
+---
+- launchApp:
+    clearState: false
+- assertVisible: "For You"
+- tapOn: "View all"
+- tapOn: "News"
+- assertVisible: "Following"
+- assertVisible: "My Feed"
+- assertVisible: "Live Coverage"
+- assertNotVisible: "Welcome back"
+- tapOn: "My Feed"
+- assertVisible: "My Feed"
+- scroll:
+    direction: DOWN
+- assertVisible: "SCIENCE"
+- scroll:
+    direction: DOWN
+- scroll:
+    direction: UP
+- tapOn: "Following"
+- assertVisible: "Following"
+- tapOn: "Live Coverage"
+- assertVisible: "Live Coverage"
+- tapOn: "My Feed"
+- assertVisible: "My Feed"

@@ -1,0 +1,36 @@
+appId: com.omre.app.posh
+---
+- launchApp:
+    clearState: false
+- assertVisible: "For You"
+- tapOn: "Open navigation menu"
+- tapOn: "Business Suite"
+- assertVisible: "Business Suite"
+- assertVisible: "Your central hub for Social, News, Orbit"
+- assertVisible: "Social"
+- assertVisible: "Biz Hub"
+- assertVisible: "Your activity"
+- assertVisible: "No pending activity"
+- assertVisible: "Social Home"
+- assertVisible: "Orbit"
+- assertVisible: "News"
+- assertNotVisible: "Welcome back"
+- tapOn: "Social Home"
+- assertVisible: "Home"
+- assertVisible: "Social feed"
+- assertVisible: "Explore"
+- assertVisible: "Shorts"
+- assertVisible: "Live"
+- assertVisible: "Messages"
+- tapOn: "Orbit"
+- assertVisible: "Orbit"
+- tapOn: "News"
+- assertVisible: "News"
+- tapOn: "Social Home"
+- scroll:
+    direction: DOWN
+- scroll:
+    direction: UP
+- assertVisible: "Business Suite"
+- pressKey: Back
+- assertVisible: "For You"

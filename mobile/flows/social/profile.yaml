@@ -1,0 +1,43 @@
+appId: com.omre.app.posh
+---
+- launchApp:
+    clearState: false
+
+- assertVisible: "For You"
+
+# Navigate to profile via bottom nav
+- tapOn: "Profile"
+- assertVisible: "w4f01"
+- assertVisible: "@w4f01"
+- assertVisible: "CREATOR"
+- assertVisible: "Posts"
+- assertVisible: "Followers"
+- assertVisible: "Following"
+- assertVisible: "Edit profile"
+- assertVisible: "Share"
+- assertVisible: "ORBIT LEVEL"
+- assertVisible: "7,850 XP"
+- assertVisible: "Highlights"
+- assertNotVisible: "Welcome back"
+
+# Profile tabs
+- tapOn: "Orbit"
+- assertVisible: "Orbit"
+- tapOn: "Reposts"
+- assertVisible: "Reposts"
+- tapOn: "Videos"
+- assertVisible: "Videos"
+- tapOn: "About"
+- assertVisible: "About"
+- tapOn: "Posts"
+- assertVisible: "No posts yet"
+
+# Scroll to see XP bar
+- scroll:
+    direction: UP
+- assertVisible: "7,850 XP"
+- assertVisible: "2,150 to Level 8"
+
+# Back to feed
+- pressKey: Back
+- assertVisible: "For You"

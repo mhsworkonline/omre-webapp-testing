@@ -1,0 +1,34 @@
+appId: com.omre.app.posh
+---
+- launchApp:
+    clearState: false
+
+- assertVisible: "For You"
+
+# Switch to Video module
+- tapOn: "View all"
+- assertVisible: "Switch to Module"
+- tapOn: "Video"
+
+- assertVisible: "Home Feed"
+- assertVisible: "Library"
+- assertVisible: "Movies & Shows"
+- assertVisible: "Subscriptions"
+- assertNotVisible: "Welcome back"
+
+# Tab navigation
+- tapOn: "Library"
+- assertVisible: "Library"
+- tapOn: "Movies & Shows"
+- assertVisible: "Movies & Shows"
+- tapOn: "Subscriptions"
+- assertVisible: "Subscriptions"
+- tapOn: "Home Feed"
+- assertVisible: "Home Feed"
+
+# Scroll content
+- scroll:
+    direction: DOWN
+- scroll:
+    direction: UP
+- assertVisible: "Home Feed"

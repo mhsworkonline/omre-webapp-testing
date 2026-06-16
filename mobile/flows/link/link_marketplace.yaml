@@ -1,0 +1,45 @@
+appId: com.omre.app.posh
+---
+- launchApp:
+    clearState: false
+- assertVisible: "For You"
+- tapOn: "View all"
+- tapOn: "Link"
+- tapOn: "Browse Marketplace"
+- assertVisible: "JOBS MODE"
+- assertVisible: "Marketplace"
+- assertVisible: "The #1 Marketplace for Tech Talent"
+- assertVisible: "Find the perfect freelance services for your business"
+- assertVisible: "What service are you looking"
+- assertVisible: "Search"
+- assertVisible: "Popular:"
+- assertVisible: "Website Design"
+- assertVisible: "WordPress"
+- assertVisible: "Logo Design"
+- assertVisible: "SEO"
+- assertVisible: "Latest Job Openings"
+- assertVisible: "Refresh"
+- tapOn: "Website Design"
+- assertVisible: "Website Design"
+- tapOn: "WordPress"
+- tapOn: "What service are you looking"
+- inputText: "mobile app"
+- assertVisible: "mobile app"
+- eraseText: 15
+- tapOn: "Search"
+- scroll:
+    direction: DOWN
+- assertVisible: "Latest Job Openings"
+- scroll:
+    direction: UP
+- tapOn: "Open navigation menu"
+- assertVisible: "Marketplace Home"
+- assertVisible: "Categories"
+- assertVisible: "Freelancers"
+- assertVisible: "Companies"
+- assertVisible: "Connections"
+- assertVisible: "Freelancer"
+- assertVisible: "Post a Project"
+- assertVisible: "My Gigs"
+- pressKey: Back
+- assertVisible: "Marketplace"

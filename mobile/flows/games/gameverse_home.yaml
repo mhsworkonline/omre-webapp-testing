@@ -1,0 +1,64 @@
+appId: com.omre.app.posh
+---
+- launchApp:
+    clearState: false
+
+- assertVisible: "For You"
+
+# Switch to Games module
+- tapOn: "View all"
+- assertVisible: "Switch to Module"
+- tapOn: "Games"
+
+# Welcome screen
+- assertVisible: "Welcome to Games"
+- assertVisible: "GameVerse"
+- assertVisible: "Play Games"
+- assertVisible: "Tournaments"
+- assertVisible: "Web Games"
+- assertVisible: "LFG / Squads"
+- assertVisible: "Library"
+- assertNotVisible: "Welcome back"
+
+# Enter main lobby
+- tapOn: "Play Games"
+- assertVisible: "GameVerse"
+- assertVisible: "Tournaments"
+- assertVisible: "LFG / Squad Finder"
+- assertVisible: "Game Library"
+- assertVisible: "Live Now"
+- assertVisible: "No live streams at the moment. Check back later!"
+
+# Categories filter chips
+- assertVisible: "All"
+- assertVisible: "Arcade"
+- assertVisible: "Puzzle"
+- assertVisible: "Action"
+- tapOn: "Arcade"
+- assertVisible: "Arcade"
+- tapOn: "Puzzle"
+- assertVisible: "Puzzle"
+- tapOn: "All"
+- assertVisible: "All"
+
+# GameVerse drawer
+- tapOn: "Open navigation menu"
+- assertVisible: "HTML5 Games"
+- assertVisible: "Tournaments"
+- assertVisible: "LFG / Squad Finder"
+- assertVisible: "My Library"
+- assertVisible: "Gaming Activity"
+- assertVisible: "Notifications"
+- assertVisible: "All Categories"
+- assertVisible: "Action"
+- assertVisible: "Adventure"
+- pressKey: Back
+
+- assertVisible: "GameVerse"
+
+# Scroll down and up
+- scroll:
+    direction: DOWN
+- scroll:
+    direction: UP
+- assertVisible: "GameVerse"

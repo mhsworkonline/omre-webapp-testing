@@ -1,0 +1,34 @@
+appId: com.omre.app.posh
+---
+- launchApp:
+    clearState: false
+
+- assertVisible: "For You"
+
+# Switch to Biz module
+- tapOn: "View all"
+- assertVisible: "Switch to Module"
+- tapOn: "Biz"
+
+# Welcome screen assertions
+- assertVisible: "Welcome to Biz"
+- assertVisible: "Sell products, run ads, manage orders"
+- assertVisible: "Store"
+- assertVisible: "Manage inventory"
+- assertVisible: "Ads"
+- assertVisible: "Reach customers"
+- assertVisible: "Continue to Omre Web"
+- assertNotVisible: "Welcome back"
+
+# Scroll to see if more cards below
+- scroll:
+    direction: DOWN
+- scroll:
+    direction: UP
+
+- assertVisible: "Welcome to Biz"
+
+# "Continue to Omre Web" exists but do NOT tap — would leave app
+# Verify Store and Ads cards are tappable (present) only
+- assertVisible: "Store"
+- assertVisible: "Ads"

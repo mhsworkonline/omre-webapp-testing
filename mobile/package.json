@@ -1,0 +1,12 @@
+{
+  "name": "omre-mobile",
+  "version": "1.0.0",
+  "description": "Maestro Android test suite for OMRE app",
+  "main": "generate-report.js",
+  "scripts": {
+    "report": "node generate-report.js"
+  },
+  "dependencies": {
+    "exceljs": "^4.4.0"
+  }
+}

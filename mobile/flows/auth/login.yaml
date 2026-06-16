@@ -1,0 +1,4 @@
+appId: com.omre.app.posh
+---
+- launchApp:
+    clearState: false

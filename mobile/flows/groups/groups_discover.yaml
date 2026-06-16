@@ -1,0 +1,49 @@
+appId: com.omre.app.posh
+---
+- launchApp:
+    clearState: false
+
+- assertVisible: "For You"
+
+# Open drawer → Groups
+- tapOn: "Open navigation menu"
+- tapOn: "Groups"
+
+- assertVisible: "Groups"
+- assertVisible: "Connect, share and grow with niche communities"
+- assertVisible: "Create Group"
+- assertVisible: "Find communities by interest"
+- assertVisible: "Discover All"
+- assertVisible: "My Groups"
+- assertVisible: "Invites"
+- assertNotVisible: "Welcome back"
+
+# Verify at least 2 groups
+- assertVisible: "Worldnoor"
+- assertVisible: "Eat Sleep Repeat"
+- assertVisible: "Join Community"
+
+# Tabs
+- tapOn: "My Groups"
+- assertVisible: "My Groups"
+- tapOn: "Invites"
+- assertVisible: "Invites"
+- tapOn: "Discover All"
+- assertVisible: "Discover All"
+
+# Search
+- tapOn: "Find communities by interest"
+- inputText: "World"
+- assertVisible: "World"
+- eraseText: 10
+- pressKey: Back
+
+# Scroll
+- scroll:
+    direction: DOWN
+- scroll:
+    direction: UP
+- assertVisible: "Groups"
+
+- pressKey: Back
+- assertVisible: "For You"

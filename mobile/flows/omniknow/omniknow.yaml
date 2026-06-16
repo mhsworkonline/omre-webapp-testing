@@ -1,0 +1,41 @@
+appId: com.omre.app.posh
+---
+- launchApp:
+    clearState: false
+- assertVisible: "For You"
+- tapOn: "Open navigation menu"
+- tapOn: "OmniKnow"
+- assertVisible: "The World Knowledge Library"
+- assertVisible: "Project Codename: OmniKnow"
+- assertVisible: "Ask the OmniSearch Engine"
+- assertVisible: "Explore Domains"
+- assertVisible: "View All"
+- assertVisible: "All Knowledge"
+- assertVisible: "Science & Tech"
+- assertVisible: "Medicine & Health"
+- assertVisible: "Humanities & Arts"
+- assertNotVisible: "Welcome back"
+- tapOn: "Ask the OmniSearch Engine"
+- inputText: "What is quantum computing?"
+- assertVisible: "What is quantum computing?"
+- eraseText: 30
+- pressKey: Back
+- tapOn: "View All"
+- pressKey: Back
+- assertVisible: "Explore Domains"
+- scroll:
+    direction: DOWN
+- assertVisible: "Religions & Spirituality"
+- assertVisible: "Culture & Society"
+- assertVisible: "Museums & Archives"
+- assertVisible: "Education"
+- assertVisible: "Simulations"
+- assertVisible: "Immersive Learning"
+- assertVisible: "Start Exploring"
+- assertVisible: "Verified Library"
+- assertVisible: "Browse Library"
+- scroll:
+    direction: UP
+- assertVisible: "The World Knowledge Library"
+- pressKey: Back
+- assertVisible: "For You"

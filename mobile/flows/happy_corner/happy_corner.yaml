@@ -1,0 +1,43 @@
+appId: com.omre.app.posh
+---
+- launchApp:
+    clearState: false
+- assertVisible: "For You"
+- tapOn: "Open navigation menu"
+- tapOn: "Happy Corner"
+- assertVisible: "HAPPY CORNER"
+- assertVisible: "Your Daily Dose."
+- assertVisible: "TODAY'S RITUAL"
+- assertVisible: "I'VE DONE THIS"
+- assertVisible: "Community Pulse"
+- assertVisible: "88%"
+- assertVisible: "World Joy is up by"
+- assertVisible: "View detailed analytics"
+- assertVisible: "Find something that makes you smile"
+- assertVisible: "Share Joy"
+- assertVisible: "All Joy"
+- assertVisible: "Kindness"
+- assertVisible: "Gratitude"
+- assertVisible: "Nature"
+- assertNotVisible: "Welcome back"
+- tapOn: "Kindness"
+- assertVisible: "Kindness"
+- tapOn: "Gratitude"
+- assertVisible: "Gratitude"
+- tapOn: "Nature"
+- assertVisible: "Nature"
+- tapOn: "All Joy"
+- assertVisible: "All Joy"
+- tapOn: "Find something that makes you smile"
+- inputText: "kindness"
+- assertVisible: "kindness"
+- eraseText: 10
+- pressKey: Back
+- scroll:
+    direction: DOWN
+- assertVisible: "KINDNESS"
+- scroll:
+    direction: UP
+- assertVisible: "Your Daily Dose."
+- pressKey: Back
+- assertVisible: "For You"

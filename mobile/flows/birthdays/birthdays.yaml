@@ -1,0 +1,72 @@
+appId: com.omre.app.posh
+---
+- launchApp:
+    clearState: false
+
+- assertVisible: "For You"
+
+# Open drawer → Birthday
+- tapOn: "Open navigation menu"
+- tapOn: "Birthday"
+
+- assertVisible: "Birthdays"
+- assertVisible: "CELEBRATION CENTER"
+- assertVisible: "Celebrate your connections"
+- assertVisible: "View Calendar"
+- assertVisible: "Add Birthday"
+- assertVisible: "Happening Today"
+- assertNotVisible: "Welcome back"
+
+# Empty state for today
+- assertVisible: "No birthdays today"
+- assertVisible: "Add a birthday"
+
+# Sections
+- scroll:
+    direction: DOWN
+- assertVisible: "TOMORROW"
+- assertVisible: "RECENT WISHES"
+- assertVisible: "COMING SOON"
+
+# Verify coming soon entries exist
+- assertVisible: "akshay"
+- assertVisible: "Jun 15"
+
+# View Calendar
+- scroll:
+    direction: UP
+- tapOn: "View Calendar"
+- pressKey: Back
+- assertVisible: "Birthdays"
+
+# Add Birthday modal
+- tapOn: "Add Birthday"
+- assertVisible: "Add a Birthday"
+- assertVisible: "Remember your friends and family"
+- assertVisible: "Name"
+- assertVisible: "e.g. John Doe"
+- assertVisible: "Age they're turning"
+- assertVisible: "e.g. 25"
+- assertVisible: "Birth Date"
+- assertVisible: "dd/mm/yyyy"
+- assertVisible: "Cancel"
+- assertVisible: "Add Birthday"
+
+# Fill name
+- tapOn: "e.g. John Doe"
+- inputText: "Test Friend"
+- assertVisible: "Test Friend"
+- eraseText: 15
+
+# Fill age
+- tapOn: "e.g. 25"
+- inputText: "30"
+- eraseText: 5
+
+# Dismiss
+- tapOn: "Cancel"
+- assertVisible: "Birthdays"
+- assertNotVisible: "Add a Birthday"
+
+- pressKey: Back
+- assertVisible: "For You"

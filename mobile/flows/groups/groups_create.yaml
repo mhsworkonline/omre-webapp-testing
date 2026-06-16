@@ -1,0 +1,51 @@
+appId: com.omre.app.posh
+---
+- launchApp:
+    clearState: false
+
+- assertVisible: "For You"
+
+# Open drawer → Groups → Create
+- tapOn: "Open navigation menu"
+- tapOn: "Groups"
+- assertVisible: "Groups"
+
+- tapOn: "Create Group"
+- assertVisible: "Create a Community"
+- assertVisible: "Bring people together around a common interest"
+- assertVisible: "Group Name"
+- assertVisible: "e.g. Vintage Camera Club"
+- assertVisible: "Description"
+- assertVisible: "What is this group about?"
+- assertVisible: "Privacy"
+- assertVisible: "Public"
+- assertVisible: "Anyone can see and join"
+- assertVisible: "Private"
+- assertVisible: "Only members can see posts"
+- assertVisible: "Create Group"
+- assertNotVisible: "Welcome back"
+
+# Toggle privacy
+- tapOn: "Private"
+- assertVisible: "Private"
+- tapOn: "Public"
+- assertVisible: "Public"
+
+# Type group name
+- tapOn: "e.g. Vintage Camera Club"
+- inputText: "AutoQA Test Group"
+- assertVisible: "AutoQA Test Group"
+- eraseText: 20
+
+# Type description
+- tapOn: "What is this group about?"
+- inputText: "Test description"
+- eraseText: 20
+
+# Dismiss via X
+- tapOn: "X"
+- assertVisible: "Groups"
+- assertNotVisible: "Create a Community"
+
+- pressKey: Back
+- assertVisible: "For You"

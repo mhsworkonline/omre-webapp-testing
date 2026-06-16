@@ -1,0 +1,42 @@
+appId: com.omre.app.posh
+---
+- launchApp:
+    clearState: false
+
+# === Setup: clear both fields ===
+- tapOn: "name@example.com"
+- eraseText: 200
+- tapOn: "Password"
+- eraseText: 200
+
+# === Test 1: Both fields empty ===
+# Tap Log in by accessibility (Maestro finds it even if keyboard is covering it)
+- tapOn: "Log in"
+- assertVisible: "Log in"
+- assertVisible: "Welcome back"
+- assertNotVisible: "Feed"
+
+# === Test 2: Email only, no password ===
+- tapOn: "name@example.com"
+- inputText: "test@example.com"
+- tapOn: "Log in"
+- assertVisible: "Log in"
+- assertNotVisible: "Feed"
+
+# === Test 3: Password only, no email ===
+# Email field retains "test@example.com" — clear it first
+- tapOn: "test@example.com"
+- eraseText: 200
+- tapOn: "Password"
+- inputText: "SomePassword123"
+- tapOn: "Log in"
+- assertVisible: "Log in"
+- assertNotVisible: "Feed"
+
+# === Cleanup: confirm fields still editable ===
+- tapOn: "name@example.com"
+- inputText: "recovery@example.com"
+- assertVisible: "recovery@example.com"
+- eraseText: 200
+- tapOn: "Password"
+- eraseText: 200

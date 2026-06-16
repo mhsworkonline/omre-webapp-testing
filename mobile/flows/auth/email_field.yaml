@@ -1,0 +1,35 @@
+appId: com.omre.app.posh
+---
+- launchApp:
+    clearState: false
+
+# Clear any pre-existing content
+- tapOn: "name@example.com"
+- eraseText: 200
+
+# Valid email accepted and displayed
+- inputText: "testuser@example.com"
+- assertVisible: "testuser@example.com"
+
+# Clearing restores placeholder
+- eraseText: 200
+- assertVisible: "name@example.com"
+- assertNotVisible: "testuser@example.com"
+
+# Email with special valid characters accepted
+- inputText: "user.name+tag@sub.domain.co"
+- assertVisible: "user.name+tag@sub.domain.co"
+- eraseText: 200
+
+# Long email accepted
+- inputText: "verylongemailaddressthatisvalid@somelongdomainname.com"
+- assertVisible: "verylongemailaddressthatisvalid@somelongdomainname.com"
+- eraseText: 200
+
+# Field remains editable after multiple inputs
+- inputText: "final@example.com"
+- assertVisible: "final@example.com"
+- eraseText: 200
+
+# Placeholder restored at end
+- assertVisible: "name@example.com"

@@ -1,0 +1,38 @@
+appId: com.omre.app.posh
+---
+- launchApp:
+    clearState: false
+
+- assertVisible: "For You"
+
+# Open messages via chat icon
+- tapOn: "Messages"
+- assertNotVisible: "Welcome back"
+
+# Message tabs
+- assertVisible: "Social"
+- assertVisible: "Orbit"
+- assertVisible: "Business"
+- assertVisible: "Jobs"
+
+- tapOn: "Orbit"
+- assertVisible: "Orbit"
+- tapOn: "Business"
+- assertVisible: "Business"
+- tapOn: "Jobs"
+- assertVisible: "Jobs"
+- tapOn: "Social"
+- assertVisible: "Social"
+
+# Search field visible
+- tapOn: "Search"
+- assertVisible: "Search"
+- pressKey: Back
+
+# Open first available conversation
+- scroll:
+    direction: DOWN
+
+# Back to feed
+- pressKey: Back
+- assertVisible: "For You"

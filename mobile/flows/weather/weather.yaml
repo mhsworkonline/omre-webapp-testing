@@ -1,0 +1,56 @@
+appId: com.omre.app.posh
+---
+- launchApp:
+    clearState: false
+
+- assertVisible: "For You"
+
+# Open drawer → Weather
+- tapOn: "Open navigation menu"
+- tapOn: "Weather"
+
+- assertVisible: "Weather"
+- assertVisible: "LIVE WEATHER"
+- assertVisible: "Check conditions and forecast for your location"
+- assertVisible: "Mumbai"
+- assertVisible: "Search"
+- assertVisible: "Pune"
+- assertVisible: "Delhi"
+- assertVisible: "London"
+- assertNotVisible: "Welcome back"
+
+# Default city weather card
+- assertVisible: "Wind"
+- assertVisible: "HUMIDITY"
+- assertVisible: "UV INDEX"
+- assertVisible: "FEELS LIKE"
+
+# Switch city via chip
+- tapOn: "Pune"
+- assertVisible: "Pune"
+- assertVisible: "Wind"
+
+- tapOn: "Delhi"
+- assertVisible: "Delhi"
+
+- tapOn: "London"
+- assertVisible: "London"
+
+- tapOn: "Mumbai"
+- assertVisible: "Mumbai"
+
+# Search for a city
+- tapOn: "Mumbai"
+- eraseText: 10
+- inputText: "Dubai"
+- tapOn: "Search"
+
+# Back to previous city view
+- scroll:
+    direction: DOWN
+- scroll:
+    direction: UP
+- assertVisible: "Weather"
+
+- pressKey: Back
+- assertVisible: "For You"

@@ -1,0 +1,44 @@
+appId: com.omre.app.posh
+---
+- launchApp:
+    clearState: false
+
+- assertVisible: "For You"
+
+# Open drawer → Friends
+- tapOn: "Open navigation menu"
+- tapOn: "Friends"
+
+- assertVisible: "Friends"
+- assertVisible: "8 connections"
+- assertVisible: "Search friends..."
+- assertNotVisible: "Welcome back"
+
+# Verify friend cards
+- assertVisible: "johnny smith"
+- assertVisible: "@Omar1656717027Ah"
+- assertVisible: "ahmedomar"
+- assertVisible: "@ahmedooo"
+- assertVisible: "Message"
+
+# Search friend
+- tapOn: "Search friends..."
+- inputText: "johnny"
+- assertVisible: "johnny"
+- eraseText: 10
+- pressKey: Back
+
+# Scroll down for more friends
+- scroll:
+    direction: DOWN
+- assertVisible: "Message"
+
+- scroll:
+    direction: UP
+- assertVisible: "8 connections"
+
+# Message button exists (don't send)
+- assertVisible: "Message"
+
+- pressKey: Back
+- assertVisible: "For You"

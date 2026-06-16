@@ -1,0 +1,34 @@
+appId: com.omre.app.posh
+---
+- launchApp:
+    clearState: false
+
+- assertVisible: "For You"
+
+# Switch to Mart module
+- tapOn: "View all"
+- assertVisible: "Switch to Module"
+- tapOn: "Mart"
+
+- assertVisible: "Categories"
+- assertVisible: "Top Sellers"
+- assertVisible: "Top Rated Places"
+- assertNotVisible: "Welcome back"
+
+# Scroll categories row
+- scroll:
+    direction: RIGHT
+- scroll:
+    direction: LEFT
+
+# Scroll feed down
+- scroll:
+    direction: DOWN
+- assertVisible: "Top Sellers"
+- scroll:
+    direction: DOWN
+- assertVisible: "Top Rated Places"
+
+- scroll:
+    direction: UP
+- assertVisible: "Categories"

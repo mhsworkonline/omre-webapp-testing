@@ -1,0 +1,59 @@
+appId: com.omre.app.posh
+---
+- launchApp:
+    clearState: false
+
+- assertVisible: "For You"
+
+# Open drawer → Blogs
+- tapOn: "Open navigation menu"
+- tapOn: "Blogs"
+
+- assertVisible: "Omre Blogs"
+- assertVisible: "Discover stories, thinking, and expertise from writers on any topic"
+- assertVisible: "Write your own blog"
+- assertNotVisible: "Welcome back"
+
+# At least one blog card
+- assertVisible: "Author"
+- assertVisible: "Hello"
+
+# Scroll for more posts
+- scroll:
+    direction: DOWN
+- scroll:
+    direction: UP
+- assertVisible: "Omre Blogs"
+
+# Open create blog modal
+- tapOn: "Write your own blog"
+- assertVisible: "Create a new Blog"
+- assertVisible: "Share your thoughts with the world"
+- assertVisible: "Cover Image URL (Optional)"
+- assertVisible: "https://..."
+- assertVisible: "Title"
+- assertVisible: "Give your post a catchy title"
+- assertVisible: "Content"
+- assertVisible: "Write your story..."
+- assertVisible: "Cancel"
+- assertVisible: "Publish Blog"
+
+# Fill title
+- tapOn: "Give your post a catchy title"
+- inputText: "Automated QA Test Blog"
+- assertVisible: "Automated QA Test Blog"
+- eraseText: 25
+
+# Fill content
+- tapOn: "Write your story..."
+- inputText: "This is a test blog post."
+- assertVisible: "This is a test blog post."
+- eraseText: 30
+
+# Cancel — modal closes
+- tapOn: "Cancel"
+- assertVisible: "Omre Blogs"
+- assertNotVisible: "Create a new Blog"
+
+- pressKey: Back
+- assertVisible: "For You"
