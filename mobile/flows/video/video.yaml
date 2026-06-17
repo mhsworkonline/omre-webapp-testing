@@ -27,8 +27,7 @@ appId: com.omre.app.posh
 - assertVisible: "Home Feed"
 
 # Scroll content
-- scroll:
+- scroll
+- swipe:
     direction: DOWN
-- scroll:
-    direction: UP
 - assertVisible: "Home Feed"

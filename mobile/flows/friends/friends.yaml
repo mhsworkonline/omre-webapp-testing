@@ -29,12 +29,11 @@ appId: com.omre.app.posh
 - pressKey: Back
 
 # Scroll down for more friends
-- scroll:
-    direction: DOWN
+- scroll
 - assertVisible: "Message"
 
-- scroll:
-    direction: UP
+- swipe:
+    direction: DOWN
 - assertVisible: "8 connections"
 
 # Message button exists (don't send)

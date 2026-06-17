@@ -27,11 +27,10 @@ appId: com.omre.app.posh
 - assertVisible: "mobile app"
 - eraseText: 15
 - tapOn: "Search"
-- scroll:
-    direction: DOWN
+- scroll
 - assertVisible: "Latest Job Openings"
-- scroll:
-    direction: UP
+- swipe:
+    direction: DOWN
 - tapOn: "Open navigation menu"
 - assertVisible: "Marketplace Home"
 - assertVisible: "Categories"

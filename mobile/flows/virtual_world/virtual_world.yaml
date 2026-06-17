@@ -13,8 +13,7 @@ appId: com.omre.app.posh
 - assertVisible: "ACTIVE HUB SESSIONS"
 - assertVisible: "99.9% UPTIME"
 - assertNotVisible: "Welcome back"
-- scroll:
-    direction: DOWN
+- scroll
 - assertVisible: "ACTIVE HUBS"
 - assertVisible: "Global embassies open for interaction"
 - assertVisible: "All"
@@ -35,8 +34,8 @@ appId: com.omre.app.posh
 - assertVisible: "NGO"
 - tapOn: "All"
 - assertVisible: "All"
-- scroll:
-    direction: UP
+- swipe:
+    direction: DOWN
 - assertVisible: "BRIDGE THE PHYSICAL GAP."
 - pressKey: Back
 - assertVisible: "For You"

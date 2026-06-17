@@ -57,8 +57,7 @@ appId: com.omre.app.posh
 - assertVisible: "GameVerse"
 
 # Scroll down and up
-- scroll:
+- scroll
+- swipe:
     direction: DOWN
-- scroll:
-    direction: UP
 - assertVisible: "GameVerse"

@@ -13,12 +13,10 @@ appId: com.omre.app.posh
 - assertNotVisible: "Welcome back"
 
 # Scroll to reveal all sections
-- scroll:
+- scroll
+- scroll
+- swipe:
     direction: DOWN
-- scroll:
-    direction: DOWN
-- scroll:
-    direction: UP
 
 - assertVisible: "Settings"
 
@@ -35,8 +33,7 @@ appId: com.omre.app.posh
 - assertVisible: "Settings"
 
 # Scroll to APP section and check Notifications setting
-- scroll:
-    direction: DOWN
+- scroll
 - tapOn: "Notifications"
 - assertVisible: "Notifications"
 - pressKey: Back

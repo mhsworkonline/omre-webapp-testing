@@ -22,13 +22,11 @@ appId: com.omre.app.posh
     direction: LEFT
 
 # Scroll feed down
-- scroll:
-    direction: DOWN
+- scroll
 - assertVisible: "Top Sellers"
-- scroll:
-    direction: DOWN
+- scroll
 - assertVisible: "Top Rated Places"
 
-- scroll:
-    direction: UP
+- swipe:
+    direction: DOWN
 - assertVisible: "Categories"

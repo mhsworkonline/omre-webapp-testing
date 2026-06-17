@@ -14,10 +14,9 @@ appId: com.omre.app.posh
 - assertVisible: "ELDER PIONEER"
 - assertVisible: "Top 2.4% of global citizens"
 - assertNotVisible: "Welcome back"
-- scroll:
+- scroll
+- swipe:
     direction: DOWN
-- scroll:
-    direction: UP
 - assertVisible: "YOUR DIGITAL CITIZENSHIP."
 - pressKey: Back
 - assertVisible: "For You"

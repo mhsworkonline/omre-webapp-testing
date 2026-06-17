@@ -27,10 +27,9 @@ appId: com.omre.app.posh
 - tapOn: "News"
 - assertVisible: "News"
 - tapOn: "Social Home"
-- scroll:
+- scroll
+- swipe:
     direction: DOWN
-- scroll:
-    direction: UP
 - assertVisible: "Business Suite"
 - pressKey: Back
 - assertVisible: "For You"

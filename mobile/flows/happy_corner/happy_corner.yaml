@@ -33,11 +33,10 @@ appId: com.omre.app.posh
 - assertVisible: "kindness"
 - eraseText: 10
 - pressKey: Back
-- scroll:
-    direction: DOWN
+- scroll
 - assertVisible: "KINDNESS"
-- scroll:
-    direction: UP
+- swipe:
+    direction: DOWN
 - assertVisible: "Your Daily Dose."
 - pressKey: Back
 - assertVisible: "For You"

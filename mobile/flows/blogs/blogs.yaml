@@ -19,10 +19,9 @@ appId: com.omre.app.posh
 - assertVisible: "Hello"
 
 # Scroll for more posts
-- scroll:
+- scroll
+- swipe:
     direction: DOWN
-- scroll:
-    direction: UP
 - assertVisible: "Omre Blogs"
 
 # Open create blog modal

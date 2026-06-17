@@ -30,8 +30,7 @@ appId: com.omre.app.posh
 - pressKey: Back
 
 # Open first available conversation
-- scroll:
-    direction: DOWN
+- scroll
 
 # Back to feed
 - pressKey: Back

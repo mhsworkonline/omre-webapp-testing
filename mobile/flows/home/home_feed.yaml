@@ -39,13 +39,11 @@ appId: com.omre.app.posh
 - assertVisible: "For You"
 
 # Scroll feed down — content loads
-- scroll:
-    direction: DOWN
-- scroll:
-    direction: DOWN
+- scroll
+- scroll
 
 # Scroll back up — header still present
-- scroll:
-    direction: UP
+- swipe:
+    direction: DOWN
 - assertVisible: "For You"
 - assertVisible: "Explore OMRE Modules"

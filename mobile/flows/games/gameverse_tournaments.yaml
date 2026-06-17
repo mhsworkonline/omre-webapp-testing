@@ -41,10 +41,9 @@ appId: com.omre.app.posh
 - assertVisible: "Host Tournament"
 
 # Scroll to see more
-- scroll:
+- scroll
+- swipe:
     direction: DOWN
-- scroll:
-    direction: UP
 
 - assertVisible: "Tournaments"
 

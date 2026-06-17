@@ -40,10 +40,9 @@ appId: com.omre.app.posh
 - assertVisible: "Discover"
 
 # Scroll
-- scroll:
+- scroll
+- swipe:
     direction: DOWN
-- scroll:
-    direction: UP
 
 - assertVisible: "Trending"
 

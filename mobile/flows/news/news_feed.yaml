@@ -11,13 +11,11 @@ appId: com.omre.app.posh
 - assertNotVisible: "Welcome back"
 - tapOn: "My Feed"
 - assertVisible: "My Feed"
-- scroll:
-    direction: DOWN
+- scroll
 - assertVisible: "SCIENCE"
-- scroll:
+- scroll
+- swipe:
     direction: DOWN
-- scroll:
-    direction: UP
 - tapOn: "Following"
 - assertVisible: "Following"
 - tapOn: "Live Coverage"

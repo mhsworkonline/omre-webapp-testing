@@ -22,8 +22,7 @@ appId: com.omre.app.posh
 - assertVisible: "Add a birthday"
 
 # Sections
-- scroll:
-    direction: DOWN
+- scroll
 - assertVisible: "TOMORROW"
 - assertVisible: "RECENT WISHES"
 - assertVisible: "COMING SOON"
@@ -33,8 +32,8 @@ appId: com.omre.app.posh
 - assertVisible: "Jun 15"
 
 # View Calendar
-- scroll:
-    direction: UP
+- swipe:
+    direction: DOWN
 - tapOn: "View Calendar"
 - pressKey: Back
 - assertVisible: "Birthdays"

@@ -39,10 +39,9 @@ appId: com.omre.app.posh
 - pressKey: Back
 
 # Scroll
-- scroll:
+- scroll
+- swipe:
     direction: DOWN
-- scroll:
-    direction: UP
 - assertVisible: "Groups"
 
 - pressKey: Back

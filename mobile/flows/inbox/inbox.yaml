@@ -27,10 +27,9 @@ appId: com.omre.app.posh
 - assertVisible: "All"
 
 # Scroll down — more notifications or empty state
-- scroll:
+- scroll
+- swipe:
     direction: DOWN
-- scroll:
-    direction: UP
 
 - assertVisible: "Mark all as read"
 

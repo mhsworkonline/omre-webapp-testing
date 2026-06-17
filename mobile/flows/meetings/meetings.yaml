@@ -29,9 +29,8 @@ appId: com.omre.app.posh
 - assertVisible: "Upcoming Meetings"
 
 # Scroll to see upcoming meetings list (may be empty)
-- scroll:
+- scroll
+- swipe:
     direction: DOWN
-- scroll:
-    direction: UP
 
 - assertVisible: "New Meeting"

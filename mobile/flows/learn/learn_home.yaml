@@ -34,11 +34,10 @@ appId: com.omre.app.posh
 - assertVisible: "Recommended for you"
 - tapOn: "Development"
 - assertVisible: "Development"
-- scroll:
-    direction: DOWN
+- scroll
 - assertVisible: "Recommended for you"
-- scroll:
-    direction: UP
+- swipe:
+    direction: DOWN
 - tapOn: "Explore Courses"
 - assertVisible: "Explore Courses"
 - assertVisible: "Discover new skills and advance your career"

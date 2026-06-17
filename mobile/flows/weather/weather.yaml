@@ -46,10 +46,9 @@ appId: com.omre.app.posh
 - tapOn: "Search"
 
 # Back to previous city view
-- scroll:
+- scroll
+- swipe:
     direction: DOWN
-- scroll:
-    direction: UP
 - assertVisible: "Weather"
 
 - pressKey: Back

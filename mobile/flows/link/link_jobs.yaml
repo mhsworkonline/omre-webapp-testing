@@ -43,10 +43,9 @@ appId: com.omre.app.posh
 - assertVisible: "Remote"
 - eraseText: 10
 - tapOn: "Search Jobs"
-- scroll:
+- scroll
+- swipe:
     direction: DOWN
-- scroll:
-    direction: UP
 - assertVisible: "Find your next dream job"
 - tapOn: "Open navigation menu"
 - assertVisible: "Job Search"

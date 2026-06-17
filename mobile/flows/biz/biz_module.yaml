@@ -21,10 +21,9 @@ appId: com.omre.app.posh
 - assertNotVisible: "Welcome back"
 
 # Scroll to see if more cards below
-- scroll:
+- scroll
+- swipe:
     direction: DOWN
-- scroll:
-    direction: UP
 
 - assertVisible: "Welcome to Biz"
 

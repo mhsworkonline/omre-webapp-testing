@@ -21,17 +21,15 @@ appId: com.omre.app.posh
 - assertVisible: "How Reputation Works"
 - assertVisible: "View Leaderboard"
 - assertNotVisible: "Welcome back"
-- scroll:
-    direction: DOWN
+- scroll
 - assertVisible: "Earn reputation through helpful posts"
 - tapOn: "View Leaderboard"
 - assertVisible: "Leaderboard"
 - assertVisible: "Ashish rangavkar"
 - assertVisible: "@ashish.fs01_pns"
-- scroll:
+- scroll
+- swipe:
     direction: DOWN
-- scroll:
-    direction: UP
 - assertVisible: "Leaderboard"
 - pressKey: Back
 - assertVisible: "Reputation"

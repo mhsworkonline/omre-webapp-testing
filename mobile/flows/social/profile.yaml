@@ -33,8 +33,8 @@ appId: com.omre.app.posh
 - assertVisible: "No posts yet"
 
 # Scroll to see XP bar
-- scroll:
-    direction: UP
+- swipe:
+    direction: DOWN
 - assertVisible: "7,850 XP"
 - assertVisible: "2,150 to Level 8"
 

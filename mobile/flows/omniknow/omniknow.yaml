@@ -23,8 +23,7 @@ appId: com.omre.app.posh
 - tapOn: "View All"
 - pressKey: Back
 - assertVisible: "Explore Domains"
-- scroll:
-    direction: DOWN
+- scroll
 - assertVisible: "Religions & Spirituality"
 - assertVisible: "Culture & Society"
 - assertVisible: "Museums & Archives"
@@ -34,8 +33,8 @@ appId: com.omre.app.posh
 - assertVisible: "Start Exploring"
 - assertVisible: "Verified Library"
 - assertVisible: "Browse Library"
-- scroll:
-    direction: UP
+- swipe:
+    direction: DOWN
 - assertVisible: "The World Knowledge Library"
 - pressKey: Back
 - assertVisible: "For You"
