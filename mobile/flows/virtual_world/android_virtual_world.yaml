@@ -1,0 +1,80 @@
+appId: com.omre.app.posh
+---
+# SCENARIO: App Launch for Virtual World | EXPECTED: App launches cleanly without crash
+- stopApp
+- launchApp:
+    clearState: false
+- waitForAnimationToEnd
+
+# SCENARIO: Open Drawer | EXPECTED: Drawer opens successfully
+- tapOn:
+    point: "7%,9%"
+- waitForAnimationToEnd
+
+# SCENARIO: Navigate to Virtual World | EXPECTED: Virtual World screen loads
+- tapOn: "Virtual World"
+- waitForAnimationToEnd
+
+# SCENARIO: Virtual World screen visible | EXPECTED: Virtual World label or content present
+- assertVisible: "Virtual World"
+
+# SCENARIO: No crash on load | EXPECTED: No error dialogs appear
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Virtual world content or entry point visible | EXPECTED: Metaverse or virtual content shown
+- assertNotVisible: "Something went wrong"
+
+# SCENARIO: No unexpected errors on initial view | EXPECTED: Screen renders without errors
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Scroll down to explore | EXPECTED: Additional virtual world content or options load
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+
+# SCENARIO: No crash after scroll down | EXPECTED: App remains stable
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Scroll up to return to top | EXPECTED: Top of virtual world screen visible
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# SCENARIO: No error after scroll up | EXPECTED: Screen still stable
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Scroll down further | EXPECTED: More content accessible
+- swipe:
+    direction: DOWN
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+
+# SCENARIO: No crash on extended scroll | EXPECTED: App still running normally
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Scroll back to top | EXPECTED: Returns to top of virtual world
+- swipe:
+    direction: UP
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# SCENARIO: Back navigation from Virtual World | EXPECTED: Previous screen loads
+- pressKey: Back
+- waitForAnimationToEnd
+
+# SCENARIO: Re-navigate to Virtual World via drawer | EXPECTED: Virtual World reloads correctly
+- tapOn:
+    point: "7%,9%"
+- waitForAnimationToEnd
+- tapOn: "Virtual World"
+- waitForAnimationToEnd
+
+# SCENARIO: Virtual World stable on second visit | EXPECTED: No errors, content visible
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>OMRE Mobile Test Report — 2026-06-17T12-03-58</title>
+<style>
+  body{font-family:system-ui,sans-serif;margin:0;background:#f5f5f5;color:#222}
+  header{background:#1a1a2e;color:#fff;padding:24px 32px}
+  header h1{margin:0 0 4px;font-size:22px}
+  header p{margin:0;opacity:.7;font-size:13px}
+  .stats{display:flex;gap:16px;padding:20px 32px}
+  .stat{background:#fff;border-radius:8px;padding:16px 24px;min-width:120px;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+  .stat .n{font-size:32px;font-weight:700}
+  .stat .n.pass{color:#22c55e}.stat .n.fail{color:#ef4444}.stat .n.total{color:#3b82f6}
+  .stat .l{font-size:12px;color:#666;margin-top:4px}
+  table{width:calc(100% - 64px);margin:0 32px 32px;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+  th{background:#1a1a2e;color:#fff;padding:12px 16px;text-align:left;font-size:13px}
+  td{padding:10px 16px;border-bottom:1px solid #eee;font-size:13px;vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  tr:hover td{background:#fafafa}
+  .badge{display:inline-block;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:600}
+  .badge.pass{background:#dcfce7;color:#166534}.badge.fail{background:#fee2e2;color:#991b1b}
+  code{font-size:12px;background:#f3f4f6;padding:2px 6px;border-radius:3px}
+  .steps-wrap{margin-top:6px}
+  .step{font-size:11px;padding:2px 0;color:#555}
+  .step-ok{color:#16a34a}.step-fail{color:#dc2626;font-weight:600}.step-skip{color:#9ca3af}
+  .ms{font-size:10px;color:#9ca3af;margin-left:6px}
+  .scenario-table{width:100%;margin:8px 0;border-collapse:collapse;box-shadow:none}
+  .scenario-table th{background:#374151;font-size:11px;padding:6px 10px}
+  .scenario-table td{font-size:12px;padding:6px 10px;border-bottom:1px solid #f0f0f0}
+  details summary{cursor:pointer;font-size:11px;color:#666;margin-top:8px}
+</style>
+</head>
+<body>
+<header>
+  <h1>OMRE Mobile Test Report</h1>
+  <p>Platform: Android &nbsp;|&nbsp; App: com.omre.app.posh &nbsp;|&nbsp; Run: 2026-06-17T12-03-58</p>
+</header>
+<div class="stats">
+  <div class="stat"><div class="n total">1</div><div class="l">Total Flows</div></div>
+  <div class="stat"><div class="n pass">1</div><div class="l">Passed</div></div>
+  <div class="stat"><div class="n fail">0</div><div class="l">Failed</div></div>
+  <div class="stat"><div class="n total">592.9s</div><div class="l">Total Duration</div></div>
+</div>
+<table>
+  <thead><tr><th>Flow</th><th>Status</th><th>Steps</th><th>Failed Step</th><th>Duration</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>home_feed</strong>
+        
+      <table class="scenario-table">
+        <thead><tr><th>Scenario</th><th>Expected Result</th><th>Actual Result</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>App launches clean without crash</td>
+            <td>App opens to home screen without error</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Home feed header section is visible</td>
+            <td>'Explore OMRE Modules' text appears</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Module switcher entry point is present</td>
+            <td>'View all' button visible on home screen</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Social module tab visible in home row</td>
+            <td>'Social' label visible</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Chat module tab visible in home row</td>
+            <td>'Chat' label visible</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Biz module tab visible in home row</td>
+            <td>'Biz' label visible</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Learn module tab visible in home row</td>
+            <td>'Learn' label visible</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Feed refresh button is present</td>
+            <td>'Refresh feed' button visible</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Post composer button is present on home screen</td>
+            <td>'Post' button visible in composer row</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Post category selector visible on home screen</td>
+            <td>'Social' category dropdown visible in composer</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Notifications bell navigates to notifications screen</td>
+            <td>Notifications screen opens</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Back from notifications returns to home</td>
+            <td>'Explore OMRE Modules' visible again</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Messages icon navigates to messages screen</td>
+            <td>Messages screen opens with Orbit tab</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Back from messages returns to home</td>
+            <td>'Explore OMRE Modules' visible again</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Hamburger opens navigation drawer</td>
+            <td>Drawer slides open showing navigation items</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Drawer contains Explore navigation item</td>
+            <td>'Explore' item visible in drawer</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Drawer contains Messages navigation item</td>
+            <td>'Messages' item visible in drawer</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Drawer contains Notifications navigation item</td>
+            <td>'Notifications' item visible in drawer</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Drawer contains Profile navigation item</td>
+            <td>'Profile' item visible in drawer</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Drawer closes on Back returning to home</td>
+            <td>Home feed visible after closing drawer</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Module switcher opens on tap</td>
+            <td>'Switch to Module' header appears</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Module switcher shows Social</td>
+            <td>'Social' visible in switcher list</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Module switcher shows Chat</td>
+            <td>'Chat' visible in switcher list</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Module switcher shows Biz</td>
+            <td>'Biz' visible in switcher list</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Module switcher shows Link</td>
+            <td>'Link' visible in switcher list</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Module switcher shows Learn</td>
+            <td>'Learn' visible in switcher list</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Module switcher shows Studio</td>
+            <td>'Studio' visible in switcher list</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Module switcher shows News</td>
+            <td>'News' visible in switcher list</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Module switcher shows Video</td>
+            <td>'Video' visible in switcher list</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Module switcher shows Orbit</td>
+            <td>'Orbit' visible in switcher list</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Module switcher shows Games</td>
+            <td>'Games' visible in switcher list</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Module switcher shows Meeting</td>
+            <td>'Meeting' visible in switcher list</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Module switcher shows Mart</td>
+            <td>'Mart' visible in switcher list</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Switching to Social module from switcher navigates correctly</td>
+            <td>Social feed opens</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Back from Social module returns to home</td>
+            <td>'Explore OMRE Modules' visible on return</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Switching to Link module from switcher navigates correctly</td>
+            <td>Link module opens</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Back from Link module returns to home</td>
+            <td>'Explore OMRE Modules' visible on return</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Module switcher closes on Back</td>
+            <td>Returns to home feed without crash</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Home feed is scrollable</td>
+            <td>Feed scrolls down revealing content below</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Pull to refresh works on home feed</td>
+            <td>Swipe down from top triggers refresh without crash</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Refresh feed button reloads feed</td>
+            <td>Tapping 'Refresh feed' reloads and home stays visible</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Module row is horizontally scrollable</td>
+            <td>Swiping left on module row reveals more modules</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+        </tbody>
+      </table>
+        <details><summary>Technical step detail</summary><div class="steps-wrap"><div class="step step-ok">✓ Set up test variables <span class="ms">13ms</span></div><div class="step step-ok">✓ Apply flow configuration <span class="ms">6ms</span></div><div class="step step-ok">✓ stopApp <span class="ms">1253ms</span></div><div class="step step-ok">✓ Launch app "com.omre.app.posh" <span class="ms">4408ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">8790ms</span></div><div class="step step-ok">✓ Assert visible: "Explore OMRE Modules" <span class="ms">34603ms</span></div><div class="step step-ok">✓ Assert visible: "View all" <span class="ms">8140ms</span></div><div class="step step-ok">✓ Assert visible: "Social" <span class="ms">4597ms</span></div><div class="step step-ok">✓ Assert visible: "Chat" <span class="ms">2996ms</span></div><div class="step step-ok">✓ Assert visible: "Biz" <span class="ms">1147ms</span></div><div class="step step-ok">✓ Assert visible: "Learn" <span class="ms">1786ms</span></div><div class="step step-ok">✓ Assert visible: "Refresh feed" <span class="ms">442ms</span></div><div class="step step-ok">✓ Assert visible: "Post" <span class="ms">1223ms</span></div><div class="step step-ok">✓ Assert visible: "Social" <span class="ms">969ms</span></div><div class="step step-ok">✓ Tap on "Notifications" <span class="ms">20075ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">3784ms</span></div><div class="step step-ok">✓ Assert visible: "Mark all as read" <span class="ms">262ms</span></div><div class="step step-ok">✓ Press key: BACK <span class="ms">5991ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">4302ms</span></div><div class="step step-ok">✓ Assert visible: "Explore OMRE Modules" <span class="ms">1531ms</span></div><div class="step step-ok">✓ Tap on "Messages" <span class="ms">21026ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">2252ms</span></div><div class="step step-ok">✓ Assert visible: "Orbit" <span class="ms">620ms</span></div><div class="step step-ok">✓ Press key: BACK <span class="ms">145417ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">17381ms</span></div><div class="step step-ok">✓ Assert visible: "Explore OMRE Modules" <span class="ms">7400ms</span></div><div class="step step-ok">✓ tapOnPointV2 <span class="ms">19678ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">6076ms</span></div><div class="step step-ok">✓ Assert visible: "Home" <span class="ms">1660ms</span></div><div class="step step-ok">✓ Assert visible: "Explore" <span class="ms">6079ms</span></div><div class="step step-ok">✓ Assert visible: "Messages" <span class="ms">2555ms</span></div><div class="step step-ok">✓ Assert visible: "Notifications" <span class="ms">5610ms</span></div><div class="step step-ok">✓ Assert visible: "Profile" <span class="ms">966ms</span></div><div class="step step-ok">✓ Press key: BACK <span class="ms">10653ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">6373ms</span></div><div class="step step-ok">✓ Assert visible: "Explore OMRE Modules" <span class="ms">5463ms</span></div><div class="step step-ok">✓ Tap on "View all" <span class="ms">20013ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">5020ms</span></div><div class="step step-ok">✓ Assert visible: "Switch to Module" <span class="ms">2049ms</span></div><div class="step step-ok">✓ Assert visible: "Social" <span class="ms">1709ms</span></div><div class="step step-ok">✓ Assert visible: "Chat" <span class="ms">5085ms</span></div><div class="step step-ok">✓ Assert visible: "Biz" <span class="ms">2021ms</span></div><div class="step step-ok">✓ Assert visible: "Link" <span class="ms">3498ms</span></div><div class="step step-ok">✓ Assert visible: "Learn" <span class="ms">3487ms</span></div><div class="step step-ok">✓ Assert visible: "Studio" <span class="ms">968ms</span></div><div class="step step-ok">✓ Assert visible: "News" <span class="ms">351ms</span></div><div class="step step-ok">✓ Assert visible: "Video" <span class="ms">1639ms</span></div><div class="step step-ok">✓ Assert visible: "Orbit" <span class="ms">4684ms</span></div><div class="step step-ok">✓ Assert visible: "Games" <span class="ms">2815ms</span></div><div class="step step-ok">✓ Assert visible: "Meeting" <span class="ms">775ms</span></div><div class="step step-ok">✓ Assert visible: "Mart" <span class="ms">2420ms</span></div><div class="step step-ok">✓ Tap on "Social" <span class="ms">13925ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">8272ms</span></div><div class="step step-ok">✓ Assert visible: "For You
+Tab 2 of 2" <span class="ms">6588ms</span></div><div class="step step-ok">✓ Press key: BACK <span class="ms">3258ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">7093ms</span></div><div class="step step-ok">✓ Assert visible: "Explore OMRE Modules" <span class="ms">2822ms</span></div><div class="step step-ok">✓ Tap on "View all" <span class="ms">13885ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">9033ms</span></div><div class="step step-ok">✓ Tap on "Link" <span class="ms">29827ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">1981ms</span></div><div class="step step-ok">✓ Assert visible: "Welcome to Link" <span class="ms">220ms</span></div><div class="step step-ok">✓ Press key: BACK <span class="ms">32213ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">3456ms</span></div><div class="step step-ok">✓ Assert visible: "Explore OMRE Modules" <span class="ms">597ms</span></div><div class="step step-ok">✓ Tap on "View all" <span class="ms">4146ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">4114ms</span></div><div class="step step-ok">✓ Press key: BACK <span class="ms">1513ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">3463ms</span></div><div class="step step-ok">✓ Assert visible: "Explore OMRE Modules" <span class="ms">783ms</span></div><div class="step step-ok">✓ Scroll <span class="ms">1722ms</span></div><div class="step step-ok">✓ Scroll <span class="ms">1553ms</span></div><div class="step step-ok">✓ Swipe DOWN <span class="ms">1770ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">4200ms</span></div><div class="step step-ok">✓ Assert visible: "Explore OMRE Modules" <span class="ms">470ms</span></div><div class="step step-ok">✓ Tap on "Refresh feed" <span class="ms">3501ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">3664ms</span></div><div class="step step-ok">✓ Assert visible: "Explore OMRE Modules" <span class="ms">564ms</span></div><div class="step step-ok">✓ Swipe LEFT <span class="ms">1965ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">3478ms</span></div><div class="step step-ok">✓ Assert visible: "Explore OMRE Modules" <span class="ms">764ms</span></div></div></details>
+      </td>
+      <td><span class="badge pass">PASSED</span></td>
+      <td>81/81</td>
+      <td>—</td>
+      <td>592.9s</td>
+    </tr></tbody>
+</table>
+</body>
+</html>

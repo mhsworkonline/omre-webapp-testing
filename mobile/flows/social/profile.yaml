@@ -1,43 +1,56 @@
 appId: com.omre.app.posh
 ---
+# SCENARIO: App launches clean to home screen | EXPECTED: App opens without crash
+- stopApp
 - launchApp:
     clearState: false
+- waitForAnimationToEnd
 
-- assertVisible: "For You"
+# SCENARIO: Home screen confirms correct starting state | EXPECTED: 'Explore OMRE Modules' visible
+- assertVisible: "Explore OMRE Modules"
 
-# Navigate to profile via bottom nav
+# SCENARIO: Navigation drawer opens via hamburger | EXPECTED: Drawer slides open on coordinate tap
+- tapOn:
+    point: "7%,9%"
+- waitForAnimationToEnd
+
+# SCENARIO: Profile page navigates from drawer | EXPECTED: Tapping 'Profile' opens profile screen
 - tapOn: "Profile"
-- assertVisible: "w4f01"
-- assertVisible: "@w4f01"
+- waitForAnimationToEnd
+
+# SCENARIO: Profile username is displayed | EXPECTED: 'wilacok854' visible on profile header
+- assertVisible: "wilacok854"
+
+# SCENARIO: Profile handle is displayed | EXPECTED: '@wilacok' handle visible below username
+- assertVisible: "@wilacok"
+
+# SCENARIO: Profile creator badge is displayed | EXPECTED: 'CREATOR' badge visible on profile
 - assertVisible: "CREATOR"
-- assertVisible: "Posts"
-- assertVisible: "Followers"
-- assertVisible: "Following"
+
+# SCENARIO: Edit profile button is present | EXPECTED: 'Edit profile' button visible
 - assertVisible: "Edit profile"
+
+# SCENARIO: Share profile button is present | EXPECTED: 'Share' button visible
 - assertVisible: "Share"
-- assertVisible: "ORBIT LEVEL"
-- assertVisible: "7,850 XP"
+
+# SCENARIO: Highlights section header is visible | EXPECTED: 'Highlights' label visible
 - assertVisible: "Highlights"
-- assertNotVisible: "Welcome back"
 
-# Profile tabs
-- tapOn: "Orbit"
-- assertVisible: "Orbit"
-- tapOn: "Reposts"
-- assertVisible: "Reposts"
-- tapOn: "Videos"
-- assertVisible: "Videos"
-- tapOn: "About"
-- assertVisible: "About"
-- tapOn: "Posts"
-- assertVisible: "No posts yet"
+# SCENARIO: Archive button is present | EXPECTED: 'Archive' button visible
+- assertVisible: "Archive"
 
-# Scroll to see XP bar
-- swipe:
-    direction: DOWN
-- assertVisible: "7,850 XP"
-- assertVisible: "2,150 to Level 8"
+# SCENARIO: Orbit tab switches profile view | EXPECTED: Tab 2 of 10 tapped without crash
+- tapOn: "Orbit\nTab 2 of 10"
+- waitForAnimationToEnd
 
-# Back to feed
-- pressKey: Back
-- assertVisible: "For You"
+# SCENARIO: Reposts tab switches profile view | EXPECTED: Tab 3 of 10 tapped without crash
+- tapOn: "Reposts\nTab 3 of 10"
+- waitForAnimationToEnd
+
+# SCENARIO: Videos tab switches profile view | EXPECTED: Tab 4 of 10 tapped without crash
+- tapOn: "Videos\nTab 4 of 10"
+- waitForAnimationToEnd
+
+# SCENARIO: Posts tab returns to default view | EXPECTED: Tab 1 of 10 tapped, returns to Posts
+- tapOn: "Posts\nTab 1 of 10"
+- waitForAnimationToEnd

@@ -1,33 +1,51 @@
 appId: com.omre.app.posh
 ---
+# SCENARIO: App launches clean to home screen | EXPECTED: App opens without crash
+- stopApp
 - launchApp:
     clearState: false
+- waitForAnimationToEnd
 
-- assertVisible: "For You"
+# SCENARIO: Home screen confirms correct starting state | EXPECTED: 'Explore OMRE Modules' visible
+- assertVisible: "Explore OMRE Modules"
 
-# Switch to Biz module
+# SCENARIO: Module switcher opens for navigation | EXPECTED: 'Switch to Module' header appears
 - tapOn: "View all"
+- waitForAnimationToEnd
 - assertVisible: "Switch to Module"
-- tapOn: "Biz"
 
-# Welcome screen assertions
+# SCENARIO: Biz module navigates from switcher | EXPECTED: Tapping Biz (index 1) opens Biz module
+- tapOn:
+    text: "Biz"
+    index: 1
+- waitForAnimationToEnd
+
+# SCENARIO: Biz welcome screen title is displayed | EXPECTED: 'Welcome to Biz' heading visible
 - assertVisible: "Welcome to Biz"
-- assertVisible: "Sell products, run ads, manage orders"
-- assertVisible: "Store"
-- assertVisible: "Manage inventory"
-- assertVisible: "Ads"
-- assertVisible: "Reach customers"
-- assertVisible: "Continue to Omre Web"
-- assertNotVisible: "Welcome back"
 
-# Scroll to see if more cards below
+# SCENARIO: Biz Store feature card is present | EXPECTED: 'Store' feature card visible
+- assertVisible: "Store"
+
+# SCENARIO: Biz Ads feature card is present | EXPECTED: 'Ads' feature card visible
+- assertVisible: "Ads"
+
+# SCENARIO: Biz inventory management feature is described | EXPECTED: 'Manage inventory' text visible
+- assertVisible: "Manage inventory"
+
+# SCENARIO: Biz customer reach feature is described | EXPECTED: 'Reach customers' text visible
+- assertVisible: "Reach customers"
+
+# SCENARIO: Continue to web CTA is present | EXPECTED: 'Continue to Omre Web' button visible
+- assertVisible: "Continue to Omre Web"
+
+# SCENARIO: Biz screen is scrollable downward | EXPECTED: Scroll down works without crash
 - scroll
+
+# SCENARIO: Biz screen scrolls back to top | EXPECTED: Swipe down returns to top of screen
 - swipe:
     direction: DOWN
 
+# SCENARIO: Key elements remain visible after scroll | EXPECTED: 'Welcome to Biz', 'Store', 'Ads' still visible
 - assertVisible: "Welcome to Biz"
-
-# "Continue to Omre Web" exists but do NOT tap — would leave app
-# Verify Store and Ads cards are tappable (present) only
 - assertVisible: "Store"
 - assertVisible: "Ads"

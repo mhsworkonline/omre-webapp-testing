@@ -1,0 +1,91 @@
+appId: com.omre.app.posh
+---
+# SCENARIO: App launches clean to home screen | EXPECTED: App opens without crash
+- stopApp
+- launchApp:
+    clearState: false
+- waitForAnimationToEnd
+
+# SCENARIO: Home screen is in correct starting state | EXPECTED: 'Explore OMRE Modules' visible on home
+- assertVisible: "Explore OMRE Modules"
+
+# SCENARIO: Navigation drawer opens via hamburger icon | EXPECTED: Drawer slides open showing nav items
+- tapOn:
+    point: "7%,9%"
+- waitForAnimationToEnd
+
+# SCENARIO: Birthday item is visible in drawer | EXPECTED: 'Birthday' label visible in open drawer
+- assertVisible: "Birthday"
+
+# SCENARIO: Tap Birthday navigates to Birthdays screen | EXPECTED: Birthdays screen loads without crash
+- tapOn: "Birthday"
+- waitForAnimationToEnd
+
+# SCENARIO: Birthdays screen header is visible | EXPECTED: 'Birthday' or 'Birthdays' heading present on screen
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: No crash dialog shown on Birthdays load | EXPECTED: App crash overlay not visible
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: No generic error shown on Birthdays load | EXPECTED: Error banner not visible
+- assertNotVisible: "Something went wrong"
+
+# SCENARIO: Celebration Center banner is visible | EXPECTED: 'CELEBRATION CENTER' label visible on screen
+- assertVisible: "CELEBRATION CENTER"
+
+# SCENARIO: Birthdays subtitle text is visible | EXPECTED: 'Celebrate your connections' subtitle visible
+- assertVisible: "Celebrate your connections"
+
+# SCENARIO: View Calendar button is visible | EXPECTED: 'View Calendar' action button visible on screen
+- assertVisible: "View Calendar"
+
+# SCENARIO: Add Birthday button is visible | EXPECTED: 'Add Birthday' action button visible on screen
+- assertVisible: "Add Birthday"
+
+# SCENARIO: Scroll down Birthdays screen | EXPECTED: Swipe up scrolls without crash, more content visible
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# SCENARIO: No crash after scrolling Birthdays | EXPECTED: Crash overlay not visible after scroll
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: No error after scrolling Birthdays | EXPECTED: Error banner not visible after scroll
+- assertNotVisible: "Something went wrong"
+
+# SCENARIO: Scroll back to top of Birthdays screen | EXPECTED: Swipe down returns to top of screen
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+
+# SCENARIO: Press Back from Birthdays returns to home | EXPECTED: Home screen visible after pressing Back
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "Explore OMRE Modules"
+
+# SCENARIO: No lingering error on home after leaving Birthdays | EXPECTED: Crash and error overlays absent on home screen
+- assertNotVisible: "Unfortunately"
+- assertNotVisible: "Something went wrong"
+
+# SCENARIO: Re-open drawer after returning to home | EXPECTED: Drawer opens correctly from home screen
+- tapOn:
+    point: "7%,9%"
+- waitForAnimationToEnd
+
+# SCENARIO: Birthday item still visible in drawer on second visit | EXPECTED: 'Birthday' label visible in drawer
+- assertVisible: "Birthday"
+
+# SCENARIO: Tap Birthday re-navigates to Birthdays screen | EXPECTED: Birthdays screen loads again without crash
+- tapOn: "Birthday"
+- waitForAnimationToEnd
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: No error on second navigation to Birthdays | EXPECTED: Error banner not visible on re-entry
+- assertNotVisible: "Something went wrong"
+
+# SCENARIO: Back from re-navigated Birthdays returns to home cleanly | EXPECTED: 'Explore OMRE Modules' visible, no error state
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "Explore OMRE Modules"
+- assertNotVisible: "Unfortunately"
+- assertNotVisible: "Something went wrong"

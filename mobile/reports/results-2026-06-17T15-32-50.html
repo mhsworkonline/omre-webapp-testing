@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>OMRE Mobile Test Report — 2026-06-17T15-32-50</title>
+<style>
+  body{font-family:system-ui,sans-serif;margin:0;background:#f5f5f5;color:#222}
+  header{background:#1a1a2e;color:#fff;padding:24px 32px}
+  header h1{margin:0 0 4px;font-size:22px}
+  header p{margin:0;opacity:.7;font-size:13px}
+  .stats{display:flex;gap:16px;padding:20px 32px}
+  .stat{background:#fff;border-radius:8px;padding:16px 24px;min-width:120px;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+  .stat .n{font-size:32px;font-weight:700}
+  .stat .n.pass{color:#22c55e}.stat .n.fail{color:#ef4444}.stat .n.total{color:#3b82f6}
+  .stat .l{font-size:12px;color:#666;margin-top:4px}
+  table{width:calc(100% - 64px);margin:0 32px 32px;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+  th{background:#1a1a2e;color:#fff;padding:12px 16px;text-align:left;font-size:13px}
+  td{padding:10px 16px;border-bottom:1px solid #eee;font-size:13px;vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  tr:hover td{background:#fafafa}
+  .badge{display:inline-block;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:600}
+  .badge.pass{background:#dcfce7;color:#166534}.badge.fail{background:#fee2e2;color:#991b1b}
+  code{font-size:12px;background:#f3f4f6;padding:2px 6px;border-radius:3px}
+  .steps-wrap{margin-top:6px}
+  .step{font-size:11px;padding:2px 0;color:#555}
+  .step-ok{color:#16a34a}.step-fail{color:#dc2626;font-weight:600}.step-skip{color:#9ca3af}
+  .ms{font-size:10px;color:#9ca3af;margin-left:6px}
+  .scenario-table{width:100%;margin:8px 0;border-collapse:collapse;box-shadow:none}
+  .scenario-table th{background:#374151;font-size:11px;padding:6px 10px}
+  .scenario-table td{font-size:12px;padding:6px 10px;border-bottom:1px solid #f0f0f0}
+  details summary{cursor:pointer;font-size:11px;color:#666;margin-top:8px}
+</style>
+</head>
+<body>
+<header>
+  <h1>OMRE Mobile Test Report</h1>
+  <p>Platform: Android &nbsp;|&nbsp; App: com.omre.app.posh &nbsp;|&nbsp; Run: 2026-06-17T15-32-50</p>
+</header>
+<div class="stats">
+  <div class="stat"><div class="n total">2</div><div class="l">Total Flows</div></div>
+  <div class="stat"><div class="n pass">2</div><div class="l">Passed</div></div>
+  <div class="stat"><div class="n fail">0</div><div class="l">Failed</div></div>
+  <div class="stat"><div class="n total">972.9s</div><div class="l">Total Duration</div></div>
+</div>
+<table>
+  <thead><tr><th>Flow</th><th>Status</th><th>Steps</th><th>Failed Step</th><th>Duration</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>android_profile</strong>
+        
+      <table class="scenario-table">
+        <thead><tr><th>Scenario</th><th>Expected Result</th><th>Actual Result</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>App launches clean to home screen</td>
+            <td>App opens without crash</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Home screen visible on launch</td>
+            <td>'Explore OMRE Modules' visible</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Navigation drawer opens via hamburger</td>
+            <td>Drawer opens showing nav items</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Profile item visible in drawer</td>
+            <td>'Profile' label visible in drawer</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Tap Profile navigates to profile screen</td>
+            <td>Profile screen loads</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Profile username is correct</td>
+            <td>'wilacok854' visible in profile header</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Profile handle is correct</td>
+            <td>'@wilacok' visible below username</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>CREATOR badge is displayed</td>
+            <td>'CREATOR' badge visible on profile</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Reputation section visible on profile</td>
+            <td>'Reputation' card visible</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Edit Profile opens edit screen and back returns to profile</td>
+            <td>Edit screen opens, back returns</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Share opens system share sheet</td>
+            <td>Share sheet visible with Copy link option</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Dismiss share sheet returns to profile</td>
+            <td>Profile visible after closing share</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Scroll reveals both Highlights and Archive sections</td>
+            <td>Both sections visible after one scroll</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Tapping Archive opens Story Archive screen</td>
+            <td>'Story Archive' title and empty state visible</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Back from Archive returns to valid screen</td>
+            <td>App navigates back without crash</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Re-navigate to profile for Highlights test</td>
+            <td>Profile reloads via drawer</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Tapping Highlights opens highlights screen</td>
+            <td>Highlights screen loads without crash</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Back from Highlights returns to valid screen</td>
+            <td>App navigates back without crash</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Re-navigate to profile for tab tests</td>
+            <td>Profile reloads via drawer</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Scroll to tab bar reveals profile tabs</td>
+            <td>Tab bar visible after scrolling</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Orbit tab (Tab 2 of 10) is tappable</td>
+            <td>Orbit tab activates without crash</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Reposts tab (Tab 3 of 10) is tappable</td>
+            <td>Reposts tab activates without crash</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Videos tab (Tab 4 of 10) is tappable</td>
+            <td>Videos tab activates without crash</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Shorts tab (Tab 5 of 10) visible after swiping tab bar</td>
+            <td>Shorts tab visible after LEFT swipe</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Shorts tab is tappable</td>
+            <td>Shorts tab activates without crash</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Pull to refresh from Shorts tab reloads feed</td>
+            <td>No crash on pull-to-refresh</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Profile sections visible after scroll up</td>
+            <td>Highlights section visible confirming profile intact</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+        </tbody>
+      </table>
+        <details><summary>Technical step detail</summary><div class="steps-wrap"><div class="step step-ok">✓ Set up test variables <span class="ms">14ms</span></div><div class="step step-ok">✓ Apply flow configuration <span class="ms">5ms</span></div><div class="step step-ok">✓ stopApp <span class="ms">622ms</span></div><div class="step step-ok">✓ Launch app "com.omre.app.posh" <span class="ms">11481ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">9864ms</span></div><div class="step step-ok">✓ Assert visible: "Explore OMRE Modules" <span class="ms">32341ms</span></div><div class="step step-ok">✓ tapOnPointV2 <span class="ms">38822ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">7517ms</span></div><div class="step step-ok">✓ Assert visible: "Home" <span class="ms">5108ms</span></div><div class="step step-ok">✓ Assert visible: "Profile" <span class="ms">3552ms</span></div><div class="step step-ok">✓ Tap on "Profile" <span class="ms">9165ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">4260ms</span></div><div class="step step-ok">✓ Assert visible: "wilacok854" <span class="ms">3069ms</span></div><div class="step step-ok">✓ Assert visible: "@wilacok" <span class="ms">1015ms</span></div><div class="step step-ok">✓ Assert visible: "CREATOR" <span class="ms">552ms</span></div><div class="step step-ok">✓ Assert visible: "Reputation" <span class="ms">305ms</span></div><div class="step step-ok">✓ Tap on "Edit Profile" <span class="ms">16803ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">2856ms</span></div><div class="step step-ok">✓ Assert visible: "wilacok854" <span class="ms">4503ms</span></div><div class="step step-ok">✓ Press key: BACK <span class="ms">6648ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">3218ms</span></div><div class="step step-ok">✓ Assert visible: "wilacok854" <span class="ms">1998ms</span></div><div class="step step-ok">✓ Tap on "Share" <span class="ms">12211ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">3756ms</span></div><div class="step step-ok">✓ Assert visible: "Copy link" <span class="ms">1940ms</span></div><div class="step step-ok">✓ Press key: BACK <span class="ms">7602ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">3994ms</span></div><div class="step step-ok">✓ Assert visible: "wilacok854" <span class="ms">10812ms</span></div><div class="step step-ok">✓ Swipe UP <span class="ms">14992ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">2270ms</span></div><div class="step step-ok">✓ Assert visible: "Highlights" <span class="ms">2174ms</span></div><div class="step step-ok">✓ Assert visible: "Archive" <span class="ms">1897ms</span></div><div class="step step-ok">✓ Tap on "Archive" <span class="ms">11497ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">7634ms</span></div><div class="step step-ok">✓ Assert visible: "Story Archive" <span class="ms">894ms</span></div><div class="step step-ok">✓ Assert visible: "No archived stories yet" <span class="ms">546ms</span></div><div class="step step-ok">✓ Press key: BACK <span class="ms">5889ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">3616ms</span></div><div class="step step-ok">✓ Assert visible: "wilacok854" <span class="ms">4792ms</span></div><div class="step step-ok">✓ tapOnPointV2 <span class="ms">6341ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">3707ms</span></div><div class="step step-ok">✓ Tap on "Profile" <span class="ms">15839ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">3662ms</span></div><div class="step step-ok">✓ Swipe DOWN <span class="ms">5942ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">3093ms</span></div><div class="step step-ok">✓ Swipe UP <span class="ms">11403ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">2919ms</span></div><div class="step step-ok">✓ Assert visible: "Highlights" <span class="ms">3816ms</span></div><div class="step step-ok">✓ Tap on "Highlights" <span class="ms">8612ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">3099ms</span></div><div class="step step-ok">✓ Assert visible: "Highlights" <span class="ms">6720ms</span></div><div class="step step-ok">✓ Press key: BACK <span class="ms">5115ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">8095ms</span></div><div class="step step-ok">✓ Assert visible: "wilacok854" <span class="ms">4637ms</span></div><div class="step step-ok">✓ tapOnPointV2 <span class="ms">12712ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">4769ms</span></div><div class="step step-ok">✓ Tap on "Profile" <span class="ms">9746ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">4450ms</span></div><div class="step step-ok">✓ Assert visible: "wilacok854" <span class="ms">2664ms</span></div><div class="step step-ok">✓ Swipe UP <span class="ms">5008ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">4748ms</span></div><div class="step step-ok">✓ Assert visible: "Posts
+Tab 1 of 10" <span class="ms">4263ms</span></div><div class="step step-ok">✓ Tap on "Orbit
+Tab 2 of 10" <span class="ms">12296ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">3059ms</span></div><div class="step step-ok">✓ Assert visible: "Orbit
+Tab 2 of 10" <span class="ms">1053ms</span></div><div class="step step-ok">✓ Tap on "Reposts
+Tab 3 of 10" <span class="ms">7622ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">2470ms</span></div><div class="step step-ok">✓ Assert visible: "Reposts
+Tab 3 of 10" <span class="ms">1716ms</span></div><div class="step step-ok">✓ Tap on "Videos
+Tab 4 of 10" <span class="ms">8556ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">4077ms</span></div><div class="step step-ok">✓ Assert visible: "Videos
+Tab 4 of 10" <span class="ms">1799ms</span></div><div class="step step-ok">✓ Swipe LEFT <span class="ms">6975ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">3333ms</span></div><div class="step step-ok">✓ Assert visible: "Shorts
+Tab 5 of 10" <span class="ms">1066ms</span></div><div class="step step-ok">✓ Tap on "Shorts
+Tab 5 of 10" <span class="ms">12654ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">3286ms</span></div><div class="step step-ok">✓ Assert visible: "Shorts
+Tab 5 of 10" <span class="ms">293ms</span></div><div class="step step-ok">✓ Swipe DOWN <span class="ms">16725ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">4251ms</span></div><div class="step step-ok">✓ Assert visible: "wilacok854" <span class="ms">10129ms</span></div><div class="step step-ok">✓ Swipe DOWN <span class="ms">32724ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">3809ms</span></div><div class="step step-ok">✓ Assert visible: "Highlights" <span class="ms">4702ms</span></div></div></details>
+      </td>
+      <td><span class="badge pass">PASSED</span></td>
+      <td>83/83</td>
+      <td>—</td>
+      <td>544.2s</td>
+    </tr>
+    <tr>
+      <td><strong>android_create_post</strong>
+        
+      <table class="scenario-table">
+        <thead><tr><th>Scenario</th><th>Expected Result</th><th>Actual Result</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>App launches clean to home screen</td>
+            <td>App opens without crash</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Home header is visible on launch</td>
+            <td>'Explore OMRE Modules' text visible</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Post composer row is visible</td>
+            <td>'Post' button visible in composer row</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Default category is Social</td>
+            <td>'Social' dropdown visible as default category</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Feed refresh button is visible</td>
+            <td>'Refresh feed' button visible</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Create Story card is visible in feed</td>
+            <td>'Create Story' visible in stories row</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>For You tab is visible in social feed</td>
+            <td>'For You' tab label visible</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Following tab is visible in social feed</td>
+            <td>'Following' tab label visible</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Tap Following tab switches to following feed</td>
+            <td>Following tab shows as active</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Tap For You tab returns to For You feed</td>
+            <td>For You tab shows as active</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Tap composer opens keyboard</td>
+            <td>Keyboard appears after tapping text area</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Text can be typed in composer</td>
+            <td>Typed text appears in field</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Keyboard dismisses on Back</td>
+            <td>Keyboard closes and composer stays visible</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Text can be erased from composer</td>
+            <td>Field clears after erase</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Empty post tap is blocked</td>
+            <td>Tapping Post with empty field does not crash or navigate away</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Module switcher opens on tap</td>
+            <td>Tapping 'Social' opens module switcher</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Biz module option visible in switcher</td>
+            <td>'Biz' listed as switchable module</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Chat module option visible in switcher</td>
+            <td>'Chat' listed as switchable module</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Dismiss module switcher without switching</td>
+            <td>Back key closes switcher without navigating</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Social module retained after dismiss</td>
+            <td>'Social' label still visible, composer intact</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Pull to refresh reloads feed</td>
+            <td>Feed refreshes without crash, Post visible</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Full post cycle — type text and tap Post</td>
+            <td>Post submitted without crash</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Composer resets after post submission</td>
+            <td>Composer row still visible and category retained</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Scroll feed down reveals content below composer</td>
+            <td>No crash on scroll</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Create Story opens story creation screen</td>
+            <td>Story screen opens on tap</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>Back from story screen returns to feed</td>
+            <td>Feed and Post button visible</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+        </tbody>
+      </table>
+        <details><summary>Technical step detail</summary><div class="steps-wrap"><div class="step step-ok">✓ Set up test variables <span class="ms">7ms</span></div><div class="step step-ok">✓ Apply flow configuration <span class="ms">3ms</span></div><div class="step step-ok">✓ stopApp <span class="ms">533ms</span></div><div class="step step-ok">✓ Launch app "com.omre.app.posh" <span class="ms">5619ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">10620ms</span></div><div class="step step-ok">✓ Assert visible: "Explore OMRE Modules" <span class="ms">22132ms</span></div><div class="step step-ok">✓ Assert visible: "Post" <span class="ms">17063ms</span></div><div class="step step-ok">✓ Assert visible: "Social" <span class="ms">17896ms</span></div><div class="step step-ok">✓ Assert visible: "Refresh feed" <span class="ms">2352ms</span></div><div class="step step-ok">✓ Assert visible: "Create Story" <span class="ms">2974ms</span></div><div class="step step-ok">✓ Assert visible: "For You
+Tab 2 of 2" <span class="ms">298ms</span></div><div class="step step-ok">✓ Assert visible: "Following
+Tab 1 of 2" <span class="ms">224ms</span></div><div class="step step-ok">✓ Tap on "Following
+Tab 1 of 2" <span class="ms">11204ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">3938ms</span></div><div class="step step-ok">✓ Assert visible: "Following
+Tab 1 of 2" <span class="ms">175ms</span></div><div class="step step-ok">✓ Tap on "For You
+Tab 2 of 2" <span class="ms">3161ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">4929ms</span></div><div class="step step-ok">✓ Assert visible: "For You
+Tab 2 of 2" <span class="ms">2686ms</span></div><div class="step step-ok">✓ tapOnPointV2 <span class="ms">17256ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">5286ms</span></div><div class="step step-ok">✓ Input text: "Test post from Maestro" <span class="ms">43274ms</span></div><div class="step step-ok">✓ Assert visible: "Test post from Maestro" <span class="ms">3524ms</span></div><div class="step step-ok">✓ Press key: BACK <span class="ms">10233ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">20704ms</span></div><div class="step step-ok">✓ Assert visible: "Post" <span class="ms">1118ms</span></div><div class="step step-ok">✓ tapOnPointV2 <span class="ms">5712ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">22007ms</span></div><div class="step step-ok">✓ Erase 30 characters <span class="ms">17578ms</span></div><div class="step step-ok">✓ Press key: BACK <span class="ms">981ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">3067ms</span></div><div class="step step-ok">✓ Assert visible: "Post" <span class="ms">347ms</span></div><div class="step step-ok">✓ Tap on "Post" <span class="ms">8856ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">3980ms</span></div><div class="step step-ok">✓ Assert visible: "Post" <span class="ms">381ms</span></div><div class="step step-ok">✓ Tap on "Social" <span class="ms">2587ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">3107ms</span></div><div class="step step-ok">✓ Assert visible: "Social" <span class="ms">216ms</span></div><div class="step step-ok">✓ Assert visible: "Biz" <span class="ms">267ms</span></div><div class="step step-ok">✓ Assert visible: "Chat" <span class="ms">157ms</span></div><div class="step step-ok">✓ Press key: BACK <span class="ms">978ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">2814ms</span></div><div class="step step-ok">✓ Assert visible: "Post" <span class="ms">310ms</span></div><div class="step step-ok">✓ Assert visible: "Social" <span class="ms">217ms</span></div><div class="step step-ok">✓ Swipe DOWN <span class="ms">2541ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">9025ms</span></div><div class="step step-ok">✓ Assert visible: "Post" <span class="ms">207ms</span></div><div class="step step-ok">✓ tapOnPointV2 <span class="ms">1707ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">14630ms</span></div><div class="step step-ok">✓ Input text: "Maestro automated test post" <span class="ms">18726ms</span></div><div class="step step-ok">✓ Assert visible: "Maestro automated test post" <span class="ms">928ms</span></div><div class="step step-ok">✓ Press key: BACK <span class="ms">2039ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">6687ms</span></div><div class="step step-ok">✓ Tap on "Post" <span class="ms">15237ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">15681ms</span></div><div class="step step-ok">✓ Assert visible: "Post" <span class="ms">1797ms</span></div><div class="step step-ok">✓ Assert visible: "Social" <span class="ms">340ms</span></div><div class="step step-ok">✓ Swipe UP <span class="ms">9142ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">15319ms</span></div><div class="step step-ok">✓ Swipe DOWN <span class="ms">4194ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">12279ms</span></div><div class="step step-ok">✓ Tap on "Create Story" <span class="ms">2977ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">2025ms</span></div><div class="step step-ok">✓ Press key: BACK <span class="ms">908ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">10801ms</span></div><div class="step step-ok">✓ Assert visible: "Post" <span class="ms">715ms</span></div></div></details>
+      </td>
+      <td><span class="badge pass">PASSED</span></td>
+      <td>65/65</td>
+      <td>—</td>
+      <td>428.7s</td>
+    </tr></tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,110 @@
+appId: com.omre.app.posh
+---
+# SCENARIO: App launches clean to home screen | EXPECTED: App opens without crash
+- stopApp
+- launchApp:
+    clearState: false
+- waitForAnimationToEnd
+
+# SCENARIO: Home screen confirms correct starting state | EXPECTED: 'Explore OMRE Modules' visible
+- assertVisible: "Explore OMRE Modules"
+
+# SCENARIO: Inbox opens via drawer navigation | EXPECTED: Tapping 'Notifications' in drawer opens Inbox screen
+- tapOn:
+    point: "7%,9%"
+- waitForAnimationToEnd
+- tapOn: "Notifications"
+- waitForAnimationToEnd
+
+# SCENARIO: Inbox screen header is visible | EXPECTED: 'Inbox' heading displayed on screen
+- assertVisible: "Inbox"
+
+# SCENARIO: Mark all as read button is visible | EXPECTED: 'Mark all as read' button present in header
+- assertVisible: "Mark all as read"
+
+# SCENARIO: Clear all button is visible | EXPECTED: 'Clear all' button present in header
+- assertVisible: "Clear all"
+
+# SCENARIO: All filter tab is present | EXPECTED: 'All' tab visible in filter row
+- assertVisible: "All"
+
+# SCENARIO: Social filter tab is present | EXPECTED: 'Social' tab visible in filter row
+- assertVisible: "Social"
+
+# SCENARIO: Messages filter tab is present | EXPECTED: 'Messages' tab visible in filter row
+- assertVisible: "Messages"
+
+# SCENARIO: All Updates secondary filter visible | EXPECTED: 'All Updates' toggle visible in second filter row
+- assertVisible: "All Updates"
+
+# SCENARIO: Unread Only filter visible | EXPECTED: 'Unread Only' toggle visible in second filter row
+- assertVisible: "Unread Only"
+
+# SCENARIO: Priority filter visible | EXPECTED: 'Priority' toggle visible in second filter row
+- assertVisible: "Priority"
+
+# SCENARIO: Empty state shown when no notifications | EXPECTED: 'No notifications' message displayed
+- assertVisible: "No notifications"
+
+# SCENARIO: Social filter tab is tappable | EXPECTED: Tapping 'Social' switches notification filter
+- tapOn: "Social"
+- waitForAnimationToEnd
+- assertVisible: "Social"
+
+# SCENARIO: Messages filter tab is tappable | EXPECTED: Tapping 'Messages' switches notification filter
+- tapOn: "Messages"
+- waitForAnimationToEnd
+- assertVisible: "Messages"
+
+# SCENARIO: All filter tab restores full notification list | EXPECTED: Tapping 'All' shows all notifications
+- tapOn: "All"
+- waitForAnimationToEnd
+- assertVisible: "All"
+
+# SCENARIO: Unread Only filter is tappable | EXPECTED: Tapping 'Unread Only' filters without crash
+- tapOn: "Unread Only"
+- waitForAnimationToEnd
+- assertVisible: "Unread Only"
+
+# SCENARIO: All Updates filter restores default view | EXPECTED: Tapping 'All Updates' returns to full list
+- tapOn: "All Updates"
+- waitForAnimationToEnd
+- assertVisible: "All Updates"
+
+# SCENARIO: Mark all as read action executes without crash | EXPECTED: Tapping 'Mark all as read' completes without error
+- tapOn: "Mark all as read"
+- waitForAnimationToEnd
+- assertVisible: "Inbox"
+
+# SCENARIO: Inbox screen is scrollable down | EXPECTED: Swipe up works without crash
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# SCENARIO: Inbox scrolls back to top | EXPECTED: Swipe down returns to top, Inbox heading visible
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "Inbox"
+
+# SCENARIO: Back from Inbox returns to home feed | EXPECTED: 'Explore OMRE Modules' visible after Back
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "Explore OMRE Modules"
+
+# SCENARIO: Inbox re-accessible via drawer navigation | EXPECTED: Drawer tap on 'Notifications' reopens Inbox
+- tapOn:
+    point: "7%,9%"
+- waitForAnimationToEnd
+- tapOn: "Notifications"
+- waitForAnimationToEnd
+- assertVisible: "Inbox"
+
+# SCENARIO: Filter tabs persist after re-navigation | EXPECTED: All/Social/Messages tabs still visible
+- assertVisible: "All"
+- assertVisible: "Social"
+
+# SCENARIO: Back from re-navigated Inbox returns home | EXPECTED: Home screen visible after Back
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "Explore OMRE Modules"

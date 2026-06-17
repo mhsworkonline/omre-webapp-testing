@@ -1,0 +1,123 @@
+appId: com.omre.app.posh
+---
+# SCENARIO: App launches clean to home screen | EXPECTED: App opens without crash
+- stopApp
+- launchApp:
+    clearState: false
+- waitForAnimationToEnd
+
+# SCENARIO: Home header is visible on launch | EXPECTED: 'Explore OMRE Modules' text visible
+- assertVisible: "Explore OMRE Modules"
+
+# SCENARIO: Post composer row is visible | EXPECTED: 'Post' button visible in composer row
+- assertVisible: "Post"
+
+# SCENARIO: Default category is Social | EXPECTED: 'Social' dropdown visible as default category
+- assertVisible: "Social"
+
+# SCENARIO: Feed refresh button is visible | EXPECTED: 'Refresh feed' button visible
+- assertVisible: "Refresh feed"
+
+# SCENARIO: Create Story card is visible in feed | EXPECTED: 'Create Story' visible in stories row
+- assertVisible: "Create Story"
+
+# SCENARIO: For You tab is visible in social feed | EXPECTED: 'For You' tab label visible
+- assertVisible: "For You\nTab 2 of 2"
+
+# SCENARIO: Following tab is visible in social feed | EXPECTED: 'Following' tab label visible
+- assertVisible: "Following\nTab 1 of 2"
+
+# SCENARIO: Tap Following tab switches to following feed | EXPECTED: Following tab shows as active
+- tapOn: "Following\nTab 1 of 2"
+- waitForAnimationToEnd
+- assertVisible: "Following\nTab 1 of 2"
+
+# SCENARIO: Tap For You tab returns to For You feed | EXPECTED: For You tab shows as active
+- tapOn: "For You\nTab 2 of 2"
+- waitForAnimationToEnd
+- assertVisible: "For You\nTab 2 of 2"
+
+# SCENARIO: Tap composer opens keyboard | EXPECTED: Keyboard appears after tapping text area
+- tapOn:
+    point: "56%,75%"
+- waitForAnimationToEnd
+
+# SCENARIO: Text can be typed in composer | EXPECTED: Typed text appears in field
+- inputText: "Test post from Maestro"
+- assertVisible: "Test post from Maestro"
+
+# SCENARIO: Keyboard dismisses on Back | EXPECTED: Keyboard closes and composer stays visible
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "Post"
+
+# SCENARIO: Text can be erased from composer | EXPECTED: Field clears after erase
+- tapOn:
+    point: "56%,75%"
+- waitForAnimationToEnd
+- eraseText: 30
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "Post"
+
+# SCENARIO: Empty post tap is blocked | EXPECTED: Tapping Post with empty field does not crash or navigate away
+- tapOn: "Post"
+- waitForAnimationToEnd
+- assertVisible: "Post"
+
+# SCENARIO: Module switcher opens on tap | EXPECTED: Tapping 'Social' opens module switcher
+- tapOn: "Social"
+- waitForAnimationToEnd
+- assertVisible: "Social"
+
+# SCENARIO: Biz module option visible in switcher | EXPECTED: 'Biz' listed as switchable module
+- assertVisible: "Biz"
+
+# SCENARIO: Chat module option visible in switcher | EXPECTED: 'Chat' listed as switchable module
+- assertVisible: "Chat"
+
+# SCENARIO: Dismiss module switcher without switching | EXPECTED: Back key closes switcher without navigating
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "Post"
+
+# SCENARIO: Social module retained after dismiss | EXPECTED: 'Social' label still visible, composer intact
+- assertVisible: "Social"
+
+# SCENARIO: Pull to refresh reloads feed | EXPECTED: Feed refreshes without crash, Post visible
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "Post"
+
+# SCENARIO: Full post cycle — type text and tap Post | EXPECTED: Post submitted without crash
+- tapOn:
+    point: "56%,75%"
+- waitForAnimationToEnd
+- inputText: "Maestro automated test post"
+- assertVisible: "Maestro automated test post"
+- pressKey: Back
+- waitForAnimationToEnd
+- tapOn: "Post"
+- waitForAnimationToEnd
+
+# SCENARIO: Composer resets after post submission | EXPECTED: Composer row still visible and category retained
+- assertVisible: "Post"
+- assertVisible: "Social"
+
+# SCENARIO: Scroll feed down reveals content below composer | EXPECTED: No crash on scroll
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# SCENARIO: Create Story opens story creation screen | EXPECTED: Story screen opens on tap
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- tapOn: "Create Story"
+- waitForAnimationToEnd
+
+# SCENARIO: Back from story screen returns to feed | EXPECTED: Feed and Post button visible
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "Post"

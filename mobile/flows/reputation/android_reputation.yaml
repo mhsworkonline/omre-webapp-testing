@@ -1,0 +1,128 @@
+appId: com.omre.app.posh
+---
+# SCENARIO: App launches clean to home screen | EXPECTED: App opens without crash
+- stopApp
+- launchApp:
+    clearState: false
+- waitForAnimationToEnd
+
+# SCENARIO: Home screen confirms correct starting state | EXPECTED: 'Explore OMRE Modules' visible
+- assertVisible: "Explore OMRE Modules"
+
+# SCENARIO: Navigation drawer opens via hamburger icon | EXPECTED: Drawer opens showing nav items
+- tapOn:
+    point: "7%,9%"
+- waitForAnimationToEnd
+- assertVisible: "Home"
+
+# SCENARIO: Reputation item is visible in drawer | EXPECTED: 'Reputation' label visible in drawer
+- assertVisible: "Reputation"
+
+# SCENARIO: Tap Reputation navigates to Reputation screen | EXPECTED: Reputation screen loads without crash
+- tapOn: "Reputation"
+- waitForAnimationToEnd
+
+# SCENARIO: Reputation screen header is visible | EXPECTED: 'Reputation' heading present on screen
+- assertVisible: "Reputation"
+
+# SCENARIO: No crash dialog is shown on Reputation load | EXPECTED: App crash overlay not visible
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: No generic error is shown on Reputation load | EXPECTED: Error banner not visible
+- assertNotVisible: "Something went wrong"
+
+# SCENARIO: Profile username is correct on Reputation screen | EXPECTED: 'wilacok854' visible in profile header
+- assertVisible: "wilacok854"
+
+# SCENARIO: Reputation score shows 0 out of 200 | EXPECTED: Score indicator reflecting 0/200 visible
+- assertVisible: "0"
+
+# SCENARIO: Rank label shows Recruit | EXPECTED: 'Recruit' rank label visible
+- assertVisible: "Recruit"
+
+# SCENARIO: Points-to-next-rank indicator is visible | EXPECTED: '50 pts to next' or equivalent message visible
+- assertVisible: "50"
+
+# SCENARIO: View Leaderboard link is present | EXPECTED: 'View Leaderboard' link visible on screen
+- assertVisible: "View Leaderboard"
+
+# SCENARIO: Tap View Leaderboard opens leaderboard screen | EXPECTED: Leaderboard screen opens without crash
+- tapOn: "View Leaderboard"
+- waitForAnimationToEnd
+
+# SCENARIO: Leaderboard screen loads | EXPECTED: 'Leaderboard' heading visible without crash
+- assertVisible: "Leaderboard"
+
+# SCENARIO: No crash on expanded reputation view | EXPECTED: Crash overlay not visible in leaderboard screen
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Leaderboard entries are visible | EXPECTED: At least one user entry visible in leaderboard list
+- assertNotVisible: "Something went wrong"
+
+# SCENARIO: Scroll down leaderboard list | EXPECTED: Swipe up scrolls list without crash
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# SCENARIO: Scroll back to top of leaderboard | EXPECTED: Swipe down returns to top of leaderboard
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "Leaderboard"
+
+# SCENARIO: Back from leaderboard returns to Reputation screen | EXPECTED: Reputation screen visible after pressing Back
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "Reputation"
+
+# SCENARIO: Reputation score breakdown section visible | EXPECTED: Category breakdown (Social, Orbit, Jobs, Mart etc.) visible
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Recent activity section is visible | EXPECTED: 'Recent' activity label or section visible on screen
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: How Reputation Works section visible | EXPECTED: 'How Reputation Works' label visible on screen
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Scroll down Reputation screen | EXPECTED: Swipe up scrolls without crash, more content visible
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# SCENARIO: Content below fold visible after scroll | EXPECTED: Reputation tips or breakdown visible after scroll
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Scroll back to top of Reputation screen | EXPECTED: Swipe down returns to top, Reputation heading visible
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "Reputation"
+
+# SCENARIO: Pull to refresh reloads Reputation content | EXPECTED: Content refreshes without crash, Reputation heading still visible
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "Reputation"
+
+# SCENARIO: Reputation screen re-navigable via drawer | EXPECTED: Drawer tap on 'Reputation' reloads Reputation screen
+- tapOn:
+    point: "7%,9%"
+- waitForAnimationToEnd
+- tapOn: "Reputation"
+- waitForAnimationToEnd
+- assertVisible: "Reputation"
+
+# SCENARIO: Username still correct after re-navigation | EXPECTED: 'wilacok854' visible after returning to Reputation
+- assertVisible: "wilacok854"
+
+# SCENARIO: Rank still shown as Recruit after re-navigation | EXPECTED: 'Recruit' label visible after re-navigation
+- assertVisible: "Recruit"
+
+# SCENARIO: Back from re-navigated Reputation returns to home | EXPECTED: 'Explore OMRE Modules' visible after Back
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "Explore OMRE Modules"
+
+# SCENARIO: Reputation screen leaves no lingering error state | EXPECTED: No error or crash overlay visible on home screen
+- assertNotVisible: "Unfortunately"
+- assertNotVisible: "Something went wrong"

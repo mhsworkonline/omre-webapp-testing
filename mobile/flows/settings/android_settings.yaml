@@ -1,0 +1,103 @@
+appId: com.omre.app.posh
+---
+# SCENARIO: App launches clean to home screen | EXPECTED: App opens without crash
+- stopApp
+- launchApp:
+    clearState: false
+- waitForAnimationToEnd
+
+# SCENARIO: Home screen confirms correct starting state | EXPECTED: 'Explore OMRE Modules' visible
+- assertVisible: "Explore OMRE Modules"
+
+# SCENARIO: Drawer hamburger menu is tappable | EXPECTED: Tapping hamburger at 7%,9% opens navigation drawer
+- tapOn:
+    point: "7%,9%"
+- waitForAnimationToEnd
+
+# SCENARIO: Navigation drawer opens successfully | EXPECTED: Drawer slides open and Settings option is visible
+- assertVisible: "Settings"
+
+# SCENARIO: Settings entry in drawer navigates to Settings screen | EXPECTED: Tapping 'Settings' loads Settings screen
+- tapOn: "Settings"
+- waitForAnimationToEnd
+
+# SCENARIO: Settings screen loads without crash | EXPECTED: No error overlay appears after entering Settings
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Settings screen title is displayed | EXPECTED: 'Settings' heading visible on Settings screen
+- assertVisible: "Settings"
+
+# SCENARIO: Settings screen is scrollable downward | EXPECTED: Swipe up scrolls through settings options without crash
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# SCENARIO: Settings screen further scroll reveals more options | EXPECTED: Second swipe up continues without crash
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# SCENARIO: Settings screen scrolls back to top | EXPECTED: Swipe down returns toward top of settings list
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+
+# SCENARIO: No crash visible after scrolling Settings | EXPECTED: 'Something went wrong' not present after scroll
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Notifications setting is accessible | EXPECTED: 'Notifications' option visible in settings list
+- assertVisible: "Notifications"
+
+# SCENARIO: Notifications sub-screen opens | EXPECTED: Tapping 'Notifications' navigates to notifications settings
+- tapOn: "Notifications"
+- waitForAnimationToEnd
+
+# SCENARIO: Notifications screen loads without crash | EXPECTED: No error overlay on Notifications settings screen
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Back navigation returns to Settings from Notifications | EXPECTED: Pressing Back returns to main Settings screen
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "Settings"
+
+# SCENARIO: Settings screen is stable after returning from Notifications | EXPECTED: No crash after back navigation
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Settings list is scrollable after returning from sub-screen | EXPECTED: Swipe up works after back navigation
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# SCENARIO: Settings scroll back to top after sub-screen return | EXPECTED: Swipe down works after back navigation
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+
+# SCENARIO: Back navigation exits Settings screen | EXPECTED: Pressing Back returns to home screen
+- pressKey: Back
+- waitForAnimationToEnd
+
+# SCENARIO: Home screen is accessible after exiting Settings | EXPECTED: 'Explore OMRE Modules' visible after back from Settings
+- assertVisible: "Explore OMRE Modules"
+
+# SCENARIO: Settings re-entry via drawer second time works | EXPECTED: Second visit to Settings opens without crash
+- tapOn:
+    point: "7%,9%"
+- waitForAnimationToEnd
+- assertVisible: "Settings"
+- tapOn: "Settings"
+- waitForAnimationToEnd
+
+# SCENARIO: Settings module stable on second visit | EXPECTED: Settings screen visible with no crash on re-entry
+- assertVisible: "Settings"
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Back from Settings second visit returns to home | EXPECTED: Home screen loads cleanly after second Settings visit
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "Explore OMRE Modules"

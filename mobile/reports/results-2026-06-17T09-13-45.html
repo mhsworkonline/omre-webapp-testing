@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>OMRE Mobile Test Report — 2026-06-17T09-13-45</title>
+<style>
+  body{font-family:system-ui,sans-serif;margin:0;background:#f5f5f5;color:#222}
+  header{background:#1a1a2e;color:#fff;padding:24px 32px}
+  header h1{margin:0 0 4px;font-size:22px}
+  header p{margin:0;opacity:.7;font-size:13px}
+  .stats{display:flex;gap:16px;padding:20px 32px}
+  .stat{background:#fff;border-radius:8px;padding:16px 24px;min-width:120px;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+  .stat .n{font-size:32px;font-weight:700}
+  .stat .n.pass{color:#22c55e}.stat .n.fail{color:#ef4444}.stat .n.total{color:#3b82f6}
+  .stat .l{font-size:12px;color:#666;margin-top:4px}
+  table{width:calc(100% - 64px);margin:0 32px 32px;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+  th{background:#1a1a2e;color:#fff;padding:12px 16px;text-align:left;font-size:13px}
+  td{padding:10px 16px;border-bottom:1px solid #eee;font-size:13px;vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  tr:hover td{background:#fafafa}
+  .badge{display:inline-block;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:600}
+  .badge.pass{background:#dcfce7;color:#166534}.badge.fail{background:#fee2e2;color:#991b1b}
+  code{font-size:12px;background:#f3f4f6;padding:2px 6px;border-radius:3px}
+  .steps-wrap{margin-top:6px}
+  .step{font-size:11px;padding:2px 0;color:#555}
+  .step-ok{color:#16a34a}.step-fail{color:#dc2626;font-weight:600}.step-skip{color:#9ca3af}
+  .ms{font-size:10px;color:#9ca3af;margin-left:6px}
+  .scenario-table{width:100%;margin:8px 0;border-collapse:collapse;box-shadow:none}
+  .scenario-table th{background:#374151;font-size:11px;padding:6px 10px}
+  .scenario-table td{font-size:12px;padding:6px 10px;border-bottom:1px solid #f0f0f0}
+  details summary{cursor:pointer;font-size:11px;color:#666;margin-top:8px}
+</style>
+</head>
+<body>
+<header>
+  <h1>OMRE Mobile Test Report</h1>
+  <p>Platform: Android &nbsp;|&nbsp; App: com.omre.app.posh &nbsp;|&nbsp; Run: 2026-06-17T09-13-45</p>
+</header>
+<div class="stats">
+  <div class="stat"><div class="n total">8</div><div class="l">Total Flows</div></div>
+  <div class="stat"><div class="n pass">8</div><div class="l">Passed</div></div>
+  <div class="stat"><div class="n fail">0</div><div class="l">Failed</div></div>
+  <div class="stat"><div class="n total">683.8s</div><div class="l">Total Duration</div></div>
+</div>
+<table>
+  <thead><tr><th>Flow</th><th>Status</th><th>Steps</th><th>Failed Step</th><th>Duration</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>link_jobs</strong>
+        
+      <table class="scenario-table">
+        <thead><tr><th>Scenario</th><th>Expected Result</th><th>Actual Result</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Unlabeled steps (no SCENARIO marker above them in the flow file)</td>
+            <td>N/A — add a "# SCENARIO: ... | EXPECTED: ..." comment above these steps</td>
+            <td>As expected — all steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+        </tbody>
+      </table>
+        <details><summary>Technical step detail</summary><div class="steps-wrap"><div class="step step-ok">✓ Set up test variables <span class="ms">7ms</span></div><div class="step step-ok">✓ Apply flow configuration <span class="ms">2ms</span></div><div class="step step-ok">✓ stopApp <span class="ms">126ms</span></div><div class="step step-ok">✓ Launch app "com.omre.app.posh" <span class="ms">2763ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">12905ms</span></div><div class="step step-ok">✓ Assert visible: "Explore OMRE Modules" <span class="ms">14728ms</span></div><div class="step step-ok">✓ Tap on "View all" <span class="ms">8700ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">3465ms</span></div><div class="step step-ok">✓ Assert visible: "Switch to Module" <span class="ms">659ms</span></div><div class="step step-ok">✓ Tap on "Link" <span class="ms">11604ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">1600ms</span></div><div class="step step-ok">✓ Assert visible: "Welcome to Link" <span class="ms">390ms</span></div><div class="step step-ok">✓ Assert visible: "Explore Jobs" <span class="ms">337ms</span></div><div class="step step-ok">✓ Assert visible: "Browse Marketplace" <span class="ms">545ms</span></div><div class="step step-ok">✓ Tap on "Explore Jobs" <span class="ms">3055ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">2023ms</span></div><div class="step step-ok">✓ Assert visible: "Job Search" <span class="ms">405ms</span></div><div class="step step-ok">✓ Assert visible: "Saved Jobs" <span class="ms">161ms</span></div><div class="step step-ok">✓ Assert visible: "Job Alerts" <span class="ms">193ms</span></div><div class="step step-ok">✓ Assert visible: "Company Pages" <span class="ms">230ms</span></div><div class="step step-ok">✓ Scroll <span class="ms">4128ms</span></div><div class="step step-ok">✓ Swipe DOWN <span class="ms">765ms</span></div></div></details>
+      </td>
+      <td><span class="badge pass">PASSED</span></td>
+      <td>22/22</td>
+      <td>—</td>
+      <td>68.8s</td>
+    </tr>
+    <tr>
+      <td><strong>biz_module</strong>
+        
+      <table class="scenario-table">
+        <thead><tr><th>Scenario</th><th>Expected Result</th><th>Actual Result</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Unlabeled steps (no SCENARIO marker above them in the flow file)</td>
+            <td>N/A — add a "# SCENARIO: ... | EXPECTED: ..." comment above these steps</td>
+            <td>As expected — all steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+        </tbody>
+      </table>
+        <details><summary>Technical step detail</summary><div class="steps-wrap"><div class="step step-ok">✓ Set up test variables <span class="ms">7ms</span></div><div class="step step-ok">✓ Apply flow configuration <span class="ms">3ms</span></div><div class="step step-ok">✓ stopApp <span class="ms">260ms</span></div><div class="step step-ok">✓ Launch app "com.omre.app.posh" <span class="ms">3722ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">17664ms</span></div><div class="step step-ok">✓ Assert visible: "Explore OMRE Modules" <span class="ms">8862ms</span></div><div class="step step-ok">✓ Tap on "View all" <span class="ms">7850ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">3789ms</span></div><div class="step step-ok">✓ Assert visible: "Switch to Module" <span class="ms">299ms</span></div><div class="step step-ok">✓ Tap on "Biz" <span class="ms">11640ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">1489ms</span></div><div class="step step-ok">✓ Assert visible: "Welcome to Biz" <span class="ms">186ms</span></div><div class="step step-ok">✓ Assert visible: "Store" <span class="ms">287ms</span></div><div class="step step-ok">✓ Assert visible: "Ads" <span class="ms">310ms</span></div><div class="step step-ok">✓ Assert visible: "Manage inventory" <span class="ms">318ms</span></div><div class="step step-ok">✓ Assert visible: "Reach customers" <span class="ms">590ms</span></div><div class="step step-ok">✓ Assert visible: "Continue to Omre Web" <span class="ms">334ms</span></div><div class="step step-ok">✓ Scroll <span class="ms">936ms</span></div><div class="step step-ok">✓ Swipe DOWN <span class="ms">745ms</span></div><div class="step step-ok">✓ Assert visible: "Welcome to Biz" <span class="ms">126ms</span></div><div class="step step-ok">✓ Assert visible: "Store" <span class="ms">155ms</span></div><div class="step step-ok">✓ Assert visible: "Ads" <span class="ms">129ms</span></div></div></details>
+      </td>
+      <td><span class="badge pass">PASSED</span></td>
+      <td>22/22</td>
+      <td>—</td>
+      <td>59.7s</td>
+    </tr>
+    <tr>
+      <td><strong>orbit_feed</strong>
+        
+      <table class="scenario-table">
+        <thead><tr><th>Scenario</th><th>Expected Result</th><th>Actual Result</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Unlabeled steps (no SCENARIO marker above them in the flow file)</td>
+            <td>N/A — add a "# SCENARIO: ... | EXPECTED: ..." comment above these steps</td>
+            <td>As expected — all steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+        </tbody>
+      </table>
+        <details><summary>Technical step detail</summary><div class="steps-wrap"><div class="step step-ok">✓ Set up test variables <span class="ms">9ms</span></div><div class="step step-ok">✓ Apply flow configuration <span class="ms">2ms</span></div><div class="step step-ok">✓ stopApp <span class="ms">102ms</span></div><div class="step step-ok">✓ Launch app "com.omre.app.posh" <span class="ms">2585ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">5988ms</span></div><div class="step step-ok">✓ Assert visible: "Explore OMRE Modules" <span class="ms">1268ms</span></div><div class="step step-ok">✓ Tap on "View all" <span class="ms">22201ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">3615ms</span></div><div class="step step-ok">✓ Tap on "Orbit" <span class="ms">8509ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">1429ms</span></div><div class="step step-ok">✓ Assert visible: "Welcome to Orbit" <span class="ms">270ms</span></div><div class="step step-ok">✓ Assert visible: "Your social feed, amplified" <span class="ms">318ms</span></div><div class="step step-ok">✓ Assert visible: "Go to Feed" <span class="ms">223ms</span></div><div class="step step-ok">✓ Tap on "Go to Feed" <span class="ms">3692ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">1121ms</span></div><div class="step step-ok">✓ Assert visible: "For You" <span class="ms">154ms</span></div><div class="step step-ok">✓ Assert visible: "Following" <span class="ms">136ms</span></div><div class="step step-ok">✓ Tap on "Following" <span class="ms">2514ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">1316ms</span></div><div class="step step-ok">✓ Tap on "For You" <span class="ms">2250ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">1083ms</span></div><div class="step step-ok">✓ Scroll <span class="ms">1794ms</span></div></div></details>
+      </td>
+      <td><span class="badge pass">PASSED</span></td>
+      <td>22/22</td>
+      <td>—</td>
+      <td>60.6s</td>
+    </tr>
+    <tr>
+      <td><strong>chat_messages</strong>
+        
+      <table class="scenario-table">
+        <thead><tr><th>Scenario</th><th>Expected Result</th><th>Actual Result</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Unlabeled steps (no SCENARIO marker above them in the flow file)</td>
+            <td>N/A — add a "# SCENARIO: ... | EXPECTED: ..." comment above these steps</td>
+            <td>As expected — all steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+        </tbody>
+      </table>
+        <details><summary>Technical step detail</summary><div class="steps-wrap"><div class="step step-ok">✓ Set up test variables <span class="ms">10ms</span></div><div class="step step-ok">✓ Apply flow configuration <span class="ms">3ms</span></div><div class="step step-ok">✓ stopApp <span class="ms">115ms</span></div><div class="step step-ok">✓ Launch app "com.omre.app.posh" <span class="ms">3496ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">11603ms</span></div><div class="step step-ok">✓ Assert visible: "Explore OMRE Modules" <span class="ms">23358ms</span></div><div class="step step-ok">✓ Tap on "Messages" <span class="ms">17088ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">1914ms</span></div><div class="step step-ok">✓ Assert visible: "Social" <span class="ms">474ms</span></div><div class="step step-ok">✓ Assert visible: "Orbit" <span class="ms">594ms</span></div><div class="step step-ok">✓ Assert visible: "Business" <span class="ms">457ms</span></div><div class="step step-ok">✓ Assert visible: "Jobs" <span class="ms">566ms</span></div><div class="step step-ok">✓ Tap on "Orbit" <span class="ms">3181ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">954ms</span></div><div class="step step-ok">✓ Tap on "Business" <span class="ms">2232ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">2391ms</span></div><div class="step step-ok">✓ Tap on "Jobs" <span class="ms">2388ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">860ms</span></div><div class="step step-ok">✓ Tap on "Social" <span class="ms">2454ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">962ms</span></div><div class="step step-ok">✓ Scroll <span class="ms">789ms</span></div><div class="step step-ok">✓ Press key: BACK <span class="ms">25728ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">4014ms</span></div><div class="step step-ok">✓ Assert visible: "Explore OMRE Modules" <span class="ms">658ms</span></div></div></details>
+      </td>
+      <td><span class="badge pass">PASSED</span></td>
+      <td>24/24</td>
+      <td>—</td>
+      <td>106.3s</td>
+    </tr>
+    <tr>
+      <td><strong>inbox</strong>
+        
+      <table class="scenario-table">
+        <thead><tr><th>Scenario</th><th>Expected Result</th><th>Actual Result</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Unlabeled steps (no SCENARIO marker above them in the flow file)</td>
+            <td>N/A — add a "# SCENARIO: ... | EXPECTED: ..." comment above these steps</td>
+            <td>As expected — all steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+        </tbody>
+      </table>
+        <details><summary>Technical step detail</summary><div class="steps-wrap"><div class="step step-ok">✓ Set up test variables <span class="ms">14ms</span></div><div class="step step-ok">✓ Apply flow configuration <span class="ms">5ms</span></div><div class="step step-ok">✓ stopApp <span class="ms">257ms</span></div><div class="step step-ok">✓ Launch app "com.omre.app.posh" <span class="ms">3710ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">18747ms</span></div><div class="step step-ok">✓ Assert visible: "Explore OMRE Modules" <span class="ms">12910ms</span></div><div class="step step-ok">✓ Tap on "Notifications" <span class="ms">7929ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">2048ms</span></div><div class="step step-ok">✓ Assert visible: "Mark all as read" <span class="ms">273ms</span></div><div class="step step-ok">✓ Assert visible: "Clear all" <span class="ms">249ms</span></div><div class="step step-ok">✓ Assert visible: "All" <span class="ms">334ms</span></div><div class="step step-ok">✓ Assert visible: "Social" <span class="ms">281ms</span></div><div class="step step-ok">✓ Assert visible: "Messages" <span class="ms">472ms</span></div><div class="step step-ok">✓ Assert visible: "Business" <span class="ms">271ms</span></div><div class="step step-ok">✓ Tap on "Social" <span class="ms">3947ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">1969ms</span></div><div class="step step-ok">✓ Tap on "Messages" <span class="ms">4768ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">1897ms</span></div><div class="step step-ok">✓ Tap on "Business" <span class="ms">3846ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">2941ms</span></div><div class="step step-ok">✓ Tap on "All" <span class="ms">3638ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">2549ms</span></div><div class="step step-ok">✓ Scroll <span class="ms">2481ms</span></div><div class="step step-ok">✓ Swipe DOWN <span class="ms">740ms</span></div><div class="step step-ok">✓ Assert visible: "Mark all as read" <span class="ms">728ms</span></div><div class="step step-ok">✓ Press key: BACK <span class="ms">3054ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">3209ms</span></div><div class="step step-ok">✓ Assert visible: "Explore OMRE Modules" <span class="ms">1547ms</span></div></div></details>
+      </td>
+      <td><span class="badge pass">PASSED</span></td>
+      <td>28/28</td>
+      <td>—</td>
+      <td>84.8s</td>
+    </tr>
+    <tr>
+      <td><strong>profile</strong>
+        
+      <table class="scenario-table">
+        <thead><tr><th>Scenario</th><th>Expected Result</th><th>Actual Result</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Unlabeled steps (no SCENARIO marker above them in the flow file)</td>
+            <td>N/A — add a "# SCENARIO: ... | EXPECTED: ..." comment above these steps</td>
+            <td>As expected — all steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+        </tbody>
+      </table>
+        <details><summary>Technical step detail</summary><div class="steps-wrap"><div class="step step-ok">✓ Set up test variables <span class="ms">28ms</span></div><div class="step step-ok">✓ Apply flow configuration <span class="ms">7ms</span></div><div class="step step-ok">✓ stopApp <span class="ms">773ms</span></div><div class="step step-ok">✓ Launch app "com.omre.app.posh" <span class="ms">3821ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">16280ms</span></div><div class="step step-ok">✓ Assert visible: "Explore OMRE Modules" <span class="ms">24893ms</span></div><div class="step step-ok">✓ tapOnPointV2 <span class="ms">9405ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">3318ms</span></div><div class="step step-ok">✓ Tap on "Profile" <span class="ms">6292ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">2766ms</span></div><div class="step step-ok">✓ Assert visible: "wilacok854" <span class="ms">1154ms</span></div><div class="step step-ok">✓ Assert visible: "@wilacok" <span class="ms">1292ms</span></div><div class="step step-ok">✓ Assert visible: "CREATOR" <span class="ms">934ms</span></div><div class="step step-ok">✓ Assert visible: "Edit profile" <span class="ms">828ms</span></div><div class="step step-ok">✓ Assert visible: "Share" <span class="ms">726ms</span></div><div class="step step-ok">✓ Assert visible: "Highlights" <span class="ms">270ms</span></div><div class="step step-ok">✓ Assert visible: "Archive" <span class="ms">286ms</span></div><div class="step step-ok">✓ Tap on "Orbit
+Tab 2 of 10" <span class="ms">7105ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">1663ms</span></div><div class="step step-ok">✓ Tap on "Reposts
+Tab 3 of 10" <span class="ms">5750ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">3648ms</span></div><div class="step step-ok">✓ Tap on "Videos
+Tab 4 of 10" <span class="ms">4085ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">4302ms</span></div><div class="step step-ok">✓ Tap on "Posts
+Tab 1 of 10" <span class="ms">6533ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">2220ms</span></div></div></details>
+      </td>
+      <td><span class="badge pass">PASSED</span></td>
+      <td>25/25</td>
+      <td>—</td>
+      <td>108.4s</td>
+    </tr>
+    <tr>
+      <td><strong>create_post</strong>
+        
+      <table class="scenario-table">
+        <thead><tr><th>Scenario</th><th>Expected Result</th><th>Actual Result</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Unlabeled steps (no SCENARIO marker above them in the flow file)</td>
+            <td>N/A — add a "# SCENARIO: ... | EXPECTED: ..." comment above these steps</td>
+            <td>As expected — all steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+        </tbody>
+      </table>
+        <details><summary>Technical step detail</summary><div class="steps-wrap"><div class="step step-ok">✓ Set up test variables <span class="ms">13ms</span></div><div class="step step-ok">✓ Apply flow configuration <span class="ms">4ms</span></div><div class="step step-ok">✓ stopApp <span class="ms">1125ms</span></div><div class="step step-ok">✓ Launch app "com.omre.app.posh" <span class="ms">3296ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">17229ms</span></div><div class="step step-ok">✓ Assert visible: "Explore OMRE Modules" <span class="ms">14635ms</span></div><div class="step step-ok">✓ Assert visible: "Refresh feed" <span class="ms">5743ms</span></div><div class="step step-ok">✓ Assert visible: "Post" <span class="ms">1738ms</span></div><div class="step step-ok">✓ Assert visible: "Social" <span class="ms">1142ms</span></div><div class="step step-ok">✓ tapOnPointV2 <span class="ms">10787ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">15406ms</span></div><div class="step step-ok">✓ Input text: "Automated test post" <span class="ms">13092ms</span></div><div class="step step-ok">✓ Assert visible: "Automated test post" <span class="ms">1331ms</span></div><div class="step step-ok">✓ Erase 50 characters <span class="ms">14982ms</span></div><div class="step step-ok">✓ Press key: BACK <span class="ms">2092ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">20117ms</span></div></div></details>
+      </td>
+      <td><span class="badge pass">PASSED</span></td>
+      <td>16/16</td>
+      <td>—</td>
+      <td>122.7s</td>
+    </tr>
+    <tr>
+      <td><strong>home_feed</strong>
+        
+      <table class="scenario-table">
+        <thead><tr><th>Scenario</th><th>Expected Result</th><th>Actual Result</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Unlabeled steps (no SCENARIO marker above them in the flow file)</td>
+            <td>N/A — add a "# SCENARIO: ... | EXPECTED: ..." comment above these steps</td>
+            <td>As expected — all steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+        </tbody>
+      </table>
+        <details><summary>Technical step detail</summary><div class="steps-wrap"><div class="step step-ok">✓ Set up test variables <span class="ms">16ms</span></div><div class="step step-ok">✓ Apply flow configuration <span class="ms">9ms</span></div><div class="step step-ok">✓ stopApp <span class="ms">1034ms</span></div><div class="step step-ok">✓ Launch app "com.omre.app.posh" <span class="ms">5422ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">3681ms</span></div><div class="step step-ok">✓ Assert visible: "Explore OMRE Modules" <span class="ms">7555ms</span></div><div class="step step-ok">✓ Assert visible: "View all" <span class="ms">22639ms</span></div><div class="step step-ok">✓ Assert visible: "Social" <span class="ms">2042ms</span></div><div class="step step-ok">✓ Assert visible: "Chat" <span class="ms">1059ms</span></div><div class="step step-ok">✓ Assert visible: "Biz" <span class="ms">4167ms</span></div><div class="step step-ok">✓ Assert visible: "Learn" <span class="ms">720ms</span></div><div class="step step-ok">✓ Assert visible: "Refresh feed" <span class="ms">420ms</span></div><div class="step step-ok">✓ Tap on "View all" <span class="ms">6729ms</span></div><div class="step step-ok">✓ Assert visible: "Switch to Module" <span class="ms">639ms</span></div><div class="step step-ok">✓ Assert visible: "Social" <span class="ms">892ms</span></div><div class="step step-ok">✓ Assert visible: "Chat" <span class="ms">367ms</span></div><div class="step step-ok">✓ Assert visible: "Biz" <span class="ms">699ms</span></div><div class="step step-ok">✓ Assert visible: "Link" <span class="ms">205ms</span></div><div class="step step-ok">✓ Assert visible: "Learn" <span class="ms">307ms</span></div><div class="step step-ok">✓ Assert visible: "Studio" <span class="ms">223ms</span></div><div class="step step-ok">✓ Assert visible: "News" <span class="ms">1982ms</span></div><div class="step step-ok">✓ Assert visible: "Video" <span class="ms">1059ms</span></div><div class="step step-ok">✓ Assert visible: "Orbit" <span class="ms">576ms</span></div><div class="step step-ok">✓ Assert visible: "Games" <span class="ms">579ms</span></div><div class="step step-ok">✓ Assert visible: "Meeting" <span class="ms">406ms</span></div><div class="step step-ok">✓ Assert visible: "Mart" <span class="ms">477ms</span></div><div class="step step-ok">✓ Press key: BACK <span class="ms">1552ms</span></div><div class="step step-ok">✓ Wait for animation <span class="ms">4045ms</span></div><div class="step step-ok">✓ Scroll <span class="ms">1722ms</span></div><div class="step step-ok">✓ Scroll <span class="ms">1334ms</span></div></div></details>
+      </td>
+      <td><span class="badge pass">PASSED</span></td>
+      <td>30/30</td>
+      <td>—</td>
+      <td>72.6s</td>
+    </tr></tbody>
+</table>
+</body>
+</html>

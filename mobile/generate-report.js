@@ -95,8 +95,9 @@ function assignScenarios(yamlPath, steps) {
       status: failedChild ? 'FAILED' : 'PASSED',
       actual: failedChild
         ? `Failed at "${failedChild.name}"${failedChild.error ? ' — ' + failedChild.error : ''}`
-        : 'As expected — all steps passed',
-      stepCount: childSteps.length
+        : 'All steps passed',
+      stepCount: childSteps.length,
+      steps: childSteps.map(s => `${s.status === 'COMPLETED' ? '✓' : s.status === 'FAILED' ? '✗' : '—'} ${s.name}`)
     };
   });
 }
@@ -435,8 +436,8 @@ async function writeExcel(flows, outDir, ts) {
   const wsS = wb.addWorksheet('Scenarios');
   wsS.views = [{ state: 'frozen', ySplit: 1 }];
 
-  const hdrsS = ['Flow', 'Scenario', 'Expected Result', 'Actual Result', 'Status'];
-  const wdsS  = [22, 40, 50, 50, 12];
+  const hdrsS = ['Flow', 'Test Case / Scenario', 'Expected Result', 'Actions Performed', 'Actual Result', 'Status'];
+  const wdsS  = [22, 42, 48, 55, 40, 12];
   const hRowS = wsS.addRow(hdrsS);
   hRowS.eachCell(c => { c.fill = HDR_FILL; c.font = HDR_FONT; c.alignment = { horizontal: 'center' }; });
   hRowS.height = 22;
@@ -444,11 +445,15 @@ async function writeExcel(flows, outDir, ts) {
 
   for (const f of flows) {
     for (const sc of (f.scenarios || [])) {
-      const row = wsS.addRow([f.name, sc.name, sc.expected, sc.actual, sc.status]);
-      row.getCell(5).fill = sc.status === 'PASSED' ? PASS_FILL : FAIL_FILL;
-      row.getCell(5).font = { bold: true, color: { argb: sc.status === 'PASSED' ? 'FF166534' : 'FF991B1B' } };
-      row.getCell(5).alignment = { horizontal: 'center' };
+      const actions = (sc.steps || []).join('\n');
+      const row = wsS.addRow([f.name, sc.name, sc.expected, actions, sc.actual, sc.status]);
+      row.getCell(6).fill = sc.status === 'PASSED' ? PASS_FILL : FAIL_FILL;
+      row.getCell(6).font = { bold: true, color: { argb: sc.status === 'PASSED' ? 'FF166534' : 'FF991B1B' } };
+      row.getCell(6).alignment = { horizontal: 'center' };
       row.eachCell(c => { c.alignment = { ...(c.alignment || {}), wrapText: true, vertical: 'top' }; });
+      // Auto height based on step count
+      const lineCount = (sc.steps || []).length || 1;
+      row.height = Math.max(18, lineCount * 16);
     }
   }
 

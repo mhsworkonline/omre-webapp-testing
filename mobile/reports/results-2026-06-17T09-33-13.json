@@ -1,0 +1,1026 @@
+{
+  "runDate": "2026-06-17T09-33-13",
+  "platform": "Android",
+  "app": "com.omre.app.posh",
+  "totalFlows": 8,
+  "passed": 0,
+  "failed": 8,
+  "flows": [
+    {
+      "name": "home_feed",
+      "status": "FAILED",
+      "stepsPassed": 0,
+      "stepsFailed": 0,
+      "failedStep": null,
+      "durationMs": 0,
+      "scenarios": [
+        {
+          "name": "App launches clean without crash",
+          "expected": "App opens to home screen without error",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Home feed header section is visible",
+          "expected": "'Explore OMRE Modules' text appears",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Module switcher entry point is present",
+          "expected": "'View all' button visible on home screen",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Social module tab visible in home row",
+          "expected": "'Social' label visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Chat module tab visible in home row",
+          "expected": "'Chat' label visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Biz module tab visible in home row",
+          "expected": "'Biz' label visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Learn module tab visible in home row",
+          "expected": "'Learn' label visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Feed refresh button is present",
+          "expected": "'Refresh feed' button visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Module switcher opens on tap",
+          "expected": "'Switch to Module' header appears",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Module switcher shows Social",
+          "expected": "'Social' visible in switcher list",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Module switcher shows Chat",
+          "expected": "'Chat' visible in switcher list",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Module switcher shows Biz",
+          "expected": "'Biz' visible in switcher list",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Module switcher shows Link",
+          "expected": "'Link' visible in switcher list",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Module switcher shows Learn",
+          "expected": "'Learn' visible in switcher list",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Module switcher shows Studio",
+          "expected": "'Studio' visible in switcher list",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Module switcher shows News",
+          "expected": "'News' visible in switcher list",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Module switcher shows Video",
+          "expected": "'Video' visible in switcher list",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Module switcher shows Orbit",
+          "expected": "'Orbit' visible in switcher list",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Module switcher shows Games",
+          "expected": "'Games' visible in switcher list",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Module switcher shows Meeting",
+          "expected": "'Meeting' visible in switcher list",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Module switcher shows Mart",
+          "expected": "'Mart' visible in switcher list",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Module switcher closes on Back",
+          "expected": "Returns to home feed without crash",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Home feed is scrollable",
+          "expected": "Feed scrolls down revealing content below",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        }
+      ],
+      "steps": []
+    },
+    {
+      "name": "create_post",
+      "status": "FAILED",
+      "stepsPassed": 0,
+      "stepsFailed": 0,
+      "failedStep": null,
+      "durationMs": 0,
+      "scenarios": [
+        {
+          "name": "App launches clean to home screen",
+          "expected": "App opens without crash",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Home screen header visible after launch",
+          "expected": "'Explore OMRE Modules' text visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Feed refresh control visible",
+          "expected": "'Refresh feed' button present",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Post submit button visible in composer row",
+          "expected": "'Post' button visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Post category selector visible",
+          "expected": "'Social' dropdown visible in composer row",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Post composer text field is tappable",
+          "expected": "Tap registers on text input at 56%,75%",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Text input accepted in post composer",
+          "expected": "Typed text 'Automated test post' appears in field",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Composer text can be erased and keyboard dismissed",
+          "expected": "Text cleared, keyboard closes",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        }
+      ],
+      "steps": []
+    },
+    {
+      "name": "profile",
+      "status": "FAILED",
+      "stepsPassed": 0,
+      "stepsFailed": 0,
+      "failedStep": null,
+      "durationMs": 0,
+      "scenarios": [
+        {
+          "name": "App launches clean to home screen",
+          "expected": "App opens without crash",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Home screen confirms correct starting state",
+          "expected": "'Explore OMRE Modules' visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Navigation drawer opens via hamburger",
+          "expected": "Drawer slides open on coordinate tap",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Profile page navigates from drawer",
+          "expected": "Tapping 'Profile' opens profile screen",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Profile username is displayed",
+          "expected": "'wilacok854' visible on profile header",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Profile handle is displayed",
+          "expected": "'@wilacok' handle visible below username",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Profile creator badge is displayed",
+          "expected": "'CREATOR' badge visible on profile",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Edit profile button is present",
+          "expected": "'Edit profile' button visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Share profile button is present",
+          "expected": "'Share' button visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Highlights section header is visible",
+          "expected": "'Highlights' label visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Archive button is present",
+          "expected": "'Archive' button visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Orbit tab switches profile view",
+          "expected": "Tab 2 of 10 tapped without crash",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Reposts tab switches profile view",
+          "expected": "Tab 3 of 10 tapped without crash",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Videos tab switches profile view",
+          "expected": "Tab 4 of 10 tapped without crash",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Posts tab returns to default view",
+          "expected": "Tab 1 of 10 tapped, returns to Posts",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        }
+      ],
+      "steps": []
+    },
+    {
+      "name": "inbox",
+      "status": "FAILED",
+      "stepsPassed": 0,
+      "stepsFailed": 0,
+      "failedStep": null,
+      "durationMs": 0,
+      "scenarios": [
+        {
+          "name": "App launches clean to home screen",
+          "expected": "App opens without crash",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Home screen confirms correct starting state",
+          "expected": "'Explore OMRE Modules' visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Notifications screen opens via bell icon",
+          "expected": "Tapping 'Notifications' navigates to inbox",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Bulk action 'Mark all as read' is available",
+          "expected": "Button visible in notifications header",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Bulk action 'Clear all' is available",
+          "expected": "Button visible in notifications header",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "All notifications filter tab is present",
+          "expected": "'All' tab visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Social notifications filter tab is present",
+          "expected": "'Social' tab visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Messages notifications filter tab is present",
+          "expected": "'Messages' tab visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Business notifications filter tab is present",
+          "expected": "'Business' tab visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Social filter tab is tappable",
+          "expected": "Tapping 'Social' tab switches filter",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Messages filter tab is tappable",
+          "expected": "Tapping 'Messages' tab switches filter",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Business filter tab is tappable",
+          "expected": "Tapping 'Business' tab switches filter",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "All filter tab restores full list",
+          "expected": "Tapping 'All' shows all notifications",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Notifications list is scrollable",
+          "expected": "Scroll down works without crash",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Notifications list scrolls back to top",
+          "expected": "Swipe down returns to top",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Mark all as read still visible after scroll",
+          "expected": "Header control remains accessible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Back navigates to home feed",
+          "expected": "Pressing Back returns to home screen",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        }
+      ],
+      "steps": []
+    },
+    {
+      "name": "chat_messages",
+      "status": "FAILED",
+      "stepsPassed": 0,
+      "stepsFailed": 0,
+      "failedStep": null,
+      "durationMs": 0,
+      "scenarios": [
+        {
+          "name": "App launches clean to home screen",
+          "expected": "App opens without crash",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Home screen confirms correct starting state",
+          "expected": "'Explore OMRE Modules' visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Messages screen opens via chat icon",
+          "expected": "Tapping 'Messages' navigates to inbox",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Social messages filter tab is present",
+          "expected": "'Social' tab visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Orbit messages filter tab is present",
+          "expected": "'Orbit' tab visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Business messages filter tab is present",
+          "expected": "'Business' tab visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Jobs messages filter tab is present",
+          "expected": "'Jobs' tab visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Orbit filter tab is tappable",
+          "expected": "Tapping 'Orbit' switches message filter",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Business filter tab is tappable",
+          "expected": "Tapping 'Business' switches message filter",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Jobs filter tab is tappable",
+          "expected": "Tapping 'Jobs' switches message filter",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Social filter tab restores default view",
+          "expected": "Tapping 'Social' returns to social messages",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Messages list is scrollable",
+          "expected": "Scroll down works without crash",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Back navigates to home feed",
+          "expected": "Pressing Back returns to home screen",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        }
+      ],
+      "steps": []
+    },
+    {
+      "name": "orbit_feed",
+      "status": "FAILED",
+      "stepsPassed": 0,
+      "stepsFailed": 0,
+      "failedStep": null,
+      "durationMs": 0,
+      "scenarios": [
+        {
+          "name": "App launches clean to home screen",
+          "expected": "App opens without crash",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Home screen confirms correct starting state",
+          "expected": "'Explore OMRE Modules' visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Module switcher opens for navigation",
+          "expected": "'Switch to Module' header appears",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Orbit module entry navigates to Orbit",
+          "expected": "Tapping 'Orbit' opens Orbit module",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Orbit onboarding title is shown",
+          "expected": "'Welcome to Orbit' visible on first-run screen",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Orbit onboarding subtitle is shown",
+          "expected": "'Your social feed, amplified' tagline visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Orbit onboarding CTA is present",
+          "expected": "'Go to Feed' button visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Go to Feed navigates to Orbit feed",
+          "expected": "Tapping CTA opens Orbit feed screen",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Orbit feed 'For You' tab is present",
+          "expected": "'For You' tab visible in Orbit feed",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Orbit feed 'Following' tab is present",
+          "expected": "'Following' tab visible in Orbit feed",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Following tab is tappable",
+          "expected": "Tapping 'Following' switches to following feed",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "For You tab restores default view",
+          "expected": "Tapping 'For You' returns to discovery feed",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Orbit feed is scrollable",
+          "expected": "Scroll down works without crash",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        }
+      ],
+      "steps": []
+    },
+    {
+      "name": "biz_module",
+      "status": "FAILED",
+      "stepsPassed": 0,
+      "stepsFailed": 0,
+      "failedStep": null,
+      "durationMs": 0,
+      "scenarios": [
+        {
+          "name": "App launches clean to home screen",
+          "expected": "App opens without crash",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Home screen confirms correct starting state",
+          "expected": "'Explore OMRE Modules' visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Module switcher opens for navigation",
+          "expected": "'Switch to Module' header appears",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Biz module navigates from switcher",
+          "expected": "Tapping Biz (index 1) opens Biz module",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Biz welcome screen title is displayed",
+          "expected": "'Welcome to Biz' heading visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Biz Store feature card is present",
+          "expected": "'Store' feature card visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Biz Ads feature card is present",
+          "expected": "'Ads' feature card visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Biz inventory management feature is described",
+          "expected": "'Manage inventory' text visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Biz customer reach feature is described",
+          "expected": "'Reach customers' text visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Continue to web CTA is present",
+          "expected": "'Continue to Omre Web' button visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Biz screen is scrollable downward",
+          "expected": "Scroll down works without crash",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Biz screen scrolls back to top",
+          "expected": "Swipe down returns to top of screen",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Key elements remain visible after scroll",
+          "expected": "'Welcome to Biz', 'Store', 'Ads' still visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        }
+      ],
+      "steps": []
+    },
+    {
+      "name": "link_jobs",
+      "status": "FAILED",
+      "stepsPassed": 0,
+      "stepsFailed": 0,
+      "failedStep": null,
+      "durationMs": 0,
+      "scenarios": [
+        {
+          "name": "App launches clean to home screen",
+          "expected": "App opens without crash",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Home screen confirms correct starting state",
+          "expected": "'Explore OMRE Modules' visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Module switcher opens for navigation",
+          "expected": "'Switch to Module' header appears",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Link module navigates from switcher",
+          "expected": "Tapping 'Link' opens Link module",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Link onboarding welcome title is shown",
+          "expected": "'Welcome to Link' heading visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Explore Jobs CTA is present on onboarding",
+          "expected": "'Explore Jobs' button visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Browse Marketplace CTA is present on onboarding",
+          "expected": "'Browse Marketplace' button visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Explore Jobs navigates to jobs section",
+          "expected": "Tapping CTA opens jobs screen",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Job Search navigation item is accessible",
+          "expected": "'Job Search' entry visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Saved Jobs navigation item is accessible",
+          "expected": "'Saved Jobs' entry visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Job Alerts navigation item is accessible",
+          "expected": "'Job Alerts' entry visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Company Pages navigation item is accessible",
+          "expected": "'Company Pages' entry visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Jobs screen is scrollable",
+          "expected": "Scroll down works without crash",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "Jobs screen scrolls back to top",
+          "expected": "Swipe down returns to top",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        }
+      ],
+      "steps": []
+    }
+  ]
+}

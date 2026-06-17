@@ -1,0 +1,98 @@
+appId: com.omre.app.posh
+---
+# SCENARIO: App launches clean to home screen | EXPECTED: App opens without crash
+- stopApp
+- launchApp:
+    clearState: false
+- waitForAnimationToEnd
+
+# SCENARIO: Home screen confirms correct starting state | EXPECTED: 'Explore OMRE Modules' visible
+- assertVisible: "Explore OMRE Modules"
+
+# SCENARIO: Messages screen opens via drawer navigation | EXPECTED: Tapping 'Messages' in drawer navigates to messages
+- tapOn:
+    point: "7%,9%"
+- waitForAnimationToEnd
+- tapOn: "Messages"
+- waitForAnimationToEnd
+
+# SCENARIO: Messages screen header is visible | EXPECTED: 'Messages' heading displayed on screen
+- assertVisible: "Messages"
+
+# SCENARIO: Social filter tab is present by default | EXPECTED: 'Social' tab visible on messages screen
+- assertVisible: "Social"
+
+# SCENARIO: Orbit filter tab is present | EXPECTED: 'Orbit' tab visible on messages screen
+- assertVisible: "Orbit"
+
+# SCENARIO: Business filter tab is present | EXPECTED: 'Business' tab visible on messages screen
+- assertVisible: "Business"
+
+# SCENARIO: Jobs filter tab is present | EXPECTED: 'Jobs' tab visible on messages screen
+- assertVisible: "Jobs"
+
+# SCENARIO: Orbit filter tab is tappable | EXPECTED: Tapping 'Orbit' switches message list to Orbit
+- tapOn: "Orbit"
+- waitForAnimationToEnd
+- assertVisible: "Orbit"
+
+# SCENARIO: Business filter tab is tappable | EXPECTED: Tapping 'Business' switches message list to Business
+- tapOn: "Business"
+- waitForAnimationToEnd
+- assertVisible: "Business"
+
+# SCENARIO: Jobs filter tab is tappable | EXPECTED: Tapping 'Jobs' switches message list to Jobs
+- tapOn: "Jobs"
+- waitForAnimationToEnd
+- assertVisible: "Jobs"
+
+# SCENARIO: Social filter tab restores default view | EXPECTED: Tapping 'Social' returns to social messages
+- tapOn: "Social"
+- waitForAnimationToEnd
+- assertVisible: "Social"
+
+# SCENARIO: Messages list scrolls down without crash | EXPECTED: No error on scroll
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# SCENARIO: Messages list scrolls back to top | EXPECTED: Messages heading visible after swipe down
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "Messages"
+
+# SCENARIO: Empty state shown when no messages exist | EXPECTED: 'No messages found' displayed
+- assertVisible: "No messages found"
+
+# SCENARIO: Tapping search bar activates input without crash | EXPECTED: No crash when search bar tapped
+- tapOn:
+    point: "50%,25%"
+- waitForAnimationToEnd
+
+# SCENARIO: Back from search input returns to messages list | EXPECTED: Messages heading visible
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "Messages"
+
+# SCENARIO: Back from messages returns to home feed | EXPECTED: 'Explore OMRE Modules' visible
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "Explore OMRE Modules"
+
+# SCENARIO: Messages accessible again via drawer navigation | EXPECTED: Drawer tap on 'Messages' opens messages
+- tapOn:
+    point: "7%,9%"
+- waitForAnimationToEnd
+- tapOn: "Messages"
+- waitForAnimationToEnd
+- assertVisible: "Messages"
+
+# SCENARIO: Filter tabs persist after drawer navigation | EXPECTED: Social/Orbit/Business/Jobs tabs all still visible
+- assertVisible: "Social"
+- assertVisible: "Orbit"
+
+# SCENARIO: Back from drawer-navigated messages returns home | EXPECTED: Home screen visible
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "Explore OMRE Modules"

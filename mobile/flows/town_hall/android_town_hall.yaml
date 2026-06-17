@@ -1,0 +1,87 @@
+appId: com.omre.app.posh
+---
+# SCENARIO: App launches clean to home screen | EXPECTED: App opens without crash
+- stopApp
+- launchApp:
+    clearState: false
+- waitForAnimationToEnd
+
+# SCENARIO: Home screen is in correct starting state | EXPECTED: 'Explore OMRE Modules' visible on home
+- assertVisible: "Explore OMRE Modules"
+
+# SCENARIO: Navigation drawer opens via hamburger icon | EXPECTED: Drawer slides open showing nav items
+- tapOn:
+    point: "7%,9%"
+- waitForAnimationToEnd
+
+# SCENARIO: Town Hall item is visible in drawer | EXPECTED: 'Town Hall' label visible in open drawer
+- assertVisible: "Town Hall"
+
+# SCENARIO: Tap Town Hall navigates to Town Hall screen | EXPECTED: Town Hall screen loads without crash
+- tapOn: "Town Hall"
+- waitForAnimationToEnd
+
+# SCENARIO: Town Hall screen header is visible | EXPECTED: 'Town Hall' heading present on screen
+- assertVisible: "Town Hall"
+
+# SCENARIO: No crash dialog shown on Town Hall load | EXPECTED: App crash overlay not visible
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: No generic error shown on Town Hall load | EXPECTED: Error banner not visible
+- assertNotVisible: "Something went wrong"
+
+# SCENARIO: No crash or error after Town Hall loads | EXPECTED: No error or crash overlay present
+- assertNotVisible: "Unfortunately"
+- assertNotVisible: "Something went wrong"
+
+# SCENARIO: Scroll down Town Hall screen | EXPECTED: Swipe up scrolls without crash, more content visible
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# SCENARIO: No crash after scrolling Town Hall | EXPECTED: Crash overlay not visible after scroll
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: No error after scrolling Town Hall | EXPECTED: Error banner not visible after scroll
+- assertNotVisible: "Something went wrong"
+
+# SCENARIO: Scroll back to top of Town Hall | EXPECTED: Swipe down returns to top, Town Hall heading visible
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "Town Hall"
+
+# SCENARIO: Press Back from Town Hall returns to home | EXPECTED: Home screen visible after pressing Back
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "Explore OMRE Modules"
+
+# SCENARIO: No lingering error on home after leaving Town Hall | EXPECTED: Crash and error overlays absent on home screen
+- assertNotVisible: "Unfortunately"
+- assertNotVisible: "Something went wrong"
+
+# SCENARIO: Re-open drawer after returning to home | EXPECTED: Drawer opens correctly from home screen
+- tapOn:
+    point: "7%,9%"
+- waitForAnimationToEnd
+
+# SCENARIO: Town Hall item still visible in drawer on second visit | EXPECTED: 'Town Hall' label visible in drawer
+- assertVisible: "Town Hall"
+
+# SCENARIO: Tap Town Hall re-navigates to Town Hall screen | EXPECTED: Town Hall screen loads again without crash
+- tapOn: "Town Hall"
+- waitForAnimationToEnd
+- assertVisible: "Town Hall"
+
+# SCENARIO: No crash on second navigation to Town Hall | EXPECTED: Crash overlay not visible on re-entry
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: No error on second navigation to Town Hall | EXPECTED: Error banner not visible on re-entry
+- assertNotVisible: "Something went wrong"
+
+# SCENARIO: Back from re-navigated Town Hall returns to home cleanly | EXPECTED: 'Explore OMRE Modules' visible, no error state
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "Explore OMRE Modules"
+- assertNotVisible: "Unfortunately"
+- assertNotVisible: "Something went wrong"

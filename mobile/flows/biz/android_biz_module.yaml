@@ -1,0 +1,92 @@
+appId: com.omre.app.posh
+---
+# SCENARIO: App launches clean to home screen | EXPECTED: App opens without crash
+- stopApp
+- launchApp:
+    clearState: false
+- waitForAnimationToEnd
+
+# SCENARIO: Home screen confirms correct starting state | EXPECTED: 'Explore OMRE Modules' visible
+- assertVisible: "Explore OMRE Modules"
+
+# SCENARIO: Module switcher entry point is present | EXPECTED: 'View all' button visible on home screen
+- assertVisible: "View all"
+
+# SCENARIO: Module switcher opens for navigation | EXPECTED: 'Switch to Module' header appears
+- tapOn: "View all"
+- waitForAnimationToEnd
+- assertVisible: "Switch to Module"
+
+# SCENARIO: Biz module is listed in module switcher | EXPECTED: 'Biz' option visible in switcher list
+- assertVisible: "Biz"
+
+# SCENARIO: Biz module entry navigates to Biz | EXPECTED: Tapping Biz (index 1) opens Biz module
+- tapOn:
+    text: "Biz"
+    index: 1
+- waitForAnimationToEnd
+
+# SCENARIO: Biz module loads without crash | EXPECTED: No error overlay appears after entering Biz
+- assertNotVisible: "Something went wrong"
+
+# SCENARIO: Continue to Omre Web button is visible | EXPECTED: 'Continue to Omre Web' CTA is accessible (canvas text not assertable)
+- assertVisible: "Continue to Omre Web"
+
+# SCENARIO: Biz screen is scrollable downward | EXPECTED: Scroll down works without crash
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# SCENARIO: Biz screen scrolls back to top | EXPECTED: Swipe down returns to top of Biz screen
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "Continue to Omre Web"
+
+# SCENARIO: Tapping Continue to Omre Web responds | EXPECTED: Tapping CTA triggers navigation or web view without crash
+- tapOn: "Continue to Omre Web"
+- waitForAnimationToEnd
+
+# SCENARIO: Back navigation exits web view or sub-screen | EXPECTED: Pressing Back returns to Biz module screen
+- pressKey: Back
+- waitForAnimationToEnd
+
+# SCENARIO: Continue to Omre Web still visible after back navigation | EXPECTED: CTA is present on return to Biz
+- assertVisible: "Continue to Omre Web"
+
+# SCENARIO: Biz screen re-scroll after back navigation | EXPECTED: Screen scrollable again without crash
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+
+# SCENARIO: No crash dialog visible on Biz module | EXPECTED: App crash overlay not present
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: No error state visible on Biz module | EXPECTED: 'Something went wrong' not present
+- assertNotVisible: "Something went wrong"
+
+# SCENARIO: Module switcher re-opens from home | EXPECTED: Navigating back to home and re-opening switcher works
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "Explore OMRE Modules"
+
+# SCENARIO: Biz re-entry via module switcher second time | EXPECTED: Biz module loads again without crash
+- tapOn: "View all"
+- waitForAnimationToEnd
+- assertVisible: "Switch to Module"
+- tapOn:
+    text: "Biz"
+    index: 1
+- waitForAnimationToEnd
+- assertVisible: "Continue to Omre Web"
+
+# SCENARIO: Biz module stable on second visit | EXPECTED: No crash and CTA still accessible
+- assertNotVisible: "Something went wrong"
+
+# SCENARIO: Back from Biz on second visit returns to home | EXPECTED: Home screen loads cleanly after second Biz visit
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "Explore OMRE Modules"

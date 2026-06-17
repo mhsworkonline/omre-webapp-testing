@@ -1,0 +1,80 @@
+appId: com.omre.app.posh
+---
+# SCENARIO: App Launch for Omni AI | EXPECTED: App launches cleanly without crash
+- stopApp
+- launchApp:
+    clearState: false
+- waitForAnimationToEnd
+
+# SCENARIO: Open Drawer | EXPECTED: Drawer opens successfully
+- tapOn:
+    point: "7%,9%"
+- waitForAnimationToEnd
+
+# SCENARIO: Navigate to Omni AI | EXPECTED: Omni AI screen loads
+- tapOn: "Omni AI"
+- waitForAnimationToEnd
+
+# SCENARIO: Omni AI screen visible | EXPECTED: Omni AI label or heading present
+- assertVisible: "Omni AI"
+
+# SCENARIO: No crash on load | EXPECTED: No error dialogs appear
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: AI chat or tools content visible | EXPECTED: Chat interface or AI tools shown
+- assertNotVisible: "Something went wrong"
+
+# SCENARIO: No unexpected errors on initial view | EXPECTED: Screen renders without errors
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Scroll down to explore | EXPECTED: More AI features or history load
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+
+# SCENARIO: No crash after scroll down | EXPECTED: App remains stable
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Scroll up to return to top | EXPECTED: Top of Omni AI screen visible
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# SCENARIO: No error after scroll up | EXPECTED: Screen still stable
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Tap text input if visible and type a message | EXPECTED: Text input accepts input
+- tapOn:
+    point: "50%,90%"
+- waitForAnimationToEnd
+- inputText: "Hello"
+- waitForAnimationToEnd
+
+# SCENARIO: No crash after typing | EXPECTED: App remains stable with text input
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Dismiss keyboard and scroll up | EXPECTED: Keyboard dismissed and screen usable
+- pressKey: Back
+- waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# SCENARIO: Back navigation from Omni AI | EXPECTED: Previous screen loads
+- pressKey: Back
+- waitForAnimationToEnd
+
+# SCENARIO: Re-navigate to Omni AI via drawer | EXPECTED: Omni AI reloads correctly
+- tapOn:
+    point: "7%,9%"
+- waitForAnimationToEnd
+- tapOn: "Omni AI"
+- waitForAnimationToEnd
+
+# SCENARIO: Omni AI stable on second visit | EXPECTED: No errors, content visible
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"

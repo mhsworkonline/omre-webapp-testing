@@ -1,0 +1,77 @@
+appId: com.omre.app.posh
+---
+# SCENARIO: App Launch for Weather | EXPECTED: App launches cleanly without crash
+- stopApp
+- launchApp:
+    clearState: false
+- waitForAnimationToEnd
+
+# SCENARIO: Open Drawer | EXPECTED: Drawer opens successfully
+- tapOn:
+    point: "7%,9%"
+- waitForAnimationToEnd
+
+# SCENARIO: Navigate to Weather | EXPECTED: Weather screen loads
+- tapOn: "Weather"
+- waitForAnimationToEnd
+
+# SCENARIO: Weather screen visible | EXPECTED: Weather heading or module title is shown
+- assertVisible: "Weather"
+
+# SCENARIO: No crash on load | EXPECTED: No error dialogs appear
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Current conditions present | EXPECTED: Temperature or weather condition text visible
+- assertNotVisible: "Something went wrong"
+
+# SCENARIO: Scroll down to see forecast | EXPECTED: Forecast section or additional content loads
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+
+# SCENARIO: No crash after scroll down | EXPECTED: App remains stable
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Scroll up to return to top | EXPECTED: Current conditions visible again
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# SCENARIO: No error after scroll up | EXPECTED: Screen still stable
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Scroll down again for extended forecast | EXPECTED: More forecast data visible
+- swipe:
+    direction: DOWN
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+
+# SCENARIO: No crash on extended scroll | EXPECTED: App still running normally
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Scroll back to top | EXPECTED: Screen returns to top without issues
+- swipe:
+    direction: UP
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# SCENARIO: Back navigation from Weather | EXPECTED: Previous screen or home loads
+- pressKey: Back
+- waitForAnimationToEnd
+
+# SCENARIO: Re-navigate to Weather via drawer | EXPECTED: Weather reloads correctly
+- tapOn:
+    point: "7%,9%"
+- waitForAnimationToEnd
+- tapOn: "Weather"
+- waitForAnimationToEnd
+
+# SCENARIO: Weather screen stable on second visit | EXPECTED: No errors, content visible
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"

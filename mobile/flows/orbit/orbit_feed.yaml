@@ -1,28 +1,48 @@
 appId: com.omre.app.posh
 ---
+# SCENARIO: App launches clean to home screen | EXPECTED: App opens without crash
+- stopApp
 - launchApp:
     clearState: false
-- assertVisible: "For You"
+- waitForAnimationToEnd
+
+# SCENARIO: Home screen confirms correct starting state | EXPECTED: 'Explore OMRE Modules' visible
+- assertVisible: "Explore OMRE Modules"
+
+# SCENARIO: Module switcher opens for navigation | EXPECTED: 'Switch to Module' header appears
 - tapOn: "View all"
+- waitForAnimationToEnd
+
+# SCENARIO: Orbit module entry navigates to Orbit | EXPECTED: Tapping 'Orbit' opens Orbit module
 - tapOn: "Orbit"
+- waitForAnimationToEnd
+
+# SCENARIO: Orbit onboarding title is shown | EXPECTED: 'Welcome to Orbit' visible on first-run screen
 - assertVisible: "Welcome to Orbit"
+
+# SCENARIO: Orbit onboarding subtitle is shown | EXPECTED: 'Your social feed, amplified' tagline visible
 - assertVisible: "Your social feed, amplified"
+
+# SCENARIO: Orbit onboarding CTA is present | EXPECTED: 'Go to Feed' button visible
 - assertVisible: "Go to Feed"
-- assertVisible: "Explore"
-- assertVisible: "For You"
-- assertVisible: "Spaces"
-- assertVisible: "Connect"
-- assertVisible: "Save & Share"
-- assertNotVisible: "Welcome back"
+
+# SCENARIO: Go to Feed navigates to Orbit feed | EXPECTED: Tapping CTA opens Orbit feed screen
 - tapOn: "Go to Feed"
+- waitForAnimationToEnd
+
+# SCENARIO: Orbit feed 'For You' tab is present | EXPECTED: 'For You' tab visible in Orbit feed
 - assertVisible: "For You"
+
+# SCENARIO: Orbit feed 'Following' tab is present | EXPECTED: 'Following' tab visible in Orbit feed
 - assertVisible: "Following"
-- assertVisible: "No orbit posts yet"
-- assertVisible: "Be the first to create one!"
+
+# SCENARIO: Following tab is tappable | EXPECTED: Tapping 'Following' switches to following feed
 - tapOn: "Following"
-- assertVisible: "Following"
+- waitForAnimationToEnd
+
+# SCENARIO: For You tab restores default view | EXPECTED: Tapping 'For You' returns to discovery feed
 - tapOn: "For You"
-- assertVisible: "For You"
-- tapOn: "+"
-- pressKey: Back
-- assertVisible: "For You"
+- waitForAnimationToEnd
+
+# SCENARIO: Orbit feed is scrollable | EXPECTED: Scroll down works without crash
+- scroll

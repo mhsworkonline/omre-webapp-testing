@@ -1,0 +1,147 @@
+appId: com.omre.app.posh
+---
+# SCENARIO: App launches clean to home screen | EXPECTED: App opens without crash
+- stopApp
+- launchApp:
+    clearState: false
+- waitForAnimationToEnd
+
+# SCENARIO: Home screen visible on launch | EXPECTED: 'Explore OMRE Modules' visible
+- assertVisible: "Explore OMRE Modules"
+
+# SCENARIO: Navigation drawer opens via hamburger | EXPECTED: Drawer opens showing nav items
+- tapOn:
+    point: "7%,9%"
+- waitForAnimationToEnd
+- assertVisible: "Home"
+
+# SCENARIO: Profile item visible in drawer | EXPECTED: 'Profile' label visible in drawer
+- assertVisible: "Profile"
+
+# SCENARIO: Tap Profile navigates to profile screen | EXPECTED: Profile screen loads
+- tapOn: "Profile"
+- waitForAnimationToEnd
+
+# SCENARIO: Profile username is correct | EXPECTED: 'wilacok854' visible in profile header
+- assertVisible: "wilacok854"
+
+# SCENARIO: Profile handle is correct | EXPECTED: '@wilacok' visible below username
+- assertVisible: "@wilacok"
+
+# SCENARIO: CREATOR badge is displayed | EXPECTED: 'CREATOR' badge visible on profile
+- assertVisible: "CREATOR"
+
+# SCENARIO: Reputation section visible on profile | EXPECTED: 'Reputation' card visible
+- assertVisible: "Reputation"
+
+# SCENARIO: Edit Profile opens edit screen and back returns to profile | EXPECTED: Edit screen opens, back returns
+- tapOn: "Edit Profile"
+- waitForAnimationToEnd
+- assertVisible: "wilacok854"
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "wilacok854"
+
+# SCENARIO: Share opens system share sheet | EXPECTED: Share sheet visible with Copy link option
+- tapOn: "Share"
+- waitForAnimationToEnd
+- assertVisible: "Copy link"
+
+# SCENARIO: Dismiss share sheet returns to profile | EXPECTED: Profile visible after closing share
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "wilacok854"
+
+# SCENARIO: Scroll reveals both Highlights and Archive sections | EXPECTED: Both sections visible after one scroll
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- assertVisible: "Highlights"
+- assertVisible: "Archive"
+
+# SCENARIO: Tapping Archive opens Story Archive screen | EXPECTED: 'Story Archive' title and empty state visible
+- tapOn: "Archive"
+- waitForAnimationToEnd
+- assertVisible: "Story Archive"
+- assertVisible: "No archived stories yet"
+
+# SCENARIO: Back from Archive returns to valid screen | EXPECTED: App navigates back without crash
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "wilacok854"
+
+# SCENARIO: Re-navigate to profile for Highlights test | EXPECTED: Profile reloads via drawer
+- tapOn:
+    point: "7%,9%"
+- waitForAnimationToEnd
+- tapOn: "Profile"
+- waitForAnimationToEnd
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- assertVisible: "Highlights"
+
+# SCENARIO: Tapping Highlights opens highlights screen | EXPECTED: Highlights screen loads without crash
+- tapOn: "Highlights"
+- waitForAnimationToEnd
+- assertVisible: "Highlights"
+
+# SCENARIO: Back from Highlights returns to valid screen | EXPECTED: App navigates back without crash
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "wilacok854"
+
+# SCENARIO: Re-navigate to profile for tab tests | EXPECTED: Profile reloads via drawer
+- tapOn:
+    point: "7%,9%"
+- waitForAnimationToEnd
+- tapOn: "Profile"
+- waitForAnimationToEnd
+- assertVisible: "wilacok854"
+
+# SCENARIO: Scroll to tab bar reveals profile tabs | EXPECTED: Tab bar visible after scrolling
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- assertVisible: "Posts\nTab 1 of 10"
+
+# SCENARIO: Orbit tab (Tab 2 of 10) is tappable | EXPECTED: Orbit tab activates without crash
+- tapOn: "Orbit\nTab 2 of 10"
+- waitForAnimationToEnd
+- assertVisible: "Orbit\nTab 2 of 10"
+
+# SCENARIO: Reposts tab (Tab 3 of 10) is tappable | EXPECTED: Reposts tab activates without crash
+- tapOn: "Reposts\nTab 3 of 10"
+- waitForAnimationToEnd
+- assertVisible: "Reposts\nTab 3 of 10"
+
+# SCENARIO: Videos tab (Tab 4 of 10) is tappable | EXPECTED: Videos tab activates without crash
+- tapOn: "Videos\nTab 4 of 10"
+- waitForAnimationToEnd
+- assertVisible: "Videos\nTab 4 of 10"
+
+# SCENARIO: Shorts tab (Tab 5 of 10) visible after swiping tab bar | EXPECTED: Shorts tab visible after LEFT swipe
+- swipe:
+    direction: LEFT
+- waitForAnimationToEnd
+- assertVisible: "Shorts\nTab 5 of 10"
+
+# SCENARIO: Shorts tab is tappable | EXPECTED: Shorts tab activates without crash
+- tapOn: "Shorts\nTab 5 of 10"
+- waitForAnimationToEnd
+- assertVisible: "Shorts\nTab 5 of 10"
+
+# SCENARIO: Pull to refresh from Shorts tab reloads feed | EXPECTED: No crash on pull-to-refresh
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "wilacok854"
+
+# SCENARIO: Profile sections visible after scroll up | EXPECTED: Highlights section visible confirming profile intact
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "Highlights"

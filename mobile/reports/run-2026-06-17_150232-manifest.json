@@ -1,0 +1,50 @@
+﻿[
+    {
+        "debugDir":  "",
+        "status":  "FAILED",
+        "name":  "home_feed",
+        "file":  "flows\\home\\home_feed.yaml"
+    },
+    {
+        "debugDir":  "",
+        "status":  "FAILED",
+        "name":  "create_post",
+        "file":  "flows\\social\\create_post.yaml"
+    },
+    {
+        "debugDir":  "",
+        "status":  "FAILED",
+        "name":  "profile",
+        "file":  "flows\\social\\profile.yaml"
+    },
+    {
+        "debugDir":  "",
+        "status":  "FAILED",
+        "name":  "inbox",
+        "file":  "flows\\inbox\\inbox.yaml"
+    },
+    {
+        "debugDir":  "",
+        "status":  "FAILED",
+        "name":  "chat_messages",
+        "file":  "flows\\messages\\chat_messages.yaml"
+    },
+    {
+        "debugDir":  "",
+        "status":  "FAILED",
+        "name":  "orbit_feed",
+        "file":  "flows\\orbit\\orbit_feed.yaml"
+    },
+    {
+        "debugDir":  "",
+        "status":  "FAILED",
+        "name":  "biz_module",
+        "file":  "flows\\biz\\biz_module.yaml"
+    },
+    {
+        "debugDir":  "",
+        "status":  "FAILED",
+        "name":  "link_jobs",
+        "file":  "flows\\link\\link_jobs.yaml"
+    }
+]

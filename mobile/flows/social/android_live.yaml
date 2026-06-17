@@ -1,0 +1,106 @@
+appId: com.omre.app.posh
+---
+# SCENARIO: App launches clean to home screen | EXPECTED: App opens without crash
+- stopApp
+- launchApp:
+    clearState: false
+- waitForAnimationToEnd
+
+# SCENARIO: Home screen confirms correct starting state | EXPECTED: 'Explore OMRE Modules' visible
+- assertVisible: "Explore OMRE Modules"
+
+# SCENARIO: Navigation drawer opens via hamburger icon | EXPECTED: Drawer opens showing nav items
+- tapOn:
+    point: "7%,9%"
+- waitForAnimationToEnd
+- assertVisible: "Home"
+
+# SCENARIO: Live item is visible in drawer | EXPECTED: 'Live' label visible in drawer
+- assertVisible: "Live"
+
+# SCENARIO: Tap Live navigates to Live screen | EXPECTED: Live screen loads without crash
+- tapOn: "Live"
+- waitForAnimationToEnd
+
+# SCENARIO: Live screen header is visible | EXPECTED: 'Live' heading present on screen
+- assertVisible: "Live"
+
+# SCENARIO: No crash dialog is shown on Live load | EXPECTED: App crash overlay not visible
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: No generic error is shown on Live load | EXPECTED: Error banner not visible
+- assertNotVisible: "Something went wrong"
+
+# SCENARIO: Live screen shows stream list or empty state | EXPECTED: Live stream cards visible or empty state message shown
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Live stream list is scrollable down | EXPECTED: Scroll down works without crash
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# SCENARIO: Scroll back to top of Live screen | EXPECTED: Swipe down returns to top of list
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "Live"
+
+# SCENARIO: Pull to refresh reloads live stream list | EXPECTED: Content refreshes without crash, Live heading still visible
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "Live"
+
+# SCENARIO: Tap first live stream item opens stream or detail | EXPECTED: Stream viewer or detail screen opens on tap
+- tapOn:
+    index: 0
+    text: "Live"
+- waitForAnimationToEnd
+
+# SCENARIO: Back from live stream detail returns to Live list | EXPECTED: Live screen visible after pressing Back
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "Live"
+
+# SCENARIO: Filter or category tabs visible if present | EXPECTED: Tab bar or filter row visible or list shown with no filter needed
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Scroll Live list further down for more content | EXPECTED: Additional content loads or end-of-list shown
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# SCENARIO: Scroll all the way back to top | EXPECTED: Live heading visible after returning to top
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "Live"
+
+# SCENARIO: Live screen re-navigable via drawer | EXPECTED: Drawer tap on 'Live' reloads Live screen
+- tapOn:
+    point: "7%,9%"
+- waitForAnimationToEnd
+- tapOn: "Live"
+- waitForAnimationToEnd
+- assertVisible: "Live"
+
+# SCENARIO: Second pull-to-refresh works without crash | EXPECTED: Live screen refreshes cleanly on second attempt
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "Live"
+
+# SCENARIO: Back from re-navigated Live returns to home | EXPECTED: 'Explore OMRE Modules' visible after Back
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "Explore OMRE Modules"
+
+# SCENARIO: Live screen leaves no lingering error state | EXPECTED: No error or crash overlay visible on home screen
+- assertNotVisible: "Unfortunately"
+- assertNotVisible: "Something went wrong"

@@ -1,0 +1,1127 @@
+{
+  "runDate": "2026-06-17T12-03-58",
+  "platform": "Android",
+  "app": "com.omre.app.posh",
+  "totalFlows": 1,
+  "passed": 1,
+  "failed": 0,
+  "flows": [
+    {
+      "name": "home_feed",
+      "status": "PASSED",
+      "stepsPassed": 81,
+      "stepsFailed": 0,
+      "failedStep": null,
+      "durationMs": 592901,
+      "scenarios": [
+        {
+          "name": "App launches clean without crash",
+          "expected": "App opens to home screen without error",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "✓ stopApp",
+            "✓ Launch app \"com.omre.app.posh\"",
+            "✓ Wait for animation"
+          ]
+        },
+        {
+          "name": "Home feed header section is visible",
+          "expected": "'Explore OMRE Modules' text appears",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Explore OMRE Modules\""
+          ]
+        },
+        {
+          "name": "Module switcher entry point is present",
+          "expected": "'View all' button visible on home screen",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"View all\""
+          ]
+        },
+        {
+          "name": "Social module tab visible in home row",
+          "expected": "'Social' label visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Social\""
+          ]
+        },
+        {
+          "name": "Chat module tab visible in home row",
+          "expected": "'Chat' label visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Chat\""
+          ]
+        },
+        {
+          "name": "Biz module tab visible in home row",
+          "expected": "'Biz' label visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Biz\""
+          ]
+        },
+        {
+          "name": "Learn module tab visible in home row",
+          "expected": "'Learn' label visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Learn\""
+          ]
+        },
+        {
+          "name": "Feed refresh button is present",
+          "expected": "'Refresh feed' button visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Refresh feed\""
+          ]
+        },
+        {
+          "name": "Post composer button is present on home screen",
+          "expected": "'Post' button visible in composer row",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Post\""
+          ]
+        },
+        {
+          "name": "Post category selector visible on home screen",
+          "expected": "'Social' category dropdown visible in composer",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Social\""
+          ]
+        },
+        {
+          "name": "Notifications bell navigates to notifications screen",
+          "expected": "Notifications screen opens",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "✓ Tap on \"Notifications\"",
+            "✓ Wait for animation",
+            "✓ Assert visible: \"Mark all as read\""
+          ]
+        },
+        {
+          "name": "Back from notifications returns to home",
+          "expected": "'Explore OMRE Modules' visible again",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "✓ Press key: BACK",
+            "✓ Wait for animation",
+            "✓ Assert visible: \"Explore OMRE Modules\""
+          ]
+        },
+        {
+          "name": "Messages icon navigates to messages screen",
+          "expected": "Messages screen opens with Orbit tab",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "✓ Tap on \"Messages\"",
+            "✓ Wait for animation",
+            "✓ Assert visible: \"Orbit\""
+          ]
+        },
+        {
+          "name": "Back from messages returns to home",
+          "expected": "'Explore OMRE Modules' visible again",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "✓ Press key: BACK",
+            "✓ Wait for animation",
+            "✓ Assert visible: \"Explore OMRE Modules\""
+          ]
+        },
+        {
+          "name": "Hamburger opens navigation drawer",
+          "expected": "Drawer slides open showing navigation items",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "✓ tapOnPointV2",
+            "✓ Wait for animation",
+            "✓ Assert visible: \"Home\""
+          ]
+        },
+        {
+          "name": "Drawer contains Explore navigation item",
+          "expected": "'Explore' item visible in drawer",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Explore\""
+          ]
+        },
+        {
+          "name": "Drawer contains Messages navigation item",
+          "expected": "'Messages' item visible in drawer",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Messages\""
+          ]
+        },
+        {
+          "name": "Drawer contains Notifications navigation item",
+          "expected": "'Notifications' item visible in drawer",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Notifications\""
+          ]
+        },
+        {
+          "name": "Drawer contains Profile navigation item",
+          "expected": "'Profile' item visible in drawer",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Profile\""
+          ]
+        },
+        {
+          "name": "Drawer closes on Back returning to home",
+          "expected": "Home feed visible after closing drawer",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "✓ Press key: BACK",
+            "✓ Wait for animation",
+            "✓ Assert visible: \"Explore OMRE Modules\""
+          ]
+        },
+        {
+          "name": "Module switcher opens on tap",
+          "expected": "'Switch to Module' header appears",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "✓ Tap on \"View all\"",
+            "✓ Wait for animation",
+            "✓ Assert visible: \"Switch to Module\""
+          ]
+        },
+        {
+          "name": "Module switcher shows Social",
+          "expected": "'Social' visible in switcher list",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Social\""
+          ]
+        },
+        {
+          "name": "Module switcher shows Chat",
+          "expected": "'Chat' visible in switcher list",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Chat\""
+          ]
+        },
+        {
+          "name": "Module switcher shows Biz",
+          "expected": "'Biz' visible in switcher list",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Biz\""
+          ]
+        },
+        {
+          "name": "Module switcher shows Link",
+          "expected": "'Link' visible in switcher list",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Link\""
+          ]
+        },
+        {
+          "name": "Module switcher shows Learn",
+          "expected": "'Learn' visible in switcher list",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Learn\""
+          ]
+        },
+        {
+          "name": "Module switcher shows Studio",
+          "expected": "'Studio' visible in switcher list",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Studio\""
+          ]
+        },
+        {
+          "name": "Module switcher shows News",
+          "expected": "'News' visible in switcher list",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"News\""
+          ]
+        },
+        {
+          "name": "Module switcher shows Video",
+          "expected": "'Video' visible in switcher list",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Video\""
+          ]
+        },
+        {
+          "name": "Module switcher shows Orbit",
+          "expected": "'Orbit' visible in switcher list",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Orbit\""
+          ]
+        },
+        {
+          "name": "Module switcher shows Games",
+          "expected": "'Games' visible in switcher list",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Games\""
+          ]
+        },
+        {
+          "name": "Module switcher shows Meeting",
+          "expected": "'Meeting' visible in switcher list",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Meeting\""
+          ]
+        },
+        {
+          "name": "Module switcher shows Mart",
+          "expected": "'Mart' visible in switcher list",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Mart\""
+          ]
+        },
+        {
+          "name": "Switching to Social module from switcher navigates correctly",
+          "expected": "Social feed opens",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "✓ Tap on \"Social\"",
+            "✓ Wait for animation",
+            "✓ Assert visible: \"For You\nTab 2 of 2\""
+          ]
+        },
+        {
+          "name": "Back from Social module returns to home",
+          "expected": "'Explore OMRE Modules' visible on return",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "✓ Press key: BACK",
+            "✓ Wait for animation",
+            "✓ Assert visible: \"Explore OMRE Modules\""
+          ]
+        },
+        {
+          "name": "Switching to Link module from switcher navigates correctly",
+          "expected": "Link module opens",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 5,
+          "steps": [
+            "✓ Tap on \"View all\"",
+            "✓ Wait for animation",
+            "✓ Tap on \"Link\"",
+            "✓ Wait for animation",
+            "✓ Assert visible: \"Welcome to Link\""
+          ]
+        },
+        {
+          "name": "Back from Link module returns to home",
+          "expected": "'Explore OMRE Modules' visible on return",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "✓ Press key: BACK",
+            "✓ Wait for animation",
+            "✓ Assert visible: \"Explore OMRE Modules\""
+          ]
+        },
+        {
+          "name": "Module switcher closes on Back",
+          "expected": "Returns to home feed without crash",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 5,
+          "steps": [
+            "✓ Tap on \"View all\"",
+            "✓ Wait for animation",
+            "✓ Press key: BACK",
+            "✓ Wait for animation",
+            "✓ Assert visible: \"Explore OMRE Modules\""
+          ]
+        },
+        {
+          "name": "Home feed is scrollable",
+          "expected": "Feed scrolls down revealing content below",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "✓ Scroll",
+            "✓ Scroll"
+          ]
+        },
+        {
+          "name": "Pull to refresh works on home feed",
+          "expected": "Swipe down from top triggers refresh without crash",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "✓ Swipe DOWN",
+            "✓ Wait for animation",
+            "✓ Assert visible: \"Explore OMRE Modules\""
+          ]
+        },
+        {
+          "name": "Refresh feed button reloads feed",
+          "expected": "Tapping 'Refresh feed' reloads and home stays visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "✓ Tap on \"Refresh feed\"",
+            "✓ Wait for animation",
+            "✓ Assert visible: \"Explore OMRE Modules\""
+          ]
+        },
+        {
+          "name": "Module row is horizontally scrollable",
+          "expected": "Swiping left on module row reveals more modules",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "✓ Swipe LEFT",
+            "✓ Wait for animation",
+            "✓ Assert visible: \"Explore OMRE Modules\""
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "name": "Set up test variables",
+          "status": "COMPLETED",
+          "duration": 13,
+          "seq": 0,
+          "error": null,
+          "synthetic": true
+        },
+        {
+          "name": "Apply flow configuration",
+          "status": "COMPLETED",
+          "duration": 6,
+          "seq": 1,
+          "error": null,
+          "synthetic": true
+        },
+        {
+          "name": "stopApp",
+          "status": "COMPLETED",
+          "duration": 1253,
+          "seq": 2,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Launch app \"com.omre.app.posh\"",
+          "status": "COMPLETED",
+          "duration": 4408,
+          "seq": 3,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 8790,
+          "seq": 4,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Explore OMRE Modules\"",
+          "status": "COMPLETED",
+          "duration": 34603,
+          "seq": 5,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"View all\"",
+          "status": "COMPLETED",
+          "duration": 8140,
+          "seq": 6,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Social\"",
+          "status": "COMPLETED",
+          "duration": 4597,
+          "seq": 7,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Chat\"",
+          "status": "COMPLETED",
+          "duration": 2996,
+          "seq": 8,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Biz\"",
+          "status": "COMPLETED",
+          "duration": 1147,
+          "seq": 9,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Learn\"",
+          "status": "COMPLETED",
+          "duration": 1786,
+          "seq": 10,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Refresh feed\"",
+          "status": "COMPLETED",
+          "duration": 442,
+          "seq": 11,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Post\"",
+          "status": "COMPLETED",
+          "duration": 1223,
+          "seq": 12,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Social\"",
+          "status": "COMPLETED",
+          "duration": 969,
+          "seq": 13,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"Notifications\"",
+          "status": "COMPLETED",
+          "duration": 20075,
+          "seq": 14,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 3784,
+          "seq": 15,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Mark all as read\"",
+          "status": "COMPLETED",
+          "duration": 262,
+          "seq": 16,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Press key: BACK",
+          "status": "COMPLETED",
+          "duration": 5991,
+          "seq": 17,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 4302,
+          "seq": 18,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Explore OMRE Modules\"",
+          "status": "COMPLETED",
+          "duration": 1531,
+          "seq": 19,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"Messages\"",
+          "status": "COMPLETED",
+          "duration": 21026,
+          "seq": 20,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 2252,
+          "seq": 21,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Orbit\"",
+          "status": "COMPLETED",
+          "duration": 620,
+          "seq": 22,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Press key: BACK",
+          "status": "COMPLETED",
+          "duration": 145417,
+          "seq": 23,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 17381,
+          "seq": 24,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Explore OMRE Modules\"",
+          "status": "COMPLETED",
+          "duration": 7400,
+          "seq": 25,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 19678,
+          "seq": 26,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 6076,
+          "seq": 27,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Home\"",
+          "status": "COMPLETED",
+          "duration": 1660,
+          "seq": 28,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Explore\"",
+          "status": "COMPLETED",
+          "duration": 6079,
+          "seq": 29,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Messages\"",
+          "status": "COMPLETED",
+          "duration": 2555,
+          "seq": 30,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Notifications\"",
+          "status": "COMPLETED",
+          "duration": 5610,
+          "seq": 31,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Profile\"",
+          "status": "COMPLETED",
+          "duration": 966,
+          "seq": 32,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Press key: BACK",
+          "status": "COMPLETED",
+          "duration": 10653,
+          "seq": 33,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 6373,
+          "seq": 34,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Explore OMRE Modules\"",
+          "status": "COMPLETED",
+          "duration": 5463,
+          "seq": 35,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"View all\"",
+          "status": "COMPLETED",
+          "duration": 20013,
+          "seq": 36,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 5020,
+          "seq": 37,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Switch to Module\"",
+          "status": "COMPLETED",
+          "duration": 2049,
+          "seq": 38,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Social\"",
+          "status": "COMPLETED",
+          "duration": 1709,
+          "seq": 39,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Chat\"",
+          "status": "COMPLETED",
+          "duration": 5085,
+          "seq": 40,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Biz\"",
+          "status": "COMPLETED",
+          "duration": 2021,
+          "seq": 41,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Link\"",
+          "status": "COMPLETED",
+          "duration": 3498,
+          "seq": 42,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Learn\"",
+          "status": "COMPLETED",
+          "duration": 3487,
+          "seq": 43,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Studio\"",
+          "status": "COMPLETED",
+          "duration": 968,
+          "seq": 44,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"News\"",
+          "status": "COMPLETED",
+          "duration": 351,
+          "seq": 45,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Video\"",
+          "status": "COMPLETED",
+          "duration": 1639,
+          "seq": 46,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Orbit\"",
+          "status": "COMPLETED",
+          "duration": 4684,
+          "seq": 47,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Games\"",
+          "status": "COMPLETED",
+          "duration": 2815,
+          "seq": 48,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Meeting\"",
+          "status": "COMPLETED",
+          "duration": 775,
+          "seq": 49,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Mart\"",
+          "status": "COMPLETED",
+          "duration": 2420,
+          "seq": 50,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"Social\"",
+          "status": "COMPLETED",
+          "duration": 13925,
+          "seq": 51,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 8272,
+          "seq": 52,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"For You\nTab 2 of 2\"",
+          "status": "COMPLETED",
+          "duration": 6588,
+          "seq": 53,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Press key: BACK",
+          "status": "COMPLETED",
+          "duration": 3258,
+          "seq": 54,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 7093,
+          "seq": 55,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Explore OMRE Modules\"",
+          "status": "COMPLETED",
+          "duration": 2822,
+          "seq": 56,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"View all\"",
+          "status": "COMPLETED",
+          "duration": 13885,
+          "seq": 57,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 9033,
+          "seq": 58,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"Link\"",
+          "status": "COMPLETED",
+          "duration": 29827,
+          "seq": 59,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1981,
+          "seq": 60,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Welcome to Link\"",
+          "status": "COMPLETED",
+          "duration": 220,
+          "seq": 61,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Press key: BACK",
+          "status": "COMPLETED",
+          "duration": 32213,
+          "seq": 62,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 3456,
+          "seq": 63,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Explore OMRE Modules\"",
+          "status": "COMPLETED",
+          "duration": 597,
+          "seq": 64,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"View all\"",
+          "status": "COMPLETED",
+          "duration": 4146,
+          "seq": 65,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 4114,
+          "seq": 66,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Press key: BACK",
+          "status": "COMPLETED",
+          "duration": 1513,
+          "seq": 67,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 3463,
+          "seq": 68,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Explore OMRE Modules\"",
+          "status": "COMPLETED",
+          "duration": 783,
+          "seq": 69,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Scroll",
+          "status": "COMPLETED",
+          "duration": 1722,
+          "seq": 70,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Scroll",
+          "status": "COMPLETED",
+          "duration": 1553,
+          "seq": 71,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Swipe DOWN",
+          "status": "COMPLETED",
+          "duration": 1770,
+          "seq": 72,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 4200,
+          "seq": 73,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Explore OMRE Modules\"",
+          "status": "COMPLETED",
+          "duration": 470,
+          "seq": 74,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"Refresh feed\"",
+          "status": "COMPLETED",
+          "duration": 3501,
+          "seq": 75,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 3664,
+          "seq": 76,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Explore OMRE Modules\"",
+          "status": "COMPLETED",
+          "duration": 564,
+          "seq": 77,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Swipe LEFT",
+          "status": "COMPLETED",
+          "duration": 1965,
+          "seq": 78,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 3478,
+          "seq": 79,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Explore OMRE Modules\"",
+          "status": "COMPLETED",
+          "duration": 764,
+          "seq": 80,
+          "error": null,
+          "synthetic": false
+        }
+      ]
+    }
+  ]
+}

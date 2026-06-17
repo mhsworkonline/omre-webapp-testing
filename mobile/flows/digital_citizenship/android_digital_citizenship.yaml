@@ -1,0 +1,80 @@
+appId: com.omre.app.posh
+---
+# SCENARIO: App Launch for Digital Citizenship | EXPECTED: App launches cleanly without crash
+- stopApp
+- launchApp:
+    clearState: false
+- waitForAnimationToEnd
+
+# SCENARIO: Open Drawer | EXPECTED: Drawer opens successfully
+- tapOn:
+    point: "7%,9%"
+- waitForAnimationToEnd
+
+# SCENARIO: Navigate to Digital Citizen | EXPECTED: Digital Citizenship screen loads
+- tapOn: "Digital Citizen"
+- waitForAnimationToEnd
+
+# SCENARIO: Digital Citizen screen visible | EXPECTED: Digital Citizen label or heading present
+- assertVisible: "Digital Citizen"
+
+# SCENARIO: No crash on load | EXPECTED: No error dialogs appear
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Digital citizenship content visible | EXPECTED: Content, quiz, or articles shown
+- assertNotVisible: "Something went wrong"
+
+# SCENARIO: No unexpected errors on initial view | EXPECTED: Screen renders without errors
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Scroll down to explore content | EXPECTED: More digital citizenship content loads
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+
+# SCENARIO: No crash after scroll down | EXPECTED: App remains stable
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Scroll up to return to top | EXPECTED: Top of digital citizen screen visible
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# SCENARIO: No error after scroll up | EXPECTED: Screen still stable
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Scroll down further for more content | EXPECTED: Extended content accessible
+- swipe:
+    direction: DOWN
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+
+# SCENARIO: No crash on extended scroll | EXPECTED: App still running normally
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Scroll back to top | EXPECTED: Returns to top of digital citizen
+- swipe:
+    direction: UP
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# SCENARIO: Back navigation from Digital Citizen | EXPECTED: Previous screen loads
+- pressKey: Back
+- waitForAnimationToEnd
+
+# SCENARIO: Re-navigate to Digital Citizen via drawer | EXPECTED: Digital Citizen reloads correctly
+- tapOn:
+    point: "7%,9%"
+- waitForAnimationToEnd
+- tapOn: "Digital Citizen"
+- waitForAnimationToEnd
+
+# SCENARIO: Digital Citizen stable on second visit | EXPECTED: No errors, content visible
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"

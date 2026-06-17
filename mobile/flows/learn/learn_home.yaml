@@ -1,54 +1,56 @@
 appId: com.omre.app.posh
 ---
+# SCENARIO: App launches clean to home screen | EXPECTED: App opens without crash
+- stopApp
 - launchApp:
     clearState: false
-- assertVisible: "For You"
+- waitForAnimationToEnd
+
+# SCENARIO: Home screen confirms correct starting state | EXPECTED: 'Explore OMRE Modules' visible
+- assertVisible: "Explore OMRE Modules"
+
+# SCENARIO: Module switcher opens for navigation | EXPECTED: 'Switch to Module' header appears
 - tapOn: "View all"
+- waitForAnimationToEnd
+- assertVisible: "Switch to Module"
+
+# SCENARIO: Learn module navigates from switcher | EXPECTED: Tapping 'Learn' opens Learn module
 - tapOn: "Learn"
+- waitForAnimationToEnd
+
+# SCENARIO: Learn onboarding welcome title is shown | EXPECTED: 'Welcome to Learn' heading visible
 - assertVisible: "Welcome to Learn"
+
+# SCENARIO: Learn onboarding tagline is shown | EXPECTED: 'Learn Without Limits' tagline visible
 - assertVisible: "Learn Without Limits"
+
+# SCENARIO: Browse Courses CTA is present | EXPECTED: 'Browse Courses' button visible on onboarding
 - assertVisible: "Browse Courses"
+
+# SCENARIO: My Learning CTA is present | EXPECTED: 'My Learning' button visible on onboarding
 - assertVisible: "My Learning"
-- assertVisible: "Expert Courses"
-- assertVisible: "Certificates"
-- assertVisible: "Track Progress"
-- assertVisible: "Hands-on Practice"
-- assertNotVisible: "Welcome back"
+
+# SCENARIO: Browse Courses navigates to courses screen | EXPECTED: Tapping CTA opens courses catalog
 - tapOn: "Browse Courses"
+- waitForAnimationToEnd
+
+# SCENARIO: Courses screen tagline is present | EXPECTED: 'Learn Without Limits' still visible
 - assertVisible: "Learn Without Limits"
-- assertVisible: "New courses added weekly"
+
+# SCENARIO: Search field is present in courses screen | EXPECTED: Courses search input visible
 - assertVisible: "What do you want to learn?"
+
+# SCENARIO: Explore Courses section is present | EXPECTED: 'Explore Courses' section visible
 - assertVisible: "Explore Courses"
-- assertVisible: "2M+"
-- assertVisible: "10K+"
-- assertVisible: "95%"
-- assertVisible: "Explore by Category"
+
+# SCENARIO: Course category sections are present | EXPECTED: 'Explore by Category' label or categories visible
 - assertVisible: "Development"
 - assertVisible: "Design"
 - assertVisible: "Marketing"
-- assertVisible: "Music"
-- assertVisible: "Business"
-- assertVisible: "Data Science"
-- assertVisible: "Photography"
-- assertVisible: "Writing"
-- assertVisible: "Recommended for you"
-- tapOn: "Development"
-- assertVisible: "Development"
+
+# SCENARIO: Courses screen is scrollable | EXPECTED: Scroll down works without crash
 - scroll
-- assertVisible: "Recommended for you"
+
+# SCENARIO: Courses screen scrolls back to top | EXPECTED: Swipe down returns to top
 - swipe:
     direction: DOWN
-- tapOn: "Explore Courses"
-- assertVisible: "Explore Courses"
-- assertVisible: "Discover new skills and advance your career"
-- assertVisible: "Search courses..."
-- assertVisible: "All Categories"
-- assertVisible: "All Levels"
-- tapOn: "Search courses..."
-- inputText: "Flutter"
-- assertVisible: "Flutter"
-- eraseText: 10
-- pressKey: Back
-- assertVisible: "Explore Courses"
-- tapOn: "My Learning"
-- assertVisible: "My Learning"

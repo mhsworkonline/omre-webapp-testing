@@ -1,0 +1,133 @@
+appId: com.omre.app.posh
+---
+# SCENARIO: App launches clean to home screen | EXPECTED: App opens without crash
+- stopApp
+- launchApp:
+    clearState: false
+- waitForAnimationToEnd
+
+# SCENARIO: Home screen confirms correct starting state | EXPECTED: 'Explore OMRE Modules' visible
+- assertVisible: "Explore OMRE Modules"
+
+# SCENARIO: Module switcher entry point is present | EXPECTED: 'View all' button visible on home screen
+- assertVisible: "View all"
+
+# SCENARIO: Module switcher opens for navigation | EXPECTED: 'Switch to Module' header appears
+- tapOn: "View all"
+- waitForAnimationToEnd
+- assertVisible: "Switch to Module"
+
+# SCENARIO: Games module is listed in module switcher | EXPECTED: 'Games' option visible in switcher list
+- assertVisible: "Games"
+
+# SCENARIO: Games module entry navigates to Games | EXPECTED: Tapping 'Games' opens Games/GameVerse module
+- tapOn: "Games"
+- waitForAnimationToEnd
+
+# SCENARIO: Games module loads without crash | EXPECTED: No error overlay appears after entering Games
+- assertNotVisible: "Something went wrong"
+
+# SCENARIO: No app crash dialog on Games module load | EXPECTED: App crash overlay not present
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: GameVerse welcome or lobby screen is visible | EXPECTED: 'GameVerse' label visible on screen
+- assertVisible: "GameVerse"
+
+# SCENARIO: Games lobby entry point is present | EXPECTED: 'Play Games' CTA visible on welcome screen
+- assertVisible: "Play Games"
+
+# SCENARIO: Tournaments entry is visible on welcome screen | EXPECTED: 'Tournaments' option visible
+- assertVisible: "Tournaments"
+
+# SCENARIO: Enter GameVerse main lobby | EXPECTED: Tapping 'Play Games' opens the GameVerse lobby without crash
+- tapOn: "Play Games"
+- waitForAnimationToEnd
+
+# SCENARIO: GameVerse lobby header is present | EXPECTED: 'GameVerse' heading visible in lobby
+- assertVisible: "GameVerse"
+
+# SCENARIO: GameVerse lobby loads without crash | EXPECTED: No error overlay in lobby after navigation
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Tournaments shortcut is visible in lobby | EXPECTED: 'Tournaments' tab or button visible in lobby
+- assertVisible: "Tournaments"
+
+# SCENARIO: Tap Tournaments navigates to Tournaments screen | EXPECTED: Tournaments screen loads without crash
+- tapOn: "Tournaments"
+- waitForAnimationToEnd
+- assertNotVisible: "Something went wrong"
+
+# SCENARIO: Tournaments screen header is visible | EXPECTED: 'Tournaments' heading present on screen
+- assertVisible: "Tournaments"
+
+# SCENARIO: Back to GameVerse returns to lobby | EXPECTED: Tapping 'Back to GameVerse' exits Tournaments and restores lobby
+- tapOn: "Back to GameVerse"
+- waitForAnimationToEnd
+- assertVisible: "GameVerse"
+
+# SCENARIO: GameVerse lobby is scrollable downward | EXPECTED: Swipe up scrolls lobby without crash
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# SCENARIO: GameVerse lobby scrolls back to top | EXPECTED: Swipe down returns toward top of lobby
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "GameVerse"
+
+# SCENARIO: No error state visible after scroll | EXPECTED: 'Something went wrong' not present after scroll
+- assertNotVisible: "Something went wrong"
+
+# SCENARIO: Pull to refresh reloads lobby content | EXPECTED: Second swipe down triggers refresh, lobby still visible
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "GameVerse"
+
+# SCENARIO: GameVerse navigation drawer opens | EXPECTED: Tapping menu icon reveals GameVerse drawer items
+- tapOn: "Open navigation menu"
+- waitForAnimationToEnd
+
+# SCENARIO: Drawer shows HTML5 Games option | EXPECTED: 'HTML5 Games' visible in GameVerse drawer
+- assertVisible: "HTML5 Games"
+
+# SCENARIO: Drawer shows LFG Squad Finder option | EXPECTED: 'LFG / Squad Finder' visible in GameVerse drawer
+- assertVisible: "LFG / Squad Finder"
+
+# SCENARIO: Drawer shows My Library option | EXPECTED: 'My Library' visible in GameVerse drawer
+- assertVisible: "My Library"
+
+# SCENARIO: Close drawer via back and return to lobby | EXPECTED: Pressing Back closes drawer and GameVerse lobby is visible
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "GameVerse"
+
+# SCENARIO: No crash after closing GameVerse drawer | EXPECTED: No crash overlay visible after drawer close
+- assertNotVisible: "Unfortunately"
+- assertNotVisible: "Something went wrong"
+
+# SCENARIO: Back from GameVerse lobby returns to home | EXPECTED: Pressing Back exits GameVerse and home screen loads
+- pressKey: Back
+- waitForAnimationToEnd
+
+# SCENARIO: Home screen visible after exiting Games | EXPECTED: 'Explore OMRE Modules' visible after returning home
+- assertVisible: "Explore OMRE Modules"
+
+# SCENARIO: Games module re-entry via module switcher | EXPECTED: Navigating to Games a second time loads without crash
+- tapOn: "View all"
+- waitForAnimationToEnd
+- assertVisible: "Switch to Module"
+- tapOn: "Games"
+- waitForAnimationToEnd
+- assertVisible: "GameVerse"
+
+# SCENARIO: GameVerse stable on second visit | EXPECTED: No crash and GameVerse screen renders correctly
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Back from Games second visit returns to home | EXPECTED: Home screen loads cleanly after second Games visit
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "Explore OMRE Modules"

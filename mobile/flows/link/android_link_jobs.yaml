@@ -1,0 +1,128 @@
+appId: com.omre.app.posh
+---
+# SCENARIO: App launches clean to home screen | EXPECTED: App opens without crash
+- stopApp
+- launchApp:
+    clearState: false
+- waitForAnimationToEnd
+
+# SCENARIO: Home screen confirms correct starting state | EXPECTED: 'Explore OMRE Modules' visible
+- assertVisible: "Explore OMRE Modules"
+
+# SCENARIO: Module switcher entry point is present | EXPECTED: 'View all' button visible on home screen
+- assertVisible: "View all"
+
+# SCENARIO: Module switcher opens for navigation | EXPECTED: 'Switch to Module' header appears
+- tapOn: "View all"
+- waitForAnimationToEnd
+- assertVisible: "Switch to Module"
+
+# SCENARIO: Link module is listed in module switcher | EXPECTED: 'Link' option visible in switcher list
+- assertVisible: "Link"
+
+# SCENARIO: Link module entry navigates to Link | EXPECTED: Tapping 'Link' opens Link module
+- tapOn: "Link"
+- waitForAnimationToEnd
+
+# SCENARIO: Link module loads without crash | EXPECTED: No error overlay appears after entering Link
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Link onboarding welcome title is shown | EXPECTED: 'Welcome to Link' heading visible
+- assertVisible: "Welcome to Link"
+
+# SCENARIO: Explore Jobs CTA is present on onboarding | EXPECTED: 'Explore Jobs' button visible
+- assertVisible: "Explore Jobs"
+
+# SCENARIO: Browse Marketplace CTA is also present | EXPECTED: 'Browse Marketplace' button visible alongside Jobs CTA
+- assertVisible: "Browse Marketplace"
+
+# SCENARIO: Explore Jobs navigates to Remote Hub | EXPECTED: Tapping 'Explore Jobs' opens job listings screen
+- tapOn: "Explore Jobs"
+- waitForAnimationToEnd
+
+# SCENARIO: Remote Hub screen title is visible | EXPECTED: 'REMOTE HUB' title visible after navigation
+- assertVisible: "REMOTE HUB"
+
+# SCENARIO: Jobs tab is present in Remote Hub | EXPECTED: 'Jobs' tab visible in Remote Hub tab bar
+- assertVisible: "Jobs"
+
+# SCENARIO: Marketplace tab is present in Remote Hub | EXPECTED: 'Marketplace' tab visible in Remote Hub tab bar
+- assertVisible: "Marketplace"
+
+# SCENARIO: Jobs tab is active by default | EXPECTED: Job listings content visible without tapping Jobs tab
+- assertNotVisible: "Something went wrong"
+
+# SCENARIO: Jobs screen content loads without crash | EXPECTED: No crash overlay on job listings screen
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Jobs screen is scrollable downward | EXPECTED: Swipe up scrolls through job listings without crash
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# SCENARIO: Jobs screen further scroll reveals more content | EXPECTED: Second swipe up continues without crash
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# SCENARIO: Jobs screen scrolls back to top | EXPECTED: Swipe down returns toward top of job listings
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+
+# SCENARIO: No crash visible after scrolling Jobs | EXPECTED: 'Something went wrong' not present after scroll
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Marketplace tab switches view from Jobs | EXPECTED: Tapping 'Marketplace' tab loads marketplace content
+- tapOn: "Marketplace"
+- waitForAnimationToEnd
+
+# SCENARIO: Remote Hub title persists after tab switch | EXPECTED: 'REMOTE HUB' title still visible on Marketplace tab
+- assertVisible: "REMOTE HUB"
+
+# SCENARIO: Marketplace tab loads without crash | EXPECTED: No error overlay after switching to Marketplace tab
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Marketplace tab is scrollable | EXPECTED: Swipe up scrolls marketplace content without crash
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# SCENARIO: Marketplace scrolls back to top | EXPECTED: Swipe down returns to top of marketplace tab
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+
+# SCENARIO: Jobs tab is re-selectable from Marketplace | EXPECTED: Tapping 'Jobs' tab returns to job listings
+- tapOn: "Jobs"
+- waitForAnimationToEnd
+
+# SCENARIO: Jobs tab reloads without crash on re-tap | EXPECTED: No error overlay after returning to Jobs tab
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Back navigation exits Link module | EXPECTED: Pressing Back returns toward home screen
+- pressKey: Back
+- waitForAnimationToEnd
+
+# SCENARIO: Home screen is accessible after back from Link | EXPECTED: 'Explore OMRE Modules' visible after back navigation
+- assertVisible: "Explore OMRE Modules"
+
+# SCENARIO: Link module re-entry via module switcher works | EXPECTED: Second visit to Link opens without crash
+- tapOn: "View all"
+- waitForAnimationToEnd
+- assertVisible: "Switch to Module"
+- tapOn: "Link"
+- waitForAnimationToEnd
+
+# SCENARIO: Link module stable on second visit | EXPECTED: Welcome screen or Link content visible; no crash
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Back from Link second visit returns to home | EXPECTED: Home screen loads cleanly after second Link visit
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "Explore OMRE Modules"

@@ -1,0 +1,170 @@
+appId: com.omre.app.posh
+---
+# SCENARIO: App launches clean without crash | EXPECTED: App opens to home screen without error
+- stopApp
+- launchApp:
+    clearState: false
+- waitForAnimationToEnd
+
+# SCENARIO: Home feed header section is visible | EXPECTED: 'Explore OMRE Modules' text appears
+- assertVisible: "Explore OMRE Modules"
+
+# SCENARIO: Module switcher entry point is present | EXPECTED: 'View all' button visible on home screen
+- assertVisible: "View all"
+
+# SCENARIO: Social module tab visible in home row | EXPECTED: 'Social' label visible
+- assertVisible: "Social"
+
+# SCENARIO: Chat module tab visible in home row | EXPECTED: 'Chat' label visible
+- assertVisible: "Chat"
+
+# SCENARIO: Biz module tab visible in home row | EXPECTED: 'Biz' label visible
+- assertVisible: "Biz"
+
+# SCENARIO: Learn module tab visible in home row | EXPECTED: 'Learn' label visible
+- assertVisible: "Learn"
+
+# SCENARIO: Feed refresh button is present | EXPECTED: 'Refresh feed' button visible
+- assertVisible: "Refresh feed"
+
+# SCENARIO: Post composer button is present on home screen | EXPECTED: 'Post' button visible in composer row
+- assertVisible: "Post"
+
+# SCENARIO: Post category selector visible on home screen | EXPECTED: 'Social' category dropdown visible in composer
+- assertVisible: "Social"
+
+# SCENARIO: Notifications bell navigates to notifications screen | EXPECTED: Notifications screen opens
+- tapOn: "Notifications"
+- waitForAnimationToEnd
+- assertVisible: "Mark all as read"
+
+# SCENARIO: Back from notifications returns to home | EXPECTED: 'Explore OMRE Modules' visible again
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "Explore OMRE Modules"
+
+# SCENARIO: Messages icon navigates to messages screen | EXPECTED: Messages screen opens with Orbit tab
+- tapOn: "Messages"
+- waitForAnimationToEnd
+- assertVisible: "Orbit"
+
+# SCENARIO: Back from messages returns to home | EXPECTED: 'Explore OMRE Modules' visible again
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "Explore OMRE Modules"
+
+# SCENARIO: Hamburger opens navigation drawer | EXPECTED: Drawer slides open showing navigation items
+- tapOn:
+    point: "7%,9%"
+- waitForAnimationToEnd
+- assertVisible: "Home"
+
+# SCENARIO: Drawer contains Explore navigation item | EXPECTED: 'Explore' item visible in drawer
+- assertVisible: "Explore"
+
+# SCENARIO: Drawer contains Messages navigation item | EXPECTED: 'Messages' item visible in drawer
+- assertVisible: "Messages"
+
+# SCENARIO: Drawer contains Notifications navigation item | EXPECTED: 'Notifications' item visible in drawer
+- assertVisible: "Notifications"
+
+# SCENARIO: Drawer contains Profile navigation item | EXPECTED: 'Profile' item visible in drawer
+- assertVisible: "Profile"
+
+# SCENARIO: Drawer closes on Back returning to home | EXPECTED: Home feed visible after closing drawer
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "Explore OMRE Modules"
+
+# SCENARIO: Module switcher opens on tap | EXPECTED: 'Switch to Module' header appears
+- tapOn: "View all"
+- waitForAnimationToEnd
+- assertVisible: "Switch to Module"
+
+# SCENARIO: Module switcher shows Social | EXPECTED: 'Social' visible in switcher list
+- assertVisible: "Social"
+
+# SCENARIO: Module switcher shows Chat | EXPECTED: 'Chat' visible in switcher list
+- assertVisible: "Chat"
+
+# SCENARIO: Module switcher shows Biz | EXPECTED: 'Biz' visible in switcher list
+- assertVisible: "Biz"
+
+# SCENARIO: Module switcher shows Link | EXPECTED: 'Link' visible in switcher list
+- assertVisible: "Link"
+
+# SCENARIO: Module switcher shows Learn | EXPECTED: 'Learn' visible in switcher list
+- assertVisible: "Learn"
+
+# SCENARIO: Module switcher shows Studio | EXPECTED: 'Studio' visible in switcher list
+- assertVisible: "Studio"
+
+# SCENARIO: Module switcher shows News | EXPECTED: 'News' visible in switcher list
+- assertVisible: "News"
+
+# SCENARIO: Module switcher shows Video | EXPECTED: 'Video' visible in switcher list
+- assertVisible: "Video"
+
+# SCENARIO: Module switcher shows Orbit | EXPECTED: 'Orbit' visible in switcher list
+- assertVisible: "Orbit"
+
+# SCENARIO: Module switcher shows Games | EXPECTED: 'Games' visible in switcher list
+- assertVisible: "Games"
+
+# SCENARIO: Module switcher shows Meeting | EXPECTED: 'Meeting' visible in switcher list
+- assertVisible: "Meeting"
+
+# SCENARIO: Module switcher shows Mart | EXPECTED: 'Mart' visible in switcher list
+- assertVisible: "Mart"
+
+# SCENARIO: Switching to Social module from switcher navigates correctly | EXPECTED: Social feed opens
+- tapOn:
+    text: "Social"
+    index: 1
+- waitForAnimationToEnd
+- assertVisible: "For You\nTab 2 of 2"
+
+# SCENARIO: Back from Social module returns to home | EXPECTED: 'Explore OMRE Modules' visible on return
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "Explore OMRE Modules"
+
+# SCENARIO: Switching to Link module from switcher navigates correctly | EXPECTED: Link module opens
+- tapOn: "View all"
+- waitForAnimationToEnd
+- tapOn: "Link"
+- waitForAnimationToEnd
+- assertVisible: "Welcome to Link"
+
+# SCENARIO: Back from Link module returns to home | EXPECTED: 'Explore OMRE Modules' visible on return
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "Explore OMRE Modules"
+
+# SCENARIO: Module switcher closes on Back | EXPECTED: Returns to home feed without crash
+- tapOn: "View all"
+- waitForAnimationToEnd
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "Explore OMRE Modules"
+
+# SCENARIO: Home feed is scrollable | EXPECTED: Feed scrolls down revealing content below
+- scroll
+- scroll
+
+# SCENARIO: Pull to refresh works on home feed | EXPECTED: Swipe down from top triggers refresh without crash
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "Explore OMRE Modules"
+
+# SCENARIO: Refresh feed button reloads feed | EXPECTED: Tapping 'Refresh feed' reloads and home stays visible
+- tapOn: "Refresh feed"
+- waitForAnimationToEnd
+- assertVisible: "Explore OMRE Modules"
+
+# SCENARIO: Module row is horizontally scrollable | EXPECTED: Swiping left on module row reveals more modules
+- swipe:
+    direction: LEFT
+- waitForAnimationToEnd
+- assertVisible: "Explore OMRE Modules"

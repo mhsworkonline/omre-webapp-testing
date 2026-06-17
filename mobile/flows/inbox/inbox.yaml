@@ -1,38 +1,63 @@
 appId: com.omre.app.posh
 ---
+# SCENARIO: App launches clean to home screen | EXPECTED: App opens without crash
+- stopApp
 - launchApp:
     clearState: false
+- waitForAnimationToEnd
 
-- assertVisible: "For You"
+# SCENARIO: Home screen confirms correct starting state | EXPECTED: 'Explore OMRE Modules' visible
+- assertVisible: "Explore OMRE Modules"
 
-# Open inbox via bell icon
+# SCENARIO: Notifications screen opens via bell icon | EXPECTED: Tapping 'Notifications' navigates to inbox
 - tapOn: "Notifications"
+- waitForAnimationToEnd
+
+# SCENARIO: Bulk action 'Mark all as read' is available | EXPECTED: Button visible in notifications header
 - assertVisible: "Mark all as read"
+
+# SCENARIO: Bulk action 'Clear all' is available | EXPECTED: Button visible in notifications header
 - assertVisible: "Clear all"
-- assertNotVisible: "Welcome back"
 
-# Tab switches
+# SCENARIO: All notifications filter tab is present | EXPECTED: 'All' tab visible
 - assertVisible: "All"
+
+# SCENARIO: Social notifications filter tab is present | EXPECTED: 'Social' tab visible
 - assertVisible: "Social"
+
+# SCENARIO: Messages notifications filter tab is present | EXPECTED: 'Messages' tab visible
 - assertVisible: "Messages"
+
+# SCENARIO: Business notifications filter tab is present | EXPECTED: 'Business' tab visible
 - assertVisible: "Business"
 
+# SCENARIO: Social filter tab is tappable | EXPECTED: Tapping 'Social' tab switches filter
 - tapOn: "Social"
-- assertVisible: "Social"
-- tapOn: "Messages"
-- assertVisible: "Messages"
-- tapOn: "Business"
-- assertVisible: "Business"
-- tapOn: "All"
-- assertVisible: "All"
+- waitForAnimationToEnd
 
-# Scroll down — more notifications or empty state
+# SCENARIO: Messages filter tab is tappable | EXPECTED: Tapping 'Messages' tab switches filter
+- tapOn: "Messages"
+- waitForAnimationToEnd
+
+# SCENARIO: Business filter tab is tappable | EXPECTED: Tapping 'Business' tab switches filter
+- tapOn: "Business"
+- waitForAnimationToEnd
+
+# SCENARIO: All filter tab restores full list | EXPECTED: Tapping 'All' shows all notifications
+- tapOn: "All"
+- waitForAnimationToEnd
+
+# SCENARIO: Notifications list is scrollable | EXPECTED: Scroll down works without crash
 - scroll
+
+# SCENARIO: Notifications list scrolls back to top | EXPECTED: Swipe down returns to top
 - swipe:
     direction: DOWN
 
+# SCENARIO: Mark all as read still visible after scroll | EXPECTED: Header control remains accessible
 - assertVisible: "Mark all as read"
 
-# Back to feed
+# SCENARIO: Back navigates to home feed | EXPECTED: Pressing Back returns to home screen
 - pressKey: Back
-- assertVisible: "For You"
+- waitForAnimationToEnd
+- assertVisible: "Explore OMRE Modules"

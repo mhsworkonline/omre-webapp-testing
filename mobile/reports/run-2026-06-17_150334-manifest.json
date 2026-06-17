@@ -1,0 +1,50 @@
+﻿[
+    {
+        "debugDir":  "C:\\Users\\manis\\.maestro\\tests\\2026-06-17_150336",
+        "status":  "PASSED",
+        "name":  "home_feed",
+        "file":  "flows\\home\\home_feed.yaml"
+    },
+    {
+        "debugDir":  "C:\\Users\\manis\\.maestro\\tests\\2026-06-17_150527",
+        "status":  "PASSED",
+        "name":  "create_post",
+        "file":  "flows\\social\\create_post.yaml"
+    },
+    {
+        "debugDir":  "C:\\Users\\manis\\.maestro\\tests\\2026-06-17_150907",
+        "status":  "PASSED",
+        "name":  "profile",
+        "file":  "flows\\social\\profile.yaml"
+    },
+    {
+        "debugDir":  "C:\\Users\\manis\\.maestro\\tests\\2026-06-17_151151",
+        "status":  "PASSED",
+        "name":  "inbox",
+        "file":  "flows\\inbox\\inbox.yaml"
+    },
+    {
+        "debugDir":  "C:\\Users\\manis\\.maestro\\tests\\2026-06-17_151441",
+        "status":  "PASSED",
+        "name":  "chat_messages",
+        "file":  "flows\\messages\\chat_messages.yaml"
+    },
+    {
+        "debugDir":  "C:\\Users\\manis\\.maestro\\tests\\2026-06-17_151825",
+        "status":  "PASSED",
+        "name":  "orbit_feed",
+        "file":  "flows\\orbit\\orbit_feed.yaml"
+    },
+    {
+        "debugDir":  "C:\\Users\\manis\\.maestro\\tests\\2026-06-17_152108",
+        "status":  "PASSED",
+        "name":  "biz_module",
+        "file":  "flows\\biz\\biz_module.yaml"
+    },
+    {
+        "debugDir":  "C:\\Users\\manis\\.maestro\\tests\\2026-06-17_152328",
+        "status":  "PASSED",
+        "name":  "link_jobs",
+        "file":  "flows\\link\\link_jobs.yaml"
+    }
+]

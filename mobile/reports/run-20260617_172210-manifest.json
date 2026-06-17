@@ -1,0 +1,11 @@
+﻿{
+    "timestamp":  "2026-06-17T17:32:38.1993901+05:30",
+    "flows":  [
+                  {
+                      "debugDir":  "c:\\claude-folder\\webapp-testing\\omre-app\\mobile\\.maestro\\debug\\20260617_172210_home_feed",
+                      "status":  "PASSED",
+                      "name":  "home_feed",
+                      "file":  "flows/home/home_feed.yaml"
+                  }
+              ]
+}

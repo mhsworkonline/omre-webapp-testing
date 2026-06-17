@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="OMRE Mobile (Android)" tests="190" failures="0" time="1010.179">
+  <testsuite name="home_feed" tests="31" failures="0" time="91.583">
+    <testcase name="Set up test variables" time="0.011"/>
+    <testcase name="Apply flow configuration" time="0.004"/>
+    <testcase name="stopApp" time="0.357"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="4.392"/>
+    <testcase name="Wait for animation" time="20.095"/>
+    <testcase name="Assert visible: &quot;Explore OMRE Modules&quot;" time="12.981"/>
+    <testcase name="Assert visible: &quot;View all&quot;" time="6.222"/>
+    <testcase name="Assert visible: &quot;Social&quot;" time="2.010"/>
+    <testcase name="Assert visible: &quot;Chat&quot;" time="0.772"/>
+    <testcase name="Assert visible: &quot;Biz&quot;" time="2.102"/>
+    <testcase name="Assert visible: &quot;Learn&quot;" time="3.257"/>
+    <testcase name="Assert visible: &quot;Refresh feed&quot;" time="2.702"/>
+    <testcase name="Tap on &quot;View all&quot;" time="7.252"/>
+    <testcase name="Wait for animation" time="3.274"/>
+    <testcase name="Assert visible: &quot;Switch to Module&quot;" time="0.885"/>
+    <testcase name="Assert visible: &quot;Social&quot;" time="1.727"/>
+    <testcase name="Assert visible: &quot;Chat&quot;" time="2.814"/>
+    <testcase name="Assert visible: &quot;Biz&quot;" time="1.091"/>
+    <testcase name="Assert visible: &quot;Link&quot;" time="0.680"/>
+    <testcase name="Assert visible: &quot;Learn&quot;" time="0.375"/>
+    <testcase name="Assert visible: &quot;Studio&quot;" time="0.414"/>
+    <testcase name="Assert visible: &quot;News&quot;" time="2.360"/>
+    <testcase name="Assert visible: &quot;Video&quot;" time="1.058"/>
+    <testcase name="Assert visible: &quot;Orbit&quot;" time="0.869"/>
+    <testcase name="Assert visible: &quot;Games&quot;" time="1.046"/>
+    <testcase name="Assert visible: &quot;Meeting&quot;" time="1.113"/>
+    <testcase name="Assert visible: &quot;Mart&quot;" time="0.548"/>
+    <testcase name="Press key: BACK" time="2.396"/>
+    <testcase name="Wait for animation" time="3.678"/>
+    <testcase name="Scroll" time="2.144"/>
+    <testcase name="Scroll" time="2.954"/>
+  </testsuite>
+  <testsuite name="create_post" tests="16" failures="0" time="161.644">
+    <testcase name="Set up test variables" time="0.014"/>
+    <testcase name="Apply flow configuration" time="0.003"/>
+    <testcase name="stopApp" time="1.046"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="6.808"/>
+    <testcase name="Wait for animation" time="16.775"/>
+    <testcase name="Assert visible: &quot;Explore OMRE Modules&quot;" time="22.202"/>
+    <testcase name="Assert visible: &quot;Refresh feed&quot;" time="2.470"/>
+    <testcase name="Assert visible: &quot;Post&quot;" time="1.095"/>
+    <testcase name="Assert visible: &quot;Social&quot;" time="2.224"/>
+    <testcase name="tapOnPointV2" time="14.155"/>
+    <testcase name="Wait for animation" time="9.091"/>
+    <testcase name="Input text: &quot;Automated test post&quot;" time="18.560"/>
+    <testcase name="Assert visible: &quot;Automated test post&quot;" time="2.215"/>
+    <testcase name="Erase 50 characters" time="42.181"/>
+    <testcase name="Press key: BACK" time="4.523"/>
+    <testcase name="Wait for animation" time="18.282"/>
+  </testsuite>
+  <testsuite name="profile" tests="25" failures="0" time="114.946">
+    <testcase name="Set up test variables" time="0.015"/>
+    <testcase name="Apply flow configuration" time="0.005"/>
+    <testcase name="stopApp" time="0.457"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="5.250"/>
+    <testcase name="Wait for animation" time="15.989"/>
+    <testcase name="Assert visible: &quot;Explore OMRE Modules&quot;" time="18.378"/>
+    <testcase name="tapOnPointV2" time="13.748"/>
+    <testcase name="Wait for animation" time="4.875"/>
+    <testcase name="Tap on &quot;Profile&quot;" time="6.485"/>
+    <testcase name="Wait for animation" time="3.454"/>
+    <testcase name="Assert visible: &quot;wilacok854&quot;" time="0.469"/>
+    <testcase name="Assert visible: &quot;@wilacok&quot;" time="0.711"/>
+    <testcase name="Assert visible: &quot;CREATOR&quot;" time="1.489"/>
+    <testcase name="Assert visible: &quot;Edit profile&quot;" time="0.186"/>
+    <testcase name="Assert visible: &quot;Share&quot;" time="0.343"/>
+    <testcase name="Assert visible: &quot;Highlights&quot;" time="3.256"/>
+    <testcase name="Assert visible: &quot;Archive&quot;" time="1.376"/>
+    <testcase name="Tap on &quot;Orbit
+Tab 2 of 10&quot;" time="5.179"/>
+    <testcase name="Wait for animation" time="4.160"/>
+    <testcase name="Tap on &quot;Reposts
+Tab 3 of 10&quot;" time="8.419"/>
+    <testcase name="Wait for animation" time="3.111"/>
+    <testcase name="Tap on &quot;Videos
+Tab 4 of 10&quot;" time="6.380"/>
+    <testcase name="Wait for animation" time="2.592"/>
+    <testcase name="Tap on &quot;Posts
+Tab 1 of 10&quot;" time="6.011"/>
+    <testcase name="Wait for animation" time="2.608"/>
+  </testsuite>
+  <testsuite name="inbox" tests="28" failures="0" time="125.521">
+    <testcase name="Set up test variables" time="0.012"/>
+    <testcase name="Apply flow configuration" time="0.004"/>
+    <testcase name="stopApp" time="0.508"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="4.822"/>
+    <testcase name="Wait for animation" time="20.706"/>
+    <testcase name="Assert visible: &quot;Explore OMRE Modules&quot;" time="22.425"/>
+    <testcase name="Tap on &quot;Notifications&quot;" time="8.610"/>
+    <testcase name="Wait for animation" time="2.321"/>
+    <testcase name="Assert visible: &quot;Mark all as read&quot;" time="0.192"/>
+    <testcase name="Assert visible: &quot;Clear all&quot;" time="0.941"/>
+    <testcase name="Assert visible: &quot;All&quot;" time="0.840"/>
+    <testcase name="Assert visible: &quot;Social&quot;" time="0.598"/>
+    <testcase name="Assert visible: &quot;Messages&quot;" time="0.467"/>
+    <testcase name="Assert visible: &quot;Business&quot;" time="0.647"/>
+    <testcase name="Tap on &quot;Social&quot;" time="4.142"/>
+    <testcase name="Wait for animation" time="2.331"/>
+    <testcase name="Tap on &quot;Messages&quot;" time="3.360"/>
+    <testcase name="Wait for animation" time="6.362"/>
+    <testcase name="Tap on &quot;Business&quot;" time="4.510"/>
+    <testcase name="Wait for animation" time="6.378"/>
+    <testcase name="Tap on &quot;All&quot;" time="10.543"/>
+    <testcase name="Wait for animation" time="3.091"/>
+    <testcase name="Scroll" time="4.433"/>
+    <testcase name="Swipe DOWN" time="1.954"/>
+    <testcase name="Assert visible: &quot;Mark all as read&quot;" time="0.403"/>
+    <testcase name="Press key: BACK" time="6.717"/>
+    <testcase name="Wait for animation" time="6.008"/>
+    <testcase name="Assert visible: &quot;Explore OMRE Modules&quot;" time="2.196"/>
+  </testsuite>
+  <testsuite name="chat_messages" tests="24" failures="0" time="166.749">
+    <testcase name="Set up test variables" time="0.020"/>
+    <testcase name="Apply flow configuration" time="0.006"/>
+    <testcase name="stopApp" time="0.657"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="5.106"/>
+    <testcase name="Wait for animation" time="15.841"/>
+    <testcase name="Assert visible: &quot;Explore OMRE Modules&quot;" time="26.598"/>
+    <testcase name="Tap on &quot;Messages&quot;" time="27.438"/>
+    <testcase name="Wait for animation" time="2.896"/>
+    <testcase name="Assert visible: &quot;Social&quot;" time="0.581"/>
+    <testcase name="Assert visible: &quot;Orbit&quot;" time="0.533"/>
+    <testcase name="Assert visible: &quot;Business&quot;" time="0.334"/>
+    <testcase name="Assert visible: &quot;Jobs&quot;" time="0.399"/>
+    <testcase name="Tap on &quot;Orbit&quot;" time="4.774"/>
+    <testcase name="Wait for animation" time="1.608"/>
+    <testcase name="Tap on &quot;Business&quot;" time="4.691"/>
+    <testcase name="Wait for animation" time="1.545"/>
+    <testcase name="Tap on &quot;Jobs&quot;" time="4.266"/>
+    <testcase name="Wait for animation" time="1.057"/>
+    <testcase name="Tap on &quot;Social&quot;" time="2.782"/>
+    <testcase name="Wait for animation" time="2.899"/>
+    <testcase name="Scroll" time="0.815"/>
+    <testcase name="Press key: BACK" time="55.518"/>
+    <testcase name="Wait for animation" time="4.916"/>
+    <testcase name="Assert visible: &quot;Explore OMRE Modules&quot;" time="1.469"/>
+  </testsuite>
+  <testsuite name="orbit_feed" tests="22" failures="0" time="114.247">
+    <testcase name="Set up test variables" time="0.018"/>
+    <testcase name="Apply flow configuration" time="0.007"/>
+    <testcase name="stopApp" time="0.506"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="6.020"/>
+    <testcase name="Wait for animation" time="15.490"/>
+    <testcase name="Assert visible: &quot;Explore OMRE Modules&quot;" time="15.470"/>
+    <testcase name="Tap on &quot;View all&quot;" time="29.075"/>
+    <testcase name="Wait for animation" time="5.420"/>
+    <testcase name="Tap on &quot;Orbit&quot;" time="17.012"/>
+    <testcase name="Wait for animation" time="2.966"/>
+    <testcase name="Assert visible: &quot;Welcome to Orbit&quot;" time="0.380"/>
+    <testcase name="Assert visible: &quot;Your social feed, amplified&quot;" time="0.252"/>
+    <testcase name="Assert visible: &quot;Go to Feed&quot;" time="0.347"/>
+    <testcase name="Tap on &quot;Go to Feed&quot;" time="5.062"/>
+    <testcase name="Wait for animation" time="2.976"/>
+    <testcase name="Assert visible: &quot;For You&quot;" time="0.496"/>
+    <testcase name="Assert visible: &quot;Following&quot;" time="0.222"/>
+    <testcase name="Tap on &quot;Following&quot;" time="3.744"/>
+    <testcase name="Wait for animation" time="2.306"/>
+    <testcase name="Tap on &quot;For You&quot;" time="2.795"/>
+    <testcase name="Wait for animation" time="1.844"/>
+    <testcase name="Scroll" time="1.839"/>
+  </testsuite>
+  <testsuite name="biz_module" tests="22" failures="0" time="117.619">
+    <testcase name="Set up test variables" time="0.009"/>
+    <testcase name="Apply flow configuration" time="0.003"/>
+    <testcase name="stopApp" time="0.351"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="6.151"/>
+    <testcase name="Wait for animation" time="16.279"/>
+    <testcase name="Assert visible: &quot;Explore OMRE Modules&quot;" time="25.194"/>
+    <testcase name="Tap on &quot;View all&quot;" time="25.443"/>
+    <testcase name="Wait for animation" time="7.737"/>
+    <testcase name="Assert visible: &quot;Switch to Module&quot;" time="1.305"/>
+    <testcase name="Tap on &quot;Biz&quot;" time="25.476"/>
+    <testcase name="Wait for animation" time="3.111"/>
+    <testcase name="Assert visible: &quot;Welcome to Biz&quot;" time="0.698"/>
+    <testcase name="Assert visible: &quot;Store&quot;" time="0.436"/>
+    <testcase name="Assert visible: &quot;Ads&quot;" time="0.518"/>
+    <testcase name="Assert visible: &quot;Manage inventory&quot;" time="0.700"/>
+    <testcase name="Assert visible: &quot;Reach customers&quot;" time="0.274"/>
+    <testcase name="Assert visible: &quot;Continue to Omre Web&quot;" time="0.387"/>
+    <testcase name="Scroll" time="1.548"/>
+    <testcase name="Swipe DOWN" time="1.203"/>
+    <testcase name="Assert visible: &quot;Welcome to Biz&quot;" time="0.263"/>
+    <testcase name="Assert visible: &quot;Store&quot;" time="0.293"/>
+    <testcase name="Assert visible: &quot;Ads&quot;" time="0.240"/>
+  </testsuite>
+  <testsuite name="link_jobs" tests="22" failures="0" time="117.870">
+    <testcase name="Set up test variables" time="0.013"/>
+    <testcase name="Apply flow configuration" time="0.005"/>
+    <testcase name="stopApp" time="0.156"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="4.977"/>
+    <testcase name="Wait for animation" time="15.204"/>
+    <testcase name="Assert visible: &quot;Explore OMRE Modules&quot;" time="24.101"/>
+    <testcase name="Tap on &quot;View all&quot;" time="25.237"/>
+    <testcase name="Wait for animation" time="5.984"/>
+    <testcase name="Assert visible: &quot;Switch to Module&quot;" time="3.207"/>
+    <testcase name="Tap on &quot;Link&quot;" time="21.729"/>
+    <testcase name="Wait for animation" time="2.487"/>
+    <testcase name="Assert visible: &quot;Welcome to Link&quot;" time="0.393"/>
+    <testcase name="Assert visible: &quot;Explore Jobs&quot;" time="0.692"/>
+    <testcase name="Assert visible: &quot;Browse Marketplace&quot;" time="0.795"/>
+    <testcase name="Tap on &quot;Explore Jobs&quot;" time="5.312"/>
+    <testcase name="Wait for animation" time="1.629"/>
+    <testcase name="Assert visible: &quot;Job Search&quot;" time="0.181"/>
+    <testcase name="Assert visible: &quot;Saved Jobs&quot;" time="0.289"/>
+    <testcase name="Assert visible: &quot;Job Alerts&quot;" time="0.265"/>
+    <testcase name="Assert visible: &quot;Company Pages&quot;" time="0.232"/>
+    <testcase name="Scroll" time="4.018"/>
+    <testcase name="Swipe DOWN" time="0.964"/>
+  </testsuite>
+</testsuites>

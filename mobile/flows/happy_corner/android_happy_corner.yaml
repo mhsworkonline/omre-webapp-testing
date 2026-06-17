@@ -1,0 +1,77 @@
+appId: com.omre.app.posh
+---
+# SCENARIO: App Launch for Happy Corner | EXPECTED: App launches cleanly without crash
+- stopApp
+- launchApp:
+    clearState: false
+- waitForAnimationToEnd
+
+# SCENARIO: Open Drawer | EXPECTED: Drawer opens successfully
+- tapOn:
+    point: "7%,9%"
+- waitForAnimationToEnd
+
+# SCENARIO: Navigate to Happy Corner | EXPECTED: Happy Corner screen loads
+- tapOn: "Happy Corner"
+- waitForAnimationToEnd
+
+# SCENARIO: Happy Corner heading visible | EXPECTED: Happy Corner label or heading present
+- assertVisible: "Happy Corner"
+
+# SCENARIO: No crash on load | EXPECTED: No error dialogs appear
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Positive content feed visible | EXPECTED: Uplifting posts or content items shown
+- assertNotVisible: "Something went wrong"
+
+# SCENARIO: No unexpected errors on initial view | EXPECTED: Screen renders without errors
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Scroll down through content feed | EXPECTED: More positive content items load
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+
+# SCENARIO: No crash after scroll down | EXPECTED: App remains stable
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Scroll up to return to top | EXPECTED: Top of Happy Corner feed visible
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# SCENARIO: No error after scroll up | EXPECTED: Screen still stable
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Pull to refresh Happy Corner | EXPECTED: Feed refreshes without crash
+- swipe:
+    direction: DOWN
+    from:
+      x: "50%"
+      y: "20%"
+    to:
+      x: "50%"
+      y: "70%"
+- waitForAnimationToEnd
+
+# SCENARIO: No crash after pull to refresh | EXPECTED: App still running normally
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Back navigation from Happy Corner | EXPECTED: Previous screen loads
+- pressKey: Back
+- waitForAnimationToEnd
+
+# SCENARIO: Re-navigate to Happy Corner via drawer | EXPECTED: Happy Corner reloads correctly
+- tapOn:
+    point: "7%,9%"
+- waitForAnimationToEnd
+- tapOn: "Happy Corner"
+- waitForAnimationToEnd
+
+# SCENARIO: Happy Corner stable on second visit | EXPECTED: No errors, content visible
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"

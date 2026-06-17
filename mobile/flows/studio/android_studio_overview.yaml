@@ -1,0 +1,113 @@
+appId: com.omre.app.posh
+---
+# SCENARIO: App launches clean to home screen | EXPECTED: App opens without crash
+- stopApp
+- launchApp:
+    clearState: false
+- waitForAnimationToEnd
+
+# SCENARIO: Home screen confirms correct starting state | EXPECTED: 'Explore OMRE Modules' visible
+- assertVisible: "Explore OMRE Modules"
+
+# SCENARIO: Module switcher entry point is present | EXPECTED: 'View all' button visible on home screen
+- assertVisible: "View all"
+
+# SCENARIO: Module switcher opens for navigation | EXPECTED: 'Switch to Module' header appears
+- tapOn: "View all"
+- waitForAnimationToEnd
+- assertVisible: "Switch to Module"
+
+# SCENARIO: Studio module is listed in module switcher | EXPECTED: 'Studio' option visible in switcher list
+- assertVisible: "Studio"
+
+# SCENARIO: Studio module entry navigates to Studio | EXPECTED: Tapping 'Studio' opens Studio module
+- tapOn: "Studio"
+- waitForAnimationToEnd
+
+# SCENARIO: Studio module loads without crash | EXPECTED: No error overlay appears after entering Studio
+- assertNotVisible: "Something went wrong"
+
+# SCENARIO: No crash dialog visible on Studio load | EXPECTED: App crash overlay not present
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Studio or Overview heading is visible | EXPECTED: 'Studio' or 'Overview' label present on main screen
+- assertVisible: "Studio"
+
+# SCENARIO: Studio main screen is scrollable downward | EXPECTED: Swipe up scrolls content without crash
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# SCENARIO: No error after scrolling Studio screen | EXPECTED: Crash and error overlays absent after scroll
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Studio screen scrolls back toward top | EXPECTED: Swipe down returns content without crash
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+
+# SCENARIO: Studio heading still visible after scroll cycle | EXPECTED: 'Studio' label present after swipe down
+- assertVisible: "Studio"
+
+# SCENARIO: Studio sidebar drawer opens via navigation menu | EXPECTED: Drawer visible with menu sections after tap
+- tapOn: "Open navigation menu"
+- waitForAnimationToEnd
+
+# SCENARIO: Overview item visible in sidebar drawer | EXPECTED: 'Overview' label present in drawer
+- assertVisible: "Overview"
+
+# SCENARIO: Omre AI item visible in sidebar drawer | EXPECTED: 'Omre AI' label present in drawer under CREATE section
+- assertVisible: "Omre AI"
+
+# SCENARIO: View Videos item visible in sidebar drawer | EXPECTED: 'View Videos' label present in drawer under MANAGE section
+- assertVisible: "View Videos"
+
+# SCENARIO: Analytics item visible in sidebar drawer | EXPECTED: 'Analytics' label present in drawer under SETTINGS section
+- assertVisible: "Analytics"
+
+# SCENARIO: AI Credits usage visible in sidebar drawer | EXPECTED: 'AI Credits' label present in drawer
+- assertVisible: "AI Credits"
+
+# SCENARIO: Closing sidebar drawer returns to Studio main screen | EXPECTED: Pressing Back dismisses drawer without crash
+- pressKey: Back
+- waitForAnimationToEnd
+
+# SCENARIO: Studio screen intact after closing drawer | EXPECTED: 'Studio' heading visible after drawer close
+- assertVisible: "Studio"
+
+# SCENARIO: No crash after drawer open and close cycle | EXPECTED: Error and crash overlays absent after drawer interaction
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Back navigation exits Studio module | EXPECTED: Pressing Back returns to home screen
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "Explore OMRE Modules"
+
+# SCENARIO: Home screen stable after leaving Studio | EXPECTED: No error or crash overlay on home screen
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Studio module re-entry via module switcher | EXPECTED: Studio reopens without crash on second visit
+- tapOn: "View all"
+- waitForAnimationToEnd
+- assertVisible: "Switch to Module"
+- tapOn: "Studio"
+- waitForAnimationToEnd
+
+# SCENARIO: Studio stable on second visit | EXPECTED: No crash overlay and Studio heading visible
+- assertNotVisible: "Something went wrong"
+- assertVisible: "Studio"
+
+# SCENARIO: Sidebar drawer accessible on second visit | EXPECTED: Drawer opens and shows Overview item again
+- tapOn: "Open navigation menu"
+- waitForAnimationToEnd
+- assertVisible: "Overview"
+- pressKey: Back
+- waitForAnimationToEnd
+
+# SCENARIO: Back from Studio on second visit returns to home | EXPECTED: 'Explore OMRE Modules' visible after second Back press
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "Explore OMRE Modules"

@@ -1,0 +1,83 @@
+appId: com.omre.app.posh
+---
+# SCENARIO: App launches clean to home screen | EXPECTED: App opens without crash
+- stopApp
+- launchApp:
+    clearState: false
+- waitForAnimationToEnd
+
+# SCENARIO: Home screen confirms correct starting state | EXPECTED: 'Explore OMRE Modules' visible
+- assertVisible: "Explore OMRE Modules"
+
+# SCENARIO: Navigation drawer opens via hamburger icon | EXPECTED: Drawer opens showing nav items
+- tapOn:
+    point: "7%,9%"
+- waitForAnimationToEnd
+- assertVisible: "Home"
+
+# SCENARIO: Explore item is visible in drawer | EXPECTED: 'Explore' label visible in drawer
+- assertVisible: "Explore"
+
+# SCENARIO: Tap Explore navigates to Explore screen | EXPECTED: Explore screen loads without crash
+- tapOn: "Explore"
+- waitForAnimationToEnd
+
+# SCENARIO: Explore screen header is visible | EXPECTED: 'Explore' heading present
+- assertVisible: "Explore"
+
+# SCENARIO: Search bar is tappable via coordinate (hint text not in accessibility tree) | EXPECTED: Search field becomes active and keyboard appears
+- tapOn:
+    point: "50%,25%"
+- waitForAnimationToEnd
+
+# SCENARIO: Type text into search bar | EXPECTED: Typed text appears in search field
+- inputText: "music"
+- waitForAnimationToEnd
+
+# SCENARIO: Search results or no-results state is shown | EXPECTED: Screen updates without crash (typed text not assertable in Flutter accessibility tree)
+- waitForAnimationToEnd
+
+# SCENARIO: Clear search text via Back key | EXPECTED: Keyboard dismisses
+- pressKey: Back
+- waitForAnimationToEnd
+
+# SCENARIO: Explore screen is still accessible after clearing search | EXPECTED: Explore heading still visible
+- assertVisible: "Explore"
+
+# SCENARIO: Tap search bar again for second query | EXPECTED: Search field becomes active
+- tapOn:
+    point: "50%,25%"
+- waitForAnimationToEnd
+
+# SCENARIO: Type a second search query | EXPECTED: Screen updates without crash
+- inputText: "sports"
+- waitForAnimationToEnd
+
+# SCENARIO: Dismiss search keyboard with Back | EXPECTED: Keyboard dismisses, Explore screen still visible
+- pressKey: Back
+- waitForAnimationToEnd
+
+# SCENARIO: Explore content area is scrollable down | EXPECTED: Scrolling down works without crash
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# SCENARIO: Scroll back to top of Explore screen | EXPECTED: Swipe down returns to top of content
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "Explore"
+
+# SCENARIO: Pull to refresh reloads Explore content | EXPECTED: Content refreshes without crash
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "Explore"
+
+# SCENARIO: Explore screen re-navigable via drawer | EXPECTED: Drawer tap on 'Explore' reloads Explore screen
+- tapOn:
+    point: "7%,9%"
+- waitForAnimationToEnd
+- tapOn: "Explore"
+- waitForAnimationToEnd
+- assertVisible: "Explore"

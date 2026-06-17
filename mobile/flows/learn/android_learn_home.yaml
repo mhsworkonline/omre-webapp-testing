@@ -1,0 +1,103 @@
+appId: com.omre.app.posh
+---
+# SCENARIO: App launches clean to home screen | EXPECTED: App opens without crash
+- stopApp
+- launchApp:
+    clearState: false
+- waitForAnimationToEnd
+
+# SCENARIO: Home screen confirms correct starting state | EXPECTED: 'Explore OMRE Modules' visible
+- assertVisible: "Explore OMRE Modules"
+
+# SCENARIO: Module switcher entry point is present | EXPECTED: 'View all' button visible on home screen
+- assertVisible: "View all"
+
+# SCENARIO: Module switcher opens for navigation | EXPECTED: 'Switch to Module' header appears
+- tapOn: "View all"
+- waitForAnimationToEnd
+- assertVisible: "Switch to Module"
+
+# SCENARIO: Learn module is listed in module switcher | EXPECTED: 'Learn' option visible in switcher list
+- assertVisible: "Learn"
+
+# SCENARIO: Learn module entry navigates to Learn | EXPECTED: Tapping 'Learn' opens Learn module
+- tapOn: "Learn"
+- waitForAnimationToEnd
+
+# SCENARIO: Learn module loads without crash | EXPECTED: No error overlay appears after entering Learn
+- assertNotVisible: "Something went wrong"
+
+# SCENARIO: No crash dialog visible on Learn load | EXPECTED: App crash overlay not present
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Learn module heading is visible | EXPECTED: 'Learn' label present in module header or screen
+- assertVisible: "Learn"
+
+# SCENARIO: Learn screen is scrollable downward | EXPECTED: Swipe up scrolls content without crash
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# SCENARIO: No error after scrolling Learn screen | EXPECTED: Crash and error overlays absent after scroll
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Learn screen scrolls back toward top | EXPECTED: Swipe down returns content upward without crash
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+
+# SCENARIO: Learn heading still visible after scroll cycle | EXPECTED: 'Learn' label present after swipe down
+- assertVisible: "Learn"
+
+# SCENARIO: Pull to refresh on Learn screen | EXPECTED: Second swipe down triggers refresh without crash
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertNotVisible: "Something went wrong"
+
+# SCENARIO: Learn screen recovers cleanly after pull to refresh | EXPECTED: 'Learn' heading still visible
+- assertVisible: "Learn"
+
+# SCENARIO: Additional scroll down on Learn screen | EXPECTED: Further swipe up reveals more content without crash
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Scroll back to top of Learn screen | EXPECTED: Swipe down brings Learn heading back into view
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "Learn"
+
+# SCENARIO: Back navigation exits Learn module | EXPECTED: Pressing Back returns to home screen
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "Explore OMRE Modules"
+
+# SCENARIO: Home screen stable after leaving Learn | EXPECTED: No error or crash overlay on home screen
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Learn module re-entry via module switcher | EXPECTED: Learn reopens without crash on second visit
+- tapOn: "View all"
+- waitForAnimationToEnd
+- assertVisible: "Switch to Module"
+- tapOn: "Learn"
+- waitForAnimationToEnd
+
+# SCENARIO: Learn stable on second visit | EXPECTED: No crash overlay and Learn heading visible
+- assertNotVisible: "Something went wrong"
+- assertVisible: "Learn"
+
+# SCENARIO: Learn screen scrollable on second visit | EXPECTED: Swipe up on second visit works without crash
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Back from Learn on second visit returns to home | EXPECTED: 'Explore OMRE Modules' visible after second Back press
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "Explore OMRE Modules"

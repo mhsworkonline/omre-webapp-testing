@@ -1,0 +1,38 @@
+[
+  {
+    "name": "android_home_feed",
+    "file": "flows\\social\\android_home_feed.yaml",
+    "debugDir": "C:\\Users\\manis\\.maestro\\tests\\2026-06-17_210326",
+    "status": "PASSED"
+  },
+  {
+    "name": "android_create_post",
+    "file": "flows\\social\\android_create_post.yaml",
+    "debugDir": "C:\\Users\\manis\\.maestro\\tests\\2026-06-17_190322",
+    "status": "PASSED"
+  },
+  {
+    "name": "android_profile",
+    "file": "flows\\profile\\android_profile.yaml",
+    "debugDir": "C:\\Users\\manis\\.maestro\\tests\\2026-06-17_205308",
+    "status": "PASSED"
+  },
+  {
+    "name": "android_chat_messages",
+    "file": "flows\\messages\\android_chat_messages.yaml",
+    "debugDir": "C:\\Users\\manis\\.maestro\\tests\\2026-06-17_212646",
+    "status": "PASSED"
+  },
+  {
+    "name": "android_inbox",
+    "file": "flows\\inbox\\android_inbox.yaml",
+    "debugDir": "C:\\Users\\manis\\.maestro\\tests\\2026-06-17_213934",
+    "status": "PASSED"
+  },
+  {
+    "name": "android_explore",
+    "file": "flows\\social\\android_explore.yaml",
+    "debugDir": "C:\\Users\\manis\\.maestro\\tests\\2026-06-17_222225",
+    "status": "PASSED"
+  }
+]

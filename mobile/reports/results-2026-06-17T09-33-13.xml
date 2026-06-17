@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="OMRE Mobile (Android)" tests="8" failures="8" time="0.000">
+  <testsuite name="home_feed" tests="1" failures="1" time="0.000">
+    <testcase name="home_feed" time="0.000">
+      <failure message="Flow failed with no step detail"/>
+    </testcase>
+  </testsuite>
+  <testsuite name="create_post" tests="1" failures="1" time="0.000">
+    <testcase name="create_post" time="0.000">
+      <failure message="Flow failed with no step detail"/>
+    </testcase>
+  </testsuite>
+  <testsuite name="profile" tests="1" failures="1" time="0.000">
+    <testcase name="profile" time="0.000">
+      <failure message="Flow failed with no step detail"/>
+    </testcase>
+  </testsuite>
+  <testsuite name="inbox" tests="1" failures="1" time="0.000">
+    <testcase name="inbox" time="0.000">
+      <failure message="Flow failed with no step detail"/>
+    </testcase>
+  </testsuite>
+  <testsuite name="chat_messages" tests="1" failures="1" time="0.000">
+    <testcase name="chat_messages" time="0.000">
+      <failure message="Flow failed with no step detail"/>
+    </testcase>
+  </testsuite>
+  <testsuite name="orbit_feed" tests="1" failures="1" time="0.000">
+    <testcase name="orbit_feed" time="0.000">
+      <failure message="Flow failed with no step detail"/>
+    </testcase>
+  </testsuite>
+  <testsuite name="biz_module" tests="1" failures="1" time="0.000">
+    <testcase name="biz_module" time="0.000">
+      <failure message="Flow failed with no step detail"/>
+    </testcase>
+  </testsuite>
+  <testsuite name="link_jobs" tests="1" failures="1" time="0.000">
+    <testcase name="link_jobs" time="0.000">
+      <failure message="Flow failed with no step detail"/>
+    </testcase>
+  </testsuite>
+</testsuites>

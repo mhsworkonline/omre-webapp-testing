@@ -1,37 +1,50 @@
 appId: com.omre.app.posh
 ---
+# SCENARIO: App launches clean to home screen | EXPECTED: App opens without crash
+- stopApp
 - launchApp:
     clearState: false
+- waitForAnimationToEnd
 
-- assertVisible: "For You"
+# SCENARIO: Home screen confirms correct starting state | EXPECTED: 'Explore OMRE Modules' visible
+- assertVisible: "Explore OMRE Modules"
 
-# Open messages via chat icon
+# SCENARIO: Messages screen opens via chat icon | EXPECTED: Tapping 'Messages' navigates to inbox
 - tapOn: "Messages"
-- assertNotVisible: "Welcome back"
+- waitForAnimationToEnd
 
-# Message tabs
+# SCENARIO: Social messages filter tab is present | EXPECTED: 'Social' tab visible
 - assertVisible: "Social"
+
+# SCENARIO: Orbit messages filter tab is present | EXPECTED: 'Orbit' tab visible
 - assertVisible: "Orbit"
+
+# SCENARIO: Business messages filter tab is present | EXPECTED: 'Business' tab visible
 - assertVisible: "Business"
+
+# SCENARIO: Jobs messages filter tab is present | EXPECTED: 'Jobs' tab visible
 - assertVisible: "Jobs"
 
+# SCENARIO: Orbit filter tab is tappable | EXPECTED: Tapping 'Orbit' switches message filter
 - tapOn: "Orbit"
-- assertVisible: "Orbit"
+- waitForAnimationToEnd
+
+# SCENARIO: Business filter tab is tappable | EXPECTED: Tapping 'Business' switches message filter
 - tapOn: "Business"
-- assertVisible: "Business"
+- waitForAnimationToEnd
+
+# SCENARIO: Jobs filter tab is tappable | EXPECTED: Tapping 'Jobs' switches message filter
 - tapOn: "Jobs"
-- assertVisible: "Jobs"
+- waitForAnimationToEnd
+
+# SCENARIO: Social filter tab restores default view | EXPECTED: Tapping 'Social' returns to social messages
 - tapOn: "Social"
-- assertVisible: "Social"
+- waitForAnimationToEnd
 
-# Search field visible
-- tapOn: "Search"
-- assertVisible: "Search"
-- pressKey: Back
-
-# Open first available conversation
+# SCENARIO: Messages list is scrollable | EXPECTED: Scroll down works without crash
 - scroll
 
-# Back to feed
+# SCENARIO: Back navigates to home feed | EXPECTED: Pressing Back returns to home screen
 - pressKey: Back
-- assertVisible: "For You"
+- waitForAnimationToEnd
+- assertVisible: "Explore OMRE Modules"

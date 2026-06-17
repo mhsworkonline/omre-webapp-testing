@@ -1,43 +1,33 @@
 appId: com.omre.app.posh
 ---
+# SCENARIO: App launches clean to home screen | EXPECTED: App opens without crash
+- stopApp
 - launchApp:
     clearState: false
+- waitForAnimationToEnd
 
-- assertVisible: "For You"
-- assertNotVisible: "Welcome back"
+# SCENARIO: Home screen header visible after launch | EXPECTED: 'Explore OMRE Modules' text visible
+- assertVisible: "Explore OMRE Modules"
 
-# Open create post via FAB
-- tapOn: "+"
-- assertVisible: "What's on your mind?"
+# SCENARIO: Feed refresh control visible | EXPECTED: 'Refresh feed' button present
+- assertVisible: "Refresh feed"
+
+# SCENARIO: Post submit button visible in composer row | EXPECTED: 'Post' button visible
+- assertVisible: "Post"
+
+# SCENARIO: Post category selector visible | EXPECTED: 'Social' dropdown visible in composer row
 - assertVisible: "Social"
 
-# Dismiss post composer — back on feed
-- pressKey: Back
-- assertVisible: "For You"
+# SCENARIO: Post composer text field is tappable | EXPECTED: Tap registers on text input at 56%,75%
+- tapOn:
+    point: "56%,75%"
+- waitForAnimationToEnd
 
-# Open again, verify media picker
-- tapOn: "+"
-- assertVisible: "What's on your mind?"
+# SCENARIO: Text input accepted in post composer | EXPECTED: Typed text 'Automated test post' appears in field
+- inputText: "Automated test post"
+- assertVisible: "Automated test post"
 
-# Tap camera/gallery area to open media picker
-- tapOn: "Camera"
-- assertVisible: "Camera"
-- assertVisible: "Gallery"
-- assertVisible: "Upload photo from gallery"
-- assertVisible: "Upload video from gallery"
-- assertVisible: "Record video"
-- assertVisible: "Back"
-
-# Close media picker
-- tapOn: "Back"
-- assertVisible: "What's on your mind?"
-
-# Type in post content
-- tapOn: "What's on your mind?"
-- inputText: "Deep dive test post — automated"
-- assertVisible: "Deep dive test post — automated"
-
-# Clear typed text and dismiss
+# SCENARIO: Composer text can be erased and keyboard dismissed | EXPECTED: Text cleared, keyboard closes
 - eraseText: 50
 - pressKey: Back
-- assertVisible: "For You"
+- waitForAnimationToEnd

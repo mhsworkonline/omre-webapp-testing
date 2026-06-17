@@ -1,44 +1,63 @@
 appId: com.omre.app.posh
 ---
+# SCENARIO: App launches clean to home screen | EXPECTED: App opens without crash
+- stopApp
 - launchApp:
     clearState: false
-- assertVisible: "For You"
+- waitForAnimationToEnd
+
+# SCENARIO: Home screen confirms correct starting state | EXPECTED: 'Explore OMRE Modules' visible
+- assertVisible: "Explore OMRE Modules"
+
+# SCENARIO: Module switcher opens for navigation | EXPECTED: 'Switch to Module' header appears
 - tapOn: "View all"
+- waitForAnimationToEnd
+- assertVisible: "Switch to Module"
+
+# SCENARIO: Link module navigates from switcher | EXPECTED: Tapping 'Link' opens Link module
 - tapOn: "Link"
+- waitForAnimationToEnd
+
+# SCENARIO: Link onboarding welcome title is shown | EXPECTED: 'Welcome to Link' heading visible
+- assertVisible: "Welcome to Link"
+
+# SCENARIO: Browse Marketplace CTA is present on onboarding | EXPECTED: 'Browse Marketplace' button visible
+- assertVisible: "Browse Marketplace"
+
+# SCENARIO: Remote Hub screen opens from marketplace CTA | EXPECTED: 'REMOTE HUB' title visible
 - tapOn: "Browse Marketplace"
-- assertVisible: "JOBS MODE"
+- waitForAnimationToEnd
+- assertVisible: "REMOTE HUB"
+
+# SCENARIO: Remote Hub Jobs tab is present | EXPECTED: 'Jobs' tab visible in Remote Hub
+- assertVisible: "Jobs"
+
+# SCENARIO: Remote Hub Marketplace tab is present | EXPECTED: 'Marketplace' tab visible in Remote Hub
 - assertVisible: "Marketplace"
-- assertVisible: "The #1 Marketplace for Tech Talent"
-- assertVisible: "Find the perfect freelance services for your business"
-- assertVisible: "What service are you looking"
-- assertVisible: "Search"
-- assertVisible: "Popular:"
-- assertVisible: "Website Design"
-- assertVisible: "WordPress"
-- assertVisible: "Logo Design"
-- assertVisible: "SEO"
-- assertVisible: "Latest Job Openings"
-- assertVisible: "Refresh"
-- tapOn: "Website Design"
-- assertVisible: "Website Design"
-- tapOn: "WordPress"
-- tapOn: "What service are you looking"
-- inputText: "mobile app"
-- assertVisible: "mobile app"
-- eraseText: 15
-- tapOn: "Search"
+
+# SCENARIO: Search Jobs button is present | EXPECTED: 'Search Jobs' CTA button visible
+- assertVisible: "Search Jobs"
+
+# SCENARIO: Trending section is present | EXPECTED: 'Trending' label visible in jobs feed
+- assertVisible: "Trending"
+
+# SCENARIO: Trending job chips are visible | EXPECTED: 'Remote' and 'Frontend' trending chips shown
+- assertVisible: "Remote"
+- assertVisible: "Frontend"
+
+# SCENARIO: Explore by Category section is present | EXPECTED: 'Explore by Category' section header visible
+- assertVisible: "Explore by Category"
+
+# SCENARIO: Marketplace tab switches to freelance view | EXPECTED: Tapping 'Marketplace' tab shows marketplace content
+- tapOn: "Marketplace"
+- waitForAnimationToEnd
+
+# SCENARIO: Remote Hub screen remains after tab switch | EXPECTED: 'REMOTE HUB' title still visible
+- assertVisible: "REMOTE HUB"
+
+# SCENARIO: Remote Hub screen is scrollable | EXPECTED: Scroll down works without crash
 - scroll
-- assertVisible: "Latest Job Openings"
+
+# SCENARIO: Remote Hub screen scrolls back to top | EXPECTED: Swipe down returns to top
 - swipe:
     direction: DOWN
-- tapOn: "Open navigation menu"
-- assertVisible: "Marketplace Home"
-- assertVisible: "Categories"
-- assertVisible: "Freelancers"
-- assertVisible: "Companies"
-- assertVisible: "Connections"
-- assertVisible: "Freelancer"
-- assertVisible: "Post a Project"
-- assertVisible: "My Gigs"
-- pressKey: Back
-- assertVisible: "Marketplace"

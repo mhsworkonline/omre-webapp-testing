@@ -2,7 +2,7 @@
 ## SEARCH FILTER /biz/digital
 
 {
-  "beforeCount": 37,
+  "beforeCount": 48,
   "afterCount": 3,
   "url": "https://omre.ai/biz/digital"
 }
@@ -166,19 +166,19 @@ $0.00
 
 Top Selling Products
 1.
-QA Test Product 1781615345579
+QA Physical Product 1781638665432
 0 sold
 2.
-QA Test Product 1781615185903
+QA Test Product 1781638609625
 0 sold
 3.
-QA Test Product 1781615072239
+QA Physical Product 1781636686385
 0 sold
 4.
-QA Test Product 1781612207041
+QA Test Product 1781636631097
 0 sold
 5.
-QA Test Product 1781611736230
+QA Physical Product 1781634138500
 0 sold
 
 ## STORE SETTINGS PAGE
@@ -191,8 +191,8 @@ QA Test Product 1781611736230
 ## PHYSICAL PRODUCTS LISTING
 
 {
-  "textSnippet": "SOCIAL\nNEWS\nVIDEO\nCHAT\nBIZ\nLINK\nLEARN\nSTUDIO\nORBIT\nGAMES\nMART\nMEETINGS\nWALLET\nToggle theme\n\nBROWSE\n\nBiz Hub\nBrowse Physical\nCart\n1\nSell Physical Products\n\nMANAGE\n\nDigital Products\nPhysical Products\nOrders\nOffers & Discounts\n\nBiz Seller Dashboard\n\nManage products, orders, and store.\n\nGO TO DASHBOARD\nPhysical Products\n0\n\nTangible goods, inventory and shipping.\n\nSell physical products\nNo physical products yet\n\nBe the first to list tangible goods, inventory and shipped items on OmreMart.\n\nSell physical products",
-  "productLinkCount": 0
+  "textSnippet": "SOCIAL\nNEWS\nVIDEO\nCHAT\nBIZ\nLINK\nLEARN\nSTUDIO\nORBIT\nGAMES\nMART\nMEETINGS\nWALLET\nToggle theme\n\nBROWSE\n\nBiz Hub\nBrowse Physical\nCart\n1\nSell Physical Products\n\nMANAGE\n\nDigital Products\nPhysical Products\nOrders\nOffers & Discounts\n\nBiz Seller Dashboard\n\nManage products, orders, and store.\n\nGO TO DASHBOARD\nPhysical Products\n12\n\nTangible goods, inventory and shipping.\n\nSell physical products\n12\nresults\nNewest\nQA Physical Product 1781638665432\n$19.99\nIndia\nSeller\nView details\nQA Physical Product 1781636686385\n$19.99\nIndia\nSeller\nView details\nQA Physical Product 1781634138500\n$19.99\nIndia\nSeller\nView details\nQA Physical Product 1781632098965\n$19.99\nIndia\nSeller\nView details\nQA Physical Product 1781629983916\n$19.99\nIndia\nSeller\nView details\nQA Physical Product 1781629362709\n$19.99\nIndia\nSeller\nView de",
+  "productLinkCount": 24
 }
 
 ## OFFERS & DISCOUNTS section
@@ -261,30 +261,30 @@ TOTAL SALES
 ORDERS
 $0.00
 AVG ORDER VALUE
-6
+30
 ACTIVE PRODUCTS
-6
+30
 PRODUCTS
 My Products
 Products you have listed (digital & physical)
 Add Digital
 Add Physical
 
-QA Test Product 1781615345579
+QA Physical Product 1781638665432
+
+$19.99 • Electronics
+
+Edit
+View
+
+QA Test Product 1781638609625
 
 $9.99 • Software
 
 Edit
 View
 
-QA Test Product 1781615185903
-
-$9.99 • Software
-
-Edit
-View
-
-QA Test Product 17816
+QA Physical
 
 ## WEBSITE BUILDER page
 

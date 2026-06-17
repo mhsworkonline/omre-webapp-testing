@@ -1,0 +1,2844 @@
+{
+  "runDate": "2026-06-17T09-55-50",
+  "platform": "Android",
+  "app": "com.omre.app.posh",
+  "totalFlows": 8,
+  "passed": 8,
+  "failed": 0,
+  "flows": [
+    {
+      "name": "home_feed",
+      "status": "PASSED",
+      "stepsPassed": 31,
+      "stepsFailed": 0,
+      "failedStep": null,
+      "durationMs": 91583,
+      "scenarios": [
+        {
+          "name": "App launches clean without crash",
+          "expected": "App opens to home screen without error",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "✓ stopApp",
+            "✓ Launch app \"com.omre.app.posh\"",
+            "✓ Wait for animation"
+          ]
+        },
+        {
+          "name": "Home feed header section is visible",
+          "expected": "'Explore OMRE Modules' text appears",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Explore OMRE Modules\""
+          ]
+        },
+        {
+          "name": "Module switcher entry point is present",
+          "expected": "'View all' button visible on home screen",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"View all\""
+          ]
+        },
+        {
+          "name": "Social module tab visible in home row",
+          "expected": "'Social' label visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Social\""
+          ]
+        },
+        {
+          "name": "Chat module tab visible in home row",
+          "expected": "'Chat' label visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Chat\""
+          ]
+        },
+        {
+          "name": "Biz module tab visible in home row",
+          "expected": "'Biz' label visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Biz\""
+          ]
+        },
+        {
+          "name": "Learn module tab visible in home row",
+          "expected": "'Learn' label visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Learn\""
+          ]
+        },
+        {
+          "name": "Feed refresh button is present",
+          "expected": "'Refresh feed' button visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Refresh feed\""
+          ]
+        },
+        {
+          "name": "Module switcher opens on tap",
+          "expected": "'Switch to Module' header appears",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "✓ Tap on \"View all\"",
+            "✓ Wait for animation",
+            "✓ Assert visible: \"Switch to Module\""
+          ]
+        },
+        {
+          "name": "Module switcher shows Social",
+          "expected": "'Social' visible in switcher list",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Social\""
+          ]
+        },
+        {
+          "name": "Module switcher shows Chat",
+          "expected": "'Chat' visible in switcher list",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Chat\""
+          ]
+        },
+        {
+          "name": "Module switcher shows Biz",
+          "expected": "'Biz' visible in switcher list",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Biz\""
+          ]
+        },
+        {
+          "name": "Module switcher shows Link",
+          "expected": "'Link' visible in switcher list",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Link\""
+          ]
+        },
+        {
+          "name": "Module switcher shows Learn",
+          "expected": "'Learn' visible in switcher list",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Learn\""
+          ]
+        },
+        {
+          "name": "Module switcher shows Studio",
+          "expected": "'Studio' visible in switcher list",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Studio\""
+          ]
+        },
+        {
+          "name": "Module switcher shows News",
+          "expected": "'News' visible in switcher list",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"News\""
+          ]
+        },
+        {
+          "name": "Module switcher shows Video",
+          "expected": "'Video' visible in switcher list",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Video\""
+          ]
+        },
+        {
+          "name": "Module switcher shows Orbit",
+          "expected": "'Orbit' visible in switcher list",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Orbit\""
+          ]
+        },
+        {
+          "name": "Module switcher shows Games",
+          "expected": "'Games' visible in switcher list",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Games\""
+          ]
+        },
+        {
+          "name": "Module switcher shows Meeting",
+          "expected": "'Meeting' visible in switcher list",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Meeting\""
+          ]
+        },
+        {
+          "name": "Module switcher shows Mart",
+          "expected": "'Mart' visible in switcher list",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Mart\""
+          ]
+        },
+        {
+          "name": "Module switcher closes on Back",
+          "expected": "Returns to home feed without crash",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "✓ Press key: BACK",
+            "✓ Wait for animation"
+          ]
+        },
+        {
+          "name": "Home feed is scrollable",
+          "expected": "Feed scrolls down revealing content below",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "✓ Scroll",
+            "✓ Scroll"
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "name": "Set up test variables",
+          "status": "COMPLETED",
+          "duration": 11,
+          "seq": 0,
+          "error": null,
+          "synthetic": true
+        },
+        {
+          "name": "Apply flow configuration",
+          "status": "COMPLETED",
+          "duration": 4,
+          "seq": 1,
+          "error": null,
+          "synthetic": true
+        },
+        {
+          "name": "stopApp",
+          "status": "COMPLETED",
+          "duration": 357,
+          "seq": 2,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Launch app \"com.omre.app.posh\"",
+          "status": "COMPLETED",
+          "duration": 4392,
+          "seq": 3,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 20095,
+          "seq": 4,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Explore OMRE Modules\"",
+          "status": "COMPLETED",
+          "duration": 12981,
+          "seq": 5,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"View all\"",
+          "status": "COMPLETED",
+          "duration": 6222,
+          "seq": 6,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Social\"",
+          "status": "COMPLETED",
+          "duration": 2010,
+          "seq": 7,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Chat\"",
+          "status": "COMPLETED",
+          "duration": 772,
+          "seq": 8,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Biz\"",
+          "status": "COMPLETED",
+          "duration": 2102,
+          "seq": 9,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Learn\"",
+          "status": "COMPLETED",
+          "duration": 3257,
+          "seq": 10,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Refresh feed\"",
+          "status": "COMPLETED",
+          "duration": 2702,
+          "seq": 11,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"View all\"",
+          "status": "COMPLETED",
+          "duration": 7252,
+          "seq": 12,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 3274,
+          "seq": 13,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Switch to Module\"",
+          "status": "COMPLETED",
+          "duration": 885,
+          "seq": 14,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Social\"",
+          "status": "COMPLETED",
+          "duration": 1727,
+          "seq": 15,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Chat\"",
+          "status": "COMPLETED",
+          "duration": 2814,
+          "seq": 16,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Biz\"",
+          "status": "COMPLETED",
+          "duration": 1091,
+          "seq": 17,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Link\"",
+          "status": "COMPLETED",
+          "duration": 680,
+          "seq": 18,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Learn\"",
+          "status": "COMPLETED",
+          "duration": 375,
+          "seq": 19,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Studio\"",
+          "status": "COMPLETED",
+          "duration": 414,
+          "seq": 20,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"News\"",
+          "status": "COMPLETED",
+          "duration": 2360,
+          "seq": 21,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Video\"",
+          "status": "COMPLETED",
+          "duration": 1058,
+          "seq": 22,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Orbit\"",
+          "status": "COMPLETED",
+          "duration": 869,
+          "seq": 23,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Games\"",
+          "status": "COMPLETED",
+          "duration": 1046,
+          "seq": 24,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Meeting\"",
+          "status": "COMPLETED",
+          "duration": 1113,
+          "seq": 25,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Mart\"",
+          "status": "COMPLETED",
+          "duration": 548,
+          "seq": 26,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Press key: BACK",
+          "status": "COMPLETED",
+          "duration": 2396,
+          "seq": 27,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 3678,
+          "seq": 28,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Scroll",
+          "status": "COMPLETED",
+          "duration": 2144,
+          "seq": 29,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Scroll",
+          "status": "COMPLETED",
+          "duration": 2954,
+          "seq": 30,
+          "error": null,
+          "synthetic": false
+        }
+      ]
+    },
+    {
+      "name": "create_post",
+      "status": "PASSED",
+      "stepsPassed": 16,
+      "stepsFailed": 0,
+      "failedStep": null,
+      "durationMs": 161644,
+      "scenarios": [
+        {
+          "name": "App launches clean to home screen",
+          "expected": "App opens without crash",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "✓ stopApp",
+            "✓ Launch app \"com.omre.app.posh\"",
+            "✓ Wait for animation"
+          ]
+        },
+        {
+          "name": "Home screen header visible after launch",
+          "expected": "'Explore OMRE Modules' text visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Explore OMRE Modules\""
+          ]
+        },
+        {
+          "name": "Feed refresh control visible",
+          "expected": "'Refresh feed' button present",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Refresh feed\""
+          ]
+        },
+        {
+          "name": "Post submit button visible in composer row",
+          "expected": "'Post' button visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Post\""
+          ]
+        },
+        {
+          "name": "Post category selector visible",
+          "expected": "'Social' dropdown visible in composer row",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Social\""
+          ]
+        },
+        {
+          "name": "Post composer text field is tappable",
+          "expected": "Tap registers on text input at 56%,75%",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "✓ tapOnPointV2",
+            "✓ Wait for animation"
+          ]
+        },
+        {
+          "name": "Text input accepted in post composer",
+          "expected": "Typed text 'Automated test post' appears in field",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "✓ Input text: \"Automated test post\"",
+            "✓ Assert visible: \"Automated test post\""
+          ]
+        },
+        {
+          "name": "Composer text can be erased and keyboard dismissed",
+          "expected": "Text cleared, keyboard closes",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "✓ Erase 50 characters",
+            "✓ Press key: BACK",
+            "✓ Wait for animation"
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "name": "Set up test variables",
+          "status": "COMPLETED",
+          "duration": 14,
+          "seq": 0,
+          "error": null,
+          "synthetic": true
+        },
+        {
+          "name": "Apply flow configuration",
+          "status": "COMPLETED",
+          "duration": 3,
+          "seq": 1,
+          "error": null,
+          "synthetic": true
+        },
+        {
+          "name": "stopApp",
+          "status": "COMPLETED",
+          "duration": 1046,
+          "seq": 2,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Launch app \"com.omre.app.posh\"",
+          "status": "COMPLETED",
+          "duration": 6808,
+          "seq": 3,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 16775,
+          "seq": 4,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Explore OMRE Modules\"",
+          "status": "COMPLETED",
+          "duration": 22202,
+          "seq": 5,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Refresh feed\"",
+          "status": "COMPLETED",
+          "duration": 2470,
+          "seq": 6,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Post\"",
+          "status": "COMPLETED",
+          "duration": 1095,
+          "seq": 7,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Social\"",
+          "status": "COMPLETED",
+          "duration": 2224,
+          "seq": 8,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 14155,
+          "seq": 9,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 9091,
+          "seq": 10,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Input text: \"Automated test post\"",
+          "status": "COMPLETED",
+          "duration": 18560,
+          "seq": 11,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Automated test post\"",
+          "status": "COMPLETED",
+          "duration": 2215,
+          "seq": 12,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Erase 50 characters",
+          "status": "COMPLETED",
+          "duration": 42181,
+          "seq": 13,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Press key: BACK",
+          "status": "COMPLETED",
+          "duration": 4523,
+          "seq": 14,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 18282,
+          "seq": 15,
+          "error": null,
+          "synthetic": false
+        }
+      ]
+    },
+    {
+      "name": "profile",
+      "status": "PASSED",
+      "stepsPassed": 25,
+      "stepsFailed": 0,
+      "failedStep": null,
+      "durationMs": 114946,
+      "scenarios": [
+        {
+          "name": "App launches clean to home screen",
+          "expected": "App opens without crash",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "✓ stopApp",
+            "✓ Launch app \"com.omre.app.posh\"",
+            "✓ Wait for animation"
+          ]
+        },
+        {
+          "name": "Home screen confirms correct starting state",
+          "expected": "'Explore OMRE Modules' visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Explore OMRE Modules\""
+          ]
+        },
+        {
+          "name": "Navigation drawer opens via hamburger",
+          "expected": "Drawer slides open on coordinate tap",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "✓ tapOnPointV2",
+            "✓ Wait for animation"
+          ]
+        },
+        {
+          "name": "Profile page navigates from drawer",
+          "expected": "Tapping 'Profile' opens profile screen",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "✓ Tap on \"Profile\"",
+            "✓ Wait for animation"
+          ]
+        },
+        {
+          "name": "Profile username is displayed",
+          "expected": "'wilacok854' visible on profile header",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"wilacok854\""
+          ]
+        },
+        {
+          "name": "Profile handle is displayed",
+          "expected": "'@wilacok' handle visible below username",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"@wilacok\""
+          ]
+        },
+        {
+          "name": "Profile creator badge is displayed",
+          "expected": "'CREATOR' badge visible on profile",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"CREATOR\""
+          ]
+        },
+        {
+          "name": "Edit profile button is present",
+          "expected": "'Edit profile' button visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Edit profile\""
+          ]
+        },
+        {
+          "name": "Share profile button is present",
+          "expected": "'Share' button visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Share\""
+          ]
+        },
+        {
+          "name": "Highlights section header is visible",
+          "expected": "'Highlights' label visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Highlights\""
+          ]
+        },
+        {
+          "name": "Archive button is present",
+          "expected": "'Archive' button visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Archive\""
+          ]
+        },
+        {
+          "name": "Orbit tab switches profile view",
+          "expected": "Tab 2 of 10 tapped without crash",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "✓ Tap on \"Orbit\nTab 2 of 10\"",
+            "✓ Wait for animation"
+          ]
+        },
+        {
+          "name": "Reposts tab switches profile view",
+          "expected": "Tab 3 of 10 tapped without crash",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "✓ Tap on \"Reposts\nTab 3 of 10\"",
+            "✓ Wait for animation"
+          ]
+        },
+        {
+          "name": "Videos tab switches profile view",
+          "expected": "Tab 4 of 10 tapped without crash",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "✓ Tap on \"Videos\nTab 4 of 10\"",
+            "✓ Wait for animation"
+          ]
+        },
+        {
+          "name": "Posts tab returns to default view",
+          "expected": "Tab 1 of 10 tapped, returns to Posts",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "✓ Tap on \"Posts\nTab 1 of 10\"",
+            "✓ Wait for animation"
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "name": "Set up test variables",
+          "status": "COMPLETED",
+          "duration": 15,
+          "seq": 0,
+          "error": null,
+          "synthetic": true
+        },
+        {
+          "name": "Apply flow configuration",
+          "status": "COMPLETED",
+          "duration": 5,
+          "seq": 1,
+          "error": null,
+          "synthetic": true
+        },
+        {
+          "name": "stopApp",
+          "status": "COMPLETED",
+          "duration": 457,
+          "seq": 2,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Launch app \"com.omre.app.posh\"",
+          "status": "COMPLETED",
+          "duration": 5250,
+          "seq": 3,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 15989,
+          "seq": 4,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Explore OMRE Modules\"",
+          "status": "COMPLETED",
+          "duration": 18378,
+          "seq": 5,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 13748,
+          "seq": 6,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 4875,
+          "seq": 7,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"Profile\"",
+          "status": "COMPLETED",
+          "duration": 6485,
+          "seq": 8,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 3454,
+          "seq": 9,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"wilacok854\"",
+          "status": "COMPLETED",
+          "duration": 469,
+          "seq": 10,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"@wilacok\"",
+          "status": "COMPLETED",
+          "duration": 711,
+          "seq": 11,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"CREATOR\"",
+          "status": "COMPLETED",
+          "duration": 1489,
+          "seq": 12,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Edit profile\"",
+          "status": "COMPLETED",
+          "duration": 186,
+          "seq": 13,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Share\"",
+          "status": "COMPLETED",
+          "duration": 343,
+          "seq": 14,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Highlights\"",
+          "status": "COMPLETED",
+          "duration": 3256,
+          "seq": 15,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Archive\"",
+          "status": "COMPLETED",
+          "duration": 1376,
+          "seq": 16,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"Orbit\nTab 2 of 10\"",
+          "status": "COMPLETED",
+          "duration": 5179,
+          "seq": 17,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 4160,
+          "seq": 18,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"Reposts\nTab 3 of 10\"",
+          "status": "COMPLETED",
+          "duration": 8419,
+          "seq": 19,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 3111,
+          "seq": 20,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"Videos\nTab 4 of 10\"",
+          "status": "COMPLETED",
+          "duration": 6380,
+          "seq": 21,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 2592,
+          "seq": 22,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"Posts\nTab 1 of 10\"",
+          "status": "COMPLETED",
+          "duration": 6011,
+          "seq": 23,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 2608,
+          "seq": 24,
+          "error": null,
+          "synthetic": false
+        }
+      ]
+    },
+    {
+      "name": "inbox",
+      "status": "PASSED",
+      "stepsPassed": 28,
+      "stepsFailed": 0,
+      "failedStep": null,
+      "durationMs": 125521,
+      "scenarios": [
+        {
+          "name": "App launches clean to home screen",
+          "expected": "App opens without crash",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "✓ stopApp",
+            "✓ Launch app \"com.omre.app.posh\"",
+            "✓ Wait for animation"
+          ]
+        },
+        {
+          "name": "Home screen confirms correct starting state",
+          "expected": "'Explore OMRE Modules' visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Explore OMRE Modules\""
+          ]
+        },
+        {
+          "name": "Notifications screen opens via bell icon",
+          "expected": "Tapping 'Notifications' navigates to inbox",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "✓ Tap on \"Notifications\"",
+            "✓ Wait for animation"
+          ]
+        },
+        {
+          "name": "Bulk action 'Mark all as read' is available",
+          "expected": "Button visible in notifications header",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Mark all as read\""
+          ]
+        },
+        {
+          "name": "Bulk action 'Clear all' is available",
+          "expected": "Button visible in notifications header",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Clear all\""
+          ]
+        },
+        {
+          "name": "All notifications filter tab is present",
+          "expected": "'All' tab visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"All\""
+          ]
+        },
+        {
+          "name": "Social notifications filter tab is present",
+          "expected": "'Social' tab visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Social\""
+          ]
+        },
+        {
+          "name": "Messages notifications filter tab is present",
+          "expected": "'Messages' tab visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Messages\""
+          ]
+        },
+        {
+          "name": "Business notifications filter tab is present",
+          "expected": "'Business' tab visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Business\""
+          ]
+        },
+        {
+          "name": "Social filter tab is tappable",
+          "expected": "Tapping 'Social' tab switches filter",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "✓ Tap on \"Social\"",
+            "✓ Wait for animation"
+          ]
+        },
+        {
+          "name": "Messages filter tab is tappable",
+          "expected": "Tapping 'Messages' tab switches filter",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "✓ Tap on \"Messages\"",
+            "✓ Wait for animation"
+          ]
+        },
+        {
+          "name": "Business filter tab is tappable",
+          "expected": "Tapping 'Business' tab switches filter",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "✓ Tap on \"Business\"",
+            "✓ Wait for animation"
+          ]
+        },
+        {
+          "name": "All filter tab restores full list",
+          "expected": "Tapping 'All' shows all notifications",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "✓ Tap on \"All\"",
+            "✓ Wait for animation"
+          ]
+        },
+        {
+          "name": "Notifications list is scrollable",
+          "expected": "Scroll down works without crash",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Scroll"
+          ]
+        },
+        {
+          "name": "Notifications list scrolls back to top",
+          "expected": "Swipe down returns to top",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Swipe DOWN"
+          ]
+        },
+        {
+          "name": "Mark all as read still visible after scroll",
+          "expected": "Header control remains accessible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Mark all as read\""
+          ]
+        },
+        {
+          "name": "Back navigates to home feed",
+          "expected": "Pressing Back returns to home screen",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "✓ Press key: BACK",
+            "✓ Wait for animation",
+            "✓ Assert visible: \"Explore OMRE Modules\""
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "name": "Set up test variables",
+          "status": "COMPLETED",
+          "duration": 12,
+          "seq": 0,
+          "error": null,
+          "synthetic": true
+        },
+        {
+          "name": "Apply flow configuration",
+          "status": "COMPLETED",
+          "duration": 4,
+          "seq": 1,
+          "error": null,
+          "synthetic": true
+        },
+        {
+          "name": "stopApp",
+          "status": "COMPLETED",
+          "duration": 508,
+          "seq": 2,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Launch app \"com.omre.app.posh\"",
+          "status": "COMPLETED",
+          "duration": 4822,
+          "seq": 3,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 20706,
+          "seq": 4,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Explore OMRE Modules\"",
+          "status": "COMPLETED",
+          "duration": 22425,
+          "seq": 5,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"Notifications\"",
+          "status": "COMPLETED",
+          "duration": 8610,
+          "seq": 6,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 2321,
+          "seq": 7,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Mark all as read\"",
+          "status": "COMPLETED",
+          "duration": 192,
+          "seq": 8,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Clear all\"",
+          "status": "COMPLETED",
+          "duration": 941,
+          "seq": 9,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"All\"",
+          "status": "COMPLETED",
+          "duration": 840,
+          "seq": 10,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Social\"",
+          "status": "COMPLETED",
+          "duration": 598,
+          "seq": 11,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Messages\"",
+          "status": "COMPLETED",
+          "duration": 467,
+          "seq": 12,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Business\"",
+          "status": "COMPLETED",
+          "duration": 647,
+          "seq": 13,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"Social\"",
+          "status": "COMPLETED",
+          "duration": 4142,
+          "seq": 14,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 2331,
+          "seq": 15,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"Messages\"",
+          "status": "COMPLETED",
+          "duration": 3360,
+          "seq": 16,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 6362,
+          "seq": 17,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"Business\"",
+          "status": "COMPLETED",
+          "duration": 4510,
+          "seq": 18,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 6378,
+          "seq": 19,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"All\"",
+          "status": "COMPLETED",
+          "duration": 10543,
+          "seq": 20,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 3091,
+          "seq": 21,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Scroll",
+          "status": "COMPLETED",
+          "duration": 4433,
+          "seq": 22,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Swipe DOWN",
+          "status": "COMPLETED",
+          "duration": 1954,
+          "seq": 23,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Mark all as read\"",
+          "status": "COMPLETED",
+          "duration": 403,
+          "seq": 24,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Press key: BACK",
+          "status": "COMPLETED",
+          "duration": 6717,
+          "seq": 25,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 6008,
+          "seq": 26,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Explore OMRE Modules\"",
+          "status": "COMPLETED",
+          "duration": 2196,
+          "seq": 27,
+          "error": null,
+          "synthetic": false
+        }
+      ]
+    },
+    {
+      "name": "chat_messages",
+      "status": "PASSED",
+      "stepsPassed": 24,
+      "stepsFailed": 0,
+      "failedStep": null,
+      "durationMs": 166749,
+      "scenarios": [
+        {
+          "name": "App launches clean to home screen",
+          "expected": "App opens without crash",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "✓ stopApp",
+            "✓ Launch app \"com.omre.app.posh\"",
+            "✓ Wait for animation"
+          ]
+        },
+        {
+          "name": "Home screen confirms correct starting state",
+          "expected": "'Explore OMRE Modules' visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Explore OMRE Modules\""
+          ]
+        },
+        {
+          "name": "Messages screen opens via chat icon",
+          "expected": "Tapping 'Messages' navigates to inbox",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "✓ Tap on \"Messages\"",
+            "✓ Wait for animation"
+          ]
+        },
+        {
+          "name": "Social messages filter tab is present",
+          "expected": "'Social' tab visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Social\""
+          ]
+        },
+        {
+          "name": "Orbit messages filter tab is present",
+          "expected": "'Orbit' tab visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Orbit\""
+          ]
+        },
+        {
+          "name": "Business messages filter tab is present",
+          "expected": "'Business' tab visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Business\""
+          ]
+        },
+        {
+          "name": "Jobs messages filter tab is present",
+          "expected": "'Jobs' tab visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Jobs\""
+          ]
+        },
+        {
+          "name": "Orbit filter tab is tappable",
+          "expected": "Tapping 'Orbit' switches message filter",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "✓ Tap on \"Orbit\"",
+            "✓ Wait for animation"
+          ]
+        },
+        {
+          "name": "Business filter tab is tappable",
+          "expected": "Tapping 'Business' switches message filter",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "✓ Tap on \"Business\"",
+            "✓ Wait for animation"
+          ]
+        },
+        {
+          "name": "Jobs filter tab is tappable",
+          "expected": "Tapping 'Jobs' switches message filter",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "✓ Tap on \"Jobs\"",
+            "✓ Wait for animation"
+          ]
+        },
+        {
+          "name": "Social filter tab restores default view",
+          "expected": "Tapping 'Social' returns to social messages",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "✓ Tap on \"Social\"",
+            "✓ Wait for animation"
+          ]
+        },
+        {
+          "name": "Messages list is scrollable",
+          "expected": "Scroll down works without crash",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Scroll"
+          ]
+        },
+        {
+          "name": "Back navigates to home feed",
+          "expected": "Pressing Back returns to home screen",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "✓ Press key: BACK",
+            "✓ Wait for animation",
+            "✓ Assert visible: \"Explore OMRE Modules\""
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "name": "Set up test variables",
+          "status": "COMPLETED",
+          "duration": 20,
+          "seq": 0,
+          "error": null,
+          "synthetic": true
+        },
+        {
+          "name": "Apply flow configuration",
+          "status": "COMPLETED",
+          "duration": 6,
+          "seq": 1,
+          "error": null,
+          "synthetic": true
+        },
+        {
+          "name": "stopApp",
+          "status": "COMPLETED",
+          "duration": 657,
+          "seq": 2,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Launch app \"com.omre.app.posh\"",
+          "status": "COMPLETED",
+          "duration": 5106,
+          "seq": 3,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 15841,
+          "seq": 4,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Explore OMRE Modules\"",
+          "status": "COMPLETED",
+          "duration": 26598,
+          "seq": 5,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"Messages\"",
+          "status": "COMPLETED",
+          "duration": 27438,
+          "seq": 6,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 2896,
+          "seq": 7,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Social\"",
+          "status": "COMPLETED",
+          "duration": 581,
+          "seq": 8,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Orbit\"",
+          "status": "COMPLETED",
+          "duration": 533,
+          "seq": 9,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Business\"",
+          "status": "COMPLETED",
+          "duration": 334,
+          "seq": 10,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Jobs\"",
+          "status": "COMPLETED",
+          "duration": 399,
+          "seq": 11,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"Orbit\"",
+          "status": "COMPLETED",
+          "duration": 4774,
+          "seq": 12,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1608,
+          "seq": 13,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"Business\"",
+          "status": "COMPLETED",
+          "duration": 4691,
+          "seq": 14,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1545,
+          "seq": 15,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"Jobs\"",
+          "status": "COMPLETED",
+          "duration": 4266,
+          "seq": 16,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1057,
+          "seq": 17,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"Social\"",
+          "status": "COMPLETED",
+          "duration": 2782,
+          "seq": 18,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 2899,
+          "seq": 19,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Scroll",
+          "status": "COMPLETED",
+          "duration": 815,
+          "seq": 20,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Press key: BACK",
+          "status": "COMPLETED",
+          "duration": 55518,
+          "seq": 21,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 4916,
+          "seq": 22,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Explore OMRE Modules\"",
+          "status": "COMPLETED",
+          "duration": 1469,
+          "seq": 23,
+          "error": null,
+          "synthetic": false
+        }
+      ]
+    },
+    {
+      "name": "orbit_feed",
+      "status": "PASSED",
+      "stepsPassed": 22,
+      "stepsFailed": 0,
+      "failedStep": null,
+      "durationMs": 114247,
+      "scenarios": [
+        {
+          "name": "App launches clean to home screen",
+          "expected": "App opens without crash",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "✓ stopApp",
+            "✓ Launch app \"com.omre.app.posh\"",
+            "✓ Wait for animation"
+          ]
+        },
+        {
+          "name": "Home screen confirms correct starting state",
+          "expected": "'Explore OMRE Modules' visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Explore OMRE Modules\""
+          ]
+        },
+        {
+          "name": "Module switcher opens for navigation",
+          "expected": "'Switch to Module' header appears",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "✓ Tap on \"View all\"",
+            "✓ Wait for animation"
+          ]
+        },
+        {
+          "name": "Orbit module entry navigates to Orbit",
+          "expected": "Tapping 'Orbit' opens Orbit module",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "✓ Tap on \"Orbit\"",
+            "✓ Wait for animation"
+          ]
+        },
+        {
+          "name": "Orbit onboarding title is shown",
+          "expected": "'Welcome to Orbit' visible on first-run screen",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Welcome to Orbit\""
+          ]
+        },
+        {
+          "name": "Orbit onboarding subtitle is shown",
+          "expected": "'Your social feed, amplified' tagline visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Your social feed, amplified\""
+          ]
+        },
+        {
+          "name": "Orbit onboarding CTA is present",
+          "expected": "'Go to Feed' button visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Go to Feed\""
+          ]
+        },
+        {
+          "name": "Go to Feed navigates to Orbit feed",
+          "expected": "Tapping CTA opens Orbit feed screen",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "✓ Tap on \"Go to Feed\"",
+            "✓ Wait for animation"
+          ]
+        },
+        {
+          "name": "Orbit feed 'For You' tab is present",
+          "expected": "'For You' tab visible in Orbit feed",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"For You\""
+          ]
+        },
+        {
+          "name": "Orbit feed 'Following' tab is present",
+          "expected": "'Following' tab visible in Orbit feed",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Following\""
+          ]
+        },
+        {
+          "name": "Following tab is tappable",
+          "expected": "Tapping 'Following' switches to following feed",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "✓ Tap on \"Following\"",
+            "✓ Wait for animation"
+          ]
+        },
+        {
+          "name": "For You tab restores default view",
+          "expected": "Tapping 'For You' returns to discovery feed",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "✓ Tap on \"For You\"",
+            "✓ Wait for animation"
+          ]
+        },
+        {
+          "name": "Orbit feed is scrollable",
+          "expected": "Scroll down works without crash",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Scroll"
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "name": "Set up test variables",
+          "status": "COMPLETED",
+          "duration": 18,
+          "seq": 0,
+          "error": null,
+          "synthetic": true
+        },
+        {
+          "name": "Apply flow configuration",
+          "status": "COMPLETED",
+          "duration": 7,
+          "seq": 1,
+          "error": null,
+          "synthetic": true
+        },
+        {
+          "name": "stopApp",
+          "status": "COMPLETED",
+          "duration": 506,
+          "seq": 2,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Launch app \"com.omre.app.posh\"",
+          "status": "COMPLETED",
+          "duration": 6020,
+          "seq": 3,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 15490,
+          "seq": 4,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Explore OMRE Modules\"",
+          "status": "COMPLETED",
+          "duration": 15470,
+          "seq": 5,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"View all\"",
+          "status": "COMPLETED",
+          "duration": 29075,
+          "seq": 6,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 5420,
+          "seq": 7,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"Orbit\"",
+          "status": "COMPLETED",
+          "duration": 17012,
+          "seq": 8,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 2966,
+          "seq": 9,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Welcome to Orbit\"",
+          "status": "COMPLETED",
+          "duration": 380,
+          "seq": 10,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Your social feed, amplified\"",
+          "status": "COMPLETED",
+          "duration": 252,
+          "seq": 11,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Go to Feed\"",
+          "status": "COMPLETED",
+          "duration": 347,
+          "seq": 12,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"Go to Feed\"",
+          "status": "COMPLETED",
+          "duration": 5062,
+          "seq": 13,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 2976,
+          "seq": 14,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"For You\"",
+          "status": "COMPLETED",
+          "duration": 496,
+          "seq": 15,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Following\"",
+          "status": "COMPLETED",
+          "duration": 222,
+          "seq": 16,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"Following\"",
+          "status": "COMPLETED",
+          "duration": 3744,
+          "seq": 17,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 2306,
+          "seq": 18,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"For You\"",
+          "status": "COMPLETED",
+          "duration": 2795,
+          "seq": 19,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1844,
+          "seq": 20,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Scroll",
+          "status": "COMPLETED",
+          "duration": 1839,
+          "seq": 21,
+          "error": null,
+          "synthetic": false
+        }
+      ]
+    },
+    {
+      "name": "biz_module",
+      "status": "PASSED",
+      "stepsPassed": 22,
+      "stepsFailed": 0,
+      "failedStep": null,
+      "durationMs": 117619,
+      "scenarios": [
+        {
+          "name": "App launches clean to home screen",
+          "expected": "App opens without crash",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "✓ stopApp",
+            "✓ Launch app \"com.omre.app.posh\"",
+            "✓ Wait for animation"
+          ]
+        },
+        {
+          "name": "Home screen confirms correct starting state",
+          "expected": "'Explore OMRE Modules' visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Explore OMRE Modules\""
+          ]
+        },
+        {
+          "name": "Module switcher opens for navigation",
+          "expected": "'Switch to Module' header appears",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "✓ Tap on \"View all\"",
+            "✓ Wait for animation",
+            "✓ Assert visible: \"Switch to Module\""
+          ]
+        },
+        {
+          "name": "Biz module navigates from switcher",
+          "expected": "Tapping Biz (index 1) opens Biz module",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "✓ Tap on \"Biz\"",
+            "✓ Wait for animation"
+          ]
+        },
+        {
+          "name": "Biz welcome screen title is displayed",
+          "expected": "'Welcome to Biz' heading visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Welcome to Biz\""
+          ]
+        },
+        {
+          "name": "Biz Store feature card is present",
+          "expected": "'Store' feature card visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Store\""
+          ]
+        },
+        {
+          "name": "Biz Ads feature card is present",
+          "expected": "'Ads' feature card visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Ads\""
+          ]
+        },
+        {
+          "name": "Biz inventory management feature is described",
+          "expected": "'Manage inventory' text visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Manage inventory\""
+          ]
+        },
+        {
+          "name": "Biz customer reach feature is described",
+          "expected": "'Reach customers' text visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Reach customers\""
+          ]
+        },
+        {
+          "name": "Continue to web CTA is present",
+          "expected": "'Continue to Omre Web' button visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Continue to Omre Web\""
+          ]
+        },
+        {
+          "name": "Biz screen is scrollable downward",
+          "expected": "Scroll down works without crash",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Scroll"
+          ]
+        },
+        {
+          "name": "Biz screen scrolls back to top",
+          "expected": "Swipe down returns to top of screen",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Swipe DOWN"
+          ]
+        },
+        {
+          "name": "Key elements remain visible after scroll",
+          "expected": "'Welcome to Biz', 'Store', 'Ads' still visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "✓ Assert visible: \"Welcome to Biz\"",
+            "✓ Assert visible: \"Store\"",
+            "✓ Assert visible: \"Ads\""
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "name": "Set up test variables",
+          "status": "COMPLETED",
+          "duration": 9,
+          "seq": 0,
+          "error": null,
+          "synthetic": true
+        },
+        {
+          "name": "Apply flow configuration",
+          "status": "COMPLETED",
+          "duration": 3,
+          "seq": 1,
+          "error": null,
+          "synthetic": true
+        },
+        {
+          "name": "stopApp",
+          "status": "COMPLETED",
+          "duration": 351,
+          "seq": 2,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Launch app \"com.omre.app.posh\"",
+          "status": "COMPLETED",
+          "duration": 6151,
+          "seq": 3,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 16279,
+          "seq": 4,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Explore OMRE Modules\"",
+          "status": "COMPLETED",
+          "duration": 25194,
+          "seq": 5,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"View all\"",
+          "status": "COMPLETED",
+          "duration": 25443,
+          "seq": 6,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 7737,
+          "seq": 7,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Switch to Module\"",
+          "status": "COMPLETED",
+          "duration": 1305,
+          "seq": 8,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"Biz\"",
+          "status": "COMPLETED",
+          "duration": 25476,
+          "seq": 9,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 3111,
+          "seq": 10,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Welcome to Biz\"",
+          "status": "COMPLETED",
+          "duration": 698,
+          "seq": 11,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Store\"",
+          "status": "COMPLETED",
+          "duration": 436,
+          "seq": 12,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Ads\"",
+          "status": "COMPLETED",
+          "duration": 518,
+          "seq": 13,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Manage inventory\"",
+          "status": "COMPLETED",
+          "duration": 700,
+          "seq": 14,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Reach customers\"",
+          "status": "COMPLETED",
+          "duration": 274,
+          "seq": 15,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Continue to Omre Web\"",
+          "status": "COMPLETED",
+          "duration": 387,
+          "seq": 16,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Scroll",
+          "status": "COMPLETED",
+          "duration": 1548,
+          "seq": 17,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Swipe DOWN",
+          "status": "COMPLETED",
+          "duration": 1203,
+          "seq": 18,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Welcome to Biz\"",
+          "status": "COMPLETED",
+          "duration": 263,
+          "seq": 19,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Store\"",
+          "status": "COMPLETED",
+          "duration": 293,
+          "seq": 20,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Ads\"",
+          "status": "COMPLETED",
+          "duration": 240,
+          "seq": 21,
+          "error": null,
+          "synthetic": false
+        }
+      ]
+    },
+    {
+      "name": "link_jobs",
+      "status": "PASSED",
+      "stepsPassed": 22,
+      "stepsFailed": 0,
+      "failedStep": null,
+      "durationMs": 117870,
+      "scenarios": [
+        {
+          "name": "App launches clean to home screen",
+          "expected": "App opens without crash",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "✓ stopApp",
+            "✓ Launch app \"com.omre.app.posh\"",
+            "✓ Wait for animation"
+          ]
+        },
+        {
+          "name": "Home screen confirms correct starting state",
+          "expected": "'Explore OMRE Modules' visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Explore OMRE Modules\""
+          ]
+        },
+        {
+          "name": "Module switcher opens for navigation",
+          "expected": "'Switch to Module' header appears",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "✓ Tap on \"View all\"",
+            "✓ Wait for animation",
+            "✓ Assert visible: \"Switch to Module\""
+          ]
+        },
+        {
+          "name": "Link module navigates from switcher",
+          "expected": "Tapping 'Link' opens Link module",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "✓ Tap on \"Link\"",
+            "✓ Wait for animation"
+          ]
+        },
+        {
+          "name": "Link onboarding welcome title is shown",
+          "expected": "'Welcome to Link' heading visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Welcome to Link\""
+          ]
+        },
+        {
+          "name": "Explore Jobs CTA is present on onboarding",
+          "expected": "'Explore Jobs' button visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Explore Jobs\""
+          ]
+        },
+        {
+          "name": "Browse Marketplace CTA is present on onboarding",
+          "expected": "'Browse Marketplace' button visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Browse Marketplace\""
+          ]
+        },
+        {
+          "name": "Explore Jobs navigates to jobs section",
+          "expected": "Tapping CTA opens jobs screen",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "✓ Tap on \"Explore Jobs\"",
+            "✓ Wait for animation"
+          ]
+        },
+        {
+          "name": "Job Search navigation item is accessible",
+          "expected": "'Job Search' entry visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Job Search\""
+          ]
+        },
+        {
+          "name": "Saved Jobs navigation item is accessible",
+          "expected": "'Saved Jobs' entry visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Saved Jobs\""
+          ]
+        },
+        {
+          "name": "Job Alerts navigation item is accessible",
+          "expected": "'Job Alerts' entry visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Job Alerts\""
+          ]
+        },
+        {
+          "name": "Company Pages navigation item is accessible",
+          "expected": "'Company Pages' entry visible",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Assert visible: \"Company Pages\""
+          ]
+        },
+        {
+          "name": "Jobs screen is scrollable",
+          "expected": "Scroll down works without crash",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Scroll"
+          ]
+        },
+        {
+          "name": "Jobs screen scrolls back to top",
+          "expected": "Swipe down returns to top",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "✓ Swipe DOWN"
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "name": "Set up test variables",
+          "status": "COMPLETED",
+          "duration": 13,
+          "seq": 0,
+          "error": null,
+          "synthetic": true
+        },
+        {
+          "name": "Apply flow configuration",
+          "status": "COMPLETED",
+          "duration": 5,
+          "seq": 1,
+          "error": null,
+          "synthetic": true
+        },
+        {
+          "name": "stopApp",
+          "status": "COMPLETED",
+          "duration": 156,
+          "seq": 2,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Launch app \"com.omre.app.posh\"",
+          "status": "COMPLETED",
+          "duration": 4977,
+          "seq": 3,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 15204,
+          "seq": 4,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Explore OMRE Modules\"",
+          "status": "COMPLETED",
+          "duration": 24101,
+          "seq": 5,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"View all\"",
+          "status": "COMPLETED",
+          "duration": 25237,
+          "seq": 6,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 5984,
+          "seq": 7,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Switch to Module\"",
+          "status": "COMPLETED",
+          "duration": 3207,
+          "seq": 8,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"Link\"",
+          "status": "COMPLETED",
+          "duration": 21729,
+          "seq": 9,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 2487,
+          "seq": 10,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Welcome to Link\"",
+          "status": "COMPLETED",
+          "duration": 393,
+          "seq": 11,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Explore Jobs\"",
+          "status": "COMPLETED",
+          "duration": 692,
+          "seq": 12,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Browse Marketplace\"",
+          "status": "COMPLETED",
+          "duration": 795,
+          "seq": 13,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"Explore Jobs\"",
+          "status": "COMPLETED",
+          "duration": 5312,
+          "seq": 14,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1629,
+          "seq": 15,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Job Search\"",
+          "status": "COMPLETED",
+          "duration": 181,
+          "seq": 16,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Saved Jobs\"",
+          "status": "COMPLETED",
+          "duration": 289,
+          "seq": 17,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Job Alerts\"",
+          "status": "COMPLETED",
+          "duration": 265,
+          "seq": 18,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Company Pages\"",
+          "status": "COMPLETED",
+          "duration": 232,
+          "seq": 19,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Scroll",
+          "status": "COMPLETED",
+          "duration": 4018,
+          "seq": 20,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Swipe DOWN",
+          "status": "COMPLETED",
+          "duration": 964,
+          "seq": 21,
+          "error": null,
+          "synthetic": false
+        }
+      ]
+    }
+  ]
+}

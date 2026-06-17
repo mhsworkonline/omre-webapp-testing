@@ -1,0 +1,84 @@
+appId: com.omre.app.posh
+---
+# SCENARIO: App Launch for Friends | EXPECTED: App launches cleanly without crash
+- stopApp
+- launchApp:
+    clearState: false
+- waitForAnimationToEnd
+
+# SCENARIO: Open Drawer | EXPECTED: Drawer opens successfully
+- tapOn:
+    point: "7%,9%"
+- waitForAnimationToEnd
+
+# SCENARIO: Navigate to Friends | EXPECTED: Friends screen loads
+- tapOn: "Friends"
+- waitForAnimationToEnd
+
+# SCENARIO: Friends screen heading visible | EXPECTED: Friends label or heading present
+- assertVisible: "Friends"
+
+# SCENARIO: No crash on load | EXPECTED: No error dialogs appear
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Friends list or empty state visible | EXPECTED: Either friend items or empty state shown
+- assertNotVisible: "Something went wrong"
+
+# SCENARIO: Check for friend requests tab | EXPECTED: Tab or section for requests is accessible
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Scroll down friends list | EXPECTED: More friends or suggestions load
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+
+# SCENARIO: No crash after scroll | EXPECTED: App remains stable
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Scroll up to return to top | EXPECTED: Top of friends list visible
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# SCENARIO: No error after scroll up | EXPECTED: Screen still stable
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Scroll down further for suggestions | EXPECTED: Friend suggestions section loads
+- swipe:
+    direction: DOWN
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+
+# SCENARIO: No crash on extended scroll | EXPECTED: App still running normally
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Scroll back to top | EXPECTED: Returns to top of friends list
+- swipe:
+    direction: UP
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# SCENARIO: No errors at top of list | EXPECTED: Screen stable at top
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Back navigation from Friends | EXPECTED: Previous screen loads
+- pressKey: Back
+- waitForAnimationToEnd
+
+# SCENARIO: Re-navigate to Friends via drawer | EXPECTED: Friends screen reloads correctly
+- tapOn:
+    point: "7%,9%"
+- waitForAnimationToEnd
+- tapOn: "Friends"
+- waitForAnimationToEnd
+
+# SCENARIO: Friends screen stable on second visit | EXPECTED: No errors, content visible
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"

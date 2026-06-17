@@ -1,0 +1,9 @@
+﻿appId: com.omre.app.posh
+---
+- stopApp
+- launchApp:
+    clearState: false
+- waitForAnimationToEnd
+- tapOn:
+    point: "7%,9%"
+- waitForAnimationToEnd

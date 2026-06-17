@@ -1,0 +1,167 @@
+appId: com.omre.app.posh
+---
+# SCENARIO: App launches clean to home screen | EXPECTED: App opens without crash
+- stopApp
+- launchApp:
+    clearState: false
+- waitForAnimationToEnd
+
+# SCENARIO: Home screen confirms correct starting state | EXPECTED: 'Explore OMRE Modules' visible
+- assertVisible: "Explore OMRE Modules"
+
+# SCENARIO: Module switcher entry point is present | EXPECTED: 'View all' button visible on home screen
+- assertVisible: "View all"
+
+# SCENARIO: Module switcher opens for navigation | EXPECTED: 'Switch to Module' header appears
+- tapOn: "View all"
+- waitForAnimationToEnd
+- assertVisible: "Switch to Module"
+
+# SCENARIO: Video module is listed in module switcher | EXPECTED: 'Video' option visible in switcher list
+- assertVisible: "Video"
+
+# SCENARIO: Video module entry navigates to Video | EXPECTED: Tapping 'Video' opens Video module
+- tapOn: "Video"
+- waitForAnimationToEnd
+
+# SCENARIO: Video module loads without crash | EXPECTED: No error overlay appears after entering Video
+- assertNotVisible: "Something went wrong"
+
+# SCENARIO: Video module has no crash dialog | EXPECTED: 'Unfortunately' crash dialog not present
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Home Feed tab is present in Video | EXPECTED: 'Home Feed' tab visible
+- assertVisible: "Home Feed"
+
+# SCENARIO: Library tab is present in Video | EXPECTED: 'Library' tab visible
+- assertVisible: "Library"
+
+# SCENARIO: Movies and Shows tab is present in Video | EXPECTED: 'Movies & Shows' tab visible
+- assertVisible: "Movies & Shows"
+
+# SCENARIO: Subscriptions tab is present in Video | EXPECTED: 'Subscriptions' tab visible
+- assertVisible: "Subscriptions"
+
+# SCENARIO: Home Feed tab is tappable and activates | EXPECTED: Tapping 'Home Feed' selects that tab without crash
+- tapOn: "Home Feed"
+- waitForAnimationToEnd
+- assertVisible: "Home Feed"
+
+# SCENARIO: Home Feed content loads without error | EXPECTED: No error overlay on Home Feed tab
+- assertNotVisible: "Something went wrong"
+
+# SCENARIO: Home Feed is scrollable downward | EXPECTED: Scroll down works without crash
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# SCENARIO: Home Feed scrolls further down | EXPECTED: Second scroll continues without crash
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# SCENARIO: Home Feed scrolls back to top | EXPECTED: Swipe down returns toward top of feed
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "Home Feed"
+
+# SCENARIO: Pull to refresh on Home Feed | EXPECTED: Feed refreshes without crash and tab still visible
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "Home Feed"
+
+# SCENARIO: Library tab switches view | EXPECTED: Tapping 'Library' loads library content without crash
+- tapOn: "Library"
+- waitForAnimationToEnd
+- assertVisible: "Library"
+
+# SCENARIO: Library content loads without error | EXPECTED: No error overlay on Library tab
+- assertNotVisible: "Something went wrong"
+
+# SCENARIO: Library is scrollable | EXPECTED: Scroll down on Library tab works without crash
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# SCENARIO: Library scrolls back to top | EXPECTED: Swipe down restores top of Library
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "Library"
+
+# SCENARIO: Movies and Shows tab switches view | EXPECTED: Tapping 'Movies & Shows' loads that content without crash
+- tapOn: "Movies & Shows"
+- waitForAnimationToEnd
+- assertVisible: "Movies & Shows"
+
+# SCENARIO: Movies and Shows content loads without error | EXPECTED: No error overlay on Movies and Shows tab
+- assertNotVisible: "Something went wrong"
+
+# SCENARIO: Movies and Shows is scrollable | EXPECTED: Scroll down on Movies and Shows tab works without crash
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# SCENARIO: Movies and Shows scrolls back to top | EXPECTED: Swipe down restores top of Movies and Shows
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "Movies & Shows"
+
+# SCENARIO: Subscriptions tab switches view | EXPECTED: Tapping 'Subscriptions' loads subscriptions content without crash
+- tapOn: "Subscriptions"
+- waitForAnimationToEnd
+- assertVisible: "Subscriptions"
+
+# SCENARIO: Subscriptions content loads without error | EXPECTED: No error overlay on Subscriptions tab
+- assertNotVisible: "Something went wrong"
+
+# SCENARIO: Subscriptions is scrollable | EXPECTED: Scroll down on Subscriptions tab works without crash
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# SCENARIO: Subscriptions scrolls back to top | EXPECTED: Swipe down restores top of Subscriptions
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "Subscriptions"
+
+# SCENARIO: Return to Home Feed after tab exploration | EXPECTED: Home Feed tab still tappable and loads content
+- tapOn: "Home Feed"
+- waitForAnimationToEnd
+- assertVisible: "Home Feed"
+
+# SCENARIO: No error state visible after tab cycling | EXPECTED: 'Something went wrong' not present
+- assertNotVisible: "Something went wrong"
+
+# SCENARIO: No crash dialog visible after tab cycling | EXPECTED: App crash overlay not present
+- assertNotVisible: "Unfortunately"
+
+# SCENARIO: Back navigation returns to home from Video | EXPECTED: Pressing Back exits Video and home screen loads
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "Explore OMRE Modules"
+
+# SCENARIO: Module switcher re-opens for second entry | EXPECTED: 'View all' still accessible and switcher opens
+- tapOn: "View all"
+- waitForAnimationToEnd
+- assertVisible: "Switch to Module"
+
+# SCENARIO: Video re-entry via module switcher | EXPECTED: Tapping 'Video' again opens Video module without crash
+- tapOn: "Video"
+- waitForAnimationToEnd
+- assertNotVisible: "Something went wrong"
+
+# SCENARIO: Video tabs still present on second visit | EXPECTED: Home Feed, Library, Movies and Shows, Subscriptions all visible
+- assertVisible: "Home Feed"
+- assertVisible: "Library"
+- assertVisible: "Movies & Shows"
+- assertVisible: "Subscriptions"
+
+# SCENARIO: Back from Video on second visit returns to home | EXPECTED: Home screen loads cleanly after second Video visit
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "Explore OMRE Modules"
