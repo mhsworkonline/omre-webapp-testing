@@ -383,14 +383,14 @@ async function writeExcel(flows, outDir, ts) {
   ws1.views = [{ state: 'frozen', ySplit: 4 }];
 
   // Title block
-  ws1.mergeCells('A1:F1');
+  ws1.mergeCells('A1:H1');
   ws1.getCell('A1').value = 'OMRE Mobile Test Report — Android';
   ws1.getCell('A1').font = { bold: true, size: 14, color: { argb: 'FFFFFFFF' } };
   ws1.getCell('A1').fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF1A1A2E' } };
   ws1.getCell('A1').alignment = { horizontal: 'center', vertical: 'middle' };
   ws1.getRow(1).height = 32;
 
-  ws1.mergeCells('A2:F2');
+  ws1.mergeCells('A2:H2');
   ws1.getCell('A2').value = `Run: ${ts}   |   Total: ${flows.length}   |   Passed: ${passed}   |   Failed: ${failed}   |   App: com.omre.app.posh`;
   ws1.getCell('A2').font = { size: 11, color: { argb: 'FFFFFFFF' } };
   ws1.getCell('A2').fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF16213E' } };
@@ -405,51 +405,70 @@ async function writeExcel(flows, outDir, ts) {
   const HDR_FILL  = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF1A1A2E' } };
   const HDR_FONT  = { bold: true, color: { argb: 'FFFFFFFF' }, size: 11 };
 
-  const headers = ['Flow Name', 'Status', 'Steps Passed', 'Steps Failed', 'Failed Step', 'Duration (s)'];
-  const widths  = [30, 12, 14, 14, 45, 14];
+  const headers = ['S.No.', 'Flow Name', 'Status', 'Steps Passed', 'Steps Failed', 'Failed Step', 'Duration (s)', 'Remarks'];
+  const widths  = [8, 30, 12, 14, 14, 45, 14, 55];
   const hdrRow = ws1.addRow(headers);
   hdrRow.eachCell(c => { c.fill = HDR_FILL; c.font = HDR_FONT; c.alignment = { horizontal: 'center', vertical: 'middle' }; });
   hdrRow.height = 22;
   widths.forEach((w, i) => { ws1.getColumn(i + 1).width = w; });
 
   // Data rows
-  for (const f of flows) {
+  for (const [i, f] of flows.entries()) {
+    const failedStepObj = f.steps.find(s => s.status === 'FAILED');
+    const remarks = f.status === 'FAILED'
+      ? `Failed at: "${f.failedStep}"${failedStepObj?.error ? ' — ' + failedStepObj.error : ''}`
+      : '';
     const row = ws1.addRow([
+      i + 1,
       f.name,
       f.status,
       f.stepsPassed,
       f.stepsFailed,
       f.failedStep || '—',
-      (f.durationMs / 1000).toFixed(2)
+      (f.durationMs / 1000).toFixed(2),
+      remarks
     ]);
-    const statusCell = row.getCell(2);
+    row.getCell(1).alignment = { horizontal: 'center' };
+    const statusCell = row.getCell(3);
     statusCell.fill = f.status === 'PASSED' ? PASS_FILL : FAIL_FILL;
     statusCell.font = { bold: true, color: { argb: f.status === 'PASSED' ? 'FF166534' : 'FF991B1B' } };
     statusCell.alignment = { horizontal: 'center' };
-    row.getCell(3).alignment = { horizontal: 'center' };
     row.getCell(4).alignment = { horizontal: 'center' };
-    row.getCell(6).alignment = { horizontal: 'center' };
-    row.height = 18;
+    row.getCell(5).alignment = { horizontal: 'center' };
+    row.getCell(7).alignment = { horizontal: 'center' };
+    if (remarks) {
+      row.getCell(8).fill = FAIL_FILL;
+      row.getCell(8).font = { color: { argb: 'FF991B1B' } };
+      row.getCell(8).alignment = { wrapText: true, vertical: 'top' };
+    }
+    row.height = remarks ? Math.max(18, Math.ceil(remarks.length / 50) * 16) : 18;
   }
 
   // ── Sheet 2: Scenarios (non-technical view) ───────────────────────────────
   const wsS = wb.addWorksheet('Scenarios');
   wsS.views = [{ state: 'frozen', ySplit: 1 }];
 
-  const hdrsS = ['Flow', 'Test Case / Scenario', 'Expected Result', 'Actions Performed', 'Actual Result', 'Status'];
-  const wdsS  = [22, 42, 48, 55, 40, 12];
+  const hdrsS = ['S.No.', 'Flow', 'Test Case / Scenario', 'Expected Result', 'Actions Performed', 'Actual Result', 'Status', 'Remarks'];
+  const wdsS  = [8, 22, 42, 48, 55, 40, 12, 55];
   const hRowS = wsS.addRow(hdrsS);
   hRowS.eachCell(c => { c.fill = HDR_FILL; c.font = HDR_FONT; c.alignment = { horizontal: 'center' }; });
   hRowS.height = 22;
   wdsS.forEach((w, i) => { wsS.getColumn(i + 1).width = w; });
 
+  let snoS = 1;
   for (const f of flows) {
     for (const sc of (f.scenarios || [])) {
       const actions = (sc.steps || []).join('\n');
-      const row = wsS.addRow([f.name, sc.name, sc.expected, actions, sc.actual, sc.status]);
-      row.getCell(6).fill = sc.status === 'PASSED' ? PASS_FILL : FAIL_FILL;
-      row.getCell(6).font = { bold: true, color: { argb: sc.status === 'PASSED' ? 'FF166534' : 'FF991B1B' } };
-      row.getCell(6).alignment = { horizontal: 'center' };
+      const scRemarks = sc.status === 'FAILED' ? sc.actual : '';
+      const row = wsS.addRow([snoS++, f.name, sc.name, sc.expected, actions, sc.actual, sc.status, scRemarks]);
+      row.getCell(1).alignment = { horizontal: 'center', vertical: 'top' };
+      row.getCell(7).fill = sc.status === 'PASSED' ? PASS_FILL : FAIL_FILL;
+      row.getCell(7).font = { bold: true, color: { argb: sc.status === 'PASSED' ? 'FF166534' : 'FF991B1B' } };
+      row.getCell(7).alignment = { horizontal: 'center' };
+      if (scRemarks) {
+        row.getCell(8).fill = FAIL_FILL;
+        row.getCell(8).font = { color: { argb: 'FF991B1B' } };
+      }
       row.eachCell(c => { c.alignment = { ...(c.alignment || {}), wrapText: true, vertical: 'top' }; });
       // Auto height based on step count
       const lineCount = (sc.steps || []).length || 1;
@@ -461,26 +480,34 @@ async function writeExcel(flows, outDir, ts) {
   const ws2 = wb.addWorksheet('Step Detail');
   ws2.views = [{ state: 'frozen', ySplit: 1 }];
 
-  const hdrs2 = ['Flow', 'Step #', 'Step Name', 'Status', 'Duration (ms)'];
-  const wds2  = [25, 8, 60, 12, 14];
+  const hdrs2 = ['S.No.', 'Flow', 'Step #', 'Step Name', 'Status', 'Duration (ms)', 'Remarks'];
+  const wds2  = [8, 25, 8, 60, 12, 14, 55];
   const hRow2 = ws2.addRow(hdrs2);
   hRow2.eachCell(c => { c.fill = HDR_FILL; c.font = HDR_FONT; c.alignment = { horizontal: 'center' }; });
   hRow2.height = 22;
   wds2.forEach((w, i) => { ws2.getColumn(i + 1).width = w; });
 
+  let sno2 = 1;
   for (const f of flows) {
     for (const step of f.steps) {
-      const row = ws2.addRow([f.name, step.seq, step.name, step.status, step.duration]);
+      const stepRemarks = step.status === 'FAILED' && step.error ? step.error : '';
+      const row = ws2.addRow([sno2++, f.name, step.seq, step.name, step.status, step.duration, stepRemarks]);
+      row.getCell(1).alignment = { horizontal: 'center' };
       if (step.status === 'COMPLETED') {
-        row.getCell(4).fill = PASS_FILL;
-        row.getCell(4).font = { color: { argb: 'FF166534' } };
+        row.getCell(5).fill = PASS_FILL;
+        row.getCell(5).font = { color: { argb: 'FF166534' } };
       } else if (step.status === 'FAILED') {
-        row.getCell(4).fill = FAIL_FILL;
-        row.getCell(4).font = { bold: true, color: { argb: 'FF991B1B' } };
+        row.getCell(5).fill = FAIL_FILL;
+        row.getCell(5).font = { bold: true, color: { argb: 'FF991B1B' } };
+        if (stepRemarks) {
+          row.getCell(7).fill = FAIL_FILL;
+          row.getCell(7).font = { color: { argb: 'FF991B1B' } };
+          row.getCell(7).alignment = { wrapText: true, vertical: 'top' };
+        }
       }
-      row.getCell(2).alignment = { horizontal: 'center' };
-      row.getCell(4).alignment = { horizontal: 'center' };
-      row.getCell(5).alignment = { horizontal: 'right' };
+      row.getCell(3).alignment = { horizontal: 'center' };
+      row.getCell(5).alignment = { horizontal: 'center' };
+      row.getCell(6).alignment = { horizontal: 'right' };
     }
   }
 
