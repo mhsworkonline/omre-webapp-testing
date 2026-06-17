@@ -34,7 +34,7 @@ appId: com.omre.app.posh
 - assertVisible: "Games"
 - assertVisible: "Meeting"
 - assertVisible: "Mart"
-- pressKey: Back
+- tapOn: "Social"
 
 - assertVisible: "For You"
 
