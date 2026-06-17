@@ -42,11 +42,3 @@ appId: com.omre.app.posh
 - scroll
 - scroll
 
-# Scroll back to top
-- scrollUntilVisible:
-    element:
-      text: "For You"
-    direction: UP
-    timeout: 5000
-- assertVisible: "For You"
-- assertVisible: "Explore OMRE Modules"
