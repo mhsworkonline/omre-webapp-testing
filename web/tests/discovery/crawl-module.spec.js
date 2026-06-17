@@ -6,8 +6,8 @@ test.setTimeout(600_000);
 
 const BASE = 'https://omre.ai';
 const MODULE = process.env.CRAWL_MODULE;
-const START_PATHS = process.env.CRAWL_START.split(',');
-const SCOPE_PREFIXES = process.env.CRAWL_SCOPE.split(',');
+const START_PATHS = process.env.CRAWL_START ? process.env.CRAWL_START.split(',') : [];
+const SCOPE_PREFIXES = process.env.CRAWL_SCOPE ? process.env.CRAWL_SCOPE.split(',') : [];
 const MAX_DEPTH = 5;
 const MAX_PAGES = 60;
 const OUT_DIR = 'discovery-output';
@@ -31,6 +31,10 @@ function inScope(href) {
 }
 
 test(`recursively crawl ${MODULE}`, async ({ page }) => {
+  if (!MODULE || !START_PATHS.length || !SCOPE_PREFIXES.length) {
+    test.skip(true, 'CRAWL_MODULE/CRAWL_START/CRAWL_SCOPE env vars not set');
+    return;
+  }
   page.setDefaultNavigationTimeout(15000);
   page.setDefaultTimeout(15000);
   mkdirSync(OUT_DIR, { recursive: true });
