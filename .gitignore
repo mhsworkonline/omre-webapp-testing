@@ -8,6 +8,9 @@ web/playwright/.cache/
 web/playwright/.auth/
 web/.env
 
+# Generated discovery outputs (build on Windows only — not tracked)
+web/discovery-output/
+
 # Mobile (Maestro)
 mobile/test-results/
 mobile/playwright-report/
