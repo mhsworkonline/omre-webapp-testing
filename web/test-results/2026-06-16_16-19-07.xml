@@ -1,0 +1,37 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="12.181861000000001">
+<testsuite name="discovery\explore-biz.spec.js" timestamp="2026-06-16T10:49:09.858Z" hostname="chromium" tests="1" failures="0" skipped="0" time="7.493" errors="0">
+<testcase name="explore Biz module structure" classname="discovery\explore-biz.spec.js" time="7.493">
+<system-out>
+<![CDATA[
+=== Biz landing page ===
+URL: https://omre.ai/biz
+Title: Omre
+Heading: What would you like to do?
+
+-- Buttons (19) --
+  • SOCIAL
+  • NEWS
+  • VIDEO
+  • CHAT
+  • BIZ
+  • LINK
+  • LEARN
+  • STUDIO
+  • ORBIT
+  • GAMES
+  • MART
+  • MEETINGS
+  • WALLET
+  • Toggle theme
+
+-- Links (10) --
+  • "Browse Digital eBooks, courses, templates" → /biz/business/digital
+  • "Browse Physical Goods, inventory, shipping" → /biz/business/physical
+  • "Seller Dashboard Manage products & orders" → /biz/business/dashboard
+  • "Website Builder Build your custom business website with a drag-and-drop editor — no code required. Build website" → /biz/website-builder
+  • "Marketplace Discover products, services, and verified sellers from across the platform. Go to Mart" → /app/marketplace
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

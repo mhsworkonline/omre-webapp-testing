@@ -1,0 +1,1890 @@
+<testsuites id="" name="" tests="490" failures="1" skipped="89" errors="8" time="1107.9874840000002">
+<testsuite name="features\games.spec.js" timestamp="2026-06-14T12:38:24.060Z" hostname="chromium" tests="42" failures="0" skipped="5" time="117.881" errors="0">
+<testcase name="TC-GAMES: Page Load and Layout › TC-GAMES-01: Given I am authenticated, When I navigate to the page, Then correct URL" classname="features\games.spec.js" time="2.827">
+</testcase>
+<testcase name="TC-GAMES: Page Load and Layout › TC-GAMES-02: Given I am on the page, When the page renders, Then games heading is visible" classname="features\games.spec.js" time="2.916">
+</testcase>
+<testcase name="TC-GAMES: Page Load and Layout › TC-GAMES-03: Given I am authenticated and on the page, When I perform the action, Then main landmark is present" classname="features\games.spec.js" time="2.586">
+</testcase>
+<testcase name="TC-GAMES: Page Load and Layout › TC-GAMES-04: page title contains &quot;Games&quot; or app name" classname="features\games.spec.js" time="2.621">
+</testcase>
+<testcase name="TC-GAMES: Game Listing and Cards › TC-GAMES-05: Given I am authenticated and on the page, When I perform the action, Then game cards or grid renders" classname="features\games.spec.js" time="3.121">
+</testcase>
+<testcase name="TC-GAMES: Game Listing and Cards › TC-GAMES-06: Given I am on the each game card, When I view it, Then it shows a title" classname="features\games.spec.js" time="3.255">
+</testcase>
+<testcase name="TC-GAMES: Game Listing and Cards › TC-GAMES-07: Given I am authenticated and on the page, When I perform the action, Then game card thumbnail image renders" classname="features\games.spec.js" time="2.631">
+</testcase>
+<testcase name="TC-GAMES: Game Listing and Cards › TC-GAMES-08: Given I am on the game card, When I view it, Then it shows a category or tag label" classname="features\games.spec.js" time="2.669">
+</testcase>
+<testcase name="TC-GAMES: Game Listing and Cards › TC-GAMES-09: Given I am on the game card, When I view it, Then it shows play count or rating" classname="features\games.spec.js" time="2.587">
+</testcase>
+<testcase name="TC-GAMES: Category Filter Tabs › TC-GAMES-10: Given I am authenticated and on the page, When I perform the action, Then category filter tab list is present" classname="features\games.spec.js" time="2.72">
+</testcase>
+<testcase name="TC-GAMES: Category Filter Tabs › TC-GAMES-11: Given the category tab is present, When I click the category tab, Then it updates the active state" classname="features\games.spec.js" time="2.789">
+</testcase>
+<testcase name="TC-GAMES: Category Filter Tabs › TC-GAMES-12: Given I am authenticated and on the page, When I perform the action, Then switching category tab filters the game list" classname="features\games.spec.js" time="2.753">
+</testcase>
+<testcase name="TC-GAMES: Search › TC-GAMES-13: Given I am authenticated and on the page, When I perform the action, Then search input is present" classname="features\games.spec.js" time="2.98">
+</testcase>
+<testcase name="TC-GAMES: Search › TC-GAMES-14: Given I am authenticated and on the page, When I perform the action, Then typing in search field returns filtered results" classname="features\games.spec.js" time="3.229">
+</testcase>
+<testcase name="TC-GAMES: Game Detail › TC-GAMES-15: Given the game card is present, When I click the game card, Then it navigates to detail page or opens modal" classname="features\games.spec.js" time="2.624">
+</testcase>
+<testcase name="TC-GAMES: Game Detail › TC-GAMES-16: Given I am on the game detail page, When I view it, Then it shows a title" classname="features\games.spec.js" time="2.601">
+</testcase>
+<testcase name="TC-GAMES: Game Detail › TC-GAMES-17: Given I am on the game detail, When I view it, Then it shows a description or summary" classname="features\games.spec.js" time="2.675">
+</testcase>
+<testcase name="TC-GAMES: Game Detail › TC-GAMES-18: Given I am on the page, When the page renders, Then play button is visible" classname="features\games.spec.js" time="2.747">
+</testcase>
+<testcase name="TC-GAMES: Game Detail › TC-GAMES-19: Given I am authenticated and on the page, When I perform the action, Then play button launches game or opens iframe" classname="features\games.spec.js" time="2.721">
+</testcase>
+<testcase name="TC-GAMES: Game Detail › TC-GAMES-20: Given I am authenticated and on the page, When I perform the action, Then back navigation returns to games list" classname="features\games.spec.js" time="2.806">
+</testcase>
+<testcase name="TC-GAMES: Featured, Popular and Recently Played › TC-GAMES-21: Given I am authenticated and on the page, When I perform the action, Then featured or popular games section is present" classname="features\games.spec.js" time="2.857">
+</testcase>
+<testcase name="TC-GAMES: Featured, Popular and Recently Played › TC-GAMES-22: Given I am on the page, When I inspect the content, Then featured section contains at least one game card" classname="features\games.spec.js" time="2.772">
+</testcase>
+<testcase name="TC-GAMES: Featured, Popular and Recently Played › TC-GAMES-23: Given I am authenticated and on the page, When I perform the action, Then recently played section renders when present" classname="features\games.spec.js" time="2.79">
+</testcase>
+<testcase name="TC-GAMES: Leaderboard, Ratings and Favourites › TC-GAMES-24: Given I am authenticated and on the page, When I perform the action, Then leaderboard link or section is present" classname="features\games.spec.js" time="2.59">
+</testcase>
+<testcase name="TC-GAMES: Leaderboard, Ratings and Favourites › TC-GAMES-25: Given I am on the star rating, When I view it, Then it displays shown on a game card" classname="features\games.spec.js" time="2.599">
+</testcase>
+<testcase name="TC-GAMES: Leaderboard, Ratings and Favourites › TC-GAMES-26: Given I am authenticated and on the page, When I perform the action, Then add to favourites button is present on a game card or detail" classname="features\games.spec.js" time="2.846">
+</testcase>
+<testcase name="TC-GAMES: Leaderboard, Ratings and Favourites › TC-GAMES-27: Given the page is loaded, When I click favourite button toggles its state, Then it responds correctly" classname="features\games.spec.js" time="2.785">
+</testcase>
+<testcase name="TC-GAMES: Leaderboard, Ratings and Favourites › TC-GAMES-28: Given I am authenticated and on the page, When I perform the action, Then games page renders without console errors on load" classname="features\games.spec.js" time="4.626">
+</testcase>
+<testcase name="TC-GAMES: Achievements and Badges › TC-GAMES-29: Given I am authenticated and on the page, When I perform the action, Then achievement or badge section is present on game detail" classname="features\games.spec.js" time="2.781">
+</testcase>
+<testcase name="TC-GAMES: Achievements and Badges › TC-GAMES-30: Given I am on the page, When I inspect the content, Then achievement section contains at least one item when present" classname="features\games.spec.js" time="2.769">
+</testcase>
+<testcase name="TC-GAMES: Invite Friend to Game › TC-GAMES-31: Given I am authenticated and on the page, When I perform the action, Then invite friend button is present on game detail" classname="features\games.spec.js" time="2.636">
+</testcase>
+<testcase name="TC-GAMES: Invite Friend to Game › TC-GAMES-32: Given I am authenticated and on the page, When I perform the action, Then invite button opens invite dialog or friend selector" classname="features\games.spec.js" time="2.8">
+</testcase>
+<testcase name="TC-GAMES: Tournament Section › TC-GAMES-33: Given I am authenticated and on the page, When I perform the action, Then tournament section or tab is present" classname="features\games.spec.js" time="2.808">
+</testcase>
+<testcase name="TC-GAMES: Rewards and Points › TC-GAMES-34: Given I am on the page, When the page renders, Then rewards or points earned indicator is visible" classname="features\games.spec.js" time="2.694">
+</testcase>
+<testcase name="TC-GAMES: Rewards and Points › TC-GAMES-35: Given I am on the rewards indicator, When I view it, Then it shows a numeric value" classname="features\games.spec.js" time="2.688">
+</testcase>
+<testcase name="TC-GAMES: High Score Display › TC-GAMES-36: Given I am authenticated and on the page, When I perform the action, Then high score is displayed on game card or detail" classname="features\games.spec.js" time="3.6">
+</testcase>
+<testcase name="TC-GAMES: High Score Display › TC-GAMES-37: Given I am on the page, When I inspect the content, Then high score value contains a number" classname="features\games.spec.js" time="3.327">
+</testcase>
+<testcase name="TC-GAMES: Favourites State and Persistence › TC-GAMES-38: Given a favourite button is present, When I click it, Then the button appearance changes to indicate toggled state" classname="features\games.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-GAMES: Favourites State and Persistence › TC-GAMES-39: Given I have toggled a favourite, When I toggle it again, Then the button returns to its original state" classname="features\games.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-GAMES: Favourites State and Persistence › TC-GAMES-40: Given I have favourited a game, When I reload the page, Then the favourite state persists" classname="features\games.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-GAMES: Invite Friend Send and Friend Selector › TC-GAMES-41: untestable: send invite creates notification/message — real-time notification delivery and message creation in a friend&apos;s inbox cannot be verified within a single Playwright session" classname="features\games.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-GAMES: Invite Friend Send and Friend Selector › TC-GAMES-42: Given I open the invite dialog, When it renders, Then the friend selector populates with the user&apos;s friends list" classname="features\games.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="features\wallet.spec.js" timestamp="2026-06-14T12:38:24.060Z" hostname="chromium" tests="56" failures="0" skipped="9" time="228.874" errors="1">
+<testcase name="TC-WALLET: Page Load and Layout › TC-WALLET-01: Given I am authenticated, When I navigate to the page, Then correct URL" classname="features\wallet.spec.js" time="3.541">
+</testcase>
+<testcase name="TC-WALLET: Page Load and Layout › TC-WALLET-02: Given I am on the page, When the page renders, Then wallet heading is visible" classname="features\wallet.spec.js" time="3.289">
+</testcase>
+<testcase name="TC-WALLET: Page Load and Layout › TC-WALLET-03: Given I am authenticated and on the page, When I perform the action, Then main content area renders with child elements" classname="features\wallet.spec.js" time="3.493">
+</testcase>
+<testcase name="TC-WALLET: Page Load and Layout › TC-WALLET-04: Given I am authenticated and on the page, When I perform the action, Then page does not surface a JS error overlay" classname="features\wallet.spec.js" time="3.238">
+</testcase>
+<testcase name="TC-WALLET: Balance Display › TC-WALLET-05: Given I am authenticated and on the page, When I perform the action, Then balance card or panel is rendered" classname="features\wallet.spec.js" time="3.368">
+</testcase>
+<testcase name="TC-WALLET: Balance Display › TC-WALLET-06: Given I am authenticated and on the page, When I perform the action, Then a numeric balance value is displayed" classname="features\wallet.spec.js" time="3.219">
+</testcase>
+<testcase name="TC-WALLET: Balance Display › TC-WALLET-07: Given I am authenticated and on the page, When I perform the action, Then currency symbol or code is displayed alongside balance" classname="features\wallet.spec.js" time="3.448">
+</testcase>
+<testcase name="TC-WALLET: Balance Display › TC-WALLET-08: Given I am authenticated and on the page, When I perform the action, Then total or available balance label is present" classname="features\wallet.spec.js" time="3.303">
+</testcase>
+<testcase name="TC-WALLET: Transaction History › TC-WALLET-09: Given I am authenticated and on the page, When I perform the action, Then transaction history section is present" classname="features\wallet.spec.js" time="3.313">
+</testcase>
+<testcase name="TC-WALLET: Transaction History › TC-WALLET-10: Given I am on the page, When I view it, Then transaction list items render or empty state shows" classname="features\wallet.spec.js" time="3.288">
+</testcase>
+<testcase name="TC-WALLET: Transaction History › TC-WALLET-11: Given I am on the each transaction item, When I view it, Then it shows an amount value" classname="features\wallet.spec.js" time="3.545">
+</testcase>
+<testcase name="TC-WALLET: Transaction History › TC-WALLET-12: Given I am on the each transaction item, When I view it, Then it shows a type or description" classname="features\wallet.spec.js" time="3.401">
+</testcase>
+<testcase name="TC-WALLET: Transaction History › TC-WALLET-13: Given I am on the each transaction item, When I view it, Then it shows a date or timestamp" classname="features\wallet.spec.js" time="3.205">
+</testcase>
+<testcase name="TC-WALLET: Transaction History › TC-WALLET-14: Given I am authenticated and on the page, When I perform the action, Then transaction status badge renders (success/pending/failed)" classname="features\wallet.spec.js" time="3.385">
+</testcase>
+<testcase name="TC-WALLET: Transaction Filters › TC-WALLET-15: Given I am authenticated and on the page, When I perform the action, Then filter tabs or buttons are present (All/Sent/Received)" classname="features\wallet.spec.js" time="3.151">
+</testcase>
+<testcase name="TC-WALLET: Transaction Filters › TC-WALLET-16: clicking &quot;Sent&quot; filter updates the visible list" classname="features\wallet.spec.js" time="3.281">
+</testcase>
+<testcase name="TC-WALLET: Transaction Filters › TC-WALLET-17: clicking &quot;Received&quot; filter updates the visible list" classname="features\wallet.spec.js" time="3.283">
+</testcase>
+<testcase name="TC-WALLET: Transaction Filters › TC-WALLET-18: &quot;All&quot; filter restores the full list" classname="features\wallet.spec.js" time="3.635">
+</testcase>
+<testcase name="TC-WALLET: Send Money › TC-WALLET-19: &quot;Send Money&quot; or Transfer button is visible" classname="features\wallet.spec.js" time="3.457">
+</testcase>
+<testcase name="TC-WALLET: Send Money › TC-WALLET-20: Given the Send Money is present, When I click the Send Money, Then it opens a form or modal" classname="features\wallet.spec.js" time="3.518">
+</testcase>
+<testcase name="TC-WALLET: Send Money › TC-WALLET-21: Given I am authenticated and on the page, When I perform the action, Then recipient field accepts text input" classname="features\wallet.spec.js" time="3.55">
+</testcase>
+<testcase name="TC-WALLET: Send Money › TC-WALLET-22: Given I am authenticated and on the page, When I perform the action, Then amount field accepts numeric input" classname="features\wallet.spec.js" time="3.606">
+</testcase>
+<testcase name="TC-WALLET: Send Money › TC-WALLET-23: Given I am authenticated and on the page, When I perform the action, Then send button is disabled when amount field is empty" classname="features\wallet.spec.js" time="3.349">
+</testcase>
+<testcase name="TC-WALLET: Send Money › TC-WALLET-24: Given I am authenticated and on the page, When I perform the action, Then cancel or close button dismisses the send money form" classname="features\wallet.spec.js" time="3.621">
+</testcase>
+<testcase name="TC-WALLET: Add Funds / Top Up › TC-WALLET-25: &quot;Add Funds&quot; or Top Up button is visible" classname="features\wallet.spec.js" time="3.331">
+</testcase>
+<testcase name="TC-WALLET: Add Funds / Top Up › TC-WALLET-26: Given the Add Funds is present, When I click the Add Funds, Then it opens a form or modal" classname="features\wallet.spec.js" time="3.57">
+</testcase>
+<testcase name="TC-WALLET: Add Funds / Top Up › TC-WALLET-27: Given I am authenticated and on the page, When I perform the action, Then payment method selector renders inside the add funds form" classname="features\wallet.spec.js" time="3.52">
+</testcase>
+<testcase name="TC-WALLET: Add Funds / Top Up › TC-WALLET-28: Given I am authenticated and on the page, When I perform the action, Then cancel or close dismisses the add funds modal" classname="features\wallet.spec.js" time="4.275">
+</testcase>
+<testcase name="TC-WALLET: Withdraw › TC-WALLET-29: Given I am authenticated and on the page, When I perform the action, Then withdraw button is present if feature is available" classname="features\wallet.spec.js" time="3.424">
+</testcase>
+<testcase name="TC-WALLET: Withdraw › TC-WALLET-30: Given the Withdraw is present, When I click the Withdraw, Then it opens a form or modal" classname="features\wallet.spec.js" time="3.496">
+</testcase>
+<testcase name="TC-WALLET: Wallet Settings / Preferences › TC-WALLET-31: Given I am authenticated and on the page, When I perform the action, Then wallet settings or preferences link is present" classname="features\wallet.spec.js" time="3.326">
+</testcase>
+<testcase name="TC-WALLET: Wallet Settings / Preferences › TC-WALLET-32: Given I am authenticated and on the page, When I perform the action, Then wallet page is navigable from main navigation" classname="features\wallet.spec.js" time="3.434">
+</testcase>
+<testcase name="TC-WALLET: Edge Cases and Accessibility › TC-WALLET-33: Given I am authenticated and on the page, When I perform the action, Then empty state message shown when no transactions exist" classname="features\wallet.spec.js" time="3.193">
+</testcase>
+<testcase name="TC-WALLET: Edge Cases and Accessibility › TC-WALLET-34: Given I am authenticated and on the page, When I perform the action, Then wallet buttons are keyboard focusable" classname="features\wallet.spec.js" time="3.606">
+</testcase>
+<testcase name="TC-WALLET: Edge Cases and Accessibility › TC-WALLET-35: Given I am on the page, When I reload the page, Then content remains intact" classname="features\wallet.spec.js" time="5.018">
+</testcase>
+<testcase name="TC-WALLET: QR Payment › TC-WALLET-36: Given I am authenticated and on the page, When I perform the action, Then QR code button or tab is present" classname="features\wallet.spec.js" time="3.532">
+</testcase>
+<testcase name="TC-WALLET: QR Payment › TC-WALLET-37: Given I am authenticated and on the page, When I perform the action, Then QR code image renders after opening QR section" classname="features\wallet.spec.js" time="3.497">
+</testcase>
+<testcase name="TC-WALLET: QR Payment › TC-WALLET-38: Given I am authenticated and on the page, When I perform the action, Then scan QR option is present in the QR section" classname="features\wallet.spec.js" time="3.678">
+</testcase>
+<testcase name="TC-WALLET: QR Payment › TC-WALLET-39: Given I am authenticated and on the page, When I perform the action, Then share QR button is present in the QR section" classname="features\wallet.spec.js" time="3.797">
+</testcase>
+<testcase name="TC-WALLET: Transaction Detail › TC-WALLET-40: Given the transaction is present, When I click the transaction, Then it opens the detail view" classname="features\wallet.spec.js" time="3.479">
+</testcase>
+<testcase name="TC-WALLET: Transaction Detail › TC-WALLET-41: Given I am on the transaction detail, When I view it, Then it shows full amount, date, status, and reference" classname="features\wallet.spec.js" time="3.632">
+</testcase>
+<testcase name="TC-WALLET: Transaction Detail › TC-WALLET-42: Given I am authenticated and on the page, When I perform the action, Then receipt download button is present in transaction detail" classname="features\wallet.spec.js" time="3.395">
+</testcase>
+<testcase name="TC-WALLET: Export Transactions › TC-WALLET-43: Given I am authenticated and on the page, When I perform the action, Then export transactions button is present" classname="features\wallet.spec.js" time="3.43">
+</testcase>
+<testcase name="TC-WALLET: Export Transactions › TC-WALLET-44: Given I am authenticated and on the page, When I perform the action, Then format selector (CSV or PDF) is present in export flow" classname="features\wallet.spec.js" time="3.401">
+</testcase>
+<testcase name="TC-WALLET: Export Transactions › TC-WALLET-45: Given I am authenticated and on the page, When I perform the action, Then date range picker is present in export flow" classname="features\wallet.spec.js" time="3.397">
+</testcase>
+<testcase name="TC-WALLET: Balance Display Edge Cases › TC-WALLET-46: Given I am on the wallet page, When the balance is zero, Then zero balance is shown without error or blank screen" classname="features\wallet.spec.js" time="3.131">
+</testcase>
+<testcase name="TC-WALLET: Transaction Filter Edge Cases › TC-WALLET-47: Given transaction filter tabs are present, When I click All/Sent/Received tabs in sequence, Then each click updates the visible content" classname="features\wallet.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-WALLET: Transaction Filter Edge Cases › TC-WALLET-48: Given I apply a filter with no matching results, When I view the list, Then an empty state or no-results message is shown" classname="features\wallet.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-WALLET: Send Money Validation and Edge Cases › TC-WALLET-49: Given the send money form is open, When I enter an invalid username as recipient, Then a validation error appears" classname="features\wallet.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-WALLET: Send Money Validation and Edge Cases › TC-WALLET-50: Given I attempt to send more than my balance, When I submit the send form, Then an insufficient balance error is shown" classname="features\wallet.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-WALLET: Send Money Validation and Edge Cases › TC-WALLET-51: Given I fill a valid send form, When I proceed, Then a transaction confirmation step is shown before final submission" classname="features\wallet.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-WALLET: Add Funds Validation › TC-WALLET-52: Given the add funds form is open, When I enter an amount below the minimum, Then a validation error or minimum limit hint appears" classname="features\wallet.spec.js" time="45.777">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|2026-06-14_18-08-24\artifacts\features-wallet-TC-WALLET--383cd--minimum-limit-hint-appears-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|2026-06-14_18-08-24\artifacts\features-wallet-TC-WALLET--383cd--minimum-limit-hint-appears-chromium\video.webm]]
+
+[[ATTACHMENT|2026-06-14_18-08-24\artifacts\features-wallet-TC-WALLET--383cd--minimum-limit-hint-appears-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="Test timeout of 45000ms exceeded." type="Error">
+<![CDATA[  [chromium] › features\wallet.spec.js:894:7 › TC-WALLET: Add Funds Validation › TC-WALLET-52: Given the add funds form is open, When I enter an amount below the minimum, Then a validation error or minimum limit hint appears 
+
+    Test timeout of 45000ms exceeded.
+
+    Error: locator.click: Test timeout of 45000ms exceeded.
+    Call log:
+      - waiting for locator('[role="dialog"] button').filter({ hasText: /add|submit|fund|proceed|pay/i }).first()
+        - locator resolved to <button disabled data-slot="button" data-size="default" data-variant="default" class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 active:scale-[0.98] bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2 ha…>Pay ₹0.001 now</button>
+      - attempting click action
+        2 × waiting for element to be visible, enabled and stable
+          - element is not enabled
+        - retrying click action
+        - waiting 20ms
+        2 × waiting for element to be visible, enabled and stable
+          - element is not enabled
+        - retrying click action
+          - waiting 100ms
+        59 × waiting for element to be visible, enabled and stable
+           - element is not enabled
+         - retrying click action
+           - waiting 500ms
+
+
+      913 |       .first();
+      914 |     if (!(await submitBtn.isVisible({ timeout: 4000 }).catch(() => false))) { test.skip(); return; }
+    > 915 |     await submitBtn.click();
+          |                     ^
+      916 |     await page.waitForTimeout(1000);
+      917 |     const errorMsg = page
+      918 |       .locator('[role="dialog"] [role="alert"], [role="dialog"] [class*="error"], [aria-live="polite"]')
+        at C:\claude-folder\webapp-testing\omre-webapp\tests\features\wallet.spec.js:915:21
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\2026-06-14_18-08-24\artifacts\features-wallet-TC-WALLET--383cd--minimum-limit-hint-appears-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\2026-06-14_18-08-24\artifacts\features-wallet-TC-WALLET--383cd--minimum-limit-hint-appears-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\2026-06-14_18-08-24\artifacts\features-wallet-TC-WALLET--383cd--minimum-limit-hint-appears-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="TC-WALLET: Add Funds Validation › TC-WALLET-53: untestable: add funds successful UI update — completing a real payment requires actual payment gateway interaction, which is untestable in automated headless tests" classname="features\wallet.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-WALLET: QR Code Visible › TC-WALLET-54: Given I navigate to the QR payment section, When the section renders, Then a QR code image or canvas is visible" classname="features\wallet.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-WALLET: Export Transactions Edge Cases › TC-WALLET-55: Given I click the export button, When the export flow opens, Then a format picker or download trigger is present" classname="features\wallet.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-WALLET: Export Transactions Edge Cases › TC-WALLET-56: untestable: export file format verification — verifying the downloaded file content (CSV/PDF structure) requires filesystem access to the browser download directory, which is not available in headless Playwright" classname="features\wallet.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="flows\media.flow.spec.js" timestamp="2026-06-14T12:38:24.060Z" hostname="chromium" tests="22" failures="0" skipped="17" time="71.621" errors="0">
+<testcase name="TC-FLOW-SHORTS | Video Playback › TC-FLOW-SHORTS-01: Given I am on the shorts page, When the player loads, Then a video element is present and playable" classname="flows\media.flow.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-FLOW-SHORTS | Video Playback › TC-FLOW-SHORTS-02: Given a short is loaded, When I click play, Then the video transitions to playing state" classname="flows\media.flow.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-FLOW-SHORTS | Video Playback › TC-FLOW-SHORTS-03: Given a short is playing, When I click pause, Then the video transitions to paused state" classname="flows\media.flow.spec.js" time="3.389">
+</testcase>
+<testcase name="TC-FLOW-SHORTS | Video Playback › TC-FLOW-SHORTS-04: Given a short is loaded, When I click the mute button, Then the video muted property is true" classname="flows\media.flow.spec.js" time="5.11">
+</testcase>
+<testcase name="TC-FLOW-SHORTS | Video Playback › TC-FLOW-SHORTS-05: Given a short is loaded, When I seek to 50% of its duration, Then currentTime updates accordingly" classname="flows\media.flow.spec.js" time="5.275">
+</testcase>
+<testcase name="TC-FLOW-SHORTS | Video Playback › TC-FLOW-SHORTS-06: Given a short is playing, When I select a different playback speed, Then the video playbackRate changes" classname="flows\media.flow.spec.js" time="2.731">
+</testcase>
+<testcase name="TC-FLOW-VIDEO | Player Controls › TC-FLOW-VIDEO-01: Given I am on the videos page, When a video loads, Then the video element exists" classname="flows\media.flow.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-FLOW-VIDEO | Player Controls › TC-FLOW-VIDEO-02: Given a video is loaded, When I play then pause it, Then the video paused state reflects the action" classname="flows\media.flow.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-FLOW-VIDEO | Player Controls › TC-FLOW-VIDEO-03: Given a video is loaded, When I toggle fullscreen, Then the page does not crash" classname="flows\media.flow.spec.js" time="2.697">
+</testcase>
+<testcase name="TC-FLOW-VIDEO | Player Controls › TC-FLOW-VIDEO-04: Given a video is playing, When I mute it, Then the muted state is true" classname="flows\media.flow.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-FLOW-VIDEO | Player Controls › TC-FLOW-VIDEO-05: Given a video is loaded, When I seek to 25% duration, Then currentTime is greater than 0" classname="flows\media.flow.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-FLOW-LIVE | Viewer Playback › TC-FLOW-LIVE-01: Given I am on the live page, When I click on an active stream, Then a video player appears" classname="flows\media.flow.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-FLOW-LIVE | Viewer Playback › TC-FLOW-LIVE-02: Given I am watching a live stream, When I send a chat message, Then the message appears in the live chat" classname="flows\media.flow.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-FLOW-LIVE | Viewer Playback › TC-FLOW-LIVE-03: Given I am on the live page, When I click Go Live, Then the go-live setup dialog or page opens" classname="flows\media.flow.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-FLOW-IMAGES | Upload Dialog → Gallery → Delete › TC-FLOW-IMAGES-01: Given I am on the images page, When I click upload, Then the upload dialog or file picker opens" classname="flows\media.flow.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-FLOW-IMAGES | Upload Dialog → Gallery → Delete › TC-FLOW-IMAGES-02: Given the images gallery has images, When I hover over an image, Then action buttons (delete/edit) appear" classname="flows\media.flow.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-FLOW-IMAGES | Upload Dialog → Gallery → Delete › TC-FLOW-IMAGES-03: Given I have images in the gallery, When I open an image, Then the lightbox or full-size view opens" classname="flows\media.flow.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-FLOW-IMAGES | Upload Dialog → Gallery → Delete › TC-FLOW-IMAGES-04: Given an image is open in lightbox, When I press Escape, Then the lightbox closes" classname="flows\media.flow.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-FLOW-CHANNEL | Upload Flow › TC-FLOW-CHANNEL-01: Given I am on my channel page, When I click Upload, Then the upload form or dialog opens" classname="flows\media.flow.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-FLOW-CHANNEL | Upload Flow › TC-FLOW-CHANNEL-02: Given the upload dialog is open, When I fill in a video title, Then the title field contains the text" classname="flows\media.flow.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-FLOW-CHANNEL | Upload Flow › TC-FLOW-CHANNEL-03: Given I am on my channel page, When I view the video grid, Then video cards are rendered with titles" classname="flows\media.flow.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-FLOW-CHANNEL | Upload Flow › TC-FLOW-CHANNEL-04: Given I am on my channel page, When I click on a video card, Then the video detail or player opens" classname="flows\media.flow.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="flows\messages.flow.spec.js" timestamp="2026-06-14T12:38:24.060Z" hostname="chromium" tests="5" failures="0" skipped="5" time="14.01" errors="0">
+<testcase name="TC-FLOW-MSG | Open → Type → Send → Verify › TC-FLOW-MSG-01: Given I am authenticated, When I open the first conversation, Then the chat panel becomes visible" classname="flows\messages.flow.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-FLOW-MSG | Open → Type → Send → Verify › TC-FLOW-MSG-02: Given a conversation is open, When I type a message, Then the input contains the typed text" classname="flows\messages.flow.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-FLOW-MSG | Open → Type → Send → Verify › TC-FLOW-MSG-03: Given a conversation is open and a message is typed, When I press send, Then the message appears in the thread" classname="flows\messages.flow.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-FLOW-MSG | Open → Type → Send → Verify › TC-FLOW-MSG-04: Given I am on the messages page, When the page loads, Then at least one conversation or empty state is shown" classname="flows\messages.flow.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-FLOW-MSG | Open → Type → Send → Verify › TC-FLOW-MSG-05: Given I am in a conversation, When I send an empty message, Then the send button remains disabled or the message is not sent" classname="flows\messages.flow.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="flows\posts.flow.spec.js" timestamp="2026-06-14T12:38:24.060Z" hostname="chromium" tests="6" failures="1" skipped="4" time="22.529" errors="0">
+<testcase name="TC-FLOW-POST | Create → Verify → Delete › TC-FLOW-POST-01: Given I am authenticated, When I create a text post, Then it appears in the home feed" classname="flows\posts.flow.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-FLOW-POST | Create → Verify → Delete › TC-FLOW-POST-02: Given a post exists in the feed, When I delete it, Then it is removed from the feed" classname="flows\posts.flow.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-FLOW-POST | Create → Verify → Delete › TC-FLOW-POST-03: Given a post is in the feed, When I click Like, Then the like button state changes" classname="flows\posts.flow.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-FLOW-POST | Create → Verify → Delete › TC-FLOW-POST-04: Given a post exists, When I click the comment button and submit a comment, Then the comment input accepts the text" classname="flows\posts.flow.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-FLOW-POST | Create → Verify → Delete › TC-FLOW-POST-05: Given the post composer is open, When I type text and submit, Then the submit button is clickable and post is dispatched" classname="flows\posts.flow.spec.js" time="4.129">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|2026-06-14_18-08-24\artifacts\flows-posts.flow-TC-FLOW-P-329ab-able-and-post-is-dispatched-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|2026-06-14_18-08-24\artifacts\flows-posts.flow-TC-FLOW-P-329ab-able-and-post-is-dispatched-chromium\video.webm]]
+
+[[ATTACHMENT|2026-06-14_18-08-24\artifacts\flows-posts.flow-TC-FLOW-P-329ab-able-and-post-is-dispatched-chromium\error-context.md]]
+]]>
+</system-out>
+<failure message="expect(received).toBe(expected) // Object.is equality" type="expect.toBe">
+<![CDATA[  [chromium] › flows\posts.flow.spec.js:56:7 › TC-FLOW-POST | Create → Verify → Delete › TC-FLOW-POST-05: Given the post composer is open, When I type text and submit, Then the submit button is clickable and post is dispatched 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      59 |     await typeInComposer(page, `${TAG} submit-test`);
+      60 |     const submitted = await submitPost(page);
+    > 61 |     expect(submitted).toBe(true);
+         |                       ^
+      62 |   });
+      63 |
+      64 |   test('TC-FLOW-POST-06: Given I am on the home page, When I open the composer, Then the post dialog or input area is visible', async ({ page }) => {
+        at C:\claude-folder\webapp-testing\omre-webapp\tests\flows\posts.flow.spec.js:61:23
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\2026-06-14_18-08-24\artifacts\flows-posts.flow-TC-FLOW-P-329ab-able-and-post-is-dispatched-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\2026-06-14_18-08-24\artifacts\flows-posts.flow-TC-FLOW-P-329ab-able-and-post-is-dispatched-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\2026-06-14_18-08-24\artifacts\flows-posts.flow-TC-FLOW-P-329ab-able-and-post-is-dispatched-chromium\error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="TC-FLOW-POST | Create → Verify → Delete › TC-FLOW-POST-06: Given I am on the home page, When I open the composer, Then the post dialog or input area is visible" classname="flows\posts.flow.spec.js" time="3.712">
+</testcase>
+</testsuite>
+<testsuite name="flows\social.flow.spec.js" timestamp="2026-06-14T12:38:24.060Z" hostname="chromium" tests="18" failures="0" skipped="14" time="129.21" errors="1">
+<testcase name="TC-FLOW-PROFILE | Edit → Save → Verify Persistence › TC-FLOW-PROFILE-01: Given I am on my profile, When I click Edit Profile, Then the edit form opens" classname="flows\social.flow.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-FLOW-PROFILE | Edit → Save → Verify Persistence › TC-FLOW-PROFILE-02: Given the edit form is open, When I update the bio and save, Then a success indicator appears or the page navigates back" classname="flows\social.flow.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-FLOW-PROFILE | Edit → Save → Verify Persistence › TC-FLOW-PROFILE-03: Given I save a bio update, When I reload the profile page, Then the updated bio is still shown" classname="flows\social.flow.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-FLOW-PROFILE | Edit → Save → Verify Persistence › TC-FLOW-PROFILE-04: Given I am viewing my own profile, When I click Share Profile, Then a share link or dialog appears" classname="flows\social.flow.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-FLOW-NEWS | Bookmark → Verify → Unbookmark › TC-FLOW-NEWS-01: Given I am on the news page, When I bookmark an article, Then the bookmark icon changes state" classname="flows\social.flow.spec.js" time="5.536">
+</testcase>
+<testcase name="TC-FLOW-NEWS | Bookmark → Verify → Unbookmark › TC-FLOW-NEWS-02: Given I have bookmarked an article, When I navigate to the saved/bookmarks section, Then the article appears there" classname="flows\social.flow.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-FLOW-NEWS | Bookmark → Verify → Unbookmark › TC-FLOW-NEWS-03: Given I click on a news article, When the article detail loads, Then the full article content is visible" classname="flows\social.flow.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-FLOW-NEWS | Bookmark → Verify → Unbookmark › TC-FLOW-NEWS-04: Given I am reading an article, When I click the back button, Then I return to the news feed" classname="flows\social.flow.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-FLOW-NEWS | Bookmark → Verify → Unbookmark › TC-FLOW-NEWS-05: Given I am on the news page, When I search for a keyword, Then the results are filtered to matching articles" classname="flows\social.flow.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-FLOW-NOTIF | Load → Read → Mark All Read › TC-FLOW-NOTIF-01: Given I navigate to notifications, When the page loads, Then the notification list or empty state is visible" classname="flows\social.flow.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-FLOW-NOTIF | Load → Read → Mark All Read › TC-FLOW-NOTIF-02: Given there are notifications, When I click one, Then it navigates to the relevant content" classname="flows\social.flow.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-FLOW-NOTIF | Load → Read → Mark All Read › TC-FLOW-NOTIF-03: Given I am on the notifications page, When I click Mark All Read, Then unread indicators disappear" classname="flows\social.flow.spec.js" time="60.287">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|2026-06-14_18-11-40\artifacts\flows-social.flow-TC-FLOW--9a229-unread-indicators-disappear-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|2026-06-14_18-11-40\artifacts\flows-social.flow-TC-FLOW--9a229-unread-indicators-disappear-chromium\video.webm]]
+
+[[ATTACHMENT|2026-06-14_18-11-40\artifacts\flows-social.flow-TC-FLOW--9a229-unread-indicators-disappear-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="Test timeout of 60000ms exceeded." type="Error">
+<![CDATA[  [chromium] › flows\social.flow.spec.js:152:7 › TC-FLOW-NOTIF | Load → Read → Mark All Read › TC-FLOW-NOTIF-03: Given I am on the notifications page, When I click Mark All Read, Then unread indicators disappear 
+
+    Test timeout of 60000ms exceeded.
+
+    Error: locator.click: Test timeout of 60000ms exceeded.
+    Call log:
+      - waiting for locator('button').filter({ hasText: /mark all|read all/i }).first()
+        - locator resolved to <button disabled type="button" data-size="sm" data-slot="button" data-variant="outline" class="items-center justify-center whitespace-nowrap text-sm disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 active:scale-[0.98] border border-input bg-background shadow-sm hover:text-accent-foreground has-[>svg]:px-2.5 h-9 rounded-full …>…</button>
+      - attempting click action
+        2 × waiting for element to be visible, enabled and stable
+          - element is not enabled
+        - retrying click action
+        - waiting 20ms
+        2 × waiting for element to be visible, enabled and stable
+          - element is not enabled
+        - retrying click action
+          - waiting 100ms
+        98 × waiting for element to be visible, enabled and stable
+           - element is not enabled
+         - retrying click action
+           - waiting 500ms
+
+
+      154 |     const markAllBtn = page.locator('button').filter({ hasText: /mark all|read all/i }).first();
+      155 |     if (!(await markAllBtn.isVisible({ timeout: 8000 }).catch(() => false))) { test.skip(); return; }
+    > 156 |     await markAllBtn.click();
+          |                      ^
+      157 |     await page.waitForTimeout(1500);
+      158 |     const unread = page.locator('[class*="unread" i], [aria-label*="unread" i]').first();
+      159 |     const stillUnread = await unread.isVisible({ timeout: 3000 }).catch(() => false);
+        at C:\claude-folder\webapp-testing\omre-webapp\tests\flows\social.flow.spec.js:156:22
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\2026-06-14_18-11-40\artifacts\flows-social.flow-TC-FLOW--9a229-unread-indicators-disappear-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\2026-06-14_18-11-40\artifacts\flows-social.flow-TC-FLOW--9a229-unread-indicators-disappear-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\2026-06-14_18-11-40\artifacts\flows-social.flow-TC-FLOW--9a229-unread-indicators-disappear-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="TC-FLOW-FRIENDS | Send Request → Verify Pending State › TC-FLOW-FRIENDS-01: Given I am on the friends/discover page, When I click Add Friend on a suggestion, Then the button state changes to pending or requested" classname="flows\social.flow.spec.js" time="3.942">
+</testcase>
+<testcase name="TC-FLOW-FRIENDS | Send Request → Verify Pending State › TC-FLOW-FRIENDS-02: Given I am on the friends page, When I search for a user by name, Then matching results are shown" classname="flows\social.flow.spec.js" time="4.084">
+</testcase>
+<testcase name="TC-FLOW-FRIENDS | Send Request → Verify Pending State › TC-FLOW-FRIENDS-03: Given I have friend requests, When I view the requests tab, Then incoming requests are listed" classname="flows\social.flow.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-FLOW-GROUPS | Join → Post → Verify › TC-FLOW-GROUPS-01: Given I am on the groups page, When I open the first group, Then the group feed or detail page loads" classname="flows\social.flow.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-FLOW-GROUPS | Join → Post → Verify › TC-FLOW-GROUPS-02: Given I am inside a group, When I type in the post composer and submit, Then the post appears in the group feed" classname="flows\social.flow.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-FLOW-GROUPS | Join → Post → Verify › TC-FLOW-GROUPS-03: Given I find a group I have not joined, When I click Join, Then the button changes to Joined or Leave" classname="flows\social.flow.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="home\home.spec.js" timestamp="2026-06-14T12:38:24.060Z" hostname="chromium" tests="59" failures="0" skipped="9" time="327.402" errors="0">
+<testcase name="TC-HOME-01: Given I am authenticated and on the page, When I perform the action, Then home page loads with correct URL" classname="home\home.spec.js" time="4.303">
+</testcase>
+<testcase name="TC-HOME-02: Given I am on the page, When the page renders, Then main feed container is visible" classname="home\home.spec.js" time="3.515">
+</testcase>
+<testcase name="TC-HOME-03: Given I am authenticated and on the page, When I perform the action, Then page header area is rendered" classname="home\home.spec.js" time="3.541">
+</testcase>
+<testcase name="TC-HOME-04: Given I am authenticated and on the page, When I perform the action, Then sidebar navigation is present" classname="home\home.spec.js" time="3.599">
+</testcase>
+<testcase name="TC-HOME-05: Given I am on the page, When the page renders, Then Home link in sidebar is visible" classname="home\home.spec.js" time="3.111">
+</testcase>
+<testcase name="TC-HOME-06: Given I am authenticated and on the page, When I perform the action, Then feed renders at least one post or content block" classname="home\home.spec.js" time="3.431">
+</testcase>
+<testcase name="TC-HOME-07: Given I am on the page, When the page renders, Then create-post input or button is visible" classname="home\home.spec.js" time="5.399">
+</testcase>
+<testcase name="TC-HOME-08: Given I am authenticated and on the page, When I perform the action, Then scrolling down loads more content" classname="home\home.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-09: Given I am on the page, When I inspect the content, Then post card contains an author link or avatar" classname="home\home.spec.js" time="4.17">
+</testcase>
+<testcase name="TC-HOME-10: Given I am on the post card, When I view it, Then it shows post text content" classname="home\home.spec.js" time="4.276">
+</testcase>
+<testcase name="TC-HOME-11: Given I am on the post card, When I view it, Then it shows a timestamp or post-age indicator" classname="home\home.spec.js">
+<properties>
+<property name="skip" value="No timestamp text detected in feed innerText">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-12: Given I am on the page, When I inspect the content, Then post card has at least two action buttons" classname="home\home.spec.js" time="3.579">
+</testcase>
+<testcase name="TC-HOME-13: Given I am authenticated and on the page, When I perform the action, Then post card three-dot options menu is present" classname="home\home.spec.js" time="6.095">
+</testcase>
+<testcase name="TC-HOME-14: Given I am authenticated and on the page, When I perform the action, Then like button is present on feed posts" classname="home\home.spec.js" time="3.526">
+</testcase>
+<testcase name="TC-HOME-15: Given the page is loaded, When I click like button is interactive and page remains stable, Then it responds correctly" classname="home\home.spec.js" time="4.155">
+</testcase>
+<testcase name="TC-HOME-16: Given I am authenticated and on the page, When I perform the action, Then comment button is present on feed posts" classname="home\home.spec.js" time="3.577">
+</testcase>
+<testcase name="TC-HOME-17: Given the comment button is present, When I click the comment button, Then it opens comments section or dialog" classname="home\home.spec.js" time="4.122">
+</testcase>
+<testcase name="TC-HOME-18: Given I am authenticated and on the page, When I perform the action, Then share button is present on feed posts" classname="home\home.spec.js" time="4.769">
+</testcase>
+<testcase name="TC-HOME-19: Given I am authenticated and on the page, When I perform the action, Then three-dot post menu opens on click" classname="home\home.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-20: Given I am on the page, When I inspect the content, Then post menu contains report or hide option" classname="home\home.spec.js" time="5.318">
+</testcase>
+<testcase name="TC-HOME-21: Given the author name is present, When I click the author name, Then it navigates to their profile" classname="home\home.spec.js" time="3.364">
+</testcase>
+<testcase name="TC-HOME-22: Given the Explore nav link is present, When I click the Explore nav link, Then it navigates to /app/explore" classname="home\home.spec.js" time="4.153">
+</testcase>
+<testcase name="TC-HOME-23: Given the Notifications nav link is present, When I click the Notifications nav link, Then it navigates to /app/notifications" classname="home\home.spec.js" time="3.971">
+</testcase>
+<testcase name="TC-HOME-24: Given the Messages nav link is present, When I click the Messages nav link, Then it navigates to /app/messages" classname="home\home.spec.js" time="4.256">
+</testcase>
+<testcase name="TC-HOME-25: Given I am on the page, When I inspect the content, Then top navigation area contains visible nav items" classname="home\home.spec.js" time="4.509">
+</testcase>
+<testcase name="TC-HOME-26: Given I am on the page, When I inspect the content, Then sidebar has multiple navigation links" classname="home\home.spec.js" time="4.175">
+</testcase>
+<testcase name="TC-HOME-27: Given the create-post is present, When I click the create-post, Then it trigger expands the composer" classname="home\home.spec.js" time="4.338">
+</testcase>
+<testcase name="TC-HOME-28: Given I am on the page, When I inspect the content, Then composer dialog contains a text input area" classname="home\home.spec.js" time="13.65">
+</testcase>
+<testcase name="TC-HOME-29: Given I am on the composer, When I view it, Then it shows the logged-in user avatar or name" classname="home\home.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-30: Given I am authenticated and on the page, When I perform the action, Then composer Post button is disabled when text area is empty" classname="home\home.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-31: Given I am authenticated and on the page, When I perform the action, Then typing in composer enables the Post button" classname="home\home.spec.js" time="13.968">
+</testcase>
+<testcase name="TC-HOME-32: Given I am on the page, When I interact with the element, Then composer can be dismissed with Escape or close button" classname="home\home.spec.js" time="14.559">
+</testcase>
+<testcase name="TC-HOME-33: Given I am on the page, When I inspect the content, Then composer has a media/photo attachment option" classname="home\home.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-34: Given I am authenticated and on the page, When I perform the action, Then stories or highlights bar is present if feature is enabled" classname="home\home.spec.js" time="9.704">
+</testcase>
+<testcase name="TC-HOME-35: Given the story is present, When I click the story, Then it opens the story viewer" classname="home\home.spec.js" time="4.018">
+</testcase>
+<testcase name="TC-HOME-36: Given I am authenticated and on the page, When I perform the action, Then feed filter or sort control is accessible if present" classname="home\home.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-37: Given I am authenticated and on the page, When I perform the action, Then image posts render their media correctly" classname="home\home.spec.js" time="4.373">
+</testcase>
+<testcase name="TC-HOME-38: Given I am authenticated and on the page, When I perform the action, Then page title reflects the app name" classname="home\home.spec.js" time="3.683">
+</testcase>
+<testcase name="TC-HOME-39: Given I am on the page, When I inspect the content, Then page has no uncaught JS errors on load" classname="home\home.spec.js" time="5.287">
+</testcase>
+<testcase name="TC-HOME-40: Given I am on the page, When I reload the page, Then content remains intact" classname="home\home.spec.js" time="5.627">
+</testcase>
+<testcase name="TC-HOME-41: Given I am on the page, When the page renders, Then create post widget text input is visible" classname="home\home.spec.js" time="6.108">
+</testcase>
+<testcase name="TC-HOME-42: Given I am authenticated and on the page, When I perform the action, Then Photo button is present in the create post widget" classname="home\home.spec.js" time="4.437">
+</testcase>
+<testcase name="TC-HOME-43: Given the Photo button is present, When I click the Photo button, Then it opens the photo picker or upload dialog" classname="home\home.spec.js" time="6.051">
+</testcase>
+<testcase name="TC-HOME-44: Given I am authenticated and on the page, When I perform the action, Then Video button is present in the create post widget" classname="home\home.spec.js" time="5.023">
+</testcase>
+<testcase name="TC-HOME-45: Given the page is loaded, When I click Video button is interactive and page stays stable, Then it responds correctly" classname="home\home.spec.js" time="5.827">
+</testcase>
+<testcase name="TC-HOME-46: Given I am authenticated and on the page, When I perform the action, Then Studio button is present in the create post widget" classname="home\home.spec.js" time="4.688">
+</testcase>
+<testcase name="TC-HOME-47: Given I am authenticated and on the page, When I perform the action, Then Studio button is clickable and page stays stable" classname="home\home.spec.js" time="4.207">
+</testcase>
+<testcase name="TC-HOME-48: Given I am authenticated and on the page, When I perform the action, Then Live button or link is present in the create post widget" classname="home\home.spec.js" time="5.47">
+</testcase>
+<testcase name="TC-HOME-49: Given the Live button is present, When I click the Live button, Then it navigates to or opens the live stream setup" classname="home\home.spec.js" time="4.936">
+</testcase>
+<testcase name="TC-HOME-50: Given I am authenticated and on the page, When I perform the action, Then Feeling button is present in the create post widget" classname="home\home.spec.js" time="5.644">
+</testcase>
+<testcase name="TC-HOME-51: Given the Feeling button is present, When I click the Feeling button, Then it opens the emotion or emoji picker" classname="home\home.spec.js" time="4.641">
+</testcase>
+<testcase name="TC-HOME-52: Given I am on the page, When the page renders, Then Post button is visible" classname="home\home.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-53: Given I am authenticated and on the page, When I perform the action, Then Post button is disabled when no text is entered" classname="home\home.spec.js" time="3.738">
+</testcase>
+<testcase name="TC-HOME-54: Given I am on the page, When I inspect the content, Then Post button has a dropdown chevron for post type selection" classname="home\home.spec.js" time="4.487">
+</testcase>
+<testcase name="TC-HOME-55: Given I am on the create post widget, When I view it, Then it shows the logged-in user avatar" classname="home\home.spec.js" time="3.603">
+</testcase>
+<testcase name="TC-HOME-56: Given I am on the home page, When I inspect the sidebar, Then Explore link is visible in sidebar" classname="home\home.spec.js" time="4.444">
+</testcase>
+<testcase name="TC-HOME-57: Given I am on the home page, When I inspect the sidebar, Then Messages link is visible in sidebar" classname="home\home.spec.js" time="4.896">
+</testcase>
+<testcase name="TC-HOME-58: Given I am on the home page, When I inspect the sidebar, Then Notifications link is visible in sidebar" classname="home\home.spec.js" time="4.519">
+</testcase>
+<testcase name="TC-HOME-59: Given the post composer is open, When I inspect it, Then emoji or media toolbar buttons are visible" classname="home\home.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="navigation\cross-module.spec.js" timestamp="2026-06-14T12:38:24.060Z" hostname="chromium" tests="20" failures="0" skipped="4" time="95.813" errors="0">
+<testcase name="TC-NAV-001 Direct Deep Links › TC-NAV-001: Given I am authenticated and on the page, When I perform the action, Then 01 direct goto /app/home loads with main content" classname="navigation\cross-module.spec.js" time="3.277">
+</testcase>
+<testcase name="TC-NAV-001 Direct Deep Links › TC-NAV-001: Given I am authenticated and on the page, When I perform the action, Then 02 direct goto /app/notifications loads with main content" classname="navigation\cross-module.spec.js" time="3.029">
+</testcase>
+<testcase name="TC-NAV-001 Direct Deep Links › TC-NAV-001: Given I am authenticated and on the page, When I perform the action, Then 03 direct goto /app/messages loads with main content" classname="navigation\cross-module.spec.js" time="2.923">
+</testcase>
+<testcase name="TC-NAV-001 Direct Deep Links › TC-NAV-001: Given I am authenticated and on the page, When I perform the action, Then 04 direct goto /app/profile loads with main content" classname="navigation\cross-module.spec.js" time="3.833">
+</testcase>
+<testcase name="TC-NAV-001 Direct Deep Links › TC-NAV-001: Given I am authenticated and on the page, When I perform the action, Then 05 direct goto /app/groups loads with main content" classname="navigation\cross-module.spec.js" time="4.067">
+</testcase>
+<testcase name="TC-NAV-001 Direct Deep Links › TC-NAV-001: Given I am authenticated and on the page, When I perform the action, Then 06 direct goto /app/settings loads with main content" classname="navigation\cross-module.spec.js" time="3.457">
+</testcase>
+<testcase name="TC-NAV-002 Browser Back/Forward › TC-NAV-002: Given I am authenticated and on the page, When I perform the action, Then 01 navigate home then notifications then back lands on home URL" classname="navigation\cross-module.spec.js" time="8.257">
+</testcase>
+<testcase name="TC-NAV-002 Browser Back/Forward › TC-NAV-002: Given I am authenticated and on the page, When I perform the action, Then 02 home→messages→back→forward lands on messages URL" classname="navigation\cross-module.spec.js" time="10.033">
+</testcase>
+<testcase name="TC-NAV-002 Browser Back/Forward › TC-NAV-002: Given I am authenticated and on the page, When I perform the action, Then 03 history length increases with each page navigation" classname="navigation\cross-module.spec.js" time="5.925">
+</testcase>
+<testcase name="TC-NAV-002 Browser Back/Forward › TC-NAV-002: Given I am authenticated and on the page, When I perform the action, Then 04 page state is preserved after pressing back" classname="navigation\cross-module.spec.js" time="7.966">
+</testcase>
+<testcase name="TC-NAV-002 Browser Back/Forward › TC-NAV-002: Given I am authenticated and on the page, When I perform the action, Then 05 no blank screen after forward navigation" classname="navigation\cross-module.spec.js" time="9.589">
+</testcase>
+<testcase name="TC-NAV-003 Active Nav Highlight › TC-NAV-003: Given I am authenticated and on the page, When I perform the action, Then 01 on /app/home the Home nav link is active" classname="navigation\cross-module.spec.js" time="3.166">
+</testcase>
+<testcase name="TC-NAV-003 Active Nav Highlight › TC-NAV-003: Given I am authenticated and on the page, When I perform the action, Then 02 on /app/notifications the Notifications nav link is active" classname="navigation\cross-module.spec.js" time="3.328">
+</testcase>
+<testcase name="TC-NAV-003 Active Nav Highlight › TC-NAV-003: Given I am authenticated and on the page, When I perform the action, Then 03 on /app/messages the Messages nav link is active" classname="navigation\cross-module.spec.js" time="3.303">
+</testcase>
+<testcase name="TC-NAV-003 Active Nav Highlight › TC-NAV-003: Given I am authenticated and on the page, When I perform the action, Then 04 on /app/groups the Groups nav link is active" classname="navigation\cross-module.spec.js" time="3.734">
+</testcase>
+<testcase name="TC-NAV-003 Active Nav Highlight › TC-NAV-003: Given I am authenticated and on the page, When I perform the action, Then 05 active indicator changes when navigating between pages" classname="navigation\cross-module.spec.js" time="5.952">
+</testcase>
+<testcase name="TC-NAV-004 Cross-Module Actions › TC-NAV-004: Given I am authenticated and on the page, When I perform the action, Then 01 clicking a user avatar in feed navigates to their profile" classname="navigation\cross-module.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-NAV-004 Cross-Module Actions › TC-NAV-004: Given I am authenticated and on the page, When I perform the action, Then 02 clicking a notification navigates away from the notifications list" classname="navigation\cross-module.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-NAV-004 Cross-Module Actions › TC-NAV-004: Given I am authenticated and on the page, When I perform the action, Then 03 clicking a post in the profile feed navigates to post detail" classname="navigation\cross-module.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-NAV-004 Cross-Module Actions › TC-NAV-004: Given I am authenticated and on the page, When I perform the action, Then 04 clicking Home in nav from any page returns to /app/home" classname="navigation\cross-module.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="platform\omni-ai.spec.js" timestamp="2026-06-14T12:38:24.060Z" hostname="chromium" tests="31" failures="0" skipped="6" time="153.398" errors="1">
+<testcase name="Page Load and Layout › TC-OMNIAI-01: Given I am authenticated, When I navigate to the page, Then correct URL" classname="platform\omni-ai.spec.js" time="3.524">
+</testcase>
+<testcase name="Page Load and Layout › TC-OMNIAI-02: Given I am on the page, When the page renders, Then Omni AI heading is visible" classname="platform\omni-ai.spec.js" time="3.549">
+</testcase>
+<testcase name="Page Load and Layout › TC-OMNIAI-03: Given I am authenticated and on the page, When I perform the action, Then main content area renders with child elements" classname="platform\omni-ai.spec.js" time="3.475">
+</testcase>
+<testcase name="Page Load and Layout › TC-OMNIAI-04: Given I am authenticated and on the page, When I perform the action, Then sidebar or navigation is present" classname="platform\omni-ai.spec.js" time="3.536">
+</testcase>
+<testcase name="Page Load and Layout › TC-OMNIAI-05: Given I am authenticated and on the page, When I perform the action, Then page does not produce uncaught JS errors on load" classname="platform\omni-ai.spec.js" time="5.022">
+</testcase>
+<testcase name="AI Tool Tiles and Options › TC-OMNIAI-06: Given I am authenticated and on the page, When I perform the action, Then AI tool tiles or option cards are visible" classname="platform\omni-ai.spec.js" time="3.442">
+</testcase>
+<testcase name="AI Tool Tiles and Options › TC-OMNIAI-07: Given I am on the page, When I inspect the content, Then tool tiles have readable title labels" classname="platform\omni-ai.spec.js" time="3.59">
+</testcase>
+<testcase name="AI Tool Tiles and Options › TC-OMNIAI-08: Given I am on the tool tiles, When I view it, Then it displays description text" classname="platform\omni-ai.spec.js" time="3.3">
+</testcase>
+<testcase name="AI Tool Tiles and Options › TC-OMNIAI-09: Given I am authenticated and on the page, When I perform the action, Then multiple AI tool options are listed" classname="platform\omni-ai.spec.js" time="3.405">
+</testcase>
+<testcase name="AI Tool Tiles and Options › TC-OMNIAI-10: Given I am authenticated and on the page, When I perform the action, Then tool icons or illustrations accompany the tiles" classname="platform\omni-ai.spec.js" time="3.456">
+</testcase>
+<testcase name="Tool Selection › TC-OMNIAI-11: Given the tool tile is present, When I click the tool tile, Then it opens the tool interface" classname="platform\omni-ai.spec.js" time="4.546">
+</testcase>
+<testcase name="Tool Selection › TC-OMNIAI-12: Given I am authenticated and on the page, When I perform the action, Then selected tool tab or state is visually indicated" classname="platform\omni-ai.spec.js" time="3.585">
+</testcase>
+<testcase name="Tool Selection › TC-OMNIAI-13: Given I am authenticated and on the page, When I perform the action, Then text generation tool or chat is accessible" classname="platform\omni-ai.spec.js" time="3.782">
+</testcase>
+<testcase name="Tool Selection › TC-OMNIAI-14: Given I am authenticated and on the page, When I perform the action, Then image generation tool or option is accessible" classname="platform\omni-ai.spec.js" time="3.846">
+</testcase>
+<testcase name="Input Field and Generate Action › TC-OMNIAI-15: Given I am authenticated and on the page, When I perform the action, Then prompt input field is present" classname="platform\omni-ai.spec.js" time="4.53">
+</testcase>
+<testcase name="Input Field and Generate Action › TC-OMNIAI-16: Given I am authenticated and on the page, When I perform the action, Then typing in prompt field accepts input" classname="platform\omni-ai.spec.js" time="4.506">
+</testcase>
+<testcase name="Input Field and Generate Action › TC-OMNIAI-17: Given I am authenticated and on the page, When I perform the action, Then generate or submit button is present and enabled" classname="platform\omni-ai.spec.js" time="4.283">
+</testcase>
+<testcase name="Input Field and Generate Action › TC-OMNIAI-18: Given I am authenticated and on the page, When I perform the action, Then output or response area exists in the DOM" classname="platform\omni-ai.spec.js" time="4.279">
+</testcase>
+<testcase name="Settings, Clear, and History › TC-OMNIAI-19: Given I am authenticated and on the page, When I perform the action, Then clear or reset button is present when input exists" classname="platform\omni-ai.spec.js" time="3.666">
+</testcase>
+<testcase name="Settings, Clear, and History › TC-OMNIAI-20: Given the page is loaded, When I click clear resets the prompt input, Then it responds correctly" classname="platform\omni-ai.spec.js" time="3.295">
+</testcase>
+<testcase name="Settings, Clear, and History › TC-OMNIAI-21: Given I am authenticated and on the page, When I perform the action, Then model selector or settings control is accessible" classname="platform\omni-ai.spec.js" time="3.827">
+</testcase>
+<testcase name="Settings, Clear, and History › TC-OMNIAI-22: Given I am authenticated and on the page, When I perform the action, Then history or recent generations panel is accessible" classname="platform\omni-ai.spec.js" time="3.459">
+</testcase>
+<testcase name="Settings, Clear, and History › TC-OMNIAI-23: Given I am authenticated and on the page, When I perform the action, Then copy output button is present after generation" classname="platform\omni-ai.spec.js" time="3.543">
+</testcase>
+<testcase name="Settings, Clear, and History › TC-OMNIAI-24: Given I am authenticated and on the page, When I perform the action, Then page renders without critical console errors" classname="platform\omni-ai.spec.js" time="4.751">
+</testcase>
+<testcase name="Generate Action, Validation and Model Switching › TC-OMNIAI-25: Given I have typed a prompt and clicked Generate, When generation runs, Then an output area receives content" classname="platform\omni-ai.spec.js" time="45.429">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|2026-06-14_18-13-42\artifacts\platform-omni-ai-Generate--6bed0-utput-area-receives-content-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|2026-06-14_18-13-42\artifacts\platform-omni-ai-Generate--6bed0-utput-area-receives-content-chromium\video.webm]]
+
+[[ATTACHMENT|2026-06-14_18-13-42\artifacts\platform-omni-ai-Generate--6bed0-utput-area-receives-content-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="Test timeout of 45000ms exceeded." type="Error">
+<![CDATA[  [chromium] › platform\omni-ai.spec.js:248:7 › Generate Action, Validation and Model Switching › TC-OMNIAI-25: Given I have typed a prompt and clicked Generate, When generation runs, Then an output area receives content 
+
+    Test timeout of 45000ms exceeded.
+
+    Error: locator.pressSequentially: Target page, context or browser has been closed
+
+      251 |     if (!visible) { test.skip(); return; }
+      252 |     await input.evaluate(el => el.click()).catch(() => {});
+    > 253 |     await input.fill('Write one sentence about digital literacy.').catch(() => input.pressSequentially('Write one sentence about digital literacy.'));
+          |                                                                                      ^
+      254 |     const generateBtn = page.locator('button').filter({ hasText: /generate|submit|send|create|ask/i }).first();
+      255 |     const btnVisible = await generateBtn.isVisible({ timeout: 5000 }).catch(() => false);
+      256 |     if (!btnVisible) { test.skip(); return; }
+        at C:\claude-folder\webapp-testing\omre-webapp\tests\platform\omni-ai.spec.js:253:86
+        at C:\claude-folder\webapp-testing\omre-webapp\tests\platform\omni-ai.spec.js:253:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\2026-06-14_18-13-42\artifacts\platform-omni-ai-Generate--6bed0-utput-area-receives-content-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\2026-06-14_18-13-42\artifacts\platform-omni-ai-Generate--6bed0-utput-area-receives-content-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\2026-06-14_18-13-42\artifacts\platform-omni-ai-Generate--6bed0-utput-area-receives-content-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Generate Action, Validation and Model Switching › TC-OMNIAI-26: untestable: error state when generation fails — requires backend to be down or quota exceeded, not reproducible in CI" classname="platform\omni-ai.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Generate Action, Validation and Model Switching › TC-OMNIAI-27: Given the prompt input is empty, When I click Generate, Then the button is disabled or an error/validation message appears" classname="platform\omni-ai.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Generate Action, Validation and Model Switching › TC-OMNIAI-28: untestable: rate limiting or quota error display requires the API quota to be exhausted, which cannot be triggered deterministically in CI" classname="platform\omni-ai.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Generate Action, Validation and Model Switching › TC-OMNIAI-29: Given output text is present, When I click the copy button, Then the button text changes or a toast confirmation appears" classname="platform\omni-ai.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Generate Action, Validation and Model Switching › TC-OMNIAI-30: Given the history section shows past generations, When I click clear history, Then the history section becomes empty" classname="platform\omni-ai.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Generate Action, Validation and Model Switching › TC-OMNIAI-31: Given a model selector is present, When I switch to a different model, Then the UI label updates to reflect the selected model" classname="platform\omni-ai.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="platform\orbit.spec.js" timestamp="2026-06-14T12:38:24.060Z" hostname="chromium" tests="28" failures="0" skipped="10" time="84.907" errors="0">
+<testcase name="Page Load and Layout › TC-ORBIT-01: Given I am authenticated, When I navigate to the page, Then correct URL" classname="platform\orbit.spec.js" time="2.644">
+</testcase>
+<testcase name="Page Load and Layout › TC-ORBIT-02: Given I am on the page, When the page renders, Then Orbit heading is visible" classname="platform\orbit.spec.js" time="2.681">
+</testcase>
+<testcase name="Page Load and Layout › TC-ORBIT-03: Given I am authenticated and on the page, When I perform the action, Then main content area renders with child elements" classname="platform\orbit.spec.js" time="2.641">
+</testcase>
+<testcase name="Page Load and Layout › TC-ORBIT-04: Given I am authenticated and on the page, When I perform the action, Then sidebar or navigation is present" classname="platform\orbit.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Page Load and Layout › TC-ORBIT-05: Given I am authenticated and on the page, When I perform the action, Then page does not produce uncaught JS errors on load" classname="platform\orbit.spec.js" time="4.357">
+</testcase>
+<testcase name="Space-Themed Content Renders › TC-ORBIT-06: Given I am on the page, When the page renders, Then themed banner, hero, or canvas is visible" classname="platform\orbit.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Space-Themed Content Renders › TC-ORBIT-07: Given I am authenticated and on the page, When I perform the action, Then content cards or feed items are displayed" classname="platform\orbit.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Space-Themed Content Renders › TC-ORBIT-08: Given I am authenticated and on the page, When I perform the action, Then card titles are non-empty text" classname="platform\orbit.spec.js" time="2.626">
+</testcase>
+<testcase name="Space-Themed Content Renders › TC-ORBIT-09: Given I am authenticated and on the page, When I perform the action, Then author or creator info is displayed on content items" classname="platform\orbit.spec.js" time="2.809">
+</testcase>
+<testcase name="Space-Themed Content Renders › TC-ORBIT-10: Given I am authenticated and on the page, When I perform the action, Then timestamps or date indicators are shown" classname="platform\orbit.spec.js" time="2.928">
+</testcase>
+<testcase name="Section Navigation › TC-ORBIT-11: Given I am authenticated and on the page, When I perform the action, Then navigation tabs or links between sections are present" classname="platform\orbit.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Section Navigation › TC-ORBIT-12: Given I am authenticated and on the page, When I perform the action, Then switching between tabs updates visible content" classname="platform\orbit.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Section Navigation › TC-ORBIT-13: Given I am authenticated and on the page, When I perform the action, Then orbit sub-section routes are navigable" classname="platform\orbit.spec.js" time="3.031">
+</testcase>
+<testcase name="Section Navigation › TC-ORBIT-14: Given I am authenticated and on the page, When I perform the action, Then back navigation returns to orbit home" classname="platform\orbit.spec.js" time="2.993">
+</testcase>
+<testcase name="Interactive Elements › TC-ORBIT-15: Given I am authenticated and on the page, When I perform the action, Then like or upvote button is present on content items" classname="platform\orbit.spec.js" time="3.133">
+</testcase>
+<testcase name="Interactive Elements › TC-ORBIT-16: Given the like is present, When I click the like, Then it changes button state" classname="platform\orbit.spec.js" time="3.105">
+</testcase>
+<testcase name="Interactive Elements › TC-ORBIT-17: Given I am authenticated and on the page, When I perform the action, Then share or repost button is accessible" classname="platform\orbit.spec.js" time="3.206">
+</testcase>
+<testcase name="Interactive Elements › TC-ORBIT-18: Given I am authenticated and on the page, When I perform the action, Then comment button opens the thread or input" classname="platform\orbit.spec.js" time="3.113">
+</testcase>
+<testcase name="Join and Subscribe › TC-ORBIT-19: Given I am on the page, When the page renders, Then Join or Subscribe button is visible" classname="platform\orbit.spec.js" time="2.89">
+</testcase>
+<testcase name="Join and Subscribe › TC-ORBIT-20: Given the page is loaded, When I click Join toggles the button state, Then it responds correctly" classname="platform\orbit.spec.js" time="3.019">
+</testcase>
+<testcase name="Join and Subscribe › TC-ORBIT-21: Given I am authenticated and on the page, When I perform the action, Then Unfollow or Leave option appears after joining" classname="platform\orbit.spec.js" time="2.906">
+</testcase>
+<testcase name="Join and Subscribe › TC-ORBIT-22: Given I am authenticated and on the page, When I perform the action, Then featured or recommended orbits are displayed" classname="platform\orbit.spec.js" time="3.117">
+</testcase>
+<testcase name="Join and Subscribe › TC-ORBIT-23: Given I am authenticated and on the page, When I perform the action, Then page renders without critical console errors" classname="platform\orbit.spec.js" time="4.576">
+</testcase>
+<testcase name="Like, Share, Comment and Follow Interactions › TC-ORBIT-24: Given a like button is present, When I click it multiple times, Then the count updates or toggles each time" classname="platform\orbit.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Like, Share, Comment and Follow Interactions › TC-ORBIT-25: Given a share button is present, When I click it, Then a share modal or dialog opens" classname="platform\orbit.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Like, Share, Comment and Follow Interactions › TC-ORBIT-26: Given a comment button is present, When I click it, Then a comment input becomes visible" classname="platform\orbit.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Like, Share, Comment and Follow Interactions › TC-ORBIT-27: Given I follow a user or orbit, When I reload the page, Then the follow state is still reflected" classname="platform\orbit.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Like, Share, Comment and Follow Interactions › TC-ORBIT-28: Given I click Join on an orbit, When the join is processed, Then a toast, notification or button state change confirms the action" classname="platform\orbit.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="profile\reputation.spec.js" timestamp="2026-06-14T12:38:24.060Z" hostname="chromium" tests="22" failures="0" skipped="2" time="75.188" errors="0">
+<testcase name="TC-REP: Page Load and Layout › TC-REP-01: Given I am authenticated and on the page, When I perform the action, Then reputation or profile page loads" classname="profile\reputation.spec.js" time="3.343">
+</testcase>
+<testcase name="TC-REP: Page Load and Layout › TC-REP-02: Given I am on the page, When the page renders, Then main content area is visible" classname="profile\reputation.spec.js" time="3.032">
+</testcase>
+<testcase name="TC-REP: Page Load and Layout › TC-REP-03: Given I am on the page, When the page renders, Then reputation section or heading is visible" classname="profile\reputation.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-REP: Score and Level Display › TC-REP-04: Given I am authenticated and on the page, When I perform the action, Then reputation score or points number is displayed" classname="profile\reputation.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-REP: Score and Level Display › TC-REP-05: Given I am authenticated and on the page, When I perform the action, Then level or rank label is displayed" classname="profile\reputation.spec.js" time="3.548">
+</testcase>
+<testcase name="TC-REP: Score and Level Display › TC-REP-06: Given I am on the page, When the page renders, Then level progress bar or progress indicator is visible" classname="profile\reputation.spec.js" time="3.192">
+</testcase>
+<testcase name="TC-REP: Badges Section › TC-REP-07: Given I am authenticated and on the page, When I perform the action, Then badges section is rendered" classname="profile\reputation.spec.js" time="3.772">
+</testcase>
+<testcase name="TC-REP: Badges Section › TC-REP-08: Given I am on the individual badge cards, When I view it, Then it shows badge icon or image" classname="profile\reputation.spec.js" time="3.142">
+</testcase>
+<testcase name="TC-REP: Badges Section › TC-REP-09: Given I am on the individual badge cards, When I view it, Then it shows badge name" classname="profile\reputation.spec.js" time="3.636">
+</testcase>
+<testcase name="TC-REP: Badges Section › TC-REP-10: Given I am authenticated and on the page, When I perform the action, Then locked badges are visually distinct from unlocked badges" classname="profile\reputation.spec.js" time="3.498">
+</testcase>
+<testcase name="TC-REP: Badges Section › TC-REP-11: Given the badge is present, When I click the badge, Then it shows detail, tooltip, or description" classname="profile\reputation.spec.js" time="3.585">
+</testcase>
+<testcase name="TC-REP: How to Earn Points › TC-REP-12: Given I am authenticated and on the page, When I perform the action, Then how-to-earn or rules section is present" classname="profile\reputation.spec.js" time="3.269">
+</testcase>
+<testcase name="TC-REP: How to Earn Points › TC-REP-13: Given I am authenticated and on the page, When I perform the action, Then points earned from actions (post, like, comment) are listed" classname="profile\reputation.spec.js" time="3.83">
+</testcase>
+<testcase name="TC-REP: Points History › TC-REP-14: Given I am authenticated and on the page, When I perform the action, Then points history or activity log section is present" classname="profile\reputation.spec.js" time="3.456">
+</testcase>
+<testcase name="TC-REP: Points History › TC-REP-15: Given I am on the page, When I inspect the content, Then activity log has at least one entry if points exist" classname="profile\reputation.spec.js" time="3.292">
+</testcase>
+<testcase name="TC-REP: Leaderboard › TC-REP-16: Given I am authenticated and on the page, When I perform the action, Then leaderboard section is present" classname="profile\reputation.spec.js" time="3.432">
+</testcase>
+<testcase name="TC-REP: Leaderboard › TC-REP-17: Given I am on the leaderboard, When I view it, Then it shows user names" classname="profile\reputation.spec.js" time="3.296">
+</testcase>
+<testcase name="TC-REP: Leaderboard › TC-REP-18: Given I am on the leaderboard, When I view it, Then it shows user avatars" classname="profile\reputation.spec.js" time="3.581">
+</testcase>
+<testcase name="TC-REP: Leaderboard › TC-REP-19: Given I am on the leaderboard, When I view it, Then it shows scores for ranked users" classname="profile\reputation.spec.js" time="3.295">
+</testcase>
+<testcase name="TC-REP: Leaderboard › TC-REP-20: Given I am authenticated and on the page, When I perform the action, Then current user is highlighted in leaderboard" classname="profile\reputation.spec.js" time="3.337">
+</testcase>
+<testcase name="TC-REP: Share Score › TC-REP-21: Given I am authenticated and on the page, When I perform the action, Then share score or badge button is present" classname="profile\reputation.spec.js" time="3.795">
+</testcase>
+<testcase name="TC-REP: Share Score › TC-REP-22: Given the share is present, When I click the share, Then it opens share options or dialog" classname="profile\reputation.spec.js" time="3.773">
+</testcase>
+</testsuite>
+<testsuite name="social\messages.spec.js" timestamp="2026-06-14T12:38:24.060Z" hostname="chromium" tests="181" failures="0" skipped="4" time="807.255" errors="5">
+<testcase name="Page Load and Layout › TC-MSG-01: Given I am authenticated and on the page, When I perform the action, Then messages page loads at correct URL" classname="social\messages.spec.js" time="3.043">
+</testcase>
+<testcase name="Page Load and Layout › TC-MSG-02: Given I am on the page, When the page renders, Then messages heading or title is visible" classname="social\messages.spec.js" time="3.082">
+</testcase>
+<testcase name="Page Load and Layout › TC-MSG-03: Given I am authenticated and on the page, When I perform the action, Then conversation list panel renders" classname="social\messages.spec.js" time="2.957">
+</testcase>
+<testcase name="Page Load and Layout › TC-MSG-04: Given I am authenticated and on the page, When I perform the action, Then new message compose button is present" classname="social\messages.spec.js" time="2.962">
+</testcase>
+<testcase name="Page Load and Layout › TC-MSG-05: Given I am on the page, When I inspect the content, Then page does not have uncaught JS errors on load" classname="social\messages.spec.js" time="4.856">
+</testcase>
+<testcase name="Conversation List › TC-MSG-06: Given I am on the page, When the page renders, Then at least one conversation is visible" classname="social\messages.spec.js" time="3.209">
+</testcase>
+<testcase name="Conversation List › TC-MSG-07: Given I am on the each conversation, When I view it, Then it shows the contact name" classname="social\messages.spec.js" time="3.263">
+</testcase>
+<testcase name="Conversation List › TC-MSG-08: Given I am on the each conversation, When I view it, Then it shows a last-message preview" classname="social\messages.spec.js" time="2.837">
+</testcase>
+<testcase name="Conversation List › TC-MSG-09: Given I am on the each conversation, When I view it, Then it shows a timestamp" classname="social\messages.spec.js" time="2.989">
+</testcase>
+<testcase name="Conversation List › TC-MSG-10: Given I am authenticated and on the page, When I perform the action, Then unread conversations are visually distinguished" classname="social\messages.spec.js" time="3.171">
+</testcase>
+<testcase name="Conversation List › TC-MSG-11: Given I am on the page, When I inspect the content, Then conversation list has a search input" classname="social\messages.spec.js" time="3.222">
+</testcase>
+<testcase name="Conversation List › TC-MSG-12: Given I am authenticated and on the page, When I perform the action, Then searching filters the conversation list" classname="social\messages.spec.js" time="4.694">
+</testcase>
+<testcase name="Conversation List › TC-MSG-13: Given I am on the page, When I inspect the content, Then conversation item has an avatar or profile picture" classname="social\messages.spec.js" time="2.882">
+</testcase>
+<testcase name="Opening a Conversation › TC-MSG-14: Given the conversation is present, When I click the conversation, Then it opens the chat panel" classname="social\messages.spec.js" time="3.148">
+</testcase>
+<testcase name="Opening a Conversation › TC-MSG-15: Given I am on the chat header, When I view it, Then it shows the contact name" classname="social\messages.spec.js" time="2.871">
+</testcase>
+<testcase name="Opening a Conversation › TC-MSG-16: Given I am on the chat header, When I view it, Then it shows the contact avatar" classname="social\messages.spec.js" time="3.308">
+</testcase>
+<testcase name="Opening a Conversation › TC-MSG-17: Given I am authenticated and on the page, When I perform the action, Then message history renders in the chat panel" classname="social\messages.spec.js" time="3">
+</testcase>
+<testcase name="Opening a Conversation › TC-MSG-18: Given I am on the page, When the page renders, Then message input field is visible" classname="social\messages.spec.js" time="3.032">
+</testcase>
+<testcase name="Opening a Conversation › TC-MSG-19: Given I am authenticated and on the page, When I perform the action, Then back button or navigation returns to conversation list" classname="social\messages.spec.js" time="2.894">
+</testcase>
+<testcase name="Opening a Conversation › TC-MSG-20: Given I am on the page, When the page renders, Then online status indicator is visible" classname="social\messages.spec.js" time="2.87">
+</testcase>
+<testcase name="Sending Messages › TC-MSG-21: Given I am authenticated and on the page, When I perform the action, Then message input accepts typed text" classname="social\messages.spec.js" time="3.014">
+</testcase>
+<testcase name="Sending Messages › TC-MSG-22: Given I am authenticated and on the page, When I perform the action, Then send button is disabled when input is empty" classname="social\messages.spec.js" time="2.842">
+</testcase>
+<testcase name="Sending Messages › TC-MSG-23: Given I am authenticated and on the page, When I perform the action, Then send button enables after typing a message" classname="social\messages.spec.js" time="3.04">
+</testcase>
+<testcase name="Sending Messages › TC-MSG-24: Given I am authenticated and on the page, When I perform the action, Then pressing Enter sends the message" classname="social\messages.spec.js" time="2.939">
+</testcase>
+<testcase name="Sending Messages › TC-MSG-25: Given I am authenticated and on the page, When I perform the action, Then input clears after message is sent" classname="social\messages.spec.js" time="3.037">
+</testcase>
+<testcase name="Sending Messages › TC-MSG-26: Given I am authenticated and on the page, When I perform the action, Then sent message appears in the chat thread" classname="social\messages.spec.js" time="2.913">
+</testcase>
+<testcase name="Message Input Toolbar › TC-MSG-27: Given I am authenticated and on the page, When I perform the action, Then emoji button is present in the message input area" classname="social\messages.spec.js" time="2.812">
+</testcase>
+<testcase name="Message Input Toolbar › TC-MSG-28: Given I am authenticated and on the page, When I perform the action, Then attachment or media button is present in message input area" classname="social\messages.spec.js" time="3.097">
+</testcase>
+<testcase name="Message Input Toolbar › TC-MSG-29: Given the emoji button is present, When I click the emoji button, Then it opens an emoji picker" classname="social\messages.spec.js" time="3.012">
+</testcase>
+<testcase name="Message Input Toolbar › TC-MSG-30: Given I am authenticated and on the page, When I perform the action, Then message input supports multiline with Shift+Enter" classname="social\messages.spec.js" time="3.12">
+</testcase>
+<testcase name="Message Actions › TC-MSG-31: Given I am authenticated and on the page, When I perform the action, Then hovering a message reveals action options" classname="social\messages.spec.js" time="3.352">
+</testcase>
+<testcase name="Message Actions › TC-MSG-32: Given I am on the page, When I inspect the content, Then own message has a delete option" classname="social\messages.spec.js" time="2.94">
+</testcase>
+<testcase name="Message Actions › TC-MSG-33: Given I am authenticated and on the page, When I perform the action, Then message timestamps are visible" classname="social\messages.spec.js" time="3.331">
+</testcase>
+<testcase name="Message Actions › TC-MSG-34: Given I am authenticated and on the page, When I perform the action, Then message read receipt or delivered indicator is present" classname="social\messages.spec.js" time="3.373">
+</testcase>
+<testcase name="New Conversation › TC-MSG-35: Given I am authenticated and on the page, When I perform the action, Then compose new message button opens a recipient search" classname="social\messages.spec.js" time="3.115">
+</testcase>
+<testcase name="New Conversation › TC-MSG-36: Given I am authenticated and on the page, When I perform the action, Then it shows user suggestions" classname="social\messages.spec.js" time="3.059">
+</testcase>
+<testcase name="New Conversation › TC-MSG-37: Given I am on the page, When I interact with the element, Then new message dialog can be dismissed" classname="social\messages.spec.js" time="2.86">
+</testcase>
+<testcase name="Unread State › TC-MSG-38: Given I am authenticated and on the page, When I perform the action, Then unread message count badge is shown if unread messages exist" classname="social\messages.spec.js" time="3.221">
+</testcase>
+<testcase name="Unread State › TC-MSG-39: Given I am authenticated and on the page, When I perform the action, Then opening an unread conversation marks it as read" classname="social\messages.spec.js" time="2.838">
+</testcase>
+<testcase name="Unread State › TC-MSG-40: Given I am on the messages nav link, When I view it, Then it shows unread badge on home page" classname="social\messages.spec.js" time="5.456">
+</testcase>
+<testcase name="Message History and Pagination › TC-MSG-41: Given I am authenticated and on the page, When I perform the action, Then scrolling up in a conversation loads older messages" classname="social\messages.spec.js" time="3.227">
+</testcase>
+<testcase name="Message History and Pagination › TC-MSG-42: Given I am on the chat panel, When I view it, Then it shows a date separator between messages" classname="social\messages.spec.js" time="3.121">
+</testcase>
+<testcase name="Message History and Pagination › TC-MSG-43: Given I am authenticated and on the page, When I perform the action, Then chat is scrolled to the most recent message on open" classname="social\messages.spec.js" time="3.438">
+</testcase>
+<testcase name="Group Conversations › TC-MSG-44: Given I am on the group conversation items, When I view it, Then it shows multiple participant avatars" classname="social\messages.spec.js" time="2.863">
+</testcase>
+<testcase name="Group Conversations › TC-MSG-45: Given I am authenticated and on the page, When I perform the action, Then conversation info or details panel is accessible" classname="social\messages.spec.js" time="3.066">
+</testcase>
+<testcase name="Voice and Video Calls › TC-MSG-46: Given I am on the page, When the page renders, Then voice call button is visible" classname="social\messages.spec.js" time="2.921">
+</testcase>
+<testcase name="Voice and Video Calls › TC-MSG-47: Given I am on the page, When the page renders, Then video call button is visible" classname="social\messages.spec.js" time="3.015">
+</testcase>
+<testcase name="Voice and Video Calls › TC-MSG-48: Given the voice call is present, When I click the voice call, Then it opens call UI or permission prompt" classname="social\messages.spec.js" time="3.029">
+</testcase>
+<testcase name="Voice and Video Calls › TC-MSG-49: Given the video call is present, When I click the video call, Then it opens video call UI or permission prompt" classname="social\messages.spec.js" time="3.049">
+</testcase>
+<testcase name="Voice and Video Calls › TC-MSG-50: Given I am on the call ui, When I view it, Then it shows the contact name or avatar" classname="social\messages.spec.js" time="2.902">
+</testcase>
+<testcase name="Voice and Video Calls › TC-MSG-51: Given I am on the page, When I inspect the content, Then call UI has a mute button" classname="social\messages.spec.js" time="3.177">
+</testcase>
+<testcase name="Voice and Video Calls › TC-MSG-52: Given I am on the page, When I inspect the content, Then call UI has an end call button" classname="social\messages.spec.js" time="2.863">
+</testcase>
+<testcase name="Voice and Video Calls › TC-MSG-53: Given I am on the page, When I inspect the content, Then video call UI has camera toggle button" classname="social\messages.spec.js" time="3.071">
+</testcase>
+<testcase name="Search Within Conversation › TC-MSG-54: Given I am on the page, When the page renders, Then search icon or button is visible" classname="social\messages.spec.js" time="2.905">
+</testcase>
+<testcase name="Search Within Conversation › TC-MSG-55: Given the search in conversation is present, When I click the search in conversation, Then it opens a search input" classname="social\messages.spec.js" time="4.4">
+</testcase>
+<testcase name="Search Within Conversation › TC-MSG-56: Given I am authenticated and on the page, When I perform the action, Then typing in conversation search filters messages" classname="social\messages.spec.js" time="4.854">
+</testcase>
+<testcase name="Search Within Conversation › TC-MSG-57: Given I am on the page, When I interact with the element, Then search in conversation can be cleared and dismissed" classname="social\messages.spec.js" time="5.917">
+</testcase>
+<testcase name="Group Chat › TC-MSG-58: Given I am authenticated and on the page, When I perform the action, Then create group chat option is accessible" classname="social\messages.spec.js" time="2.997">
+</testcase>
+<testcase name="Group Chat › TC-MSG-59: Given I am on the page, When I inspect the content, Then group creation flow has a participant search field" classname="social\messages.spec.js" time="3.576">
+</testcase>
+<testcase name="Group Chat › TC-MSG-60: Given I am on the page, When I inspect the content, Then group creation flow has a group name field" classname="social\messages.spec.js" time="3.329">
+</testcase>
+<testcase name="Group Chat › TC-MSG-61: Given I am authenticated and on the page, When I perform the action, Then it shows group name in conversation header" classname="social\messages.spec.js" time="2.925">
+</testcase>
+<testcase name="Group Chat › TC-MSG-62: Given I am on the group chat info panel, When I view it, Then it shows member list" classname="social\messages.spec.js" time="3.165">
+</testcase>
+<testcase name="Group Chat › TC-MSG-63: Given I am on the page, When I inspect the content, Then group chat has an add member option" classname="social\messages.spec.js" time="3.34">
+</testcase>
+<testcase name="Group Chat › TC-MSG-64: Given I am on the page, When I inspect the content, Then group chat has a leave group option" classname="social\messages.spec.js" time="3.515">
+</testcase>
+<testcase name="Group Chat › TC-MSG-65: Given I am on the group conversation, When I view it, Then it shows all participants in the header area" classname="social\messages.spec.js" time="3.301">
+</testcase>
+<testcase name="New Community › TC-MSG-66: Given I am authenticated and on the page, When I perform the action, Then New Community button or option is accessible" classname="social\messages.spec.js" time="3.443">
+</testcase>
+<testcase name="New Community › TC-MSG-67: Given the New Community is present, When I click the New Community, Then it opens a community creation flow" classname="social\messages.spec.js" time="3.659">
+</testcase>
+<testcase name="New Community › TC-MSG-68: Given I am on the page, When I inspect the content, Then community creation form has a community name field" classname="social\messages.spec.js" time="3.49">
+</testcase>
+<testcase name="New Community › TC-MSG-69: Given I am on the page, When I inspect the content, Then community creation form has a description or about field" classname="social\messages.spec.js" time="3.24">
+</testcase>
+<testcase name="New Community › TC-MSG-70: Given I am on the page, When I inspect the content, Then community creation form has a privacy setting" classname="social\messages.spec.js" time="3.516">
+</testcase>
+<testcase name="New Community › TC-MSG-71: Given I am on the page, When I interact with the element, Then community creation form can be dismissed without creating" classname="social\messages.spec.js" time="3.249">
+</testcase>
+<testcase name="Conversation List Context Menu › TC-MSG-72: Given I am authenticated and on the page, When I perform the action, Then conversation list 3-dot menu opens on hover" classname="social\messages.spec.js" time="3.059">
+</testcase>
+<testcase name="Conversation List Context Menu › TC-MSG-73: Given I am on the page, When I inspect the content, Then context menu contains Archive chat option" classname="social\messages.spec.js" time="3.102">
+</testcase>
+<testcase name="Conversation List Context Menu › TC-MSG-74: Given I am on the page, When I inspect the content, Then context menu contains Mute notifications option" classname="social\messages.spec.js" time="3.125">
+</testcase>
+<testcase name="Conversation List Context Menu › TC-MSG-75: Given I am on the page, When I inspect the content, Then context menu contains Pin chat option" classname="social\messages.spec.js" time="3.149">
+</testcase>
+<testcase name="Conversation List Context Menu › TC-MSG-76: Given I am on the page, When I inspect the content, Then context menu contains Mark as unread option" classname="social\messages.spec.js" time="3.072">
+</testcase>
+<testcase name="Conversation List Context Menu › TC-MSG-77: Given I am on the page, When I inspect the content, Then context menu contains Add to favourites option" classname="social\messages.spec.js" time="2.906">
+</testcase>
+<testcase name="Conversation List Context Menu › TC-MSG-78: Given I am on the page, When I inspect the content, Then context menu contains Lock chat option" classname="social\messages.spec.js" time="3.11">
+</testcase>
+<testcase name="Conversation List Context Menu › TC-MSG-79: Given I am on the page, When I inspect the content, Then context menu contains Block option" classname="social\messages.spec.js" time="3.247">
+</testcase>
+<testcase name="Conversation List Context Menu › TC-MSG-80: Given I am on the page, When I inspect the content, Then context menu contains Clear chat option" classname="social\messages.spec.js" time="3.059">
+</testcase>
+<testcase name="Conversation List Context Menu › TC-MSG-81: Given I am on the page, When I inspect the content, Then context menu contains Delete chat option" classname="social\messages.spec.js" time="2.855">
+</testcase>
+<testcase name="Conversation List Context Menu › TC-MSG-82: Given the page is loaded, When I click Pin chat pins the conversation to the top, Then it responds correctly" classname="social\messages.spec.js" time="2.989">
+</testcase>
+<testcase name="Conversation List Context Menu › TC-MSG-83: Given the Archive chat is present, When I click the Archive chat, Then it removes it from the main list" classname="social\messages.spec.js" time="2.998">
+</testcase>
+<testcase name="Attachment Menu › TC-MSG-84: Given I am on the page, When the page renders, Then attachment + button is visible" classname="social\messages.spec.js" time="2.987">
+</testcase>
+<testcase name="Attachment Menu › TC-MSG-85: Given the + is present, When I click the +, Then it opens the attachment menu" classname="social\messages.spec.js" time="3.948">
+</testcase>
+<testcase name="Attachment Menu › TC-MSG-86: Given I am on the page, When I inspect the content, Then attachment menu contains Gallery option" classname="social\messages.spec.js" time="3.902">
+</testcase>
+<testcase name="Attachment Menu › TC-MSG-87: Given I am on the page, When I inspect the content, Then attachment menu contains Audio option" classname="social\messages.spec.js" time="4.005">
+</testcase>
+<testcase name="Attachment Menu › TC-MSG-88: Given I am on the page, When I inspect the content, Then attachment menu contains Poll option" classname="social\messages.spec.js" time="3.878">
+</testcase>
+<testcase name="Attachment Menu › TC-MSG-89: Given I am on the page, When I inspect the content, Then attachment menu contains Location option" classname="social\messages.spec.js" time="4.064">
+</testcase>
+<testcase name="Attachment Menu › TC-MSG-90: Given I am on the page, When I inspect the content, Then attachment menu contains Event option" classname="social\messages.spec.js" time="4.218">
+</testcase>
+<testcase name="Attachment Menu › TC-MSG-91: Given I am on the page, When I inspect the content, Then attachment menu contains Document option" classname="social\messages.spec.js" time="3.92">
+</testcase>
+<testcase name="Attachment Menu › TC-MSG-92: Given the Gallery is present, When I click the Gallery, Then it opens image picker or file input" classname="social\messages.spec.js" time="4.302">
+</testcase>
+<testcase name="Attachment Menu › TC-MSG-93: Given the Poll is present, When I click the Poll, Then it opens poll creation form" classname="social\messages.spec.js" time="3.953">
+</testcase>
+<testcase name="Attachment Menu › TC-MSG-94: Given the Document is present, When I click the Document, Then it opens file picker" classname="social\messages.spec.js" time="4.041">
+</testcase>
+<testcase name="Attachment Menu › TC-MSG-95: Given I am on the page, When I interact with the element, Then attachment menu can be dismissed with Escape" classname="social\messages.spec.js" time="4.14">
+</testcase>
+<testcase name="In-Chat Header Menu › TC-MSG-96: Given I am authenticated and on the page, When I perform the action, Then in-chat header 3-dot menu opens" classname="social\messages.spec.js" time="3.244">
+</testcase>
+<testcase name="In-Chat Header Menu › TC-MSG-97: Given I am on the page, When I inspect the content, Then header menu contains View profile option" classname="social\messages.spec.js" time="2.89">
+</testcase>
+<testcase name="In-Chat Header Menu › TC-MSG-98: Given I am on the page, When I inspect the content, Then header menu contains Shared media option" classname="social\messages.spec.js" time="3.195">
+</testcase>
+<testcase name="In-Chat Header Menu › TC-MSG-99: Given I am on the page, When I inspect the content, Then header menu contains Mute notifications option" classname="social\messages.spec.js" time="3.057">
+</testcase>
+<testcase name="In-Chat Header Menu › TC-MSG-100: Given I am on the page, When I inspect the content, Then header menu contains Disappearing messages option" classname="social\messages.spec.js" time="3.364">
+</testcase>
+<testcase name="In-Chat Header Menu › TC-MSG-101: Given I am on the page, When I inspect the content, Then header menu contains Lock chat option" classname="social\messages.spec.js" time="3.277">
+</testcase>
+<testcase name="In-Chat Header Menu › TC-MSG-102: Given I am on the page, When I inspect the content, Then header menu contains Add to favorites option" classname="social\messages.spec.js" time="3.008">
+</testcase>
+<testcase name="In-Chat Header Menu › TC-MSG-103: Given I am on the page, When I inspect the content, Then header menu contains Search in conversation option" classname="social\messages.spec.js" time="3.026">
+</testcase>
+<testcase name="In-Chat Header Menu › TC-MSG-104: Given the Search in conversation is present, When I click the Search in conversation, Then it opens the search bar" classname="social\messages.spec.js" time="3.169">
+</testcase>
+<testcase name="In-Chat Header Menu › TC-MSG-105: Given I am on the page, When I inspect the content, Then header menu contains Select messages option" classname="social\messages.spec.js" time="2.829">
+</testcase>
+<testcase name="In-Chat Header Menu › TC-MSG-106: Given the page is loaded, When I click Select messages enables checkbox selection mode, Then it responds correctly" classname="social\messages.spec.js" time="3.071">
+</testcase>
+<testcase name="In-Chat Header Menu › TC-MSG-107: Given I am on the page, When I inspect the content, Then header menu contains Change wallpaper option" classname="social\messages.spec.js" time="2.994">
+</testcase>
+<testcase name="In-Chat Header Menu › TC-MSG-108: Given I am on the page, When I inspect the content, Then header menu contains Bubble colour option" classname="social\messages.spec.js" time="2.808">
+</testcase>
+<testcase name="In-Chat Header Menu › TC-MSG-109: Given I am on the page, When I inspect the content, Then header menu contains Block user option" classname="social\messages.spec.js" time="2.878">
+</testcase>
+<testcase name="In-Chat Header Menu › TC-MSG-110: Given I am on the page, When I inspect the content, Then header menu contains Report option" classname="social\messages.spec.js" time="3.191">
+</testcase>
+<testcase name="In-Chat Header Menu › TC-MSG-111: Given I am on the page, When I inspect the content, Then header menu contains Clear chat option" classname="social\messages.spec.js" time="3.243">
+</testcase>
+<testcase name="In-Chat Header Menu › TC-MSG-112: Given I am on the page, When I inspect the content, Then header menu contains Delete chat option" classname="social\messages.spec.js" time="3.086">
+</testcase>
+<testcase name="In-Chat Header Menu › TC-MSG-113: Given the View profile is present, When I click the View profile, Then it navigates to the contact profile" classname="social\messages.spec.js" time="2.946">
+</testcase>
+<testcase name="In-Chat Header Menu › TC-MSG-114: Given the Shared media is present, When I click the Shared media, Then it opens the media gallery for this chat" classname="social\messages.spec.js" time="3.019">
+</testcase>
+<testcase name="In-Chat Header Menu › TC-MSG-115: Given I am on the page, When I interact with the element, Then in-chat header menu can be dismissed with Escape" classname="social\messages.spec.js" time="3.059">
+</testcase>
+<testcase name="Message Reactions › TC-MSG-116: Given I am authenticated and on the page, When I perform the action, Then hovering a message bubble reveals a reaction trigger" classname="social\messages.spec.js" time="3.528">
+</testcase>
+<testcase name="Message Reactions › TC-MSG-117: Given the the reaction is present, When I click the the reaction, Then it trigger opens an emoji picker" classname="social\messages.spec.js" time="3.88">
+</testcase>
+<testcase name="Message Reactions › TC-MSG-118: Given I am on the page, When I inspect the content, Then emoji picker contains selectable emoji buttons" classname="social\messages.spec.js" time="3.555">
+</testcase>
+<testcase name="Message Reactions › TC-MSG-119: Given I am authenticated and on the page, When I perform the action, Then it shows the reaction count on the bubble" classname="social\messages.spec.js" time="3.404">
+</testcase>
+<testcase name="Message Reactions › TC-MSG-120: Given the page is loaded, When I click an existing reaction toggles it off, Then it responds correctly" classname="social\messages.spec.js" time="2.981">
+</testcase>
+<testcase name="Message Reactions › TC-MSG-121: Given I am on the page, When I interact with the element, Then reaction emoji picker can be dismissed with Escape" classname="social\messages.spec.js" time="3.669">
+</testcase>
+<testcase name="Reply to a Message › TC-MSG-122: Given I am authenticated and on the page, When I perform the action, Then hovering a message reveals a Reply option" classname="social\messages.spec.js" time="4.606">
+</testcase>
+<testcase name="Reply to a Message › TC-MSG-123: Given the Reply is present, When I click the Reply, Then it shows a quoted-message preview above the input" classname="social\messages.spec.js" time="4.186">
+</testcase>
+<testcase name="Reply to a Message › TC-MSG-124: Given I am authenticated and on the page, When I perform the action, Then quoted-reply preview shows the original message text" classname="social\messages.spec.js" time="4.264">
+</testcase>
+<testcase name="Reply to a Message › TC-MSG-125: Given I am authenticated and on the page, When I perform the action, Then cancelling a reply removes the quoted-reply preview" classname="social\messages.spec.js" time="4.884">
+</testcase>
+<testcase name="Reply to a Message › TC-MSG-126: Given I am authenticated and on the page, When I perform the action, Then sending a reply attaches the quoted message in the thread" classname="social\messages.spec.js" time="4.142">
+</testcase>
+<testcase name="Forward, Copy and Star a Message › TC-MSG-127: Given I am on the page, When I inspect the content, Then message action menu contains a Forward option" classname="social\messages.spec.js" time="4.796">
+</testcase>
+<testcase name="Forward, Copy and Star a Message › TC-MSG-128: Given the Forward is present, When I click the Forward, Then it opens a conversation-picker dialog" classname="social\messages.spec.js" time="4.476">
+</testcase>
+<testcase name="Forward, Copy and Star a Message › TC-MSG-129: Given I am on the page, When I inspect the content, Then message action menu contains a Copy option" classname="social\messages.spec.js" time="4.555">
+</testcase>
+<testcase name="Forward, Copy and Star a Message › TC-MSG-130: Given the page is loaded, When I click Copy does not throw an error, Then it responds correctly" classname="social\messages.spec.js" time="4.629">
+</testcase>
+<testcase name="Forward, Copy and Star a Message › TC-MSG-131: Given I am on the page, When I inspect the content, Then message action menu contains a Star / Save option" classname="social\messages.spec.js" time="4.684">
+</testcase>
+<testcase name="Forward, Copy and Star a Message › TC-MSG-132: Given the page is loaded, When I click Star marks the message as starred, Then it responds correctly" classname="social\messages.spec.js" time="4.086">
+</testcase>
+<testcase name="Forward, Copy and Star a Message › TC-MSG-133: Given I am on the page, When I inspect the content, Then message action menu contains a Pin message option" classname="social\messages.spec.js" time="4.667">
+</testcase>
+<testcase name="Forward, Copy and Star a Message › TC-MSG-134: Given I am authenticated and on the page, When I perform the action, Then it shows a pinned-message banner at the top of the chat" classname="social\messages.spec.js" time="4.547">
+</testcase>
+<testcase name="In-Chat Visual States › TC-MSG-135: Given I am on the conversation header, When I view it, Then it shows the contact name" classname="social\messages.spec.js" time="3.202">
+</testcase>
+<testcase name="In-Chat Visual States › TC-MSG-136: Given I am on the conversation header, When I view it, Then it shows an avatar or profile picture" classname="social\messages.spec.js" time="3.179">
+</testcase>
+<testcase name="In-Chat Visual States › TC-MSG-137: Given I am on the conversation header, When I view it, Then it shows an online or last-seen indicator" classname="social\messages.spec.js" time="2.897">
+</testcase>
+<testcase name="In-Chat Visual States › TC-MSG-138: Given I am on the messages in the thread, When I view it, Then it shows a timestamp" classname="social\messages.spec.js" time="3.294">
+</testcase>
+<testcase name="In-Chat Visual States › TC-MSG-139: Given I am on the message thread, When I view it, Then it shows date separator labels" classname="social\messages.spec.js" time="2.897">
+</testcase>
+<testcase name="In-Chat Visual States › TC-MSG-140: Given I am on the sent messages, When I view it, Then it shows a delivery-status indicator" classname="social\messages.spec.js" time="3.062">
+</testcase>
+<testcase name="In-Chat Visual States › TC-MSG-141: Given I am authenticated and on the page, When I perform the action, Then it shows a link preview card" classname="social\messages.spec.js" time="2.924">
+</testcase>
+<testcase name="In-Chat Visual States › TC-MSG-142: Given I am authenticated and on the page, When I perform the action, Then tapping an image in the chat opens a full-screen viewer" classname="social\messages.spec.js" time="3.646">
+</testcase>
+<testcase name="In-Chat Visual States › TC-MSG-143: Given I am on the page, When I inspect the content, Then the typing indicator appears when input has focus" classname="social\messages.spec.js" time="2.874">
+</testcase>
+<testcase name="In-Chat Visual States › TC-MSG-144: Given I am on the page, When the page renders, Then the voice note record button is visible" classname="social\messages.spec.js" time="2.964">
+</testcase>
+<testcase name="In-Chat Visual States › TC-MSG-145: Given the the voice note button prompts for mic permission or is present, When I click the the voice note button prompts for mic permission or, Then it shows recording UI" classname="social\messages.spec.js" time="2.933">
+</testcase>
+<testcase name="Group Management › TC-MSG-146: Given I am on the group conversation header, When I view it, Then it shows the group name" classname="social\messages.spec.js" time="2.894">
+</testcase>
+<testcase name="Group Management › TC-MSG-147: Given I am on the group header, When I view it, Then it shows a participant count or member avatars" classname="social\messages.spec.js" time="2.854">
+</testcase>
+<testcase name="Group Management › TC-MSG-148: Given I am authenticated and on the page, When I perform the action, Then it shows a member list" classname="social\messages.spec.js" time="4.129">
+</testcase>
+<testcase name="Group Management › TC-MSG-149: Given I am on the page, When I inspect the content, Then group info panel has an Add Members button" classname="social\messages.spec.js" time="4.35">
+</testcase>
+<testcase name="Group Management › TC-MSG-150: Given the Add Members is present, When I click the Add Members, Then it opens a people-picker dialog" classname="social\messages.spec.js" time="4.104">
+</testcase>
+<testcase name="Group Management › TC-MSG-151: Given I am on the page, When I inspect the content, Then group member row has an admin-only Remove option" classname="social\messages.spec.js" time="4.121">
+</testcase>
+<testcase name="Group Management › TC-MSG-152: Given I am authenticated and on the page, When I perform the action, Then Leave Group option is available in the group menu" classname="social\messages.spec.js" time="3.007">
+</testcase>
+<testcase name="Group Management › TC-MSG-153: Given the Leave Group is present, When I click the Leave Group, Then it shows a confirmation dialog" classname="social\messages.spec.js" time="2.873">
+</testcase>
+<testcase name="Group Management › TC-MSG-154: Given I am on the page, When I interact with the element, Then group name can be edited from the group info panel" classname="social\messages.spec.js" time="4.062">
+</testcase>
+<testcase name="Archived and Favourite Conversations › TC-MSG-155: Given I am authenticated and on the page, When I perform the action, Then archived chats section is accessible from the messages page" classname="social\messages.spec.js" time="3.175">
+</testcase>
+<testcase name="Archived and Favourite Conversations › TC-MSG-156: Given the Archived is present, When I click the Archived, Then it opens the archived conversations list" classname="social\messages.spec.js" time="2.948">
+</testcase>
+<testcase name="Archived and Favourite Conversations › TC-MSG-157: Given I am authenticated and on the page, When I perform the action, Then favourites section is accessible from the messages page" classname="social\messages.spec.js" time="2.834">
+</testcase>
+<testcase name="Archived and Favourite Conversations › TC-MSG-158: Given the Favourites is present, When I click the Favourites, Then it opens the favourites conversation list" classname="social\messages.spec.js" time="2.982">
+</testcase>
+<testcase name="Archived and Favourite Conversations › TC-MSG-159: Given I am authenticated and on the page, When I perform the action, Then a conversation added to favourites appears in the Favourites section" classname="social\messages.spec.js" time="3.005">
+</testcase>
+<testcase name="Archived and Favourite Conversations › TC-MSG-160: Given I am authenticated and on the page, When I perform the action, Then unarchiving a conversation restores it to the main list" classname="social\messages.spec.js" time="3.054">
+</testcase>
+<testcase name="Message Scheduling › TC-MSG-161: Given I am authenticated and on the page, When I perform the action, Then schedule send option is present in message compose area" classname="social\messages.spec.js" time="2.947">
+</testcase>
+<testcase name="Message Scheduling › TC-MSG-162: Given the schedule is present, When I click the schedule, Then it opens a date and time picker" classname="social\messages.spec.js" time="3.114">
+</testcase>
+<testcase name="Message Scheduling › TC-MSG-163: Given I am on the a scheduled message, When I view it, Then it shows in a pending or scheduled state" classname="social\messages.spec.js" time="2.803">
+</testcase>
+<testcase name="Disappearing Messages › TC-MSG-164: Given I am authenticated and on the page, When I perform the action, Then disappearing messages toggle is accessible from conversation settings" classname="social\messages.spec.js" time="3.017">
+</testcase>
+<testcase name="Disappearing Messages › TC-MSG-165: Given I am authenticated and on the page, When I perform the action, Then it shows timer duration options" classname="social\messages.spec.js" time="2.89">
+</testcase>
+<testcase name="Disappearing Messages › TC-MSG-166: Given I am authenticated and on the page, When I perform the action, Then disappearing messages off option is available" classname="social\messages.spec.js" time="2.935">
+</testcase>
+<testcase name="Bulk Operations › TC-MSG-167: Given I am on the page, When I interact with the element, Then long press or select mode can be activated on conversations" classname="social\messages.spec.js" time="3.159">
+</testcase>
+<testcase name="Bulk Operations › TC-MSG-168: Given I am on the page, When I interact with the element, Then multiple conversations can be selected in select mode" classname="social\messages.spec.js" time="3.223">
+</testcase>
+<testcase name="Bulk Operations › TC-MSG-169: Given I am authenticated and on the page, When I perform the action, Then bulk delete option appears when conversations are selected" classname="social\messages.spec.js" time="3.048">
+</testcase>
+<testcase name="Bulk Operations › TC-MSG-170: Given I am authenticated and on the page, When I perform the action, Then bulk archive option appears when conversations are selected" classname="social\messages.spec.js" time="2.982">
+</testcase>
+<testcase name="Encryption › TC-MSG-171: Given I am authenticated and on the page, When I perform the action, Then encryption indicator icon is present in the chat header if end-to-end encrypted" classname="social\messages.spec.js" time="2.981">
+</testcase>
+<testcase name="Encryption › TC-MSG-172: Given the the encryption indicator is present, When I click the the encryption indicator, Then it shows encryption details or tooltip" classname="social\messages.spec.js" time="2.949">
+</testcase>
+<testcase name="Group Conversation Creation Workflow › TC-MSG-173: Given I am on the messages page, When I look for a New Group or + button, Then I can initiate group conversation creation" classname="social\messages.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Message Edit Functionality › TC-MSG-174: Given I am on a sent message, When I hover to reveal the action menu, Then an Edit option may be available" classname="social\messages.spec.js" time="45.355">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|2026-06-14_18-18-29\artifacts\social-messages-Message-Ed-e8767-dit-option-may-be-available-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|2026-06-14_18-18-29\artifacts\social-messages-Message-Ed-e8767-dit-option-may-be-available-chromium\video.webm]]
+
+[[ATTACHMENT|2026-06-14_18-18-29\artifacts\social-messages-Message-Ed-e8767-dit-option-may-be-available-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="Test timeout of 45000ms exceeded while running &quot;beforeEach&quot; hook." type="Error">
+<![CDATA[  [chromium] › social\messages.spec.js:2850:7 › Message Edit Functionality › TC-MSG-174: Given I am on a sent message, When I hover to reveal the action menu, Then an Edit option may be available 
+
+    Test timeout of 45000ms exceeded while running "beforeEach" hook.
+
+      2842 |
+      2843 | test.describe('Message Edit Functionality', () => {
+    > 2844 |   test.beforeEach(async ({ page }) => {
+           |        ^
+      2845 |     await goMessages(page);
+      2846 |     await page.locator('[role="listitem"], ul li').first().click().catch(() => {});
+      2847 |     if (!page.isClosed()) await page.waitForTimeout(1000);
+        at C:\claude-folder\webapp-testing\omre-webapp\tests\social\messages.spec.js:2844:8
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\2026-06-14_18-18-29\artifacts\social-messages-Message-Ed-e8767-dit-option-may-be-available-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\2026-06-14_18-18-29\artifacts\social-messages-Message-Ed-e8767-dit-option-may-be-available-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\2026-06-14_18-18-29\artifacts\social-messages-Message-Ed-e8767-dit-option-may-be-available-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Message Emoji Reactions (TODO entry) › TC-MSG-175: Given I am on a message bubble, When I hover to reveal the reaction trigger, Then an emoji reaction panel is accessible" classname="social\messages.spec.js" time="45.425">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|2026-06-14_18-12-16\artifacts\social-messages-Message-Em-60cf7-eaction-panel-is-accessible-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|2026-06-14_18-12-16\artifacts\social-messages-Message-Em-60cf7-eaction-panel-is-accessible-chromium\video.webm]]
+
+[[ATTACHMENT|2026-06-14_18-12-16\artifacts\social-messages-Message-Em-60cf7-eaction-panel-is-accessible-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="Test timeout of 45000ms exceeded while running &quot;beforeEach&quot; hook." type="Error">
+<![CDATA[  [chromium] › social\messages.spec.js:2879:7 › Message Emoji Reactions (TODO entry) › TC-MSG-175: Given I am on a message bubble, When I hover to reveal the reaction trigger, Then an emoji reaction panel is accessible 
+
+    Test timeout of 45000ms exceeded while running "beforeEach" hook.
+
+      2871 |
+      2872 | test.describe('Message Emoji Reactions (TODO entry)', () => {
+    > 2873 |   test.beforeEach(async ({ page }) => {
+           |        ^
+      2874 |     await goMessages(page);
+      2875 |     await page.locator('[role="listitem"], ul li').first().click().catch(() => {});
+      2876 |     if (!page.isClosed()) await page.waitForTimeout(1000);
+        at C:\claude-folder\webapp-testing\omre-webapp\tests\social\messages.spec.js:2873:8
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\2026-06-14_18-12-16\artifacts\social-messages-Message-Em-60cf7-eaction-panel-is-accessible-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\2026-06-14_18-12-16\artifacts\social-messages-Message-Em-60cf7-eaction-panel-is-accessible-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\2026-06-14_18-12-16\artifacts\social-messages-Message-Em-60cf7-eaction-panel-is-accessible-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="File and Image Sharing › TC-MSG-176: Given I am in a chat, When I look for a file or image attach button, Then a file picker trigger is visible" classname="social\messages.spec.js" time="45.467">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|2026-06-14_18-25-16\artifacts\social-messages-File-and-I-62f5e-e-picker-trigger-is-visible-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|2026-06-14_18-25-16\artifacts\social-messages-File-and-I-62f5e-e-picker-trigger-is-visible-chromium\video.webm]]
+
+[[ATTACHMENT|2026-06-14_18-25-16\artifacts\social-messages-File-and-I-62f5e-e-picker-trigger-is-visible-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="Test timeout of 45000ms exceeded while running &quot;beforeEach&quot; hook." type="Error">
+<![CDATA[  [chromium] › social\messages.spec.js:2913:7 › File and Image Sharing › TC-MSG-176: Given I am in a chat, When I look for a file or image attach button, Then a file picker trigger is visible 
+
+    Test timeout of 45000ms exceeded while running "beforeEach" hook.
+
+      2905 |
+      2906 | test.describe('File and Image Sharing', () => {
+    > 2907 |   test.beforeEach(async ({ page }) => {
+           |        ^
+      2908 |     await goMessages(page);
+      2909 |     await page.locator('[role="listitem"], ul li').first().click().catch(() => {});
+      2910 |     if (!page.isClosed()) await page.waitForTimeout(1000);
+        at C:\claude-folder\webapp-testing\omre-webapp\tests\social\messages.spec.js:2907:8
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\2026-06-14_18-25-16\artifacts\social-messages-File-and-I-62f5e-e-picker-trigger-is-visible-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\2026-06-14_18-25-16\artifacts\social-messages-File-and-I-62f5e-e-picker-trigger-is-visible-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\2026-06-14_18-25-16\artifacts\social-messages-File-and-I-62f5e-e-picker-trigger-is-visible-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="File and Image Sharing › TC-MSG-177: Given the file picker trigger is visible, When I click it, Then a file type menu or OS file dialog is triggered" classname="social\messages.spec.js" time="45.402">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|2026-06-14_18-25-16\artifacts\social-messages-File-and-I-16df0-OS-file-dialog-is-triggered-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|2026-06-14_18-25-16\artifacts\social-messages-File-and-I-16df0-OS-file-dialog-is-triggered-chromium\video.webm]]
+
+[[ATTACHMENT|2026-06-14_18-25-16\artifacts\social-messages-File-and-I-16df0-OS-file-dialog-is-triggered-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="Test timeout of 45000ms exceeded while running &quot;beforeEach&quot; hook." type="Error">
+<![CDATA[  [chromium] › social\messages.spec.js:2925:7 › File and Image Sharing › TC-MSG-177: Given the file picker trigger is visible, When I click it, Then a file type menu or OS file dialog is triggered 
+
+    Test timeout of 45000ms exceeded while running "beforeEach" hook.
+
+      2905 |
+      2906 | test.describe('File and Image Sharing', () => {
+    > 2907 |   test.beforeEach(async ({ page }) => {
+           |        ^
+      2908 |     await goMessages(page);
+      2909 |     await page.locator('[role="listitem"], ul li').first().click().catch(() => {});
+      2910 |     if (!page.isClosed()) await page.waitForTimeout(1000);
+        at C:\claude-folder\webapp-testing\omre-webapp\tests\social\messages.spec.js:2907:8
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\2026-06-14_18-25-16\artifacts\social-messages-File-and-I-16df0-OS-file-dialog-is-triggered-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\2026-06-14_18-25-16\artifacts\social-messages-File-and-I-16df0-OS-file-dialog-is-triggered-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\2026-06-14_18-25-16\artifacts\social-messages-File-and-I-16df0-OS-file-dialog-is-triggered-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Typing Indicator › TC-MSG-178: Given another user is typing, When the typing indicator appears, Then it is shown in the chat — untestable: requires a second active authenticated session sending real-time events" classname="social\messages.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Message Encryption Security › TC-MSG-179: Given messages are transmitted, When inspecting network traffic, Then message payloads are encrypted in transit — untestable: requires network-level inspection outside browser context" classname="social\messages.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Call Recording › TC-MSG-180: Given a call is in progress, When the user records it, Then the recording is saved — untestable: requires two live call participants and media recording API access" classname="social\messages.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Multiline Message Formatting › TC-MSG-181: Given I am in a chat, When I type a multiline message using Shift+Enter, Then the newlines are preserved in the input" classname="social\messages.spec.js" time="45.238">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|2026-06-14_18-26-04\artifacts\social-messages-Multiline--e157f--are-preserved-in-the-input-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|2026-06-14_18-26-04\artifacts\social-messages-Multiline--e157f--are-preserved-in-the-input-chromium\video.webm]]
+
+[[ATTACHMENT|2026-06-14_18-26-04\artifacts\social-messages-Multiline--e157f--are-preserved-in-the-input-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="Test timeout of 45000ms exceeded while running &quot;beforeEach&quot; hook." type="Error">
+<![CDATA[  [chromium] › social\messages.spec.js:2970:7 › Multiline Message Formatting › TC-MSG-181: Given I am in a chat, When I type a multiline message using Shift+Enter, Then the newlines are preserved in the input 
+
+    Test timeout of 45000ms exceeded while running "beforeEach" hook.
+
+      2962 |
+      2963 | test.describe('Multiline Message Formatting', () => {
+    > 2964 |   test.beforeEach(async ({ page }) => {
+           |        ^
+      2965 |     await goMessages(page);
+      2966 |     await page.locator('[role="listitem"], ul li').first().click().catch(() => {});
+      2967 |     if (!page.isClosed()) await page.waitForTimeout(1000);
+        at C:\claude-folder\webapp-testing\omre-webapp\tests\social\messages.spec.js:2964:8
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\2026-06-14_18-26-04\artifacts\social-messages-Multiline--e157f--are-preserved-in-the-input-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\2026-06-14_18-26-04\artifacts\social-messages-Multiline--e157f--are-preserved-in-the-input-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\2026-06-14_18-26-04\artifacts\social-messages-Multiline--e157f--are-preserved-in-the-input-chromium\error-context.md
+]]>
+</error>
+</testcase>
+</testsuite>
+</testsuites>

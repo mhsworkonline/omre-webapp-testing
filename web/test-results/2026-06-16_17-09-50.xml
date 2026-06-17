@@ -1,0 +1,60 @@
+<testsuites id="" name="" tests="28" failures="0" skipped="0" errors="0" time="81.38636300000002">
+<testsuite name="platform\biz.spec.js" timestamp="2026-06-16T11:39:50.827Z" hostname="chromium" tests="28" failures="0" skipped="0" time="304.964" errors="0">
+<testcase name="TC-BIZ — Hub Landing › TC-BIZ-01: Given I am authenticated, When I navigate to /biz, Then the URL is correct" classname="platform\biz.spec.js" time="12.542">
+</testcase>
+<testcase name="TC-BIZ — Hub Landing › TC-BIZ-02: Given I am on the page, When I inspect it, Then the &quot;What would you like to do?&quot; heading is shown" classname="platform\biz.spec.js" time="12.369">
+</testcase>
+<testcase name="TC-BIZ — Hub Landing › TC-BIZ-03: Given I am on the hub, When I inspect the links, Then &quot;Browse Digital&quot; is visible and links to /biz/business/digital" classname="platform\biz.spec.js" time="13.09">
+</testcase>
+<testcase name="TC-BIZ — Hub Landing › TC-BIZ-04: Given I am on the hub, When I inspect the links, Then &quot;Browse Physical&quot; is visible and links to /biz/business/physical" classname="platform\biz.spec.js" time="12.387">
+</testcase>
+<testcase name="TC-BIZ — Hub Landing › TC-BIZ-05: Given I am on the hub, When I inspect the links, Then &quot;Seller Dashboard&quot; is visible and links to /biz/business/dashboard" classname="platform\biz.spec.js" time="9.018">
+</testcase>
+<testcase name="TC-BIZ — Hub Landing › TC-BIZ-06: Given I am on the hub, When I inspect the links, Then &quot;Website Builder&quot; is visible and links to /biz/website-builder" classname="platform\biz.spec.js" time="9.101">
+</testcase>
+<testcase name="TC-BIZ — Hub Landing › TC-BIZ-07: Given I am on the hub, When I inspect the links, Then &quot;Marketplace&quot; is visible and links to /app/marketplace" classname="platform\biz.spec.js" time="8.946">
+</testcase>
+<testcase name="TC-BIZ — Browse Digital / Physical › TC-BIZ-08: Given I am on the hub, When I click &quot;Browse Digital&quot;, Then I land on /biz/business/digital" classname="platform\biz.spec.js" time="9.983">
+</testcase>
+<testcase name="TC-BIZ — Browse Digital / Physical › TC-BIZ-09: Given I am on the hub, When I click &quot;Browse Physical&quot;, Then I land on /biz/business/physical" classname="platform\biz.spec.js" time="11.549">
+</testcase>
+<testcase name="TC-BIZ — Seller Dashboard › TC-BIZ-10: Given I have no store yet, When I open Seller Dashboard, Then I am routed to &quot;Create Seller Profile&quot;" classname="platform\biz.spec.js" time="11.538">
+</testcase>
+<testcase name="TC-BIZ — Seller Dashboard › TC-BIZ-11: Given I am on Create Seller Profile, When I inspect it, Then a &quot;Create Profile &amp; Start Selling&quot; button is visible" classname="platform\biz.spec.js" time="11.517">
+</testcase>
+<testcase name="TC-BIZ — Seller Dashboard › TC-BIZ-SIDEBAR-Dashboard: Given I am on the dashboard, When I inspect the sidebar, Then &quot;Dashboard&quot; links to /biz/business/dashboard" classname="platform\biz.spec.js" time="10.192">
+</testcase>
+<testcase name="TC-BIZ — Seller Dashboard › TC-BIZ-SIDEBAR-Analytics: Given I am on the dashboard, When I inspect the sidebar, Then &quot;Analytics&quot; links to /biz/business/dashboard/analytics" classname="platform\biz.spec.js" time="12.066">
+</testcase>
+<testcase name="TC-BIZ — Seller Dashboard › TC-BIZ-SIDEBAR-Digital-Products: Given I am on the dashboard, When I inspect the sidebar, Then &quot;Digital Products&quot; links to /biz/business/dashboard/digital-products" classname="platform\biz.spec.js" time="12.099">
+</testcase>
+<testcase name="TC-BIZ — Seller Dashboard › TC-BIZ-SIDEBAR-Physical-Products: Given I am on the dashboard, When I inspect the sidebar, Then &quot;Physical Products&quot; links to /biz/business/dashboard/physical-products" classname="platform\biz.spec.js" time="12.317">
+</testcase>
+<testcase name="TC-BIZ — Seller Dashboard › TC-BIZ-SIDEBAR-Orders: Given I am on the dashboard, When I inspect the sidebar, Then &quot;Orders&quot; links to /biz/business/dashboard/orders" classname="platform\biz.spec.js" time="11.76">
+</testcase>
+<testcase name="TC-BIZ — Seller Dashboard › TC-BIZ-SIDEBAR-Cart: Given I am on the dashboard, When I inspect the sidebar, Then &quot;Cart&quot; links to /biz/business/dashboard/cart" classname="platform\biz.spec.js" time="12.61">
+</testcase>
+<testcase name="TC-BIZ — Seller Dashboard › TC-BIZ-SIDEBAR-Store-Profile: Given I am on the dashboard, When I inspect the sidebar, Then &quot;Store Profile&quot; links to /biz/business/dashboard/store-profile" classname="platform\biz.spec.js" time="12.509">
+</testcase>
+<testcase name="TC-BIZ — Seller Dashboard › TC-BIZ-SIDEBAR-Store-Settings: Given I am on the dashboard, When I inspect the sidebar, Then &quot;Store Settings&quot; links to /biz/business/dashboard/store-settings" classname="platform\biz.spec.js" time="13.439">
+</testcase>
+<testcase name="TC-BIZ — Seller Dashboard › TC-BIZ-SIDEBAR-Ads: Given I am on the dashboard, When I inspect the sidebar, Then &quot;Ads &amp; Marketing&quot; links to /app/business/ads" classname="platform\biz.spec.js" time="13.396">
+</testcase>
+<testcase name="TC-BIZ — Seller Dashboard › TC-BIZ-PROFILE-FORM: Given I am on Create Seller Profile, When I inspect the form, Then store name, tagline, description, logo, banner, website, and location fields are present" classname="platform\biz.spec.js" time="10.804">
+</testcase>
+<testcase name="TC-BIZ — Cart › TC-BIZ-CART-01: Given I am authenticated, When I navigate to /biz/cart, Then the URL is correct" classname="platform\biz.spec.js" time="10.047">
+</testcase>
+<testcase name="TC-BIZ — Cart › TC-BIZ-CART-02: Given my cart has nothing in it, When I open the cart, Then an empty-cart message is shown" classname="platform\biz.spec.js" time="10.25">
+</testcase>
+<testcase name="TC-BIZ — Product Detail › TC-BIZ-PRODUCT-01: Given I am on Browse Digital, When I click a product, Then I land on its product detail page" classname="platform\biz.spec.js" time="13.34">
+</testcase>
+<testcase name="TC-BIZ — Product Detail › TC-BIZ-PRODUCT-02: Given I am on a product detail page, When I inspect it, Then a product title is shown" classname="platform\biz.spec.js" time="7.822">
+</testcase>
+<testcase name="TC-BIZ — Storefront › TC-BIZ-STORE-01: Given a seller has a public store, When I visit their store page, Then the seller name is shown as the heading" classname="platform\biz.spec.js" time="6.683">
+</testcase>
+<testcase name="TC-BIZ — Alias Routes (/biz/digital, /biz/physical) › TC-BIZ-ALIAS-01: Given I navigate to /biz/digital directly, Then it shows the Digital Products listing with a search box" classname="platform\biz.spec.js" time="6.914">
+</testcase>
+<testcase name="TC-BIZ — Alias Routes (/biz/digital, /biz/physical) › TC-BIZ-ALIAS-02: Given I navigate to /biz/physical directly, Then it shows the Physical Products listing" classname="platform\biz.spec.js" time="6.676">
+</testcase>
+</testsuite>
+</testsuites>

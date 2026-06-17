@@ -1,7 +1,9 @@
 node_modules/
 
 # Web (Playwright)
-web/test-results/
+web/test-results/*
+!web/test-results/*.xlsx
+!web/test-results/*.xml
 web/playwright-report/
 web/blob-report/
 web/playwright/.cache/
@@ -10,6 +12,9 @@ web/.env
 
 # Generated discovery outputs (build on Windows only — not tracked)
 web/discovery-output/
+
+# LibreOffice/Excel lock files
+.~lock.*#
 
 # Mobile (Maestro)
 mobile/test-results/

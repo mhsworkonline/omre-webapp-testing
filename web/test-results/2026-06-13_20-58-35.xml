@@ -1,0 +1,106 @@
+<testsuites id="" name="" tests="30" failures="0" skipped="7" errors="0" time="77.23716800000001">
+<testsuite name="home\stories.spec.js" timestamp="2026-06-13T15:28:35.825Z" hostname="chromium" tests="30" failures="0" skipped="7" time="291.053" errors="0">
+<testcase name="Stories Bar › TC-STORY-BAR-01: stories bar or carousel is present on home feed" classname="home\stories.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Stories Bar › TC-STORY-BAR-02: stories bar contains at least one story item" classname="home\stories.spec.js" time="10.137">
+</testcase>
+<testcase name="Stories Bar › TC-STORY-BAR-03: Add Story button is present in the stories bar" classname="home\stories.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Stories Bar › TC-STORY-BAR-04: story items show user avatars or thumbnails" classname="home\stories.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Stories Bar › TC-STORY-BAR-05: stories bar can be scrolled horizontally if overflowing" classname="home\stories.spec.js" time="12.144">
+</testcase>
+<testcase name="Viewing Stories › TC-STORY-VIEW-01: clicking a story opens the story viewer" classname="home\stories.spec.js" time="11.129">
+</testcase>
+<testcase name="Viewing Stories › TC-STORY-VIEW-02: story viewer shows the story content (image or video)" classname="home\stories.spec.js" time="11.163">
+</testcase>
+<testcase name="Viewing Stories › TC-STORY-VIEW-03: story viewer has a progress bar showing duration" classname="home\stories.spec.js" time="11.528">
+</testcase>
+<testcase name="Viewing Stories › TC-STORY-VIEW-04: story viewer shows the author name or avatar" classname="home\stories.spec.js" time="10.2">
+</testcase>
+<testcase name="Viewing Stories › TC-STORY-VIEW-05: story viewer has a close button" classname="home\stories.spec.js" time="10.261">
+</testcase>
+<testcase name="Viewing Stories › TC-STORY-VIEW-06: pressing Escape closes the story viewer" classname="home\stories.spec.js" time="10.73">
+</testcase>
+<testcase name="Viewing Stories › TC-STORY-VIEW-07: clicking close button dismisses the story viewer" classname="home\stories.spec.js" time="13.442">
+</testcase>
+<testcase name="Viewing Stories › TC-STORY-VIEW-08: next story navigation button is present" classname="home\stories.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Viewing Stories › TC-STORY-VIEW-09: previous story navigation button is present" classname="home\stories.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Viewing Stories › TC-STORY-VIEW-10: clicking next advances to the next story" classname="home\stories.spec.js" time="6.823">
+</testcase>
+<testcase name="Viewing Stories › TC-STORY-VIEW-11: story viewer shows timestamp of when story was posted" classname="home\stories.spec.js" time="10.993">
+</testcase>
+<testcase name="Story Reactions and Replies › TC-STORY-REACT-01: reaction or emoji bar is visible in story viewer" classname="home\stories.spec.js" time="8.977">
+</testcase>
+<testcase name="Story Reactions and Replies › TC-STORY-REACT-02: reply input field is present in story viewer" classname="home\stories.spec.js" time="7.733">
+</testcase>
+<testcase name="Story Reactions and Replies › TC-STORY-REACT-03: typing a reply enables the send button" classname="home\stories.spec.js" time="11.559">
+</testcase>
+<testcase name="Story Reactions and Replies › TC-STORY-REACT-04: clicking a reaction emoji on a story is interactive" classname="home\stories.spec.js" time="8.833">
+</testcase>
+<testcase name="Creating a Story › TC-STORY-CREATE-01: Add Story button is clickable" classname="home\stories.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Creating a Story › TC-STORY-CREATE-02: clicking Add Story opens the story creator" classname="home\stories.spec.js" time="8.828">
+</testcase>
+<testcase name="Creating a Story › TC-STORY-CREATE-03: story creator has a photo upload option" classname="home\stories.spec.js" time="8.479">
+</testcase>
+<testcase name="Creating a Story › TC-STORY-CREATE-04: story creator has a text story option" classname="home\stories.spec.js" time="8.893">
+</testcase>
+<testcase name="Creating a Story › TC-STORY-CREATE-05: story creator has a video option" classname="home\stories.spec.js" time="8.028">
+</testcase>
+<testcase name="Creating a Story › TC-STORY-CREATE-06: story creator can be dismissed without creating" classname="home\stories.spec.js" time="9.445">
+</testcase>
+<testcase name="My Story Management › TC-STORY-MY-01: own story item is present if user has an active story" classname="home\stories.spec.js" time="9.209">
+</testcase>
+<testcase name="My Story Management › TC-STORY-MY-02: own story shows view count when opened" classname="home\stories.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="My Story Management › TC-STORY-MY-03: own story has a delete option" classname="home\stories.spec.js" time="8.864">
+</testcase>
+<testcase name="My Story Management › TC-STORY-MY-04: story shows 24h expiry indicator" classname="home\stories.spec.js" time="7.617">
+</testcase>
+</testsuite>
+</testsuites>

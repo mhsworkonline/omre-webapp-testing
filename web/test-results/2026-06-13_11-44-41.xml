@@ -1,0 +1,95 @@
+<testsuites id="" name="" tests="28" failures="0" skipped="1" errors="1" time="106.46426">
+<testsuite name="auth\login.spec.js" timestamp="2026-06-13T06:14:41.419Z" hostname="chromium" tests="28" failures="0" skipped="1" time="204.424" errors="1">
+<testcase name="Authentication — form tests (no session needed) › TC-AUTH-03: Given I am on the empty form, When I view it, Then it showss validation" classname="auth\login.spec.js" time="2.676">
+</testcase>
+<testcase name="Authentication — form tests (no session needed) › TC-AUTH-04: Given I am on the email filled but no password, When I view it, Then it showss validation" classname="auth\login.spec.js" time="2.831">
+</testcase>
+<testcase name="Authentication — form tests (no session needed) › TC-AUTH-05: Given I am on the password filled but no email, When I view it, Then it showss validation" classname="auth\login.spec.js" time="2.889">
+</testcase>
+<testcase name="Authentication — form tests (no session needed) › TC-AUTH-06: Given I am authenticated and on the page, When I perform the action, Then show password reveals password text" classname="auth\login.spec.js" time="2.838">
+</testcase>
+<testcase name="Authentication — form tests (no session needed) › TC-AUTH-07: Given I am authenticated and on the page, When I perform the action, Then toggle password twice restores masked input" classname="auth\login.spec.js" time="3.025">
+</testcase>
+<testcase name="Authentication — form tests (no session needed) › TC-AUTH-08: Given I am authenticated and on the page, When I perform the action, Then unauthenticated access to /app/home redirects to login" classname="auth\login.spec.js" time="4.907">
+</testcase>
+<testcase name="Authentication — requires login › TC-AUTH-01: Given I am authenticated and on the page, When I perform the action, Then successful login redirects to /app/home" classname="auth\login.spec.js" time="2.824">
+</testcase>
+<testcase name="Authentication — requires login › TC-AUTH-02: Given I am on the wrong password, When I view it, Then it showss error message" classname="auth\login.spec.js" time="62.738">
+</testcase>
+<testcase name="Authentication — session tests › TC-AUTH-09: Given I am authenticated, When a session action occurs, Then session persists after page reload" classname="auth\login.spec.js" time="3.311">
+</testcase>
+<testcase name="Authentication — session tests › TC-AUTH-10: Given I am logged in, When I log out, Then clears session and redirects to login" classname="auth\login.spec.js" time="60.344">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|2026-06-13_11-44-42\artifacts\auth-login-Authentication--1f682-sion-and-redirects-to-login-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|2026-06-13_11-44-42\artifacts\auth-login-Authentication--1f682-sion-and-redirects-to-login-chromium\video.webm]]
+
+[[ATTACHMENT|2026-06-13_11-44-42\artifacts\auth-login-Authentication--1f682-sion-and-redirects-to-login-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="Test timeout of 60000ms exceeded." type="Error">
+<![CDATA[  [chromium] › auth\login.spec.js:94:7 › Authentication — session tests › TC-AUTH-10: Given I am logged in, When I log out, Then clears session and redirects to login 
+
+    Test timeout of 60000ms exceeded.
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\2026-06-13_11-44-42\artifacts\auth-login-Authentication--1f682-sion-and-redirects-to-login-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\2026-06-13_11-44-42\artifacts\auth-login-Authentication--1f682-sion-and-redirects-to-login-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\2026-06-13_11-44-42\artifacts\auth-login-Authentication--1f682-sion-and-redirects-to-login-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Forgot Password › TC-AUTH-11: Given I am on the page, When the page renders, Then forgot password link is visible" classname="auth\login.spec.js" time="2.655">
+</testcase>
+<testcase name="Forgot Password › TC-AUTH-12: Given the forgot password link is present, When I click the forgot password link, Then it opens the password reset form" classname="auth\login.spec.js" time="3.219">
+</testcase>
+<testcase name="Forgot Password › TC-AUTH-13: Given I am on the page, When I inspect the content, Then password reset form has an email input field" classname="auth\login.spec.js" time="3.229">
+</testcase>
+<testcase name="Forgot Password › TC-AUTH-14: Given I am on the submitting the reset form with a valid email, When I view it, Then it showss a confirmation or success message" classname="auth\login.spec.js" time="4.914">
+</testcase>
+<testcase name="Forgot Password › TC-AUTH-15: Given I am authenticated and on the page, When I perform the action, Then back to login link is present on the reset password form" classname="auth\login.spec.js" time="3.268">
+</testcase>
+<testcase name="Social Login › TC-AUTH-16: Given I am on the page, When the page renders, Then Google or OAuth social login button is visible" classname="auth\login.spec.js" time="2.191">
+</testcase>
+<testcase name="Social Login › TC-AUTH-17: Given I am on the page, When the page renders, Then Facebook or additional OAuth button is visible" classname="auth\login.spec.js" time="2.14">
+</testcase>
+<testcase name="Social Login › TC-AUTH-18: Given the a social login button initiates a is present, When I click the a social login button initiates a, Then it redirect or opens a popup" classname="auth\login.spec.js" time="5.194">
+</testcase>
+<testcase name="Sign Up › TC-AUTH-19: Given I am on the page, When the page renders, Then sign up link or button is visible" classname="auth\login.spec.js" time="2.186">
+</testcase>
+<testcase name="Sign Up › TC-AUTH-20: Given the sign up is present, When I click the sign up, Then it navigates to or opens a signup form" classname="auth\login.spec.js" time="3.418">
+</testcase>
+<testcase name="Sign Up › TC-AUTH-21: Given I am on the page, When I inspect the content, Then signup form has a name field" classname="auth\login.spec.js" time="2.937">
+</testcase>
+<testcase name="Sign Up › TC-AUTH-22: Given I am on the page, When I inspect the content, Then signup form has an email field" classname="auth\login.spec.js" time="3.053">
+</testcase>
+<testcase name="Sign Up › TC-AUTH-23: Given I am on the page, When I inspect the content, Then signup form has a password field" classname="auth\login.spec.js" time="3.465">
+</testcase>
+<testcase name="Sign Up › TC-AUTH-24: Given I am on the signup form, When I view it, Then it showss a password strength indicator when typing" classname="auth\login.spec.js" time="3.737">
+</testcase>
+<testcase name="Sign Up › TC-AUTH-25: Given I am on the submitting the signup form creates an account or, When I view it, Then it showss a confirmation" classname="auth\login.spec.js" time="3.278">
+</testcase>
+<testcase name="Security › TC-AUTH-26: Given I am on the multiple wrong password attempts, When I view it, Then it shows a lockout message or CAPTCHA" classname="auth\login.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Security › TC-AUTH-27: Given I am authenticated and on the page, When I perform the action, Then remember me checkbox is present on the login form" classname="auth\login.spec.js" time="2.583">
+</testcase>
+<testcase name="Security › TC-AUTH-28: Given I am on the page, When I interact with the element, Then remember me checkbox can be toggled on and off" classname="auth\login.spec.js" time="2.293">
+</testcase>
+</testsuite>
+</testsuites>

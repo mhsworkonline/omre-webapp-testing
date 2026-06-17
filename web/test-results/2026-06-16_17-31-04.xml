@@ -1,0 +1,53 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="11.652866">
+<testsuite name="discovery\setup-seller-profile.spec.js" timestamp="2026-06-16T12:01:05.093Z" hostname="chromium" tests="1" failures="0" skipped="0" time="9.665" errors="0">
+<testcase name="create seller profile and explore what unlocks" classname="discovery\setup-seller-profile.spec.js" time="9.665">
+<system-out>
+<![CDATA[Profile already exists — skipping creation
+
+After submit — URL: https://omre.ai/biz/business/dashboard
+Heading: Automated QA Test Store
+
+=== Digital Products page ===
+Heading: Digital Products
+ btn: SOCIAL
+ btn: NEWS
+ btn: VIDEO
+ btn: CHAT
+ btn: BIZ
+ btn: LINK
+ btn: LEARN
+ btn: STUDIO
+ btn: ORBIT
+ btn: GAMES
+ btn: MART
+ btn: MEETINGS
+ btn: WALLET
+ btn: Toggle theme
+ btn: Add Product
+
+=== Add Product form ===
+URL: https://omre.ai/biz/business/dashboard/digital-products
+Heading: Digital Products
+ input: type=INPUT name=null placeholder=Search products...
+ input: type=INPUT name=null placeholder=e.g. Premium eBook - Complete Guide
+ input: type=INPUT name=null placeholder=Brief summary shown in search results
+ input: type=TEXTAREA name=null placeholder=Detailed product description, features, what's included
+ input: type=SELECT name=null placeholder=null
+ input: type=number name=null placeholder=0.00
+ input: type=number name=null placeholder=Original price (for discount display)
+ input: type=number name=null placeholder=Your cost
+ input: type=INPUT name=null placeholder=e.g. EBOOK-001
+ input: type=number name=null placeholder=Unlimited (0 or empty)
+ input: type=SELECT name=null placeholder=null
+ input: type=SELECT name=null placeholder=null
+ input: type=INPUT name=null placeholder=e.g. ebook, guide, tutorial, premium
+ input: type=SELECT name=null placeholder=null
+ input: type=INPUT name=null placeholder=Your brand name
+ btn: Cancel
+ btn: Add Product
+ btn: Close
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

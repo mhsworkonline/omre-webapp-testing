@@ -1,0 +1,156 @@
+<testsuites id="" name="" tests="46" failures="0" skipped="10" errors="0" time="134.56815">
+<testsuite name="home\post-creation.spec.js" timestamp="2026-06-13T15:06:58.164Z" hostname="chromium" tests="46" failures="0" skipped="10" time="506.546" errors="0">
+<testcase name="Text Post › TC-POST-TEXT-01: composer opens with a text input area" classname="home\post-creation.spec.js" time="10.629">
+</testcase>
+<testcase name="Text Post › TC-POST-TEXT-02: Post button is disabled when composer is empty" classname="home\post-creation.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Text Post › TC-POST-TEXT-03: typing text enables the Post button" classname="home\post-creation.spec.js" time="10.344">
+</testcase>
+<testcase name="Text Post › TC-POST-TEXT-04: composer shows logged-in user avatar" classname="home\post-creation.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Text Post › TC-POST-TEXT-05: composer can be dismissed with Escape key" classname="home\post-creation.spec.js" time="10.069">
+</testcase>
+<testcase name="Text Post › TC-POST-TEXT-06: composer can be dismissed with close button" classname="home\post-creation.spec.js" time="8.554">
+</testcase>
+<testcase name="Text Post › TC-POST-TEXT-07: clearing text after typing disables Post button again" classname="home\post-creation.spec.js" time="13.777">
+</testcase>
+<testcase name="Text Post › TC-POST-TEXT-08: composer has emoji or attachment toolbar" classname="home\post-creation.spec.js" time="12.504">
+</testcase>
+<testcase name="Photo Post › TC-POST-PHOTO-01: Given the home page is loaded, when the Photo button is clicked, then a file picker dialog or composer opens" classname="home\post-creation.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Photo Post › TC-POST-PHOTO-02: clicking Photo button opens the composer or file picker" classname="home\post-creation.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Photo Post › TC-POST-PHOTO-03: photo composer has an upload area or file input" classname="home\post-creation.spec.js" time="9.319">
+</testcase>
+<testcase name="Photo Post › TC-POST-PHOTO-04: photo composer has a caption/text input" classname="home\post-creation.spec.js" time="8.71">
+</testcase>
+<testcase name="Photo Post › TC-POST-PHOTO-05: photo composer Post button is present" classname="home\post-creation.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Photo Post › TC-POST-PHOTO-06: photo composer can be dismissed" classname="home\post-creation.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Video Post › TC-POST-VIDEO-01: Given the home page is loaded, when the Video button is clicked, then a video composer or dialog opens" classname="home\post-creation.spec.js" time="13.751">
+</testcase>
+<testcase name="Video Post › TC-POST-VIDEO-02: clicking Video button opens a composer or upload area" classname="home\post-creation.spec.js" time="13.204">
+</testcase>
+<testcase name="Video Post › TC-POST-VIDEO-03: video upload area or file input is accessible" classname="home\post-creation.spec.js" time="15.173">
+</testcase>
+<testcase name="Video Post › TC-POST-VIDEO-04: video composer can be dismissed" classname="home\post-creation.spec.js" time="15.165">
+</testcase>
+<testcase name="Feeling Post › TC-POST-FEELING-01: Given the home page is loaded, when the Feeling button is clicked, then an emotion picker opens containing selectable items" classname="home\post-creation.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Feeling Post › TC-POST-FEELING-02: Given the Feeling button is clicked, when the picker opens, then it contains clickable options with count greater than zero" classname="home\post-creation.spec.js" time="11.8">
+</testcase>
+<testcase name="Feeling Post › TC-POST-FEELING-03: emotion picker contains selectable options" classname="home\post-creation.spec.js" time="9.022">
+</testcase>
+<testcase name="Feeling Post › TC-POST-FEELING-04: selecting a feeling adds it to the composer" classname="home\post-creation.spec.js" time="11.81">
+</testcase>
+<testcase name="Feeling Post › TC-POST-FEELING-05: feeling picker can be dismissed with Escape" classname="home\post-creation.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Feeling Post › TC-POST-FEELING-06: feeling picker has a search or filter input" classname="home\post-creation.spec.js" time="11.849">
+</testcase>
+<testcase name="Studio Post › TC-POST-STUDIO-01: Given the home page is loaded, when the Studio button is clicked, then a dropdown menu opens or the page navigates to a Studio URL" classname="home\post-creation.spec.js" time="11.474">
+</testcase>
+<testcase name="Studio Post › TC-POST-STUDIO-02: Given the Studio dropdown opens, when its contents are inspected, then it contains at least one option with visible text" classname="home\post-creation.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Studio Post › TC-POST-STUDIO-03: Studio dropdown shows sub-option items" classname="home\post-creation.spec.js" time="9.326">
+</testcase>
+<testcase name="Studio Post › TC-POST-STUDIO-04: selecting a Studio sub-option opens the correct composer" classname="home\post-creation.spec.js" time="10.79">
+</testcase>
+<testcase name="Studio Post › TC-POST-STUDIO-05: Studio interaction does not crash the app" classname="home\post-creation.spec.js" time="9.821">
+</testcase>
+<testcase name="Live Streaming › TC-POST-LIVE-01: Given the home page is loaded, when the Live button is clicked, then the page navigates to a live setup URL or a live dialog opens" classname="home\post-creation.spec.js" time="10.318">
+</testcase>
+<testcase name="Live Streaming › TC-POST-LIVE-02: clicking Live navigates to the live setup page" classname="home\post-creation.spec.js" time="11.74">
+</testcase>
+<testcase name="Live Streaming › TC-POST-LIVE-03: live setup page has a title or go-live button" classname="home\post-creation.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Live Streaming › TC-POST-LIVE-04: live setup page has a title input for the stream" classname="home\post-creation.spec.js" time="9.371">
+</testcase>
+<testcase name="Post Privacy › TC-POST-PRIVACY-01: privacy selector is present in the composer" classname="home\post-creation.spec.js" time="9.666">
+</testcase>
+<testcase name="Post Privacy › TC-POST-PRIVACY-02: clicking privacy selector opens audience options" classname="home\post-creation.spec.js" time="10.296">
+</testcase>
+<testcase name="Post Privacy › TC-POST-PRIVACY-03: Public option is available in audience selector" classname="home\post-creation.spec.js" time="7.538">
+</testcase>
+<testcase name="Post Privacy › TC-POST-PRIVACY-04: Friends option is available in audience selector" classname="home\post-creation.spec.js" time="10.69">
+</testcase>
+<testcase name="Post Privacy › TC-POST-PRIVACY-05: selecting a privacy option updates the selector label" classname="home\post-creation.spec.js" time="10.15">
+</testcase>
+<testcase name="File Upload › TC-POST-UPLOAD-01: clicking Photo opens a composer or file input" classname="home\post-creation.spec.js" time="7.484">
+</testcase>
+<testcase name="File Upload › TC-POST-UPLOAD-02: can attach a test image via file input" classname="home\post-creation.spec.js" time="8.866">
+</testcase>
+<testcase name="File Upload › TC-POST-UPLOAD-03: image attachment enables the Post button" classname="home\post-creation.spec.js" time="8.588">
+</testcase>
+<testcase name="File Upload › TC-POST-UPLOAD-04: can attach a test video via file input" classname="home\post-creation.spec.js" time="11.061">
+</testcase>
+<testcase name="File Upload › TC-POST-UPLOAD-05: image preview or thumbnail appears after file selection" classname="home\post-creation.spec.js" time="9.901">
+</testcase>
+<testcase name="Text Post Submission &amp; Cleanup › TC-POST-SUBMIT-01: can write and submit a text post (dialog closes on submit)" classname="home\post-creation.spec.js" time="19.076">
+</testcase>
+<testcase name="Text Post Submission &amp; Cleanup › TC-POST-SUBMIT-02: submitted post appears in the feed" classname="home\post-creation.spec.js" time="15.036">
+</testcase>
+<testcase name="Text Post Submission &amp; Cleanup › TC-POST-SUBMIT-03: full create → delete cycle removes the post from feed" classname="home\post-creation.spec.js" time="14.041">
+</testcase>
+</testsuite>
+</testsuites>

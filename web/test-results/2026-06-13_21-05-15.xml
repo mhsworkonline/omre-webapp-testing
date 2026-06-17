@@ -1,0 +1,580 @@
+<testsuites id="" name="" tests="183" failures="0" skipped="34" errors="0" time="514.997849">
+<testsuite name="home\home.spec.js" timestamp="2026-06-13T15:35:15.551Z" hostname="chromium" tests="55" failures="0" skipped="11" time="668.822" errors="0">
+<testcase name="TC-HOME-01: Given I am authenticated and on the page, When I perform the action, Then home page loads with correct URL" classname="home\home.spec.js" time="11.661">
+</testcase>
+<testcase name="TC-HOME-02: Given I am on the page, When the page renders, Then main feed container is visible" classname="home\home.spec.js" time="11.186">
+</testcase>
+<testcase name="TC-HOME-03: Given I am authenticated and on the page, When I perform the action, Then page header area is rendered" classname="home\home.spec.js" time="16.48">
+</testcase>
+<testcase name="TC-HOME-04: Given I am authenticated and on the page, When I perform the action, Then sidebar navigation is present" classname="home\home.spec.js" time="10.519">
+</testcase>
+<testcase name="TC-HOME-05: Given I am on the page, When the page renders, Then Home link in sidebar is visible" classname="home\home.spec.js" time="10.633">
+</testcase>
+<testcase name="TC-HOME-06: Given I am authenticated and on the page, When I perform the action, Then feed renders at least one post or content block" classname="home\home.spec.js" time="38.376">
+</testcase>
+<testcase name="TC-HOME-07: Given I am on the page, When the page renders, Then create-post input or button is visible" classname="home\home.spec.js" time="8.753">
+</testcase>
+<testcase name="TC-HOME-08: Given I am authenticated and on the page, When I perform the action, Then scrolling down loads more content" classname="home\home.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-09: Given I am on the page, When I inspect the content, Then post card contains an author link or avatar" classname="home\home.spec.js" time="12.037">
+</testcase>
+<testcase name="TC-HOME-10: Given I am on the post card, When I view it, Then it shows post text content" classname="home\home.spec.js" time="12.098">
+</testcase>
+<testcase name="TC-HOME-11: Given I am on the post card, When I view it, Then it shows a timestamp or post-age indicator" classname="home\home.spec.js">
+<properties>
+<property name="skip" value="No timestamp text detected in feed innerText">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-12: Given I am on the page, When I inspect the content, Then post card has at least two action buttons" classname="home\home.spec.js" time="10.335">
+</testcase>
+<testcase name="TC-HOME-13: Given I am authenticated and on the page, When I perform the action, Then post card three-dot options menu is present" classname="home\home.spec.js" time="10.831">
+</testcase>
+<testcase name="TC-HOME-14: Given I am authenticated and on the page, When I perform the action, Then like button is present on feed posts" classname="home\home.spec.js" time="8.57">
+</testcase>
+<testcase name="TC-HOME-15: Given the page is loaded, When I click like button is interactive and page remains stable, Then it responds correctly" classname="home\home.spec.js" time="8.289">
+</testcase>
+<testcase name="TC-HOME-16: Given I am authenticated and on the page, When I perform the action, Then comment button is present on feed posts" classname="home\home.spec.js" time="8.285">
+</testcase>
+<testcase name="TC-HOME-17: Given the comment button is present, When I click the comment button, Then it opens comments section or dialog" classname="home\home.spec.js" time="14.067">
+</testcase>
+<testcase name="TC-HOME-18: Given I am authenticated and on the page, When I perform the action, Then share button is present on feed posts" classname="home\home.spec.js" time="11.59">
+</testcase>
+<testcase name="TC-HOME-19: Given I am authenticated and on the page, When I perform the action, Then three-dot post menu opens on click" classname="home\home.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-20: Given I am on the page, When I inspect the content, Then post menu contains report or hide option" classname="home\home.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-21: Given the author name is present, When I click the author name, Then it navigates to their profile" classname="home\home.spec.js" time="9.245">
+</testcase>
+<testcase name="TC-HOME-22: Given the Explore nav link is present, When I click the Explore nav link, Then it navigates to /app/explore" classname="home\home.spec.js" time="8.291">
+</testcase>
+<testcase name="TC-HOME-23: Given the Notifications nav link is present, When I click the Notifications nav link, Then it navigates to /app/notifications" classname="home\home.spec.js" time="8.201">
+</testcase>
+<testcase name="TC-HOME-24: Given the Messages nav link is present, When I click the Messages nav link, Then it navigates to /app/messages" classname="home\home.spec.js" time="16.231">
+</testcase>
+<testcase name="TC-HOME-25: Given I am on the page, When I inspect the content, Then top navigation area contains visible nav items" classname="home\home.spec.js" time="10.639">
+</testcase>
+<testcase name="TC-HOME-26: Given I am on the page, When I inspect the content, Then sidebar has multiple navigation links" classname="home\home.spec.js" time="9.92">
+</testcase>
+<testcase name="TC-HOME-27: Given the create-post is present, When I click the create-post, Then it trigger expands the composer" classname="home\home.spec.js" time="13.651">
+</testcase>
+<testcase name="TC-HOME-28: Given I am on the page, When I inspect the content, Then composer dialog contains a text input area" classname="home\home.spec.js" time="17.897">
+</testcase>
+<testcase name="TC-HOME-29: Given I am on the composer, When I view it, Then it shows the logged-in user avatar or name" classname="home\home.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-30: Given I am authenticated and on the page, When I perform the action, Then composer Post button is disabled when text area is empty" classname="home\home.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-31: Given I am authenticated and on the page, When I perform the action, Then typing in composer enables the Post button" classname="home\home.spec.js" time="19.2">
+</testcase>
+<testcase name="TC-HOME-32: Given I am on the page, When I interact with the element, Then composer can be dismissed with Escape or close button" classname="home\home.spec.js" time="19.015">
+</testcase>
+<testcase name="TC-HOME-33: Given I am on the page, When I inspect the content, Then composer has a media/photo attachment option" classname="home\home.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-34: Given I am authenticated and on the page, When I perform the action, Then stories or highlights bar is present if feature is enabled" classname="home\home.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-35: Given the story is present, When I click the story, Then it opens the story viewer" classname="home\home.spec.js" time="5.658">
+</testcase>
+<testcase name="TC-HOME-36: Given I am authenticated and on the page, When I perform the action, Then feed filter or sort control is accessible if present" classname="home\home.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-37: Given I am authenticated and on the page, When I perform the action, Then image posts render their media correctly" classname="home\home.spec.js" time="8.592">
+</testcase>
+<testcase name="TC-HOME-38: Given I am authenticated and on the page, When I perform the action, Then page title reflects the app name" classname="home\home.spec.js" time="7.424">
+</testcase>
+<testcase name="TC-HOME-39: Given I am on the page, When I inspect the content, Then page has no uncaught JS errors on load" classname="home\home.spec.js" time="28.383">
+</testcase>
+<testcase name="TC-HOME-40: Given I am on the page, When I reload the page, Then content remains intact" classname="home\home.spec.js" time="13.001">
+</testcase>
+<testcase name="TC-HOME-41: Given I am on the page, When the page renders, Then create post widget text input is visible" classname="home\home.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-42: Given I am authenticated and on the page, When I perform the action, Then Photo button is present in the create post widget" classname="home\home.spec.js" time="12.754">
+</testcase>
+<testcase name="TC-HOME-43: Given the Photo button is present, When I click the Photo button, Then it opens the photo picker or upload dialog" classname="home\home.spec.js" time="7.201">
+</testcase>
+<testcase name="TC-HOME-44: Given I am authenticated and on the page, When I perform the action, Then Video button is present in the create post widget" classname="home\home.spec.js" time="11.1">
+</testcase>
+<testcase name="TC-HOME-45: Given the page is loaded, When I click Video button is interactive and page stays stable, Then it responds correctly" classname="home\home.spec.js" time="14.03">
+</testcase>
+<testcase name="TC-HOME-46: Given I am authenticated and on the page, When I perform the action, Then Studio button is present in the create post widget" classname="home\home.spec.js" time="12.122">
+</testcase>
+<testcase name="TC-HOME-47: Given I am authenticated and on the page, When I perform the action, Then Studio button is clickable and page stays stable" classname="home\home.spec.js" time="9.378">
+</testcase>
+<testcase name="TC-HOME-48: Given I am authenticated and on the page, When I perform the action, Then Live button or link is present in the create post widget" classname="home\home.spec.js" time="12.355">
+</testcase>
+<testcase name="TC-HOME-49: Given the Live button is present, When I click the Live button, Then it navigates to or opens the live stream setup" classname="home\home.spec.js" time="10.405">
+</testcase>
+<testcase name="TC-HOME-50: Given I am authenticated and on the page, When I perform the action, Then Feeling button is present in the create post widget" classname="home\home.spec.js" time="10.822">
+</testcase>
+<testcase name="TC-HOME-51: Given the Feeling button is present, When I click the Feeling button, Then it opens the emotion or emoji picker" classname="home\home.spec.js" time="15.736">
+</testcase>
+<testcase name="TC-HOME-52: Given I am on the page, When the page renders, Then Post button is visible" classname="home\home.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-53: Given I am authenticated and on the page, When I perform the action, Then Post button is disabled when no text is entered" classname="home\home.spec.js" time="11.619">
+</testcase>
+<testcase name="TC-HOME-54: Given I am on the page, When I inspect the content, Then Post button has a dropdown chevron for post type selection" classname="home\home.spec.js" time="12.723">
+</testcase>
+<testcase name="TC-HOME-55: Given I am on the create post widget, When I view it, Then it shows the logged-in user avatar" classname="home\home.spec.js" time="7.201">
+</testcase>
+</testsuite>
+<testsuite name="home\interactions.spec.js" timestamp="2026-06-13T15:35:15.551Z" hostname="chromium" tests="52" failures="0" skipped="5" time="538.278" errors="0">
+<testcase name="Comment Flow › TC-INTERACT-COMMENT-01: comment section opens after clicking comment button" classname="home\interactions.spec.js" time="9.079">
+</testcase>
+<testcase name="Comment Flow › TC-INTERACT-COMMENT-02: comment input field is visible and editable" classname="home\interactions.spec.js" time="9.574">
+</testcase>
+<testcase name="Comment Flow › TC-INTERACT-COMMENT-03: typing in comment input reflects the text" classname="home\interactions.spec.js" time="9.09">
+</testcase>
+<testcase name="Comment Flow › TC-INTERACT-COMMENT-04: comment submit button enables when text is entered" classname="home\interactions.spec.js" time="9.499">
+</testcase>
+<testcase name="Comment Flow › TC-INTERACT-COMMENT-05: submitting a comment clears the input" classname="home\interactions.spec.js" time="10.185">
+</testcase>
+<testcase name="Comment Flow › TC-INTERACT-COMMENT-06: submitted comment appears in the comment thread" classname="home\interactions.spec.js" time="8.246">
+</testcase>
+<testcase name="Comment Flow › TC-INTERACT-COMMENT-07: existing comments are visible in the comment section" classname="home\interactions.spec.js" time="10.398">
+</testcase>
+<testcase name="Comment Flow › TC-INTERACT-COMMENT-08: comment section shows comment count" classname="home\interactions.spec.js" time="8.695">
+</testcase>
+<testcase name="Comment Flow › TC-INTERACT-COMMENT-09: reply button is present on individual comments" classname="home\interactions.spec.js" time="11.152">
+</testcase>
+<testcase name="Comment Flow › TC-INTERACT-COMMENT-10: clicking Reply on a comment opens a reply input" classname="home\interactions.spec.js" time="10.226">
+</testcase>
+<testcase name="Comment Flow › TC-INTERACT-COMMENT-11: own comment has a delete option" classname="home\interactions.spec.js" time="11.036">
+</testcase>
+<testcase name="Comment Flow › TC-INTERACT-COMMENT-12: click like on comment, verify like state toggled (aria-pressed changed, count changed, or class changed)" classname="home\interactions.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Reaction Picker › TC-INTERACT-REACT-01: hovering the like button reveals a reaction picker" classname="home\interactions.spec.js" time="8.496">
+</testcase>
+<testcase name="Reaction Picker › TC-INTERACT-REACT-02: reaction picker contains multiple distinct reaction options" classname="home\interactions.spec.js" time="7.811">
+</testcase>
+<testcase name="Reaction Picker › TC-INTERACT-REACT-03: clicking a reaction registers it and updates button state" classname="home\interactions.spec.js" time="9.867">
+</testcase>
+<testcase name="Reaction Picker › TC-INTERACT-REACT-04: click reaction count, verify a reactions list/modal opens showing who reacted" classname="home\interactions.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Reaction Picker › TC-INTERACT-REACT-05: clicking reaction count opens the reactions list viewer" classname="home\interactions.spec.js" time="8.812">
+</testcase>
+<testcase name="Reaction Picker › TC-INTERACT-REACT-06: clicking the active reaction again removes it (toggle)" classname="home\interactions.spec.js" time="8.398">
+</testcase>
+<testcase name="Post Detail View › TC-INTERACT-DETAIL-01: clicking on post content navigates to post detail page" classname="home\interactions.spec.js" time="9.671">
+</testcase>
+<testcase name="Post Detail View › TC-INTERACT-DETAIL-02: post detail page shows the post content" classname="home\interactions.spec.js" time="8.169">
+</testcase>
+<testcase name="Post Detail View › TC-INTERACT-DETAIL-03: post detail page has a comment section" classname="home\interactions.spec.js" time="7.66">
+</testcase>
+<testcase name="Post Detail View › TC-INTERACT-DETAIL-04: post detail page shows like and share buttons" classname="home\interactions.spec.js" time="11.509">
+</testcase>
+<testcase name="Post Detail View › TC-INTERACT-DETAIL-05: post detail shows the author&apos;s name and avatar" classname="home\interactions.spec.js" time="8.057">
+</testcase>
+<testcase name="Post Detail View › TC-INTERACT-DETAIL-06: back navigation from detail returns to home feed" classname="home\interactions.spec.js" time="7.686">
+</testcase>
+<testcase name="Post Detail View › TC-INTERACT-DETAIL-07: post timestamp is shown on the detail page" classname="home\interactions.spec.js" time="9.149">
+</testcase>
+<testcase name="Share Flow › TC-INTERACT-SHARE-01: click share button, verify share dialog/sheet/menu opens (contains share options)" classname="home\interactions.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Share Flow › TC-INTERACT-SHARE-02: clicking share opens a share options panel or dialog" classname="home\interactions.spec.js" time="8.789">
+</testcase>
+<testcase name="Share Flow › TC-INTERACT-SHARE-03: share panel contains a copy link option" classname="home\interactions.spec.js" time="8.194">
+</testcase>
+<testcase name="Share Flow › TC-INTERACT-SHARE-04: share panel has a repost or share to feed option" classname="home\interactions.spec.js" time="10.402">
+</testcase>
+<testcase name="Share Flow › TC-INTERACT-SHARE-05: share panel can be dismissed with Escape" classname="home\interactions.spec.js" time="8.266">
+</testcase>
+<testcase name="Share Flow › TC-INTERACT-SHARE-06: share panel has a send via message option" classname="home\interactions.spec.js" time="8.425">
+</testcase>
+<testcase name="See More — Long Post Truncation › TC-INTERACT-SEERMORE-01: click See More, verify text expanded (element height increased or truncation removed — check that a &quot;See Less&quot; button appears or text length increased)" classname="home\interactions.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="See More — Long Post Truncation › TC-INTERACT-SEERMORE-02: clicking &quot;See more&quot; expands the full post text" classname="home\interactions.spec.js" time="12.495">
+</testcase>
+<testcase name="See More — Long Post Truncation › TC-INTERACT-SEERMORE-03: expanded post shows a &quot;See less&quot; button" classname="home\interactions.spec.js" time="10.733">
+</testcase>
+<testcase name="See More — Long Post Truncation › TC-INTERACT-SEERMORE-04: clicking &quot;See less&quot; re-truncates the post" classname="home\interactions.spec.js" time="10.896">
+</testcase>
+<testcase name="Bookmark / Save Post › TC-INTERACT-SAVE-01: click save/bookmark button, verify state changed (aria-pressed, icon class, or toast appeared)" classname="home\interactions.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Bookmark / Save Post › TC-INTERACT-SAVE-02: clicking bookmark saves the post and updates button state" classname="home\interactions.spec.js" time="11.894">
+</testcase>
+<testcase name="Bookmark / Save Post › TC-INTERACT-SAVE-03: bookmark button in post 3-dot menu is accessible" classname="home\interactions.spec.js" time="11.179">
+</testcase>
+<testcase name="Bookmark / Save Post › TC-INTERACT-SAVE-04: saved posts are accessible from profile or saved section" classname="home\interactions.spec.js" time="11.107">
+</testcase>
+<testcase name="Feed Tabs › TC-INTERACT-TABS-01: feed tabs are visible if present (For You / Following / Latest)" classname="home\interactions.spec.js" time="10.554">
+</testcase>
+<testcase name="Feed Tabs › TC-INTERACT-TABS-02: active tab is visually distinguished" classname="home\interactions.spec.js" time="13.655">
+</testcase>
+<testcase name="Feed Tabs › TC-INTERACT-TABS-03: clicking an inactive tab switches feed content" classname="home\interactions.spec.js" time="14.208">
+</testcase>
+<testcase name="Feed Tabs › TC-INTERACT-TABS-04: switching tabs does not break the page or throw errors" classname="home\interactions.spec.js" time="13.365">
+</testcase>
+<testcase name="Hashtags and Mentions › TC-INTERACT-TAG-01: hashtags in posts are rendered as clickable links" classname="home\interactions.spec.js" time="13.467">
+</testcase>
+<testcase name="Hashtags and Mentions › TC-INTERACT-TAG-02: clicking a hashtag navigates to the hashtag or explore page" classname="home\interactions.spec.js" time="14.145">
+</testcase>
+<testcase name="Hashtags and Mentions › TC-INTERACT-TAG-03: @mentions in posts are rendered as clickable profile links" classname="home\interactions.spec.js" time="12.929">
+</testcase>
+<testcase name="Hashtags and Mentions › TC-INTERACT-TAG-04: clicking an @mention navigates to that user&apos;s profile" classname="home\interactions.spec.js" time="12.42">
+</testcase>
+<testcase name="Infinite Scroll and Loading State › TC-INTERACT-SCROLL-01: scrolling to bottom triggers a loading indicator" classname="home\interactions.spec.js" time="13.973">
+</testcase>
+<testcase name="Infinite Scroll and Loading State › TC-INTERACT-SCROLL-02: more posts load after scrolling to bottom" classname="home\interactions.spec.js" time="12.396">
+</testcase>
+<testcase name="Infinite Scroll and Loading State › TC-INTERACT-SCROLL-03: page does not crash during repeated scrolling" classname="home\interactions.spec.js" time="11.052">
+</testcase>
+<testcase name="Infinite Scroll and Loading State › TC-INTERACT-SCROLL-04: back-to-top button appears after scrolling down" classname="home\interactions.spec.js" time="11.669">
+</testcase>
+<testcase name="Infinite Scroll and Loading State › TC-INTERACT-SCROLL-05: feed items are not duplicated after pagination" classname="home\interactions.spec.js" time="11.474">
+</testcase>
+</testsuite>
+<testsuite name="home\post-creation.spec.js" timestamp="2026-06-13T15:35:15.551Z" hostname="chromium" tests="46" failures="0" skipped="11" time="537.925" errors="0">
+<testcase name="Text Post › TC-POST-TEXT-01: composer opens with a text input area" classname="home\post-creation.spec.js" time="12.552">
+</testcase>
+<testcase name="Text Post › TC-POST-TEXT-02: Post button is disabled when composer is empty" classname="home\post-creation.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Text Post › TC-POST-TEXT-03: typing text enables the Post button" classname="home\post-creation.spec.js" time="12.995">
+</testcase>
+<testcase name="Text Post › TC-POST-TEXT-04: composer shows logged-in user avatar" classname="home\post-creation.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Text Post › TC-POST-TEXT-05: composer can be dismissed with Escape key" classname="home\post-creation.spec.js" time="8.067">
+</testcase>
+<testcase name="Text Post › TC-POST-TEXT-06: composer can be dismissed with close button" classname="home\post-creation.spec.js" time="7.963">
+</testcase>
+<testcase name="Text Post › TC-POST-TEXT-07: clearing text after typing disables Post button again" classname="home\post-creation.spec.js" time="8.729">
+</testcase>
+<testcase name="Text Post › TC-POST-TEXT-08: composer has emoji or attachment toolbar" classname="home\post-creation.spec.js" time="12.577">
+</testcase>
+<testcase name="Photo Post › TC-POST-PHOTO-01: Given the home page is loaded, when the Photo button is clicked, then a file picker dialog or composer opens" classname="home\post-creation.spec.js" time="10.189">
+</testcase>
+<testcase name="Photo Post › TC-POST-PHOTO-02: clicking Photo button opens the composer or file picker" classname="home\post-creation.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Photo Post › TC-POST-PHOTO-03: photo composer has an upload area or file input" classname="home\post-creation.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Photo Post › TC-POST-PHOTO-04: photo composer has a caption/text input" classname="home\post-creation.spec.js" time="11.203">
+</testcase>
+<testcase name="Photo Post › TC-POST-PHOTO-05: photo composer Post button is present" classname="home\post-creation.spec.js" time="7.985">
+</testcase>
+<testcase name="Photo Post › TC-POST-PHOTO-06: photo composer can be dismissed" classname="home\post-creation.spec.js" time="9.873">
+</testcase>
+<testcase name="Video Post › TC-POST-VIDEO-01: Given the home page is loaded, when the Video button is clicked, then a video composer or dialog opens" classname="home\post-creation.spec.js" time="13.639">
+</testcase>
+<testcase name="Video Post › TC-POST-VIDEO-02: clicking Video button opens a composer or upload area" classname="home\post-creation.spec.js" time="14.953">
+</testcase>
+<testcase name="Video Post › TC-POST-VIDEO-03: video upload area or file input is accessible" classname="home\post-creation.spec.js" time="12.112">
+</testcase>
+<testcase name="Video Post › TC-POST-VIDEO-04: video composer can be dismissed" classname="home\post-creation.spec.js" time="12.524">
+</testcase>
+<testcase name="Feeling Post › TC-POST-FEELING-01: Given the home page is loaded, when the Feeling button is clicked, then an emotion picker opens containing selectable items" classname="home\post-creation.spec.js" time="19.1">
+</testcase>
+<testcase name="Feeling Post › TC-POST-FEELING-02: Given the Feeling button is clicked, when the picker opens, then it contains clickable options with count greater than zero" classname="home\post-creation.spec.js" time="13.419">
+</testcase>
+<testcase name="Feeling Post › TC-POST-FEELING-03: emotion picker contains selectable options" classname="home\post-creation.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Feeling Post › TC-POST-FEELING-04: selecting a feeling adds it to the composer" classname="home\post-creation.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Feeling Post › TC-POST-FEELING-05: feeling picker can be dismissed with Escape" classname="home\post-creation.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Feeling Post › TC-POST-FEELING-06: feeling picker has a search or filter input" classname="home\post-creation.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Studio Post › TC-POST-STUDIO-01: Given the home page is loaded, when the Studio button is clicked, then a dropdown menu opens or the page navigates to a Studio URL" classname="home\post-creation.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Studio Post › TC-POST-STUDIO-02: Given the Studio dropdown opens, when its contents are inspected, then it contains at least one option with visible text" classname="home\post-creation.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Studio Post › TC-POST-STUDIO-03: Studio dropdown shows sub-option items" classname="home\post-creation.spec.js" time="8.958">
+</testcase>
+<testcase name="Studio Post › TC-POST-STUDIO-04: selecting a Studio sub-option opens the correct composer" classname="home\post-creation.spec.js" time="10.852">
+</testcase>
+<testcase name="Studio Post › TC-POST-STUDIO-05: Studio interaction does not crash the app" classname="home\post-creation.spec.js" time="9.322">
+</testcase>
+<testcase name="Live Streaming › TC-POST-LIVE-01: Given the home page is loaded, when the Live button is clicked, then the page navigates to a live setup URL or a live dialog opens" classname="home\post-creation.spec.js" time="16.382">
+</testcase>
+<testcase name="Live Streaming › TC-POST-LIVE-02: clicking Live navigates to the live setup page" classname="home\post-creation.spec.js" time="13.588">
+</testcase>
+<testcase name="Live Streaming › TC-POST-LIVE-03: live setup page has a title or go-live button" classname="home\post-creation.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Live Streaming › TC-POST-LIVE-04: live setup page has a title input for the stream" classname="home\post-creation.spec.js" time="21.035">
+</testcase>
+<testcase name="Post Privacy › TC-POST-PRIVACY-01: privacy selector is present in the composer" classname="home\post-creation.spec.js" time="7.234">
+</testcase>
+<testcase name="Post Privacy › TC-POST-PRIVACY-02: clicking privacy selector opens audience options" classname="home\post-creation.spec.js" time="8.004">
+</testcase>
+<testcase name="Post Privacy › TC-POST-PRIVACY-03: Public option is available in audience selector" classname="home\post-creation.spec.js" time="10.251">
+</testcase>
+<testcase name="Post Privacy › TC-POST-PRIVACY-04: Friends option is available in audience selector" classname="home\post-creation.spec.js" time="9.095">
+</testcase>
+<testcase name="Post Privacy › TC-POST-PRIVACY-05: selecting a privacy option updates the selector label" classname="home\post-creation.spec.js" time="10.373">
+</testcase>
+<testcase name="File Upload › TC-POST-UPLOAD-01: clicking Photo opens a composer or file input" classname="home\post-creation.spec.js" time="7.847">
+</testcase>
+<testcase name="File Upload › TC-POST-UPLOAD-02: can attach a test image via file input" classname="home\post-creation.spec.js" time="8.236">
+</testcase>
+<testcase name="File Upload › TC-POST-UPLOAD-03: image attachment enables the Post button" classname="home\post-creation.spec.js" time="10.324">
+</testcase>
+<testcase name="File Upload › TC-POST-UPLOAD-04: can attach a test video via file input" classname="home\post-creation.spec.js" time="10.07">
+</testcase>
+<testcase name="File Upload › TC-POST-UPLOAD-05: image preview or thumbnail appears after file selection" classname="home\post-creation.spec.js" time="8.446">
+</testcase>
+<testcase name="Text Post Submission &amp; Cleanup › TC-POST-SUBMIT-01: can write and submit a text post (dialog closes on submit)" classname="home\post-creation.spec.js" time="19.655">
+</testcase>
+<testcase name="Text Post Submission &amp; Cleanup › TC-POST-SUBMIT-02: submitted post appears in the feed" classname="home\post-creation.spec.js" time="18.837">
+</testcase>
+<testcase name="Text Post Submission &amp; Cleanup › TC-POST-SUBMIT-03: full create → delete cycle removes the post from feed" classname="home\post-creation.spec.js" time="16.974">
+</testcase>
+</testsuite>
+<testsuite name="home\stories.spec.js" timestamp="2026-06-13T15:35:15.551Z" hostname="chromium" tests="30" failures="0" skipped="7" time="284.16" errors="0">
+<testcase name="Stories Bar › TC-STORY-BAR-01: stories bar or carousel is present on home feed" classname="home\stories.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Stories Bar › TC-STORY-BAR-02: stories bar contains at least one story item" classname="home\stories.spec.js" time="6.023">
+</testcase>
+<testcase name="Stories Bar › TC-STORY-BAR-03: Add Story button is present in the stories bar" classname="home\stories.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Stories Bar › TC-STORY-BAR-04: story items show user avatars or thumbnails" classname="home\stories.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Stories Bar › TC-STORY-BAR-05: stories bar can be scrolled horizontally if overflowing" classname="home\stories.spec.js" time="6.77">
+</testcase>
+<testcase name="Viewing Stories › TC-STORY-VIEW-01: clicking a story opens the story viewer" classname="home\stories.spec.js" time="9.519">
+</testcase>
+<testcase name="Viewing Stories › TC-STORY-VIEW-02: story viewer shows the story content (image or video)" classname="home\stories.spec.js" time="8.378">
+</testcase>
+<testcase name="Viewing Stories › TC-STORY-VIEW-03: story viewer has a progress bar showing duration" classname="home\stories.spec.js" time="13.108">
+</testcase>
+<testcase name="Viewing Stories › TC-STORY-VIEW-04: story viewer shows the author name or avatar" classname="home\stories.spec.js" time="11.881">
+</testcase>
+<testcase name="Viewing Stories › TC-STORY-VIEW-05: story viewer has a close button" classname="home\stories.spec.js" time="11.159">
+</testcase>
+<testcase name="Viewing Stories › TC-STORY-VIEW-06: pressing Escape closes the story viewer" classname="home\stories.spec.js" time="11.791">
+</testcase>
+<testcase name="Viewing Stories › TC-STORY-VIEW-07: clicking close button dismisses the story viewer" classname="home\stories.spec.js" time="8.566">
+</testcase>
+<testcase name="Viewing Stories › TC-STORY-VIEW-08: next story navigation button is present" classname="home\stories.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Viewing Stories › TC-STORY-VIEW-09: previous story navigation button is present" classname="home\stories.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Viewing Stories › TC-STORY-VIEW-10: clicking next advances to the next story" classname="home\stories.spec.js" time="12.583">
+</testcase>
+<testcase name="Viewing Stories › TC-STORY-VIEW-11: story viewer shows timestamp of when story was posted" classname="home\stories.spec.js" time="10.309">
+</testcase>
+<testcase name="Story Reactions and Replies › TC-STORY-REACT-01: reaction or emoji bar is visible in story viewer" classname="home\stories.spec.js" time="9.223">
+</testcase>
+<testcase name="Story Reactions and Replies › TC-STORY-REACT-02: reply input field is present in story viewer" classname="home\stories.spec.js" time="9.121">
+</testcase>
+<testcase name="Story Reactions and Replies › TC-STORY-REACT-03: typing a reply enables the send button" classname="home\stories.spec.js" time="11.04">
+</testcase>
+<testcase name="Story Reactions and Replies › TC-STORY-REACT-04: clicking a reaction emoji on a story is interactive" classname="home\stories.spec.js" time="9.082">
+</testcase>
+<testcase name="Creating a Story › TC-STORY-CREATE-01: Add Story button is clickable" classname="home\stories.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Creating a Story › TC-STORY-CREATE-02: clicking Add Story opens the story creator" classname="home\stories.spec.js" time="9.257">
+</testcase>
+<testcase name="Creating a Story › TC-STORY-CREATE-03: story creator has a photo upload option" classname="home\stories.spec.js" time="7.717">
+</testcase>
+<testcase name="Creating a Story › TC-STORY-CREATE-04: story creator has a text story option" classname="home\stories.spec.js" time="12.181">
+</testcase>
+<testcase name="Creating a Story › TC-STORY-CREATE-05: story creator has a video option" classname="home\stories.spec.js" time="8.006">
+</testcase>
+<testcase name="Creating a Story › TC-STORY-CREATE-06: story creator can be dismissed without creating" classname="home\stories.spec.js" time="9.441">
+</testcase>
+<testcase name="My Story Management › TC-STORY-MY-01: own story item is present if user has an active story" classname="home\stories.spec.js" time="9.259">
+</testcase>
+<testcase name="My Story Management › TC-STORY-MY-02: own story shows view count when opened" classname="home\stories.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="My Story Management › TC-STORY-MY-03: own story has a delete option" classname="home\stories.spec.js" time="7.33">
+</testcase>
+<testcase name="My Story Management › TC-STORY-MY-04: story shows 24h expiry indicator" classname="home\stories.spec.js" time="8.062">
+</testcase>
+</testsuite>
+</testsuites>

@@ -1,0 +1,6 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="11.999571">
+<testsuite name="auth\auth.setup.js" timestamp="2026-06-16T06:29:51.933Z" hostname="auth" tests="1" failures="0" skipped="0" time="9.563" errors="0">
+<testcase name="authenticate" classname="auth\auth.setup.js" time="9.563">
+</testcase>
+</testsuite>
+</testsuites>

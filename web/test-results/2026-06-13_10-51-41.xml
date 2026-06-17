@@ -1,0 +1,22 @@
+<testsuites id="" name="" tests="3" failures="0" skipped="2" errors="0" time="10.702067999999999">
+<testsuite name="responsive\mobile.spec.js" timestamp="2026-06-13T05:21:41.706Z" hostname="chromium" tests="3" failures="0" skipped="2" time="22.285" errors="0">
+<testcase name="Mobile Navigation › TC-MOBILE-007 nav drawer contains navigation links" classname="responsive\mobile.spec.js" time="7.447">
+</testcase>
+<testcase name="Mobile Navigation › TC-MOBILE-008 tapping a nav link navigates to the correct page" classname="responsive\mobile.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile Navigation › TC-MOBILE-009 drawer closes after tapping a nav link" classname="responsive\mobile.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+</testsuites>

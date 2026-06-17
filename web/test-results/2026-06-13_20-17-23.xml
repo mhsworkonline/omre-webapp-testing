@@ -1,0 +1,1072 @@
+<testsuites id="" name="" tests="183" failures="2" skipped="172" errors="6" time="78.99348800000001">
+<testsuite name="home\home.spec.js" timestamp="2026-06-13T14:47:23.884Z" hostname="chromium" tests="55" failures="2" skipped="44" time="213.548" errors="6">
+<testcase name="TC-HOME-01: Given I am authenticated and on the page, When I perform the action, Then home page loads with correct URL" classname="home\home.spec.js" time="13.169">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|2026-06-13_20-17-24\artifacts\home-home-TC-HOME-01-Given-2db46-page-loads-with-correct-URL-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|2026-06-13_20-17-24\artifacts\home-home-TC-HOME-01-Given-2db46-page-loads-with-correct-URL-chromium\video.webm]]
+
+[[ATTACHMENT|2026-06-13_20-17-24\artifacts\home-home-TC-HOME-01-Given-2db46-page-loads-with-correct-URL-chromium\error-context.md]]
+]]>
+</system-out>
+<failure message="expect(page).toHaveURL(expected) failed" type="expect.toHaveURL">
+<![CDATA[  [chromium] › home\home.spec.js:16:5 › TC-HOME-01: Given I am authenticated and on the page, When I perform the action, Then home page loads with correct URL 
+
+    Error: expect(page).toHaveURL(expected) failed
+
+    Expected pattern: /\/app\/home/
+    Received string:  "https://app.omre.ai/auth/login?redirect=%2Fapp%2Fhome"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toHaveURL" with timeout 5000ms
+        - waiting for" https://app.omre.ai/auth/login?redirect=%2Fapp%2Fhome" navigation to finish...
+        - navigated to "https://app.omre.ai/auth/login?redirect=%2Fapp%2Fhome"
+        11 × unexpected value "https://app.omre.ai/auth/login?redirect=%2Fapp%2Fhome"
+
+
+      15 |
+      16 | test('TC-HOME-01: Given I am authenticated and on the page, When I perform the action, Then home page loads with correct URL', async ({ page }) => {
+    > 17 |   await expect(page).toHaveURL(/\/app\/home/);
+         |                      ^
+      18 | });
+      19 |
+      20 | test('TC-HOME-02: Given I am on the page, When the page renders, Then main feed container is visible', async () => {
+        at C:\claude-folder\webapp-testing\omre-webapp\tests\home\home.spec.js:17:22
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\2026-06-13_20-17-24\artifacts\home-home-TC-HOME-01-Given-2db46-page-loads-with-correct-URL-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\2026-06-13_20-17-24\artifacts\home-home-TC-HOME-01-Given-2db46-page-loads-with-correct-URL-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\2026-06-13_20-17-24\artifacts\home-home-TC-HOME-01-Given-2db46-page-loads-with-correct-URL-chromium\error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="TC-HOME-02: Given I am on the page, When the page renders, Then main feed container is visible" classname="home\home.spec.js" time="7.981">
+</testcase>
+<testcase name="TC-HOME-03: Given I am authenticated and on the page, When I perform the action, Then page header area is rendered" classname="home\home.spec.js" time="7.268">
+</testcase>
+<testcase name="TC-HOME-04: Given I am authenticated and on the page, When I perform the action, Then sidebar navigation is present" classname="home\home.spec.js" time="10.856">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|2026-06-13_20-17-24\artifacts\home-home-TC-HOME-04-Given-c56a5-debar-navigation-is-present-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|2026-06-13_20-17-24\artifacts\home-home-TC-HOME-04-Given-c56a5-debar-navigation-is-present-chromium\video.webm]]
+
+[[ATTACHMENT|2026-06-13_20-17-24\artifacts\home-home-TC-HOME-04-Given-c56a5-debar-navigation-is-present-chromium\error-context.md]]
+]]>
+</system-out>
+<failure message="expect(locator).toBeVisible() failed" type="expect.toBeVisible">
+<![CDATA[  [chromium] › home\home.spec.js:30:5 › TC-HOME-04: Given I am authenticated and on the page, When I perform the action, Then sidebar navigation is present 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('nav, aside, [role="navigation"]').first()
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for locator('nav, aside, [role="navigation"]').first()
+        - waiting for" https://app.omre.ai/auth/login?redirect=%2Fapp%2Fhome" navigation to finish...
+        - navigated to "https://app.omre.ai/auth/login?redirect=%2Fapp%2Fhome"
+
+
+      29 |
+      30 | test('TC-HOME-04: Given I am authenticated and on the page, When I perform the action, Then sidebar navigation is present', async () => {
+    > 31 |   await expect(homePage.sidebarNav).toBeVisible();
+         |                                     ^
+      32 | });
+      33 |
+      34 | test('TC-HOME-05: Given I am on the page, When the page renders, Then Home link in sidebar is visible', async ({ page }) => {
+        at C:\claude-folder\webapp-testing\omre-webapp\tests\home\home.spec.js:31:37
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\2026-06-13_20-17-24\artifacts\home-home-TC-HOME-04-Given-c56a5-debar-navigation-is-present-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\2026-06-13_20-17-24\artifacts\home-home-TC-HOME-04-Given-c56a5-debar-navigation-is-present-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\2026-06-13_20-17-24\artifacts\home-home-TC-HOME-04-Given-c56a5-debar-navigation-is-present-chromium\error-context.md
+]]>
+</failure>
+</testcase>
+<testcase name="TC-HOME-05: Given I am on the page, When the page renders, Then Home link in sidebar is visible" classname="home\home.spec.js" time="6.091">
+</testcase>
+<testcase name="TC-HOME-06: Given I am authenticated and on the page, When I perform the action, Then feed renders at least one post or content block" classname="home\home.spec.js" time="21.694">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|2026-06-13_20-17-24\artifacts\home-home-TC-HOME-06-Given-f41c7-t-one-post-or-content-block-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|2026-06-13_20-17-24\artifacts\home-home-TC-HOME-06-Given-f41c7-t-one-post-or-content-block-chromium\video.webm]]
+
+[[ATTACHMENT|2026-06-13_20-17-24\artifacts\home-home-TC-HOME-06-Given-f41c7-t-one-post-or-content-block-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="locator.waitFor: Timeout 15000ms exceeded." type="TimeoutError">
+<![CDATA[  [chromium] › home\home.spec.js:41:5 › TC-HOME-06: Given I am authenticated and on the page, When I perform the action, Then feed renders at least one post or content block 
+
+    TimeoutError: locator.waitFor: Timeout 15000ms exceeded.
+    Call log:
+      - waiting for locator('main, [role="main"], body > div:not([hidden])').first() to be visible
+        32 × locator resolved to hidden <div>…</div>
+
+
+       at ..\pages\HomePage.js:51
+
+      49 |
+      50 |   async waitForFeed() {
+    > 51 |     await this.feedContainer.waitFor({ state: 'visible', timeout: 15000 });
+         |                              ^
+      52 |   }
+      53 |
+      54 |   async scrollToBottom() {
+        at HomePage.waitForFeed (C:\claude-folder\webapp-testing\omre-webapp\pages\HomePage.js:51:30)
+        at C:\claude-folder\webapp-testing\omre-webapp\tests\home\home.spec.js:42:18
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\2026-06-13_20-17-24\artifacts\home-home-TC-HOME-06-Given-f41c7-t-one-post-or-content-block-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\2026-06-13_20-17-24\artifacts\home-home-TC-HOME-06-Given-f41c7-t-one-post-or-content-block-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\2026-06-13_20-17-24\artifacts\home-home-TC-HOME-06-Given-f41c7-t-one-post-or-content-block-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="TC-HOME-07: Given I am on the page, When the page renders, Then create-post input or button is visible" classname="home\home.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-08: Given I am authenticated and on the page, When I perform the action, Then scrolling down loads more content" classname="home\home.spec.js" time="9.697">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|2026-06-13_20-17-41\artifacts\home-home-TC-HOME-08-Given-332b9-ing-down-loads-more-content-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|2026-06-13_20-17-41\artifacts\home-home-TC-HOME-08-Given-332b9-ing-down-loads-more-content-chromium\video.webm]]
+
+[[ATTACHMENT|2026-06-13_20-17-41\artifacts\home-home-TC-HOME-08-Given-332b9-ing-down-loads-more-content-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="page.evaluate: Execution context was destroyed, most likely because of a navigation" type="Error">
+<![CDATA[  [chromium] › home\home.spec.js:71:5 › TC-HOME-08: Given I am authenticated and on the page, When I perform the action, Then scrolling down loads more content 
+
+    Error: page.evaluate: Execution context was destroyed, most likely because of a navigation
+
+       at ..\pages\HomePage.js:55
+
+      53 |
+      54 |   async scrollToBottom() {
+    > 55 |     await this.page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+         |                     ^
+      56 |     await this.page.waitForTimeout(1500);
+      57 |   }
+      58 |
+        at HomePage.scrollToBottom (C:\claude-folder\webapp-testing\omre-webapp\pages\HomePage.js:55:21)
+        at C:\claude-folder\webapp-testing\omre-webapp\tests\home\home.spec.js:76:18
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\2026-06-13_20-17-41\artifacts\home-home-TC-HOME-08-Given-332b9-ing-down-loads-more-content-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\2026-06-13_20-17-41\artifacts\home-home-TC-HOME-08-Given-332b9-ing-down-loads-more-content-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\2026-06-13_20-17-41\artifacts\home-home-TC-HOME-08-Given-332b9-ing-down-loads-more-content-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="TC-HOME-09: Given I am on the page, When I inspect the content, Then post card contains an author link or avatar" classname="home\home.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-10: Given I am on the post card, When I view it, Then it shows post text content" classname="home\home.spec.js" time="24.956">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|2026-06-13_20-17-24\artifacts\home-home-TC-HOME-10-Given-760db--it-shows-post-text-content-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|2026-06-13_20-17-24\artifacts\home-home-TC-HOME-10-Given-760db--it-shows-post-text-content-chromium\video.webm]]
+
+[[ATTACHMENT|2026-06-13_20-17-24\artifacts\home-home-TC-HOME-10-Given-760db--it-shows-post-text-content-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="locator.waitFor: Timeout 15000ms exceeded." type="TimeoutError">
+<![CDATA[  [chromium] › home\home.spec.js:96:5 › TC-HOME-10: Given I am on the post card, When I view it, Then it shows post text content 
+
+    TimeoutError: locator.waitFor: Timeout 15000ms exceeded.
+    Call log:
+      - waiting for locator('main, [role="main"], body > div:not([hidden])').first() to be visible
+        31 × locator resolved to hidden <div>…</div>
+
+
+       at ..\pages\HomePage.js:51
+
+      49 |
+      50 |   async waitForFeed() {
+    > 51 |     await this.feedContainer.waitFor({ state: 'visible', timeout: 15000 });
+         |                              ^
+      52 |   }
+      53 |
+      54 |   async scrollToBottom() {
+        at HomePage.waitForFeed (C:\claude-folder\webapp-testing\omre-webapp\pages\HomePage.js:51:30)
+        at C:\claude-folder\webapp-testing\omre-webapp\tests\home\home.spec.js:97:18
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\2026-06-13_20-17-24\artifacts\home-home-TC-HOME-10-Given-760db--it-shows-post-text-content-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\2026-06-13_20-17-24\artifacts\home-home-TC-HOME-10-Given-760db--it-shows-post-text-content-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\2026-06-13_20-17-24\artifacts\home-home-TC-HOME-10-Given-760db--it-shows-post-text-content-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="TC-HOME-11: Given I am on the post card, When I view it, Then it shows a timestamp or post-age indicator" classname="home\home.spec.js" time="21.257">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|2026-06-13_20-17-41\artifacts\home-home-TC-HOME-11-Given-e7e3a-stamp-or-post-age-indicator-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|2026-06-13_20-17-41\artifacts\home-home-TC-HOME-11-Given-e7e3a-stamp-or-post-age-indicator-chromium\video.webm]]
+
+[[ATTACHMENT|2026-06-13_20-17-41\artifacts\home-home-TC-HOME-11-Given-e7e3a-stamp-or-post-age-indicator-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="locator.waitFor: Timeout 15000ms exceeded." type="TimeoutError">
+<![CDATA[  [chromium] › home\home.spec.js:108:5 › TC-HOME-11: Given I am on the post card, When I view it, Then it shows a timestamp or post-age indicator 
+
+    TimeoutError: locator.waitFor: Timeout 15000ms exceeded.
+    Call log:
+      - waiting for locator('main, [role="main"], body > div:not([hidden])').first() to be visible
+        31 × locator resolved to hidden <div>…</div>
+
+
+       at ..\pages\HomePage.js:51
+
+      49 |
+      50 |   async waitForFeed() {
+    > 51 |     await this.feedContainer.waitFor({ state: 'visible', timeout: 15000 });
+         |                              ^
+      52 |   }
+      53 |
+      54 |   async scrollToBottom() {
+        at HomePage.waitForFeed (C:\claude-folder\webapp-testing\omre-webapp\pages\HomePage.js:51:30)
+        at C:\claude-folder\webapp-testing\omre-webapp\tests\home\home.spec.js:109:18
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\2026-06-13_20-17-41\artifacts\home-home-TC-HOME-11-Given-e7e3a-stamp-or-post-age-indicator-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\2026-06-13_20-17-41\artifacts\home-home-TC-HOME-11-Given-e7e3a-stamp-or-post-age-indicator-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\2026-06-13_20-17-41\artifacts\home-home-TC-HOME-11-Given-e7e3a-stamp-or-post-age-indicator-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="TC-HOME-12: Given I am on the page, When I inspect the content, Then post card has at least two action buttons" classname="home\home.spec.js" time="21.321">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|2026-06-13_20-17-56\artifacts\home-home-TC-HOME-12-Given-6150f-at-least-two-action-buttons-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|2026-06-13_20-17-56\artifacts\home-home-TC-HOME-12-Given-6150f-at-least-two-action-buttons-chromium\video.webm]]
+
+[[ATTACHMENT|2026-06-13_20-17-56\artifacts\home-home-TC-HOME-12-Given-6150f-at-least-two-action-buttons-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="locator.waitFor: Timeout 15000ms exceeded." type="TimeoutError">
+<![CDATA[  [chromium] › home\home.spec.js:124:5 › TC-HOME-12: Given I am on the page, When I inspect the content, Then post card has at least two action buttons 
+
+    TimeoutError: locator.waitFor: Timeout 15000ms exceeded.
+    Call log:
+      - waiting for locator('main, [role="main"], body > div:not([hidden])').first() to be visible
+        32 × locator resolved to hidden <div>…</div>
+
+
+       at ..\pages\HomePage.js:51
+
+      49 |
+      50 |   async waitForFeed() {
+    > 51 |     await this.feedContainer.waitFor({ state: 'visible', timeout: 15000 });
+         |                              ^
+      52 |   }
+      53 |
+      54 |   async scrollToBottom() {
+        at HomePage.waitForFeed (C:\claude-folder\webapp-testing\omre-webapp\pages\HomePage.js:51:30)
+        at C:\claude-folder\webapp-testing\omre-webapp\tests\home\home.spec.js:125:18
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\2026-06-13_20-17-56\artifacts\home-home-TC-HOME-12-Given-6150f-at-least-two-action-buttons-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\2026-06-13_20-17-56\artifacts\home-home-TC-HOME-12-Given-6150f-at-least-two-action-buttons-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\2026-06-13_20-17-56\artifacts\home-home-TC-HOME-12-Given-6150f-at-least-two-action-buttons-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="TC-HOME-13: Given I am authenticated and on the page, When I perform the action, Then post card three-dot options menu is present" classname="home\home.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-14: Given I am authenticated and on the page, When I perform the action, Then like button is present on feed posts" classname="home\home.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-15: Given the page is loaded, When I click like button is interactive and page remains stable, Then it responds correctly" classname="home\home.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-16: Given I am authenticated and on the page, When I perform the action, Then comment button is present on feed posts" classname="home\home.spec.js">
+<properties>
+<property name="skip" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-17: Given the comment button is present, When I click the comment button, Then it opens comments section or dialog" classname="home\home.spec.js" time="4.056">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|2026-06-13_20-18-17\artifacts\home-home-TC-HOME-17-Given-ccad6--comments-section-or-dialog-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="locator.waitFor: Target page, context or browser has been closed" type="Error">
+<![CDATA[  [chromium] › home\home.spec.js:232:5 › TC-HOME-17: Given the comment button is present, When I click the comment button, Then it opens comments section or dialog 
+
+    Error: locator.waitFor: Target page, context or browser has been closed
+    Call log:
+      - waiting for locator('main, [role="main"], body > div:not([hidden])').first() to be visible
+
+
+       at ..\pages\HomePage.js:51
+
+      49 |
+      50 |   async waitForFeed() {
+    > 51 |     await this.feedContainer.waitFor({ state: 'visible', timeout: 15000 });
+         |                              ^
+      52 |   }
+      53 |
+      54 |   async scrollToBottom() {
+        at HomePage.waitForFeed (C:\claude-folder\webapp-testing\omre-webapp\pages\HomePage.js:51:30)
+        at C:\claude-folder\webapp-testing\omre-webapp\tests\home\home.spec.js:233:18
+
+    Error: browserContext.close: Test ended.
+    Browser logs:
+
+    <launching> C:\Users\manis\AppData\Local\ms-playwright\chromium_headless_shell-1223\chrome-headless-shell-win64\chrome-headless-shell.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=C:\Users\manis\AppData\Local\Temp\playwright_chromiumdev_profile-0QP1ZR --remote-debugging-pipe --no-startup-window
+    <launched> pid=40640
+    [pid=40640][err] [0613/201821.519:INFO:CONSOLE:1] "[Axios] 401 Unauthorized at /app/home - redirecting to /auth/login?redirect=%2Fapp%2Fhome", source: https://app.omre.ai/_next/static/chunks/23974-16448bf1d65c0999.js (1)
+    [pid=40640][err] [0613/201821.591:INFO:CONSOLE:1] "[HTTP 500] /social/users/blocked: Failed to get blocked users", source: https://app.omre.ai/_next/static/chunks/23974-16448bf1d65c0999.js (1)
+    [pid=40640][err] [0613/201821.591:INFO:CONSOLE:1] "[Axios] 401 Unauthorized at /app/home - redirecting to /auth/login?redirect=%2Fapp%2Fhome", source: https://app.omre.ai/_next/static/chunks/23974-16448bf1d65c0999.js (1)
+    [pid=40640][err] [0613/201821.607:INFO:CONSOLE:1] "[HTTP 500] /social/users/muted: Failed to get muted users", source: https://app.omre.ai/_next/static/chunks/23974-16448bf1d65c0999.js (1)
+    [pid=40640][err] [0613/201822.325:INFO:CONSOLE:1] "react-i18next:: useTranslation: You will need to pass in an i18next instance by using initReactI18next [object Object]", source: https://app.omre.ai/_next/static/chunks/79114-8edf877e6c1c60bc.js (1)
+    [pid=40640] <gracefully close start>
+
+    Error Context: ..\test-results\2026-06-13_20-18-17\artifacts\home-home-TC-HOME-17-Given-ccad6--comments-section-or-dialog-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="TC-HOME-18: Given I am authenticated and on the page, When I perform the action, Then share button is present on feed posts" classname="home\home.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-19: Given I am authenticated and on the page, When I perform the action, Then three-dot post menu opens on click" classname="home\home.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-20: Given I am on the page, When I inspect the content, Then post menu contains report or hide option" classname="home\home.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-21: Given the author name is present, When I click the author name, Then it navigates to their profile" classname="home\home.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-22: Given the Explore nav link is present, When I click the Explore nav link, Then it navigates to /app/explore" classname="home\home.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-23: Given the Notifications nav link is present, When I click the Notifications nav link, Then it navigates to /app/notifications" classname="home\home.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-24: Given the Messages nav link is present, When I click the Messages nav link, Then it navigates to /app/messages" classname="home\home.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-25: Given I am on the page, When I inspect the content, Then top navigation area contains visible nav items" classname="home\home.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-26: Given I am on the page, When I inspect the content, Then sidebar has multiple navigation links" classname="home\home.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-27: Given the create-post is present, When I click the create-post, Then it trigger expands the composer" classname="home\home.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-28: Given I am on the page, When I inspect the content, Then composer dialog contains a text input area" classname="home\home.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-29: Given I am on the composer, When I view it, Then it shows the logged-in user avatar or name" classname="home\home.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-30: Given I am authenticated and on the page, When I perform the action, Then composer Post button is disabled when text area is empty" classname="home\home.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-31: Given I am authenticated and on the page, When I perform the action, Then typing in composer enables the Post button" classname="home\home.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-32: Given I am on the page, When I interact with the element, Then composer can be dismissed with Escape or close button" classname="home\home.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-33: Given I am on the page, When I inspect the content, Then composer has a media/photo attachment option" classname="home\home.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-34: Given I am authenticated and on the page, When I perform the action, Then stories or highlights bar is present if feature is enabled" classname="home\home.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-35: Given the story is present, When I click the story, Then it opens the story viewer" classname="home\home.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-36: Given I am authenticated and on the page, When I perform the action, Then feed filter or sort control is accessible if present" classname="home\home.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-37: Given I am authenticated and on the page, When I perform the action, Then image posts render their media correctly" classname="home\home.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-38: Given I am authenticated and on the page, When I perform the action, Then page title reflects the app name" classname="home\home.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-39: Given I am on the page, When I inspect the content, Then page has no uncaught JS errors on load" classname="home\home.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-40: Given I am on the page, When I reload the page, Then content remains intact" classname="home\home.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-41: Given I am on the page, When the page renders, Then create post widget text input is visible" classname="home\home.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-42: Given I am authenticated and on the page, When I perform the action, Then Photo button is present in the create post widget" classname="home\home.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-43: Given the Photo button is present, When I click the Photo button, Then it opens the photo picker or upload dialog" classname="home\home.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-44: Given I am authenticated and on the page, When I perform the action, Then Video button is present in the create post widget" classname="home\home.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-45: Given the page is loaded, When I click Video button is interactive and page stays stable, Then it responds correctly" classname="home\home.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-46: Given I am authenticated and on the page, When I perform the action, Then Studio button is present in the create post widget" classname="home\home.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-47: Given I am authenticated and on the page, When I perform the action, Then Studio button is clickable and page stays stable" classname="home\home.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-48: Given I am authenticated and on the page, When I perform the action, Then Live button or link is present in the create post widget" classname="home\home.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-49: Given the Live button is present, When I click the Live button, Then it navigates to or opens the live stream setup" classname="home\home.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-50: Given I am authenticated and on the page, When I perform the action, Then Feeling button is present in the create post widget" classname="home\home.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-51: Given the Feeling button is present, When I click the Feeling button, Then it opens the emotion or emoji picker" classname="home\home.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-52: Given I am on the page, When the page renders, Then Post button is visible" classname="home\home.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-53: Given I am authenticated and on the page, When I perform the action, Then Post button is disabled when no text is entered" classname="home\home.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-54: Given I am on the page, When I inspect the content, Then Post button has a dropdown chevron for post type selection" classname="home\home.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="TC-HOME-55: Given I am on the create post widget, When I view it, Then it shows the logged-in user avatar" classname="home\home.spec.js">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="home\interactions.spec.js" timestamp="2026-06-13T14:47:23.884Z" hostname="chromium" tests="52" failures="0" skipped="52" time="0" errors="0">
+<testcase name="Comment Flow › TC-INTERACT-COMMENT-01: comment section opens after clicking comment button" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Comment Flow › TC-INTERACT-COMMENT-02: comment input field is visible and editable" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Comment Flow › TC-INTERACT-COMMENT-03: typing in comment input reflects the text" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Comment Flow › TC-INTERACT-COMMENT-04: comment submit button enables when text is entered" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Comment Flow › TC-INTERACT-COMMENT-05: submitting a comment clears the input" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Comment Flow › TC-INTERACT-COMMENT-06: submitted comment appears in the comment thread" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Comment Flow › TC-INTERACT-COMMENT-07: existing comments are visible in the comment section" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Comment Flow › TC-INTERACT-COMMENT-08: comment section shows comment count" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Comment Flow › TC-INTERACT-COMMENT-09: reply button is present on individual comments" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Comment Flow › TC-INTERACT-COMMENT-10: clicking Reply on a comment opens a reply input" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Comment Flow › TC-INTERACT-COMMENT-11: own comment has a delete option" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Comment Flow › TC-INTERACT-COMMENT-12: click like on comment, verify like state toggled (aria-pressed changed, count changed, or class changed)" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Reaction Picker › TC-INTERACT-REACT-01: hovering the like button reveals a reaction picker" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Reaction Picker › TC-INTERACT-REACT-02: reaction picker contains multiple distinct reaction options" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Reaction Picker › TC-INTERACT-REACT-03: clicking a reaction registers it and updates button state" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Reaction Picker › TC-INTERACT-REACT-04: click reaction count, verify a reactions list/modal opens showing who reacted" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Reaction Picker › TC-INTERACT-REACT-05: clicking reaction count opens the reactions list viewer" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Reaction Picker › TC-INTERACT-REACT-06: clicking the active reaction again removes it (toggle)" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Post Detail View › TC-INTERACT-DETAIL-01: clicking on post content navigates to post detail page" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Post Detail View › TC-INTERACT-DETAIL-02: post detail page shows the post content" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Post Detail View › TC-INTERACT-DETAIL-03: post detail page has a comment section" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Post Detail View › TC-INTERACT-DETAIL-04: post detail page shows like and share buttons" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Post Detail View › TC-INTERACT-DETAIL-05: post detail shows the author&apos;s name and avatar" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Post Detail View › TC-INTERACT-DETAIL-06: back navigation from detail returns to home feed" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Post Detail View › TC-INTERACT-DETAIL-07: post timestamp is shown on the detail page" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Share Flow › TC-INTERACT-SHARE-01: click share button, verify share dialog/sheet/menu opens (contains share options)" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Share Flow › TC-INTERACT-SHARE-02: clicking share opens a share options panel or dialog" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Share Flow › TC-INTERACT-SHARE-03: share panel contains a copy link option" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Share Flow › TC-INTERACT-SHARE-04: share panel has a repost or share to feed option" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Share Flow › TC-INTERACT-SHARE-05: share panel can be dismissed with Escape" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Share Flow › TC-INTERACT-SHARE-06: share panel has a send via message option" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="See More — Long Post Truncation › TC-INTERACT-SEERMORE-01: click See More, verify text expanded (element height increased or truncation removed — check that a &quot;See Less&quot; button appears or text length increased)" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="See More — Long Post Truncation › TC-INTERACT-SEERMORE-02: clicking &quot;See more&quot; expands the full post text" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="See More — Long Post Truncation › TC-INTERACT-SEERMORE-03: expanded post shows a &quot;See less&quot; button" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="See More — Long Post Truncation › TC-INTERACT-SEERMORE-04: clicking &quot;See less&quot; re-truncates the post" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Bookmark / Save Post › TC-INTERACT-SAVE-01: click save/bookmark button, verify state changed (aria-pressed, icon class, or toast appeared)" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Bookmark / Save Post › TC-INTERACT-SAVE-02: clicking bookmark saves the post and updates button state" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Bookmark / Save Post › TC-INTERACT-SAVE-03: bookmark button in post 3-dot menu is accessible" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Bookmark / Save Post › TC-INTERACT-SAVE-04: saved posts are accessible from profile or saved section" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Feed Tabs › TC-INTERACT-TABS-01: feed tabs are visible if present (For You / Following / Latest)" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Feed Tabs › TC-INTERACT-TABS-02: active tab is visually distinguished" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Feed Tabs › TC-INTERACT-TABS-03: clicking an inactive tab switches feed content" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Feed Tabs › TC-INTERACT-TABS-04: switching tabs does not break the page or throw errors" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Hashtags and Mentions › TC-INTERACT-TAG-01: hashtags in posts are rendered as clickable links" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Hashtags and Mentions › TC-INTERACT-TAG-02: clicking a hashtag navigates to the hashtag or explore page" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Hashtags and Mentions › TC-INTERACT-TAG-03: @mentions in posts are rendered as clickable profile links" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Hashtags and Mentions › TC-INTERACT-TAG-04: clicking an @mention navigates to that user&apos;s profile" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Infinite Scroll and Loading State › TC-INTERACT-SCROLL-01: scrolling to bottom triggers a loading indicator" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Infinite Scroll and Loading State › TC-INTERACT-SCROLL-02: more posts load after scrolling to bottom" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Infinite Scroll and Loading State › TC-INTERACT-SCROLL-03: page does not crash during repeated scrolling" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Infinite Scroll and Loading State › TC-INTERACT-SCROLL-04: back-to-top button appears after scrolling down" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Infinite Scroll and Loading State › TC-INTERACT-SCROLL-05: feed items are not duplicated after pagination" classname="home\interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="home\post-creation.spec.js" timestamp="2026-06-13T14:47:23.884Z" hostname="chromium" tests="46" failures="0" skipped="46" time="0" errors="0">
+<testcase name="Text Post › TC-POST-TEXT-01: composer opens with a text input area" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Text Post › TC-POST-TEXT-02: Post button is disabled when composer is empty" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Text Post › TC-POST-TEXT-03: typing text enables the Post button" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Text Post › TC-POST-TEXT-04: composer shows logged-in user avatar" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Text Post › TC-POST-TEXT-05: composer can be dismissed with Escape key" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Text Post › TC-POST-TEXT-06: composer can be dismissed with close button" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Text Post › TC-POST-TEXT-07: clearing text after typing disables Post button again" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Text Post › TC-POST-TEXT-08: composer has emoji or attachment toolbar" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Photo Post › TC-POST-PHOTO-01: Given the home page is loaded, when the Photo button is clicked, then a file picker dialog or composer opens" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Photo Post › TC-POST-PHOTO-02: clicking Photo button opens the composer or file picker" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Photo Post › TC-POST-PHOTO-03: photo composer has an upload area or file input" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Photo Post › TC-POST-PHOTO-04: photo composer has a caption/text input" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Photo Post › TC-POST-PHOTO-05: photo composer Post button is present" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Photo Post › TC-POST-PHOTO-06: photo composer can be dismissed" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Video Post › TC-POST-VIDEO-01: Given the home page is loaded, when the Video button is clicked, then a video composer or dialog opens" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Video Post › TC-POST-VIDEO-02: clicking Video button opens a composer or upload area" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Video Post › TC-POST-VIDEO-03: video upload area or file input is accessible" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Video Post › TC-POST-VIDEO-04: video composer can be dismissed" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Feeling Post › TC-POST-FEELING-01: Given the home page is loaded, when the Feeling button is clicked, then an emotion picker opens containing selectable items" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Feeling Post › TC-POST-FEELING-02: Given the Feeling button is clicked, when the picker opens, then it contains clickable options with count greater than zero" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Feeling Post › TC-POST-FEELING-03: emotion picker contains selectable options" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Feeling Post › TC-POST-FEELING-04: selecting a feeling adds it to the composer" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Feeling Post › TC-POST-FEELING-05: feeling picker can be dismissed with Escape" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Feeling Post › TC-POST-FEELING-06: feeling picker has a search or filter input" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Studio Post › TC-POST-STUDIO-01: Given the home page is loaded, when the Studio button is clicked, then a dropdown menu opens or the page navigates to a Studio URL" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Studio Post › TC-POST-STUDIO-02: Given the Studio dropdown opens, when its contents are inspected, then it contains at least one option with visible text" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Studio Post › TC-POST-STUDIO-03: Studio dropdown shows sub-option items" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Studio Post › TC-POST-STUDIO-04: selecting a Studio sub-option opens the correct composer" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Studio Post › TC-POST-STUDIO-05: Studio interaction does not crash the app" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Live Streaming › TC-POST-LIVE-01: Given the home page is loaded, when the Live button is clicked, then the page navigates to a live setup URL or a live dialog opens" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Live Streaming › TC-POST-LIVE-02: clicking Live navigates to the live setup page" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Live Streaming › TC-POST-LIVE-03: live setup page has a title or go-live button" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Live Streaming › TC-POST-LIVE-04: live setup page has a title input for the stream" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Post Privacy › TC-POST-PRIVACY-01: privacy selector is present in the composer" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Post Privacy › TC-POST-PRIVACY-02: clicking privacy selector opens audience options" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Post Privacy › TC-POST-PRIVACY-03: Public option is available in audience selector" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Post Privacy › TC-POST-PRIVACY-04: Friends option is available in audience selector" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Post Privacy › TC-POST-PRIVACY-05: selecting a privacy option updates the selector label" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="File Upload › TC-POST-UPLOAD-01: clicking Photo opens a composer or file input" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="File Upload › TC-POST-UPLOAD-02: can attach a test image via file input" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="File Upload › TC-POST-UPLOAD-03: image attachment enables the Post button" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="File Upload › TC-POST-UPLOAD-04: can attach a test video via file input" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="File Upload › TC-POST-UPLOAD-05: image preview or thumbnail appears after file selection" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Text Post Submission &amp; Cleanup › TC-POST-SUBMIT-01: can write and submit a text post (dialog closes on submit)" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Text Post Submission &amp; Cleanup › TC-POST-SUBMIT-02: submitted post appears in the feed" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Text Post Submission &amp; Cleanup › TC-POST-SUBMIT-03: full create → delete cycle removes the post from feed" classname="home\post-creation.spec.js">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="home\stories.spec.js" timestamp="2026-06-13T14:47:23.884Z" hostname="chromium" tests="30" failures="0" skipped="30" time="0" errors="0">
+<testcase name="Stories Bar › TC-STORY-BAR-01: stories bar or carousel is present on home feed" classname="home\stories.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Stories Bar › TC-STORY-BAR-02: stories bar contains at least one story item" classname="home\stories.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Stories Bar › TC-STORY-BAR-03: Add Story button is present in the stories bar" classname="home\stories.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Stories Bar › TC-STORY-BAR-04: story items show user avatars or thumbnails" classname="home\stories.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Stories Bar › TC-STORY-BAR-05: stories bar can be scrolled horizontally if overflowing" classname="home\stories.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Viewing Stories › TC-STORY-VIEW-01: clicking a story opens the story viewer" classname="home\stories.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Viewing Stories › TC-STORY-VIEW-02: story viewer shows the story content (image or video)" classname="home\stories.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Viewing Stories › TC-STORY-VIEW-03: story viewer has a progress bar showing duration" classname="home\stories.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Viewing Stories › TC-STORY-VIEW-04: story viewer shows the author name or avatar" classname="home\stories.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Viewing Stories › TC-STORY-VIEW-05: story viewer has a close button" classname="home\stories.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Viewing Stories › TC-STORY-VIEW-06: pressing Escape closes the story viewer" classname="home\stories.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Viewing Stories › TC-STORY-VIEW-07: clicking close button dismisses the story viewer" classname="home\stories.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Viewing Stories › TC-STORY-VIEW-08: next story navigation button is present" classname="home\stories.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Viewing Stories › TC-STORY-VIEW-09: previous story navigation button is present" classname="home\stories.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Viewing Stories › TC-STORY-VIEW-10: clicking next advances to the next story" classname="home\stories.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Viewing Stories › TC-STORY-VIEW-11: story viewer shows timestamp of when story was posted" classname="home\stories.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Story Reactions and Replies › TC-STORY-REACT-01: reaction or emoji bar is visible in story viewer" classname="home\stories.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Story Reactions and Replies › TC-STORY-REACT-02: reply input field is present in story viewer" classname="home\stories.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Story Reactions and Replies › TC-STORY-REACT-03: typing a reply enables the send button" classname="home\stories.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Story Reactions and Replies › TC-STORY-REACT-04: clicking a reaction emoji on a story is interactive" classname="home\stories.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Creating a Story › TC-STORY-CREATE-01: Add Story button is clickable" classname="home\stories.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Creating a Story › TC-STORY-CREATE-02: clicking Add Story opens the story creator" classname="home\stories.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Creating a Story › TC-STORY-CREATE-03: story creator has a photo upload option" classname="home\stories.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Creating a Story › TC-STORY-CREATE-04: story creator has a text story option" classname="home\stories.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Creating a Story › TC-STORY-CREATE-05: story creator has a video option" classname="home\stories.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Creating a Story › TC-STORY-CREATE-06: story creator can be dismissed without creating" classname="home\stories.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="My Story Management › TC-STORY-MY-01: own story item is present if user has an active story" classname="home\stories.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="My Story Management › TC-STORY-MY-02: own story shows view count when opened" classname="home\stories.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="My Story Management › TC-STORY-MY-03: own story has a delete option" classname="home\stories.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="My Story Management › TC-STORY-MY-04: story shows 24h expiry indicator" classname="home\stories.spec.js">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+</testsuites>
