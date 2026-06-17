@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="OMRE Mobile (Android)" tests="108" failures="2" time="374.138">
+  <testsuite name="email_field" tests="20" failures="0" time="82.528">
+    <testcase name="Set up test variables" time="0.006"/>
+    <testcase name="Apply flow configuration" time="0.002"/>
+    <testcase name="Open the OMRE app" time="2.623"/>
+    <testcase name="Tap the email field" time="11.756"/>
+    <testcase name="Clear the email field" time="8.329"/>
+    <testcase name="Type a valid email address" time="3.906"/>
+    <testcase name="Confirm the typed email is shown" time="0.267"/>
+    <testcase name="Clear the email field again" time="9.040"/>
+    <testcase name="Confirm the placeholder text reappears" time="0.278"/>
+    <testcase name="Confirm the old email is gone" time="0.994"/>
+    <testcase name="Type an email with a plus-tag and subdomain" time="4.546"/>
+    <testcase name="Confirm the special-character email is shown" time="0.266"/>
+    <testcase name="Clear the email field" time="8.817"/>
+    <testcase name="Type a very long but valid email address" time="7.840"/>
+    <testcase name="Confirm the long email is shown" time="0.234"/>
+    <testcase name="Clear the email field" time="11.161"/>
+    <testcase name="Type one more email to confirm the field still accepts input" time="3.365"/>
+    <testcase name="Confirm the final email is shown" time="0.232"/>
+    <testcase name="Clear the email field" time="8.693"/>
+    <testcase name="Confirm the placeholder text is restored at the end" time="0.173"/>
+  </testsuite>
+  <testsuite name="empty_submit" tests="24" failures="1" time="91.755">
+    <testcase name="Set up test variables" time="0.007"/>
+    <testcase name="Apply flow configuration" time="0.003"/>
+    <testcase name="Open the OMRE app" time="2.420"/>
+    <testcase name="Tap the email field" time="13.579"/>
+    <testcase name="Clear the email field" time="8.276"/>
+    <testcase name="Tap the password field" time="2.849"/>
+    <testcase name="Clear the password field" time="8.372"/>
+    <testcase name="Tap Log in with both fields empty" time="3.968"/>
+    <testcase name="Confirm still on the login screen" time="0.271"/>
+    <testcase name="Confirm the login screen heading is shown" time="0.286"/>
+    <testcase name="Confirm we did not log in" time="1.478"/>
+    <testcase name="Tap the email field" time="2.475"/>
+    <testcase name="Type an email, leave password empty" time="3.293"/>
+    <testcase name="Tap Log in with only an email entered" time="3.730"/>
+    <testcase name="Confirm still on the login screen" time="0.226"/>
+    <testcase name="Confirm we did not log in" time="0.876"/>
+    <testcase name="Tap the email field" time="3.769"/>
+    <testcase name="Clear the email field" time="8.870"/>
+    <testcase name="Tap the password field" time="2.538"/>
+    <testcase name="Type a password, leave email empty" time="3.318"/>
+    <testcase name="Tap Log in with only a password entered" time="3.746"/>
+    <testcase name="Confirm still on the login screen" time="0.223"/>
+    <testcase name="Confirm we did not log in" time="0.940"/>
+    <testcase name="Tap the email field" time="16.242">
+      <failure message="Tap the email field did not complete"/>
+    </testcase>
+  </testsuite>
+  <testsuite name="invalid_email" tests="36" failures="0" time="134.062">
+    <testcase name="Set up test variables" time="0.011"/>
+    <testcase name="Apply flow configuration" time="0.003"/>
+    <testcase name="Open the OMRE app" time="2.484"/>
+    <testcase name="Tap the password field" time="11.161"/>
+    <testcase name="Clear the password field" time="7.110"/>
+    <testcase name="Type a valid password" time="1.502"/>
+    <testcase name="Tap the email field" time="3.553"/>
+    <testcase name="Clear the email field" time="8.165"/>
+    <testcase name="Type an email with no @ symbol" time="2.679"/>
+    <testcase name="Tap Log in with the invalid email" time="3.938"/>
+    <testcase name="Confirm still on the login screen" time="0.272"/>
+    <testcase name="Confirm we did not log in" time="1.789"/>
+    <testcase name="Clear the email field" time="8.768"/>
+    <testcase name="Type an email with no domain after @" time="1.971"/>
+    <testcase name="Tap Log in with the invalid email" time="3.776"/>
+    <testcase name="Confirm still on the login screen" time="0.224"/>
+    <testcase name="Confirm we did not log in" time="1.620"/>
+    <testcase name="Clear the email field" time="8.802"/>
+    <testcase name="Type an email with no top-level domain" time="2.640"/>
+    <testcase name="Tap Log in with the invalid email" time="3.746"/>
+    <testcase name="Confirm still on the login screen" time="0.215"/>
+    <testcase name="Confirm we did not log in" time="0.895"/>
+    <testcase name="Clear the email field" time="9.149"/>
+    <testcase name="Type an email containing a space" time="4.537"/>
+    <testcase name="Tap Log in with the invalid email" time="3.818"/>
+    <testcase name="Confirm still on the login screen" time="0.197"/>
+    <testcase name="Confirm we did not log in" time="0.854"/>
+    <testcase name="Clear the email field" time="9.229"/>
+    <testcase name="Type an email with a double @ symbol" time="3.372"/>
+    <testcase name="Tap Log in with the invalid email" time="3.913"/>
+    <testcase name="Confirm still on the login screen" time="0.411"/>
+    <testcase name="Confirm we did not log in" time="0.862"/>
+    <testcase name="Clear the email field" time="9.398"/>
+    <testcase name="Type a valid email to confirm the field recovers" time="3.317"/>
+    <testcase name="Confirm the valid email is shown" time="0.174"/>
+    <testcase name="Clear the email field" time="9.507"/>
+  </testsuite>
+  <testsuite name="login" tests="3" failures="0" time="2.783">
+    <testcase name="Set up test variables" time="0.007"/>
+    <testcase name="Apply flow configuration" time="0.002"/>
+    <testcase name="Open the OMRE app" time="2.774"/>
+  </testsuite>
+  <testsuite name="password_field" tests="8" failures="1" time="42.005">
+    <testcase name="Set up test variables" time="0.006"/>
+    <testcase name="Apply flow configuration" time="0.003"/>
+    <testcase name="Open the OMRE app" time="1.862"/>
+    <testcase name="Tap the password field" time="11.281"/>
+    <testcase name="Clear the password field" time="9.977"/>
+    <testcase name="Type a password" time="1.655"/>
+    <testcase name="Confirm the password is masked" time="0.728"/>
+    <testcase name="Tap the show-password toggle" time="16.493">
+      <failure message="Tap the show-password toggle did not complete"/>
+    </testcase>
+  </testsuite>
+  <testsuite name="pre_login" tests="17" failures="0" time="21.005">
+    <testcase name="Set up test variables" time="0.006"/>
+    <testcase name="Apply flow configuration" time="0.002"/>
+    <testcase name="Open the OMRE app" time="2.039"/>
+    <testcase name="Confirm the login heading is shown" time="10.266"/>
+    <testcase name="Confirm the login subheading is shown" time="0.067"/>
+    <testcase name="Confirm the email field is shown" time="0.077"/>
+    <testcase name="Confirm the password field is shown" time="0.097"/>
+    <testcase name="Confirm the forgot-password link is shown" time="0.078"/>
+    <testcase name="Confirm the Log in button is shown" time="0.077"/>
+    <testcase name="Confirm the alternate-login divider is shown" time="0.083"/>
+    <testcase name="Confirm the Google login option is shown" time="0.110"/>
+    <testcase name="Confirm the sign-up link is shown" time="0.102"/>
+    <testcase name="Tap the email field" time="3.851"/>
+    <testcase name="Confirm the email field is still shown" time="0.290"/>
+    <testcase name="Tap the password field" time="2.809"/>
+    <testcase name="Confirm the password field is still shown" time="0.244"/>
+    <testcase name="Confirm we are still on the login screen" time="0.807"/>
+  </testsuite>
+</testsuites>

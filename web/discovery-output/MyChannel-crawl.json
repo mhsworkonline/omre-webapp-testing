@@ -1,0 +1,132 @@
+[
+  {
+    "url": "https://omre.ai/app/profile/w4f01",
+    "path": "/app/profile/w4f01",
+    "depth": 0,
+    "heading": "w4f01",
+    "links": [
+      {
+        "text": "",
+        "href": "/app/home"
+      },
+      {
+        "text": "",
+        "href": "/help"
+      },
+      {
+        "text": "",
+        "href": "/app/explore"
+      },
+      {
+        "text": "",
+        "href": "/app/messages"
+      },
+      {
+        "text": "",
+        "href": "/app/notifications"
+      },
+      {
+        "text": "0 Recruit Reputation",
+        "href": "/app/reputation"
+      },
+      {
+        "text": "Upload Video Share your videos",
+        "href": "/app/videos/studio"
+      },
+      {
+        "text": "Video Ads Create & manage video ads",
+        "href": "/app/business/ads"
+      },
+      {
+        "text": "Orbit Post Post in Orbit (Public)",
+        "href": "/app/orbit"
+      },
+      {
+        "text": "Social Post Share with your followers",
+        "href": "/app/home"
+      },
+      {
+        "text": "Live",
+        "href": "/app/live/create"
+      },
+      {
+        "text": "View full reputation",
+        "href": "/app/reputation"
+      }
+    ],
+    "buttons": [
+      "SOCIAL",
+      "NEWS",
+      "VIDEO",
+      "CHAT",
+      "BIZ",
+      "LINK",
+      "LEARN",
+      "STUDIO",
+      "ORBIT",
+      "GAMES",
+      "MART",
+      "MEETINGS",
+      "WALLET",
+      "Toggle theme",
+      "Edit Cover",
+      "Add a bio to share your story",
+      "Edit Profile",
+      "Share Profile",
+      "0 Posts",
+      "1 Followers",
+      "10 Following",
+      "0 Likes",
+      "Create New More options",
+      "New",
+      "Posts",
+      "Orbit",
+      "Reposts",
+      "Videos",
+      "About",
+      "Photos",
+      "Store",
+      "Saved",
+      "Latest",
+      "+ Add Bio",
+      "Current City",
+      "Workplace",
+      "School",
+      "Hometown",
+      "Relationship Status",
+      "Edit Details",
+      "Photo",
+      "Video",
+      "Studio",
+      "Feeling",
+      "Post"
+    ],
+    "inputs": [
+      {
+        "type": "file",
+        "name": null,
+        "placeholder": null
+      },
+      {
+        "type": "file",
+        "name": null,
+        "placeholder": null
+      },
+      {
+        "type": "text",
+        "name": null,
+        "placeholder": "What's on your mind, w4f01?"
+      },
+      {
+        "type": "file",
+        "name": null,
+        "placeholder": null
+      },
+      {
+        "type": "file",
+        "name": null,
+        "placeholder": null
+      }
+    ]
+  }
+]

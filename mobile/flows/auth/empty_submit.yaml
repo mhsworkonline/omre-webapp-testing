@@ -1,42 +1,94 @@
 appId: com.omre.app.posh
 ---
+# SCENARIO: App opens with both login fields empty and clearable | EXPECTED: App launches and both the email and password fields can be cleared
 - launchApp:
     clearState: false
+    label: "Open the OMRE app"
+- tapOn:
+    text: "name@example.com"
+    label: "Tap the email field"
+- eraseText:
+    charactersToErase: 200
+    label: "Clear the email field"
+- tapOn:
+    text: "Password"
+    label: "Tap the password field"
+- eraseText:
+    charactersToErase: 200
+    label: "Clear the password field"
 
-# === Setup: clear both fields ===
-- tapOn: "name@example.com"
-- eraseText: 200
-- tapOn: "Password"
-- eraseText: 200
-
-# === Test 1: Both fields empty ===
+# SCENARIO: Submitting with both fields empty is rejected | EXPECTED: Login is rejected and the user stays on the login screen
 # Tap Log in by accessibility (Maestro finds it even if keyboard is covering it)
-- tapOn: "Log in"
-- assertVisible: "Log in"
-- assertVisible: "Welcome back"
-- assertNotVisible: "Feed"
+- tapOn:
+    text: "Log in"
+    label: "Tap Log in with both fields empty"
+- assertVisible:
+    text: "Log in"
+    label: "Confirm still on the login screen"
+- assertVisible:
+    text: "Welcome back"
+    label: "Confirm the login screen heading is shown"
+- assertNotVisible:
+    text: "Feed"
+    label: "Confirm we did not log in"
 
-# === Test 2: Email only, no password ===
-- tapOn: "name@example.com"
-- inputText: "test@example.com"
-- tapOn: "Log in"
-- assertVisible: "Log in"
-- assertNotVisible: "Feed"
+# SCENARIO: Submitting with only an email is rejected | EXPECTED: Login is rejected and the user stays on the login screen
+- tapOn:
+    text: "name@example.com"
+    label: "Tap the email field"
+- inputText:
+    text: "test@example.com"
+    label: "Type an email, leave password empty"
+- tapOn:
+    text: "Log in"
+    label: "Tap Log in with only an email entered"
+- assertVisible:
+    text: "Log in"
+    label: "Confirm still on the login screen"
+- assertNotVisible:
+    text: "Feed"
+    label: "Confirm we did not log in"
 
-# === Test 3: Password only, no email ===
+# SCENARIO: Submitting with only a password is rejected | EXPECTED: Login is rejected and the user stays on the login screen
 # Email field retains "test@example.com" — clear it first
-- tapOn: "test@example.com"
-- eraseText: 200
-- tapOn: "Password"
-- inputText: "SomePassword123"
-- tapOn: "Log in"
-- assertVisible: "Log in"
-- assertNotVisible: "Feed"
+- tapOn:
+    text: "test@example.com"
+    label: "Tap the email field"
+- eraseText:
+    charactersToErase: 200
+    label: "Clear the email field"
+- tapOn:
+    text: "Password"
+    label: "Tap the password field"
+- inputText:
+    text: "SomePassword123"
+    label: "Type a password, leave email empty"
+- tapOn:
+    text: "Log in"
+    label: "Tap Log in with only a password entered"
+- assertVisible:
+    text: "Log in"
+    label: "Confirm still on the login screen"
+- assertNotVisible:
+    text: "Feed"
+    label: "Confirm we did not log in"
 
-# === Cleanup: confirm fields still editable ===
-- tapOn: "name@example.com"
-- inputText: "recovery@example.com"
-- assertVisible: "recovery@example.com"
-- eraseText: 200
-- tapOn: "Password"
-- eraseText: 200
+# SCENARIO: Fields remain usable after the rejected attempts | EXPECTED: Both fields still accept and display new input
+- tapOn:
+    text: "name@example.com"
+    label: "Tap the email field"
+- inputText:
+    text: "recovery@example.com"
+    label: "Type an email to confirm the field still works"
+- assertVisible:
+    text: "recovery@example.com"
+    label: "Confirm the email is shown"
+- eraseText:
+    charactersToErase: 200
+    label: "Clear the email field"
+- tapOn:
+    text: "Password"
+    label: "Tap the password field"
+- eraseText:
+    charactersToErase: 200
+    label: "Clear the password field"

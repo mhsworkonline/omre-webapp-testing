@@ -1,0 +1,150 @@
+[
+  {
+    "url": "https://omre.ai/app/explore",
+    "path": "/app/explore",
+    "depth": 0,
+    "heading": "(none)",
+    "links": [
+      {
+        "text": "",
+        "href": "/app/home"
+      },
+      {
+        "text": "",
+        "href": "/help"
+      },
+      {
+        "text": "",
+        "href": "/app/explore"
+      },
+      {
+        "text": "",
+        "href": "/app/messages"
+      },
+      {
+        "text": "",
+        "href": "/app/notifications"
+      },
+      {
+        "text": "Home",
+        "href": "/app/home"
+      },
+      {
+        "text": "Explore",
+        "href": "/app/explore"
+      },
+      {
+        "text": "Shorts",
+        "href": "/app/shorts"
+      },
+      {
+        "text": "Live",
+        "href": "/app/live"
+      },
+      {
+        "text": "Messages",
+        "href": "/app/messages"
+      },
+      {
+        "text": "Notifications",
+        "href": "/app/notifications"
+      },
+      {
+        "text": "Profile",
+        "href": "/app/profile/w4f01"
+      },
+      {
+        "text": "Reputation",
+        "href": "/app/reputation"
+      },
+      {
+        "text": "Business Suite",
+        "href": "/app/business-suite"
+      },
+      {
+        "text": "Settings",
+        "href": "/app/settings"
+      },
+      {
+        "text": "OmniKnow",
+        "href": "/app/omniknow"
+      },
+      {
+        "text": "Happy Corner",
+        "href": "/app/happy-corner"
+      },
+      {
+        "text": "Virtual World",
+        "href": "/app/virtual-world"
+      },
+      {
+        "text": "Digital Citizen",
+        "href": "/app/digital-citizen"
+      },
+      {
+        "text": "Omni AI",
+        "href": "/app/omni-ai"
+      },
+      {
+        "text": "Pages",
+        "href": "/app/pages"
+      },
+      {
+        "text": "Groups",
+        "href": "/app/groups?tab=feed"
+      },
+      {
+        "text": "Town Hall",
+        "href": "/app/town-hall"
+      },
+      {
+        "text": "Birthday",
+        "href": "/app/birthday"
+      },
+      {
+        "text": "Blogs",
+        "href": "/app/blogs"
+      },
+      {
+        "text": "Weather",
+        "href": "/app/weather"
+      },
+      {
+        "text": "Images",
+        "href": "/app/images"
+      },
+      {
+        "text": "Friends",
+        "href": "/app/friends"
+      },
+      {
+        "text": "PREMIUM Go ads-free Hide every ad · 200 OMRE / 30 days Try it →",
+        "href": "/app/settings/premium"
+      }
+    ],
+    "buttons": [
+      "SOCIAL",
+      "NEWS",
+      "VIDEO",
+      "CHAT",
+      "BIZ",
+      "LINK",
+      "LEARN",
+      "STUDIO",
+      "ORBIT",
+      "GAMES",
+      "MART",
+      "MEETINGS",
+      "WALLET",
+      "Toggle theme",
+      "Logout"
+    ],
+    "inputs": [
+      {
+        "type": "text",
+        "name": null,
+        "placeholder": "Search discovery..."
+      }
+    ]
+  }
+]

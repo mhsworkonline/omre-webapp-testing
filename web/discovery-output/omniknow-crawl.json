@@ -1,0 +1,192 @@
+[
+  {
+    "url": "https://omre.ai/app/omniknow",
+    "path": "/app/omniknow",
+    "depth": 0,
+    "heading": "The World Knowledge Library",
+    "links": [
+      {
+        "text": "",
+        "href": "/app/home"
+      },
+      {
+        "text": "",
+        "href": "/help"
+      },
+      {
+        "text": "",
+        "href": "/app/explore"
+      },
+      {
+        "text": "",
+        "href": "/app/messages"
+      },
+      {
+        "text": "",
+        "href": "/app/notifications"
+      },
+      {
+        "text": "[button] View All",
+        "href": "/app/omniknow/explorer"
+      },
+      {
+        "text": "[button] Start Exploring",
+        "href": "/app/omniknow/explorer"
+      },
+      {
+        "text": "[button] Browse Library",
+        "href": "/app/omniknow/explorer"
+      },
+      {
+        "text": "[button] Explore All Paths",
+        "href": "/app/omniknow/explorer"
+      },
+      {
+        "text": "[button] Explore topics",
+        "href": "/app/omniknow/explorer"
+      }
+    ],
+    "buttons": [
+      "SOCIAL",
+      "NEWS",
+      "VIDEO",
+      "CHAT",
+      "BIZ",
+      "LINK",
+      "LEARN",
+      "STUDIO",
+      "ORBIT",
+      "GAMES",
+      "MART",
+      "MEETINGS",
+      "WALLET",
+      "Toggle theme",
+      "View All",
+      "Start Exploring",
+      "Browse Library",
+      "Resume",
+      "Explore All Paths",
+      "Explore topics"
+    ],
+    "inputs": [
+      {
+        "type": "text",
+        "name": null,
+        "placeholder": "Ask the OmniSearch Engine... (e.g. 'How do black holes work?')"
+      }
+    ]
+  },
+  {
+    "url": "https://omre.ai/app/omniknow/explorer",
+    "path": "/app/omniknow/explorer",
+    "depth": 1,
+    "heading": "World Wisdom Explorer",
+    "links": [
+      {
+        "text": "",
+        "href": "/app/home"
+      },
+      {
+        "text": "",
+        "href": "/help"
+      },
+      {
+        "text": "",
+        "href": "/app/explore"
+      },
+      {
+        "text": "",
+        "href": "/app/messages"
+      },
+      {
+        "text": "",
+        "href": "/app/notifications"
+      },
+      {
+        "text": "[button] Explore Topic",
+        "href": "/app/omniknow/topic/334923b1-3ad6-48da-91ff-79843dd31eb2"
+      }
+    ],
+    "buttons": [
+      "SOCIAL",
+      "NEWS",
+      "VIDEO",
+      "CHAT",
+      "BIZ",
+      "LINK",
+      "LEARN",
+      "STUDIO",
+      "ORBIT",
+      "GAMES",
+      "MART",
+      "MEETINGS",
+      "WALLET",
+      "Toggle theme",
+      "Back to Dashboard",
+      "Filters",
+      "Explore Topic"
+    ],
+    "inputs": [
+      {
+        "type": "text",
+        "name": null,
+        "placeholder": "Search domains, topics, or creators..."
+      }
+    ]
+  },
+  {
+    "url": "https://omre.ai/app/omniknow/topic/334923b1-3ad6-48da-91ff-79843dd31eb2",
+    "path": "/app/omniknow/topic/334923b1-3ad6-48da-91ff-79843dd31eb2",
+    "depth": 2,
+    "heading": "Tatya Vinchu",
+    "links": [
+      {
+        "text": "",
+        "href": "/app/home"
+      },
+      {
+        "text": "",
+        "href": "/help"
+      },
+      {
+        "text": "",
+        "href": "/app/explore"
+      },
+      {
+        "text": "",
+        "href": "/app/messages"
+      },
+      {
+        "text": "",
+        "href": "/app/notifications"
+      },
+      {
+        "text": "OMNIKNOW",
+        "href": "/app/omniknow"
+      },
+      {
+        "text": "EXPLORER",
+        "href": "/app/omniknow/explorer"
+      }
+    ],
+    "buttons": [
+      "SOCIAL",
+      "NEWS",
+      "VIDEO",
+      "CHAT",
+      "BIZ",
+      "LINK",
+      "LEARN",
+      "STUDIO",
+      "ORBIT",
+      "GAMES",
+      "MART",
+      "MEETINGS",
+      "WALLET",
+      "Toggle theme",
+      "Back",
+      "Start Learning Now"
+    ],
+    "inputs": []
+  }
+]

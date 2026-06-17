@@ -1,4 +1,4 @@
-﻿// TC-BIZ — Business Directory Tests
+// TC-BIZ — Biz Hub Tests (rewritten from live crawl: /biz is a hub, not a business directory)
 // URL: https://omre.ai/biz
 
 import { test, expect } from '@playwright/test';
@@ -11,375 +11,418 @@ test.setTimeout(45000);
 
 async function goModule(page) {
   await page.goto(MODULE_URL, { waitUntil: 'domcontentloaded' });
-  await page.waitForTimeout(1500);
+  await page.waitForTimeout(2500);
 }
 
-// ─────────────────────────────────────────────
-// TC-BIZ-01 to TC-BIZ-04 — Page Load & Layout
-// ─────────────────────────────────────────────
-test.describe('TC-BIZ — Page Load and Layout', () => {
+test.describe('TC-BIZ — Hub Landing', () => {
   test.beforeEach(async ({ page }) => { await goModule(page); });
 
-  test('TC-BIZ-01: Given I am authenticated, When I navigate to the page, Then and URL is correct', async ({ page }) => {
+  test('TC-BIZ-01: Given I am authenticated, When I navigate to /biz, Then the URL is correct', async ({ page }) => {
     expect(page.url()).toContain('/biz');
   });
 
-  test('TC-BIZ-02: Given I am on the page, When I inspect the content, Then page has a visible heading', async ({ page }) => {
-    const heading = page.locator('h1, h2').first();
-    await expect(heading).toBeVisible({ timeout: 8000 });
-    const text = await heading.textContent();
-    expect(text.trim().length).toBeGreaterThan(0);
+  test('TC-BIZ-02: Given I am on the page, When I inspect it, Then the "What would you like to do?" heading is shown', async ({ page }) => {
+    await expect(page.locator('h1, h2').first()).toHaveText(/what would you like to do/i);
   });
 
-  test('TC-BIZ-03: Given I am authenticated and on the page, When I perform the action, Then main content area renders', async ({ page }) => {
-    const main = page.locator('main');
-    const visible = await main.isVisible({ timeout: 5000 }).catch(() => false);
-    expect(visible).toBe(true);
+  test('TC-BIZ-03: Given I am on the hub, When I inspect the "Browse Digital" link, Then it is visible and links to /biz/business/digital', async ({ page }) => {
+    const link = page.getByRole('link', { name: /browse digital/i });
+    await expect(link).toBeVisible();
+    await expect(link).toHaveAttribute('href', '/biz/business/digital');
   });
 
-  test('TC-BIZ-04: Given I am on the page does not, When I view it, Then it shows an error state', async ({ page }) => {
-    const bodyText = await page.locator('body').innerText();
-    expect(bodyText).not.toMatch(/404|something went wrong|page not found/i);
-  });
-});
-
-// ─────────────────────────────────────────────
-// TC-BIZ-05 to TC-BIZ-09 — Business Listings
-// ─────────────────────────────────────────────
-test.describe('TC-BIZ — Business Listings', () => {
-  test.beforeEach(async ({ page }) => { await goModule(page); });
-
-  test('TC-BIZ-05: Given I am authenticated and on the page, When I perform the action, Then business listing items render on page', async ({ page }) => {
-    // Wait for at least one list item, article, or card-like element
-    const listItems = page.locator('ul li, ol li, [role="listitem"], article');
-    if (!(await listItems.first().isVisible({ timeout: 10000 }).catch(() => false))) { test.skip(); return; }
-    const count = await listItems.count();
-    expect(count).toBeGreaterThan(0);
+  test('TC-BIZ-04: Given I am on the hub, When I inspect the "Browse Physical" link, Then it is visible and links to /biz/business/physical', async ({ page }) => {
+    const link = page.getByRole('link', { name: /browse physical/i });
+    await expect(link).toBeVisible();
+    await expect(link).toHaveAttribute('href', '/biz/business/physical');
   });
 
-  test('TC-BIZ-06: Given I am on the each business card, When I view it, Then it shows a name', async ({ page }) => {
-    const cards = page.locator('ul li, ol li, [role="listitem"], article');
-    if (!(await cards.first().isVisible({ timeout: 10000 }).catch(() => false))) { test.skip(); return; }
-    const firstCard = cards.first();
-    const nameEl = firstCard.locator('h2, h3, h4, strong, [role="heading"]').first();
-    const visible = await nameEl.isVisible({ timeout: 5000 }).catch(() => false);
-    expect(visible).toBe(true);
+  test('TC-BIZ-05: Given I am on the hub, When I inspect the "Seller Dashboard" link, Then it is visible and links to /biz/business/dashboard', async ({ page }) => {
+    const link = page.getByRole('link', { name: /seller dashboard/i });
+    await expect(link).toBeVisible();
+    await expect(link).toHaveAttribute('href', '/biz/business/dashboard');
   });
 
-  test('TC-BIZ-07: Given I am on the business card, When I view it, Then it displayss a logo or image', async ({ page }) => {
-    const cards = page.locator('ul li, ol li, [role="listitem"], article');
-    if (!(await cards.first().isVisible({ timeout: 10000 }).catch(() => false))) { test.skip(); return; }
-    const img = cards.first().locator('img').first();
-    const visible = await img.isVisible({ timeout: 5000 }).catch(() => false);
-    expect(visible).toBe(true);
+  test('TC-BIZ-06: Given I am on the hub, When I inspect the "Website Builder" link, Then it is visible and links to /biz/website-builder', async ({ page }) => {
+    const link = page.getByRole('link', { name: /website builder/i });
+    await expect(link).toBeVisible();
+    await expect(link).toHaveAttribute('href', '/biz/website-builder');
   });
 
-  test('TC-BIZ-08: Given I am on the business card, When I view it, Then it shows a category or tag', async ({ page }) => {
-    const cards = page.locator('ul li, ol li, [role="listitem"], article');
-    if (!(await cards.first().isVisible({ timeout: 10000 }).catch(() => false))) { test.skip(); return; }
-    // Category could be a span, small, or li within the card
-    const categoryEl = cards.first().locator('span, small, [role="note"]').first();
-    const visible = await categoryEl.isVisible({ timeout: 5000 }).catch(() => false);
-    expect(visible).toBe(true);
-  });
-
-  test('TC-BIZ-09: Given I am authenticated and on the page, When I perform the action, Then multiple business cards are visible', async ({ page }) => {
-    const cards = page.locator('ul li, ol li, [role="listitem"], article');
-    if (!(await cards.first().isVisible({ timeout: 10000 }).catch(() => false))) { test.skip(); return; }
-    const count = await cards.count();
-    expect(count).toBeGreaterThan(1);
+  test('TC-BIZ-07: Given I am on the hub, When I inspect the "Marketplace" link, Then it is visible and links to /app/marketplace', async ({ page }) => {
+    const link = page.getByRole('link', { name: /marketplace/i });
+    await expect(link).toBeVisible();
+    await expect(link).toHaveAttribute('href', '/app/marketplace');
   });
 });
 
-// ─────────────────────────────────────────────
-// TC-BIZ-10 to TC-BIZ-13 — Search & Filters
-// ─────────────────────────────────────────────
-test.describe('TC-BIZ — Search and Filters', () => {
-  test.beforeEach(async ({ page }) => { await goModule(page); });
-
-  test('TC-BIZ-10: Given I am authenticated and on the page, When I perform the action, Then search input is present', async ({ page }) => {
-    const searchInput = page.locator(
-      'input[type="search"], input[aria-label*="search" i], input[placeholder*="search" i], input[name*="search" i]'
-    );
-    const visible = await searchInput.first().isVisible({ timeout: 8000 }).catch(() => false);
-    if (!visible) { test.skip(); return; }
-    expect(visible).toBe(true);
+test.describe('TC-BIZ — Browse Digital / Physical', () => {
+  test('TC-BIZ-08: Given I am on the hub, When I click "Browse Digital", Then I land on /biz/business/digital', async ({ page }) => {
+    await goModule(page);
+    await page.getByRole('link', { name: /browse digital/i }).click();
+    await page.waitForURL(/\/biz\/business\/digital/, { timeout: 10000 });
+    expect(page.url()).toContain('/biz/business/digital');
   });
 
-  test('TC-BIZ-11: Given I am authenticated and on the page, When I perform the action, Then typing in search input does not throw an error', async ({ page }) => {
-    const searchInput = page.locator(
-      'input[type="search"], input[aria-label*="search" i], input[placeholder*="search" i], input[name*="search" i]'
-    ).first();
-    const visible = await searchInput.isVisible({ timeout: 8000 }).catch(() => false);
-    if (!visible) {
-      test.skip();
-      return;
+  test('TC-BIZ-09: Given I am on the hub, When I click "Browse Physical", Then I land on /biz/business/physical', async ({ page }) => {
+    await goModule(page);
+    await page.getByRole('link', { name: /browse physical/i }).click();
+    await page.waitForURL(/\/biz\/business\/physical/, { timeout: 10000 });
+    expect(page.url()).toContain('/biz/business/physical');
+  });
+});
+
+test.describe('TC-BIZ — Seller Dashboard', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('https://omre.ai/biz/business/dashboard', { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(2500);
+  });
+
+  test('TC-BIZ-10: Given I open Seller Dashboard, Then I see either "Create Seller Profile" (no store yet) or my store dashboard (store exists)', async ({ page }) => {
+    const heading = await page.locator('h1, h2').first().innerText();
+    expect(heading.length).toBeGreaterThan(0); // either "Create Seller Profile" or the store's own name
+  });
+
+  test('TC-BIZ-11: Given I have no store yet, When I am on Create Seller Profile, Then a "Create Profile & Start Selling" button is visible — skipped once a store exists', async ({ page }) => {
+    const createBtn = page.getByRole('button', { name: /create profile.*start selling/i });
+    const isGated = await createBtn.isVisible({ timeout: 5000 }).catch(() => false);
+    if (!isGated) { test.skip(true, 'Seller profile already exists on this account — gate no longer shown'); return; }
+    await expect(createBtn).toBeVisible();
+  });
+
+  for (const [name, href] of [
+    ['Dashboard', '/biz/business/dashboard'],
+    ['Analytics', '/biz/business/dashboard/analytics'],
+    ['Digital Products', '/biz/business/dashboard/digital-products'],
+    ['Physical Products', '/biz/business/dashboard/physical-products'],
+    ['Orders', '/biz/business/dashboard/orders'],
+    ['Cart', '/biz/business/dashboard/cart'],
+    ['Store Profile', '/biz/business/dashboard/store-profile'],
+    ['Store Settings', '/biz/business/dashboard/store-settings'],
+  ]) {
+    test(`TC-BIZ-SIDEBAR-${name.replace(/\s+/g,'-')}: Given I am on the dashboard, When I inspect the "${name}" sidebar link, Then it links to ${href}`, async ({ page }) => {
+      const link = page.getByRole('navigation').getByRole('link', { name: new RegExp(`^${name}$`, 'i') });
+      await expect(link).toBeVisible();
+      await expect(link).toHaveAttribute('href', href);
+    });
+  }
+
+  test('TC-BIZ-SIDEBAR-Ads: Given I am on the dashboard, When I inspect the sidebar, Then "Ads & Marketing" links to /app/business/ads', async ({ page }) => {
+    const link = page.getByRole('link', { name: /ads.*marketing/i });
+    await expect(link).toBeVisible();
+    await expect(link).toHaveAttribute('href', '/app/business/ads');
+  });
+
+  test('TC-BIZ-PROFILE-FORM: Given I have no store yet, When I inspect Create Seller Profile, Then store name, tagline, description, logo, banner, website, and location fields are present — skipped once a store exists', async ({ page }) => {
+    const isGated = await page.getByPlaceholder(/my awesome store/i).isVisible({ timeout: 5000 }).catch(() => false);
+    if (!isGated) { test.skip(true, 'Seller profile already exists on this account — gate no longer shown'); return; }
+    await expect(page.getByPlaceholder(/short phrase.*describes your store/i)).toBeVisible();
+    await expect(page.getByPlaceholder(/tell customers what you sell/i)).toBeVisible();
+    await expect(page.getByPlaceholder('https://yoursite.com')).toBeVisible();
+    await expect(page.getByPlaceholder(/city, country/i)).toBeVisible();
+    await expect(page.locator('input[type="file"]')).toHaveCount(2);
+  });
+});
+
+test.describe('TC-BIZ — Cart', () => {
+  test('TC-BIZ-CART-01: Given I am authenticated, When I navigate to /biz/cart, Then the URL is correct', async ({ page }) => {
+    await page.goto('https://omre.ai/biz/cart', { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(2500);
+    expect(page.url()).toContain('/biz/cart');
+  });
+
+  test('TC-BIZ-CART-02: Given my cart has nothing in it, When I open the cart, Then an empty-cart message is shown', async ({ page }) => {
+    await page.goto('https://omre.ai/biz/cart', { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(2500);
+    await expect(page.getByText(/your cart is empty/i)).toBeVisible();
+  });
+});
+
+test.describe('TC-BIZ — Product Detail', () => {
+  test('TC-BIZ-PRODUCT-01: Given I am on Browse Digital, When I click a product, Then I land on its product detail page', async ({ page }) => {
+    await page.goto('https://omre.ai/biz/business/digital', { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(2500);
+    const anyProduct = page.locator('a[href^="/biz/product/"]').first();
+    await expect(anyProduct).toBeVisible();
+    await anyProduct.click();
+    await page.waitForURL(/\/biz\/product\//, { timeout: 10000 });
+    expect(page.url()).toContain('/biz/product/');
+  });
+
+  test('TC-BIZ-PRODUCT-02: Given I am on a product detail page, When I inspect it, Then a product title is shown', async ({ page }) => {
+    await page.goto('https://omre.ai/biz/product/bc9a60ef-1a0c-4e06-99ce-30fd80e3438d', { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(2500);
+    await expect(page.locator('h1, h2').first()).not.toBeEmpty({ timeout: 10000 });
+  });
+});
+
+test.describe('TC-BIZ — Storefront', () => {
+  test('TC-BIZ-STORE-01: Given a seller has a public store, When I visit their store page, Then the seller name is shown as the heading', async ({ page }) => {
+    await page.goto('https://omre.ai/biz/store/a9a9ebe4-2ea6-4835-9d3d-795ab5130676', { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(2500);
+    await expect(page.locator('h1, h2').first()).not.toBeEmpty({ timeout: 10000 });
+  });
+});
+
+test.describe('TC-BIZ — Alias Routes (/biz/digital, /biz/physical)', () => {
+  test('TC-BIZ-ALIAS-01: Given I navigate to /biz/digital directly, Then it shows the Digital Products listing with a search box', async ({ page }) => {
+    await page.goto('https://omre.ai/biz/digital', { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(2500);
+    await expect(page.locator('h1, h2').first()).toHaveText(/digital products/i);
+    await expect(page.getByPlaceholder(/search ebooks, courses, templates/i)).toBeVisible();
+  });
+
+  test('TC-BIZ-ALIAS-02: Given I navigate to /biz/physical directly, Then it shows the Physical Products listing', async ({ page }) => {
+    await page.goto('https://omre.ai/biz/physical', { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(2500);
+    await expect(page.locator('h1, h2').first()).toHaveText(/physical products/i);
+  });
+
+  test('TC-BIZ-ALIAS-03: Given I navigate to /biz/dashboard directly, Then it behaves the same as /biz/business/dashboard', async ({ page }) => {
+    await page.goto('https://omre.ai/biz/dashboard', { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(2500);
+    const heading = await page.locator('h1, h2').first().innerText();
+    expect(heading.length).toBeGreaterThan(0);
+  });
+});
+
+test.describe('TC-BIZ — Functional: Seller Profile & Product (real CRUD, idempotent)', () => {
+  test('TC-BIZ-FUNC-01: Given I have no seller profile, When I fill and submit the form, Then the seller dashboard unlocks', async ({ page }) => {
+    await page.goto('https://omre.ai/biz/business/dashboard', { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(2500);
+
+    const createBtn = page.getByRole('button', { name: /create profile.*start selling/i });
+    if (await createBtn.isVisible({ timeout: 5000 }).catch(() => false)) {
+      const inputs = await page.locator('input').all();
+      const values = ['Automated QA Test Store', 'qa-test-store', 'Testing the seller dashboard', 'This store exists only to validate OMRE seller dashboard test flows.', 'Test City, Test Country'];
+      let i = 0;
+      for (const inp of inputs) {
+        const type = (await inp.getAttribute('type').catch(() => '')) || 'text';
+        if (type === 'file') continue;
+        if (type === 'url') { await inp.fill('https://example.com').catch(() => {}); continue; }
+        await inp.fill(values[i++] || 'QA Test Value').catch(() => {});
+      }
+      await createBtn.click();
+      await page.waitForTimeout(3000);
     }
-    await searchInput.click({ force: true });
-    await searchInput.press('Control+A');
-    await searchInput.press('Delete');
-    await searchInput.type('tech', { delay: 80 });
+
+    await page.goto('https://omre.ai/biz/business/dashboard/digital-products', { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(2000);
+    await expect(page.getByRole('button', { name: /add product/i })).toBeVisible({ timeout: 10000 });
+  });
+
+  test('TC-BIZ-FUNC-02: Given the dashboard is unlocked, When I cancel the Add Product form, Then no product is created and the modal closes', async ({ page }) => {
+    await page.goto('https://omre.ai/biz/business/dashboard/digital-products', { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(2000);
+    await page.getByRole('button', { name: /add product/i }).click();
+    await page.waitForTimeout(1500);
+    await page.getByRole('button', { name: /^cancel$/i }).click();
     await page.waitForTimeout(1000);
-    const val = await searchInput.inputValue();
-    expect(val).toContain('tech');
+    await expect(page.getByRole('button', { name: /^cancel$/i })).not.toBeVisible();
   });
 
-  test('TC-BIZ-12: Given I am authenticated and on the page, When I perform the action, Then category filter controls are present', async ({ page }) => {
-    const filterEl = page.locator(
-      '[role="tablist"], [role="listbox"], select, [aria-label*="filter" i], [aria-label*="categor" i], nav'
-    ).first();
-    const visible = await filterEl.isVisible({ timeout: 8000 }).catch(() => false);
-    if (!visible) { test.skip(); return; }
-    expect(visible).toBe(true);
-  });
-
-  test('TC-BIZ-13: Given the category filter is present, When I click the category filter, Then it updates the listing', async ({ page }) => {
-    // Find any filter tab or button that is not already selected
-    const filterButtons = page.locator(
-      '[role="tab"]:not([aria-selected="true"]), [role="option"], nav a, nav button'
-    );
-    const count = await filterButtons.count();
-    if (count === 0) {
-      test.skip();
-      return;
-    }
-    const beforeCards = await page.locator('ul li, ol li, [role="listitem"], article').count();
-    await filterButtons.first().click();
-    await page.waitForTimeout(1200);
-    // Page should still have content (no hard crash)
-    const afterCards = await page.locator('ul li, ol li, [role="listitem"], article').count();
-    expect(afterCards).toBeGreaterThanOrEqual(0);
-    // At minimum the URL or DOM should have updated somehow
-    expect(beforeCards + afterCards).toBeGreaterThanOrEqual(0);
-  });
-});
-
-// ─────────────────────────────────────────────
-// TC-BIZ-14 to TC-BIZ-18 — Business Detail
-// ─────────────────────────────────────────────
-test.describe('TC-BIZ — Business Detail View', () => {
-  test.setTimeout(90000);
-  test.beforeEach(async ({ page }) => { await goModule(page); });
-
-  test('TC-BIZ-14: Given the business card is present, When I click the business card, Then it navigates away from listing', async ({ page }) => {
-    const cards = page.locator('ul li, ol li, [role="listitem"], article');
-    if (!(await cards.first().isVisible({ timeout: 10000 }).catch(() => false))) { test.skip(); return; }
-    await cards.first().click();
+  test('TC-BIZ-FUNC-03: Given the dashboard is unlocked, When I fill and submit the Add Product form, Then the product is created and appears in the listing', async ({ page }) => {
+    const productName = `QA Test Product ${Date.now()}`;
+    await page.goto('https://omre.ai/biz/business/dashboard/digital-products', { waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(2000);
-    // URL should change from the listing page
-    const url = page.url();
-    expect(url).toContain('omre.ai');
-  });
-
-  test('TC-BIZ-15: Given I am on the page, When I inspect the content, Then business detail page has a heading', async ({ page }) => {
-    const cards = page.locator('ul li, ol li, [role="listitem"], article');
-    if (!(await cards.first().isVisible({ timeout: 10000 }).catch(() => false))) { test.skip(); return; }
-    await cards.first().click();
-    await page.waitForTimeout(2000);
-    const heading = page.locator('h1, h2').first();
-    await expect(heading).toBeVisible({ timeout: 8000 });
-  });
-
-  test('TC-BIZ-16: Given I am on the business detail, When I view it, Then it shows about/description info', async ({ page }) => {
-    const cards = page.locator('ul li, ol li, [role="listitem"], article');
-    if (!(await cards.first().isVisible({ timeout: 10000 }).catch(() => false))) { test.skip(); return; }
-    await cards.first().click();
-    await page.waitForTimeout(2000);
-    // Look for descriptive text block on detail
-    const descEl = page.locator('p, [aria-label*="about" i], [aria-label*="description" i]').first();
-    const visible = await descEl.isVisible({ timeout: 8000 }).catch(() => false);
-    expect(visible).toBe(true);
-  });
-
-  test('TC-BIZ-17: Given I am on the business detail, When I view it, Then it shows contact information', async ({ page }) => {
-    const cards = page.locator('ul li, ol li, [role="listitem"], article');
-    if (!(await cards.first().isVisible({ timeout: 10000 }).catch(() => false))) { test.skip(); return; }
-    await cards.first().click();
-    await page.waitForTimeout(2000);
-    // Contact could be email, phone, address, or a link
-    const contactEl = page.locator(
-      'a[href^="mailto:"], a[href^="tel:"], [aria-label*="contact" i], [aria-label*="email" i], [aria-label*="phone" i]'
-    ).first();
-    const visible = await contactEl.isVisible({ timeout: 8000 }).catch(() => false);
-    // Soft guard — not all businesses may have public contact
-    expect(typeof visible).toBe('boolean');
-  });
-
-  test('TC-BIZ-18: Given I am authenticated and on the page, When I perform the action, Then back navigation returns to listing', async ({ page }) => {
-    const cards = page.locator('ul li, ol li, [role="listitem"], article');
-    if (!(await cards.first().isVisible({ timeout: 10000 }).catch(() => false))) { test.skip(); return; }
-    await cards.first().click();
-    await page.waitForTimeout(2000);
-    await page.goBack();
+    await page.getByRole('button', { name: /add product/i }).click();
     await page.waitForTimeout(1500);
-    expect(page.url()).toContain('/biz');
+
+    await page.getByPlaceholder(/premium ebook.*complete guide/i).fill(productName);
+    await page.getByPlaceholder(/brief summary shown in search results/i).fill('QA automated test listing — safe to ignore/delete.');
+    await page.getByPlaceholder(/detailed product description/i).fill('Created by an automated test to verify the Add Product flow. Not a real product.');
+    await page.getByPlaceholder('0.00').fill('9.99');
+
+    await page.getByRole('button', { name: /^add product$/i }).click();
+    await page.waitForTimeout(2500);
+
+    await expect(page.getByText(productName)).toBeVisible({ timeout: 10000 });
   });
 });
 
-// ─────────────────────────────────────────────
-// TC-BIZ-19 to TC-BIZ-22 — CTAs & Follow
-// ─────────────────────────────────────────────
-test.describe('TC-BIZ — CTAs and Follow Actions', () => {
-  test.beforeEach(async ({ page }) => { await goModule(page); });
-
-  test('TC-BIZ-19: Given I am authenticated and on the page, When I perform the action, Then create or add business CTA is present on listing page', async ({ page }) => {
-    const cta = page.locator(
-      'button, a[href*="create"], a[href*="add"], a[href*="new"]'
-    ).filter({ hasText: /add|create|list|register|new business/i }).first();
-    const visible = await cta.isVisible({ timeout: 8000 }).catch(() => false);
-    // CTA may require specific role; soft assertion
-    expect(typeof visible).toBe('boolean');
-  });
-
-  test('TC-BIZ-20: Given I am authenticated and on the page, When I perform the action, Then follow button is present on a business card or detail', async ({ page }) => {
-    const followBtn = page.locator('button, [role="button"]').filter({ hasText: /follow/i }).first();
-    const visibleOnListing = await followBtn.isVisible({ timeout: 5000 }).catch(() => false);
-    if (!visibleOnListing) {
-      // Try on the detail page
-      const cards = page.locator('ul li, ol li, [role="listitem"], article');
-    if (!(await cards.first().isVisible({ timeout: 10000 }).catch(() => false))) { test.skip(); return; }
-      await cards.first().click();
-      await page.waitForTimeout(2000);
-      const followBtnDetail = page.locator('button, [role="button"]').filter({ hasText: /follow/i }).first();
-      const visibleOnDetail = await followBtnDetail.isVisible({ timeout: 5000 }).catch(() => false);
-      expect(typeof visibleOnDetail).toBe('boolean');
-    } else {
-      expect(visibleOnListing).toBe(true);
-    }
-  });
-
-  test('TC-BIZ-21: Given I am authenticated and on the page, When I perform the action, Then follow action triggers a response (button state changes or notification)', async ({ page }) => {
-    // Navigate to first business detail to find follow button
-    const cards = page.locator('ul li, ol li, [role="listitem"], article');
-    if (!(await cards.first().isVisible({ timeout: 10000 }).catch(() => false))) { test.skip(); return; }
-    await cards.first().click();
-    await page.waitForTimeout(2000);
-    const followBtn = page.locator('button, [role="button"]').filter({ hasText: /follow/i }).first();
-    const visible = await followBtn.isVisible({ timeout: 5000 }).catch(() => false);
-    if (!visible) {
-      test.skip();
-      return;
-    }
-    const beforeText = await followBtn.textContent();
-    await followBtn.evaluate(el => el.click());
+test.describe('TC-BIZ — Catalog Search', () => {
+  test('TC-BIZ-SEARCH-01: Given I am on Browse Digital, When I type a product name into search, Then the listing filters to matching results', async ({ page }) => {
+    await page.goto('https://omre.ai/biz/digital', { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(2500);
+    const searchBox = page.getByPlaceholder(/search ebooks, courses, templates/i);
+    const beforeCount = await page.locator('a[href^="/biz/product/"]').count();
+    await searchBox.fill('Invoice');
     await page.waitForTimeout(1500);
-    // After clicking, either: text changes, button disables, or a toast appears
-    const afterText = await followBtn.textContent().catch(() => beforeText);
-    // Something should have happened — page should not show a hard error
-    const bodyText = await page.locator('body').innerText();
-    expect(bodyText).not.toMatch(/unexpected error|500/i);
-    expect(typeof afterText).toBe('string');
+    const afterCount = await page.locator('a[href^="/biz/product/"]').count();
+    expect(afterCount).toBeLessThan(beforeCount);
+    await expect(page.getByText(/invoice generator/i).first()).toBeVisible();
   });
 
-  test('TC-BIZ-22: Given I am authenticated and on the page, When I perform the action, Then unfollow or following state is reflected on re-visit', async ({ page }) => {
-    const cards = page.locator('ul li, ol li, [role="listitem"], article');
-    if (!(await cards.first().isVisible({ timeout: 10000 }).catch(() => false))) { test.skip(); return; }
-    await cards.first().click();
-    await page.waitForTimeout(2000);
-    // After follow attempt, page should remain stable
-    const heading = page.locator('h1, h2').first();
-    const visible = await heading.isVisible({ timeout: 8000 }).catch(() => false);
-    expect(visible).toBe(true);
-    // Page body should include meaningful content
-    const bodyText = await page.locator('body').innerText();
-    expect(bodyText.trim().length).toBeGreaterThan(50);
+  test('TC-BIZ-SEARCH-02: Given I search for a term with no matches, When the listing filters, Then no products are shown', async ({ page }) => {
+    await page.goto('https://omre.ai/biz/digital', { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(2500);
+    await page.getByPlaceholder(/search ebooks, courses, templates/i).fill('zzz-no-such-product-zzz');
+    await page.waitForTimeout(1500);
+    const count = await page.locator('a[href^="/biz/product/"]').count();
+    expect(count).toBe(0);
   });
 });
 
-// ─────────────────────────────────────────────
-// TC-BIZ-23 to TC-BIZ-27 — Form Validation, Follow Persistence, Business Creation & Empty Filter
-// ─────────────────────────────────────────────
-test.describe('TC-BIZ — Form Validation and Advanced Actions', () => {
-  test.beforeEach(async ({ page }) => { await goModule(page); });
+test.describe('TC-BIZ — Cart & Checkout', () => {
+  test('TC-BIZ-CART-03: Given I am on a product detail page, When I click Add to Cart, Then the item appears in my cart', async ({ page }) => {
+    await page.goto('https://omre.ai/biz/product/bc9a60ef-1a0c-4e06-99ce-30fd80e3438d', { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(2500);
+    await page.getByRole('button', { name: /^add to cart$/i }).first().click();
+    await page.waitForTimeout(1500);
+    await page.goto('https://omre.ai/biz/cart', { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(2000);
+    await expect(page.getByText(/your cart is empty/i)).not.toBeVisible();
+    await expect(page.getByText(/invoice generator/i).first()).toBeVisible();
+  });
 
-  test('TC-BIZ-23: Given a business create or edit form is open, When I submit with empty required fields, Then validation errors appear', async ({ page }) => {
-    const createBtn = page.locator('button, a[href*="create"], a[href*="add"]')
-      .filter({ hasText: /add|create|list|register|new business/i }).first();
-    const visible = await createBtn.isVisible({ timeout: 8000 }).catch(() => false);
-    if (!visible) { test.skip(); return; }
-    await createBtn.click();
+  test('TC-BIZ-CHECKOUT-01: Given I click Buy Now on a product, Then I land on the checkout page with the correct product and total', async ({ page }) => {
+    await page.goto('https://omre.ai/biz/product/627e49bd-ee50-4acd-a8f7-1230f79702a3', { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(2500);
+    await page.getByRole('button', { name: /buy now/i }).first().click();
+    await page.waitForURL(/\/biz\/checkout/, { timeout: 10000 });
+    await page.waitForTimeout(1500);
+    expect(page.url()).toContain('/biz/checkout');
+    await expect(page.getByText(/order summary/i)).toBeVisible();
+    await expect(page.getByText(/total/i).first()).toBeVisible();
+  });
+
+  test('TC-BIZ-CHECKOUT-02: Given I am on checkout, Then contact, delivery and payment-method sections are all present', async ({ page }) => {
+    await page.goto('https://omre.ai/biz/product/627e49bd-ee50-4acd-a8f7-1230f79702a3', { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(2500);
+    await page.getByRole('button', { name: /buy now/i }).first().click();
+    await page.waitForURL(/\/biz\/checkout/, { timeout: 10000 });
+    await page.waitForTimeout(1500);
+    await expect(page.getByText(/contact information/i)).toBeVisible();
+    await expect(page.getByText(/delivery address/i)).toBeVisible();
+    await expect(page.getByText(/payment method/i)).toBeVisible();
+    await expect(page.getByText(/cash on delivery/i)).toBeVisible();
+    await expect(page.getByText(/^upi$/i)).toBeVisible();
+    // Intentionally not clicking "Place order" — would create a real order/charge.
+  });
+});
+
+test.describe('TC-BIZ — Ads & Marketing Application', () => {
+  test('TC-BIZ-ADS-01: Given I open Ads & Marketing, Then the application form fields are present', async ({ page }) => {
+    await page.goto('https://omre.ai/app/business/ads', { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(2500);
+    await expect(page.getByPlaceholder('Acme Inc.')).toBeVisible();
+    await expect(page.getByPlaceholder(/e\.g\. IN, US, GB/i)).toBeVisible();
+    await expect(page.getByPlaceholder('https://yoursite.com')).toBeVisible();
+    await expect(page.getByPlaceholder(/briefly describe your products/i)).toBeVisible();
+    await expect(page.getByRole('button', { name: /submit application/i })).toBeVisible();
+  });
+
+  test('TC-BIZ-ADS-02: Given the application form is empty, When I submit, Then it does not silently succeed', async ({ page }) => {
+    await page.goto('https://omre.ai/app/business/ads', { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(2500);
+    await page.getByRole('button', { name: /submit application/i }).click();
+    await page.waitForTimeout(1500);
+    // Still on the same form — either a validation message appeared or the page didn't navigate away.
+    expect(page.url()).toContain('/app/business/ads');
+  });
+});
+
+test.describe('TC-BIZ — Analytics', () => {
+  test('TC-BIZ-ANALYTICS-01: Given I open Analytics, Then sales, revenue and summary sections are shown', async ({ page }) => {
+    await page.goto('https://omre.ai/biz/business/dashboard/analytics', { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(2500);
+    await expect(page.getByRole('heading', { name: /analytics/i })).toBeVisible();
+    await expect(page.getByText(/^sales$/i)).toBeVisible();
+    await expect(page.getByText(/^revenue$/i)).toBeVisible();
+    await expect(page.getByText(/total sales/i)).toBeVisible();
+    await expect(page.getByText(/total orders/i)).toBeVisible();
+    await expect(page.getByText(/top selling products/i)).toBeVisible();
+  });
+});
+
+test.describe('TC-BIZ — Store Settings', () => {
+  test('TC-BIZ-SETTINGS-01: Given I open Store Settings, Then billing/payout controls are shown', async ({ page }) => {
+    await page.goto('https://omre.ai/biz/business/dashboard/store-settings', { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(2500);
+    await expect(page.getByRole('heading', { name: /store settings/i })).toBeVisible();
+    await expect(page.getByText(/auto-recharge/i).first()).toBeVisible();
+    await expect(page.getByRole('button', { name: /save changes/i })).toBeVisible();
+  });
+});
+
+test.describe('TC-BIZ — Physical Products', () => {
+  test('TC-BIZ-PHYS-01: Given I have no physical products listed, Then an empty state with a CTA is shown', async ({ page }) => {
+    await page.goto('https://omre.ai/biz/business/dashboard/physical-products', { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(2500);
+    const empty = await page.getByText(/no physical products yet/i).isVisible({ timeout: 5000 }).catch(() => false);
+    if (!empty) { test.skip(true, 'Physical products already exist on this account — empty state no longer shown'); return; }
+    await expect(page.getByRole('button', { name: /sell physical products|add product/i }).first()).toBeVisible();
+  });
+
+  test('TC-BIZ-PHYS-FUNC-01: Given I add a physical product with required fields, Then it is created and appears in the listing', async ({ page }) => {
+    const productName = `QA Physical Product ${Date.now()}`;
+    await page.goto('https://omre.ai/biz/business/dashboard/physical-products', { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(2500);
+    await page.getByRole('button', { name: /sell physical products|add product/i }).first().click();
+    await page.waitForTimeout(1500);
+
+    await page.getByPlaceholder(/wireless headphones/i).fill(productName);
+    await page.getByPlaceholder(/brief summary for listings/i).fill('QA automated physical product — safe to ignore/delete.');
+    await page.getByPlaceholder(/detailed product description/i).fill('Created by an automated test to verify the Add Physical Product flow.');
+    await page.getByPlaceholder('0.00').fill('19.99');
+    await page.getByPlaceholder('0', { exact: true }).fill('10');
+
+    await page.getByRole('button', { name: /^add product$/i }).click();
+    await page.waitForTimeout(2500);
+
+    await expect(page.getByText(productName)).toBeVisible({ timeout: 10000 });
+  });
+});
+
+test.describe('TC-BIZ — Dashboard Overview', () => {
+  test('TC-BIZ-OVERVIEW-01: Given my store exists, Then profile completion and performance summary are shown', async ({ page }) => {
+    await page.goto('https://omre.ai/biz/business/dashboard', { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(2500);
+    await expect(page.getByText(/profile completion/i)).toBeVisible();
+    await expect(page.getByText(/total sales/i)).toBeVisible();
+    await expect(page.getByText(/^orders$/i).first()).toBeVisible();
+    await expect(page.getByText(/active products/i)).toBeVisible();
+  });
+
+  test('TC-BIZ-OVERVIEW-02: Given the performance summary, Then the Today/7D/30D/ALL period tabs are switchable', async ({ page }) => {
+    await page.goto('https://omre.ai/biz/business/dashboard', { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(2500);
+    const tab7D = page.getByRole('button', { name: /^7D$/i });
+    await expect(tab7D).toBeVisible();
+    await tab7D.click();
     await page.waitForTimeout(1000);
-    const form = page.locator('form, [role="dialog"]').first();
-    const formVisible = await form.isVisible({ timeout: 5000 }).catch(() => false);
-    if (!formVisible) { test.skip(); return; }
-    // Submit without filling in fields
-    const submitBtn = form.locator('button[type="submit"], button').filter({ hasText: /save|submit|create|add/i }).first();
-    const submitVisible = await submitBtn.isVisible({ timeout: 4000 }).catch(() => false);
-    if (!submitVisible) { test.skip(); return; }
-    await submitBtn.click();
-    await page.waitForTimeout(800);
-    // Check for validation errors
-    const errorEl = page.locator('[aria-invalid="true"], [role="alert"], .error, [class*="error"]').first();
-    const requiredEl = page.locator('input:invalid, textarea:invalid').first();
-    const hasError = await errorEl.isVisible({ timeout: 3000 }).catch(() => false)
-      || await requiredEl.isVisible({ timeout: 3000 }).catch(() => false);
-    expect(typeof hasError).toBe('boolean');
+    await expect(page.getByText(/total sales/i)).toBeVisible();
   });
 
-  test('TC-BIZ-24: Given I followed a business, When I reload the page, Then the follow state is reflected', async ({ page }) => {
-    const cards = page.locator('ul li, ol li, [role="listitem"], article');
-    if (!(await cards.first().isVisible({ timeout: 10000 }).catch(() => false))) { test.skip(); return; }
-    await cards.first().click();
+  test('TC-BIZ-OVERVIEW-03: Given my product list, When I click View on a product, Then I land on its product detail or edit context', async ({ page }) => {
+    await page.goto('https://omre.ai/biz/business/dashboard', { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(2500);
+    const viewBtn = page.getByRole('button', { name: /^view$/i }).first();
+    const hasView = await viewBtn.isVisible({ timeout: 5000 }).catch(() => false);
+    if (!hasView) { test.skip(true, 'No products listed on this account'); return; }
+    await viewBtn.click();
     await page.waitForTimeout(2000);
-    const followBtn = page.locator('button, [role="button"]').filter({ hasText: /follow/i }).first();
-    const visible = await followBtn.isVisible({ timeout: 5000 }).catch(() => false);
-    if (!visible) { test.skip(); return; }
-    const beforeText = await followBtn.textContent();
-    await followBtn.evaluate(el => el.click());
-    await page.waitForTimeout(1500);
-    // Reload and check the follow button reflects updated state
-    const currentUrl = page.url();
-    await page.goto(currentUrl, { waitUntil: 'domcontentloaded' });
-    await page.waitForTimeout(1500);
-    const afterBtn = page.locator('button, [role="button"]').filter({ hasText: /follow|unfollow|following/i }).first();
-    const afterVisible = await afterBtn.isVisible({ timeout: 5000 }).catch(() => false);
-    expect(typeof afterVisible).toBe('boolean');
-    const afterText = afterVisible ? await afterBtn.textContent() : beforeText;
-    expect(typeof afterText).toBe('string');
+    expect(page.url()).toMatch(/\/biz\/(product|business)\//);
   });
+});
 
-  test('TC-BIZ-25: Given I am on a business detail page and following, When I click Unfollow, Then button state changes', async ({ page }) => {
-    const cards = page.locator('ul li, ol li, [role="listitem"], article');
-    if (!(await cards.first().isVisible({ timeout: 10000 }).catch(() => false))) { test.skip(); return; }
-    await cards.first().click();
-    await page.waitForTimeout(2000);
-    // Look for an active following/unfollow button
-    const unfollowBtn = page.locator('button, [role="button"]').filter({ hasText: /unfollow|following/i }).first();
-    const visible = await unfollowBtn.isVisible({ timeout: 5000 }).catch(() => false);
-    if (!visible) { test.skip(); return; }
-    const beforeText = await unfollowBtn.textContent();
-    await unfollowBtn.evaluate(el => el.click());
-    await page.waitForTimeout(1500);
-    const bodyText = await page.locator('body').innerText();
-    expect(bodyText).not.toMatch(/unexpected error|500/i);
-    expect(typeof beforeText).toBe('string');
+test.describe('TC-BIZ — Orders', () => {
+  test('TC-BIZ-ORDERS-01: Given I open Orders, Then the orders table and Export CSV control are shown', async ({ page }) => {
+    await page.goto('https://omre.ai/biz/business/dashboard/orders', { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(2500);
+    await expect(page.getByRole('heading', { name: /^orders$/i })).toBeVisible();
+    await expect(page.getByRole('button', { name: /export csv/i })).toBeVisible();
+    await expect(page.getByText(/order id/i)).toBeVisible();
   });
+});
 
-  test('TC-BIZ-26: Given I am on the biz listing, When I click the Create Business CTA, Then a form or redirect opens', async ({ page }) => {
-    const createBtn = page.locator('button, a')
-      .filter({ hasText: /add|create|list your business|register|new business/i }).first();
-    const visible = await createBtn.isVisible({ timeout: 8000 }).catch(() => false);
-    if (!visible) { test.skip(); return; }
-    await createBtn.evaluate(el => el.click());
-    await page.waitForTimeout(1500);
-    const modal = page.locator('[role="dialog"], [aria-modal="true"]').first();
-    const hasModal = await modal.isVisible({ timeout: 3000 }).catch(() => false);
-    const urlChanged = !page.url().endsWith('/biz');
-    expect(hasModal || urlChanged || true).toBe(true);
-  });
-
-  test('TC-BIZ-27: Given I apply a filter that returns no matches, When I view the result, Then an empty state or no-results message is shown', async ({ page }) => {
-    const searchInput = page.locator(
-      'input[type="search"], input[aria-label*="search" i], input[placeholder*="search" i]'
-    ).first();
-    const visible = await searchInput.isVisible({ timeout: 8000 }).catch(() => false);
-    if (!visible) { test.skip(); return; }
-    await searchInput.click({ force: true });
-    await searchInput.fill('xyzxyzxyz_no_results_expected_12345');
-    await page.waitForTimeout(1200);
-    const bodyText = await page.locator('body').innerText();
-    // Either empty state text or zero results — page should not crash
-    expect(bodyText).not.toMatch(/unexpected error|500/i);
-    expect(bodyText.trim().length).toBeGreaterThan(0);
+test.describe('TC-BIZ — Website Builder', () => {
+  test('TC-BIZ-WEBSITE-01: Given my store exists, When I open Website Builder, Then I can start creating a website', async ({ page }) => {
+    await page.goto('https://omre.ai/biz/website-builder', { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(2500);
+    await expect(page.getByRole('heading', { name: /website builder/i })).toBeVisible();
+    const hasGate = await page.getByText(/set up your business first/i).isVisible({ timeout: 3000 }).catch(() => false);
+    if (hasGate) { test.skip(true, 'Store not yet created on this account — gate shown instead'); return; }
+    await expect(page.getByText(/get started/i).first()).toBeVisible();
   });
 });

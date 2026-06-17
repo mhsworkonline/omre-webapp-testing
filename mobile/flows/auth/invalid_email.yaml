@@ -1,52 +1,118 @@
 appId: com.omre.app.posh
 ---
+# SCENARIO: A valid password is in place so only the email format is being tested | EXPECTED: App launches and the password and email fields can be set up
 - launchApp:
     clearState: false
-
-# Setup: put a valid password in the password field so only email is the variable
-- tapOn: "Password"
-- eraseText: 200
-- inputText: "Password123"
+    label: "Open the OMRE app"
+- tapOn:
+    text: "Password"
+    label: "Tap the password field"
+- eraseText:
+    charactersToErase: 200
+    label: "Clear the password field"
+- inputText:
+    text: "Password123"
+    label: "Type a valid password"
 # Switch focus to email field (keyboard stays open on email)
-- tapOn: "name@example.com"
-- eraseText: 200
+- tapOn:
+    text: "name@example.com"
+    label: "Tap the email field"
+- eraseText:
+    charactersToErase: 200
+    label: "Clear the email field"
 
-# No @ symbol
-- inputText: "notanemail"
-- tapOn: "Log in"
-- assertVisible: "Log in"
-- assertNotVisible: "Feed"
-- eraseText: 200
+# SCENARIO: Email with no @ symbol is rejected | EXPECTED: Login is rejected and the user stays on the login screen
+- inputText:
+    text: "notanemail"
+    label: "Type an email with no @ symbol"
+- tapOn:
+    text: "Log in"
+    label: "Tap Log in with the invalid email"
+- assertVisible:
+    text: "Log in"
+    label: "Confirm still on the login screen"
+- assertNotVisible:
+    text: "Feed"
+    label: "Confirm we did not log in"
+- eraseText:
+    charactersToErase: 200
+    label: "Clear the email field"
 
-# No domain after @
-- inputText: "user@"
-- tapOn: "Log in"
-- assertVisible: "Log in"
-- assertNotVisible: "Feed"
-- eraseText: 200
+# SCENARIO: Email with no domain after @ is rejected | EXPECTED: Login is rejected and the user stays on the login screen
+- inputText:
+    text: "user@"
+    label: "Type an email with no domain after @"
+- tapOn:
+    text: "Log in"
+    label: "Tap Log in with the invalid email"
+- assertVisible:
+    text: "Log in"
+    label: "Confirm still on the login screen"
+- assertNotVisible:
+    text: "Feed"
+    label: "Confirm we did not log in"
+- eraseText:
+    charactersToErase: 200
+    label: "Clear the email field"
 
-# No TLD
-- inputText: "user@domain"
-- tapOn: "Log in"
-- assertVisible: "Log in"
-- assertNotVisible: "Feed"
-- eraseText: 200
+# SCENARIO: Email with no top-level domain is rejected | EXPECTED: Login is rejected and the user stays on the login screen
+- inputText:
+    text: "user@domain"
+    label: "Type an email with no top-level domain"
+- tapOn:
+    text: "Log in"
+    label: "Tap Log in with the invalid email"
+- assertVisible:
+    text: "Log in"
+    label: "Confirm still on the login screen"
+- assertNotVisible:
+    text: "Feed"
+    label: "Confirm we did not log in"
+- eraseText:
+    charactersToErase: 200
+    label: "Clear the email field"
 
-# Spaces inside email
-- inputText: "user name@example.com"
-- tapOn: "Log in"
-- assertVisible: "Log in"
-- assertNotVisible: "Feed"
-- eraseText: 200
+# SCENARIO: Email with a space inside it is rejected | EXPECTED: Login is rejected and the user stays on the login screen
+- inputText:
+    text: "user name@example.com"
+    label: "Type an email containing a space"
+- tapOn:
+    text: "Log in"
+    label: "Tap Log in with the invalid email"
+- assertVisible:
+    text: "Log in"
+    label: "Confirm still on the login screen"
+- assertNotVisible:
+    text: "Feed"
+    label: "Confirm we did not log in"
+- eraseText:
+    charactersToErase: 200
+    label: "Clear the email field"
 
-# Double @ symbol
-- inputText: "user@@example.com"
-- tapOn: "Log in"
-- assertVisible: "Log in"
-- assertNotVisible: "Feed"
-- eraseText: 200
+# SCENARIO: Email with a double @ symbol is rejected | EXPECTED: Login is rejected and the user stays on the login screen
+- inputText:
+    text: "user@@example.com"
+    label: "Type an email with a double @ symbol"
+- tapOn:
+    text: "Log in"
+    label: "Tap Log in with the invalid email"
+- assertVisible:
+    text: "Log in"
+    label: "Confirm still on the login screen"
+- assertNotVisible:
+    text: "Feed"
+    label: "Confirm we did not log in"
+- eraseText:
+    charactersToErase: 200
+    label: "Clear the email field"
 
-# Field recovers — valid format accepted without error
-- inputText: "valid@example.com"
-- assertVisible: "valid@example.com"
-- eraseText: 200
+# SCENARIO: Field recovers once a valid email format is entered | EXPECTED: A correctly formatted email is accepted and displayed without error
+- inputText:
+    text: "valid@example.com"
+    label: "Type a valid email to confirm the field recovers"
+- assertVisible:
+    text: "valid@example.com"
+    label: "Confirm the valid email is shown"
+- eraseText:
+    charactersToErase: 200
+    label: "Clear the email field"

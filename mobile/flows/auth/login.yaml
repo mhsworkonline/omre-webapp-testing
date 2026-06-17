@@ -1,4 +1,6 @@
 appId: com.omre.app.posh
 ---
+# SCENARIO: App opens to the login screen with a preserved session check | EXPECTED: App launches without crashing
 - launchApp:
     clearState: false
+    label: "Open the OMRE app"

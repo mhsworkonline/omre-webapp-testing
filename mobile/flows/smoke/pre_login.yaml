@@ -1,28 +1,57 @@
 appId: com.omre.app.posh
 ---
+# SCENARIO: Login screen displays its branding and heading text | EXPECTED: App launches and shows the welcome heading and subheading
+# Branding (logo text is Flutter canvas-rendered, not semantic — skip OMRE/tagline assertions)
 - launchApp:
     clearState: false
+    label: "Open the OMRE app"
+- assertVisible:
+    text: "Welcome back"
+    label: "Confirm the login heading is shown"
+- assertVisible:
+    text: "Enter your credentials to access your account"
+    label: "Confirm the login subheading is shown"
 
-# Branding (logo text is Flutter canvas-rendered, not semantic — skip OMRE/tagline assertions)
-- assertVisible: "Welcome back"
-- assertVisible: "Enter your credentials to access your account"
+# SCENARIO: Login screen shows both input fields | EXPECTED: Email and password fields are both visible
+- assertVisible:
+    text: "name@example.com"
+    label: "Confirm the email field is shown"
+- assertVisible:
+    text: "Password"
+    label: "Confirm the password field is shown"
 
-# Input fields
-- assertVisible: "name@example.com"
-- assertVisible: "Password"
+# SCENARIO: Login screen shows all expected actions and links | EXPECTED: Forgot password, Log in, Google login, and Sign up are all visible
+- assertVisible:
+    text: "Forgot password?"
+    label: "Confirm the forgot-password link is shown"
+- assertVisible:
+    text: "Log in"
+    label: "Confirm the Log in button is shown"
+- assertVisible:
+    text: "OR CONTINUE WITH"
+    label: "Confirm the alternate-login divider is shown"
+- assertVisible:
+    text: "Google"
+    label: "Confirm the Google login option is shown"
+- assertVisible:
+    text: "Sign up"
+    label: "Confirm the sign-up link is shown"
 
-# Actions
-- assertVisible: "Forgot password?"
-- assertVisible: "Log in"
-- assertVisible: "OR CONTINUE WITH"
-- assertVisible: "Google"
-- assertVisible: "Sign up"
+# SCENARIO: Input fields respond to taps | EXPECTED: Tapping each field keeps it visible and ready for input
+- tapOn:
+    text: "name@example.com"
+    label: "Tap the email field"
+- assertVisible:
+    text: "name@example.com"
+    label: "Confirm the email field is still shown"
+- tapOn:
+    text: "Password"
+    label: "Tap the password field"
+- assertVisible:
+    text: "Password"
+    label: "Confirm the password field is still shown"
 
-# Fields are interactive
-- tapOn: "name@example.com"
-- assertVisible: "name@example.com"
-- tapOn: "Password"
-- assertVisible: "Password"
-
-# Login screen stays put without credentials
-- assertNotVisible: "Feed"
+# SCENARIO: Login screen does not navigate away without credentials | EXPECTED: User remains on the login screen, no Feed content appears
+- assertNotVisible:
+    text: "Feed"
+    label: "Confirm we are still on the login screen"

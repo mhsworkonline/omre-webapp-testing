@@ -1,0 +1,68 @@
+[
+  {
+    "url": "https://omre.ai/app/notifications",
+    "path": "/app/notifications",
+    "depth": 0,
+    "heading": "Notifications",
+    "links": [
+      {
+        "text": "",
+        "href": "/app/home"
+      },
+      {
+        "text": "",
+        "href": "/help"
+      },
+      {
+        "text": "",
+        "href": "/app/explore"
+      },
+      {
+        "text": "",
+        "href": "/app/messages"
+      },
+      {
+        "text": "",
+        "href": "/app/notifications"
+      }
+    ],
+    "buttons": [
+      "SOCIAL",
+      "NEWS",
+      "VIDEO",
+      "CHAT",
+      "BIZ",
+      "LINK",
+      "LEARN",
+      "STUDIO",
+      "ORBIT",
+      "GAMES",
+      "MART",
+      "MEETINGS",
+      "WALLET",
+      "Toggle theme",
+      "Mark all read",
+      "All",
+      "Social",
+      "Orbit",
+      "Business",
+      "Marketplace",
+      "Jobs",
+      "Studio",
+      "System",
+      "Select",
+      "Mark All Read",
+      "Clear",
+      "All Updates",
+      "Unread Only",
+      "Priority"
+    ],
+    "inputs": [
+      {
+        "type": "text",
+        "name": null,
+        "placeholder": "Search notifications..."
+      }
+    ]
+  }
+]

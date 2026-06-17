@@ -1,0 +1,487 @@
+[
+  {
+    "url": "https://omre.ai/app/blogs",
+    "path": "/app/blogs",
+    "depth": 0,
+    "heading": "Omre Blogs",
+    "links": [
+      {
+        "text": "",
+        "href": "/app/home"
+      },
+      {
+        "text": "",
+        "href": "/help"
+      },
+      {
+        "text": "",
+        "href": "/app/explore"
+      },
+      {
+        "text": "",
+        "href": "/app/messages"
+      },
+      {
+        "text": "",
+        "href": "/app/notifications"
+      },
+      {
+        "text": "Home",
+        "href": "/app/home"
+      },
+      {
+        "text": "Explore",
+        "href": "/app/explore"
+      },
+      {
+        "text": "Shorts",
+        "href": "/app/shorts"
+      },
+      {
+        "text": "Live",
+        "href": "/app/live"
+      },
+      {
+        "text": "Messages",
+        "href": "/app/messages"
+      },
+      {
+        "text": "Notifications",
+        "href": "/app/notifications"
+      },
+      {
+        "text": "Profile",
+        "href": "/app/profile/w4f01"
+      },
+      {
+        "text": "Reputation",
+        "href": "/app/reputation"
+      },
+      {
+        "text": "Business Suite",
+        "href": "/app/business-suite"
+      },
+      {
+        "text": "Settings",
+        "href": "/app/settings"
+      },
+      {
+        "text": "OmniKnow",
+        "href": "/app/omniknow"
+      },
+      {
+        "text": "Happy Corner",
+        "href": "/app/happy-corner"
+      },
+      {
+        "text": "Virtual World",
+        "href": "/app/virtual-world"
+      },
+      {
+        "text": "Digital Citizen",
+        "href": "/app/digital-citizen"
+      },
+      {
+        "text": "Omni AI",
+        "href": "/app/omni-ai"
+      },
+      {
+        "text": "Pages",
+        "href": "/app/pages"
+      },
+      {
+        "text": "Groups",
+        "href": "/app/groups?tab=feed"
+      },
+      {
+        "text": "Town Hall",
+        "href": "/app/town-hall"
+      },
+      {
+        "text": "Birthday",
+        "href": "/app/birthday"
+      },
+      {
+        "text": "Blogs",
+        "href": "/app/blogs"
+      },
+      {
+        "text": "Weather",
+        "href": "/app/weather"
+      },
+      {
+        "text": "Images",
+        "href": "/app/images"
+      },
+      {
+        "text": "Friends",
+        "href": "/app/friends"
+      },
+      {
+        "text": "PREMIUM Go ads-free Hide every ad · 200 OMRE / 30 days Try it →",
+        "href": "/app/settings/premium"
+      },
+      {
+        "text": "COMMUNITY",
+        "href": "/app/blogs/a245a2f1-dbba-4034-91eb-f3222224da19"
+      },
+      {
+        "text": "Hello vshsiwbshs",
+        "href": "/app/blogs/a245a2f1-dbba-4034-91eb-f3222224da19"
+      },
+      {
+        "text": "Read more",
+        "href": "/app/blogs/a245a2f1-dbba-4034-91eb-f3222224da19"
+      },
+      {
+        "text": "COMMUNITY",
+        "href": "/app/blogs/4cd6881c-c803-41ab-be2d-f8983df88b41"
+      },
+      {
+        "text": "TTTTT news",
+        "href": "/app/blogs/4cd6881c-c803-41ab-be2d-f8983df88b41"
+      },
+      {
+        "text": "Read more",
+        "href": "/app/blogs/4cd6881c-c803-41ab-be2d-f8983df88b41"
+      },
+      {
+        "text": "PUBLIC POLICY",
+        "href": "/app/blogs/372452e8-734a-41d2-b70e-f106614395c4"
+      },
+      {
+        "text": "Community Insight #3 This is seeded blog content for the Social blog section. It helps verify layout, cards, detail page rendering, and interactions.",
+        "href": "/app/blogs/372452e8-734a-41d2-b70e-f106614395c4"
+      },
+      {
+        "text": "Read more",
+        "href": "/app/blogs/372452e8-734a-41d2-b70e-f106614395c4"
+      },
+      {
+        "text": "TECHNOLOGY",
+        "href": "/app/blogs/5265ec0b-b36e-4b8b-8625-d75d6692cb0c"
+      },
+      {
+        "text": "Community Insight #4 This is seeded blog content for the Social blog section. It helps verify layout, cards, detail page rendering, and interactions.",
+        "href": "/app/blogs/5265ec0b-b36e-4b8b-8625-d75d6692cb0c"
+      },
+      {
+        "text": "Read more",
+        "href": "/app/blogs/5265ec0b-b36e-4b8b-8625-d75d6692cb0c"
+      },
+      {
+        "text": "COMMUNITY",
+        "href": "/app/blogs/e417b869-bc23-477e-9ff5-110c6c1daed3"
+      },
+      {
+        "text": "Community Insight #5 This is seeded blog content for the Social blog section. It helps verify layout, cards, detail page rendering, and interactions.",
+        "href": "/app/blogs/e417b869-bc23-477e-9ff5-110c6c1daed3"
+      },
+      {
+        "text": "Read more",
+        "href": "/app/blogs/e417b869-bc23-477e-9ff5-110c6c1daed3"
+      },
+      {
+        "text": "EDUCATION",
+        "href": "/app/blogs/e5e0726e-74d8-4c6a-96b2-49860c8dddc9"
+      },
+      {
+        "text": "Community Insight #6 This is seeded blog content for the Social blog section. It helps verify layout, cards, detail page rendering, and interactions.",
+        "href": "/app/blogs/e5e0726e-74d8-4c6a-96b2-49860c8dddc9"
+      },
+      {
+        "text": "Read more",
+        "href": "/app/blogs/e5e0726e-74d8-4c6a-96b2-49860c8dddc9"
+      },
+      {
+        "text": "PUBLIC POLICY",
+        "href": "/app/blogs/50e41dac-d04c-4b8c-accb-fbaa3c4dd996"
+      },
+      {
+        "text": "Community Insight #7 This is seeded blog content for the Social blog section. It helps verify layout, cards, detail page rendering, and interactions.",
+        "href": "/app/blogs/50e41dac-d04c-4b8c-accb-fbaa3c4dd996"
+      },
+      {
+        "text": "Read more",
+        "href": "/app/blogs/50e41dac-d04c-4b8c-accb-fbaa3c4dd996"
+      },
+      {
+        "text": "TECHNOLOGY",
+        "href": "/app/blogs/c94f44ab-cdc2-49bd-9f23-886ca925d53b"
+      },
+      {
+        "text": "Community Insight #8 This is seeded blog content for the Social blog section. It helps verify layout, cards, detail page rendering, and interactions.",
+        "href": "/app/blogs/c94f44ab-cdc2-49bd-9f23-886ca925d53b"
+      },
+      {
+        "text": "Read more",
+        "href": "/app/blogs/c94f44ab-cdc2-49bd-9f23-886ca925d53b"
+      },
+      {
+        "text": "COMMUNITY",
+        "href": "/app/blogs/0115ed9d-45d3-44cb-b52a-8ae7986617c6"
+      },
+      {
+        "text": "Community Insight #9 This is seeded blog content for the Social blog section. It helps verify layout, cards, detail page rendering, and interactions.",
+        "href": "/app/blogs/0115ed9d-45d3-44cb-b52a-8ae7986617c6"
+      },
+      {
+        "text": "Read more",
+        "href": "/app/blogs/0115ed9d-45d3-44cb-b52a-8ae7986617c6"
+      },
+      {
+        "text": "EDUCATION",
+        "href": "/app/blogs/be34e639-fe14-4605-b0d5-ad09b4e0d3e6"
+      },
+      {
+        "text": "Community Insight #10 This is seeded blog content for the Social blog section. It helps verify layout, cards, detail page rendering, and interactions.",
+        "href": "/app/blogs/be34e639-fe14-4605-b0d5-ad09b4e0d3e6"
+      },
+      {
+        "text": "Read more",
+        "href": "/app/blogs/be34e639-fe14-4605-b0d5-ad09b4e0d3e6"
+      },
+      {
+        "text": "PUBLIC POLICY",
+        "href": "/app/blogs/901e144c-9914-497a-a07f-85758b62874b"
+      },
+      {
+        "text": "Community Insight #11 This is seeded blog content for the Social blog section. It helps verify layout, cards, detail page rendering, and interactions.",
+        "href": "/app/blogs/901e144c-9914-497a-a07f-85758b62874b"
+      },
+      {
+        "text": "Read more",
+        "href": "/app/blogs/901e144c-9914-497a-a07f-85758b62874b"
+      },
+      {
+        "text": "TECHNOLOGY",
+        "href": "/app/blogs/a64f6df8-20ed-48df-9381-ffd7203e26f7"
+      },
+      {
+        "text": "Community Insight #12 This is seeded blog content for the Social blog section. It helps verify layout, cards, detail page rendering, and interactions.",
+        "href": "/app/blogs/a64f6df8-20ed-48df-9381-ffd7203e26f7"
+      },
+      {
+        "text": "Read more",
+        "href": "/app/blogs/a64f6df8-20ed-48df-9381-ffd7203e26f7"
+      },
+      {
+        "text": "COMMUNITY",
+        "href": "/app/blogs/13b0b2da-d4ec-42ab-a048-11e2921fd18c"
+      },
+      {
+        "text": "Community Insight #13 This is seeded blog content for the Social blog section. It helps verify layout, cards, detail page rendering, and interactions.",
+        "href": "/app/blogs/13b0b2da-d4ec-42ab-a048-11e2921fd18c"
+      },
+      {
+        "text": "Read more",
+        "href": "/app/blogs/13b0b2da-d4ec-42ab-a048-11e2921fd18c"
+      },
+      {
+        "text": "COMMUNITY",
+        "href": "/app/blogs/b00331b9-3f8a-45bd-8401-82e341aff1be"
+      },
+      {
+        "text": "Community Insight #1 This is seeded blog content for the Social blog section. It helps verify layout, cards, detail page rendering, and interactions.",
+        "href": "/app/blogs/b00331b9-3f8a-45bd-8401-82e341aff1be"
+      },
+      {
+        "text": "Read more",
+        "href": "/app/blogs/b00331b9-3f8a-45bd-8401-82e341aff1be"
+      },
+      {
+        "text": "PUBLIC POLICY",
+        "href": "/app/blogs/2e74ce69-d5b8-4354-9b22-303607b0506c"
+      },
+      {
+        "text": "Community Insight #15 This is seeded blog content for the Social blog section. It helps verify layout, cards, detail page rendering, and interactions.",
+        "href": "/app/blogs/2e74ce69-d5b8-4354-9b22-303607b0506c"
+      },
+      {
+        "text": "Read more",
+        "href": "/app/blogs/2e74ce69-d5b8-4354-9b22-303607b0506c"
+      },
+      {
+        "text": "TECHNOLOGY",
+        "href": "/app/blogs/ab441aff-a708-4551-b0e8-29c8e2062ca3"
+      },
+      {
+        "text": "Community Insight #16 This is seeded blog content for the Social blog section. It helps verify layout, cards, detail page rendering, and interactions.",
+        "href": "/app/blogs/ab441aff-a708-4551-b0e8-29c8e2062ca3"
+      },
+      {
+        "text": "Read more",
+        "href": "/app/blogs/ab441aff-a708-4551-b0e8-29c8e2062ca3"
+      },
+      {
+        "text": "COMMUNITY",
+        "href": "/app/blogs/b56ad69c-b3c8-42c7-aba0-3de5122e9d2c"
+      },
+      {
+        "text": "Community Insight #17 This is seeded blog content for the Social blog section. It helps verify layout, cards, detail page rendering, and interactions.",
+        "href": "/app/blogs/b56ad69c-b3c8-42c7-aba0-3de5122e9d2c"
+      },
+      {
+        "text": "Read more",
+        "href": "/app/blogs/b56ad69c-b3c8-42c7-aba0-3de5122e9d2c"
+      },
+      {
+        "text": "EDUCATION",
+        "href": "/app/blogs/a9db6a6d-0a5a-41b4-b281-b8e379da47af"
+      },
+      {
+        "text": "Community Insight #18 This is seeded blog content for the Social blog section. It helps verify layout, cards, detail page rendering, and interactions.",
+        "href": "/app/blogs/a9db6a6d-0a5a-41b4-b281-b8e379da47af"
+      },
+      {
+        "text": "Read more",
+        "href": "/app/blogs/a9db6a6d-0a5a-41b4-b281-b8e379da47af"
+      },
+      {
+        "text": "PUBLIC POLICY",
+        "href": "/app/blogs/f6c27b1f-5e06-4b8c-b79b-5085f14da0b2"
+      },
+      {
+        "text": "Community Insight #19 This is seeded blog content for the Social blog section. It helps verify layout, cards, detail page rendering, and interactions.",
+        "href": "/app/blogs/f6c27b1f-5e06-4b8c-b79b-5085f14da0b2"
+      },
+      {
+        "text": "Read more",
+        "href": "/app/blogs/f6c27b1f-5e06-4b8c-b79b-5085f14da0b2"
+      },
+      {
+        "text": "TECHNOLOGY",
+        "href": "/app/blogs/00415784-f692-4603-8fb0-4048642559e9"
+      },
+      {
+        "text": "Community Insight #20 This is seeded blog content for the Social blog section. It helps verify layout, cards, detail page rendering, and interactions.",
+        "href": "/app/blogs/00415784-f692-4603-8fb0-4048642559e9"
+      },
+      {
+        "text": "Read more",
+        "href": "/app/blogs/00415784-f692-4603-8fb0-4048642559e9"
+      },
+      {
+        "text": "COMMUNITY",
+        "href": "/app/blogs/0f401080-c089-45b4-96ee-0c1428dd4f39"
+      },
+      {
+        "text": "Community Insight #21 This is seeded blog content for the Social blog section. It helps verify layout, cards, detail page rendering, and interactions.",
+        "href": "/app/blogs/0f401080-c089-45b4-96ee-0c1428dd4f39"
+      },
+      {
+        "text": "Read more",
+        "href": "/app/blogs/0f401080-c089-45b4-96ee-0c1428dd4f39"
+      },
+      {
+        "text": "EDUCATION",
+        "href": "/app/blogs/29beb38f-52e7-487a-9ba6-d534e2342989"
+      },
+      {
+        "text": "Community Insight #22 This is seeded blog content for the Social blog section. It helps verify layout, cards, detail page rendering, and interactions.",
+        "href": "/app/blogs/29beb38f-52e7-487a-9ba6-d534e2342989"
+      },
+      {
+        "text": "Read more",
+        "href": "/app/blogs/29beb38f-52e7-487a-9ba6-d534e2342989"
+      },
+      {
+        "text": "PUBLIC POLICY",
+        "href": "/app/blogs/7fffd98c-8756-49ae-8615-ba5437b2e921"
+      },
+      {
+        "text": "Community Insight #23 This is seeded blog content for the Social blog section. It helps verify layout, cards, detail page rendering, and interactions.",
+        "href": "/app/blogs/7fffd98c-8756-49ae-8615-ba5437b2e921"
+      },
+      {
+        "text": "Read more",
+        "href": "/app/blogs/7fffd98c-8756-49ae-8615-ba5437b2e921"
+      },
+      {
+        "text": "TECHNOLOGY",
+        "href": "/app/blogs/3e4f70df-8c7a-43ed-84e1-f05f59f15f67"
+      },
+      {
+        "text": "Community Insight #24 This is seeded blog content for the Social blog section. It helps verify layout, cards, detail page rendering, and interactions.",
+        "href": "/app/blogs/3e4f70df-8c7a-43ed-84e1-f05f59f15f67"
+      },
+      {
+        "text": "Read more",
+        "href": "/app/blogs/3e4f70df-8c7a-43ed-84e1-f05f59f15f67"
+      },
+      {
+        "text": "COMMUNITY",
+        "href": "/app/blogs/a8dd91e1-e46b-45a7-b1c2-93e943f63fe5"
+      },
+      {
+        "text": "Community Insight #25 This is seeded blog content for the Social blog section. It helps verify layout, cards, detail page rendering, and interactions.",
+        "href": "/app/blogs/a8dd91e1-e46b-45a7-b1c2-93e943f63fe5"
+      },
+      {
+        "text": "Read more",
+        "href": "/app/blogs/a8dd91e1-e46b-45a7-b1c2-93e943f63fe5"
+      },
+      {
+        "text": "EDUCATION",
+        "href": "/app/blogs/635d6296-d08c-42ad-bf20-f2d22943c3dc"
+      },
+      {
+        "text": "Community Insight #14 This is seeded blog content for the Social blog section. It helps verify layout, cards, detail page rendering, and interactions.",
+        "href": "/app/blogs/635d6296-d08c-42ad-bf20-f2d22943c3dc"
+      },
+      {
+        "text": "Read more",
+        "href": "/app/blogs/635d6296-d08c-42ad-bf20-f2d22943c3dc"
+      },
+      {
+        "text": "EDUCATION",
+        "href": "/app/blogs/f5431c8f-c7c3-4eec-a98b-1acbf8ea841f"
+      },
+      {
+        "text": "Community Insight #2 This is seeded blog content for the Social blog section. It helps verify layout, cards, detail page rendering, and interactions.",
+        "href": "/app/blogs/f5431c8f-c7c3-4eec-a98b-1acbf8ea841f"
+      },
+      {
+        "text": "Read more",
+        "href": "/app/blogs/f5431c8f-c7c3-4eec-a98b-1acbf8ea841f"
+      },
+      {
+        "text": "View all",
+        "href": "/app/friends"
+      },
+      {
+        "text": "Nuage Laboratoire @rfuqufyqtfawkomhgr3gfm-lvl-00_bra",
+        "href": "/app/profile/rfuqufyqtfawkomhgr3gfm-lvl-00_bra"
+      },
+      {
+        "text": "6612_Abuzar shaikh @abuzarshk1344_5rh",
+        "href": "/app/profile/abuzarshk1344_5rh"
+      },
+      {
+        "text": "المحب @moheb_omre",
+        "href": "/app/profile/moheb_omre"
+      }
+    ],
+    "buttons": [
+      "SOCIAL",
+      "NEWS",
+      "VIDEO",
+      "CHAT",
+      "BIZ",
+      "LINK",
+      "LEARN",
+      "STUDIO",
+      "ORBIT",
+      "GAMES",
+      "MART",
+      "MEETINGS",
+      "WALLET",
+      "Toggle theme",
+      "Logout",
+      "Write article",
+      "0",
+      "1"
+    ],
+    "inputs": []
+  }
+]

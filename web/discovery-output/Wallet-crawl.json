@@ -1,0 +1,70 @@
+[
+  {
+    "url": "https://omre.ai/app/wallet",
+    "path": "/app/wallet",
+    "depth": 0,
+    "heading": "My Wallet",
+    "links": [
+      {
+        "text": "",
+        "href": "/app/home"
+      },
+      {
+        "text": "",
+        "href": "/help"
+      },
+      {
+        "text": "",
+        "href": "/app/explore"
+      },
+      {
+        "text": "",
+        "href": "/app/messages"
+      },
+      {
+        "text": "",
+        "href": "/app/notifications"
+      }
+    ],
+    "buttons": [
+      "SOCIAL",
+      "NEWS",
+      "VIDEO",
+      "CHAT",
+      "BIZ",
+      "LINK",
+      "LEARN",
+      "STUDIO",
+      "ORBIT",
+      "GAMES",
+      "MART",
+      "MEETINGS",
+      "WALLET",
+      "Toggle theme",
+      "Refresh",
+      "Settings",
+      "Help",
+      "HIDDEN Tap to reveal",
+      "A Add Money Instant top-up",
+      "W Withdraw To bank",
+      "Overview",
+      "Ads Budget",
+      "Transactions",
+      "Payment Methods",
+      "Invoices",
+      "View all",
+      "Starter",
+      "Popular",
+      "Boost",
+      "Pro",
+      "Add"
+    ],
+    "inputs": [
+      {
+        "type": "number",
+        "name": null,
+        "placeholder": "Custom"
+      }
+    ]
+  }
+]

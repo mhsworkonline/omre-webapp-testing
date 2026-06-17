@@ -1,0 +1,1037 @@
+{
+  "runDate": "2026-06-16T09-34-40",
+  "platform": "Android",
+  "app": "com.omre.app.posh",
+  "totalFlows": 6,
+  "passed": 4,
+  "failed": 2,
+  "flows": [
+    {
+      "name": "email_field",
+      "status": "PASSED",
+      "stepsPassed": 20,
+      "stepsFailed": 0,
+      "failedStep": null,
+      "durationMs": 118606,
+      "scenarios": [
+        {
+          "name": "Setup",
+          "expected": "App launches and is ready for testing",
+          "status": "PASSED",
+          "actual": "As expected — all steps passed",
+          "stepCount": 1
+        },
+        {
+          "name": "App opens with an empty, editable email field",
+          "expected": "App launches to the login screen and the email field can be cleared",
+          "status": "PASSED",
+          "actual": "As expected — all steps passed",
+          "stepCount": 2
+        },
+        {
+          "name": "Valid email is typed into the field",
+          "expected": "The typed email address appears exactly as entered",
+          "status": "PASSED",
+          "actual": "As expected — all steps passed",
+          "stepCount": 2
+        },
+        {
+          "name": "Clearing the field restores the placeholder",
+          "expected": "Placeholder text reappears and the previously typed email is no longer shown",
+          "status": "PASSED",
+          "actual": "As expected — all steps passed",
+          "stepCount": 3
+        },
+        {
+          "name": "Email with special characters (+tag, subdomain) is accepted",
+          "expected": "The special-character email address is accepted and displayed",
+          "status": "PASSED",
+          "actual": "As expected — all steps passed",
+          "stepCount": 3
+        },
+        {
+          "name": "Very long email address is accepted",
+          "expected": "A long but valid email is accepted and displayed without truncation or error",
+          "status": "PASSED",
+          "actual": "As expected — all steps passed",
+          "stepCount": 3
+        },
+        {
+          "name": "Field stays editable after repeated use",
+          "expected": "The field accepts a new email after multiple prior edits",
+          "status": "PASSED",
+          "actual": "As expected — all steps passed",
+          "stepCount": 3
+        },
+        {
+          "name": "Field returns to its empty state at the end",
+          "expected": "Placeholder text is shown again after the final clear",
+          "status": "PASSED",
+          "actual": "As expected — all steps passed",
+          "stepCount": 1
+        }
+      ],
+      "steps": [
+        {
+          "name": "Set up test variables",
+          "status": "COMPLETED",
+          "duration": 11,
+          "seq": 0,
+          "error": null,
+          "synthetic": true
+        },
+        {
+          "name": "Apply flow configuration",
+          "status": "COMPLETED",
+          "duration": 2,
+          "seq": 1,
+          "error": null,
+          "synthetic": true
+        },
+        {
+          "name": "Open the OMRE app",
+          "status": "COMPLETED",
+          "duration": 2700,
+          "seq": 2,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap the email field",
+          "status": "COMPLETED",
+          "duration": 15610,
+          "seq": 3,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Clear the email field",
+          "status": "COMPLETED",
+          "duration": 12054,
+          "seq": 4,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Type a valid email address",
+          "status": "COMPLETED",
+          "duration": 4486,
+          "seq": 5,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Confirm the typed email is shown",
+          "status": "COMPLETED",
+          "duration": 320,
+          "seq": 6,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Clear the email field again",
+          "status": "COMPLETED",
+          "duration": 13938,
+          "seq": 7,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Confirm the placeholder text reappears",
+          "status": "COMPLETED",
+          "duration": 296,
+          "seq": 8,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Confirm the old email is gone",
+          "status": "COMPLETED",
+          "duration": 1400,
+          "seq": 9,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Type an email with a plus-tag and subdomain",
+          "status": "COMPLETED",
+          "duration": 5182,
+          "seq": 10,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Confirm the special-character email is shown",
+          "status": "COMPLETED",
+          "duration": 345,
+          "seq": 11,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Clear the email field",
+          "status": "COMPLETED",
+          "duration": 14037,
+          "seq": 12,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Type a very long but valid email address",
+          "status": "COMPLETED",
+          "duration": 9490,
+          "seq": 13,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Confirm the long email is shown",
+          "status": "COMPLETED",
+          "duration": 294,
+          "seq": 14,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Clear the email field",
+          "status": "COMPLETED",
+          "duration": 18781,
+          "seq": 15,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Type one more email to confirm the field still accepts input",
+          "status": "COMPLETED",
+          "duration": 4091,
+          "seq": 16,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Confirm the final email is shown",
+          "status": "COMPLETED",
+          "duration": 256,
+          "seq": 17,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Clear the email field",
+          "status": "COMPLETED",
+          "duration": 15122,
+          "seq": 18,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Confirm the placeholder text is restored at the end",
+          "status": "COMPLETED",
+          "duration": 191,
+          "seq": 19,
+          "error": null,
+          "synthetic": false
+        }
+      ]
+    },
+    {
+      "name": "pre_login",
+      "status": "PASSED",
+      "stepsPassed": 17,
+      "stepsFailed": 0,
+      "failedStep": null,
+      "durationMs": 21005,
+      "scenarios": [
+        {
+          "name": "Setup",
+          "expected": "App launches and is ready for testing",
+          "status": "PASSED",
+          "actual": "As expected — all steps passed",
+          "stepCount": 15
+        }
+      ],
+      "steps": [
+        {
+          "name": "Set up test variables",
+          "status": "COMPLETED",
+          "duration": 6,
+          "seq": 0,
+          "error": null,
+          "synthetic": true
+        },
+        {
+          "name": "Apply flow configuration",
+          "status": "COMPLETED",
+          "duration": 2,
+          "seq": 1,
+          "error": null,
+          "synthetic": true
+        },
+        {
+          "name": "Open the OMRE app",
+          "status": "COMPLETED",
+          "duration": 2039,
+          "seq": 2,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Confirm the login heading is shown",
+          "status": "COMPLETED",
+          "duration": 10266,
+          "seq": 3,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Confirm the login subheading is shown",
+          "status": "COMPLETED",
+          "duration": 67,
+          "seq": 4,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Confirm the email field is shown",
+          "status": "COMPLETED",
+          "duration": 77,
+          "seq": 5,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Confirm the password field is shown",
+          "status": "COMPLETED",
+          "duration": 97,
+          "seq": 6,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Confirm the forgot-password link is shown",
+          "status": "COMPLETED",
+          "duration": 78,
+          "seq": 7,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Confirm the Log in button is shown",
+          "status": "COMPLETED",
+          "duration": 77,
+          "seq": 8,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Confirm the alternate-login divider is shown",
+          "status": "COMPLETED",
+          "duration": 83,
+          "seq": 9,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Confirm the Google login option is shown",
+          "status": "COMPLETED",
+          "duration": 110,
+          "seq": 10,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Confirm the sign-up link is shown",
+          "status": "COMPLETED",
+          "duration": 102,
+          "seq": 11,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap the email field",
+          "status": "COMPLETED",
+          "duration": 3851,
+          "seq": 12,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Confirm the email field is still shown",
+          "status": "COMPLETED",
+          "duration": 290,
+          "seq": 13,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap the password field",
+          "status": "COMPLETED",
+          "duration": 2809,
+          "seq": 14,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Confirm the password field is still shown",
+          "status": "COMPLETED",
+          "duration": 244,
+          "seq": 15,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Confirm we are still on the login screen",
+          "status": "COMPLETED",
+          "duration": 807,
+          "seq": 16,
+          "error": null,
+          "synthetic": false
+        }
+      ]
+    },
+    {
+      "name": "password_field",
+      "status": "FAILED",
+      "stepsPassed": 7,
+      "stepsFailed": 1,
+      "failedStep": "Tap the show-password toggle",
+      "durationMs": 42005,
+      "scenarios": [
+        {
+          "name": "Setup",
+          "expected": "App launches and is ready for testing",
+          "status": "FAILED",
+          "actual": "Failed at \"Tap the show-password toggle\" — Element not found: Text matching regex: Show password",
+          "stepCount": 6
+        }
+      ],
+      "steps": [
+        {
+          "name": "Set up test variables",
+          "status": "COMPLETED",
+          "duration": 6,
+          "seq": 0,
+          "error": null,
+          "synthetic": true
+        },
+        {
+          "name": "Apply flow configuration",
+          "status": "COMPLETED",
+          "duration": 3,
+          "seq": 1,
+          "error": null,
+          "synthetic": true
+        },
+        {
+          "name": "Open the OMRE app",
+          "status": "COMPLETED",
+          "duration": 1862,
+          "seq": 2,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap the password field",
+          "status": "COMPLETED",
+          "duration": 11281,
+          "seq": 3,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Clear the password field",
+          "status": "COMPLETED",
+          "duration": 9977,
+          "seq": 4,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Type a password",
+          "status": "COMPLETED",
+          "duration": 1655,
+          "seq": 5,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Confirm the password is masked",
+          "status": "COMPLETED",
+          "duration": 728,
+          "seq": 6,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap the show-password toggle",
+          "status": "FAILED",
+          "duration": 16493,
+          "seq": 7,
+          "error": "Element not found: Text matching regex: Show password",
+          "synthetic": false
+        }
+      ]
+    },
+    {
+      "name": "login",
+      "status": "PASSED",
+      "stepsPassed": 3,
+      "stepsFailed": 0,
+      "failedStep": null,
+      "durationMs": 2783,
+      "scenarios": [
+        {
+          "name": "Setup",
+          "expected": "App launches and is ready for testing",
+          "status": "PASSED",
+          "actual": "As expected — all steps passed",
+          "stepCount": 1
+        }
+      ],
+      "steps": [
+        {
+          "name": "Set up test variables",
+          "status": "COMPLETED",
+          "duration": 7,
+          "seq": 0,
+          "error": null,
+          "synthetic": true
+        },
+        {
+          "name": "Apply flow configuration",
+          "status": "COMPLETED",
+          "duration": 2,
+          "seq": 1,
+          "error": null,
+          "synthetic": true
+        },
+        {
+          "name": "Open the OMRE app",
+          "status": "COMPLETED",
+          "duration": 2774,
+          "seq": 2,
+          "error": null,
+          "synthetic": false
+        }
+      ]
+    },
+    {
+      "name": "invalid_email",
+      "status": "PASSED",
+      "stepsPassed": 36,
+      "stepsFailed": 0,
+      "failedStep": null,
+      "durationMs": 134062,
+      "scenarios": [
+        {
+          "name": "Setup",
+          "expected": "App launches and is ready for testing",
+          "status": "PASSED",
+          "actual": "As expected — all steps passed",
+          "stepCount": 34
+        }
+      ],
+      "steps": [
+        {
+          "name": "Set up test variables",
+          "status": "COMPLETED",
+          "duration": 11,
+          "seq": 0,
+          "error": null,
+          "synthetic": true
+        },
+        {
+          "name": "Apply flow configuration",
+          "status": "COMPLETED",
+          "duration": 3,
+          "seq": 1,
+          "error": null,
+          "synthetic": true
+        },
+        {
+          "name": "Open the OMRE app",
+          "status": "COMPLETED",
+          "duration": 2484,
+          "seq": 2,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap the password field",
+          "status": "COMPLETED",
+          "duration": 11161,
+          "seq": 3,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Clear the password field",
+          "status": "COMPLETED",
+          "duration": 7110,
+          "seq": 4,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Type a valid password",
+          "status": "COMPLETED",
+          "duration": 1502,
+          "seq": 5,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap the email field",
+          "status": "COMPLETED",
+          "duration": 3553,
+          "seq": 6,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Clear the email field",
+          "status": "COMPLETED",
+          "duration": 8165,
+          "seq": 7,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Type an email with no @ symbol",
+          "status": "COMPLETED",
+          "duration": 2679,
+          "seq": 8,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap Log in with the invalid email",
+          "status": "COMPLETED",
+          "duration": 3938,
+          "seq": 9,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Confirm still on the login screen",
+          "status": "COMPLETED",
+          "duration": 272,
+          "seq": 10,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Confirm we did not log in",
+          "status": "COMPLETED",
+          "duration": 1789,
+          "seq": 11,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Clear the email field",
+          "status": "COMPLETED",
+          "duration": 8768,
+          "seq": 12,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Type an email with no domain after @",
+          "status": "COMPLETED",
+          "duration": 1971,
+          "seq": 13,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap Log in with the invalid email",
+          "status": "COMPLETED",
+          "duration": 3776,
+          "seq": 14,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Confirm still on the login screen",
+          "status": "COMPLETED",
+          "duration": 224,
+          "seq": 15,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Confirm we did not log in",
+          "status": "COMPLETED",
+          "duration": 1620,
+          "seq": 16,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Clear the email field",
+          "status": "COMPLETED",
+          "duration": 8802,
+          "seq": 17,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Type an email with no top-level domain",
+          "status": "COMPLETED",
+          "duration": 2640,
+          "seq": 18,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap Log in with the invalid email",
+          "status": "COMPLETED",
+          "duration": 3746,
+          "seq": 19,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Confirm still on the login screen",
+          "status": "COMPLETED",
+          "duration": 215,
+          "seq": 20,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Confirm we did not log in",
+          "status": "COMPLETED",
+          "duration": 895,
+          "seq": 21,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Clear the email field",
+          "status": "COMPLETED",
+          "duration": 9149,
+          "seq": 22,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Type an email containing a space",
+          "status": "COMPLETED",
+          "duration": 4537,
+          "seq": 23,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap Log in with the invalid email",
+          "status": "COMPLETED",
+          "duration": 3818,
+          "seq": 24,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Confirm still on the login screen",
+          "status": "COMPLETED",
+          "duration": 197,
+          "seq": 25,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Confirm we did not log in",
+          "status": "COMPLETED",
+          "duration": 854,
+          "seq": 26,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Clear the email field",
+          "status": "COMPLETED",
+          "duration": 9229,
+          "seq": 27,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Type an email with a double @ symbol",
+          "status": "COMPLETED",
+          "duration": 3372,
+          "seq": 28,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap Log in with the invalid email",
+          "status": "COMPLETED",
+          "duration": 3913,
+          "seq": 29,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Confirm still on the login screen",
+          "status": "COMPLETED",
+          "duration": 411,
+          "seq": 30,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Confirm we did not log in",
+          "status": "COMPLETED",
+          "duration": 862,
+          "seq": 31,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Clear the email field",
+          "status": "COMPLETED",
+          "duration": 9398,
+          "seq": 32,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Type a valid email to confirm the field recovers",
+          "status": "COMPLETED",
+          "duration": 3317,
+          "seq": 33,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Confirm the valid email is shown",
+          "status": "COMPLETED",
+          "duration": 174,
+          "seq": 34,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Clear the email field",
+          "status": "COMPLETED",
+          "duration": 9507,
+          "seq": 35,
+          "error": null,
+          "synthetic": false
+        }
+      ]
+    },
+    {
+      "name": "empty_submit",
+      "status": "FAILED",
+      "stepsPassed": 23,
+      "stepsFailed": 1,
+      "failedStep": "Tap the email field",
+      "durationMs": 91755,
+      "scenarios": [
+        {
+          "name": "Setup",
+          "expected": "App launches and is ready for testing",
+          "status": "FAILED",
+          "actual": "Failed at \"Tap the email field\" — Element not found: Text matching regex: name@example.com",
+          "stepCount": 22
+        }
+      ],
+      "steps": [
+        {
+          "name": "Set up test variables",
+          "status": "COMPLETED",
+          "duration": 7,
+          "seq": 0,
+          "error": null,
+          "synthetic": true
+        },
+        {
+          "name": "Apply flow configuration",
+          "status": "COMPLETED",
+          "duration": 3,
+          "seq": 1,
+          "error": null,
+          "synthetic": true
+        },
+        {
+          "name": "Open the OMRE app",
+          "status": "COMPLETED",
+          "duration": 2420,
+          "seq": 2,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap the email field",
+          "status": "COMPLETED",
+          "duration": 13579,
+          "seq": 3,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Clear the email field",
+          "status": "COMPLETED",
+          "duration": 8276,
+          "seq": 4,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap the password field",
+          "status": "COMPLETED",
+          "duration": 2849,
+          "seq": 5,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Clear the password field",
+          "status": "COMPLETED",
+          "duration": 8372,
+          "seq": 6,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap Log in with both fields empty",
+          "status": "COMPLETED",
+          "duration": 3968,
+          "seq": 7,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Confirm still on the login screen",
+          "status": "COMPLETED",
+          "duration": 271,
+          "seq": 8,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Confirm the login screen heading is shown",
+          "status": "COMPLETED",
+          "duration": 286,
+          "seq": 9,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Confirm we did not log in",
+          "status": "COMPLETED",
+          "duration": 1478,
+          "seq": 10,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap the email field",
+          "status": "COMPLETED",
+          "duration": 2475,
+          "seq": 11,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Type an email, leave password empty",
+          "status": "COMPLETED",
+          "duration": 3293,
+          "seq": 12,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap Log in with only an email entered",
+          "status": "COMPLETED",
+          "duration": 3730,
+          "seq": 13,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Confirm still on the login screen",
+          "status": "COMPLETED",
+          "duration": 226,
+          "seq": 14,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Confirm we did not log in",
+          "status": "COMPLETED",
+          "duration": 876,
+          "seq": 15,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap the email field",
+          "status": "COMPLETED",
+          "duration": 3769,
+          "seq": 16,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Clear the email field",
+          "status": "COMPLETED",
+          "duration": 8870,
+          "seq": 17,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap the password field",
+          "status": "COMPLETED",
+          "duration": 2538,
+          "seq": 18,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Type a password, leave email empty",
+          "status": "COMPLETED",
+          "duration": 3318,
+          "seq": 19,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap Log in with only a password entered",
+          "status": "COMPLETED",
+          "duration": 3746,
+          "seq": 20,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Confirm still on the login screen",
+          "status": "COMPLETED",
+          "duration": 223,
+          "seq": 21,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Confirm we did not log in",
+          "status": "COMPLETED",
+          "duration": 940,
+          "seq": 22,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap the email field",
+          "status": "FAILED",
+          "duration": 16242,
+          "seq": 23,
+          "error": "Element not found: Text matching regex: name@example.com",
+          "synthetic": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>OMRE Mobile Test Report — 2026-06-16T08-51-58</title>
+<style>
+  body{font-family:system-ui,sans-serif;margin:0;background:#f5f5f5;color:#222}
+  header{background:#1a1a2e;color:#fff;padding:24px 32px}
+  header h1{margin:0 0 4px;font-size:22px}
+  header p{margin:0;opacity:.7;font-size:13px}
+  .stats{display:flex;gap:16px;padding:20px 32px}
+  .stat{background:#fff;border-radius:8px;padding:16px 24px;min-width:120px;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+  .stat .n{font-size:32px;font-weight:700}
+  .stat .n.pass{color:#22c55e}.stat .n.fail{color:#ef4444}.stat .n.total{color:#3b82f6}
+  .stat .l{font-size:12px;color:#666;margin-top:4px}
+  table{width:calc(100% - 64px);margin:0 32px 32px;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+  th{background:#1a1a2e;color:#fff;padding:12px 16px;text-align:left;font-size:13px}
+  td{padding:10px 16px;border-bottom:1px solid #eee;font-size:13px;vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  tr:hover td{background:#fafafa}
+  .badge{display:inline-block;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:600}
+  .badge.pass{background:#dcfce7;color:#166534}.badge.fail{background:#fee2e2;color:#991b1b}
+  code{font-size:12px;background:#f3f4f6;padding:2px 6px;border-radius:3px}
+  .steps-wrap{margin-top:6px}
+  .step{font-size:11px;padding:2px 0;color:#555}
+  .step-ok{color:#16a34a}.step-fail{color:#dc2626;font-weight:600}.step-skip{color:#9ca3af}
+  .ms{font-size:10px;color:#9ca3af;margin-left:6px}
+</style>
+</head>
+<body>
+<header>
+  <h1>OMRE Mobile Test Report</h1>
+  <p>Platform: Android &nbsp;|&nbsp; App: com.omre.app.posh &nbsp;|&nbsp; Run: 2026-06-16T08-51-58</p>
+</header>
+<div class="stats">
+  <div class="stat"><div class="n total">6</div><div class="l">Total Flows</div></div>
+  <div class="stat"><div class="n pass">4</div><div class="l">Passed</div></div>
+  <div class="stat"><div class="n fail">2</div><div class="l">Failed</div></div>
+  <div class="stat"><div class="n total">370.3s</div><div class="l">Total Duration</div></div>
+</div>
+<table>
+  <thead><tr><th>Flow</th><th>Status</th><th>Steps</th><th>Failed Step</th><th>Duration</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>email_field</strong>
+        <div class="steps-wrap"><div class="step step-ok">✓ Set up test variables <span class="ms">5ms</span></div><div class="step step-ok">✓ Apply flow configuration <span class="ms">2ms</span></div><div class="step step-ok">✓ Launch app "com.omre.app.posh" <span class="ms">1903ms</span></div><div class="step step-ok">✓ Tap on "name@example.com" <span class="ms">12692ms</span></div><div class="step step-ok">✓ Erase 200 characters <span class="ms">8917ms</span></div><div class="step step-ok">✓ Input text: "testuser@example.com" <span class="ms">3958ms</span></div><div class="step step-ok">✓ Assert visible: "testuser@example.com" <span class="ms">299ms</span></div><div class="step step-ok">✓ Erase 200 characters <span class="ms">9025ms</span></div><div class="step step-ok">✓ Assert visible: "name@example.com" <span class="ms">309ms</span></div><div class="step step-ok">✓ Assert not visible: "testuser@example.com" <span class="ms">1046ms</span></div><div class="step step-ok">✓ Input text: "user.name+tag@sub.domain.co" <span class="ms">4353ms</span></div><div class="step step-ok">✓ Assert visible: "user.name+tag@sub.domain.co" <span class="ms">214ms</span></div><div class="step step-ok">✓ Erase 200 characters <span class="ms">9020ms</span></div><div class="step step-ok">✓ Input text: "verylongemailaddressthatisvalid@somelongdomainname.com" <span class="ms">7830ms</span></div><div class="step step-ok">✓ Assert visible: "verylongemailaddressthatisvalid@somelongdomainname.com" <span class="ms">336ms</span></div><div class="step step-ok">✓ Erase 200 characters <span class="ms">9815ms</span></div><div class="step step-ok">✓ Input text: "final@example.com" <span class="ms">3331ms</span></div><div class="step step-ok">✓ Assert visible: "final@example.com" <span class="ms">219ms</span></div><div class="step step-ok">✓ Erase 200 characters <span class="ms">8848ms</span></div><div class="step step-ok">✓ Assert visible: "name@example.com" <span class="ms">217ms</span></div></div>
+      </td>
+      <td><span class="badge pass">PASSED</span></td>
+      <td>20/20</td>
+      <td>—</td>
+      <td>82.3s</td>
+    </tr>
+    <tr>
+      <td><strong>empty_submit</strong>
+        <div class="steps-wrap"><div class="step step-ok">✓ Set up test variables <span class="ms">7ms</span></div><div class="step step-ok">✓ Apply flow configuration <span class="ms">2ms</span></div><div class="step step-ok">✓ Launch app "com.omre.app.posh" <span class="ms">2537ms</span></div><div class="step step-ok">✓ Tap on "name@example.com" <span class="ms">11344ms</span></div><div class="step step-ok">✓ Erase 200 characters <span class="ms">8861ms</span></div><div class="step step-ok">✓ Tap on "Password" <span class="ms">2793ms</span></div><div class="step step-ok">✓ Erase 200 characters <span class="ms">8243ms</span></div><div class="step step-ok">✓ Tap on "Log in" <span class="ms">3897ms</span></div><div class="step step-ok">✓ Assert visible: "Log in" <span class="ms">297ms</span></div><div class="step step-ok">✓ Assert visible: "Welcome back" <span class="ms">260ms</span></div><div class="step step-ok">✓ Assert not visible: "Feed" <span class="ms">1408ms</span></div><div class="step step-ok">✓ Tap on "name@example.com" <span class="ms">2384ms</span></div><div class="step step-ok">✓ Input text: "test@example.com" <span class="ms">3365ms</span></div><div class="step step-ok">✓ Tap on "Log in" <span class="ms">3919ms</span></div><div class="step step-ok">✓ Assert visible: "Log in" <span class="ms">271ms</span></div><div class="step step-ok">✓ Assert not visible: "Feed" <span class="ms">2066ms</span></div><div class="step step-ok">✓ Tap on "test@example.com" <span class="ms">2479ms</span></div><div class="step step-ok">✓ Erase 200 characters <span class="ms">9308ms</span></div><div class="step step-ok">✓ Tap on "Password" <span class="ms">2562ms</span></div><div class="step step-ok">✓ Input text: "SomePassword123" <span class="ms">3209ms</span></div><div class="step step-ok">✓ Tap on "Log in" <span class="ms">3717ms</span></div><div class="step step-ok">✓ Assert visible: "Log in" <span class="ms">173ms</span></div><div class="step step-ok">✓ Assert not visible: "Feed" <span class="ms">1021ms</span></div><div class="step step-fail">✗ Tap on "name@example.com" <span class="ms">16203ms</span></div></div>
+      </td>
+      <td><span class="badge fail">FAILED</span></td>
+      <td>23/24</td>
+      <td><code>Tap on "name@example.com"</code></td>
+      <td>90.3s</td>
+    </tr>
+    <tr>
+      <td><strong>invalid_email</strong>
+        <div class="steps-wrap"><div class="step step-ok">✓ Set up test variables <span class="ms">9ms</span></div><div class="step step-ok">✓ Apply flow configuration <span class="ms">4ms</span></div><div class="step step-ok">✓ Launch app "com.omre.app.posh" <span class="ms">2390ms</span></div><div class="step step-ok">✓ Tap on "Password" <span class="ms">11417ms</span></div><div class="step step-ok">✓ Erase 200 characters <span class="ms">7423ms</span></div><div class="step step-ok">✓ Input text: "Password123" <span class="ms">1465ms</span></div><div class="step step-ok">✓ Tap on "name@example.com" <span class="ms">3557ms</span></div><div class="step step-ok">✓ Erase 200 characters <span class="ms">8824ms</span></div><div class="step step-ok">✓ Input text: "notanemail" <span class="ms">2746ms</span></div><div class="step step-ok">✓ Tap on "Log in" <span class="ms">4235ms</span></div><div class="step step-ok">✓ Assert visible: "Log in" <span class="ms">381ms</span></div><div class="step step-ok">✓ Assert not visible: "Feed" <span class="ms">1529ms</span></div><div class="step step-ok">✓ Erase 200 characters <span class="ms">9049ms</span></div><div class="step step-ok">✓ Input text: "user@" <span class="ms">2077ms</span></div><div class="step step-ok">✓ Tap on "Log in" <span class="ms">4593ms</span></div><div class="step step-ok">✓ Assert visible: "Log in" <span class="ms">324ms</span></div><div class="step step-ok">✓ Assert not visible: "Feed" <span class="ms">1406ms</span></div><div class="step step-ok">✓ Erase 200 characters <span class="ms">9460ms</span></div><div class="step step-ok">✓ Input text: "user@domain" <span class="ms">2609ms</span></div><div class="step step-ok">✓ Tap on "Log in" <span class="ms">3712ms</span></div><div class="step step-ok">✓ Assert visible: "Log in" <span class="ms">240ms</span></div><div class="step step-ok">✓ Assert not visible: "Feed" <span class="ms">1523ms</span></div><div class="step step-ok">✓ Erase 200 characters <span class="ms">9135ms</span></div><div class="step step-ok">✓ Input text: "user name@example.com" <span class="ms">3748ms</span></div><div class="step step-ok">✓ Tap on "Log in" <span class="ms">3822ms</span></div><div class="step step-ok">✓ Assert visible: "Log in" <span class="ms">193ms</span></div><div class="step step-ok">✓ Assert not visible: "Feed" <span class="ms">914ms</span></div><div class="step step-ok">✓ Erase 200 characters <span class="ms">8868ms</span></div><div class="step step-ok">✓ Input text: "user@@example.com" <span class="ms">3352ms</span></div><div class="step step-ok">✓ Tap on "Log in" <span class="ms">3707ms</span></div><div class="step step-ok">✓ Assert visible: "Log in" <span class="ms">212ms</span></div><div class="step step-ok">✓ Assert not visible: "Feed" <span class="ms">1000ms</span></div><div class="step step-ok">✓ Erase 200 characters <span class="ms">8970ms</span></div><div class="step step-ok">✓ Input text: "valid@example.com" <span class="ms">3329ms</span></div><div class="step step-ok">✓ Assert visible: "valid@example.com" <span class="ms">202ms</span></div><div class="step step-ok">✓ Erase 200 characters <span class="ms">8961ms</span></div></div>
+      </td>
+      <td><span class="badge pass">PASSED</span></td>
+      <td>36/36</td>
+      <td>—</td>
+      <td>135.4s</td>
+    </tr>
+    <tr>
+      <td><strong>login</strong>
+        <div class="steps-wrap"><div class="step step-ok">✓ Set up test variables <span class="ms">10ms</span></div><div class="step step-ok">✓ Apply flow configuration <span class="ms">1ms</span></div><div class="step step-ok">✓ Launch app "com.omre.app.posh" <span class="ms">2250ms</span></div></div>
+      </td>
+      <td><span class="badge pass">PASSED</span></td>
+      <td>3/3</td>
+      <td>—</td>
+      <td>2.3s</td>
+    </tr>
+    <tr>
+      <td><strong>password_field</strong>
+        <div class="steps-wrap"><div class="step step-ok">✓ Set up test variables <span class="ms">5ms</span></div><div class="step step-ok">✓ Apply flow configuration <span class="ms">3ms</span></div><div class="step step-ok">✓ Launch app "com.omre.app.posh" <span class="ms">2236ms</span></div><div class="step step-ok">✓ Tap on "Password" <span class="ms">10838ms</span></div><div class="step step-ok">✓ Erase 200 characters <span class="ms">7857ms</span></div><div class="step step-ok">✓ Input text: "MySecret123" <span class="ms">1605ms</span></div><div class="step step-ok">✓ Assert not visible: "MySecret123" <span class="ms">661ms</span></div><div class="step step-fail">✗ Tap on "Show password" <span class="ms">16505ms</span></div></div>
+      </td>
+      <td><span class="badge fail">FAILED</span></td>
+      <td>7/8</td>
+      <td><code>Tap on "Show password"</code></td>
+      <td>39.7s</td>
+    </tr>
+    <tr>
+      <td><strong>pre_login</strong>
+        <div class="steps-wrap"><div class="step step-ok">✓ Set up test variables <span class="ms">9ms</span></div><div class="step step-ok">✓ Apply flow configuration <span class="ms">3ms</span></div><div class="step step-ok">✓ Launch app "com.omre.app.posh" <span class="ms">1959ms</span></div><div class="step step-ok">✓ Assert visible: "Welcome back" <span class="ms">8723ms</span></div><div class="step step-ok">✓ Assert visible: "Enter your credentials to access your account" <span class="ms">484ms</span></div><div class="step step-ok">✓ Assert visible: "name@example.com" <span class="ms">135ms</span></div><div class="step step-ok">✓ Assert visible: "Password" <span class="ms">106ms</span></div><div class="step step-ok">✓ Assert visible: "Forgot password?" <span class="ms">116ms</span></div><div class="step step-ok">✓ Assert visible: "Log in" <span class="ms">61ms</span></div><div class="step step-ok">✓ Assert visible: "OR CONTINUE WITH" <span class="ms">120ms</span></div><div class="step step-ok">✓ Assert visible: "Google" <span class="ms">141ms</span></div><div class="step step-ok">✓ Assert visible: "Sign up" <span class="ms">186ms</span></div><div class="step step-ok">✓ Tap on "name@example.com" <span class="ms">3704ms</span></div><div class="step step-ok">✓ Assert visible: "name@example.com" <span class="ms">303ms</span></div><div class="step step-ok">✓ Tap on "Password" <span class="ms">2819ms</span></div><div class="step step-ok">✓ Assert visible: "Password" <span class="ms">437ms</span></div><div class="step step-ok">✓ Assert not visible: "Feed" <span class="ms">971ms</span></div></div>
+      </td>
+      <td><span class="badge pass">PASSED</span></td>
+      <td>17/17</td>
+      <td>—</td>
+      <td>20.3s</td>
+    </tr></tbody>
+</table>
+</body>
+</html>

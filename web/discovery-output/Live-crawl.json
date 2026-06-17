@@ -1,0 +1,61 @@
+[
+  {
+    "url": "https://omre.ai/app/live",
+    "path": "/app/live",
+    "depth": 0,
+    "heading": "Live",
+    "links": [
+      {
+        "text": "",
+        "href": "/app/home"
+      },
+      {
+        "text": "",
+        "href": "/help"
+      },
+      {
+        "text": "",
+        "href": "/app/explore"
+      },
+      {
+        "text": "",
+        "href": "/app/messages"
+      },
+      {
+        "text": "",
+        "href": "/app/notifications"
+      },
+      {
+        "text": "Schedule",
+        "href": "/app/live/schedule"
+      },
+      {
+        "text": "Go Live",
+        "href": "/app/live/create"
+      }
+    ],
+    "buttons": [
+      "SOCIAL",
+      "NEWS",
+      "VIDEO",
+      "CHAT",
+      "BIZ",
+      "LINK",
+      "LEARN",
+      "STUDIO",
+      "ORBIT",
+      "GAMES",
+      "MART",
+      "MEETINGS",
+      "WALLET",
+      "Toggle theme",
+      "All",
+      "Social",
+      "Learning",
+      "Gaming",
+      "Business",
+      "Events"
+    ],
+    "inputs": []
+  }
+]

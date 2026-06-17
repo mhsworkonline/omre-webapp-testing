@@ -17,14 +17,20 @@ function stepName(cmd) {
   if (!cmd) return 'Unknown';
   const c = cmd;
 
+  // Prefer an explicit label (set via `label:` in the flow YAML) over the auto-derived description
+  const firstKey = Object.keys(c)[0];
+  if (firstKey && c[firstKey] && typeof c[firstKey] === 'object' && c[firstKey].label) {
+    return c[firstKey].label;
+  }
+
   if (c.assertConditionCommand) {
     const cond = c.assertConditionCommand.condition;
     if (cond?.visible)    return `Assert visible: "${cond.visible.textRegex}"`;
     if (cond?.notVisible) return `Assert not visible: "${cond.notVisible.textRegex}"`;
     return 'Assert condition';
   }
-  if (c.tapOnElementCommand) {
-    const s = c.tapOnElementCommand.selector;
+  if (c.tapOnElement || c.tapOnElementCommand) {
+    const s = (c.tapOnElement || c.tapOnElementCommand).selector;
     if (s?.textRegex) return `Tap on "${s.textRegex}"`;
     if (s?.point)     return `Tap at ${s.point}`;
     return 'Tap on element';
@@ -38,18 +44,86 @@ function stepName(cmd) {
   if (c.swipeCommand)      return `Swipe ${c.swipeCommand.direction || ''}`.trim();
   if (c.waitForAnimationToEndCommand) return 'Wait for animation';
   if (c.waitCommand)       return `Wait ${c.waitCommand.ms}ms`;
+  if (c.defineVariablesCommand) return 'Set up test variables';
+  if (c.applyConfigurationCommand) return 'Apply flow configuration';
   // Fallback: use first key minus "Command" suffix
   const key = Object.keys(c)[0] || 'unknown';
   return key.replace(/Command$/, '');
 }
 
+// ─── Parse "# SCENARIO: <name> | EXPECTED: <result>" markers from a flow's source YAML ──
+function parseScenarios(yamlPath) {
+  if (!yamlPath || !fs.existsSync(yamlPath)) return [];
+  const lines = fs.readFileSync(yamlPath, 'utf8').split(/\r?\n/);
+  const scenarios = [];
+  let current = null;
+  for (const line of lines) {
+    const m = line.match(/^\s*#\s*SCENARIO:\s*(.+?)\s*\|\s*EXPECTED:\s*(.+?)\s*$/);
+    if (m) {
+      current = { name: m[1], expected: m[2], commandCount: 0 };
+      scenarios.push(current);
+      continue;
+    }
+    if (/^-\s/.test(line)) {
+      if (!current) {
+        current = {
+          name: 'Unlabeled steps (no SCENARIO marker above them in the flow file)',
+          expected: 'N/A — add a "# SCENARIO: ... | EXPECTED: ..." comment above these steps',
+          commandCount: 0
+        };
+        scenarios.push(current);
+      }
+      current.commandCount++;
+    }
+  }
+  return scenarios;
+}
+
+// ─── Roll up real (non-framework) steps into their scenario, with pass/fail ──────
+function assignScenarios(yamlPath, steps) {
+  const scenarios = parseScenarios(yamlPath);
+  if (scenarios.length === 0) return [];
+  const real = steps.filter(s => !s.synthetic);
+  let idx = 0;
+  return scenarios.map(sc => {
+    const childSteps = real.slice(idx, idx + sc.commandCount);
+    idx += sc.commandCount;
+    const failedChild = childSteps.find(s => s.status === 'FAILED');
+    return {
+      name: sc.name,
+      expected: sc.expected,
+      status: failedChild ? 'FAILED' : 'PASSED',
+      actual: failedChild
+        ? `Failed at "${failedChild.name}"${failedChild.error ? ' — ' + failedChild.error : ''}`
+        : 'As expected — all steps passed',
+      stepCount: childSteps.length
+    };
+  });
+}
+
+function findFlowFile(name) {
+  const flowsDir = path.join(__dirname, 'flows');
+  if (!fs.existsSync(flowsDir)) return null;
+  const stack = [flowsDir];
+  while (stack.length) {
+    const dir = stack.pop();
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) stack.push(full);
+      else if (entry.name === `${name}.yaml`) return full;
+    }
+  }
+  return null;
+}
+
 // ─── Load flows from run manifest or by scanning .maestro/tests ───────────────
 function loadFlows() {
   if (RUN_INPUT && fs.existsSync(RUN_INPUT)) {
-    const manifest = JSON.parse(fs.readFileSync(RUN_INPUT, 'utf8'));
+    const manifest = JSON.parse(fs.readFileSync(RUN_INPUT, 'utf8').replace(/^﻿/, ''));
     return manifest.map(entry => {
       const steps = readCommandsJson(entry.debugDir);
-      return buildFlow(entry.name, entry.status, entry.debugDir, steps);
+      const flowFile = path.isAbsolute(entry.file) ? entry.file : path.join(__dirname, entry.file);
+      return buildFlow(entry.name, entry.status, entry.debugDir, steps, flowFile);
     });
   }
 
@@ -73,7 +147,7 @@ function loadFlows() {
       if (!flowMap.has(name)) {
         const steps = readCommandsJson(full, file);
         const hasFail = steps.some(s => s.status === 'FAILED');
-        flowMap.set(name, buildFlow(name, hasFail ? 'FAILED' : 'PASSED', full, steps));
+        flowMap.set(name, buildFlow(name, hasFail ? 'FAILED' : 'PASSED', full, steps, findFlowFile(name)));
       }
     }
   }
@@ -91,19 +165,22 @@ function readCommandsJson(dir, filename) {
         name: stepName(entry.command),
         status: entry.metadata?.status || 'UNKNOWN',
         duration: entry.metadata?.duration || 0,
-        seq: entry.metadata?.sequenceNumber ?? 0
+        seq: entry.metadata?.sequenceNumber ?? 0,
+        error: entry.metadata?.error?.message || null,
+        synthetic: !!(entry.command?.defineVariablesCommand || entry.command?.applyConfigurationCommand)
       }))
       .sort((a, b) => a.seq - b.seq);
   } catch { return []; }
 }
 
-function buildFlow(name, status, debugDir, steps) {
+function buildFlow(name, status, debugDir, steps, flowFile) {
   const screenshot = debugDir ? findScreenshot(debugDir) : null;
   return {
     name,
     status,
     debugDir,
     steps,
+    scenarios: assignScenarios(flowFile, steps),
     failedStep: steps.find(s => s.status === 'FAILED')?.name || null,
     stepsPassed: steps.filter(s => s.status === 'COMPLETED').length,
     stepsFailed: steps.filter(s => s.status === 'FAILED').length,
@@ -133,6 +210,7 @@ function writeJson(flows, outDir, ts) {
       stepsFailed: f.stepsFailed,
       failedStep: f.failedStep,
       durationMs: f.durationMs,
+      scenarios: f.scenarios,
       steps: f.steps
     }))
   };
@@ -206,10 +284,24 @@ function writeHtml(flows, outDir, ts) {
       return `<div class="step ${cls}">${icon} ${esc(s.name)} <span class="ms">${s.duration}ms</span></div>`;
     }).join('');
 
+    const scenarioTable = (f.scenarios && f.scenarios.length) ? `
+      <table class="scenario-table">
+        <thead><tr><th>Scenario</th><th>Expected Result</th><th>Actual Result</th><th>Status</th></tr></thead>
+        <tbody>${f.scenarios.map(sc => `
+          <tr>
+            <td>${esc(sc.name)}</td>
+            <td>${esc(sc.expected)}</td>
+            <td>${esc(sc.actual)}</td>
+            <td><span class="badge ${sc.status === 'PASSED' ? 'pass' : 'fail'}">${sc.status}</span></td>
+          </tr>`).join('')}
+        </tbody>
+      </table>` : '';
+
     return `
     <tr>
       <td><strong>${esc(f.name)}</strong>
-        <div class="steps-wrap">${detail}</div>
+        ${scenarioTable}
+        <details><summary>Technical step detail</summary><div class="steps-wrap">${detail}</div></details>
       </td>
       <td>${badge}</td>
       <td>${f.stepsPassed}/${f.steps.length}</td>
@@ -247,6 +339,10 @@ function writeHtml(flows, outDir, ts) {
   .step{font-size:11px;padding:2px 0;color:#555}
   .step-ok{color:#16a34a}.step-fail{color:#dc2626;font-weight:600}.step-skip{color:#9ca3af}
   .ms{font-size:10px;color:#9ca3af;margin-left:6px}
+  .scenario-table{width:100%;margin:8px 0;border-collapse:collapse;box-shadow:none}
+  .scenario-table th{background:#374151;font-size:11px;padding:6px 10px}
+  .scenario-table td{font-size:12px;padding:6px 10px;border-bottom:1px solid #f0f0f0}
+  details summary{cursor:pointer;font-size:11px;color:#666;margin-top:8px}
 </style>
 </head>
 <body>
@@ -335,7 +431,28 @@ async function writeExcel(flows, outDir, ts) {
     row.height = 18;
   }
 
-  // ── Sheet 2: Step Detail ───────────────────────────────────────────────────
+  // ── Sheet 2: Scenarios (non-technical view) ───────────────────────────────
+  const wsS = wb.addWorksheet('Scenarios');
+  wsS.views = [{ state: 'frozen', ySplit: 1 }];
+
+  const hdrsS = ['Flow', 'Scenario', 'Expected Result', 'Actual Result', 'Status'];
+  const wdsS  = [22, 40, 50, 50, 12];
+  const hRowS = wsS.addRow(hdrsS);
+  hRowS.eachCell(c => { c.fill = HDR_FILL; c.font = HDR_FONT; c.alignment = { horizontal: 'center' }; });
+  hRowS.height = 22;
+  wdsS.forEach((w, i) => { wsS.getColumn(i + 1).width = w; });
+
+  for (const f of flows) {
+    for (const sc of (f.scenarios || [])) {
+      const row = wsS.addRow([f.name, sc.name, sc.expected, sc.actual, sc.status]);
+      row.getCell(5).fill = sc.status === 'PASSED' ? PASS_FILL : FAIL_FILL;
+      row.getCell(5).font = { bold: true, color: { argb: sc.status === 'PASSED' ? 'FF166534' : 'FF991B1B' } };
+      row.getCell(5).alignment = { horizontal: 'center' };
+      row.eachCell(c => { c.alignment = { ...(c.alignment || {}), wrapText: true, vertical: 'top' }; });
+    }
+  }
+
+  // ── Sheet 3: Step Detail (technical view) ─────────────────────────────────
   const ws2 = wb.addWorksheet('Step Detail');
   ws2.views = [{ state: 'frozen', ySplit: 1 }];
 

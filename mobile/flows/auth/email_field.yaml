@@ -1,35 +1,69 @@
 appId: com.omre.app.posh
 ---
+# SCENARIO: App opens with an empty, editable email field | EXPECTED: App launches to the login screen and the email field can be cleared
 - launchApp:
     clearState: false
+    label: "Open the OMRE app"
+- tapOn:
+    text: "name@example.com"
+    label: "Tap the email field"
+- eraseText:
+    charactersToErase: 200
+    label: "Clear the email field"
 
-# Clear any pre-existing content
-- tapOn: "name@example.com"
-- eraseText: 200
+# SCENARIO: Valid email is typed into the field | EXPECTED: The typed email address appears exactly as entered
+- inputText:
+    text: "testuser@example.com"
+    label: "Type a valid email address"
+- assertVisible:
+    text: "testuser@example.com"
+    label: "Confirm the typed email is shown"
 
-# Valid email accepted and displayed
-- inputText: "testuser@example.com"
-- assertVisible: "testuser@example.com"
+# SCENARIO: Clearing the field restores the placeholder | EXPECTED: Placeholder text reappears and the previously typed email is no longer shown
+- eraseText:
+    charactersToErase: 200
+    label: "Clear the email field again"
+- assertVisible:
+    text: "name@example.com"
+    label: "Confirm the placeholder text reappears"
+- assertNotVisible:
+    text: "testuser@example.com"
+    label: "Confirm the old email is gone"
 
-# Clearing restores placeholder
-- eraseText: 200
-- assertVisible: "name@example.com"
-- assertNotVisible: "testuser@example.com"
+# SCENARIO: Email with special characters (+tag, subdomain) is accepted | EXPECTED: The special-character email address is accepted and displayed
+- inputText:
+    text: "user.name+tag@sub.domain.co"
+    label: "Type an email with a plus-tag and subdomain"
+- assertVisible:
+    text: "user.name+tag@sub.domain.co"
+    label: "Confirm the special-character email is shown"
+- eraseText:
+    charactersToErase: 200
+    label: "Clear the email field"
 
-# Email with special valid characters accepted
-- inputText: "user.name+tag@sub.domain.co"
-- assertVisible: "user.name+tag@sub.domain.co"
-- eraseText: 200
+# SCENARIO: Very long email address is accepted | EXPECTED: A long but valid email is accepted and displayed without truncation or error
+- inputText:
+    text: "verylongemailaddressthatisvalid@somelongdomainname.com"
+    label: "Type a very long but valid email address"
+- assertVisible:
+    text: "verylongemailaddressthatisvalid@somelongdomainname.com"
+    label: "Confirm the long email is shown"
+- eraseText:
+    charactersToErase: 200
+    label: "Clear the email field"
 
-# Long email accepted
-- inputText: "verylongemailaddressthatisvalid@somelongdomainname.com"
-- assertVisible: "verylongemailaddressthatisvalid@somelongdomainname.com"
-- eraseText: 200
+# SCENARIO: Field stays editable after repeated use | EXPECTED: The field accepts a new email after multiple prior edits
+- inputText:
+    text: "final@example.com"
+    label: "Type one more email to confirm the field still accepts input"
+- assertVisible:
+    text: "final@example.com"
+    label: "Confirm the final email is shown"
+- eraseText:
+    charactersToErase: 200
+    label: "Clear the email field"
 
-# Field remains editable after multiple inputs
-- inputText: "final@example.com"
-- assertVisible: "final@example.com"
-- eraseText: 200
-
-# Placeholder restored at end
-- assertVisible: "name@example.com"
+# SCENARIO: Field returns to its empty state at the end | EXPECTED: Placeholder text is shown again after the final clear
+- assertVisible:
+    text: "name@example.com"
+    label: "Confirm the placeholder text is restored at the end"

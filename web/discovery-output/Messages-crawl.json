@@ -1,0 +1,682 @@
+[
+  {
+    "url": "https://omre.ai/app/messages",
+    "path": "/app/messages",
+    "depth": 0,
+    "heading": "Messages",
+    "links": [
+      {
+        "text": "",
+        "href": "/app/home"
+      },
+      {
+        "text": "",
+        "href": "/help"
+      },
+      {
+        "text": "",
+        "href": "/app/explore"
+      },
+      {
+        "text": "",
+        "href": "/app/messages"
+      },
+      {
+        "text": "",
+        "href": "/app/notifications"
+      },
+      {
+        "text": "Chats",
+        "href": "/app/messages"
+      },
+      {
+        "text": "Channels",
+        "href": "/app/messages/channels"
+      },
+      {
+        "text": "Communities",
+        "href": "/app/messages/communities"
+      },
+      {
+        "text": "Groups",
+        "href": "/app/messages/groups"
+      },
+      {
+        "text": "",
+        "href": "/app/messages/ai"
+      },
+      {
+        "text": "Media",
+        "href": "/app/messages/media"
+      }
+    ],
+    "buttons": [
+      "SOCIAL",
+      "NEWS",
+      "VIDEO",
+      "CHAT",
+      "BIZ",
+      "LINK",
+      "LEARN",
+      "STUDIO",
+      "ORBIT",
+      "GAMES",
+      "MART",
+      "MEETINGS",
+      "WALLET",
+      "Toggle theme",
+      "Chats",
+      "Message requests"
+    ],
+    "inputs": [
+      {
+        "type": "text",
+        "name": "omre-conversation-search",
+        "placeholder": "Search messages and people you follow"
+      }
+    ]
+  },
+  {
+    "url": "https://omre.ai/app/messages/channels",
+    "path": "/app/messages/channels",
+    "depth": 1,
+    "heading": "Channels",
+    "links": [
+      {
+        "text": "",
+        "href": "/app/home"
+      },
+      {
+        "text": "",
+        "href": "/help"
+      },
+      {
+        "text": "",
+        "href": "/app/explore"
+      },
+      {
+        "text": "",
+        "href": "/app/messages"
+      },
+      {
+        "text": "",
+        "href": "/app/notifications"
+      },
+      {
+        "text": "Chats",
+        "href": "/app/messages"
+      },
+      {
+        "text": "Channels",
+        "href": "/app/messages/channels"
+      },
+      {
+        "text": "Communities",
+        "href": "/app/messages/communities"
+      },
+      {
+        "text": "Groups",
+        "href": "/app/messages/groups"
+      },
+      {
+        "text": "",
+        "href": "/app/messages/ai"
+      },
+      {
+        "text": "Media",
+        "href": "/app/messages/media"
+      },
+      {
+        "text": "Browse all channels",
+        "href": "/app/messages/channels/explore"
+      },
+      {
+        "text": "Browse all channels",
+        "href": "/app/messages/channels/explore"
+      }
+    ],
+    "buttons": [
+      "SOCIAL",
+      "NEWS",
+      "VIDEO",
+      "CHAT",
+      "BIZ",
+      "LINK",
+      "LEARN",
+      "STUDIO",
+      "ORBIT",
+      "GAMES",
+      "MART",
+      "MEETINGS",
+      "WALLET",
+      "Toggle theme",
+      "Create channel"
+    ],
+    "inputs": []
+  },
+  {
+    "url": "https://omre.ai/app/messages/communities",
+    "path": "/app/messages/communities",
+    "depth": 1,
+    "heading": "Communities",
+    "links": [
+      {
+        "text": "",
+        "href": "/app/home"
+      },
+      {
+        "text": "",
+        "href": "/help"
+      },
+      {
+        "text": "",
+        "href": "/app/explore"
+      },
+      {
+        "text": "",
+        "href": "/app/messages"
+      },
+      {
+        "text": "",
+        "href": "/app/notifications"
+      },
+      {
+        "text": "Chats",
+        "href": "/app/messages"
+      },
+      {
+        "text": "Channels",
+        "href": "/app/messages/channels"
+      },
+      {
+        "text": "Communities",
+        "href": "/app/messages/communities"
+      },
+      {
+        "text": "Groups",
+        "href": "/app/messages/groups"
+      },
+      {
+        "text": "",
+        "href": "/app/messages/ai"
+      },
+      {
+        "text": "Media",
+        "href": "/app/messages/media"
+      },
+      {
+        "text": "Browse Orbit",
+        "href": "/app/orbit/communities"
+      },
+      {
+        "text": "Explore communities",
+        "href": "/app/orbit/communities"
+      }
+    ],
+    "buttons": [
+      "SOCIAL",
+      "NEWS",
+      "VIDEO",
+      "CHAT",
+      "BIZ",
+      "LINK",
+      "LEARN",
+      "STUDIO",
+      "ORBIT",
+      "GAMES",
+      "MART",
+      "MEETINGS",
+      "WALLET",
+      "Toggle theme",
+      "Create Community",
+      "Browse Orbit"
+    ],
+    "inputs": []
+  },
+  {
+    "url": "https://omre.ai/app/messages/groups",
+    "path": "/app/messages/groups",
+    "depth": 1,
+    "heading": "Groups",
+    "links": [
+      {
+        "text": "",
+        "href": "/app/home"
+      },
+      {
+        "text": "",
+        "href": "/help"
+      },
+      {
+        "text": "",
+        "href": "/app/explore"
+      },
+      {
+        "text": "",
+        "href": "/app/messages"
+      },
+      {
+        "text": "",
+        "href": "/app/notifications"
+      },
+      {
+        "text": "Chats",
+        "href": "/app/messages"
+      },
+      {
+        "text": "Channels",
+        "href": "/app/messages/channels"
+      },
+      {
+        "text": "Communities",
+        "href": "/app/messages/communities"
+      },
+      {
+        "text": "Groups",
+        "href": "/app/messages/groups"
+      },
+      {
+        "text": "",
+        "href": "/app/messages/ai"
+      },
+      {
+        "text": "Media",
+        "href": "/app/messages/media"
+      }
+    ],
+    "buttons": [
+      "SOCIAL",
+      "NEWS",
+      "VIDEO",
+      "CHAT",
+      "BIZ",
+      "LINK",
+      "LEARN",
+      "STUDIO",
+      "ORBIT",
+      "GAMES",
+      "MART",
+      "MEETINGS",
+      "WALLET",
+      "Toggle theme",
+      "Create Group"
+    ],
+    "inputs": []
+  },
+  {
+    "url": "https://omre.ai/app/messages/ai",
+    "path": "/app/messages/ai",
+    "depth": 1,
+    "heading": "OMRE AI",
+    "links": [
+      {
+        "text": "",
+        "href": "/app/home"
+      },
+      {
+        "text": "",
+        "href": "/help"
+      },
+      {
+        "text": "",
+        "href": "/app/explore"
+      },
+      {
+        "text": "",
+        "href": "/app/messages"
+      },
+      {
+        "text": "",
+        "href": "/app/notifications"
+      },
+      {
+        "text": "Chats",
+        "href": "/app/messages"
+      },
+      {
+        "text": "Channels",
+        "href": "/app/messages/channels"
+      },
+      {
+        "text": "Communities",
+        "href": "/app/messages/communities"
+      },
+      {
+        "text": "Groups",
+        "href": "/app/messages/groups"
+      },
+      {
+        "text": "",
+        "href": "/app/messages/ai"
+      },
+      {
+        "text": "Media",
+        "href": "/app/messages/media"
+      }
+    ],
+    "buttons": [
+      "SOCIAL",
+      "NEWS",
+      "VIDEO",
+      "CHAT",
+      "BIZ",
+      "LINK",
+      "LEARN",
+      "STUDIO",
+      "ORBIT",
+      "GAMES",
+      "MART",
+      "MEETINGS",
+      "WALLET",
+      "Toggle theme"
+    ],
+    "inputs": [
+      {
+        "type": "text",
+        "name": null,
+        "placeholder": "Ask anything..."
+      }
+    ]
+  },
+  {
+    "url": "https://omre.ai/app/messages/media",
+    "path": "/app/messages/media",
+    "depth": 1,
+    "heading": "Media",
+    "links": [
+      {
+        "text": "",
+        "href": "/app/home"
+      },
+      {
+        "text": "",
+        "href": "/help"
+      },
+      {
+        "text": "",
+        "href": "/app/explore"
+      },
+      {
+        "text": "",
+        "href": "/app/messages"
+      },
+      {
+        "text": "",
+        "href": "/app/notifications"
+      },
+      {
+        "text": "Chats",
+        "href": "/app/messages"
+      },
+      {
+        "text": "Channels",
+        "href": "/app/messages/channels"
+      },
+      {
+        "text": "Communities",
+        "href": "/app/messages/communities"
+      },
+      {
+        "text": "Groups",
+        "href": "/app/messages/groups"
+      },
+      {
+        "text": "",
+        "href": "/app/messages/ai"
+      },
+      {
+        "text": "Media",
+        "href": "/app/messages/media"
+      }
+    ],
+    "buttons": [
+      "SOCIAL",
+      "NEWS",
+      "VIDEO",
+      "CHAT",
+      "BIZ",
+      "LINK",
+      "LEARN",
+      "STUDIO",
+      "ORBIT",
+      "GAMES",
+      "MART",
+      "MEETINGS",
+      "WALLET",
+      "Toggle theme"
+    ],
+    "inputs": []
+  },
+  {
+    "url": "https://omre.ai/app/messages/channels/explore",
+    "path": "/app/messages/channels/explore",
+    "depth": 2,
+    "heading": "Channels",
+    "links": [
+      {
+        "text": "",
+        "href": "/app/home"
+      },
+      {
+        "text": "",
+        "href": "/help"
+      },
+      {
+        "text": "",
+        "href": "/app/explore"
+      },
+      {
+        "text": "",
+        "href": "/app/messages"
+      },
+      {
+        "text": "",
+        "href": "/app/notifications"
+      },
+      {
+        "text": "Chats",
+        "href": "/app/messages"
+      },
+      {
+        "text": "Channels",
+        "href": "/app/messages/channels"
+      },
+      {
+        "text": "Communities",
+        "href": "/app/messages/communities"
+      },
+      {
+        "text": "Groups",
+        "href": "/app/messages/groups"
+      },
+      {
+        "text": "",
+        "href": "/app/messages/ai"
+      },
+      {
+        "text": "Media",
+        "href": "/app/messages/media"
+      },
+      {
+        "text": "Browse all channels",
+        "href": "/app/messages/channels/explore"
+      },
+      {
+        "text": "Tatya Vinchu 5 followers Follow",
+        "href": "/app/messages/channels/559eb707-ee98-48a0-85d1-4d628948782a"
+      },
+      {
+        "text": "ashish chaneel 2 3 followers Follow",
+        "href": "/app/messages/channels/1472bf6e-27f6-4da9-bf90-374473b5bc60"
+      },
+      {
+        "text": "testing 3 followers Follow",
+        "href": "/app/messages/channels/7c299d6d-201f-4996-9fb7-106f0ddec399"
+      },
+      {
+        "text": "Tatya Vinchu 3 followers Follow",
+        "href": "/app/messages/channels/c210e7ad-b392-42ba-9df1-85a0f245d16b"
+      },
+      {
+        "text": "Omre by akshay 3 followers Follow",
+        "href": "/app/messages/channels/e3509c40-8628-45f9-9433-c05eada3f3f6"
+      },
+      {
+        "text": "libo 2 followers Follow",
+        "href": "/app/messages/channels/cf515578-d6ed-4140-b9cf-a5011b2562c8"
+      },
+      {
+        "text": "akshay testing 1 followers Follow",
+        "href": "/app/messages/channels/436576a2-f5c3-4d28-a4b6-8a258608cef7"
+      },
+      {
+        "text": "lolo 1 followers Follow",
+        "href": "/app/messages/channels/0b5a9d70-2677-4ea1-94c4-7253c7b35829"
+      }
+    ],
+    "buttons": [
+      "SOCIAL",
+      "NEWS",
+      "VIDEO",
+      "CHAT",
+      "BIZ",
+      "LINK",
+      "LEARN",
+      "STUDIO",
+      "ORBIT",
+      "GAMES",
+      "MART",
+      "MEETINGS",
+      "WALLET",
+      "Toggle theme",
+      "Create channel",
+      "All",
+      "News",
+      "Tech",
+      "Entertainment",
+      "Sports",
+      "Business",
+      "Education",
+      "Science",
+      "Health",
+      "Gaming",
+      "Politics",
+      "Travel",
+      "Food",
+      "Lifestyle",
+      "Fashion",
+      "Finance",
+      "Auto",
+      "Music",
+      "Movies",
+      "Books",
+      "History",
+      "Nature",
+      "Design",
+      "Photography",
+      "Crypto",
+      "AI",
+      "Startups",
+      "Coding",
+      "Fitness",
+      "Psychology",
+      "Culture",
+      "Religion",
+      "DIY",
+      "Pets",
+      "Space",
+      "Environment",
+      "Featured",
+      "🌎 Worldwide",
+      "Follow"
+    ],
+    "inputs": [
+      {
+        "type": "text",
+        "name": null,
+        "placeholder": "Search channels..."
+      }
+    ]
+  },
+  {
+    "url": "https://omre.ai/app/messages/channels/559eb707-ee98-48a0-85d1-4d628948782a",
+    "path": "/app/messages/channels/559eb707-ee98-48a0-85d1-4d628948782a",
+    "depth": 3,
+    "heading": "Channels",
+    "links": [
+      {
+        "text": "",
+        "href": "/app/home"
+      },
+      {
+        "text": "",
+        "href": "/help"
+      },
+      {
+        "text": "",
+        "href": "/app/explore"
+      },
+      {
+        "text": "",
+        "href": "/app/messages"
+      },
+      {
+        "text": "",
+        "href": "/app/notifications"
+      },
+      {
+        "text": "Chats",
+        "href": "/app/messages"
+      },
+      {
+        "text": "Channels",
+        "href": "/app/messages/channels"
+      },
+      {
+        "text": "Communities",
+        "href": "/app/messages/communities"
+      },
+      {
+        "text": "Groups",
+        "href": "/app/messages/groups"
+      },
+      {
+        "text": "",
+        "href": "/app/messages/ai"
+      },
+      {
+        "text": "Media",
+        "href": "/app/messages/media"
+      },
+      {
+        "text": "Browse all channels",
+        "href": "/app/messages/channels/explore"
+      }
+    ],
+    "buttons": [
+      "SOCIAL",
+      "NEWS",
+      "VIDEO",
+      "CHAT",
+      "BIZ",
+      "LINK",
+      "LEARN",
+      "STUDIO",
+      "ORBIT",
+      "GAMES",
+      "MART",
+      "MEETINGS",
+      "WALLET",
+      "Toggle theme",
+      "Create channel",
+      "Tatya Vinchu 5 followers·3 posts",
+      "❤️",
+      "🔥",
+      "😂",
+      "👏",
+      "😮",
+      "❤️ 1"
+    ],
+    "inputs": []
+  }
+]

@@ -11,10 +11,11 @@ End-to-end Playwright test suite for **omre.ai** — a social media / all-in-one
 - **Reports:** Timestamped HTML / JSON / JUnit in `playwright-report/` and `test-results/`
 
 ## Directory Structure
+This `web/` directory is one of two test suites in the `omre-webapp-testing` repo (sibling: `mobile/`, the Maestro Android suite). `deploy.js` (git add/commit/push for the whole repo) lives one level up, at the repo root.
 ```
-omre-webapp/
+web/
 ├── playwright.config.js       # Config: baseURL, reporters, browser projects
-├── .env                       # Credentials (OMRE_EMAIL, OMRE_PASSWORD)
+├── .env                       # Credentials (TEST_EMAIL, TEST_PASSWORD) — gitignored, create manually per machine
 ├── run-failing-tests.ps1      # Script to re-run only previously failing tests
 ├── pages/                     # Page Object Models (LoginPage, HomePage, etc.)
 ├── tests/
@@ -60,8 +61,15 @@ npx playwright test --project=chromium --workers=4
 
 ### Only previously failing tests (use --grep, not line numbers)
 ```powershell
-powershell -File "C:\claude-folder\webapp-testing\omre-webapp\run-failing-tests.ps1"
+powershell -File "C:\claude-folder\webapp-testing\omre-app\web\run-failing-tests.ps1"
 ```
+
+### Cross-platform runs (Windows + Ubuntu)
+The suite runs on both Windows and Ubuntu (2 cores / 8GB tested). On a 2-core box, cap workers to avoid memory pressure from multiple browser instances:
+```bash
+npx playwright test --project=chromium --workers=2
+```
+`.env` is gitignored — create it manually on each machine (see `.env.example`).
 
 ### Single file
 ```powershell
@@ -97,6 +105,7 @@ node rename-tests.js
 - **React hydration error #418** fires on notifications/messages pages — filtered out in error boundary tests
 - **HTTP 502 errors** from Cloudflare are transient — re-run affected tests rather than treating as test bugs
 - **Auth sessions expire** during very long runs — re-run `auth.setup.js` before a fresh full suite run
+- **`auth.setup.js` fails fast** if `TEST_EMAIL`/`TEST_PASSWORD` are unset — throws immediately instead of timing out 2 minutes later on a blank login form
 - **Platform hub pages** (`/biz`, `/learn`, `/link`) show landing pages with div-based cards, not `<li>` or `<article>` — listing tests use skip guards
 - **`body > div` is always hidden** on channel, subscriptions, messages, and AI Studio pages — always use `body > div:not([hidden])`
 - **Next.js RSC payload** injects `"children":404` into every page's `<script>` tags — use `innerText()` not `textContent()` to avoid false-positive 404 matches

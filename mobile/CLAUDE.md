@@ -106,8 +106,9 @@ Google OAuth cannot be automated. Workflow:
 - (stored in `.env` — not used in current auth strategy)
 
 ## Directory Structure
+This `mobile/` directory is one of two test suites in the `omre-webapp-testing` repo (sibling: `web/`, the Playwright web suite). `deploy.js` (git add/commit/push for the whole repo) lives one level up, at the repo root.
 ```
-omre-mobile/
+mobile/
 ├── CLAUDE.md
 ├── run-flow.ps1                  # Single flow runner
 ├── run-all.ps1                   # All flows + report generation

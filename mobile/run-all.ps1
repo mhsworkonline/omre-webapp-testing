@@ -1,3 +1,5 @@
+param([string[]]$Paths = @("flows"))
+
 $env:JAVA_HOME = "C:\Users\manis\scoop\apps\openjdk\current"
 Set-Location $PSScriptRoot
 
@@ -9,7 +11,7 @@ New-Item -ItemType Directory -Force -Path $reportsDir | Out-Null
 $timestamp = Get-Date -Format "yyyy-MM-dd_HHmmss"
 $manifestFile = "$reportsDir\run-$timestamp-manifest.json"
 
-$flows = Get-ChildItem "$PSScriptRoot\flows" -Recurse -Filter "*.yaml" | Sort-Object FullName
+$flows = $Paths | ForEach-Object { Get-ChildItem "$PSScriptRoot\$_" -Recurse -Filter "*.yaml" } | Sort-Object FullName -Unique
 if ($flows.Count -eq 0) { Write-Host "No flows found."; exit 1 }
 
 Write-Host ""

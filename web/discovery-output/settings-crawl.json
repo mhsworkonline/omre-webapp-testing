@@ -1,0 +1,1066 @@
+[
+  {
+    "url": "https://omre.ai/app/settings",
+    "path": "/app/settings",
+    "depth": 0,
+    "heading": "Settings",
+    "links": [
+      {
+        "text": "",
+        "href": "/app/home"
+      },
+      {
+        "text": "",
+        "href": "/help"
+      },
+      {
+        "text": "",
+        "href": "/app/explore"
+      },
+      {
+        "text": "",
+        "href": "/app/messages"
+      },
+      {
+        "text": "",
+        "href": "/app/notifications"
+      },
+      {
+        "text": "Account Profile, contact info, linked accounts",
+        "href": "/app/settings/account"
+      },
+      {
+        "text": "Premium Go ads-free and support creators",
+        "href": "/app/settings/premium"
+      },
+      {
+        "text": "Blocked users See and unblock users you blocked",
+        "href": "/app/settings/account#blocked-users"
+      },
+      {
+        "text": "Appearance Theme, colors, fonts",
+        "href": "/app/settings/appearance"
+      },
+      {
+        "text": "Privacy Who can see your content",
+        "href": "/app/settings/privacy"
+      },
+      {
+        "text": "Safety & Moderation Blocked accounts, filters",
+        "href": "/app/settings/safety"
+      },
+      {
+        "text": "Security 2FA, password, login alerts",
+        "href": "/app/settings/security"
+      },
+      {
+        "text": "Notifications Push, email, interactions",
+        "href": "/app/settings/notifications"
+      },
+      {
+        "text": "Content & Feed Autoplay, recommendations",
+        "href": "/app/settings/content"
+      },
+      {
+        "text": "Messaging Message privacy, calls",
+        "href": "/app/settings/messaging"
+      },
+      {
+        "text": "Focus Mode Distraction reduction",
+        "href": "/app/settings/focus"
+      },
+      {
+        "text": "Accessibility Font size, contrast, language",
+        "href": "/app/settings/accessibility"
+      },
+      {
+        "text": "Business Orders, catalog, payments",
+        "href": "/app/settings/business"
+      },
+      {
+        "text": "Creator Studio Publishing, monetization",
+        "href": "/app/settings/creator"
+      },
+      {
+        "text": "AI Studio AI features, personalization",
+        "href": "/app/settings/ai"
+      },
+      {
+        "text": "Education Courses, learning preferences",
+        "href": "/app/settings/education"
+      },
+      {
+        "text": "Help & About Support, legal, app info",
+        "href": "/app/settings/help"
+      }
+    ],
+    "buttons": [
+      "SOCIAL",
+      "NEWS",
+      "VIDEO",
+      "CHAT",
+      "BIZ",
+      "LINK",
+      "LEARN",
+      "STUDIO",
+      "ORBIT",
+      "GAMES",
+      "MART",
+      "MEETINGS",
+      "WALLET",
+      "Toggle theme"
+    ],
+    "inputs": [
+      {
+        "type": "text",
+        "name": null,
+        "placeholder": "Settings…"
+      }
+    ]
+  },
+  {
+    "url": "https://omre.ai/app/settings/account",
+    "path": "/app/settings/account",
+    "depth": 1,
+    "heading": "Settings",
+    "links": [
+      {
+        "text": "",
+        "href": "/app/home"
+      },
+      {
+        "text": "",
+        "href": "/help"
+      },
+      {
+        "text": "",
+        "href": "/app/explore"
+      },
+      {
+        "text": "",
+        "href": "/app/messages"
+      },
+      {
+        "text": "",
+        "href": "/app/notifications"
+      },
+      {
+        "text": "Back to Settings",
+        "href": "/app/settings"
+      }
+    ],
+    "buttons": [
+      "SOCIAL",
+      "NEWS",
+      "VIDEO",
+      "CHAT",
+      "BIZ",
+      "LINK",
+      "LEARN",
+      "STUDIO",
+      "ORBIT",
+      "GAMES",
+      "MART",
+      "MEETINGS",
+      "WALLET",
+      "Toggle theme",
+      "Change",
+      "Save profile",
+      "Save contact info",
+      "Try again",
+      "Delete Account"
+    ],
+    "inputs": [
+      {
+        "type": "file",
+        "name": null,
+        "placeholder": null
+      },
+      {
+        "type": "text",
+        "name": null,
+        "placeholder": null
+      },
+      {
+        "type": "text",
+        "name": null,
+        "placeholder": null
+      },
+      {
+        "type": "text",
+        "name": null,
+        "placeholder": "A short line or two about yourself…"
+      },
+      {
+        "type": "email",
+        "name": null,
+        "placeholder": null
+      },
+      {
+        "type": "tel",
+        "name": null,
+        "placeholder": "+1 (555) 000-0000"
+      }
+    ]
+  },
+  {
+    "url": "https://omre.ai/app/settings/premium",
+    "path": "/app/settings/premium",
+    "depth": 1,
+    "heading": "Settings",
+    "links": [
+      {
+        "text": "",
+        "href": "/app/home"
+      },
+      {
+        "text": "",
+        "href": "/help"
+      },
+      {
+        "text": "",
+        "href": "/app/explore"
+      },
+      {
+        "text": "",
+        "href": "/app/messages"
+      },
+      {
+        "text": "",
+        "href": "/app/notifications"
+      },
+      {
+        "text": "Back to Settings",
+        "href": "/app/settings"
+      },
+      {
+        "text": "Top Up",
+        "href": "/app/wallet"
+      }
+    ],
+    "buttons": [
+      "SOCIAL",
+      "NEWS",
+      "VIDEO",
+      "CHAT",
+      "BIZ",
+      "LINK",
+      "LEARN",
+      "STUDIO",
+      "ORBIT",
+      "GAMES",
+      "MART",
+      "MEETINGS",
+      "WALLET",
+      "Toggle theme",
+      "Top Up",
+      "Upgrade Now"
+    ],
+    "inputs": []
+  },
+  {
+    "url": "https://omre.ai/app/settings/appearance",
+    "path": "/app/settings/appearance",
+    "depth": 1,
+    "heading": "Settings",
+    "links": [
+      {
+        "text": "",
+        "href": "/app/home"
+      },
+      {
+        "text": "",
+        "href": "/help"
+      },
+      {
+        "text": "",
+        "href": "/app/explore"
+      },
+      {
+        "text": "",
+        "href": "/app/messages"
+      },
+      {
+        "text": "",
+        "href": "/app/notifications"
+      },
+      {
+        "text": "Back to Settings",
+        "href": "/app/settings"
+      }
+    ],
+    "buttons": [
+      "SOCIAL",
+      "NEWS",
+      "VIDEO",
+      "CHAT",
+      "BIZ",
+      "LINK",
+      "LEARN",
+      "STUDIO",
+      "ORBIT",
+      "GAMES",
+      "MART",
+      "MEETINGS",
+      "WALLET",
+      "Toggle theme",
+      "Blue",
+      "Purple",
+      "Pink",
+      "Green",
+      "Orange",
+      "Red",
+      "Aurora",
+      "Reset"
+    ],
+    "inputs": [
+      {
+        "type": "color",
+        "name": null,
+        "placeholder": null
+      }
+    ]
+  },
+  {
+    "url": "https://omre.ai/app/settings/privacy",
+    "path": "/app/settings/privacy",
+    "depth": 1,
+    "heading": "Settings",
+    "links": [
+      {
+        "text": "",
+        "href": "/app/home"
+      },
+      {
+        "text": "",
+        "href": "/help"
+      },
+      {
+        "text": "",
+        "href": "/app/explore"
+      },
+      {
+        "text": "",
+        "href": "/app/messages"
+      },
+      {
+        "text": "",
+        "href": "/app/notifications"
+      },
+      {
+        "text": "Back to Settings",
+        "href": "/app/settings"
+      },
+      {
+        "text": "Messaging settings",
+        "href": "/app/settings/messaging"
+      }
+    ],
+    "buttons": [
+      "SOCIAL",
+      "NEWS",
+      "VIDEO",
+      "CHAT",
+      "BIZ",
+      "LINK",
+      "LEARN",
+      "STUDIO",
+      "ORBIT",
+      "GAMES",
+      "MART",
+      "MEETINGS",
+      "WALLET",
+      "Toggle theme"
+    ],
+    "inputs": []
+  },
+  {
+    "url": "https://omre.ai/app/settings/safety",
+    "path": "/app/settings/safety",
+    "depth": 1,
+    "heading": "Settings",
+    "links": [
+      {
+        "text": "",
+        "href": "/app/home"
+      },
+      {
+        "text": "",
+        "href": "/help"
+      },
+      {
+        "text": "",
+        "href": "/app/explore"
+      },
+      {
+        "text": "",
+        "href": "/app/messages"
+      },
+      {
+        "text": "",
+        "href": "/app/notifications"
+      },
+      {
+        "text": "Back to Settings",
+        "href": "/app/settings"
+      },
+      {
+        "text": "View List",
+        "href": "/app/settings/account#blocked-users"
+      },
+      {
+        "text": "View List",
+        "href": "/app/settings/account#muted-users"
+      }
+    ],
+    "buttons": [
+      "SOCIAL",
+      "NEWS",
+      "VIDEO",
+      "CHAT",
+      "BIZ",
+      "LINK",
+      "LEARN",
+      "STUDIO",
+      "ORBIT",
+      "GAMES",
+      "MART",
+      "MEETINGS",
+      "WALLET",
+      "Toggle theme"
+    ],
+    "inputs": [
+      {
+        "type": "text",
+        "name": null,
+        "placeholder": "Add word or phrase..."
+      }
+    ]
+  },
+  {
+    "url": "https://omre.ai/app/settings/security",
+    "path": "/app/settings/security",
+    "depth": 1,
+    "heading": "Settings",
+    "links": [
+      {
+        "text": "",
+        "href": "/app/home"
+      },
+      {
+        "text": "",
+        "href": "/help"
+      },
+      {
+        "text": "",
+        "href": "/app/explore"
+      },
+      {
+        "text": "",
+        "href": "/app/messages"
+      },
+      {
+        "text": "",
+        "href": "/app/notifications"
+      },
+      {
+        "text": "Back to Settings",
+        "href": "/app/settings"
+      }
+    ],
+    "buttons": [
+      "SOCIAL",
+      "NEWS",
+      "VIDEO",
+      "CHAT",
+      "BIZ",
+      "LINK",
+      "LEARN",
+      "STUDIO",
+      "ORBIT",
+      "GAMES",
+      "MART",
+      "MEETINGS",
+      "WALLET",
+      "Toggle theme",
+      "Set up 2FA",
+      "Update Password",
+      "View Active Sessions",
+      "Add Passkey"
+    ],
+    "inputs": [
+      {
+        "type": "password",
+        "name": null,
+        "placeholder": "Enter current password"
+      },
+      {
+        "type": "password",
+        "name": null,
+        "placeholder": "Enter new password"
+      },
+      {
+        "type": "password",
+        "name": null,
+        "placeholder": "Confirm new password"
+      }
+    ]
+  },
+  {
+    "url": "https://omre.ai/app/settings/notifications",
+    "path": "/app/settings/notifications",
+    "depth": 1,
+    "heading": "Settings",
+    "links": [
+      {
+        "text": "",
+        "href": "/app/home"
+      },
+      {
+        "text": "",
+        "href": "/help"
+      },
+      {
+        "text": "",
+        "href": "/app/explore"
+      },
+      {
+        "text": "",
+        "href": "/app/messages"
+      },
+      {
+        "text": "",
+        "href": "/app/notifications"
+      },
+      {
+        "text": "Back to Settings",
+        "href": "/app/settings"
+      }
+    ],
+    "buttons": [
+      "SOCIAL",
+      "NEWS",
+      "VIDEO",
+      "CHAT",
+      "BIZ",
+      "LINK",
+      "LEARN",
+      "STUDIO",
+      "ORBIT",
+      "GAMES",
+      "MART",
+      "MEETINGS",
+      "WALLET",
+      "Toggle theme"
+    ],
+    "inputs": []
+  },
+  {
+    "url": "https://omre.ai/app/settings/content",
+    "path": "/app/settings/content",
+    "depth": 1,
+    "heading": "Settings",
+    "links": [
+      {
+        "text": "",
+        "href": "/app/home"
+      },
+      {
+        "text": "",
+        "href": "/help"
+      },
+      {
+        "text": "",
+        "href": "/app/explore"
+      },
+      {
+        "text": "",
+        "href": "/app/messages"
+      },
+      {
+        "text": "",
+        "href": "/app/notifications"
+      },
+      {
+        "text": "Back to Settings",
+        "href": "/app/settings"
+      }
+    ],
+    "buttons": [
+      "SOCIAL",
+      "NEWS",
+      "VIDEO",
+      "CHAT",
+      "BIZ",
+      "LINK",
+      "LEARN",
+      "STUDIO",
+      "ORBIT",
+      "GAMES",
+      "MART",
+      "MEETINGS",
+      "WALLET",
+      "Toggle theme",
+      "Reset now"
+    ],
+    "inputs": []
+  },
+  {
+    "url": "https://omre.ai/app/settings/messaging",
+    "path": "/app/settings/messaging",
+    "depth": 1,
+    "heading": "Settings",
+    "links": [
+      {
+        "text": "",
+        "href": "/app/home"
+      },
+      {
+        "text": "",
+        "href": "/help"
+      },
+      {
+        "text": "",
+        "href": "/app/explore"
+      },
+      {
+        "text": "",
+        "href": "/app/messages"
+      },
+      {
+        "text": "",
+        "href": "/app/notifications"
+      },
+      {
+        "text": "Back to Settings",
+        "href": "/app/settings"
+      }
+    ],
+    "buttons": [
+      "SOCIAL",
+      "NEWS",
+      "VIDEO",
+      "CHAT",
+      "BIZ",
+      "LINK",
+      "LEARN",
+      "STUDIO",
+      "ORBIT",
+      "GAMES",
+      "MART",
+      "MEETINGS",
+      "WALLET",
+      "Toggle theme",
+      "Set PIN"
+    ],
+    "inputs": []
+  },
+  {
+    "url": "https://omre.ai/app/settings/focus",
+    "path": "/app/settings/focus",
+    "depth": 1,
+    "heading": "Settings",
+    "links": [
+      {
+        "text": "",
+        "href": "/app/home"
+      },
+      {
+        "text": "",
+        "href": "/help"
+      },
+      {
+        "text": "",
+        "href": "/app/explore"
+      },
+      {
+        "text": "",
+        "href": "/app/messages"
+      },
+      {
+        "text": "",
+        "href": "/app/notifications"
+      },
+      {
+        "text": "Back to Settings",
+        "href": "/app/settings"
+      }
+    ],
+    "buttons": [
+      "SOCIAL",
+      "NEWS",
+      "VIDEO",
+      "CHAT",
+      "BIZ",
+      "LINK",
+      "LEARN",
+      "STUDIO",
+      "ORBIT",
+      "GAMES",
+      "MART",
+      "MEETINGS",
+      "WALLET",
+      "Toggle theme"
+    ],
+    "inputs": []
+  },
+  {
+    "url": "https://omre.ai/app/settings/accessibility",
+    "path": "/app/settings/accessibility",
+    "depth": 1,
+    "heading": "Settings",
+    "links": [
+      {
+        "text": "",
+        "href": "/app/home"
+      },
+      {
+        "text": "",
+        "href": "/help"
+      },
+      {
+        "text": "",
+        "href": "/app/explore"
+      },
+      {
+        "text": "",
+        "href": "/app/messages"
+      },
+      {
+        "text": "",
+        "href": "/app/notifications"
+      },
+      {
+        "text": "Back to Settings",
+        "href": "/app/settings"
+      }
+    ],
+    "buttons": [
+      "SOCIAL",
+      "NEWS",
+      "VIDEO",
+      "CHAT",
+      "BIZ",
+      "LINK",
+      "LEARN",
+      "STUDIO",
+      "ORBIT",
+      "GAMES",
+      "MART",
+      "MEETINGS",
+      "WALLET",
+      "Toggle theme"
+    ],
+    "inputs": []
+  },
+  {
+    "url": "https://omre.ai/app/settings/business",
+    "path": "/app/settings/business",
+    "depth": 1,
+    "heading": "Settings",
+    "links": [
+      {
+        "text": "",
+        "href": "/app/home"
+      },
+      {
+        "text": "",
+        "href": "/help"
+      },
+      {
+        "text": "",
+        "href": "/app/explore"
+      },
+      {
+        "text": "",
+        "href": "/app/messages"
+      },
+      {
+        "text": "",
+        "href": "/app/notifications"
+      },
+      {
+        "text": "Back to Settings",
+        "href": "/app/settings"
+      },
+      {
+        "text": "Go to Business Dashboard",
+        "href": "/biz"
+      },
+      {
+        "text": "Manage Payout Methods",
+        "href": "/biz"
+      },
+      {
+        "text": "View Transaction History",
+        "href": "/biz/orders"
+      }
+    ],
+    "buttons": [
+      "SOCIAL",
+      "NEWS",
+      "VIDEO",
+      "CHAT",
+      "BIZ",
+      "LINK",
+      "LEARN",
+      "STUDIO",
+      "ORBIT",
+      "GAMES",
+      "MART",
+      "MEETINGS",
+      "WALLET",
+      "Toggle theme",
+      "Go to Business Dashboard"
+    ],
+    "inputs": []
+  },
+  {
+    "url": "https://omre.ai/app/settings/creator",
+    "path": "/app/settings/creator",
+    "depth": 1,
+    "heading": "Settings",
+    "links": [
+      {
+        "text": "",
+        "href": "/app/home"
+      },
+      {
+        "text": "",
+        "href": "/help"
+      },
+      {
+        "text": "",
+        "href": "/app/explore"
+      },
+      {
+        "text": "",
+        "href": "/app/messages"
+      },
+      {
+        "text": "",
+        "href": "/app/notifications"
+      },
+      {
+        "text": "Back to Settings",
+        "href": "/app/settings"
+      },
+      {
+        "text": "Go to Studio",
+        "href": "/studio/overview"
+      },
+      {
+        "text": "Manage Monetization",
+        "href": "/studio/settings"
+      },
+      {
+        "text": "View Earnings",
+        "href": "/studio/analytics"
+      }
+    ],
+    "buttons": [
+      "SOCIAL",
+      "NEWS",
+      "VIDEO",
+      "CHAT",
+      "BIZ",
+      "LINK",
+      "LEARN",
+      "STUDIO",
+      "ORBIT",
+      "GAMES",
+      "MART",
+      "MEETINGS",
+      "WALLET",
+      "Toggle theme",
+      "Go to Studio"
+    ],
+    "inputs": []
+  },
+  {
+    "url": "https://omre.ai/app/settings/ai",
+    "path": "/app/settings/ai",
+    "depth": 1,
+    "heading": "Settings",
+    "links": [
+      {
+        "text": "",
+        "href": "/app/home"
+      },
+      {
+        "text": "",
+        "href": "/help"
+      },
+      {
+        "text": "",
+        "href": "/app/explore"
+      },
+      {
+        "text": "",
+        "href": "/app/messages"
+      },
+      {
+        "text": "",
+        "href": "/app/notifications"
+      },
+      {
+        "text": "Back to Settings",
+        "href": "/app/settings"
+      }
+    ],
+    "buttons": [
+      "SOCIAL",
+      "NEWS",
+      "VIDEO",
+      "CHAT",
+      "BIZ",
+      "LINK",
+      "LEARN",
+      "STUDIO",
+      "ORBIT",
+      "GAMES",
+      "MART",
+      "MEETINGS",
+      "WALLET",
+      "Toggle theme"
+    ],
+    "inputs": []
+  },
+  {
+    "url": "https://omre.ai/app/settings/education",
+    "path": "/app/settings/education",
+    "depth": 1,
+    "heading": "Settings",
+    "links": [
+      {
+        "text": "",
+        "href": "/app/home"
+      },
+      {
+        "text": "",
+        "href": "/help"
+      },
+      {
+        "text": "",
+        "href": "/app/explore"
+      },
+      {
+        "text": "",
+        "href": "/app/messages"
+      },
+      {
+        "text": "",
+        "href": "/app/notifications"
+      },
+      {
+        "text": "Back to Settings",
+        "href": "/app/settings"
+      },
+      {
+        "text": "Go to Learn",
+        "href": "/learn/home"
+      },
+      {
+        "text": "Go to Teaching Dashboard",
+        "href": "/learn/teach/dashboard"
+      }
+    ],
+    "buttons": [
+      "SOCIAL",
+      "NEWS",
+      "VIDEO",
+      "CHAT",
+      "BIZ",
+      "LINK",
+      "LEARN",
+      "STUDIO",
+      "ORBIT",
+      "GAMES",
+      "MART",
+      "MEETINGS",
+      "WALLET",
+      "Toggle theme",
+      "Go to Learn",
+      "Go to Teaching Dashboard"
+    ],
+    "inputs": []
+  },
+  {
+    "url": "https://omre.ai/app/settings/help",
+    "path": "/app/settings/help",
+    "depth": 1,
+    "heading": "Settings",
+    "links": [
+      {
+        "text": "",
+        "href": "/app/home"
+      },
+      {
+        "text": "",
+        "href": "/help"
+      },
+      {
+        "text": "",
+        "href": "/app/explore"
+      },
+      {
+        "text": "",
+        "href": "/app/messages"
+      },
+      {
+        "text": "",
+        "href": "/app/notifications"
+      },
+      {
+        "text": "Back to Settings",
+        "href": "/app/settings"
+      },
+      {
+        "text": "Help Center Browse articles and guides",
+        "href": "/app/help"
+      },
+      {
+        "text": "Contact Support Get help from our team",
+        "href": "mailto:support@omre.com"
+      },
+      {
+        "text": "Report a Problem Report bugs or safety issues",
+        "href": "/app/help?report=1"
+      },
+      {
+        "text": "Terms of Service",
+        "href": "/app/legal/terms"
+      },
+      {
+        "text": "Privacy Policy",
+        "href": "/app/legal/privacy"
+      },
+      {
+        "text": "Community Guidelines",
+        "href": "/app/legal/terms"
+      },
+      {
+        "text": "Transparency Center",
+        "href": "/app/legal/terms"
+      }
+    ],
+    "buttons": [
+      "SOCIAL",
+      "NEWS",
+      "VIDEO",
+      "CHAT",
+      "BIZ",
+      "LINK",
+      "LEARN",
+      "STUDIO",
+      "ORBIT",
+      "GAMES",
+      "MART",
+      "MEETINGS",
+      "WALLET",
+      "Toggle theme",
+      "Log Out"
+    ],
+    "inputs": []
+  }
+]
