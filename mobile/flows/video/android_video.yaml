@@ -1,44 +1,45 @@
-appId: com.omre.app.posh
+﻿appId: com.omre.app.posh
 ---
-# Video Module — android_video.yaml
-# 35+ test cases: navigation, browse videos, play, like,
-# comment, share, upload, back nav
+# Video Module - android_video.yaml
+# 38 test cases: navigation, browse videos, play, like,
+# comment, share, tabs, back nav
+# Note: Back from video player goes to Home - re-nav after each
 
-# TC01 — Launch app
+# TC01 - Launch app
 - stopApp
 - launchApp:
     clearState: false
 - waitForAnimationToEnd
 
-# TC02 — Open module switcher
+# TC02 - Open module switcher
 - tapOn: "View all"
 - waitForAnimationToEnd
 
-# TC03 — Navigate to Video
+# TC03 - Navigate to Video
 - tapOn: "Video"
 - waitForAnimationToEnd
 - waitForAnimationToEnd
 
-# TC04 — Video screen heading visible
+# TC04 - Video screen heading visible
 - assertVisible: "Video"
 
-# TC05 — Scroll down through video feed
+# TC05 - Scroll down through video feed
 - swipe:
     direction: UP
 - waitForAnimationToEnd
 
-# TC06 — Still on Video after scroll
+# TC06 - Video heading persists during scroll
 - assertVisible: "Video"
 
-# TC07 — Second scroll
+# TC07 - Second scroll
 - swipe:
     direction: UP
 - waitForAnimationToEnd
 
-# TC08 — Still on Video
+# TC08 - Video still visible
 - assertVisible: "Video"
 
-# TC09 — Scroll back to top
+# TC09 - Scroll back to top
 - swipe:
     direction: DOWN
 - waitForAnimationToEnd
@@ -46,136 +47,210 @@ appId: com.omre.app.posh
     direction: DOWN
 - waitForAnimationToEnd
 
-# TC10 — Video heading at top
+# TC10 - Video heading at top
 - assertVisible: "Video"
 
-# TC11 — Tap first video to play
+# TC11 - Tap first video to play (y=40% avoids tab row)
 - tapOn:
-    point: "50%,30%"
+    point: "50%,40%"
 - waitForAnimationToEnd
 - waitForAnimationToEnd
 
-# TC12 — Back from video player
+# TC12 - Back from video player (goes to Home)
 - pressKey: Back
 - waitForAnimationToEnd
 
-# TC13 — Back on Video feed
+# TC13 - Re-navigate to Video
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- tapOn: "View all"
+- waitForAnimationToEnd
+- tapOn: "Video"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
 - assertVisible: "Video"
 
-# TC14 — Tap second video
+# TC14 - Tap second video
 - tapOn:
     point: "50%,55%"
 - waitForAnimationToEnd
 - waitForAnimationToEnd
 
-# TC15 — Back from video player
+# TC15 - Back from video player
 - pressKey: Back
 - waitForAnimationToEnd
 
-# TC16 — Back on Video
+# TC16 - Re-navigate to Video
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- tapOn: "View all"
+- waitForAnimationToEnd
+- tapOn: "Video"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
 - assertVisible: "Video"
 
-# TC17 — Like first video (~88%,30%)
+# TC17 - Tap third video
 - tapOn:
-    point: "88%,30%"
+    point: "50%,70%"
+- waitForAnimationToEnd
 - waitForAnimationToEnd
 
-# TC18 — Video still visible after like
+# TC18 - Back from video player
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC19 - Re-navigate to Video
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- tapOn: "View all"
+- waitForAnimationToEnd
+- tapOn: "Video"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
 - assertVisible: "Video"
 
-# TC19 — Unlike (toggle)
+# TC20 - Like first video (~12%,40%)
 - tapOn:
-    point: "88%,30%"
+    point: "12%,40%"
 - waitForAnimationToEnd
 
-# TC20 — Comment on first video (~88%,40%)
+# TC21 - Unlike (toggle)
+- tapOn:
+    point: "12%,40%"
+- waitForAnimationToEnd
+- assertVisible: "Video"
+
+# TC22 - Comment on first video (~88%,40%)
 - tapOn:
     point: "88%,40%"
 - waitForAnimationToEnd
-
-# TC21 — Back from comments
 - pressKey: Back
 - waitForAnimationToEnd
 
-# TC22 — Back on Video
+# TC23 - Re-nav after comment (goes home)
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- tapOn: "View all"
+- waitForAnimationToEnd
+- tapOn: "Video"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
 - assertVisible: "Video"
 
-# TC23 — Share first video (~88%,50%)
+# TC24 - Share first video (~88%,50%)
 - tapOn:
     point: "88%,50%"
 - waitForAnimationToEnd
 - pressKey: Back
 - waitForAnimationToEnd
 
-# TC24 — Back on Video after share
+# TC25 - Re-nav after share
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- tapOn: "View all"
+- waitForAnimationToEnd
+- tapOn: "Video"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
 - assertVisible: "Video"
 
-# TC25 — Tap search/filter icon (top-right)
+# TC26 - Tap search/filter icon (top-right ~88%,9%)
 - tapOn:
     point: "88%,9%"
 - waitForAnimationToEnd
 - pressKey: Back
 - waitForAnimationToEnd
-
-# TC26 — Back on Video
 - assertVisible: "Video"
 
-# TC27 — Tap upload/create video button if present (~75%,9%)
+# TC27 - Tap upload icon (~75%,9%)
 - tapOn:
     point: "75%,9%"
 - waitForAnimationToEnd
 - pressKey: Back
 - waitForAnimationToEnd
-
-# TC28 — Back on Video
 - assertVisible: "Video"
 
-# TC29 — Tap category tab (second tab ~30%,18%)
+# TC27 - Tap second category tab (~30%,18%)
 - tapOn:
     point: "30%,18%"
 - waitForAnimationToEnd
-
-# TC30 — Video still accessible in filtered view
 - assertVisible: "Video"
 
-# TC31 — Scroll in filtered view
+# TC28 - Scroll in filtered view
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- assertVisible: "Video"
+
+# TC29 - Tap third category tab (~60%,18%)
+- tapOn:
+    point: "60%,18%"
+- waitForAnimationToEnd
+- assertVisible: "Video"
+
+# TC30 - Scroll third tab
 - swipe:
     direction: UP
 - waitForAnimationToEnd
 
-# TC32 — Video still visible
-- assertVisible: "Video"
-
-# TC33 — Scroll back to top
-- swipe:
-    direction: DOWN
-- waitForAnimationToEnd
-
-# TC34 — Tap first tab to reset
+# TC31 - Tap first tab to reset (~10%,18%)
 - tapOn:
     point: "10%,18%"
 - waitForAnimationToEnd
-
-# TC35 — Scroll to bottom of full feed
-- swipe:
-    direction: UP
-- waitForAnimationToEnd
-- swipe:
-    direction: UP
-- waitForAnimationToEnd
-
-# TC36 — Video intact at bottom
 - assertVisible: "Video"
 
-# TC37 — Scroll back up
+# TC32 - Scroll to bottom of feed
 - swipe:
-    direction: DOWN
+    direction: UP
 - waitForAnimationToEnd
 - swipe:
-    direction: DOWN
+    direction: UP
 - waitForAnimationToEnd
 
-# TC38 — Back to home
+# TC33 - Scroll back to top
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "Video"
+
+# TC34 - Tap options on first video (~92%,40%)
+- tapOn:
+    point: "92%,40%"
+- waitForAnimationToEnd
 - pressKey: Back
 - waitForAnimationToEnd
-- assertVisible: "Explore OMRE Modules"
+- assertVisible: "Video"
+
+# TC35 - Tap save/bookmark icon (~65%,40%)
+- tapOn:
+    point: "65%,40%"
+- waitForAnimationToEnd
+- assertVisible: "Video"
+
+# TC36 - Swipe left on video card
+- swipe:
+    direction: LEFT
+- waitForAnimationToEnd
+- swipe:
+    direction: RIGHT
+- waitForAnimationToEnd
+
+# TC37 - Video still accessible after swipes
+- assertVisible: "Video"
+
+# TC38 - Module switcher accessible from Video
+- tapOn: "View all"
+- waitForAnimationToEnd
+- assertVisible: "Switch to Module"
+- pressKey: Back
+- waitForAnimationToEnd
+

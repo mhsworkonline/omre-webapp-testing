@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 // Reads Maestro debug JSON files and generates: JSON, JUnit XML, HTML, Excel reports.
 // Usage: node generate-report.js [--dir <maestro-tests-dir>] [--since <YYYY-MM-DD_HHmmss>]
 
@@ -7,12 +7,12 @@ const path = require('path');
 const os = require('os');
 const ExcelJS = require('exceljs');
 
-// Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ Config Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
+// --- Config --------------------------------------------------------------------
 const MAESTRO_TESTS_DIR = path.join(os.homedir(), '.maestro', 'tests');
 const REPORTS_DIR = path.join(__dirname, '..', 'reports', 'mobile');
 const RUN_INPUT = process.argv[2]; // optional: path to run-manifest.json written by run-all.ps1
 
-// Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ Parse command object into a human-readable step name Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
+// --- Parse command object into a human-readable step name ----------------------
 function stepName(cmd) {
   if (!cmd) return 'Unknown';
   const c = cmd;
@@ -51,26 +51,30 @@ function stepName(cmd) {
   return key.replace(/Command$/, '');
 }
 
-// Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ Parse "# SCENARIO: <name> | EXPECTED: <result>" markers from a flow's source YAML Ã¢â€â‚¬Ã¢â€â‚¬
+// --- Parse "# SCENARIO: <name> | EXPECTED: <result>" markers from a flow's source YAML --
 function parseScenarios(yamlPath) {
   if (!yamlPath || !fs.existsSync(yamlPath)) return [];
   const lines = fs.readFileSync(yamlPath, 'utf8').split(/\r?\n/);
   const scenarios = [];
   let current = null;
   for (const line of lines) {
-    const m = line.match(/^\s*#\s*SCENARIO:\s*(.+?)\s*\|\s*EXPECTED:\s*(.+?)\s*$/);
-    if (m) {
-      current = { name: m[1], expected: m[2], commandCount: 0 };
+    // Format 1: # SCENARIO: name | EXPECTED: result
+    const m1 = line.match(/^\s*#\s*SCENARIO:\s*(.+?)\s*\|\s*EXPECTED:\s*(.+?)\s*$/);
+    if (m1) {
+      current = { name: m1[1], expected: m1[2], commandCount: 0 };
+      scenarios.push(current);
+      continue;
+    }
+    // Format 2: # TCxx - description  (our YAML style)
+    const m2 = line.match(/^\s*#\s*(TC\d+[a-z]?)[^-]*[-]+\s*(.+)$/);
+    if (m2) {
+      current = { name: m2[1] + ' - ' + m2[2].trim(), expected: 'Step completes successfully', commandCount: 0 };
       scenarios.push(current);
       continue;
     }
     if (/^-\s/.test(line)) {
       if (!current) {
-        current = {
-          name: 'Unlabeled steps (no SCENARIO marker above them in the flow file)',
-          expected: 'N/A Ã¢â‚¬â€ add a "# SCENARIO: ... | EXPECTED: ..." comment above these steps',
-          commandCount: 0
-        };
+        current = { name: 'Setup', expected: 'App launches and session is ready', commandCount: 0 };
         scenarios.push(current);
       }
       current.commandCount++;
@@ -79,7 +83,7 @@ function parseScenarios(yamlPath) {
   return scenarios;
 }
 
-// Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ Roll up real (non-framework) steps into their scenario, with pass/fail Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
+// --- Roll up real (non-framework) steps into their scenario, with pass/fail ------
 function assignScenarios(yamlPath, steps) {
   const scenarios = parseScenarios(yamlPath);
   if (scenarios.length === 0) return [];
@@ -94,7 +98,7 @@ function assignScenarios(yamlPath, steps) {
       expected: sc.expected,
       status: failedChild ? 'FAILED' : 'PASSED',
       actual: failedChild
-        ? `Failed at "${failedChild.name}"${failedChild.error ? ' Ã¢â‚¬â€ ' + failedChild.error : ''}`
+        ? `Failed at "${failedChild.name}"${failedChild.error ? '  -  ' + failedChild.error : ''}`
         : 'All steps passed',
       stepCount: childSteps.length,
       steps: childSteps.map(s => `${s.status === 'COMPLETED' ? '[OK]' : s.status === 'FAILED' ? '[FAIL]' : '[-]'} ${s.name}`)
@@ -117,10 +121,10 @@ function findFlowFile(name) {
   return null;
 }
 
-// Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ Load flows from run manifest or by scanning .maestro/tests Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
+// --- Load flows from run manifest or by scanning .maestro/tests ---------------
 function loadFlows() {
   if (RUN_INPUT && fs.existsSync(RUN_INPUT)) {
-    const manifest = JSON.parse(fs.readFileSync(RUN_INPUT, 'utf8').replace(/^Ã¯Â»Â¿/, ''));
+    const manifest = JSON.parse(fs.readFileSync(RUN_INPUT, 'utf8').replace(/^/, ''));
     return manifest.map(entry => {
       const steps = readCommandsJson(entry.debugDir);
       const flowFile = path.isAbsolute(entry.file) ? entry.file : path.join(__dirname, entry.file);
@@ -128,7 +132,7 @@ function loadFlows() {
     });
   }
 
-  // No manifest Ã¢â‚¬â€ scan the most-recent test folders
+  // No manifest  -  scan the most-recent test folders
   if (!fs.existsSync(MAESTRO_TESTS_DIR)) {
     console.error('No Maestro test results found at:', MAESTRO_TESTS_DIR);
     process.exit(1);
@@ -195,7 +199,7 @@ function findScreenshot(dir) {
   return f ? path.join(dir, f) : null;
 }
 
-// Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ 1. JSON Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
+// --- 1. JSON -------------------------------------------------------------------
 function writeJson(flows, outDir, ts) {
   const report = {
     runDate: ts,
@@ -217,10 +221,10 @@ function writeJson(flows, outDir, ts) {
   };
   const out = path.join(outDir, `results-${ts}.json`);
   fs.writeFileSync(out, JSON.stringify(report, null, 2));
-  console.log('  JSON  Ã¢â€ â€™', out);
+  console.log('  JSON  -', out);
 }
 
-// Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ 2. JUnit XML Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
+// --- 2. JUnit XML --------------------------------------------------------------
 function writeJunit(flows, outDir, ts) {
   function esc(s) {
     return String(s)
@@ -264,10 +268,10 @@ function writeJunit(flows, outDir, ts) {
 
   const out = path.join(outDir, `results-${ts}.xml`);
   fs.writeFileSync(out, xml);
-  console.log('  XML   Ã¢â€ â€™', out);
+  console.log('  XML   -', out);
 }
 
-// Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ 3. HTML Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
+// --- 3. HTML -------------------------------------------------------------------
 function writeHtml(flows, outDir, ts) {
   const passed = flows.filter(f => f.status === 'PASSED').length;
   const failed = flows.filter(f => f.status === 'FAILED').length;
@@ -277,7 +281,7 @@ function writeHtml(flows, outDir, ts) {
     const badge = f.status === 'PASSED'
       ? '<span class="badge pass">PASSED</span>'
       : '<span class="badge fail">FAILED</span>';
-    const failCell = f.failedStep ? `<code>${esc(f.failedStep)}</code>` : 'Ã¢â‚¬â€';
+    const failCell = f.failedStep ? `<code>${esc(f.failedStep)}</code>` : ' - ';
     const dur = (f.durationMs / 1000).toFixed(1) + 's';
     const detail = f.steps.map(s => {
       const cls = s.status === 'COMPLETED' ? 'step-ok' : s.status === 'FAILED' ? 'step-fail' : 'step-skip';
@@ -317,7 +321,7 @@ function writeHtml(flows, outDir, ts) {
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>OMRE Mobile Test Report Ã¢â‚¬â€ ${ts}</title>
+<title>OMRE Mobile Test Report  -  ${ts}</title>
 <style>
   body{font-family:system-ui,sans-serif;margin:0;background:#f5f5f5;color:#222}
   header{background:#1a1a2e;color:#fff;padding:24px 32px}
@@ -366,10 +370,10 @@ function writeHtml(flows, outDir, ts) {
 
   const out = path.join(outDir, `results-${ts}.html`);
   fs.writeFileSync(out, html);
-  console.log('  HTML  Ã¢â€ â€™', out);
+  console.log('  HTML  -', out);
 }
 
-// Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ 4. Excel Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
+// --- 4. Excel ------------------------------------------------------------------
 async function writeExcel(flows, outDir, ts) {
   const wb = new ExcelJS.Workbook();
   wb.creator = 'OMRE Mobile Test Suite';
@@ -378,13 +382,13 @@ async function writeExcel(flows, outDir, ts) {
   const passed = flows.filter(f => f.status === 'PASSED').length;
   const failed = flows.filter(f => f.status === 'FAILED').length;
 
-  // Ã¢â€â‚¬Ã¢â€â‚¬ Sheet 1: Summary Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
+  // -- Sheet 1: Summary ------------------------------------------------------
   const ws1 = wb.addWorksheet('Summary');
   ws1.views = [{ state: 'frozen', ySplit: 4 }];
 
   // Title block
   ws1.mergeCells('A1:H1');
-  ws1.getCell('A1').value = 'OMRE Mobile Test Report Ã¢â‚¬â€ Android';
+  ws1.getCell('A1').value = 'OMRE Mobile Test Report  -  Android';
   ws1.getCell('A1').font = { bold: true, size: 14, color: { argb: 'FFFFFFFF' } };
   ws1.getCell('A1').fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF1A1A2E' } };
   ws1.getCell('A1').alignment = { horizontal: 'center', vertical: 'middle' };
@@ -416,7 +420,7 @@ async function writeExcel(flows, outDir, ts) {
   for (const [i, f] of flows.entries()) {
     const failedStepObj = f.steps.find(s => s.status === 'FAILED');
     const remarks = f.status === 'FAILED'
-      ? `Failed at: "${f.failedStep}"${failedStepObj?.error ? ' Ã¢â‚¬â€ ' + failedStepObj.error : ''}`
+      ? `Failed at: "${f.failedStep}"${failedStepObj?.error ? '  -  ' + failedStepObj.error : ''}`
       : '';
     const row = ws1.addRow([
       i + 1,
@@ -424,7 +428,7 @@ async function writeExcel(flows, outDir, ts) {
       f.status,
       f.stepsPassed,
       f.stepsFailed,
-      f.failedStep || 'Ã¢â‚¬â€',
+      f.failedStep || ' - ',
       (f.durationMs / 1000).toFixed(2),
       remarks
     ]);
@@ -444,7 +448,7 @@ async function writeExcel(flows, outDir, ts) {
     row.height = remarks ? Math.max(18, Math.ceil(remarks.length / 50) * 16) : 18;
   }
 
-  // Ã¢â€â‚¬Ã¢â€â‚¬ Sheet 2: Scenarios (non-technical view) Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
+  // -- Sheet 2: Scenarios (non-technical view) -------------------------------
   const wsS = wb.addWorksheet('Scenarios');
   wsS.views = [{ state: 'frozen', ySplit: 1 }];
 
@@ -476,7 +480,7 @@ async function writeExcel(flows, outDir, ts) {
     }
   }
 
-  // Ã¢â€â‚¬Ã¢â€â‚¬ Sheet 3: Step Detail (technical view) Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
+  // -- Sheet 3: Step Detail (technical view) ---------------------------------
   const ws2 = wb.addWorksheet('Step Detail');
   ws2.views = [{ state: 'frozen', ySplit: 1 }];
 
@@ -513,10 +517,10 @@ async function writeExcel(flows, outDir, ts) {
 
   const out = path.join(outDir, `results-${ts}.xlsx`);
   await wb.xlsx.writeFile(out);
-  console.log('  Excel Ã¢â€ â€™', out);
+  console.log('  Excel -', out);
 }
 
-// Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ Main Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
+// --- Main ----------------------------------------------------------------------
 (async () => {
   fs.mkdirSync(REPORTS_DIR, { recursive: true });
   const ts = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
@@ -527,7 +531,7 @@ async function writeExcel(flows, outDir, ts) {
     console.error('No test results found. Run the tests first.');
     process.exit(1);
   }
-  console.log(`Found ${flows.length} flow(s) Ã¢â‚¬â€ generating reports:\n`);
+  console.log(`Found ${flows.length} flow(s)  -  generating reports:\n`);
 
   writeJson(flows, REPORTS_DIR, ts);
   writeJunit(flows, REPORTS_DIR, ts);
