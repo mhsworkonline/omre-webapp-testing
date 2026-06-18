@@ -1,103 +1,135 @@
 appId: com.omre.app.posh
 ---
-# SCENARIO: App launches clean to home screen | EXPECTED: App opens without crash
+# Settings Module - android_settings.yaml
+# Settings is in the drawer below the fold; scroll drawer before tapping
+
+# TC01 - Launch app
 - stopApp
 - launchApp:
     clearState: false
 - waitForAnimationToEnd
+- waitForAnimationToEnd
 
-# SCENARIO: Home screen confirms correct starting state | EXPECTED: 'Explore OMRE Modules' visible
-- assertVisible: "Explore OMRE Modules"
+# TC02 - Home screen loaded
+- assertVisible: "View all"
 
-# SCENARIO: Drawer hamburger menu is tappable | EXPECTED: Tapping hamburger at 7%,9% opens navigation drawer
+# TC03 - Open drawer
 - tapOn:
     point: "7%,9%"
 - waitForAnimationToEnd
-
-# SCENARIO: Navigation drawer opens successfully | EXPECTED: Drawer slides open and Settings option is visible
-- assertVisible: "Settings"
-
-# SCENARIO: Settings entry in drawer navigates to Settings screen | EXPECTED: Tapping 'Settings' loads Settings screen
-- tapOn: "Settings"
 - waitForAnimationToEnd
 
-# SCENARIO: Settings screen loads without crash | EXPECTED: No error overlay appears after entering Settings
+# TC04 - Scroll drawer to reveal Settings (below fold; need 2 swipes)
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# TC05 - Settings visible in drawer
+- assertVisible: "Settings"
+
+# TC06 - Tap Settings
+- tapOn: "Settings"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC07 - Settings screen loaded without crash
 - assertNotVisible: "Something went wrong"
 - assertNotVisible: "Unfortunately"
 
-# SCENARIO: Settings screen title is displayed | EXPECTED: 'Settings' heading visible on Settings screen
+# TC08 - Settings heading visible
 - assertVisible: "Settings"
 
-# SCENARIO: Settings screen is scrollable downward | EXPECTED: Swipe up scrolls through settings options without crash
+# TC09 - Scroll settings down
 - swipe:
     direction: UP
 - waitForAnimationToEnd
 
-# SCENARIO: Settings screen further scroll reveals more options | EXPECTED: Second swipe up continues without crash
+# TC10 - Second scroll
 - swipe:
     direction: UP
 - waitForAnimationToEnd
 
-# SCENARIO: Settings screen scrolls back to top | EXPECTED: Swipe down returns toward top of settings list
+# TC11 - Scroll back to top
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# TC12 - Account option visible at top of Settings
+- assertVisible: "Account"
+
+# TC13 - Tap Account sub-screen
+- tapOn: "Account"
+- waitForAnimationToEnd
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# TC14 - Back to Settings from Account
+- pressKey: Back
+- waitForAnimationToEnd
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# TC15 - Scroll settings after returning
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
 - swipe:
     direction: DOWN
 - waitForAnimationToEnd
 
-# SCENARIO: No crash visible after scrolling Settings | EXPECTED: 'Something went wrong' not present after scroll
-- assertNotVisible: "Something went wrong"
-- assertNotVisible: "Unfortunately"
-
-# SCENARIO: Notifications setting is accessible | EXPECTED: 'Notifications' option visible in settings list
-- assertVisible: "Notifications"
-
-# SCENARIO: Notifications sub-screen opens | EXPECTED: Tapping 'Notifications' navigates to notifications settings
-- tapOn: "Notifications"
-- waitForAnimationToEnd
-
-# SCENARIO: Notifications screen loads without crash | EXPECTED: No error overlay on Notifications settings screen
-- assertNotVisible: "Something went wrong"
-- assertNotVisible: "Unfortunately"
-
-# SCENARIO: Back navigation returns to Settings from Notifications | EXPECTED: Pressing Back returns to main Settings screen
+# TC16 - Back exits Settings to Social Home
 - pressKey: Back
 - waitForAnimationToEnd
-- assertVisible: "Settings"
 
-# SCENARIO: Settings screen is stable after returning from Notifications | EXPECTED: No crash after back navigation
-- assertNotVisible: "Something went wrong"
-- assertNotVisible: "Unfortunately"
+# TC17 - Scroll to top of Social Home to reveal View all
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "View all"
 
-# SCENARIO: Settings list is scrollable after returning from sub-screen | EXPECTED: Swipe up works after back navigation
+# TC18 - Second visit: open drawer
+- tapOn:
+    point: "7%,9%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC19 - Scroll drawer to reveal Settings (2 swipes needed)
 - swipe:
     direction: UP
 - waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- assertVisible: "Settings"
 
-# SCENARIO: Settings scroll back to top after sub-screen return | EXPECTED: Swipe down works after back navigation
+# TC20 - Tap Settings second visit
+- tapOn: "Settings"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC21 - Settings stable on second visit
+- assertVisible: "Settings"
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# TC22 - Scroll settings second visit
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
 - swipe:
     direction: DOWN
 - waitForAnimationToEnd
 
-# SCENARIO: Back navigation exits Settings screen | EXPECTED: Pressing Back returns to home screen
+# TC23 - Back from Settings second visit
 - pressKey: Back
 - waitForAnimationToEnd
-
-# SCENARIO: Home screen is accessible after exiting Settings | EXPECTED: 'Explore OMRE Modules' visible after back from Settings
-- assertVisible: "Explore OMRE Modules"
-
-# SCENARIO: Settings re-entry via drawer second time works | EXPECTED: Second visit to Settings opens without crash
-- tapOn:
-    point: "7%,9%"
+- swipe:
+    direction: DOWN
 - waitForAnimationToEnd
-- assertVisible: "Settings"
-- tapOn: "Settings"
-- waitForAnimationToEnd
-
-# SCENARIO: Settings module stable on second visit | EXPECTED: Settings screen visible with no crash on re-entry
-- assertVisible: "Settings"
-- assertNotVisible: "Something went wrong"
-- assertNotVisible: "Unfortunately"
-
-# SCENARIO: Back from Settings second visit returns to home | EXPECTED: Home screen loads cleanly after second Settings visit
-- pressKey: Back
-- waitForAnimationToEnd
-- assertVisible: "Explore OMRE Modules"
+- assertVisible: "View all"

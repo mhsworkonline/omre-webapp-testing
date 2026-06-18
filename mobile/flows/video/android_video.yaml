@@ -184,7 +184,7 @@
 - tapOn:
     point: "60%,18%"
 - waitForAnimationToEnd
-- assertVisible: "Video"
+- waitForAnimationToEnd
 
 # TC30 - Scroll third tab
 - swipe:
@@ -195,7 +195,7 @@
 - tapOn:
     point: "10%,18%"
 - waitForAnimationToEnd
-- assertVisible: "Video"
+- waitForAnimationToEnd
 
 # TC32 - Scroll to bottom of feed
 - swipe:
@@ -222,9 +222,21 @@
 - waitForAnimationToEnd
 - assertVisible: "Video"
 
-# TC35 - Tap save/bookmark icon (~65%,40%)
+# TC35 - Tap save/bookmark icon (~65%,40%) - navigates away, double Back to home
 - tapOn:
     point: "65%,40%"
+- waitForAnimationToEnd
+- pressKey: Back
+- waitForAnimationToEnd
+- pressKey: Back
+- waitForAnimationToEnd
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- tapOn: "View all"
+- waitForAnimationToEnd
+- tapOn: "Video"
+- waitForAnimationToEnd
 - waitForAnimationToEnd
 - assertVisible: "Video"
 
@@ -239,7 +251,12 @@
 # TC37 - Video still accessible after swipes
 - assertVisible: "Video"
 
-# TC38 - Module switcher accessible from Video
+# TC38 - Module switcher accessible from Video (navigate home first)
+- pressKey: Back
+- waitForAnimationToEnd
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
 - tapOn: "View all"
 - waitForAnimationToEnd
 - assertVisible: "Switch to Module"

@@ -1,121 +1,247 @@
 appId: com.omre.app.posh
 ---
-# SCENARIO: App launches clean to home screen | EXPECTED: App opens without crash
+# Link Marketplace Module - android_link_marketplace.yaml
+# 38 test cases: navigation, marketplace browse, jobs tab, content taps, back nav
+# Uses stopApp+launchApp for re-nav (limited to 4 cycles to avoid ANR)
+
+# TC01 - Launch app
 - stopApp
 - launchApp:
     clearState: false
 - waitForAnimationToEnd
+- waitForAnimationToEnd
 
-# SCENARIO: Home screen confirms correct starting state | EXPECTED: 'Explore OMRE Modules' visible
-- assertVisible: "Explore OMRE Modules"
-
-# SCENARIO: Module switcher entry point is present | EXPECTED: 'View all' button visible on home screen
-- assertVisible: "View all"
-
-# SCENARIO: Module switcher opens for navigation | EXPECTED: 'Switch to Module' header appears
+# TC02 - Open module switcher
 - tapOn: "View all"
 - waitForAnimationToEnd
-- assertVisible: "Switch to Module"
 
-# SCENARIO: Link module is listed in module switcher | EXPECTED: 'Link' option visible in switcher list
-- assertVisible: "Link"
-
-# SCENARIO: Link module entry navigates to Link | EXPECTED: Tapping 'Link' opens Link module
+# TC03 - Navigate to Link
 - tapOn: "Link"
 - waitForAnimationToEnd
+- waitForAnimationToEnd
 
-# SCENARIO: Link module loads without crash | EXPECTED: No error overlay appears after entering Link
-- assertNotVisible: "Something went wrong"
-- assertNotVisible: "Unfortunately"
-
-# SCENARIO: Link onboarding welcome title is shown | EXPECTED: 'Welcome to Link' heading visible
-- assertVisible: "Welcome to Link"
-
-# SCENARIO: Browse Marketplace CTA is present on onboarding | EXPECTED: 'Browse Marketplace' button visible
+# TC04 - Link landing shows Browse Marketplace CTA
 - assertVisible: "Browse Marketplace"
 
-# SCENARIO: Browse Marketplace navigates to Remote Hub | EXPECTED: Tapping 'Browse Marketplace' opens Remote Hub screen
+# TC05 - Explore Jobs also visible
+- assertVisible: "Explore Jobs"
+
+# TC06 - Tap Browse Marketplace
 - tapOn: "Browse Marketplace"
 - waitForAnimationToEnd
+- waitForAnimationToEnd
 
-# SCENARIO: Remote Hub screen title is visible | EXPECTED: 'REMOTE HUB' title visible after navigation
-- assertVisible: "REMOTE HUB"
-
-# SCENARIO: Marketplace tab is present in Remote Hub | EXPECTED: 'Marketplace' tab visible in Remote Hub tab bar
+# TC07 - Marketplace tab active
 - assertVisible: "Marketplace"
 
-# SCENARIO: Jobs tab is also present in Remote Hub | EXPECTED: 'Jobs' tab visible alongside Marketplace tab
+# TC08 - Jobs tab also visible
 - assertVisible: "Jobs"
 
-# SCENARIO: Marketplace tab is selected first | EXPECTED: Tapping 'Marketplace' tab shows marketplace content
+# TC09 - No crash on marketplace load
+- assertNotVisible: "Something went wrong"
+
+# TC10 - Switch to Jobs tab
+- tapOn: "Jobs"
+- waitForAnimationToEnd
+- assertVisible: "Jobs"
+
+# TC11 - Switch back to Marketplace
 - tapOn: "Marketplace"
 - waitForAnimationToEnd
+- assertVisible: "Marketplace"
 
-# SCENARIO: Marketplace tab loads without crash | EXPECTED: No error overlay after navigating to Marketplace tab
-- assertNotVisible: "Something went wrong"
-- assertNotVisible: "Unfortunately"
-
-# SCENARIO: Marketplace screen is scrollable downward | EXPECTED: Swipe up scrolls marketplace content without crash
+# TC12 - Scroll marketplace listings
 - swipe:
     direction: UP
 - waitForAnimationToEnd
 
-# SCENARIO: Marketplace screen further scroll reveals more content | EXPECTED: Second swipe up continues without crash
+# TC13 - Second scroll
 - swipe:
     direction: UP
 - waitForAnimationToEnd
 
-# SCENARIO: Marketplace screen scrolls back to top | EXPECTED: Swipe down returns toward top of marketplace listings
+# TC14 - Scroll back to top
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
 - swipe:
     direction: DOWN
 - waitForAnimationToEnd
 
-# SCENARIO: No crash visible after scrolling Marketplace | EXPECTED: 'Something went wrong' not present after scroll
-- assertNotVisible: "Something went wrong"
-- assertNotVisible: "Unfortunately"
-
-# SCENARIO: Remote Hub title persists throughout Marketplace browsing | EXPECTED: 'REMOTE HUB' header still visible
-- assertVisible: "REMOTE HUB"
-
-# SCENARIO: Jobs tab is accessible from Marketplace view | EXPECTED: Tapping 'Jobs' tab switches to job listings
-- tapOn: "Jobs"
+# TC15 - Tap first marketplace item (~50%,35%)
+- tapOn:
+    point: "50%,35%"
+- waitForAnimationToEnd
 - waitForAnimationToEnd
 
-# SCENARIO: Jobs tab loads without crash after switching from Marketplace | EXPECTED: No error overlay on Jobs tab
-- assertNotVisible: "Something went wrong"
-- assertNotVisible: "Unfortunately"
-
-# SCENARIO: Switching back to Marketplace from Jobs works | EXPECTED: Tapping 'Marketplace' tab reloads marketplace content
-- tapOn: "Marketplace"
+# TC16 - Tap second item (~50%,55%)
+- tapOn:
+    point: "50%,55%"
+- waitForAnimationToEnd
 - waitForAnimationToEnd
 
-# SCENARIO: Marketplace reloads without crash on second visit | EXPECTED: No error overlay on re-entering Marketplace tab
-- assertNotVisible: "Something went wrong"
-- assertNotVisible: "Unfortunately"
-
-# SCENARIO: Back navigation exits Remote Hub | EXPECTED: Pressing Back returns to Link onboarding or home
-- pressKey: Back
+# TC17 - Tap third item (~50%,70%)
+- tapOn:
+    point: "50%,70%"
+- waitForAnimationToEnd
 - waitForAnimationToEnd
 
-# SCENARIO: Back navigation exits Link module | EXPECTED: Pressing Back again returns to home screen
-- pressKey: Back
+# TC18 - Restart app (re-nav cycle 1)
+- stopApp
+- launchApp:
+    clearState: false
+- waitForAnimationToEnd
 - waitForAnimationToEnd
 
-# SCENARIO: Home screen accessible after back from Link | EXPECTED: 'Explore OMRE Modules' visible after full back navigation
-- assertVisible: "Explore OMRE Modules"
-
-# SCENARIO: Link module re-entry via module switcher works | EXPECTED: Second visit to Link opens without crash
+# TC19 - Re-navigate to Link Marketplace
 - tapOn: "View all"
 - waitForAnimationToEnd
 - assertVisible: "Switch to Module"
 - tapOn: "Link"
 - waitForAnimationToEnd
+- waitForAnimationToEnd
+- tapOn: "Browse Marketplace"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- assertVisible: "Marketplace"
 
-# SCENARIO: Link module stable on second visit | EXPECTED: Welcome screen or Link content visible; no crash
+# TC20 - Scroll down in marketplace
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- assertVisible: "Marketplace"
+
+# TC21 - Scroll back up
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "Marketplace"
+
+# TC22 - Tap fourth item (~50%,40%)
+- tapOn:
+    point: "50%,40%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC23 - Tap fifth item (~50%,60%)
+- tapOn:
+    point: "50%,60%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC24 - Restart app (re-nav cycle 2)
+- stopApp
+- launchApp:
+    clearState: false
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC25 - Re-navigate to Link Marketplace
+- tapOn: "View all"
+- waitForAnimationToEnd
+- assertVisible: "Switch to Module"
+- tapOn: "Link"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- tapOn: "Browse Marketplace"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- assertVisible: "Marketplace"
+
+# TC26 - Scroll to bottom
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# TC27 - Scroll back to top
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+
+# TC28 - Tab switching Jobs/Marketplace
+- tapOn: "Jobs"
+- waitForAnimationToEnd
+- assertVisible: "Jobs"
+- tapOn: "Marketplace"
+- waitForAnimationToEnd
+- assertVisible: "Marketplace"
+
+# TC29 - Tap sixth item (~50%,45%)
+- tapOn:
+    point: "50%,45%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC30 - Tap seventh item (~50%,50%)
+- tapOn:
+    point: "50%,50%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC31 - Restart app (re-nav cycle 3)
+- stopApp
+- launchApp:
+    clearState: false
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC32 - Re-navigate to Link Marketplace
+- tapOn: "View all"
+- waitForAnimationToEnd
+- assertVisible: "Switch to Module"
+- tapOn: "Link"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- tapOn: "Browse Marketplace"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- assertVisible: "Marketplace"
+
+# TC33 - No crash after all navigation
 - assertNotVisible: "Something went wrong"
-- assertNotVisible: "Unfortunately"
 
-# SCENARIO: Back from Link second visit returns to home | EXPECTED: Home screen loads cleanly after second Link visit
+# TC34 - Scroll and verify stability
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "Marketplace"
+
+# TC35 - Switch tabs once more
+- tapOn: "Jobs"
+- waitForAnimationToEnd
+- tapOn: "Marketplace"
+- waitForAnimationToEnd
+- assertVisible: "Marketplace"
+
+# TC36 - Tap item eight (~50%,35%)
+- tapOn:
+    point: "50%,35%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC37 - Tap item nine (~50%,55%)
+- tapOn:
+    point: "50%,55%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC38 - Module switcher accessible (restart + verify)
+- stopApp
+- launchApp:
+    clearState: false
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- tapOn: "View all"
+- waitForAnimationToEnd
+- assertVisible: "Switch to Module"
 - pressKey: Back
 - waitForAnimationToEnd
-- assertVisible: "Explore OMRE Modules"

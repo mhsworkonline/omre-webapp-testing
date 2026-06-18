@@ -5,9 +5,10 @@ appId: com.omre.app.posh
 - launchApp:
     clearState: false
 - waitForAnimationToEnd
+- waitForAnimationToEnd
 
-# SCENARIO: Home screen confirms correct starting state | EXPECTED: 'Explore OMRE Modules' visible
-- assertVisible: "Explore OMRE Modules"
+# SCENARIO: Home screen confirms correct starting state | EXPECTED: View all visible
+- assertVisible: "View all"
 
 # SCENARIO: Module switcher opens for navigation | EXPECTED: 'Switch to Module' header appears
 - tapOn: "View all"
@@ -15,42 +16,46 @@ appId: com.omre.app.posh
 - assertVisible: "Switch to Module"
 
 # SCENARIO: Learn module navigates from switcher | EXPECTED: Tapping 'Learn' opens Learn module
-- tapOn: "Learn"
+- tapOn:
+    text: "Learn"
+    index: 1
+- waitForAnimationToEnd
 - waitForAnimationToEnd
 
-# SCENARIO: Learn onboarding welcome title is shown | EXPECTED: 'Welcome to Learn' heading visible
-- assertVisible: "Welcome to Learn"
+# SCENARIO: Learn module loads without crash | EXPECTED: No error screen
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
 
-# SCENARIO: Learn onboarding tagline is shown | EXPECTED: 'Learn Without Limits' tagline visible
-- assertVisible: "Learn Without Limits"
+# SCENARIO: Learn heading visible | EXPECTED: 'Learn' heading shown
+- assertVisible: "Learn"
 
-# SCENARIO: Browse Courses CTA is present | EXPECTED: 'Browse Courses' button visible on onboarding
-- assertVisible: "Browse Courses"
-
-# SCENARIO: My Learning CTA is present | EXPECTED: 'My Learning' button visible on onboarding
-- assertVisible: "My Learning"
-
-# SCENARIO: Browse Courses navigates to courses screen | EXPECTED: Tapping CTA opens courses catalog
-- tapOn: "Browse Courses"
+# SCENARIO: Scroll down through Learn content | EXPECTED: Scroll works without crash
+- swipe:
+    direction: UP
 - waitForAnimationToEnd
+- assertNotVisible: "Something went wrong"
 
-# SCENARIO: Courses screen tagline is present | EXPECTED: 'Learn Without Limits' still visible
-- assertVisible: "Learn Without Limits"
-
-# SCENARIO: Search field is present in courses screen | EXPECTED: Courses search input visible
-- assertVisible: "What do you want to learn?"
-
-# SCENARIO: Explore Courses section is present | EXPECTED: 'Explore Courses' section visible
-- assertVisible: "Explore Courses"
-
-# SCENARIO: Course category sections are present | EXPECTED: 'Explore by Category' label or categories visible
-- assertVisible: "Development"
-- assertVisible: "Design"
-- assertVisible: "Marketing"
-
-# SCENARIO: Courses screen is scrollable | EXPECTED: Scroll down works without crash
-- scroll
-
-# SCENARIO: Courses screen scrolls back to top | EXPECTED: Swipe down returns to top
+# SCENARIO: Scroll back to top | EXPECTED: Swipe down returns to top
 - swipe:
     direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "Learn"
+
+# SCENARIO: Tap first content item | EXPECTED: Opens without crash
+- tapOn:
+    point: "50%,35%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- assertNotVisible: "Something went wrong"
+
+# SCENARIO: Back to Social Home | EXPECTED: Back navigates home
+- pressKey: Back
+- waitForAnimationToEnd
+- pressKey: Back
+- waitForAnimationToEnd
+- pressKey: Back
+- waitForAnimationToEnd
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "View all"

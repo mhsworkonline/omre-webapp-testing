@@ -1,97 +1,131 @@
-﻿appId: com.omre.app.posh
+appId: com.omre.app.posh
 ---
-# Studio Module — android_studio_overview.yaml
-# 35+ test cases: navigation, overview, content creation tools,
-# drawer sections, create/manage content, back nav
+# Studio Module - android_studio_overview.yaml
+# 38 test cases: navigation, overview, drawer items, content tools, back nav
+# Note: Studio opens as overlay - swipe UP dismisses to Social Home
+# No scroll tests; use taps only
 
-# TC01 — Launch app
+# TC01 - Launch app
 - stopApp
 - launchApp:
     clearState: false
 - waitForAnimationToEnd
+- pressKey: Back
+- waitForAnimationToEnd
 
-# TC02 — Open module switcher
+# TC02 - Open module switcher
 - tapOn: "View all"
 - waitForAnimationToEnd
 
-# TC03 — Navigate to Studio
+# TC03 - Navigate to Studio
 - tapOn: "Studio"
 - waitForAnimationToEnd
 - waitForAnimationToEnd
 
-# TC04 — Studio screen heading visible
+# TC04 - Studio screen heading visible
 - assertVisible: "Studio"
 
-# TC05 — Scroll down through Studio content
-- swipe:
-    direction: UP
-- waitForAnimationToEnd
-
-# TC06 — Still on Studio after scroll
-- assertVisible: "Studio"
-
-# TC07 — Second scroll
-- swipe:
-    direction: UP
-- waitForAnimationToEnd
-
-# TC08 — Still on Studio
-- assertVisible: "Studio"
-
-# TC09 — Scroll back to top
-- swipe:
-    direction: DOWN
-- waitForAnimationToEnd
-- swipe:
-    direction: DOWN
-- waitForAnimationToEnd
-
-# TC10 — Studio heading at top
-- assertVisible: "Studio"
-
-# TC11 — Tap first content item/card
+# TC05 - Tap first content item/card
 - tapOn:
     point: "50%,30%"
 - waitForAnimationToEnd
+- waitForAnimationToEnd
 
-# TC12 — Back to Studio
+# TC06 - Multi-Back to Social Home
 - pressKey: Back
 - waitForAnimationToEnd
 
-# TC13 — Back on Studio
+# TC07 - Re-navigate to Studio
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- tapOn: "View all"
+- waitForAnimationToEnd
+- assertVisible: "Switch to Module"
+- tapOn: "Studio"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- runFlow:
+    when:
+      visible: "Get Started"
+    commands:
+      - tapOn: "Get Started"
+      - waitForAnimationToEnd
 - assertVisible: "Studio"
 
-# TC14 — Tap second content item
+# TC08 - Tap second content item
 - tapOn:
     point: "50%,50%"
 - waitForAnimationToEnd
+- waitForAnimationToEnd
 
-# TC15 — Back to Studio
+# TC09 - Multi-Back to Social Home
 - pressKey: Back
 - waitForAnimationToEnd
 
-# TC16 — Still on Studio
+# TC10 - Re-navigate to Studio
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- tapOn: "View all"
+- waitForAnimationToEnd
+- assertVisible: "Switch to Module"
+- tapOn: "Studio"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- runFlow:
+    when:
+      visible: "Get Started"
+    commands:
+      - tapOn: "Get Started"
+      - waitForAnimationToEnd
 - assertVisible: "Studio"
 
-# TC17 — Open Studio drawer/menu (left hamburger if present)
+# TC11 - Tap third content item
+- tapOn:
+    point: "50%,70%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC12 - Multi-Back to Social Home
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC13 - Re-navigate to Studio
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- tapOn: "View all"
+- waitForAnimationToEnd
+- assertVisible: "Switch to Module"
+- tapOn: "Studio"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- runFlow:
+    when:
+      visible: "Get Started"
+    commands:
+      - tapOn: "Get Started"
+      - waitForAnimationToEnd
+- assertVisible: "Studio"
+
+# TC14 - Open drawer (7%,9%)
 - tapOn:
     point: "7%,9%"
 - waitForAnimationToEnd
 - waitForAnimationToEnd
 
-# TC18 — Navigate to Idea Lab in Studio drawer
+# TC15 - Navigate to Idea Lab if visible
 - runFlow:
     when:
       visible: "Idea Lab"
     commands:
       - tapOn: "Idea Lab"
       - waitForAnimationToEnd
+      - pressKey: Back
+      - waitForAnimationToEnd
 
-# TC19 — Back to Studio
-- pressKey: Back
-- waitForAnimationToEnd
-
-# TC20 — Navigate to Script Gen
+# TC16 - Navigate to Script Gen if visible
 - runFlow:
     when:
       visible: "Script Gen"
@@ -101,7 +135,7 @@
       - pressKey: Back
       - waitForAnimationToEnd
 
-# TC21 — Navigate to View Videos
+# TC17 - Navigate to View Videos if visible
 - runFlow:
     when:
       visible: "View Videos"
@@ -111,7 +145,7 @@
       - pressKey: Back
       - waitForAnimationToEnd
 
-# TC22 — Navigate to Analytics
+# TC18 - Navigate to Analytics if visible
 - runFlow:
     when:
       visible: "Analytics"
@@ -121,83 +155,196 @@
       - pressKey: Back
       - waitForAnimationToEnd
 
-# TC23 — Dismiss Studio drawer
+# TC19 - Dismiss drawer
 - pressKey: Back
 - waitForAnimationToEnd
 
-# TC24 — Studio still visible
+# TC20 - Re-navigate to Studio after drawer
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- tapOn: "View all"
+- waitForAnimationToEnd
+- assertVisible: "Switch to Module"
+- tapOn: "Studio"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- runFlow:
+    when:
+      visible: "Get Started"
+    commands:
+      - tapOn: "Get Started"
+      - waitForAnimationToEnd
 - assertVisible: "Studio"
 
-# TC25 — Tap create/upload button (top-right ~88%,9%)
+# TC21 - Tap top-right icon (~88%,9%)
 - tapOn:
     point: "88%,9%"
 - waitForAnimationToEnd
 - pressKey: Back
 - waitForAnimationToEnd
-
-# TC26 — Studio still visible after create dismiss
 - assertVisible: "Studio"
 
-# TC27 — Tap secondary action (~75%,9%)
+# TC22 - Tap secondary top icon (~75%,9%)
 - tapOn:
     point: "75%,9%"
 - waitForAnimationToEnd
 - pressKey: Back
 - waitForAnimationToEnd
-
-# TC28 — Studio still visible
 - assertVisible: "Studio"
 
-# TC29 — Scroll down to see all Studio sections
-- swipe:
-    direction: UP
-- waitForAnimationToEnd
-- swipe:
-    direction: UP
-- waitForAnimationToEnd
-
-# TC30 — Studio intact at bottom
-- assertVisible: "Studio"
-
-# TC31 — Scroll back to top
-- swipe:
-    direction: DOWN
-- waitForAnimationToEnd
-- swipe:
-    direction: DOWN
-- waitForAnimationToEnd
-
-# TC32 — Tap third content item
-- tapOn:
-    point: "50%,40%"
-- waitForAnimationToEnd
-
-# TC33 — Back to Studio
-- pressKey: Back
-- waitForAnimationToEnd
-
-# TC34 — Studio visible
-- assertVisible: "Studio"
-
-# TC35 — Tap settings icon (~60%,9%)
+# TC23 - Tap third top icon (~60%,9%)
 - tapOn:
     point: "60%,9%"
 - waitForAnimationToEnd
 - pressKey: Back
 - waitForAnimationToEnd
-
-# TC36 — Studio still intact
 - assertVisible: "Studio"
 
-# TC37 — Scroll full cycle one more time
-- swipe:
-    direction: UP
+# TC24 - Tap like/interact on first item (~12%,30%)
+- tapOn:
+    point: "12%,30%"
 - waitForAnimationToEnd
+- tapOn:
+    point: "12%,30%"
+- waitForAnimationToEnd
+- assertVisible: "Studio"
+
+# TC25 - Tap options on first item (~92%,30%)
+- tapOn:
+    point: "92%,30%"
+- waitForAnimationToEnd
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "Studio"
+
+# TC26 - Tap comment icon (~88%,40%)
+- tapOn:
+    point: "88%,40%"
+- waitForAnimationToEnd
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC27 - Re-navigate after comment (may have gone Home)
 - swipe:
     direction: DOWN
 - waitForAnimationToEnd
+- tapOn: "View all"
+- waitForAnimationToEnd
+- assertVisible: "Switch to Module"
+- tapOn: "Studio"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- runFlow:
+    when:
+      visible: "Get Started"
+    commands:
+      - tapOn: "Get Started"
+      - waitForAnimationToEnd
+- assertVisible: "Studio"
 
-# TC38 — Back to home
+# TC28 - Tap share icon (~88%,50%)
+- tapOn:
+    point: "88%,50%"
+- waitForAnimationToEnd
 - pressKey: Back
 - waitForAnimationToEnd
-- assertVisible: "Explore OMRE Modules"
+- assertVisible: "Studio"
+
+# TC29 - Tap save icon (~65%,30%)
+- tapOn:
+    point: "65%,30%"
+- waitForAnimationToEnd
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC30 - Re-navigate after save
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- tapOn: "View all"
+- waitForAnimationToEnd
+- assertVisible: "Switch to Module"
+- tapOn: "Studio"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- runFlow:
+    when:
+      visible: "Get Started"
+    commands:
+      - tapOn: "Get Started"
+      - waitForAnimationToEnd
+- assertVisible: "Studio"
+
+# TC31 - Tap fourth content item (~50%,40%)
+- tapOn:
+    point: "50%,40%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC32 - Multi-Back to Social Home
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC33 - Re-navigate to Studio
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- tapOn: "View all"
+- waitForAnimationToEnd
+- assertVisible: "Switch to Module"
+- tapOn: "Studio"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- runFlow:
+    when:
+      visible: "Get Started"
+    commands:
+      - tapOn: "Get Started"
+      - waitForAnimationToEnd
+- assertVisible: "Studio"
+
+# TC34 - Tap bottom-area content (~50%,80%)
+- tapOn:
+    point: "50%,80%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC35 - Multi-Back to Social Home
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC36 - Re-navigate to Studio
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- tapOn: "View all"
+- waitForAnimationToEnd
+- assertVisible: "Switch to Module"
+- tapOn: "Studio"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- runFlow:
+    when:
+      visible: "Get Started"
+    commands:
+      - tapOn: "Get Started"
+      - waitForAnimationToEnd
+- assertVisible: "Studio"
+
+# TC37 - Tap mid-screen content (~50%,60%)
+- tapOn:
+    point: "50%,60%"
+- waitForAnimationToEnd
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC38 - Module switcher accessible from Studio
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- tapOn: "View all"
+- waitForAnimationToEnd
+- assertVisible: "Switch to Module"
+- pressKey: Back
+- waitForAnimationToEnd

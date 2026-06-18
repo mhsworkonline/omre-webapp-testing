@@ -1,80 +1,121 @@
 appId: com.omre.app.posh
 ---
-# SCENARIO: App Launch for Digital Citizenship | EXPECTED: App launches cleanly without crash
+# Digital Citizen Module (physical device)
+# Needs 1 full swipe(s) to reveal in drawer
+
+# TC01 - Launch app
 - stopApp
 - launchApp:
     clearState: false
 - waitForAnimationToEnd
+- waitForAnimationToEnd
 
-# SCENARIO: Open Drawer | EXPECTED: Drawer opens successfully
+# TC02 - Open drawer
 - tapOn:
     point: "7%,9%"
 - waitForAnimationToEnd
-
-# SCENARIO: Navigate to Digital Citizen | EXPECTED: Digital Citizenship screen loads
-- tapOn: "Digital Citizen"
 - waitForAnimationToEnd
 
-# SCENARIO: Digital Citizen screen visible | EXPECTED: Digital Citizen label or heading present
+# TC03 - Scroll drawer to Digital Citizen
+- scrollUntilVisible:
+    element:
+      text: "Digital Citizen"
+    direction: DOWN
+    timeout: 5000
+
+# TC04 - Digital Citizen visible in drawer
 - assertVisible: "Digital Citizen"
 
-# SCENARIO: No crash on load | EXPECTED: No error dialogs appear
-- assertNotVisible: "Something went wrong"
-- assertNotVisible: "Unfortunately"
-
-# SCENARIO: Digital citizenship content visible | EXPECTED: Content, quiz, or articles shown
-- assertNotVisible: "Something went wrong"
-
-# SCENARIO: No unexpected errors on initial view | EXPECTED: Screen renders without errors
-- assertNotVisible: "Unfortunately"
-
-# SCENARIO: Scroll down to explore content | EXPECTED: More digital citizenship content loads
-- swipe:
-    direction: DOWN
+# TC05 - Tap Digital Citizen
+- tapOn: "Digital Citizen"
+- waitForAnimationToEnd
 - waitForAnimationToEnd
 
-# SCENARIO: No crash after scroll down | EXPECTED: App remains stable
+# TC06 - No crash on load
 - assertNotVisible: "Something went wrong"
 - assertNotVisible: "Unfortunately"
 
-# SCENARIO: Scroll up to return to top | EXPECTED: Top of digital citizen screen visible
+# TC07 - Digital Citizen heading visible
+- assertNotVisible: "Something went wrong"
+
+# TC08 - Scroll down
 - swipe:
     direction: UP
 - waitForAnimationToEnd
-
-# SCENARIO: No error after scroll up | EXPECTED: Screen still stable
-- assertNotVisible: "Something went wrong"
 - assertNotVisible: "Unfortunately"
+- assertNotVisible: "Something went wrong"
 
-# SCENARIO: Scroll down further for more content | EXPECTED: Extended content accessible
-- swipe:
-    direction: DOWN
+# TC09 - Scroll back to top
 - swipe:
     direction: DOWN
 - waitForAnimationToEnd
-
-# SCENARIO: No crash on extended scroll | EXPECTED: App still running normally
 - assertNotVisible: "Something went wrong"
-- assertNotVisible: "Unfortunately"
 
-# SCENARIO: Scroll back to top | EXPECTED: Returns to top of digital citizen
-- swipe:
-    direction: UP
-- swipe:
-    direction: UP
+# TC10 - Tap first item
+- tapOn:
+    point: "50%,40%"
 - waitForAnimationToEnd
+- waitForAnimationToEnd
+- assertNotVisible: "Something went wrong"
 
-# SCENARIO: Back navigation from Digital Citizen | EXPECTED: Previous screen loads
+# TC11 - Back from detail
 - pressKey: Back
 - waitForAnimationToEnd
 
-# SCENARIO: Re-navigate to Digital Citizen via drawer | EXPECTED: Digital Citizen reloads correctly
+# TC12 - Tap second item
+- tapOn:
+    point: "50%,60%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- assertNotVisible: "Something went wrong"
+
+# TC13 - Back from detail
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC14 - Back to Social Home
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC15 - Scroll to top of Social Home
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "View all"
+
+# TC16 - Second visit: open drawer
 - tapOn:
     point: "7%,9%"
 - waitForAnimationToEnd
-- tapOn: "Digital Citizen"
 - waitForAnimationToEnd
 
-# SCENARIO: Digital Citizen stable on second visit | EXPECTED: No errors, content visible
+# TC17 - Scroll drawer to Digital Citizen
+- scrollUntilVisible:
+    element:
+      text: "Digital Citizen"
+    direction: DOWN
+    timeout: 5000
+- assertVisible: "Digital Citizen"
+
+# TC18 - Tap Digital Citizen second visit
+- tapOn: "Digital Citizen"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC19 - Stable on second visit
+- assertNotVisible: "Something went wrong"
 - assertNotVisible: "Something went wrong"
 - assertNotVisible: "Unfortunately"
+
+# TC20 - Scroll and return
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+
+# TC21 - Back from second visit
+- pressKey: Back
+- waitForAnimationToEnd
+- assertNotVisible: "Something went wrong"

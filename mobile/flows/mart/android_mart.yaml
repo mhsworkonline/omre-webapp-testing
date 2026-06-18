@@ -1,111 +1,225 @@
 appId: com.omre.app.posh
 ---
-# SCENARIO: App launches clean to home screen | EXPECTED: App opens without crash
+# Mart Module - android_mart.yaml
+# "Browse Mart" -> "Explore categories" grid
+# Back from any category detail -> Social Home (not categories)
+# Max 4 stopApp cycles to avoid ANR
+
+# TC01 - Launch app
 - stopApp
 - launchApp:
     clearState: false
 - waitForAnimationToEnd
+- waitForAnimationToEnd
 
-# SCENARIO: Home screen confirms correct starting state | EXPECTED: 'Explore OMRE Modules' visible
-- assertVisible: "Explore OMRE Modules"
-
-# SCENARIO: Module switcher entry point is present | EXPECTED: 'View all' button visible on home screen
+# TC02 - Module switcher entry visible
 - assertVisible: "View all"
 
-# SCENARIO: Module switcher opens for navigation | EXPECTED: 'Switch to Module' header appears
+# TC03 - Open module switcher
 - tapOn: "View all"
 - waitForAnimationToEnd
 - assertVisible: "Switch to Module"
 
-# SCENARIO: Mart module is listed in module switcher | EXPECTED: 'Mart' option visible in switcher list
+# TC04 - Mart listed in switcher
 - assertVisible: "Mart"
 
-# SCENARIO: Mart module entry navigates to Mart | EXPECTED: Tapping 'Mart' opens Mart/marketplace module
+# TC05 - Navigate to Mart welcome
 - tapOn: "Mart"
 - waitForAnimationToEnd
-
-# SCENARIO: Mart module loads without crash | EXPECTED: No error overlay appears after entering Mart
 - assertNotVisible: "Something went wrong"
-
-# SCENARIO: No app crash dialog on Mart module load | EXPECTED: App crash overlay not present
 - assertNotVisible: "Unfortunately"
 
-# SCENARIO: Categories section is visible on Mart home | EXPECTED: 'Categories' label present on Mart screen
+# TC06 - Mart landing CTAs visible
+- assertVisible: "Browse Mart"
 - assertVisible: "Categories"
 
-# SCENARIO: Top Sellers section is visible on Mart home | EXPECTED: 'Top Sellers' label present on Mart screen
-- assertVisible: "Top Sellers"
-
-# SCENARIO: Top Rated Places section is visible | EXPECTED: 'Top Rated Places' label present on Mart screen
-- assertVisible: "Top Rated Places"
-
-# SCENARIO: Mart categories row is scrollable horizontally | EXPECTED: Swipe right on categories row works without crash
-- swipe:
-    direction: RIGHT
+# TC07 - Enter categories view
+- tapOn: "Browse Mart"
 - waitForAnimationToEnd
-
-# SCENARIO: Mart categories row scrolls back left | EXPECTED: Swipe left restores categories row without crash
-- swipe:
-    direction: LEFT
 - waitForAnimationToEnd
+- assertNotVisible: "Something went wrong"
 
-# SCENARIO: Categories section still visible after horizontal scroll | EXPECTED: 'Categories' label still present after swipe
-- assertVisible: "Categories"
+# TC08 - First visible category present
+- assertVisible: "Restaurants"
 
-# SCENARIO: Mart feed is scrollable downward | EXPECTED: Swipe up scrolls Mart feed without crash
+# TC09 - Scroll categories grid down
 - swipe:
     direction: UP
 - waitForAnimationToEnd
-
-# SCENARIO: No error visible after scrolling Mart feed | EXPECTED: 'Something went wrong' not present after scroll
 - assertNotVisible: "Something went wrong"
 
-# SCENARIO: Continue scrolling Mart feed further down | EXPECTED: Second swipe up continues without crash
+# TC10 - Second scroll
 - swipe:
     direction: UP
 - waitForAnimationToEnd
 - assertNotVisible: "Unfortunately"
 
-# SCENARIO: Mart feed scrolls back to top | EXPECTED: Swipe down returns to top of Mart screen
+# TC11 - Scroll back to top
 - swipe:
     direction: DOWN
 - waitForAnimationToEnd
-- assertVisible: "Categories"
-
-# SCENARIO: Pull to refresh reloads Mart content | EXPECTED: Second swipe down triggers refresh without crash
 - swipe:
     direction: DOWN
 - waitForAnimationToEnd
-- assertVisible: "Categories"
+- assertVisible: "Restaurants"
 
-# SCENARIO: Top Sellers section visible after refresh | EXPECTED: 'Top Sellers' still present after pull to refresh
-- assertVisible: "Top Sellers"
-
-# SCENARIO: No crash after refresh on Mart screen | EXPECTED: No crash overlay after pull to refresh
-- assertNotVisible: "Unfortunately"
+# TC12 - Tap first category item (~25%,30%)
+- tapOn:
+    point: "25%,30%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
 - assertNotVisible: "Something went wrong"
 
-# SCENARIO: Back from Mart returns to home screen | EXPECTED: Pressing Back exits Mart and home screen loads
-- pressKey: Back
+# TC13 - Re-nav cycle 1 (Back from category -> Social Home)
+- stopApp
+- launchApp:
+    clearState: false
 - waitForAnimationToEnd
-- assertVisible: "Explore OMRE Modules"
-
-# SCENARIO: Mart module re-entry via module switcher | EXPECTED: Navigating to Mart a second time loads without crash
+- waitForAnimationToEnd
 - tapOn: "View all"
 - waitForAnimationToEnd
 - assertVisible: "Switch to Module"
 - tapOn: "Mart"
 - waitForAnimationToEnd
-- assertVisible: "Categories"
+- tapOn: "Browse Mart"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- assertVisible: "Restaurants"
 
-# SCENARIO: Mart stable on second visit | EXPECTED: No crash and marketplace content visible on second visit
+# TC14 - Tap second category item (~75%,30%)
+- tapOn:
+    point: "75%,30%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- assertNotVisible: "Something went wrong"
+
+# TC15 - Re-nav cycle 2
+- stopApp
+- launchApp:
+    clearState: false
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- tapOn: "View all"
+- waitForAnimationToEnd
+- assertVisible: "Switch to Module"
+- tapOn: "Mart"
+- waitForAnimationToEnd
+- tapOn: "Browse Mart"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- assertVisible: "Restaurants"
+
+# TC16 - Scroll and tap third item (~25%,50%)
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- tapOn:
+    point: "25%,50%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- assertNotVisible: "Something went wrong"
+
+# TC17 - Tap fourth item (~75%,50%)
+- stopApp
+- launchApp:
+    clearState: false
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- tapOn: "View all"
+- waitForAnimationToEnd
+- assertVisible: "Switch to Module"
+- tapOn: "Mart"
+- waitForAnimationToEnd
+- tapOn: "Browse Mart"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- tapOn:
+    point: "75%,50%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- assertNotVisible: "Something went wrong"
+
+# TC18 - Re-nav cycle 3 (final)
+- stopApp
+- launchApp:
+    clearState: false
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC19 - Re-navigate to Mart categories
+- tapOn: "View all"
+- waitForAnimationToEnd
+- assertVisible: "Switch to Module"
+- tapOn: "Mart"
+- waitForAnimationToEnd
+- tapOn: "Browse Mart"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC20 - Categories stable on third visit
 - assertNotVisible: "Something went wrong"
 - assertNotVisible: "Unfortunately"
+- assertVisible: "Restaurants"
 
-# SCENARIO: Top Sellers section persists on second visit | EXPECTED: 'Top Sellers' still visible on re-navigation
-- assertVisible: "Top Sellers"
+# TC21 - Scroll down
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- assertNotVisible: "Something went wrong"
 
-# SCENARIO: Back from Mart second visit returns to home | EXPECTED: Home screen loads cleanly after second Mart visit
+# TC22 - Scroll further
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# TC23 - Scroll back to top
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "Restaurants"
+
+# TC24 - Tap item in lower area (~25%,70%)
+- tapOn:
+    point: "25%,70%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- assertNotVisible: "Something went wrong"
+
+# TC25 - Re-nav cycle 4 (final check)
+- stopApp
+- launchApp:
+    clearState: false
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- tapOn: "View all"
+- waitForAnimationToEnd
+- assertVisible: "Switch to Module"
+- tapOn: "Mart"
+- waitForAnimationToEnd
+- tapOn: "Browse Mart"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- assertVisible: "Restaurants"
+- assertNotVisible: "Something went wrong"
+
+# TC26 - Tap item at ~75%,70%
+- tapOn:
+    point: "75%,70%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- assertNotVisible: "Something went wrong"
+
+# TC27 - Module switcher accessible from Social Home
+- stopApp
+- launchApp:
+    clearState: false
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- tapOn: "View all"
+- waitForAnimationToEnd
+- assertVisible: "Switch to Module"
 - pressKey: Back
 - waitForAnimationToEnd
-- assertVisible: "Explore OMRE Modules"

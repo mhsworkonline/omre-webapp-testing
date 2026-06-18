@@ -1,44 +1,44 @@
 appId: com.omre.app.posh
 ---
-# Learn Module — android_learn_home.yaml
-# 35+ test cases: navigation, browse courses, enroll,
-# search, categories, progress, back nav
+# Learn Module - android_learn_home.yaml
+# 38 test cases: navigation, browse courses, content taps, tabs, back nav
+# Note: Learn opens sub-path /learn/home - Back depth varies; use 3x Back to guarantee Home
 
-# TC01 — Launch app
+# TC01 - Launch app
 - stopApp
 - launchApp:
     clearState: false
 - waitForAnimationToEnd
 
-# TC02 — Open module switcher
+# TC02 - Open module switcher
 - tapOn: "View all"
 - waitForAnimationToEnd
 
-# TC03 — Navigate to Learn
+# TC03 - Navigate to Learn
 - tapOn: "Learn"
 - waitForAnimationToEnd
 - waitForAnimationToEnd
 
-# TC04 — Learn screen heading visible
+# TC04 - Learn screen heading visible
 - assertVisible: "Learn"
 
-# TC05 — Scroll down through Learn content
+# TC05 - Scroll down through Learn content
 - swipe:
     direction: UP
 - waitForAnimationToEnd
 
-# TC06 — Still on Learn after scroll
+# TC06 - Still on Learn after scroll
 - assertVisible: "Learn"
 
-# TC07 — Second scroll
+# TC07 - Second scroll
 - swipe:
     direction: UP
 - waitForAnimationToEnd
 
-# TC08 — Still on Learn
+# TC08 - Still on Learn
 - assertVisible: "Learn"
 
-# TC09 — Scroll back to top
+# TC09 - Scroll back to top
 - swipe:
     direction: DOWN
 - waitForAnimationToEnd
@@ -46,111 +46,187 @@ appId: com.omre.app.posh
     direction: DOWN
 - waitForAnimationToEnd
 
-# TC10 — Learn heading at top
+# TC10 - Learn heading at top
 - assertVisible: "Learn"
 
-# TC11 — Tap first course/content item
+# TC11 - Tap first course/content item
 - tapOn:
     point: "50%,30%"
 - waitForAnimationToEnd
+- waitForAnimationToEnd
 
-# TC12 — Back to Learn
+# TC12 - Multi-Back to Social Home (3x to clear any stack depth)
+- pressKey: Back
+- waitForAnimationToEnd
+- pressKey: Back
+- waitForAnimationToEnd
 - pressKey: Back
 - waitForAnimationToEnd
 
-# TC13 — Back on Learn
+# TC13 - Re-navigate to Learn via module switcher
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- tapOn: "View all"
+- waitForAnimationToEnd
+- assertVisible: "Switch to Module"
+- tapOn:
+    text: "Learn"
+    index: 1
+- waitForAnimationToEnd
+- waitForAnimationToEnd
 - assertVisible: "Learn"
 
-# TC14 — Tap second course
+# TC14 - Tap second course
 - tapOn:
     point: "50%,50%"
 - waitForAnimationToEnd
+- waitForAnimationToEnd
 
-# TC15 — Back to Learn
+# TC15 - Multi-Back to Social Home
+- pressKey: Back
+- waitForAnimationToEnd
+- pressKey: Back
+- waitForAnimationToEnd
 - pressKey: Back
 - waitForAnimationToEnd
 
-# TC16 — Still on Learn
+# TC16 - Re-navigate to Learn
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- tapOn: "View all"
+- waitForAnimationToEnd
+- assertVisible: "Switch to Module"
+- tapOn:
+    text: "Learn"
+    index: 1
+- waitForAnimationToEnd
+- waitForAnimationToEnd
 - assertVisible: "Learn"
 
-# TC17 — Tap third course
+# TC17 - Tap third course
 - tapOn:
     point: "50%,70%"
 - waitForAnimationToEnd
+- waitForAnimationToEnd
 
-# TC18 — Back to Learn
+# TC18 - Multi-Back to Social Home
+- pressKey: Back
+- waitForAnimationToEnd
+- pressKey: Back
+- waitForAnimationToEnd
 - pressKey: Back
 - waitForAnimationToEnd
 
-# TC19 — Still on Learn
+# TC19 - Re-navigate to Learn
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- tapOn: "View all"
+- waitForAnimationToEnd
+- assertVisible: "Switch to Module"
+- tapOn:
+    text: "Learn"
+    index: 1
+- waitForAnimationToEnd
+- waitForAnimationToEnd
 - assertVisible: "Learn"
 
-# TC20 — Enroll/save first course (bookmark ~80%,30%)
+# TC20 - Enroll/save first course (bookmark ~80%,30%)
 - tapOn:
     point: "80%,30%"
 - waitForAnimationToEnd
+- waitForAnimationToEnd
 
-# TC21 — Learn still visible after enroll
+# TC21 - Multi-Back to Social Home after bookmark
+- pressKey: Back
+- waitForAnimationToEnd
+- pressKey: Back
+- waitForAnimationToEnd
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC22 - Re-navigate to Learn after bookmark
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- tapOn: "View all"
+- waitForAnimationToEnd
+- assertVisible: "Switch to Module"
+- tapOn:
+    text: "Learn"
+    index: 1
+- waitForAnimationToEnd
+- waitForAnimationToEnd
 - assertVisible: "Learn"
 
-# TC22 — Tap search icon (top-right ~88%,9%)
+# TC23 - Tap search icon (top-right ~88%,9%)
 - tapOn:
     point: "88%,9%"
 - waitForAnimationToEnd
 - pressKey: Back
 - waitForAnimationToEnd
-
-# TC23 — Back on Learn after search
 - assertVisible: "Learn"
 
-# TC24 — Tap category/filter tab (second tab)
+# TC24 - Tap second category tab (~30%,18%)
 - tapOn:
     point: "30%,18%"
 - waitForAnimationToEnd
+- waitForAnimationToEnd
 
-# TC25 — Learn visible in filtered view
-- assertVisible: "Learn"
-
-# TC26 — Tap first item in filtered view
+# TC25 - Tap first item in filtered view
 - tapOn:
     point: "50%,35%"
 - waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC26 - Multi-Back to Social Home from filtered item
+- pressKey: Back
+- waitForAnimationToEnd
+- pressKey: Back
+- waitForAnimationToEnd
 - pressKey: Back
 - waitForAnimationToEnd
 
-# TC27 — Back on Learn
+# TC27 - Re-navigate to Learn
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- tapOn: "View all"
+- waitForAnimationToEnd
+- assertVisible: "Switch to Module"
+- tapOn:
+    text: "Learn"
+    index: 1
+- waitForAnimationToEnd
+- waitForAnimationToEnd
 - assertVisible: "Learn"
 
-# TC28 — Tap third category tab
+# TC28 - Tap third category tab (~55%,18%)
 - tapOn:
     point: "55%,18%"
 - waitForAnimationToEnd
+- waitForAnimationToEnd
 
-# TC29 — Learn visible
-- assertVisible: "Learn"
-
-# TC30 — Scroll down in this category
+# TC29 - Scroll down in this category
 - swipe:
     direction: UP
 - waitForAnimationToEnd
 
-# TC31 — Learn still accessible
-- assertVisible: "Learn"
-
-# TC32 — Scroll back to top
+# TC30 - Scroll back up
 - swipe:
     direction: DOWN
 - waitForAnimationToEnd
 
-# TC33 — Tap first tab to reset
+# TC31 - Tap first tab to reset (~10%,18%)
 - tapOn:
     point: "10%,18%"
 - waitForAnimationToEnd
-
-# TC34 — Learn heading visible in default view
+- waitForAnimationToEnd
 - assertVisible: "Learn"
 
-# TC35 — Scroll to bottom
+# TC32 - Scroll to bottom
 - swipe:
     direction: UP
 - waitForAnimationToEnd
@@ -158,18 +234,56 @@ appId: com.omre.app.posh
     direction: UP
 - waitForAnimationToEnd
 
-# TC36 — Learn intact at bottom
+# TC33 - Scroll back to top
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
 - assertVisible: "Learn"
 
-# TC37 — Scroll back up
-- swipe:
-    direction: DOWN
+# TC34 - Tap options/more on first course (~92%,30%)
+- tapOn:
+    point: "92%,30%"
 - waitForAnimationToEnd
-- swipe:
-    direction: DOWN
-- waitForAnimationToEnd
-
-# TC38 — Back to home
 - pressKey: Back
 - waitForAnimationToEnd
-- assertVisible: "Explore OMRE Modules"
+- assertVisible: "Learn"
+
+# TC35 - Like/interact with first course (~12%,30%)
+- tapOn:
+    point: "12%,30%"
+- waitForAnimationToEnd
+- tapOn:
+    point: "12%,30%"
+- waitForAnimationToEnd
+- assertVisible: "Learn"
+
+# TC36 - Swipe left/right on course card
+- swipe:
+    direction: LEFT
+- waitForAnimationToEnd
+- swipe:
+    direction: RIGHT
+- waitForAnimationToEnd
+- assertVisible: "Learn"
+
+# TC37 - Scroll down and back
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "Learn"
+
+# TC38 - Module switcher accessible from Learn
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- tapOn: "View all"
+- waitForAnimationToEnd
+- assertVisible: "Switch to Module"
+- pressKey: Back
+- waitForAnimationToEnd

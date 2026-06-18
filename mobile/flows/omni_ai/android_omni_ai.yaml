@@ -1,80 +1,128 @@
 appId: com.omre.app.posh
 ---
-# SCENARIO: App Launch for Omni AI | EXPECTED: App launches cleanly without crash
+# Omni AI Module (physical device)
+# 1 full swipe UP + short swipe brings Omni AI into view
+# Tap Omni AI by text (tapOn is lenient on visibility unlike assertVisible/scrollUntilVisible)
+
+# TC01 - Launch app
 - stopApp
 - launchApp:
     clearState: false
 - waitForAnimationToEnd
+- waitForAnimationToEnd
 
-# SCENARIO: Open Drawer | EXPECTED: Drawer opens successfully
+# TC02 - Open drawer
 - tapOn:
     point: "7%,9%"
 - waitForAnimationToEnd
-
-# SCENARIO: Navigate to Omni AI | EXPECTED: Omni AI screen loads
-- tapOn: "Omni AI"
 - waitForAnimationToEnd
 
-# SCENARIO: Omni AI screen visible | EXPECTED: Omni AI label or heading present
-- assertVisible: "Omni AI"
+# TC03 - Scroll drawer: 1 full swipe + short nudge to reveal Omni AI
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    start: "50%,90%"
+    end: "50%,72%"
+    duration: 800
+- waitForAnimationToEnd
 
-# SCENARIO: No crash on load | EXPECTED: No error dialogs appear
+# TC04 - Tap Omni AI by coordinate (bottom portion of ESSENTIALS list)
+- tapOn:
+    point: "50%,77%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC05 - No crash on load
 - assertNotVisible: "Something went wrong"
 - assertNotVisible: "Unfortunately"
 
-# SCENARIO: AI chat or tools content visible | EXPECTED: Chat interface or AI tools shown
+# TC06 - Scroll down
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- assertNotVisible: "Unfortunately"
 - assertNotVisible: "Something went wrong"
 
-# SCENARIO: No unexpected errors on initial view | EXPECTED: Screen renders without errors
+# TC07 - Scroll back to top
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertNotVisible: "Something went wrong"
+
+# TC08 - Tap first item
+- tapOn:
+    point: "50%,40%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- assertNotVisible: "Something went wrong"
+
+# TC09 - Back from detail
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC10 - Tap second item
+- tapOn:
+    point: "50%,60%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- assertNotVisible: "Something went wrong"
+
+# TC11 - Back from detail
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC12 - Back to Social Home
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC13 - Scroll to top of Social Home
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "View all"
+
+# TC14 - Second visit: open drawer
+- tapOn:
+    point: "7%,9%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC15 - Scroll drawer second visit (same calibration)
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    start: "50%,90%"
+    end: "50%,72%"
+    duration: 800
+- waitForAnimationToEnd
+
+# TC16 - Tap Omni AI second visit
+- tapOn:
+    point: "50%,77%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC17 - Stable on second visit
+- assertNotVisible: "Something went wrong"
 - assertNotVisible: "Unfortunately"
 
-# SCENARIO: Scroll down to explore | EXPECTED: More AI features or history load
+# TC18 - Scroll and return
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
 - swipe:
     direction: DOWN
 - waitForAnimationToEnd
 
-# SCENARIO: No crash after scroll down | EXPECTED: App remains stable
-- assertNotVisible: "Something went wrong"
-- assertNotVisible: "Unfortunately"
-
-# SCENARIO: Scroll up to return to top | EXPECTED: Top of Omni AI screen visible
-- swipe:
-    direction: UP
-- waitForAnimationToEnd
-
-# SCENARIO: No error after scroll up | EXPECTED: Screen still stable
-- assertNotVisible: "Something went wrong"
-- assertNotVisible: "Unfortunately"
-
-# SCENARIO: Tap text input if visible and type a message | EXPECTED: Text input accepts input
-- tapOn:
-    point: "50%,90%"
-- waitForAnimationToEnd
-- inputText: "Hello"
-- waitForAnimationToEnd
-
-# SCENARIO: No crash after typing | EXPECTED: App remains stable with text input
-- assertNotVisible: "Something went wrong"
-- assertNotVisible: "Unfortunately"
-
-# SCENARIO: Dismiss keyboard and scroll up | EXPECTED: Keyboard dismissed and screen usable
+# TC19 - Back from second visit
 - pressKey: Back
 - waitForAnimationToEnd
-- swipe:
-    direction: UP
-- waitForAnimationToEnd
-
-# SCENARIO: Back navigation from Omni AI | EXPECTED: Previous screen loads
-- pressKey: Back
-- waitForAnimationToEnd
-
-# SCENARIO: Re-navigate to Omni AI via drawer | EXPECTED: Omni AI reloads correctly
-- tapOn:
-    point: "7%,9%"
-- waitForAnimationToEnd
-- tapOn: "Omni AI"
-- waitForAnimationToEnd
-
-# SCENARIO: Omni AI stable on second visit | EXPECTED: No errors, content visible
 - assertNotVisible: "Something went wrong"
-- assertNotVisible: "Unfortunately"

@@ -1,84 +1,122 @@
 appId: com.omre.app.posh
 ---
-# SCENARIO: App Launch for Business Suite | EXPECTED: App launches cleanly without crash
+# Business Suite Module
+# Business Suite is just below Reputation on initial drawer open
+# Use short swipe (20% scroll) to reveal it without overshooting to ESSENTIALS
+
+# TC01 - Launch app
 - stopApp
 - launchApp:
     clearState: false
 - waitForAnimationToEnd
+- waitForAnimationToEnd
 
-# SCENARIO: Open Drawer | EXPECTED: Drawer opens successfully
+# TC02 - Open drawer
 - tapOn:
     point: "7%,9%"
 - waitForAnimationToEnd
-
-# SCENARIO: Navigate to Business Suite | EXPECTED: Business Suite screen loads
-- tapOn: "Business Suite"
 - waitForAnimationToEnd
 
-# SCENARIO: Business Suite heading visible | EXPECTED: Business Suite label or heading present
+# TC03 - Short scroll to reveal Business Suite
+- swipe:
+    start: "50%,80%"
+    end: "50%,60%"
+    duration: 600
+- waitForAnimationToEnd
+
+# TC04 - Business Suite visible in drawer
 - assertVisible: "Business Suite"
 
-# SCENARIO: No crash on load | EXPECTED: No error dialogs appear
-- assertNotVisible: "Something went wrong"
-- assertNotVisible: "Unfortunately"
-
-# SCENARIO: Business tools or dashboard content visible | EXPECTED: Dashboard or tool options shown
-- assertNotVisible: "Something went wrong"
-
-# SCENARIO: No unexpected errors on initial view | EXPECTED: Screen renders without errors
-- assertNotVisible: "Unfortunately"
-
-# SCENARIO: Scroll down to see more tools | EXPECTED: Additional business tools or sections load
-- swipe:
-    direction: DOWN
+# TC05 - Tap Business Suite
+- tapOn: "Business Suite"
+- waitForAnimationToEnd
 - waitForAnimationToEnd
 
-# SCENARIO: No crash after scroll down | EXPECTED: App remains stable
+# TC06 - No crash on load
 - assertNotVisible: "Something went wrong"
 - assertNotVisible: "Unfortunately"
 
-# SCENARIO: Scroll up to return to top | EXPECTED: Top of business suite visible
+# TC07 - Business Suite heading visible
+- assertVisible: "Business Suite"
+
+# TC08 - Scroll down
 - swipe:
     direction: UP
 - waitForAnimationToEnd
-
-# SCENARIO: No error after scroll up | EXPECTED: Screen still stable
-- assertNotVisible: "Something went wrong"
 - assertNotVisible: "Unfortunately"
+- assertNotVisible: "Something went wrong"
 
-# SCENARIO: Scroll down again for extended content | EXPECTED: More features accessible
-- swipe:
-    direction: DOWN
+# TC09 - Scroll back to top
 - swipe:
     direction: DOWN
 - waitForAnimationToEnd
-
-# SCENARIO: No crash on extended scroll | EXPECTED: App still running normally
 - assertNotVisible: "Something went wrong"
-- assertNotVisible: "Unfortunately"
 
-# SCENARIO: Scroll back to top | EXPECTED: Returns to top of business suite
-- swipe:
-    direction: UP
-- swipe:
-    direction: UP
+# TC10 - Tap first item
+- tapOn:
+    point: "50%,40%"
 - waitForAnimationToEnd
-
-# SCENARIO: No errors at top of screen | EXPECTED: Screen stable at top
+- waitForAnimationToEnd
 - assertNotVisible: "Something went wrong"
-- assertNotVisible: "Unfortunately"
 
-# SCENARIO: Back navigation from Business Suite | EXPECTED: Previous screen loads
+# TC11 - Back from detail
 - pressKey: Back
 - waitForAnimationToEnd
 
-# SCENARIO: Re-navigate to Business Suite via drawer | EXPECTED: Business Suite reloads correctly
+# TC12 - Tap second item
+- tapOn:
+    point: "50%,60%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- assertNotVisible: "Something went wrong"
+
+# TC13 - Back from detail
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC14 - Back to Social Home
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC15 - Scroll to top of Social Home
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "View all"
+
+# TC16 - Second visit: open drawer
 - tapOn:
     point: "7%,9%"
 - waitForAnimationToEnd
-- tapOn: "Business Suite"
 - waitForAnimationToEnd
 
-# SCENARIO: Business Suite stable on second visit | EXPECTED: No errors, content visible
+# TC17 - Short scroll to reveal Business Suite
+- swipe:
+    start: "50%,80%"
+    end: "50%,60%"
+    duration: 600
+- waitForAnimationToEnd
+- assertVisible: "Business Suite"
+
+# TC18 - Tap Business Suite second visit
+- tapOn: "Business Suite"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC19 - Stable on second visit
+- assertVisible: "Business Suite"
 - assertNotVisible: "Something went wrong"
 - assertNotVisible: "Unfortunately"
+
+# TC20 - Scroll and return
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+
+# TC21 - Back from second visit
+- pressKey: Back
+- waitForAnimationToEnd
+- assertNotVisible: "Something went wrong"

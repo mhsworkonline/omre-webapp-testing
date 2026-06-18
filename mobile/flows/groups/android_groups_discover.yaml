@@ -1,101 +1,129 @@
 appId: com.omre.app.posh
 ---
-# SCENARIO: App launches clean to home screen | EXPECTED: App opens without crash
+# Groups Module (physical device)
+# Needs 1 full swipe(s) to reveal in drawer
+
+# TC01 - Launch app
 - stopApp
 - launchApp:
     clearState: false
 - waitForAnimationToEnd
+- waitForAnimationToEnd
 
-# SCENARIO: Home screen is in correct starting state | EXPECTED: 'Explore OMRE Modules' visible on home
-- assertVisible: "Explore OMRE Modules"
-
-# SCENARIO: Navigation drawer opens via hamburger icon | EXPECTED: Drawer slides open showing nav items
+# TC02 - Open drawer
 - tapOn:
     point: "7%,9%"
 - waitForAnimationToEnd
-
-# SCENARIO: Groups item is visible in drawer | EXPECTED: 'Groups' label visible in open drawer
-- assertVisible: "Groups"
-
-# SCENARIO: Tap Groups navigates to Groups screen | EXPECTED: Groups screen loads without crash
-- tapOn: "Groups"
 - waitForAnimationToEnd
 
-# SCENARIO: Groups screen header is visible | EXPECTED: 'Groups' heading present on screen
-- assertVisible: "Groups"
-
-# SCENARIO: No crash dialog shown on Groups load | EXPECTED: App crash overlay not visible
-- assertNotVisible: "Unfortunately"
-
-# SCENARIO: No generic error shown on Groups load | EXPECTED: Error banner not visible
-- assertNotVisible: "Something went wrong"
-
-# SCENARIO: No crash after Groups loads | EXPECTED: No error or crash overlay on screen
-- assertNotVisible: "Unfortunately"
-- assertNotVisible: "Something went wrong"
-
-# SCENARIO: Scroll down Groups list | EXPECTED: Swipe up scrolls without crash, more content below
+# TC03 - Scroll drawer
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
 - swipe:
     direction: UP
 - waitForAnimationToEnd
 
-# SCENARIO: No crash after scrolling Groups list | EXPECTED: Crash overlay not visible after scroll
+# TC04 - Groups visible in drawer
+- assertVisible: "Groups"
+
+# TC05 - Tap Groups
+- tapOn: "Groups"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC06 - No crash on load
+- assertNotVisible: "Something went wrong"
 - assertNotVisible: "Unfortunately"
 
-# SCENARIO: No error after scrolling Groups list | EXPECTED: Error banner not visible after scroll
+# TC07 - Groups heading visible
+- assertVisible: "Groups"
+
+# TC08 - Scroll down
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- assertNotVisible: "Unfortunately"
 - assertNotVisible: "Something went wrong"
 
-# SCENARIO: Scroll back to top of Groups screen | EXPECTED: Swipe down returns to top, Groups heading visible
+# TC09 - Scroll back to top
 - swipe:
     direction: DOWN
 - waitForAnimationToEnd
-- assertVisible: "Groups"
-
-# SCENARIO: Pull to refresh reloads Groups content | EXPECTED: Content refreshes without crash
-- swipe:
-    direction: DOWN
-- waitForAnimationToEnd
-
-# SCENARIO: No crash after pull-to-refresh | EXPECTED: Crash overlay not visible after refresh
-- assertNotVisible: "Unfortunately"
-
-# SCENARIO: No error after pull-to-refresh | EXPECTED: Error banner not visible after refresh
 - assertNotVisible: "Something went wrong"
 
-# SCENARIO: Groups heading still visible after pull-to-refresh | EXPECTED: 'Groups' heading still present
-- assertVisible: "Groups"
+# TC10 - Tap first item
+- tapOn:
+    point: "50%,40%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- assertNotVisible: "Something went wrong"
 
-# SCENARIO: Press Back from Groups returns to home | EXPECTED: Home screen visible after pressing Back
+# TC11 - Back from detail
 - pressKey: Back
 - waitForAnimationToEnd
-- assertVisible: "Explore OMRE Modules"
 
-# SCENARIO: No lingering error on home after leaving Groups | EXPECTED: Crash and error overlays absent on home screen
-- assertNotVisible: "Unfortunately"
+# TC12 - Tap second item
+- tapOn:
+    point: "50%,60%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
 - assertNotVisible: "Something went wrong"
 
-# SCENARIO: Re-open drawer after returning to home | EXPECTED: Drawer opens correctly from home screen
+# TC13 - Back from detail
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC14 - Back to Social Home
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC15 - Scroll to top of Social Home
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "View all"
+
+# TC16 - Second visit: open drawer
 - tapOn:
     point: "7%,9%"
 - waitForAnimationToEnd
+- waitForAnimationToEnd
 
-# SCENARIO: Groups item still visible in drawer on second visit | EXPECTED: 'Groups' label visible in drawer
+# TC17 - Scroll drawer
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
 - assertVisible: "Groups"
 
-# SCENARIO: Tap Groups re-navigates to Groups screen | EXPECTED: Groups screen loads again without crash
+# TC18 - Tap Groups second visit
 - tapOn: "Groups"
 - waitForAnimationToEnd
-- assertVisible: "Groups"
+- waitForAnimationToEnd
 
-# SCENARIO: No crash on second navigation to Groups | EXPECTED: Crash overlay not visible on re-entry
+# TC19 - Stable on second visit
+- assertVisible: "Groups"
+- assertNotVisible: "Something went wrong"
 - assertNotVisible: "Unfortunately"
 
-# SCENARIO: No error on second navigation to Groups | EXPECTED: Error banner not visible on re-entry
-- assertNotVisible: "Something went wrong"
+# TC20 - Scroll and return
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
 
-# SCENARIO: Back from re-navigated Groups returns to home cleanly | EXPECTED: 'Explore OMRE Modules' visible, no error state
+# TC21 - Back from second visit
 - pressKey: Back
 - waitForAnimationToEnd
-- assertVisible: "Explore OMRE Modules"
-- assertNotVisible: "Unfortunately"
 - assertNotVisible: "Something went wrong"

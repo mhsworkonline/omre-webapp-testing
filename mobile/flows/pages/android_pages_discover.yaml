@@ -1,110 +1,129 @@
 appId: com.omre.app.posh
 ---
-# SCENARIO: App launches clean to home screen | EXPECTED: App opens without crash
+# Pages Module (physical device)
+# Needs 1 full swipe(s) to reveal in drawer
+
+# TC01 - Launch app
 - stopApp
 - launchApp:
     clearState: false
 - waitForAnimationToEnd
+- waitForAnimationToEnd
 
-# SCENARIO: Home screen is in correct starting state | EXPECTED: 'Explore OMRE Modules' visible on home
-- assertVisible: "Explore OMRE Modules"
-
-# SCENARIO: Navigation drawer opens via hamburger icon | EXPECTED: Drawer slides open showing nav items
+# TC02 - Open drawer
 - tapOn:
     point: "7%,9%"
 - waitForAnimationToEnd
-
-# SCENARIO: Pages item is visible in drawer | EXPECTED: 'Pages' label visible in open drawer
-- assertVisible: "Pages"
-
-# SCENARIO: Tap Pages navigates to Pages screen | EXPECTED: Pages screen loads without crash
-- tapOn: "Pages"
 - waitForAnimationToEnd
 
-# SCENARIO: Pages screen header is visible | EXPECTED: 'Pages' heading present on screen
-- assertVisible: "Pages"
-
-# SCENARIO: No crash dialog shown on Pages load | EXPECTED: App crash overlay not visible
-- assertNotVisible: "Unfortunately"
-
-# SCENARIO: No generic error shown on Pages load | EXPECTED: Error banner not visible
-- assertNotVisible: "Something went wrong"
-
-# SCENARIO: No crash after Pages loads | EXPECTED: No error or crash overlay on screen
-- assertNotVisible: "Unfortunately"
-- assertNotVisible: "Something went wrong"
-
-# SCENARIO: Discover tab is visible and active | EXPECTED: 'Discover' tab present on Pages screen
-- assertVisible: "Discover"
-
-# SCENARIO: Following tab is visible | EXPECTED: 'Following' tab visible on Pages screen
-- assertVisible: "Following"
-
-# SCENARIO: Your Pages tab is visible | EXPECTED: 'Your Pages' tab visible on Pages screen
-- assertVisible: "Your Pages"
-
-# SCENARIO: Scroll down Pages list | EXPECTED: Swipe up scrolls without crash, more content below
+# TC03 - Scroll drawer
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
 - swipe:
     direction: UP
 - waitForAnimationToEnd
 
-# SCENARIO: No crash after scrolling Pages list | EXPECTED: Crash overlay not visible after scroll
+# TC04 - Pages visible in drawer
+- assertVisible: "Pages"
+
+# TC05 - Tap Pages
+- tapOn: "Pages"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC06 - No crash on load
+- assertNotVisible: "Something went wrong"
 - assertNotVisible: "Unfortunately"
 
-# SCENARIO: No error after scrolling Pages list | EXPECTED: Error banner not visible after scroll
+# TC07 - Pages heading visible
+- assertVisible: "Pages"
+
+# TC08 - Scroll down
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- assertNotVisible: "Unfortunately"
 - assertNotVisible: "Something went wrong"
 
-# SCENARIO: Scroll back to top of Pages screen | EXPECTED: Swipe down returns to top, Pages heading visible
+# TC09 - Scroll back to top
 - swipe:
     direction: DOWN
 - waitForAnimationToEnd
-- assertVisible: "Pages"
-
-# SCENARIO: Pull to refresh reloads Pages content | EXPECTED: Content refreshes without crash
-- swipe:
-    direction: DOWN
-- waitForAnimationToEnd
-
-# SCENARIO: No crash after pull-to-refresh | EXPECTED: Crash overlay not visible after refresh
-- assertNotVisible: "Unfortunately"
-
-# SCENARIO: No error after pull-to-refresh | EXPECTED: Error banner not visible after refresh
 - assertNotVisible: "Something went wrong"
 
-# SCENARIO: Pages heading still visible after pull-to-refresh | EXPECTED: 'Pages' heading still present
-- assertVisible: "Pages"
+# TC10 - Tap first item
+- tapOn:
+    point: "50%,40%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- assertNotVisible: "Something went wrong"
 
-# SCENARIO: Press Back from Pages returns to home | EXPECTED: Home screen visible after pressing Back
+# TC11 - Back from detail
 - pressKey: Back
 - waitForAnimationToEnd
-- assertVisible: "Explore OMRE Modules"
 
-# SCENARIO: No lingering error on home after leaving Pages | EXPECTED: Crash and error overlays absent on home screen
-- assertNotVisible: "Unfortunately"
+# TC12 - Tap second item
+- tapOn:
+    point: "50%,60%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
 - assertNotVisible: "Something went wrong"
 
-# SCENARIO: Re-open drawer after returning to home | EXPECTED: Drawer opens correctly from home screen
+# TC13 - Back from detail
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC14 - Back to Social Home
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC15 - Scroll to top of Social Home
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "View all"
+
+# TC16 - Second visit: open drawer
 - tapOn:
     point: "7%,9%"
 - waitForAnimationToEnd
+- waitForAnimationToEnd
 
-# SCENARIO: Pages item still visible in drawer on second visit | EXPECTED: 'Pages' label visible in drawer
+# TC17 - Scroll drawer
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
 - assertVisible: "Pages"
 
-# SCENARIO: Tap Pages re-navigates to Pages screen | EXPECTED: Pages screen loads again without crash
+# TC18 - Tap Pages second visit
 - tapOn: "Pages"
 - waitForAnimationToEnd
-- assertVisible: "Pages"
+- waitForAnimationToEnd
 
-# SCENARIO: No crash on second navigation to Pages | EXPECTED: Crash overlay not visible on re-entry
+# TC19 - Stable on second visit
+- assertVisible: "Pages"
+- assertNotVisible: "Something went wrong"
 - assertNotVisible: "Unfortunately"
 
-# SCENARIO: No error on second navigation to Pages | EXPECTED: Error banner not visible on re-entry
-- assertNotVisible: "Something went wrong"
+# TC20 - Scroll and return
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
 
-# SCENARIO: Back from re-navigated Pages returns to home cleanly | EXPECTED: 'Explore OMRE Modules' visible, no error state
+# TC21 - Back from second visit
 - pressKey: Back
 - waitForAnimationToEnd
-- assertVisible: "Explore OMRE Modules"
-- assertNotVisible: "Unfortunately"
 - assertNotVisible: "Something went wrong"

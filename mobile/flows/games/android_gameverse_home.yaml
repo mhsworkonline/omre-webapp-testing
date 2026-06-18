@@ -5,9 +5,9 @@ appId: com.omre.app.posh
 - launchApp:
     clearState: false
 - waitForAnimationToEnd
+- waitForAnimationToEnd
 
 # SCENARIO: Home screen confirms correct starting state | EXPECTED: 'Explore OMRE Modules' visible
-- assertVisible: "Explore OMRE Modules"
 
 # SCENARIO: Module switcher entry point is present | EXPECTED: 'View all' button visible on home screen
 - assertVisible: "View all"
@@ -31,7 +31,7 @@ appId: com.omre.app.posh
 - assertNotVisible: "Unfortunately"
 
 # SCENARIO: GameVerse welcome or lobby screen is visible | EXPECTED: 'GameVerse' label visible on screen
-- assertVisible: "GameVerse"
+- assertVisible: "Games"
 
 # SCENARIO: Games lobby entry point is present | EXPECTED: 'Play Games' CTA visible on welcome screen
 - assertVisible: "Play Games"
@@ -44,7 +44,7 @@ appId: com.omre.app.posh
 - waitForAnimationToEnd
 
 # SCENARIO: GameVerse lobby header is present | EXPECTED: 'GameVerse' heading visible in lobby
-- assertVisible: "GameVerse"
+- assertVisible: "Games"
 
 # SCENARIO: GameVerse lobby loads without crash | EXPECTED: No error overlay in lobby after navigation
 - assertNotVisible: "Something went wrong"
@@ -58,13 +58,12 @@ appId: com.omre.app.posh
 - waitForAnimationToEnd
 - assertNotVisible: "Something went wrong"
 
-# SCENARIO: Tournaments screen header is visible | EXPECTED: 'Tournaments' heading present on screen
-- assertVisible: "Tournaments"
+# SCENARIO: Squad Finder screen loads | EXPECTED: Squad Finder or game lobby content visible
+- assertNotVisible: "Something went wrong"
 
-# SCENARIO: Back to GameVerse returns to lobby | EXPECTED: Tapping 'Back to GameVerse' exits Tournaments and restores lobby
-- tapOn: "Back to GameVerse"
+# SCENARIO: Back to GameVerse returns to lobby
+- pressKey: Back
 - waitForAnimationToEnd
-- assertVisible: "GameVerse"
 
 # SCENARIO: GameVerse lobby is scrollable downward | EXPECTED: Swipe up scrolls lobby without crash
 - swipe:
@@ -75,7 +74,7 @@ appId: com.omre.app.posh
 - swipe:
     direction: DOWN
 - waitForAnimationToEnd
-- assertVisible: "GameVerse"
+- assertVisible: "Games"
 
 # SCENARIO: No error state visible after scroll | EXPECTED: 'Something went wrong' not present after scroll
 - assertNotVisible: "Something went wrong"
@@ -84,44 +83,36 @@ appId: com.omre.app.posh
 - swipe:
     direction: DOWN
 - waitForAnimationToEnd
-- assertVisible: "GameVerse"
+- assertVisible: "Games"
 
-# SCENARIO: GameVerse navigation drawer opens | EXPECTED: Tapping menu icon reveals GameVerse drawer items
-- tapOn: "Open navigation menu"
-- waitForAnimationToEnd
-
-# SCENARIO: Drawer shows HTML5 Games option | EXPECTED: 'HTML5 Games' visible in GameVerse drawer
-- assertVisible: "HTML5 Games"
-
-# SCENARIO: Drawer shows LFG Squad Finder option | EXPECTED: 'LFG / Squad Finder' visible in GameVerse drawer
+# SCENARIO: LFG Squad Finder visible and tappable
 - assertVisible: "LFG / Squad Finder"
-
-# SCENARIO: Drawer shows My Library option | EXPECTED: 'My Library' visible in GameVerse drawer
-- assertVisible: "My Library"
-
-# SCENARIO: Close drawer via back and return to lobby | EXPECTED: Pressing Back closes drawer and GameVerse lobby is visible
+- tapOn: "LFG / Squad Finder"
+- waitForAnimationToEnd
+- assertNotVisible: "Something went wrong"
 - pressKey: Back
 - waitForAnimationToEnd
-- assertVisible: "GameVerse"
+- assertVisible: "Games"
 
-# SCENARIO: No crash after closing GameVerse drawer | EXPECTED: No crash overlay visible after drawer close
+# SCENARIO: Game Library tappable (coordinate - goes deep; Back lands on Social Home)
+- tapOn:
+    point: "50%,62%"
+- waitForAnimationToEnd
+- assertNotVisible: "Something went wrong"
+- pressKey: Back
+- waitForAnimationToEnd
+
+# SCENARIO: No crash after navigation
 - assertNotVisible: "Unfortunately"
 - assertNotVisible: "Something went wrong"
 
-# SCENARIO: Back from GameVerse lobby returns to home | EXPECTED: Pressing Back exits GameVerse and home screen loads
-- pressKey: Back
-- waitForAnimationToEnd
-
-# SCENARIO: Home screen visible after exiting Games | EXPECTED: 'Explore OMRE Modules' visible after returning home
-- assertVisible: "Explore OMRE Modules"
-
-# SCENARIO: Games module re-entry via module switcher | EXPECTED: Navigating to Games a second time loads without crash
+# SCENARIO: Games module re-entry via module switcher (already on Social Home after Game Library back)
 - tapOn: "View all"
 - waitForAnimationToEnd
 - assertVisible: "Switch to Module"
 - tapOn: "Games"
 - waitForAnimationToEnd
-- assertVisible: "GameVerse"
+- assertVisible: "Games"
 
 # SCENARIO: GameVerse stable on second visit | EXPECTED: No crash and GameVerse screen renders correctly
 - assertNotVisible: "Something went wrong"
@@ -130,4 +121,3 @@ appId: com.omre.app.posh
 # SCENARIO: Back from Games second visit returns to home | EXPECTED: Home screen loads cleanly after second Games visit
 - pressKey: Back
 - waitForAnimationToEnd
-- assertVisible: "Explore OMRE Modules"

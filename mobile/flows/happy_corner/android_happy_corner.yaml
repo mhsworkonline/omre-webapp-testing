@@ -1,77 +1,117 @@
 appId: com.omre.app.posh
 ---
-# SCENARIO: App Launch for Happy Corner | EXPECTED: App launches cleanly without crash
+# Happy Corner Module (physical device)
+# Needs 1 full swipe(s) to reveal in drawer
+
+# TC01 - Launch app
 - stopApp
 - launchApp:
     clearState: false
 - waitForAnimationToEnd
+- waitForAnimationToEnd
 
-# SCENARIO: Open Drawer | EXPECTED: Drawer opens successfully
+# TC02 - Open drawer
 - tapOn:
     point: "7%,9%"
 - waitForAnimationToEnd
-
-# SCENARIO: Navigate to Happy Corner | EXPECTED: Happy Corner screen loads
-- tapOn: "Happy Corner"
 - waitForAnimationToEnd
 
-# SCENARIO: Happy Corner heading visible | EXPECTED: Happy Corner label or heading present
-- assertVisible: "Happy Corner"
-
-# SCENARIO: No crash on load | EXPECTED: No error dialogs appear
-- assertNotVisible: "Something went wrong"
-- assertNotVisible: "Unfortunately"
-
-# SCENARIO: Positive content feed visible | EXPECTED: Uplifting posts or content items shown
-- assertNotVisible: "Something went wrong"
-
-# SCENARIO: No unexpected errors on initial view | EXPECTED: Screen renders without errors
-- assertNotVisible: "Unfortunately"
-
-# SCENARIO: Scroll down through content feed | EXPECTED: More positive content items load
-- swipe:
-    direction: DOWN
-- waitForAnimationToEnd
-
-# SCENARIO: No crash after scroll down | EXPECTED: App remains stable
-- assertNotVisible: "Something went wrong"
-- assertNotVisible: "Unfortunately"
-
-# SCENARIO: Scroll up to return to top | EXPECTED: Top of Happy Corner feed visible
+# TC03 - Scroll drawer
 - swipe:
     direction: UP
 - waitForAnimationToEnd
 
-# SCENARIO: No error after scroll up | EXPECTED: Screen still stable
-- assertNotVisible: "Something went wrong"
-- assertNotVisible: "Unfortunately"
+# TC04 - Happy Corner visible in drawer
+- assertVisible: "Happy Corner"
 
-# SCENARIO: Pull to refresh Happy Corner | EXPECTED: Feed refreshes without crash
-- swipe:
-    direction: DOWN
-    from:
-      x: "50%"
-      y: "20%"
-    to:
-      x: "50%"
-      y: "70%"
+# TC05 - Tap Happy Corner
+- tapOn: "Happy Corner"
+- waitForAnimationToEnd
 - waitForAnimationToEnd
 
-# SCENARIO: No crash after pull to refresh | EXPECTED: App still running normally
+# TC06 - No crash on load
 - assertNotVisible: "Something went wrong"
 - assertNotVisible: "Unfortunately"
 
-# SCENARIO: Back navigation from Happy Corner | EXPECTED: Previous screen loads
+# TC07 - Happy Corner heading visible
+- assertVisible: "Community Pulse"
+
+# TC08 - Scroll down
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- assertNotVisible: "Unfortunately"
+- assertNotVisible: "Something went wrong"
+
+# TC09 - Scroll back to top
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertNotVisible: "Something went wrong"
+
+# TC10 - Tap first item
+- tapOn:
+    point: "50%,40%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- assertNotVisible: "Something went wrong"
+
+# TC11 - Back from detail
 - pressKey: Back
 - waitForAnimationToEnd
 
-# SCENARIO: Re-navigate to Happy Corner via drawer | EXPECTED: Happy Corner reloads correctly
+# TC12 - Tap second item
+- tapOn:
+    point: "50%,60%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- assertNotVisible: "Something went wrong"
+
+# TC13 - Back from detail
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC14 - Back to Social Home
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC15 - Scroll to top of Social Home
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "View all"
+
+# TC16 - Second visit: open drawer
 - tapOn:
     point: "7%,9%"
 - waitForAnimationToEnd
-- tapOn: "Happy Corner"
 - waitForAnimationToEnd
 
-# SCENARIO: Happy Corner stable on second visit | EXPECTED: No errors, content visible
+# TC17 - Scroll drawer
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- assertVisible: "Happy Corner"
+
+# TC18 - Tap Happy Corner second visit
+- tapOn: "Happy Corner"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC19 - Stable on second visit
+- assertVisible: "Community Pulse"
 - assertNotVisible: "Something went wrong"
 - assertNotVisible: "Unfortunately"
+
+# TC20 - Scroll and return
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+
+# TC21 - Back from second visit
+- pressKey: Back
+- waitForAnimationToEnd
+- assertNotVisible: "Something went wrong"
