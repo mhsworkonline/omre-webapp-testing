@@ -1,0 +1,4645 @@
+{
+  "runDate": "2026-06-18T06-35-05",
+  "platform": "Android",
+  "app": "com.omre.app.posh",
+  "totalFlows": 4,
+  "passed": 3,
+  "failed": 1,
+  "flows": [
+    {
+      "name": "android_video",
+      "status": "FAILED",
+      "stepsPassed": 49,
+      "stepsFailed": 1,
+      "failedStep": "Tap on \"View all\"",
+      "durationMs": 434896,
+      "scenarios": [
+        {
+          "name": "TC01 - Launch app",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "[OK] stopApp",
+            "[OK] Launch app \"com.omre.app.posh\"",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC02 - Open module switcher",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] Tap on \"View all\"",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC03 - Navigate to Video",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "[OK] Tap on \"Video\"",
+            "[OK] Wait for animation",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC04 - Video screen heading visible",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "[OK] Assert visible: \"Video\""
+          ]
+        },
+        {
+          "name": "TC05 - Scroll down through video feed",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] Swipe UP",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC06 - Video heading persists during scroll",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "[OK] Assert visible: \"Video\""
+          ]
+        },
+        {
+          "name": "TC07 - Second scroll",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] Swipe UP",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC08 - Video still visible",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "[OK] Assert visible: \"Video\""
+          ]
+        },
+        {
+          "name": "TC09 - Scroll back to top",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 4,
+          "steps": [
+            "[OK] Swipe DOWN",
+            "[OK] Wait for animation",
+            "[OK] Swipe DOWN",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC10 - Video heading at top",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "[OK] Assert visible: \"Video\""
+          ]
+        },
+        {
+          "name": "TC11 - Tap first video to play (y=40% avoids tab row)",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "[OK] tapOnPointV2",
+            "[OK] Wait for animation",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC12 - Back from video player (goes to Home)",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] Press key: BACK",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC13 - Re-navigate to Video",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 8,
+          "steps": [
+            "[OK] Tap on \"View all\"",
+            "[OK] Wait for animation",
+            "[OK] Tap on \"Video\"",
+            "[OK] Wait for animation",
+            "[OK] Wait for animation",
+            "[OK] Assert visible: \"Video\"",
+            "[OK] tapOnPointV2",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC14 - Tap second video",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "[OK] Wait for animation",
+            "[OK] Press key: BACK",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC15 - Back from video player",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] Tap on \"View all\"",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC16 - Re-navigate to Video",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 8,
+          "steps": [
+            "[OK] Tap on \"Video\"",
+            "[OK] Wait for animation",
+            "[OK] Wait for animation",
+            "[OK] Assert visible: \"Video\"",
+            "[OK] tapOnPointV2",
+            "[OK] Wait for animation",
+            "[OK] Wait for animation",
+            "[OK] Press key: BACK"
+          ]
+        },
+        {
+          "name": "TC17 - Tap third video",
+          "expected": "Step completes successfully",
+          "status": "FAILED",
+          "actual": "Failed at \"Tap on \"View all\"\"  -  Element not found: Text matching regex: View all",
+          "stepCount": 2,
+          "steps": [
+            "[OK] Wait for animation",
+            "[FAIL] Tap on \"View all\""
+          ]
+        },
+        {
+          "name": "TC18 - Back from video player",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "TC19 - Re-navigate to Video",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "TC20 - Like first video (~12%,40%)",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "TC21 - Unlike (toggle)",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "TC22 - Comment on first video (~88%,40%)",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "TC23 - Re-nav after comment (goes home)",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "TC24 - Share first video (~88%,50%)",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "TC25 - Re-nav after share",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "TC26 - Tap search/filter icon (top-right ~88%,9%)",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "TC27 - Tap upload icon (~75%,9%)",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "TC27 - Tap second category tab (~30%,18%)",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "TC28 - Scroll in filtered view",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "TC29 - Tap third category tab (~60%,18%)",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "TC30 - Scroll third tab",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "TC31 - Tap first tab to reset (~10%,18%)",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "TC32 - Scroll to bottom of feed",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "TC33 - Scroll back to top",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "TC34 - Tap options on first video (~92%,40%)",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "TC35 - Tap save/bookmark icon (~65%,40%)",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "TC36 - Swipe left on video card",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "TC37 - Video still accessible after swipes",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        },
+        {
+          "name": "TC38 - Module switcher accessible from Video",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 0,
+          "steps": []
+        }
+      ],
+      "steps": [
+        {
+          "name": "Set up test variables",
+          "status": "COMPLETED",
+          "duration": 17,
+          "seq": 0,
+          "error": null,
+          "synthetic": true
+        },
+        {
+          "name": "Apply flow configuration",
+          "status": "COMPLETED",
+          "duration": 6,
+          "seq": 1,
+          "error": null,
+          "synthetic": true
+        },
+        {
+          "name": "stopApp",
+          "status": "COMPLETED",
+          "duration": 1164,
+          "seq": 2,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Launch app \"com.omre.app.posh\"",
+          "status": "COMPLETED",
+          "duration": 5381,
+          "seq": 3,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 7200,
+          "seq": 4,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"View all\"",
+          "status": "COMPLETED",
+          "duration": 53309,
+          "seq": 5,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 3957,
+          "seq": 6,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"Video\"",
+          "status": "COMPLETED",
+          "duration": 20674,
+          "seq": 7,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 3506,
+          "seq": 8,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 3440,
+          "seq": 9,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Video\"",
+          "status": "COMPLETED",
+          "duration": 702,
+          "seq": 10,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Swipe UP",
+          "status": "COMPLETED",
+          "duration": 1770,
+          "seq": 11,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 2369,
+          "seq": 12,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Video\"",
+          "status": "COMPLETED",
+          "duration": 584,
+          "seq": 13,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Swipe UP",
+          "status": "COMPLETED",
+          "duration": 1426,
+          "seq": 14,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 2792,
+          "seq": 15,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Video\"",
+          "status": "COMPLETED",
+          "duration": 325,
+          "seq": 16,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Swipe DOWN",
+          "status": "COMPLETED",
+          "duration": 811,
+          "seq": 17,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1300,
+          "seq": 18,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Swipe DOWN",
+          "status": "COMPLETED",
+          "duration": 876,
+          "seq": 19,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1424,
+          "seq": 20,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Video\"",
+          "status": "COMPLETED",
+          "duration": 131,
+          "seq": 21,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 861,
+          "seq": 22,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1244,
+          "seq": 23,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1220,
+          "seq": 24,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Press key: BACK",
+          "status": "COMPLETED",
+          "duration": 43122,
+          "seq": 25,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 4817,
+          "seq": 26,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"View all\"",
+          "status": "COMPLETED",
+          "duration": 12456,
+          "seq": 27,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 4973,
+          "seq": 28,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"Video\"",
+          "status": "COMPLETED",
+          "duration": 13822,
+          "seq": 29,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 3494,
+          "seq": 30,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 3788,
+          "seq": 31,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Video\"",
+          "status": "COMPLETED",
+          "duration": 1632,
+          "seq": 32,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 4461,
+          "seq": 33,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 3795,
+          "seq": 34,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1940,
+          "seq": 35,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Press key: BACK",
+          "status": "COMPLETED",
+          "duration": 59170,
+          "seq": 36,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 5851,
+          "seq": 37,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"View all\"",
+          "status": "COMPLETED",
+          "duration": 20590,
+          "seq": 38,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 6059,
+          "seq": 39,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"Video\"",
+          "status": "COMPLETED",
+          "duration": 12407,
+          "seq": 40,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 4665,
+          "seq": 41,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 5493,
+          "seq": 42,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Video\"",
+          "status": "COMPLETED",
+          "duration": 654,
+          "seq": 43,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 4127,
+          "seq": 44,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 2397,
+          "seq": 45,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 2796,
+          "seq": 46,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Press key: BACK",
+          "status": "COMPLETED",
+          "duration": 31593,
+          "seq": 47,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 18534,
+          "seq": 48,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"View all\"",
+          "status": "FAILED",
+          "duration": 45771,
+          "seq": 49,
+          "error": "Element not found: Text matching regex: View all",
+          "synthetic": false
+        }
+      ]
+    },
+    {
+      "name": "android_news_feed",
+      "status": "PASSED",
+      "stepsPassed": 111,
+      "stepsFailed": 0,
+      "failedStep": null,
+      "durationMs": 544393,
+      "scenarios": [
+        {
+          "name": "TC01 - Launch app",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "[OK] stopApp",
+            "[OK] Launch app \"com.omre.app.posh\"",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC02 - Open module switcher",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] Tap on \"View all\"",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC03 - Navigate to News",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "[OK] Tap on \"News\"",
+            "[OK] Wait for animation",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC04 - News screen heading visible",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "[OK] Assert visible: \"News\""
+          ]
+        },
+        {
+          "name": "TC05 - Scroll down through news feed",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] Swipe UP",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC06 - News heading persists during scroll",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "[OK] Assert visible: \"News\""
+          ]
+        },
+        {
+          "name": "TC07 - Second scroll",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] Swipe UP",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC08 - News still visible",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "[OK] Assert visible: \"News\""
+          ]
+        },
+        {
+          "name": "TC09 - Scroll back to top",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 4,
+          "steps": [
+            "[OK] Swipe DOWN",
+            "[OK] Wait for animation",
+            "[OK] Swipe DOWN",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC10 - News heading at top",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "[OK] Assert visible: \"News\""
+          ]
+        },
+        {
+          "name": "TC11 - Tap first news article (y=40% avoids tab row at ~18%)",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] tapOnPointV2",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC12 - Back from article (goes to home)",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] Press key: BACK",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC13 - Re-navigate to News",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 6,
+          "steps": [
+            "[OK] Tap on \"View all\"",
+            "[OK] Wait for animation",
+            "[OK] Tap on \"News\"",
+            "[OK] Wait for animation",
+            "[OK] Wait for animation",
+            "[OK] Assert visible: \"News\""
+          ]
+        },
+        {
+          "name": "TC14 - Tap second article",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] tapOnPointV2",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC15 - Back from article",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] Press key: BACK",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC16 - Re-navigate to News",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 6,
+          "steps": [
+            "[OK] Tap on \"View all\"",
+            "[OK] Wait for animation",
+            "[OK] Tap on \"News\"",
+            "[OK] Wait for animation",
+            "[OK] Wait for animation",
+            "[OK] Assert visible: \"News\""
+          ]
+        },
+        {
+          "name": "TC17 - Tap third article",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] tapOnPointV2",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC18 - Back from article",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] Press key: BACK",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC19 - Re-navigate to News",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 6,
+          "steps": [
+            "[OK] Tap on \"View all\"",
+            "[OK] Wait for animation",
+            "[OK] Tap on \"News\"",
+            "[OK] Wait for animation",
+            "[OK] Wait for animation",
+            "[OK] Assert visible: \"News\""
+          ]
+        },
+        {
+          "name": "TC20 - Share first article (share icon ~88%,40%)",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 4,
+          "steps": [
+            "[OK] tapOnPointV2",
+            "[OK] Wait for animation",
+            "[OK] Press key: BACK",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC21 - Re-navigate after share if needed",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 6,
+          "steps": [
+            "[OK] Tap on \"View all\"",
+            "[OK] Wait for animation",
+            "[OK] Tap on \"News\"",
+            "[OK] Wait for animation",
+            "[OK] Wait for animation",
+            "[OK] Assert visible: \"News\""
+          ]
+        },
+        {
+          "name": "TC22 - Tap search/filter icon top-right",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 4,
+          "steps": [
+            "[OK] tapOnPointV2",
+            "[OK] Wait for animation",
+            "[OK] Press key: BACK",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC23 - News still visible after search dismiss",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "[OK] Assert visible: \"News\""
+          ]
+        },
+        {
+          "name": "TC24 - Tap category tab 2 (~30%,18%)",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] tapOnPointV2",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC25 - News still visible in tab 2",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "[OK] Assert visible: \"News\""
+          ]
+        },
+        {
+          "name": "TC26 - Scroll tab 2 content",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "[OK] Swipe UP",
+            "[OK] Wait for animation",
+            "[OK] Assert visible: \"News\""
+          ]
+        },
+        {
+          "name": "TC27 - Tap category tab 3 (~60%,18%)",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "[OK] tapOnPointV2",
+            "[OK] Wait for animation",
+            "[OK] Assert visible: \"News\""
+          ]
+        },
+        {
+          "name": "TC28 - Scroll tab 3 content",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] Swipe UP",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC29 - Tap back to first tab (~10%,18%)",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "[OK] tapOnPointV2",
+            "[OK] Wait for animation",
+            "[OK] Assert visible: \"News\""
+          ]
+        },
+        {
+          "name": "TC30 - Scroll to bottom of feed",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 4,
+          "steps": [
+            "[OK] Swipe UP",
+            "[OK] Wait for animation",
+            "[OK] Swipe UP",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC31 - Scroll back to top",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 5,
+          "steps": [
+            "[OK] Swipe DOWN",
+            "[OK] Wait for animation",
+            "[OK] Swipe DOWN",
+            "[OK] Wait for animation",
+            "[OK] Assert visible: \"News\""
+          ]
+        },
+        {
+          "name": "TC32 - Tap top-right options icon",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 4,
+          "steps": [
+            "[OK] tapOnPointV2",
+            "[OK] Wait for animation",
+            "[OK] Press key: BACK",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC33 - News accessible after options dismiss",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "[OK] Assert visible: \"News\""
+          ]
+        },
+        {
+          "name": "TC34 - Tap bookmark/save icon on first article (~75%,40%)",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "[OK] tapOnPointV2",
+            "[OK] Wait for animation",
+            "[OK] Assert visible: \"News\""
+          ]
+        },
+        {
+          "name": "TC35 - Tap like/react on first article (~65%,40%)",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "[OK] tapOnPointV2",
+            "[OK] Wait for animation",
+            "[OK] Assert visible: \"News\""
+          ]
+        },
+        {
+          "name": "TC36 - Scroll through feed one more time",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 5,
+          "steps": [
+            "[OK] Swipe UP",
+            "[OK] Wait for animation",
+            "[OK] Swipe DOWN",
+            "[OK] Wait for animation",
+            "[OK] Assert visible: \"News\""
+          ]
+        },
+        {
+          "name": "TC37 - Scroll to top of News feed",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 4,
+          "steps": [
+            "[OK] Swipe DOWN",
+            "[OK] Wait for animation",
+            "[OK] Swipe DOWN",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC38 - News heading visible at top after full test cycle",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "[OK] Assert visible: \"News\""
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "name": "Set up test variables",
+          "status": "COMPLETED",
+          "duration": 16,
+          "seq": 0,
+          "error": null,
+          "synthetic": true
+        },
+        {
+          "name": "Apply flow configuration",
+          "status": "COMPLETED",
+          "duration": 10,
+          "seq": 1,
+          "error": null,
+          "synthetic": true
+        },
+        {
+          "name": "stopApp",
+          "status": "COMPLETED",
+          "duration": 1866,
+          "seq": 2,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Launch app \"com.omre.app.posh\"",
+          "status": "COMPLETED",
+          "duration": 3659,
+          "seq": 3,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 13439,
+          "seq": 4,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"View all\"",
+          "status": "COMPLETED",
+          "duration": 42916,
+          "seq": 5,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 5521,
+          "seq": 6,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"News\"",
+          "status": "COMPLETED",
+          "duration": 18968,
+          "seq": 7,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 2834,
+          "seq": 8,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 2990,
+          "seq": 9,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"News\"",
+          "status": "COMPLETED",
+          "duration": 490,
+          "seq": 10,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Swipe UP",
+          "status": "COMPLETED",
+          "duration": 2145,
+          "seq": 11,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1404,
+          "seq": 12,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"News\"",
+          "status": "COMPLETED",
+          "duration": 222,
+          "seq": 13,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Swipe UP",
+          "status": "COMPLETED",
+          "duration": 1618,
+          "seq": 14,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1386,
+          "seq": 15,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"News\"",
+          "status": "COMPLETED",
+          "duration": 133,
+          "seq": 16,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Swipe DOWN",
+          "status": "COMPLETED",
+          "duration": 1708,
+          "seq": 17,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1302,
+          "seq": 18,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Swipe DOWN",
+          "status": "COMPLETED",
+          "duration": 1567,
+          "seq": 19,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1283,
+          "seq": 20,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"News\"",
+          "status": "COMPLETED",
+          "duration": 192,
+          "seq": 21,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 822,
+          "seq": 22,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1333,
+          "seq": 23,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Press key: BACK",
+          "status": "COMPLETED",
+          "duration": 31198,
+          "seq": 24,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 3320,
+          "seq": 25,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"View all\"",
+          "status": "COMPLETED",
+          "duration": 3287,
+          "seq": 26,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 2152,
+          "seq": 27,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"News\"",
+          "status": "COMPLETED",
+          "duration": 17329,
+          "seq": 28,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 2414,
+          "seq": 29,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1797,
+          "seq": 30,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"News\"",
+          "status": "COMPLETED",
+          "duration": 130,
+          "seq": 31,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 682,
+          "seq": 32,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1102,
+          "seq": 33,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Press key: BACK",
+          "status": "COMPLETED",
+          "duration": 38758,
+          "seq": 34,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 4432,
+          "seq": 35,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"View all\"",
+          "status": "COMPLETED",
+          "duration": 8808,
+          "seq": 36,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 4319,
+          "seq": 37,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"News\"",
+          "status": "COMPLETED",
+          "duration": 23081,
+          "seq": 38,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 2138,
+          "seq": 39,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 2364,
+          "seq": 40,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"News\"",
+          "status": "COMPLETED",
+          "duration": 184,
+          "seq": 41,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 1193,
+          "seq": 42,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 2174,
+          "seq": 43,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Press key: BACK",
+          "status": "COMPLETED",
+          "duration": 45035,
+          "seq": 44,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 4878,
+          "seq": 45,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"View all\"",
+          "status": "COMPLETED",
+          "duration": 15175,
+          "seq": 46,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 6077,
+          "seq": 47,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"News\"",
+          "status": "COMPLETED",
+          "duration": 21168,
+          "seq": 48,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 4540,
+          "seq": 49,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 3550,
+          "seq": 50,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"News\"",
+          "status": "COMPLETED",
+          "duration": 489,
+          "seq": 51,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 2421,
+          "seq": 52,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 3315,
+          "seq": 53,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Press key: BACK",
+          "status": "COMPLETED",
+          "duration": 60346,
+          "seq": 54,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 6509,
+          "seq": 55,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"View all\"",
+          "status": "COMPLETED",
+          "duration": 17904,
+          "seq": 56,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 7667,
+          "seq": 57,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"News\"",
+          "status": "COMPLETED",
+          "duration": 21020,
+          "seq": 58,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 2641,
+          "seq": 59,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 3272,
+          "seq": 60,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"News\"",
+          "status": "COMPLETED",
+          "duration": 313,
+          "seq": 61,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 3550,
+          "seq": 62,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 2329,
+          "seq": 63,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Press key: BACK",
+          "status": "COMPLETED",
+          "duration": 2147,
+          "seq": 64,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1362,
+          "seq": 65,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"News\"",
+          "status": "COMPLETED",
+          "duration": 147,
+          "seq": 66,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 969,
+          "seq": 67,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1612,
+          "seq": 68,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"News\"",
+          "status": "COMPLETED",
+          "duration": 503,
+          "seq": 69,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Swipe UP",
+          "status": "COMPLETED",
+          "duration": 1693,
+          "seq": 70,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1381,
+          "seq": 71,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"News\"",
+          "status": "COMPLETED",
+          "duration": 169,
+          "seq": 72,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 817,
+          "seq": 73,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1721,
+          "seq": 74,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"News\"",
+          "status": "COMPLETED",
+          "duration": 249,
+          "seq": 75,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Swipe UP",
+          "status": "COMPLETED",
+          "duration": 1562,
+          "seq": 76,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1332,
+          "seq": 77,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 1057,
+          "seq": 78,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1566,
+          "seq": 79,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"News\"",
+          "status": "COMPLETED",
+          "duration": 190,
+          "seq": 80,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Swipe UP",
+          "status": "COMPLETED",
+          "duration": 1584,
+          "seq": 81,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1316,
+          "seq": 82,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Swipe UP",
+          "status": "COMPLETED",
+          "duration": 1916,
+          "seq": 83,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1497,
+          "seq": 84,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Swipe DOWN",
+          "status": "COMPLETED",
+          "duration": 1387,
+          "seq": 85,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1446,
+          "seq": 86,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Swipe DOWN",
+          "status": "COMPLETED",
+          "duration": 1571,
+          "seq": 87,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1350,
+          "seq": 88,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"News\"",
+          "status": "COMPLETED",
+          "duration": 138,
+          "seq": 89,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 1731,
+          "seq": 90,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1480,
+          "seq": 91,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Press key: BACK",
+          "status": "COMPLETED",
+          "duration": 1408,
+          "seq": 92,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1449,
+          "seq": 93,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"News\"",
+          "status": "COMPLETED",
+          "duration": 158,
+          "seq": 94,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 751,
+          "seq": 95,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1248,
+          "seq": 96,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"News\"",
+          "status": "COMPLETED",
+          "duration": 126,
+          "seq": 97,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 885,
+          "seq": 98,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1408,
+          "seq": 99,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"News\"",
+          "status": "COMPLETED",
+          "duration": 124,
+          "seq": 100,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Swipe UP",
+          "status": "COMPLETED",
+          "duration": 1550,
+          "seq": 101,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1255,
+          "seq": 102,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Swipe DOWN",
+          "status": "COMPLETED",
+          "duration": 1654,
+          "seq": 103,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1216,
+          "seq": 104,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"News\"",
+          "status": "COMPLETED",
+          "duration": 110,
+          "seq": 105,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Swipe DOWN",
+          "status": "COMPLETED",
+          "duration": 1617,
+          "seq": 106,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1368,
+          "seq": 107,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Swipe DOWN",
+          "status": "COMPLETED",
+          "duration": 1864,
+          "seq": 108,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1302,
+          "seq": 109,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"News\"",
+          "status": "COMPLETED",
+          "duration": 122,
+          "seq": 110,
+          "error": null,
+          "synthetic": false
+        }
+      ]
+    },
+    {
+      "name": "android_biz_module",
+      "status": "PASSED",
+      "stepsPassed": 103,
+      "stepsFailed": 0,
+      "failedStep": null,
+      "durationMs": 662524,
+      "scenarios": [
+        {
+          "name": "TC01 - Launch app",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "[OK] stopApp",
+            "[OK] Launch app \"com.omre.app.posh\"",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC02 - Open module switcher",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] Tap on \"View all\"",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC03 - Module switcher visible",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "[OK] Assert visible: \"Switch to Module\""
+          ]
+        },
+        {
+          "name": "TC04 - Navigate to Biz (index:1 to avoid ambiguity)",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "[OK] Tap on \"Biz\"",
+            "[OK] Wait for animation",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC05 - Biz module loaded (no heading assertion - text unknown)",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC06 - Scroll down through Biz feed",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] Swipe UP",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC07 - Second scroll",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] Swipe UP",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC08 - Scroll back to top",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 4,
+          "steps": [
+            "[OK] Swipe DOWN",
+            "[OK] Wait for animation",
+            "[OK] Swipe DOWN",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC09 - Tap first post/card in Biz feed",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] tapOnPointV2",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC10 - Back to Biz feed",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] Press key: BACK",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC11 - Tap second post/card",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] tapOnPointV2",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC12 - Back to Biz",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] Press key: BACK",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC13 - Tap third post/card",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] tapOnPointV2",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC14 - Back to Biz",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] Press key: BACK",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC15 - Like first post in Biz feed (heart icon ~12%,35%)",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] tapOnPointV2",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC16 - Unlike (toggle)",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] tapOnPointV2",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC17 - Like via right-side icon (alternate position ~88%,35%)",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] tapOnPointV2",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC18 - Unlike toggle",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] tapOnPointV2",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC19 - Tap comment icon (~88%,45%)",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] tapOnPointV2",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC20 - Back from comments",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] Press key: BACK",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC21 - Tap share icon (~88%,55%)",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] tapOnPointV2",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC22 - Dismiss share sheet",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] Press key: BACK",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC23 - Scroll to bottom of feed",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 4,
+          "steps": [
+            "[OK] Swipe UP",
+            "[OK] Wait for animation",
+            "[OK] Swipe UP",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC24 - Scroll back to top",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 4,
+          "steps": [
+            "[OK] Swipe DOWN",
+            "[OK] Wait for animation",
+            "[OK] Swipe DOWN",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC25 - Tap top-right action/filter icon",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 4,
+          "steps": [
+            "[OK] tapOnPointV2",
+            "[OK] Wait for animation",
+            "[OK] Press key: BACK",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC26 - Tap options on existing post (~92%,35%)",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 4,
+          "steps": [
+            "[OK] tapOnPointV2",
+            "[OK] Wait for animation",
+            "[OK] Press key: BACK",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC27 - Tap options on second post (~92%,55%)",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 4,
+          "steps": [
+            "[OK] tapOnPointV2",
+            "[OK] Wait for animation",
+            "[OK] Press key: BACK",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC28 - Swipe on a post card",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 4,
+          "steps": [
+            "[OK] Swipe LEFT",
+            "[OK] Wait for animation",
+            "[OK] Swipe RIGHT",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC29 - Create Biz post - tap post input (coord for Social home feed)",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] tapOnPointV2",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC30 - Type biz post content",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] Input text: \"Biz module create post test\"",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC31 - Submit post (try all common labels)",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 5,
+          "steps": [
+            "[-] runFlow",
+            "[-] runFlow",
+            "[-] runFlow",
+            "[OK] Wait for animation",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC32 - Navigate back to Biz (post may have been on Social feed)",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 8,
+          "steps": [
+            "[OK] tapOnPointV2",
+            "[OK] Wait for animation",
+            "[OK] Wait for animation",
+            "[OK] Tap on \"View all\"",
+            "[OK] Wait for animation",
+            "[OK] Tap on \"Biz\"",
+            "[OK] Wait for animation",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC33 - Tap options on newest post (~92%,25%)",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] tapOnPointV2",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC34 - Delete the test post",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 6,
+          "steps": [
+            "[-] runFlow",
+            "[-] runFlow",
+            "[-] runFlow",
+            "[-] runFlow",
+            "[OK] Press key: BACK",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC35 - Scroll Biz feed after delete",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 4,
+          "steps": [
+            "[OK] Swipe UP",
+            "[OK] Wait for animation",
+            "[OK] Swipe DOWN",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC36 - Tap first result in Biz (verify feed intact)",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 4,
+          "steps": [
+            "[OK] tapOnPointV2",
+            "[OK] Wait for animation",
+            "[OK] Press key: BACK",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC37 - Module switcher visible via View all",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "[OK] Tap on \"View all\"",
+            "[OK] Wait for animation",
+            "[OK] Assert visible: \"Switch to Module\""
+          ]
+        },
+        {
+          "name": "TC38 - Dismiss module switcher",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] Press key: BACK",
+            "[OK] Wait for animation"
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "name": "Set up test variables",
+          "status": "COMPLETED",
+          "duration": 11,
+          "seq": 0,
+          "error": null,
+          "synthetic": true
+        },
+        {
+          "name": "Apply flow configuration",
+          "status": "COMPLETED",
+          "duration": 5,
+          "seq": 1,
+          "error": null,
+          "synthetic": true
+        },
+        {
+          "name": "stopApp",
+          "status": "COMPLETED",
+          "duration": 427,
+          "seq": 2,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Launch app \"com.omre.app.posh\"",
+          "status": "COMPLETED",
+          "duration": 3432,
+          "seq": 3,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 15176,
+          "seq": 4,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"View all\"",
+          "status": "COMPLETED",
+          "duration": 26644,
+          "seq": 5,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 4745,
+          "seq": 6,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Switch to Module\"",
+          "status": "COMPLETED",
+          "duration": 2171,
+          "seq": 7,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"Biz\"",
+          "status": "COMPLETED",
+          "duration": 18270,
+          "seq": 8,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1425,
+          "seq": 9,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1112,
+          "seq": 10,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1158,
+          "seq": 11,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Swipe UP",
+          "status": "COMPLETED",
+          "duration": 800,
+          "seq": 12,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1155,
+          "seq": 13,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Swipe UP",
+          "status": "COMPLETED",
+          "duration": 856,
+          "seq": 14,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1145,
+          "seq": 15,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Swipe DOWN",
+          "status": "COMPLETED",
+          "duration": 780,
+          "seq": 16,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1169,
+          "seq": 17,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Swipe DOWN",
+          "status": "COMPLETED",
+          "duration": 860,
+          "seq": 18,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1132,
+          "seq": 19,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 818,
+          "seq": 20,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1054,
+          "seq": 21,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Press key: BACK",
+          "status": "COMPLETED",
+          "duration": 35576,
+          "seq": 22,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 3685,
+          "seq": 23,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 21165,
+          "seq": 24,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 17239,
+          "seq": 25,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Press key: BACK",
+          "status": "COMPLETED",
+          "duration": 2184,
+          "seq": 26,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 13883,
+          "seq": 27,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 2795,
+          "seq": 28,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 5074,
+          "seq": 29,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Press key: BACK",
+          "status": "COMPLETED",
+          "duration": 3886,
+          "seq": 30,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 4893,
+          "seq": 31,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 5531,
+          "seq": 32,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 4320,
+          "seq": 33,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 3555,
+          "seq": 34,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 4765,
+          "seq": 35,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 9189,
+          "seq": 36,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 3898,
+          "seq": 37,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 4026,
+          "seq": 38,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1925,
+          "seq": 39,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 1758,
+          "seq": 40,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1364,
+          "seq": 41,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Press key: BACK",
+          "status": "COMPLETED",
+          "duration": 36442,
+          "seq": 42,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 6128,
+          "seq": 43,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 24629,
+          "seq": 44,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 16606,
+          "seq": 45,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Press key: BACK",
+          "status": "COMPLETED",
+          "duration": 6590,
+          "seq": 46,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 4297,
+          "seq": 47,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Swipe UP",
+          "status": "COMPLETED",
+          "duration": 9067,
+          "seq": 48,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 19414,
+          "seq": 49,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Swipe UP",
+          "status": "COMPLETED",
+          "duration": 6286,
+          "seq": 50,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 19541,
+          "seq": 51,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Swipe DOWN",
+          "status": "COMPLETED",
+          "duration": 6607,
+          "seq": 52,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 18594,
+          "seq": 53,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Swipe DOWN",
+          "status": "COMPLETED",
+          "duration": 3331,
+          "seq": 54,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 2611,
+          "seq": 55,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 2222,
+          "seq": 56,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1306,
+          "seq": 57,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Press key: BACK",
+          "status": "COMPLETED",
+          "duration": 1876,
+          "seq": 58,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 2230,
+          "seq": 59,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 8797,
+          "seq": 60,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 2330,
+          "seq": 61,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Press key: BACK",
+          "status": "COMPLETED",
+          "duration": 27387,
+          "seq": 62,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 2707,
+          "seq": 63,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 11592,
+          "seq": 64,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 18870,
+          "seq": 65,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Press key: BACK",
+          "status": "COMPLETED",
+          "duration": 1979,
+          "seq": 66,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 2071,
+          "seq": 67,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Swipe LEFT",
+          "status": "COMPLETED",
+          "duration": 2885,
+          "seq": 68,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 2250,
+          "seq": 69,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Swipe RIGHT",
+          "status": "COMPLETED",
+          "duration": 1870,
+          "seq": 70,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1916,
+          "seq": 71,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 1284,
+          "seq": 72,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1998,
+          "seq": 73,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Input text: \"Biz module create post test\"",
+          "status": "COMPLETED",
+          "duration": 4906,
+          "seq": 74,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1795,
+          "seq": 75,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "runFlow",
+          "status": "SKIPPED",
+          "duration": 0,
+          "seq": 76,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "runFlow",
+          "status": "SKIPPED",
+          "duration": 0,
+          "seq": 77,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "runFlow",
+          "status": "SKIPPED",
+          "duration": 0,
+          "seq": 78,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1870,
+          "seq": 79,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1808,
+          "seq": 80,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 1897,
+          "seq": 81,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 2008,
+          "seq": 82,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 2098,
+          "seq": 83,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"View all\"",
+          "status": "COMPLETED",
+          "duration": 2889,
+          "seq": 84,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1873,
+          "seq": 85,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"Biz\"",
+          "status": "COMPLETED",
+          "duration": 11328,
+          "seq": 86,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1846,
+          "seq": 87,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 2285,
+          "seq": 88,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 595,
+          "seq": 89,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 947,
+          "seq": 90,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "runFlow",
+          "status": "SKIPPED",
+          "duration": 0,
+          "seq": 91,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "runFlow",
+          "status": "SKIPPED",
+          "duration": 0,
+          "seq": 92,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "runFlow",
+          "status": "SKIPPED",
+          "duration": 0,
+          "seq": 93,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "runFlow",
+          "status": "SKIPPED",
+          "duration": 0,
+          "seq": 94,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Press key: BACK",
+          "status": "COMPLETED",
+          "duration": 31051,
+          "seq": 95,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 4881,
+          "seq": 96,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Swipe UP",
+          "status": "COMPLETED",
+          "duration": 4591,
+          "seq": 97,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 16015,
+          "seq": 98,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Swipe DOWN",
+          "status": "COMPLETED",
+          "duration": 2913,
+          "seq": 99,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 2381,
+          "seq": 100,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 12510,
+          "seq": 101,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1510,
+          "seq": 102,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Press key: BACK",
+          "status": "COMPLETED",
+          "duration": 26305,
+          "seq": 103,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 2235,
+          "seq": 104,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"View all\"",
+          "status": "COMPLETED",
+          "duration": 3117,
+          "seq": 105,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 2042,
+          "seq": 106,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Switch to Module\"",
+          "status": "COMPLETED",
+          "duration": 156,
+          "seq": 107,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Press key: BACK",
+          "status": "COMPLETED",
+          "duration": 1015,
+          "seq": 108,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 2888,
+          "seq": 109,
+          "error": null,
+          "synthetic": false
+        }
+      ]
+    },
+    {
+      "name": "android_orbit_feed",
+      "status": "PASSED",
+      "stepsPassed": 88,
+      "stepsFailed": 0,
+      "failedStep": null,
+      "durationMs": 586057,
+      "scenarios": [
+        {
+          "name": "TC01 - Launch app",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "[OK] stopApp",
+            "[OK] Launch app \"com.omre.app.posh\"",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC02 - Tap Orbit icon in bottom nav",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "[OK] tapOnPointV2",
+            "[OK] Wait for animation",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC03 - Explore screen heading visible",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "[OK] Assert visible: \"Explore\""
+          ]
+        },
+        {
+          "name": "TC04 - Tap search bar by coordinate",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] tapOnPointV2",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC05 - Type search query",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] Input text: \"OMRE community\"",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC06 - Back from search",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 4,
+          "steps": [
+            "[OK] Press key: BACK",
+            "[OK] Wait for animation",
+            "[OK] Press key: BACK",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC07 - Back on Explore",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "[OK] Assert visible: \"Explore\""
+          ]
+        },
+        {
+          "name": "TC08 - Scroll down through For You feed",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] Swipe UP",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC09 - Explore still visible",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "[OK] Assert visible: \"Explore\""
+          ]
+        },
+        {
+          "name": "TC10 - Second scroll",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] Swipe UP",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC11 - Still on Explore",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "[OK] Assert visible: \"Explore\""
+          ]
+        },
+        {
+          "name": "TC12 - Scroll back to top",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 4,
+          "steps": [
+            "[OK] Swipe DOWN",
+            "[OK] Wait for animation",
+            "[OK] Swipe DOWN",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC13 - Explore heading at top",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "[OK] Assert visible: \"Explore\""
+          ]
+        },
+        {
+          "name": "TC14 - Tap first post (top-left ~25%,35%)",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] tapOnPointV2",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC15 - Back to Explore",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] Press key: BACK",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC16 - Back on Explore",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "[OK] Assert visible: \"Explore\""
+          ]
+        },
+        {
+          "name": "TC17 - Tap second post (top-right ~75%,35%)",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] tapOnPointV2",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC18 - Back to Explore",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] Press key: BACK",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC19 - Back on Explore",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "[OK] Assert visible: \"Explore\""
+          ]
+        },
+        {
+          "name": "TC20 - Tap third post (bottom-left ~25%,60%)",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] tapOnPointV2",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC21 - Back to Explore",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] Press key: BACK",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC22 - Switch to Trending tab (coord ~28%,20%)",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] tapOnPointV2",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC23 - Explore still visible in Trending",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "[OK] Assert visible: \"Explore\""
+          ]
+        },
+        {
+          "name": "TC24 - Scroll Trending",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] Swipe UP",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC25 - Tap post in Trending",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 4,
+          "steps": [
+            "[OK] tapOnPointV2",
+            "[OK] Wait for animation",
+            "[OK] Press key: BACK",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC26 - Switch to Reels tab (coord ~45%,20%)",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] tapOnPointV2",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC27 - Scroll Reels (full-screen — no Explore heading; scroll only)",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] Swipe UP",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC28 - Back out of Reels to return to Explore tabs",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 3,
+          "steps": [
+            "[OK] Press key: BACK",
+            "[OK] Wait for animation",
+            "[OK] Assert visible: \"Explore\""
+          ]
+        },
+        {
+          "name": "TC29 - Reset scroll to top before Posts tab tap",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] Swipe DOWN",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC29b - Switch to Posts tab (coord ~60%,14%)",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] tapOnPointV2",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC30 - Explore visible in Posts",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "[OK] Assert visible: \"Explore\""
+          ]
+        },
+        {
+          "name": "TC31 - Tap first post in Posts tab",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 4,
+          "steps": [
+            "[OK] tapOnPointV2",
+            "[OK] Wait for animation",
+            "[OK] Press key: BACK",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC32 - Switch to Discover tab (coord ~77%,14%)",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] tapOnPointV2",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC33 - Explore visible in Discover",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "[OK] Assert visible: \"Explore\""
+          ]
+        },
+        {
+          "name": "TC34 - Scroll Discover content",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 2,
+          "steps": [
+            "[OK] Swipe UP",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC35 - Tap item in Discover",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 4,
+          "steps": [
+            "[OK] tapOnPointV2",
+            "[OK] Wait for animation",
+            "[OK] Press key: BACK",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC36 - Explore still visible after all tabs explored",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 1,
+          "steps": [
+            "[OK] Assert visible: \"Explore\""
+          ]
+        },
+        {
+          "name": "TC37 - Navigate back to home via drawer",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 6,
+          "steps": [
+            "[OK] tapOnPointV2",
+            "[OK] Wait for animation",
+            "[OK] Wait for animation",
+            "[OK] Tap on \"Social\"",
+            "[OK] Wait for animation",
+            "[OK] Wait for animation"
+          ]
+        },
+        {
+          "name": "TC38 - Scroll to top of Social home feed",
+          "expected": "Step completes successfully",
+          "status": "PASSED",
+          "actual": "All steps passed",
+          "stepCount": 4,
+          "steps": [
+            "[OK] Swipe DOWN",
+            "[OK] Wait for animation",
+            "[OK] Swipe DOWN",
+            "[OK] Wait for animation"
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "name": "Set up test variables",
+          "status": "COMPLETED",
+          "duration": 8,
+          "seq": 0,
+          "error": null,
+          "synthetic": true
+        },
+        {
+          "name": "Apply flow configuration",
+          "status": "COMPLETED",
+          "duration": 3,
+          "seq": 1,
+          "error": null,
+          "synthetic": true
+        },
+        {
+          "name": "stopApp",
+          "status": "COMPLETED",
+          "duration": 384,
+          "seq": 2,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Launch app \"com.omre.app.posh\"",
+          "status": "COMPLETED",
+          "duration": 4445,
+          "seq": 3,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 12863,
+          "seq": 4,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 44475,
+          "seq": 5,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 20392,
+          "seq": 6,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 19424,
+          "seq": 7,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Explore\"",
+          "status": "COMPLETED",
+          "duration": 826,
+          "seq": 8,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 2838,
+          "seq": 9,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 15474,
+          "seq": 10,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Input text: \"OMRE community\"",
+          "status": "COMPLETED",
+          "duration": 5955,
+          "seq": 11,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 20875,
+          "seq": 12,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Press key: BACK",
+          "status": "COMPLETED",
+          "duration": 1954,
+          "seq": 13,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 2097,
+          "seq": 14,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Press key: BACK",
+          "status": "COMPLETED",
+          "duration": 673,
+          "seq": 15,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1598,
+          "seq": 16,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Explore\"",
+          "status": "COMPLETED",
+          "duration": 144,
+          "seq": 17,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Swipe UP",
+          "status": "COMPLETED",
+          "duration": 4419,
+          "seq": 18,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 14445,
+          "seq": 19,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Explore\"",
+          "status": "COMPLETED",
+          "duration": 688,
+          "seq": 20,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Swipe UP",
+          "status": "COMPLETED",
+          "duration": 1538,
+          "seq": 21,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 2778,
+          "seq": 22,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Explore\"",
+          "status": "COMPLETED",
+          "duration": 221,
+          "seq": 23,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Swipe DOWN",
+          "status": "COMPLETED",
+          "duration": 2564,
+          "seq": 24,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 17116,
+          "seq": 25,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Swipe DOWN",
+          "status": "COMPLETED",
+          "duration": 2523,
+          "seq": 26,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 2393,
+          "seq": 27,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Explore\"",
+          "status": "COMPLETED",
+          "duration": 150,
+          "seq": 28,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 953,
+          "seq": 29,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1809,
+          "seq": 30,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Press key: BACK",
+          "status": "COMPLETED",
+          "duration": 758,
+          "seq": 31,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1870,
+          "seq": 32,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Explore\"",
+          "status": "COMPLETED",
+          "duration": 167,
+          "seq": 33,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 10500,
+          "seq": 34,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1877,
+          "seq": 35,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Press key: BACK",
+          "status": "COMPLETED",
+          "duration": 21499,
+          "seq": 36,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 2303,
+          "seq": 37,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Explore\"",
+          "status": "COMPLETED",
+          "duration": 424,
+          "seq": 38,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 1571,
+          "seq": 39,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1395,
+          "seq": 40,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Press key: BACK",
+          "status": "COMPLETED",
+          "duration": 1272,
+          "seq": 41,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1970,
+          "seq": 42,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 842,
+          "seq": 43,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 1680,
+          "seq": 44,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Explore\"",
+          "status": "COMPLETED",
+          "duration": 151,
+          "seq": 45,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Swipe UP",
+          "status": "COMPLETED",
+          "duration": 3487,
+          "seq": 46,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 16691,
+          "seq": 47,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 6895,
+          "seq": 48,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 16948,
+          "seq": 49,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Press key: BACK",
+          "status": "COMPLETED",
+          "duration": 8838,
+          "seq": 50,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 18067,
+          "seq": 51,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 5337,
+          "seq": 52,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 17443,
+          "seq": 53,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Swipe UP",
+          "status": "COMPLETED",
+          "duration": 3602,
+          "seq": 54,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 4844,
+          "seq": 55,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Press key: BACK",
+          "status": "COMPLETED",
+          "duration": 982,
+          "seq": 56,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 5204,
+          "seq": 57,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Explore\"",
+          "status": "COMPLETED",
+          "duration": 360,
+          "seq": 58,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Swipe DOWN",
+          "status": "COMPLETED",
+          "duration": 4341,
+          "seq": 59,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 20464,
+          "seq": 60,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 5892,
+          "seq": 61,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 16942,
+          "seq": 62,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Explore\"",
+          "status": "COMPLETED",
+          "duration": 1632,
+          "seq": 63,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 12163,
+          "seq": 64,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 16640,
+          "seq": 65,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Press key: BACK",
+          "status": "COMPLETED",
+          "duration": 6038,
+          "seq": 66,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 18535,
+          "seq": 67,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 4908,
+          "seq": 68,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 17971,
+          "seq": 69,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Explore\"",
+          "status": "COMPLETED",
+          "duration": 1111,
+          "seq": 70,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Swipe UP",
+          "status": "COMPLETED",
+          "duration": 3919,
+          "seq": 71,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 17262,
+          "seq": 72,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 4486,
+          "seq": 73,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 15869,
+          "seq": 74,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Press key: BACK",
+          "status": "COMPLETED",
+          "duration": 3668,
+          "seq": 75,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 16780,
+          "seq": 76,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Assert visible: \"Explore\"",
+          "status": "COMPLETED",
+          "duration": 1305,
+          "seq": 77,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "tapOnPointV2",
+          "status": "COMPLETED",
+          "duration": 6759,
+          "seq": 78,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 3714,
+          "seq": 79,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 3315,
+          "seq": 80,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Tap on \"Social\"",
+          "status": "COMPLETED",
+          "duration": 3136,
+          "seq": 81,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 2956,
+          "seq": 82,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 3044,
+          "seq": 83,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Swipe DOWN",
+          "status": "COMPLETED",
+          "duration": 2086,
+          "seq": 84,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 3006,
+          "seq": 85,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Swipe DOWN",
+          "status": "COMPLETED",
+          "duration": 2094,
+          "seq": 86,
+          "error": null,
+          "synthetic": false
+        },
+        {
+          "name": "Wait for animation",
+          "status": "COMPLETED",
+          "duration": 3019,
+          "seq": 87,
+          "error": null,
+          "synthetic": false
+        }
+      ]
+    }
+  ]
+}

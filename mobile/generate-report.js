@@ -387,14 +387,14 @@ async function writeExcel(flows, outDir, ts) {
   ws1.views = [{ state: 'frozen', ySplit: 4 }];
 
   // Title block
-  ws1.mergeCells('A1:H1');
+  ws1.mergeCells('A1:J1');
   ws1.getCell('A1').value = 'OMRE Mobile Test Report  -  Android';
   ws1.getCell('A1').font = { bold: true, size: 14, color: { argb: 'FFFFFFFF' } };
   ws1.getCell('A1').fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF1A1A2E' } };
   ws1.getCell('A1').alignment = { horizontal: 'center', vertical: 'middle' };
   ws1.getRow(1).height = 32;
 
-  ws1.mergeCells('A2:H2');
+  ws1.mergeCells('A2:J2');
   ws1.getCell('A2').value = `Run: ${ts}   |   Total: ${flows.length}   |   Passed: ${passed}   |   Failed: ${failed}   |   App: com.omre.app.posh`;
   ws1.getCell('A2').font = { size: 11, color: { argb: 'FFFFFFFF' } };
   ws1.getCell('A2').fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF16213E' } };
@@ -409,11 +409,11 @@ async function writeExcel(flows, outDir, ts) {
   const HDR_FILL  = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF1A1A2E' } };
   const HDR_FONT  = { bold: true, color: { argb: 'FFFFFFFF' }, size: 11 };
 
-  const headers = ['S.No.', 'Flow Name', 'Status', 'Steps Passed', 'Steps Failed', 'Failed Step', 'Duration (s)', 'Remarks'];
-  const widths  = [8, 30, 12, 14, 14, 45, 14, 55];
+  const headers = ['S.No.', 'Flow Name', 'Status', 'Test Cases Passed', 'Test Cases Failed', 'Commands Passed', 'Commands Failed', 'Failed Step', 'Duration (s)', 'Remarks'];
+  const widths  = [8, 30, 12, 18, 18, 16, 16, 45, 14, 55];
   const hdrRow = ws1.addRow(headers);
-  hdrRow.eachCell(c => { c.fill = HDR_FILL; c.font = HDR_FONT; c.alignment = { horizontal: 'center', vertical: 'middle' }; });
-  hdrRow.height = 22;
+  hdrRow.eachCell(c => { c.fill = HDR_FILL; c.font = HDR_FONT; c.alignment = { horizontal: 'center', vertical: 'middle', wrapText: true }; });
+  hdrRow.height = 30;
   widths.forEach((w, i) => { ws1.getColumn(i + 1).width = w; });
 
   // Data rows
@@ -422,10 +422,14 @@ async function writeExcel(flows, outDir, ts) {
     const remarks = f.status === 'FAILED'
       ? `Failed at: "${f.failedStep}"${failedStepObj?.error ? '  -  ' + failedStepObj.error : ''}`
       : '';
+    const tcPassed = f.scenarios.filter(s => s.status === 'PASSED').length;
+    const tcFailed = f.scenarios.filter(s => s.status === 'FAILED').length;
     const row = ws1.addRow([
       i + 1,
       f.name,
       f.status,
+      tcPassed,
+      tcFailed,
       f.stepsPassed,
       f.stepsFailed,
       f.failedStep || ' - ',
@@ -439,11 +443,13 @@ async function writeExcel(flows, outDir, ts) {
     statusCell.alignment = { horizontal: 'center' };
     row.getCell(4).alignment = { horizontal: 'center' };
     row.getCell(5).alignment = { horizontal: 'center' };
+    row.getCell(6).alignment = { horizontal: 'center' };
     row.getCell(7).alignment = { horizontal: 'center' };
+    row.getCell(9).alignment = { horizontal: 'center' };
     if (remarks) {
-      row.getCell(8).fill = FAIL_FILL;
-      row.getCell(8).font = { color: { argb: 'FF991B1B' } };
-      row.getCell(8).alignment = { wrapText: true, vertical: 'top' };
+      row.getCell(10).fill = FAIL_FILL;
+      row.getCell(10).font = { color: { argb: 'FF991B1B' } };
+      row.getCell(10).alignment = { wrapText: true, vertical: 'top' };
     }
     row.height = remarks ? Math.max(18, Math.ceil(remarks.length / 50) * 16) : 18;
   }

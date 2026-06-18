@@ -37,16 +37,16 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
-    // auth project: only the login/setup specs (no storageState needed)
+    // setup project: runs auth.setup.js first, saves session to playwright/.auth/user.json
     {
-      name: 'auth',
-      testMatch: /tests[\\/]auth[\\/].*/,
+      name: 'setup',
+      testMatch: /tests[\\/]auth[\\/]auth\.setup\.js/,
     },
-    // Default browser projects — pick up everything else (smoke, home, social, etc.)
-    // Tests that need a session include test.use({ storageState }) themselves.
+    // chromium: automatically runs setup first, then all tests
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
+      dependencies: ['setup'],
     },
 
     {

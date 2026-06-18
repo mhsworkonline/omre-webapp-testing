@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>OMRE Mobile Test Report  -  2026-06-18T06-35-05</title>
+<style>
+  body{font-family:system-ui,sans-serif;margin:0;background:#f5f5f5;color:#222}
+  header{background:#1a1a2e;color:#fff;padding:24px 32px}
+  header h1{margin:0 0 4px;font-size:22px}
+  header p{margin:0;opacity:.7;font-size:13px}
+  .stats{display:flex;gap:16px;padding:20px 32px}
+  .stat{background:#fff;border-radius:8px;padding:16px 24px;min-width:120px;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+  .stat .n{font-size:32px;font-weight:700}
+  .stat .n.pass{color:#22c55e}.stat .n.fail{color:#ef4444}.stat .n.total{color:#3b82f6}
+  .stat .l{font-size:12px;color:#666;margin-top:4px}
+  table{width:calc(100% - 64px);margin:0 32px 32px;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+  th{background:#1a1a2e;color:#fff;padding:12px 16px;text-align:left;font-size:13px}
+  td{padding:10px 16px;border-bottom:1px solid #eee;font-size:13px;vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  tr:hover td{background:#fafafa}
+  .badge{display:inline-block;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:600}
+  .badge.pass{background:#dcfce7;color:#166534}.badge.fail{background:#fee2e2;color:#991b1b}
+  code{font-size:12px;background:#f3f4f6;padding:2px 6px;border-radius:3px}
+  .steps-wrap{margin-top:6px}
+  .step{font-size:11px;padding:2px 0;color:#555}
+  .step-ok{color:#16a34a}.step-fail{color:#dc2626;font-weight:600}.step-skip{color:#9ca3af}
+  .ms{font-size:10px;color:#9ca3af;margin-left:6px}
+  .scenario-table{width:100%;margin:8px 0;border-collapse:collapse;box-shadow:none}
+  .scenario-table th{background:#374151;font-size:11px;padding:6px 10px}
+  .scenario-table td{font-size:12px;padding:6px 10px;border-bottom:1px solid #f0f0f0}
+  details summary{cursor:pointer;font-size:11px;color:#666;margin-top:8px}
+</style>
+</head>
+<body>
+<header>
+  <h1>OMRE Mobile Test Report</h1>
+  <p>Platform: Android &nbsp;|&nbsp; App: com.omre.app.posh &nbsp;|&nbsp; Run: 2026-06-18T06-35-05</p>
+</header>
+<div class="stats">
+  <div class="stat"><div class="n total">4</div><div class="l">Total Flows</div></div>
+  <div class="stat"><div class="n pass">3</div><div class="l">Passed</div></div>
+  <div class="stat"><div class="n fail">1</div><div class="l">Failed</div></div>
+  <div class="stat"><div class="n total">2227.9s</div><div class="l">Total Duration</div></div>
+</div>
+<table>
+  <thead><tr><th>Flow</th><th>Status</th><th>Steps</th><th>Failed Step</th><th>Duration</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>android_video</strong>
+        
+      <table class="scenario-table">
+        <thead><tr><th>Scenario</th><th>Expected Result</th><th>Actual Result</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>TC01 - Launch app</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC02 - Open module switcher</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC03 - Navigate to Video</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC04 - Video screen heading visible</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC05 - Scroll down through video feed</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC06 - Video heading persists during scroll</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC07 - Second scroll</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC08 - Video still visible</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC09 - Scroll back to top</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC10 - Video heading at top</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC11 - Tap first video to play (y=40% avoids tab row)</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC12 - Back from video player (goes to Home)</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC13 - Re-navigate to Video</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC14 - Tap second video</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC15 - Back from video player</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC16 - Re-navigate to Video</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC17 - Tap third video</td>
+            <td>Step completes successfully</td>
+            <td>Failed at "Tap on "View all""  -  Element not found: Text matching regex: View all</td>
+            <td><span class="badge fail">FAILED</span></td>
+          </tr>
+          <tr>
+            <td>TC18 - Back from video player</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC19 - Re-navigate to Video</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC20 - Like first video (~12%,40%)</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC21 - Unlike (toggle)</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC22 - Comment on first video (~88%,40%)</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC23 - Re-nav after comment (goes home)</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC24 - Share first video (~88%,50%)</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC25 - Re-nav after share</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC26 - Tap search/filter icon (top-right ~88%,9%)</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC27 - Tap upload icon (~75%,9%)</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC27 - Tap second category tab (~30%,18%)</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC28 - Scroll in filtered view</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC29 - Tap third category tab (~60%,18%)</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC30 - Scroll third tab</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC31 - Tap first tab to reset (~10%,18%)</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC32 - Scroll to bottom of feed</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC33 - Scroll back to top</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC34 - Tap options on first video (~92%,40%)</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC35 - Tap save/bookmark icon (~65%,40%)</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC36 - Swipe left on video card</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC37 - Video still accessible after swipes</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC38 - Module switcher accessible from Video</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+        </tbody>
+      </table>
+        <details><summary>Technical step detail</summary><div class="steps-wrap"><div class="step step-ok">[OK] Set up test variables <span class="ms">17ms</span></div><div class="step step-ok">[OK] Apply flow configuration <span class="ms">6ms</span></div><div class="step step-ok">[OK] stopApp <span class="ms">1164ms</span></div><div class="step step-ok">[OK] Launch app "com.omre.app.posh" <span class="ms">5381ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">7200ms</span></div><div class="step step-ok">[OK] Tap on "View all" <span class="ms">53309ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">3957ms</span></div><div class="step step-ok">[OK] Tap on "Video" <span class="ms">20674ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">3506ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">3440ms</span></div><div class="step step-ok">[OK] Assert visible: "Video" <span class="ms">702ms</span></div><div class="step step-ok">[OK] Swipe UP <span class="ms">1770ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">2369ms</span></div><div class="step step-ok">[OK] Assert visible: "Video" <span class="ms">584ms</span></div><div class="step step-ok">[OK] Swipe UP <span class="ms">1426ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">2792ms</span></div><div class="step step-ok">[OK] Assert visible: "Video" <span class="ms">325ms</span></div><div class="step step-ok">[OK] Swipe DOWN <span class="ms">811ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1300ms</span></div><div class="step step-ok">[OK] Swipe DOWN <span class="ms">876ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1424ms</span></div><div class="step step-ok">[OK] Assert visible: "Video" <span class="ms">131ms</span></div><div class="step step-ok">[OK] tapOnPointV2 <span class="ms">861ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1244ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1220ms</span></div><div class="step step-ok">[OK] Press key: BACK <span class="ms">43122ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">4817ms</span></div><div class="step step-ok">[OK] Tap on "View all" <span class="ms">12456ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">4973ms</span></div><div class="step step-ok">[OK] Tap on "Video" <span class="ms">13822ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">3494ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">3788ms</span></div><div class="step step-ok">[OK] Assert visible: "Video" <span class="ms">1632ms</span></div><div class="step step-ok">[OK] tapOnPointV2 <span class="ms">4461ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">3795ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1940ms</span></div><div class="step step-ok">[OK] Press key: BACK <span class="ms">59170ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">5851ms</span></div><div class="step step-ok">[OK] Tap on "View all" <span class="ms">20590ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">6059ms</span></div><div class="step step-ok">[OK] Tap on "Video" <span class="ms">12407ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">4665ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">5493ms</span></div><div class="step step-ok">[OK] Assert visible: "Video" <span class="ms">654ms</span></div><div class="step step-ok">[OK] tapOnPointV2 <span class="ms">4127ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">2397ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">2796ms</span></div><div class="step step-ok">[OK] Press key: BACK <span class="ms">31593ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">18534ms</span></div><div class="step step-fail">[FAIL] Tap on "View all" <span class="ms">45771ms</span></div></div></details>
+      </td>
+      <td><span class="badge fail">FAILED</span></td>
+      <td>49/50</td>
+      <td><code>Tap on "View all"</code></td>
+      <td>434.9s</td>
+    </tr>
+    <tr>
+      <td><strong>android_news_feed</strong>
+        
+      <table class="scenario-table">
+        <thead><tr><th>Scenario</th><th>Expected Result</th><th>Actual Result</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>TC01 - Launch app</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC02 - Open module switcher</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC03 - Navigate to News</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC04 - News screen heading visible</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC05 - Scroll down through news feed</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC06 - News heading persists during scroll</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC07 - Second scroll</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC08 - News still visible</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC09 - Scroll back to top</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC10 - News heading at top</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC11 - Tap first news article (y=40% avoids tab row at ~18%)</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC12 - Back from article (goes to home)</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC13 - Re-navigate to News</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC14 - Tap second article</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC15 - Back from article</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC16 - Re-navigate to News</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC17 - Tap third article</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC18 - Back from article</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC19 - Re-navigate to News</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC20 - Share first article (share icon ~88%,40%)</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC21 - Re-navigate after share if needed</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC22 - Tap search/filter icon top-right</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC23 - News still visible after search dismiss</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC24 - Tap category tab 2 (~30%,18%)</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC25 - News still visible in tab 2</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC26 - Scroll tab 2 content</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC27 - Tap category tab 3 (~60%,18%)</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC28 - Scroll tab 3 content</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC29 - Tap back to first tab (~10%,18%)</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC30 - Scroll to bottom of feed</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC31 - Scroll back to top</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC32 - Tap top-right options icon</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC33 - News accessible after options dismiss</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC34 - Tap bookmark/save icon on first article (~75%,40%)</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC35 - Tap like/react on first article (~65%,40%)</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC36 - Scroll through feed one more time</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC37 - Scroll to top of News feed</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC38 - News heading visible at top after full test cycle</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+        </tbody>
+      </table>
+        <details><summary>Technical step detail</summary><div class="steps-wrap"><div class="step step-ok">[OK] Set up test variables <span class="ms">16ms</span></div><div class="step step-ok">[OK] Apply flow configuration <span class="ms">10ms</span></div><div class="step step-ok">[OK] stopApp <span class="ms">1866ms</span></div><div class="step step-ok">[OK] Launch app "com.omre.app.posh" <span class="ms">3659ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">13439ms</span></div><div class="step step-ok">[OK] Tap on "View all" <span class="ms">42916ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">5521ms</span></div><div class="step step-ok">[OK] Tap on "News" <span class="ms">18968ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">2834ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">2990ms</span></div><div class="step step-ok">[OK] Assert visible: "News" <span class="ms">490ms</span></div><div class="step step-ok">[OK] Swipe UP <span class="ms">2145ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1404ms</span></div><div class="step step-ok">[OK] Assert visible: "News" <span class="ms">222ms</span></div><div class="step step-ok">[OK] Swipe UP <span class="ms">1618ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1386ms</span></div><div class="step step-ok">[OK] Assert visible: "News" <span class="ms">133ms</span></div><div class="step step-ok">[OK] Swipe DOWN <span class="ms">1708ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1302ms</span></div><div class="step step-ok">[OK] Swipe DOWN <span class="ms">1567ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1283ms</span></div><div class="step step-ok">[OK] Assert visible: "News" <span class="ms">192ms</span></div><div class="step step-ok">[OK] tapOnPointV2 <span class="ms">822ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1333ms</span></div><div class="step step-ok">[OK] Press key: BACK <span class="ms">31198ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">3320ms</span></div><div class="step step-ok">[OK] Tap on "View all" <span class="ms">3287ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">2152ms</span></div><div class="step step-ok">[OK] Tap on "News" <span class="ms">17329ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">2414ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1797ms</span></div><div class="step step-ok">[OK] Assert visible: "News" <span class="ms">130ms</span></div><div class="step step-ok">[OK] tapOnPointV2 <span class="ms">682ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1102ms</span></div><div class="step step-ok">[OK] Press key: BACK <span class="ms">38758ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">4432ms</span></div><div class="step step-ok">[OK] Tap on "View all" <span class="ms">8808ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">4319ms</span></div><div class="step step-ok">[OK] Tap on "News" <span class="ms">23081ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">2138ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">2364ms</span></div><div class="step step-ok">[OK] Assert visible: "News" <span class="ms">184ms</span></div><div class="step step-ok">[OK] tapOnPointV2 <span class="ms">1193ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">2174ms</span></div><div class="step step-ok">[OK] Press key: BACK <span class="ms">45035ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">4878ms</span></div><div class="step step-ok">[OK] Tap on "View all" <span class="ms">15175ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">6077ms</span></div><div class="step step-ok">[OK] Tap on "News" <span class="ms">21168ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">4540ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">3550ms</span></div><div class="step step-ok">[OK] Assert visible: "News" <span class="ms">489ms</span></div><div class="step step-ok">[OK] tapOnPointV2 <span class="ms">2421ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">3315ms</span></div><div class="step step-ok">[OK] Press key: BACK <span class="ms">60346ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">6509ms</span></div><div class="step step-ok">[OK] Tap on "View all" <span class="ms">17904ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">7667ms</span></div><div class="step step-ok">[OK] Tap on "News" <span class="ms">21020ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">2641ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">3272ms</span></div><div class="step step-ok">[OK] Assert visible: "News" <span class="ms">313ms</span></div><div class="step step-ok">[OK] tapOnPointV2 <span class="ms">3550ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">2329ms</span></div><div class="step step-ok">[OK] Press key: BACK <span class="ms">2147ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1362ms</span></div><div class="step step-ok">[OK] Assert visible: "News" <span class="ms">147ms</span></div><div class="step step-ok">[OK] tapOnPointV2 <span class="ms">969ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1612ms</span></div><div class="step step-ok">[OK] Assert visible: "News" <span class="ms">503ms</span></div><div class="step step-ok">[OK] Swipe UP <span class="ms">1693ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1381ms</span></div><div class="step step-ok">[OK] Assert visible: "News" <span class="ms">169ms</span></div><div class="step step-ok">[OK] tapOnPointV2 <span class="ms">817ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1721ms</span></div><div class="step step-ok">[OK] Assert visible: "News" <span class="ms">249ms</span></div><div class="step step-ok">[OK] Swipe UP <span class="ms">1562ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1332ms</span></div><div class="step step-ok">[OK] tapOnPointV2 <span class="ms">1057ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1566ms</span></div><div class="step step-ok">[OK] Assert visible: "News" <span class="ms">190ms</span></div><div class="step step-ok">[OK] Swipe UP <span class="ms">1584ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1316ms</span></div><div class="step step-ok">[OK] Swipe UP <span class="ms">1916ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1497ms</span></div><div class="step step-ok">[OK] Swipe DOWN <span class="ms">1387ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1446ms</span></div><div class="step step-ok">[OK] Swipe DOWN <span class="ms">1571ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1350ms</span></div><div class="step step-ok">[OK] Assert visible: "News" <span class="ms">138ms</span></div><div class="step step-ok">[OK] tapOnPointV2 <span class="ms">1731ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1480ms</span></div><div class="step step-ok">[OK] Press key: BACK <span class="ms">1408ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1449ms</span></div><div class="step step-ok">[OK] Assert visible: "News" <span class="ms">158ms</span></div><div class="step step-ok">[OK] tapOnPointV2 <span class="ms">751ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1248ms</span></div><div class="step step-ok">[OK] Assert visible: "News" <span class="ms">126ms</span></div><div class="step step-ok">[OK] tapOnPointV2 <span class="ms">885ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1408ms</span></div><div class="step step-ok">[OK] Assert visible: "News" <span class="ms">124ms</span></div><div class="step step-ok">[OK] Swipe UP <span class="ms">1550ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1255ms</span></div><div class="step step-ok">[OK] Swipe DOWN <span class="ms">1654ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1216ms</span></div><div class="step step-ok">[OK] Assert visible: "News" <span class="ms">110ms</span></div><div class="step step-ok">[OK] Swipe DOWN <span class="ms">1617ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1368ms</span></div><div class="step step-ok">[OK] Swipe DOWN <span class="ms">1864ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1302ms</span></div><div class="step step-ok">[OK] Assert visible: "News" <span class="ms">122ms</span></div></div></details>
+      </td>
+      <td><span class="badge pass">PASSED</span></td>
+      <td>111/111</td>
+      <td> - </td>
+      <td>544.4s</td>
+    </tr>
+    <tr>
+      <td><strong>android_biz_module</strong>
+        
+      <table class="scenario-table">
+        <thead><tr><th>Scenario</th><th>Expected Result</th><th>Actual Result</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>TC01 - Launch app</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC02 - Open module switcher</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC03 - Module switcher visible</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC04 - Navigate to Biz (index:1 to avoid ambiguity)</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC05 - Biz module loaded (no heading assertion - text unknown)</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC06 - Scroll down through Biz feed</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC07 - Second scroll</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC08 - Scroll back to top</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC09 - Tap first post/card in Biz feed</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC10 - Back to Biz feed</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC11 - Tap second post/card</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC12 - Back to Biz</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC13 - Tap third post/card</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC14 - Back to Biz</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC15 - Like first post in Biz feed (heart icon ~12%,35%)</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC16 - Unlike (toggle)</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC17 - Like via right-side icon (alternate position ~88%,35%)</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC18 - Unlike toggle</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC19 - Tap comment icon (~88%,45%)</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC20 - Back from comments</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC21 - Tap share icon (~88%,55%)</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC22 - Dismiss share sheet</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC23 - Scroll to bottom of feed</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC24 - Scroll back to top</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC25 - Tap top-right action/filter icon</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC26 - Tap options on existing post (~92%,35%)</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC27 - Tap options on second post (~92%,55%)</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC28 - Swipe on a post card</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC29 - Create Biz post - tap post input (coord for Social home feed)</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC30 - Type biz post content</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC31 - Submit post (try all common labels)</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC32 - Navigate back to Biz (post may have been on Social feed)</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC33 - Tap options on newest post (~92%,25%)</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC34 - Delete the test post</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC35 - Scroll Biz feed after delete</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC36 - Tap first result in Biz (verify feed intact)</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC37 - Module switcher visible via View all</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC38 - Dismiss module switcher</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+        </tbody>
+      </table>
+        <details><summary>Technical step detail</summary><div class="steps-wrap"><div class="step step-ok">[OK] Set up test variables <span class="ms">11ms</span></div><div class="step step-ok">[OK] Apply flow configuration <span class="ms">5ms</span></div><div class="step step-ok">[OK] stopApp <span class="ms">427ms</span></div><div class="step step-ok">[OK] Launch app "com.omre.app.posh" <span class="ms">3432ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">15176ms</span></div><div class="step step-ok">[OK] Tap on "View all" <span class="ms">26644ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">4745ms</span></div><div class="step step-ok">[OK] Assert visible: "Switch to Module" <span class="ms">2171ms</span></div><div class="step step-ok">[OK] Tap on "Biz" <span class="ms">18270ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1425ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1112ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1158ms</span></div><div class="step step-ok">[OK] Swipe UP <span class="ms">800ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1155ms</span></div><div class="step step-ok">[OK] Swipe UP <span class="ms">856ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1145ms</span></div><div class="step step-ok">[OK] Swipe DOWN <span class="ms">780ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1169ms</span></div><div class="step step-ok">[OK] Swipe DOWN <span class="ms">860ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1132ms</span></div><div class="step step-ok">[OK] tapOnPointV2 <span class="ms">818ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1054ms</span></div><div class="step step-ok">[OK] Press key: BACK <span class="ms">35576ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">3685ms</span></div><div class="step step-ok">[OK] tapOnPointV2 <span class="ms">21165ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">17239ms</span></div><div class="step step-ok">[OK] Press key: BACK <span class="ms">2184ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">13883ms</span></div><div class="step step-ok">[OK] tapOnPointV2 <span class="ms">2795ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">5074ms</span></div><div class="step step-ok">[OK] Press key: BACK <span class="ms">3886ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">4893ms</span></div><div class="step step-ok">[OK] tapOnPointV2 <span class="ms">5531ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">4320ms</span></div><div class="step step-ok">[OK] tapOnPointV2 <span class="ms">3555ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">4765ms</span></div><div class="step step-ok">[OK] tapOnPointV2 <span class="ms">9189ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">3898ms</span></div><div class="step step-ok">[OK] tapOnPointV2 <span class="ms">4026ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1925ms</span></div><div class="step step-ok">[OK] tapOnPointV2 <span class="ms">1758ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1364ms</span></div><div class="step step-ok">[OK] Press key: BACK <span class="ms">36442ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">6128ms</span></div><div class="step step-ok">[OK] tapOnPointV2 <span class="ms">24629ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">16606ms</span></div><div class="step step-ok">[OK] Press key: BACK <span class="ms">6590ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">4297ms</span></div><div class="step step-ok">[OK] Swipe UP <span class="ms">9067ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">19414ms</span></div><div class="step step-ok">[OK] Swipe UP <span class="ms">6286ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">19541ms</span></div><div class="step step-ok">[OK] Swipe DOWN <span class="ms">6607ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">18594ms</span></div><div class="step step-ok">[OK] Swipe DOWN <span class="ms">3331ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">2611ms</span></div><div class="step step-ok">[OK] tapOnPointV2 <span class="ms">2222ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1306ms</span></div><div class="step step-ok">[OK] Press key: BACK <span class="ms">1876ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">2230ms</span></div><div class="step step-ok">[OK] tapOnPointV2 <span class="ms">8797ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">2330ms</span></div><div class="step step-ok">[OK] Press key: BACK <span class="ms">27387ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">2707ms</span></div><div class="step step-ok">[OK] tapOnPointV2 <span class="ms">11592ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">18870ms</span></div><div class="step step-ok">[OK] Press key: BACK <span class="ms">1979ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">2071ms</span></div><div class="step step-ok">[OK] Swipe LEFT <span class="ms">2885ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">2250ms</span></div><div class="step step-ok">[OK] Swipe RIGHT <span class="ms">1870ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1916ms</span></div><div class="step step-ok">[OK] tapOnPointV2 <span class="ms">1284ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1998ms</span></div><div class="step step-ok">[OK] Input text: "Biz module create post test" <span class="ms">4906ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1795ms</span></div><div class="step step-skip">[-] runFlow <span class="ms">0ms</span></div><div class="step step-skip">[-] runFlow <span class="ms">0ms</span></div><div class="step step-skip">[-] runFlow <span class="ms">0ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1870ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1808ms</span></div><div class="step step-ok">[OK] tapOnPointV2 <span class="ms">1897ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">2008ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">2098ms</span></div><div class="step step-ok">[OK] Tap on "View all" <span class="ms">2889ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1873ms</span></div><div class="step step-ok">[OK] Tap on "Biz" <span class="ms">11328ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1846ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">2285ms</span></div><div class="step step-ok">[OK] tapOnPointV2 <span class="ms">595ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">947ms</span></div><div class="step step-skip">[-] runFlow <span class="ms">0ms</span></div><div class="step step-skip">[-] runFlow <span class="ms">0ms</span></div><div class="step step-skip">[-] runFlow <span class="ms">0ms</span></div><div class="step step-skip">[-] runFlow <span class="ms">0ms</span></div><div class="step step-ok">[OK] Press key: BACK <span class="ms">31051ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">4881ms</span></div><div class="step step-ok">[OK] Swipe UP <span class="ms">4591ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">16015ms</span></div><div class="step step-ok">[OK] Swipe DOWN <span class="ms">2913ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">2381ms</span></div><div class="step step-ok">[OK] tapOnPointV2 <span class="ms">12510ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1510ms</span></div><div class="step step-ok">[OK] Press key: BACK <span class="ms">26305ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">2235ms</span></div><div class="step step-ok">[OK] Tap on "View all" <span class="ms">3117ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">2042ms</span></div><div class="step step-ok">[OK] Assert visible: "Switch to Module" <span class="ms">156ms</span></div><div class="step step-ok">[OK] Press key: BACK <span class="ms">1015ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">2888ms</span></div></div></details>
+      </td>
+      <td><span class="badge pass">PASSED</span></td>
+      <td>103/110</td>
+      <td> - </td>
+      <td>662.5s</td>
+    </tr>
+    <tr>
+      <td><strong>android_orbit_feed</strong>
+        
+      <table class="scenario-table">
+        <thead><tr><th>Scenario</th><th>Expected Result</th><th>Actual Result</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>TC01 - Launch app</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC02 - Tap Orbit icon in bottom nav</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC03 - Explore screen heading visible</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC04 - Tap search bar by coordinate</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC05 - Type search query</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC06 - Back from search</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC07 - Back on Explore</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC08 - Scroll down through For You feed</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC09 - Explore still visible</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC10 - Second scroll</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC11 - Still on Explore</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC12 - Scroll back to top</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC13 - Explore heading at top</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC14 - Tap first post (top-left ~25%,35%)</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC15 - Back to Explore</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC16 - Back on Explore</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC17 - Tap second post (top-right ~75%,35%)</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC18 - Back to Explore</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC19 - Back on Explore</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC20 - Tap third post (bottom-left ~25%,60%)</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC21 - Back to Explore</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC22 - Switch to Trending tab (coord ~28%,20%)</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC23 - Explore still visible in Trending</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC24 - Scroll Trending</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC25 - Tap post in Trending</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC26 - Switch to Reels tab (coord ~45%,20%)</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC27 - Scroll Reels (full-screen — no Explore heading; scroll only)</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC28 - Back out of Reels to return to Explore tabs</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC29 - Reset scroll to top before Posts tab tap</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC29b - Switch to Posts tab (coord ~60%,14%)</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC30 - Explore visible in Posts</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC31 - Tap first post in Posts tab</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC32 - Switch to Discover tab (coord ~77%,14%)</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC33 - Explore visible in Discover</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC34 - Scroll Discover content</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC35 - Tap item in Discover</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC36 - Explore still visible after all tabs explored</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC37 - Navigate back to home via drawer</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+          <tr>
+            <td>TC38 - Scroll to top of Social home feed</td>
+            <td>Step completes successfully</td>
+            <td>All steps passed</td>
+            <td><span class="badge pass">PASSED</span></td>
+          </tr>
+        </tbody>
+      </table>
+        <details><summary>Technical step detail</summary><div class="steps-wrap"><div class="step step-ok">[OK] Set up test variables <span class="ms">8ms</span></div><div class="step step-ok">[OK] Apply flow configuration <span class="ms">3ms</span></div><div class="step step-ok">[OK] stopApp <span class="ms">384ms</span></div><div class="step step-ok">[OK] Launch app "com.omre.app.posh" <span class="ms">4445ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">12863ms</span></div><div class="step step-ok">[OK] tapOnPointV2 <span class="ms">44475ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">20392ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">19424ms</span></div><div class="step step-ok">[OK] Assert visible: "Explore" <span class="ms">826ms</span></div><div class="step step-ok">[OK] tapOnPointV2 <span class="ms">2838ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">15474ms</span></div><div class="step step-ok">[OK] Input text: "OMRE community" <span class="ms">5955ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">20875ms</span></div><div class="step step-ok">[OK] Press key: BACK <span class="ms">1954ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">2097ms</span></div><div class="step step-ok">[OK] Press key: BACK <span class="ms">673ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1598ms</span></div><div class="step step-ok">[OK] Assert visible: "Explore" <span class="ms">144ms</span></div><div class="step step-ok">[OK] Swipe UP <span class="ms">4419ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">14445ms</span></div><div class="step step-ok">[OK] Assert visible: "Explore" <span class="ms">688ms</span></div><div class="step step-ok">[OK] Swipe UP <span class="ms">1538ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">2778ms</span></div><div class="step step-ok">[OK] Assert visible: "Explore" <span class="ms">221ms</span></div><div class="step step-ok">[OK] Swipe DOWN <span class="ms">2564ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">17116ms</span></div><div class="step step-ok">[OK] Swipe DOWN <span class="ms">2523ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">2393ms</span></div><div class="step step-ok">[OK] Assert visible: "Explore" <span class="ms">150ms</span></div><div class="step step-ok">[OK] tapOnPointV2 <span class="ms">953ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1809ms</span></div><div class="step step-ok">[OK] Press key: BACK <span class="ms">758ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1870ms</span></div><div class="step step-ok">[OK] Assert visible: "Explore" <span class="ms">167ms</span></div><div class="step step-ok">[OK] tapOnPointV2 <span class="ms">10500ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1877ms</span></div><div class="step step-ok">[OK] Press key: BACK <span class="ms">21499ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">2303ms</span></div><div class="step step-ok">[OK] Assert visible: "Explore" <span class="ms">424ms</span></div><div class="step step-ok">[OK] tapOnPointV2 <span class="ms">1571ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1395ms</span></div><div class="step step-ok">[OK] Press key: BACK <span class="ms">1272ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1970ms</span></div><div class="step step-ok">[OK] tapOnPointV2 <span class="ms">842ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">1680ms</span></div><div class="step step-ok">[OK] Assert visible: "Explore" <span class="ms">151ms</span></div><div class="step step-ok">[OK] Swipe UP <span class="ms">3487ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">16691ms</span></div><div class="step step-ok">[OK] tapOnPointV2 <span class="ms">6895ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">16948ms</span></div><div class="step step-ok">[OK] Press key: BACK <span class="ms">8838ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">18067ms</span></div><div class="step step-ok">[OK] tapOnPointV2 <span class="ms">5337ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">17443ms</span></div><div class="step step-ok">[OK] Swipe UP <span class="ms">3602ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">4844ms</span></div><div class="step step-ok">[OK] Press key: BACK <span class="ms">982ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">5204ms</span></div><div class="step step-ok">[OK] Assert visible: "Explore" <span class="ms">360ms</span></div><div class="step step-ok">[OK] Swipe DOWN <span class="ms">4341ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">20464ms</span></div><div class="step step-ok">[OK] tapOnPointV2 <span class="ms">5892ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">16942ms</span></div><div class="step step-ok">[OK] Assert visible: "Explore" <span class="ms">1632ms</span></div><div class="step step-ok">[OK] tapOnPointV2 <span class="ms">12163ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">16640ms</span></div><div class="step step-ok">[OK] Press key: BACK <span class="ms">6038ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">18535ms</span></div><div class="step step-ok">[OK] tapOnPointV2 <span class="ms">4908ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">17971ms</span></div><div class="step step-ok">[OK] Assert visible: "Explore" <span class="ms">1111ms</span></div><div class="step step-ok">[OK] Swipe UP <span class="ms">3919ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">17262ms</span></div><div class="step step-ok">[OK] tapOnPointV2 <span class="ms">4486ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">15869ms</span></div><div class="step step-ok">[OK] Press key: BACK <span class="ms">3668ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">16780ms</span></div><div class="step step-ok">[OK] Assert visible: "Explore" <span class="ms">1305ms</span></div><div class="step step-ok">[OK] tapOnPointV2 <span class="ms">6759ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">3714ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">3315ms</span></div><div class="step step-ok">[OK] Tap on "Social" <span class="ms">3136ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">2956ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">3044ms</span></div><div class="step step-ok">[OK] Swipe DOWN <span class="ms">2086ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">3006ms</span></div><div class="step step-ok">[OK] Swipe DOWN <span class="ms">2094ms</span></div><div class="step step-ok">[OK] Wait for animation <span class="ms">3019ms</span></div></div></details>
+      </td>
+      <td><span class="badge pass">PASSED</span></td>
+      <td>88/88</td>
+      <td> - </td>
+      <td>586.1s</td>
+    </tr></tbody>
+</table>
+</body>
+</html>

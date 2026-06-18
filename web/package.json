@@ -2,7 +2,11 @@
   "name": "omre-webapp",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "npx playwright test --project=chromium",
+    "test:auth": "npx playwright test --project=setup",
+    "test:report": "node generate-report.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
