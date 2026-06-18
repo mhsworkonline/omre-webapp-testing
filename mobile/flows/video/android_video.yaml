@@ -149,15 +149,7 @@
 - pressKey: Back
 - waitForAnimationToEnd
 
-# TC25 - Re-nav after share
-- swipe:
-    direction: DOWN
-- waitForAnimationToEnd
-- tapOn: "View all"
-- waitForAnimationToEnd
-- tapOn: "Video"
-- waitForAnimationToEnd
-- waitForAnimationToEnd
+# TC25 - Share closes back to Video screen (no re-nav needed)
 - assertVisible: "Video"
 
 # TC26 - Tap search/filter icon (top-right ~88%,9%)
