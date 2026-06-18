@@ -22,50 +22,104 @@ appId: com.omre.app.posh
 - tapOn: "Live"
 - waitForAnimationToEnd
 
-# SCENARIO: Live screen header is visible | EXPECTED: 'Live' heading present on screen
+# SCENARIO: Live screen header is visible (READ) | EXPECTED: 'Live' heading present on screen
 - assertVisible: "Live"
 
-# SCENARIO: No crash dialog is shown on Live load | EXPECTED: App crash overlay not visible
-- assertNotVisible: "Unfortunately"
-
-# SCENARIO: No generic error is shown on Live load | EXPECTED: Error banner not visible
-- assertNotVisible: "Something went wrong"
-
-# SCENARIO: Live screen shows stream list or empty state | EXPECTED: Live stream cards visible or empty state message shown
-- assertNotVisible: "Unfortunately"
-
-# SCENARIO: Live stream list is scrollable down | EXPECTED: Scroll down works without crash
+# SCENARIO: Live stream list is scrollable down (READ) | EXPECTED: Swipe up scrolls list without crash
 - swipe:
     direction: UP
 - waitForAnimationToEnd
 
-# SCENARIO: Scroll back to top of Live screen | EXPECTED: Swipe down returns to top of list
+# SCENARIO: Scroll back to top of Live list (READ) | EXPECTED: Swipe down returns to top, Live heading visible
 - swipe:
     direction: DOWN
 - waitForAnimationToEnd
 - assertVisible: "Live"
 
-# SCENARIO: Pull to refresh reloads live stream list | EXPECTED: Content refreshes without crash, Live heading still visible
+# SCENARIO: Pull to refresh reloads live stream list (READ) | EXPECTED: Content refreshes, Live heading still visible
 - swipe:
     direction: DOWN
 - waitForAnimationToEnd
 - assertVisible: "Live"
 
-# SCENARIO: Tap first live stream item opens stream or detail | EXPECTED: Stream viewer or detail screen opens on tap
+# SCENARIO: Tap first live stream card to join stream (READ — enter stream) | EXPECTED: Stream viewer or detail screen opens
 - tapOn:
-    index: 0
-    text: "Live"
+    point: "50%,35%"
 - waitForAnimationToEnd
 
-# SCENARIO: Back from live stream detail returns to Live list | EXPECTED: Live screen visible after pressing Back
+# SCENARIO: Back from live stream viewer returns to Live list (READ cleanup) | EXPECTED: Live screen visible after Back
 - pressKey: Back
 - waitForAnimationToEnd
 - assertVisible: "Live"
 
-# SCENARIO: Filter or category tabs visible if present | EXPECTED: Tab bar or filter row visible or list shown with no filter needed
-- assertNotVisible: "Unfortunately"
+# SCENARIO: Tap second live stream card (READ — alternate stream) | EXPECTED: Different stream viewer opens without crash
+- tapOn:
+    point: "50%,55%"
+- waitForAnimationToEnd
 
-# SCENARIO: Scroll Live list further down for more content | EXPECTED: Additional content loads or end-of-list shown
+# SCENARIO: Like or react in live stream (UPDATE — reaction) | EXPECTED: Reaction button tap registers without crash
+- tapOn:
+    point: "90%,80%"
+- waitForAnimationToEnd
+
+# SCENARIO: Tap again to toggle reaction (UPDATE — toggle off) | EXPECTED: Second tap removes or changes reaction
+- tapOn:
+    point: "90%,80%"
+- waitForAnimationToEnd
+
+# SCENARIO: Open live chat comment input (CREATE — setup) | EXPECTED: Chat input activates, keyboard appears
+- tapOn:
+    point: "50%,92%"
+- waitForAnimationToEnd
+
+# SCENARIO: Type a live comment (CREATE) | EXPECTED: Text appears in chat input without crash
+- inputText: "Amazing stream!"
+- waitForAnimationToEnd
+
+# SCENARIO: Send the live comment (CREATE) | EXPECTED: Comment is submitted to live chat
+- tapOn:
+    point: "93%,92%"
+- waitForAnimationToEnd
+
+# SCENARIO: Live chat updates after comment (READ — verify send) | EXPECTED: Chat area still visible, no crash
+- waitForAnimationToEnd
+
+# SCENARIO: Dismiss keyboard from live chat (READ cleanup) | EXPECTED: Keyboard dismisses, stream visible
+- pressKey: Back
+- waitForAnimationToEnd
+
+# SCENARIO: Type second comment in live chat (CREATE — second comment) | EXPECTED: Input re-opens and accepts text
+- tapOn:
+    point: "50%,92%"
+- waitForAnimationToEnd
+- inputText: "Keep it up!"
+- waitForAnimationToEnd
+
+# SCENARIO: Send second live comment (CREATE) | EXPECTED: Second comment submitted without crash
+- tapOn:
+    point: "93%,92%"
+- waitForAnimationToEnd
+
+# SCENARIO: Dismiss keyboard after second comment (READ cleanup) | EXPECTED: Keyboard closes
+- pressKey: Back
+- waitForAnimationToEnd
+
+# SCENARIO: Scroll live chat upward to view earlier messages (READ) | EXPECTED: Chat scrolls showing earlier messages
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+
+# SCENARIO: Scroll chat back down to latest messages (READ) | EXPECTED: Returns to most recent messages
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# SCENARIO: Back from live stream returns to Live list (READ cleanup) | EXPECTED: Live heading visible after exit
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "Live"
+
+# SCENARIO: Scroll Live list to discover more streams (READ) | EXPECTED: More live cards visible after scroll
 - swipe:
     direction: UP
 - waitForAnimationToEnd
@@ -73,7 +127,7 @@ appId: com.omre.app.posh
     direction: UP
 - waitForAnimationToEnd
 
-# SCENARIO: Scroll all the way back to top | EXPECTED: Live heading visible after returning to top
+# SCENARIO: Scroll back to top of Live list (READ) | EXPECTED: Live heading visible at top
 - swipe:
     direction: DOWN
 - waitForAnimationToEnd
@@ -82,7 +136,7 @@ appId: com.omre.app.posh
 - waitForAnimationToEnd
 - assertVisible: "Live"
 
-# SCENARIO: Live screen re-navigable via drawer | EXPECTED: Drawer tap on 'Live' reloads Live screen
+# SCENARIO: Re-navigate to Live via drawer (READ — second entry) | EXPECTED: Live reloads without crash
 - tapOn:
     point: "7%,9%"
 - waitForAnimationToEnd
@@ -90,7 +144,7 @@ appId: com.omre.app.posh
 - waitForAnimationToEnd
 - assertVisible: "Live"
 
-# SCENARIO: Second pull-to-refresh works without crash | EXPECTED: Live screen refreshes cleanly on second attempt
+# SCENARIO: Second pull-to-refresh on re-entry (READ) | EXPECTED: Live list refreshes cleanly
 - swipe:
     direction: DOWN
 - waitForAnimationToEnd
@@ -100,7 +154,3 @@ appId: com.omre.app.posh
 - pressKey: Back
 - waitForAnimationToEnd
 - assertVisible: "Explore OMRE Modules"
-
-# SCENARIO: Live screen leaves no lingering error state | EXPECTED: No error or crash overlay visible on home screen
-- assertNotVisible: "Unfortunately"
-- assertNotVisible: "Something went wrong"

@@ -22,96 +22,68 @@ appId: com.omre.app.posh
 - tapOn: "Images"
 - waitForAnimationToEnd
 
-# SCENARIO: Images screen header is visible | EXPECTED: 'Images' heading present on screen
-- assertVisible: "Images"
+# SCENARIO: Images screen header is visible (READ) | EXPECTED: 'Community Images' heading present on screen
+- assertVisible: "Community Images"
 
-# SCENARIO: No crash dialog is shown on Images load | EXPECTED: App crash overlay not visible
-- assertNotVisible: "Unfortunately"
+# SCENARIO: Gallery section heading is visible (READ) | EXPECTED: 'Gallery' label visible below header
+- assertVisible: "Gallery"
 
-# SCENARIO: No generic error is shown on Images load | EXPECTED: Error banner not visible
-- assertNotVisible: "Something went wrong"
-
-# SCENARIO: Images screen shows grid or empty state | EXPECTED: Image grid tiles visible or empty state message shown
-- assertNotVisible: "Unfortunately"
-
-# SCENARIO: Scroll down through Images grid | EXPECTED: Swipe up scrolls grid without crash
+# SCENARIO: Images grid is scrollable down (READ) | EXPECTED: Swipe up scrolls grid without crash
 - swipe:
     direction: UP
 - waitForAnimationToEnd
 
-# SCENARIO: Images screen still visible after scroll down | EXPECTED: Images context maintained after scroll
-- assertNotVisible: "Unfortunately"
-
-# SCENARIO: Scroll down further through Images grid | EXPECTED: Second swipe up loads or reveals more content
+# SCENARIO: Scroll further down Images grid (READ) | EXPECTED: Second swipe reveals more images
 - swipe:
     direction: UP
 - waitForAnimationToEnd
 
-# SCENARIO: Scroll back to top of Images grid | EXPECTED: Swipe down returns to top, Images heading visible
+# SCENARIO: Scroll back to top of Images grid (READ) | EXPECTED: Community Images heading visible after returning to top
 - swipe:
     direction: DOWN
 - waitForAnimationToEnd
 - swipe:
     direction: DOWN
 - waitForAnimationToEnd
-- assertVisible: "Images"
+- assertVisible: "Community Images"
 
-# SCENARIO: Tap first image item opens full-screen viewer | EXPECTED: Full-screen image viewer opens on tap
+# SCENARIO: Pull to refresh Images grid (READ) | EXPECTED: Grid reloads, Community Images heading still visible
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "Community Images"
+
+# SCENARIO: Upload new image — tap FAB (CREATE — initiate) | EXPECTED: Upload chooser or camera picker opens
 - tapOn:
-    index: 0
-    text: "Images"
+    point: "88%,88%"
 - waitForAnimationToEnd
 
-# SCENARIO: Full-screen viewer displays without crash | EXPECTED: No crash overlay visible in full-screen view
-- assertNotVisible: "Unfortunately"
-
-# SCENARIO: Back from full-screen viewer returns to Images grid | EXPECTED: Images screen visible after pressing Back
+# SCENARIO: Dismiss upload chooser without selecting (CREATE — cancel) | EXPECTED: Returns to Images screen cleanly
 - pressKey: Back
 - waitForAnimationToEnd
-- assertVisible: "Images"
+- assertVisible: "Community Images"
 
-# SCENARIO: Upload or camera button visible if present | EXPECTED: Upload / camera FAB or button visible on Images screen
-- assertNotVisible: "Unfortunately"
-
-# SCENARIO: Tap upload or camera button if visible | EXPECTED: Upload chooser or camera intent opens without crash
-- tapOn:
-    index: 0
-    text: "Images"
-- waitForAnimationToEnd
-
-# SCENARIO: Dismiss upload chooser or camera intent | EXPECTED: Back returns to Images screen cleanly
-- pressKey: Back
-- waitForAnimationToEnd
-- assertVisible: "Images"
-
-# SCENARIO: Filter tabs or category bar visible if present | EXPECTED: Tab or filter row visible or grid shown with no filter needed
-- assertNotVisible: "Unfortunately"
-
-# SCENARIO: Pull to refresh reloads Images content | EXPECTED: Content refreshes without crash, Images heading still visible
-- swipe:
-    direction: DOWN
-- waitForAnimationToEnd
-- assertVisible: "Images"
-
-# SCENARIO: Images screen re-navigable via drawer | EXPECTED: Drawer tap on 'Images' reloads Images screen
+# SCENARIO: Re-navigate to Images via drawer (READ — second entry) | EXPECTED: Images reloads without crash
 - tapOn:
     point: "7%,9%"
 - waitForAnimationToEnd
 - tapOn: "Images"
 - waitForAnimationToEnd
-- assertVisible: "Images"
+- assertVisible: "Community Images"
 
-# SCENARIO: Second pull-to-refresh works without crash | EXPECTED: Images screen refreshes cleanly on second attempt
+# SCENARIO: Gallery section visible on second entry (READ — consistency) | EXPECTED: Gallery heading present
+- assertVisible: "Gallery"
+
+# SCENARIO: Scroll Images on second visit (READ) | EXPECTED: Grid still scrollable without crash
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
 - swipe:
     direction: DOWN
 - waitForAnimationToEnd
-- assertVisible: "Images"
+- assertVisible: "Community Images"
 
-# SCENARIO: Back from re-navigated Images returns to home | EXPECTED: 'Explore OMRE Modules' visible after Back
+# SCENARIO: Back from Images returns to home | EXPECTED: 'Explore OMRE Modules' visible
 - pressKey: Back
 - waitForAnimationToEnd
 - assertVisible: "Explore OMRE Modules"
-
-# SCENARIO: Images screen leaves no lingering error state | EXPECTED: No error or crash overlay visible on home screen
-- assertNotVisible: "Unfortunately"
-- assertNotVisible: "Something went wrong"

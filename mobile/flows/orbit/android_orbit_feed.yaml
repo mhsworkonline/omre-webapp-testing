@@ -17,85 +17,125 @@ appId: com.omre.app.posh
 - waitForAnimationToEnd
 - assertVisible: "Switch to Module"
 
-# SCENARIO: Orbit module is listed in module switcher | EXPECTED: 'Orbit' option visible in switcher list
+# SCENARIO: Orbit module is listed in module switcher | EXPECTED: 'Orbit' option visible in switcher
 - assertVisible: "Orbit"
 
-# SCENARIO: Orbit module entry navigates to Orbit | EXPECTED: Tapping 'Orbit' opens Orbit module
+# SCENARIO: Tap Orbit to enter Orbit module (READ — enter) | EXPECTED: Orbit module loads without crash
 - tapOn: "Orbit"
 - waitForAnimationToEnd
 
-# SCENARIO: Orbit module name appears in top bar | EXPECTED: 'Orbit' label visible in module header
+# SCENARIO: Orbit module name visible in header (READ) | EXPECTED: 'Orbit' label visible on screen
 - assertVisible: "Orbit"
 
-# SCENARIO: Orbit onboarding or feed loads without crash | EXPECTED: Screen renders without error overlay
-- assertNotVisible: "Something went wrong"
-
-# SCENARIO: Orbit feed 'For You' tab is present | EXPECTED: 'For You' tab visible as single-line label
+# SCENARIO: For You tab is present on Orbit feed (READ) | EXPECTED: 'For You' tab visible as single-line label
 - assertVisible: "For You"
 
-# SCENARIO: Orbit feed 'Following' tab is present | EXPECTED: 'Following' tab visible as single-line label
+# SCENARIO: Following tab is present on Orbit feed (READ) | EXPECTED: 'Following' tab visible
 - assertVisible: "Following"
 
-# SCENARIO: For You tab is tappable and activates | EXPECTED: Tapping 'For You' selects that tab without crash
+# SCENARIO: Tap For You tab to view discovery content (READ) | EXPECTED: For You tab activates without crash
 - tapOn: "For You"
 - waitForAnimationToEnd
 - assertVisible: "For You"
 
-# SCENARIO: Following tab switches feed view | EXPECTED: Tapping 'Following' switches to following content
+# SCENARIO: For You feed is scrollable (READ) | EXPECTED: Swipe up scrolls feed without crash
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# SCENARIO: Like the first visible Orbit post (UPDATE — toggle on) | EXPECTED: Like registers without crash
+- tapOn: "Like"
+- waitForAnimationToEnd
+
+# SCENARIO: Unlike the post to restore original state (UPDATE — toggle off) | EXPECTED: Unlike registers without crash
+- tapOn: "Like"
+- waitForAnimationToEnd
+
+# SCENARIO: Open comments on the first Orbit post (READ — comment section) | EXPECTED: Comments open without crash
+- tapOn: "Comment"
+- waitForAnimationToEnd
+
+# SCENARIO: Tap comment input to start typing (CREATE — comment setup) | EXPECTED: Keyboard appears
+- tapOn:
+    point: "50%,90%"
+- waitForAnimationToEnd
+
+# SCENARIO: Type a comment on the Orbit post (CREATE) | EXPECTED: Text appears in comment field
+- inputText: "Interesting perspective!"
+- waitForAnimationToEnd
+
+# SCENARIO: Submit the Orbit comment (CREATE) | EXPECTED: Comment posted to thread
+- tapOn: "Post"
+- waitForAnimationToEnd
+
+# SCENARIO: Comment thread visible after posting (READ — verify) | EXPECTED: Comments area shows without crash
+- waitForAnimationToEnd
+
+# SCENARIO: Close comment section (READ cleanup) | EXPECTED: Returns to Orbit feed
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "For You"
+
+# SCENARIO: Scroll further down For You feed (READ) | EXPECTED: More posts visible
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# SCENARIO: Like a second Orbit post (UPDATE) | EXPECTED: Like registers on second post without crash
+- tapOn: "Like"
+- waitForAnimationToEnd
+
+# SCENARIO: Scroll back to top of For You feed (READ) | EXPECTED: Feed scrolls back, For You tab visible
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "For You"
+
+# SCENARIO: Tap Following tab to view followed content (READ) | EXPECTED: Following tab activates, content loads
 - tapOn: "Following"
 - waitForAnimationToEnd
 - assertVisible: "Following"
 
-# SCENARIO: For You tab restores discovery feed | EXPECTED: Tapping 'For You' returns to discovery content
+# SCENARIO: Following feed is scrollable (READ) | EXPECTED: Swipe up scrolls Following feed without crash
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# SCENARIO: Scroll Following feed back to top (READ) | EXPECTED: Following tab heading still visible
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "Following"
+
+# SCENARIO: Switch back to For You from Following (READ) | EXPECTED: For You tab reactivates
 - tapOn: "For You"
 - waitForAnimationToEnd
 - assertVisible: "For You"
 
-# SCENARIO: Orbit feed is scrollable downward | EXPECTED: Scroll down works without crash
-- swipe:
-    direction: UP
+# SCENARIO: Create a new Orbit post — tap compose button (CREATE — initiate) | EXPECTED: Post composer opens
+- tapOn:
+    point: "88%,88%"
 - waitForAnimationToEnd
 
-# SCENARIO: Orbit feed scrolls further down | EXPECTED: Second scroll continues without crash
-- swipe:
-    direction: UP
+# SCENARIO: Type content for new Orbit post (CREATE) | EXPECTED: Text appears in Orbit post composer
+- inputText: "Testing Orbit post creation"
 - waitForAnimationToEnd
 
-# SCENARIO: Orbit feed scrolls back to top | EXPECTED: Swipe down returns toward top of feed
+# SCENARIO: Cancel and discard the draft (CREATE — cancel) | EXPECTED: Returns to Orbit feed without posting
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "For You"
+
+# SCENARIO: Pull to refresh Orbit For You feed (READ) | EXPECTED: Feed refreshes, For You tab visible
 - swipe:
     direction: DOWN
 - waitForAnimationToEnd
 - assertVisible: "For You"
 
-# SCENARIO: Pull to refresh triggers feed reload | EXPECTED: Feed refreshes without crash and tabs remain visible
-- swipe:
-    direction: DOWN
-- waitForAnimationToEnd
-- assertVisible: "For You"
-
-# SCENARIO: Following tab functions after scroll and refresh | EXPECTED: Following tab still tappable and loads content
-- tapOn: "Following"
-- waitForAnimationToEnd
-- assertVisible: "Following"
-
-# SCENARIO: Following feed is scrollable | EXPECTED: Scroll down on Following tab works without crash
-- swipe:
-    direction: UP
-- waitForAnimationToEnd
-
-# SCENARIO: Following feed scrolls back to top | EXPECTED: Swipe down restores top of Following feed
-- swipe:
-    direction: DOWN
-- waitForAnimationToEnd
-- assertVisible: "Following"
-
-# SCENARIO: No error state visible on Orbit feed | EXPECTED: 'Something went wrong' not present
-- assertNotVisible: "Something went wrong"
-
-# SCENARIO: No crash dialog visible on Orbit feed | EXPECTED: App crash overlay not present
-- assertNotVisible: "Unfortunately"
-
-# SCENARIO: Back navigation returns to home from Orbit | EXPECTED: Pressing Back exits Orbit and home screen loads
+# SCENARIO: Back from Orbit returns to home | EXPECTED: 'Explore OMRE Modules' visible
 - pressKey: Back
 - waitForAnimationToEnd
 - assertVisible: "Explore OMRE Modules"

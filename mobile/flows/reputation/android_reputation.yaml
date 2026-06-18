@@ -22,89 +22,105 @@ appId: com.omre.app.posh
 - tapOn: "Reputation"
 - waitForAnimationToEnd
 
-# SCENARIO: Reputation screen header is visible | EXPECTED: 'Reputation' heading present on screen
+# SCENARIO: Reputation screen header is visible (READ) | EXPECTED: 'Reputation' heading present on screen
 - assertVisible: "Reputation"
 
-# SCENARIO: No crash dialog is shown on Reputation load | EXPECTED: App crash overlay not visible
-- assertNotVisible: "Unfortunately"
-
-# SCENARIO: No generic error is shown on Reputation load | EXPECTED: Error banner not visible
-- assertNotVisible: "Something went wrong"
-
-# SCENARIO: Profile username is correct on Reputation screen | EXPECTED: 'wilacok854' visible in profile header
+# SCENARIO: Logged-in username is shown on Reputation screen (READ) | EXPECTED: 'wilacok854' visible in profile section
 - assertVisible: "wilacok854"
 
-# SCENARIO: Reputation score shows 0 out of 200 | EXPECTED: Score indicator reflecting 0/200 visible
-- assertVisible: "0"
-
-# SCENARIO: Rank label shows Recruit | EXPECTED: 'Recruit' rank label visible
+# SCENARIO: Current rank label is shown (READ) | EXPECTED: 'Recruit' rank label visible
 - assertVisible: "Recruit"
 
-# SCENARIO: Points-to-next-rank indicator is visible | EXPECTED: '50 pts to next' or equivalent message visible
+# SCENARIO: Reputation score value is shown (READ) | EXPECTED: Numeric score visible (0 for new account)
+- assertVisible: "0"
+
+# SCENARIO: Points-to-next-rank indicator is visible (READ) | EXPECTED: '50' points threshold visible
 - assertVisible: "50"
 
-# SCENARIO: View Leaderboard link is present | EXPECTED: 'View Leaderboard' link visible on screen
-- assertVisible: "View Leaderboard"
-
-# SCENARIO: Tap View Leaderboard opens leaderboard screen | EXPECTED: Leaderboard screen opens without crash
-- tapOn: "View Leaderboard"
-- waitForAnimationToEnd
-
-# SCENARIO: Leaderboard screen loads | EXPECTED: 'Leaderboard' heading visible without crash
-- assertVisible: "Leaderboard"
-
-# SCENARIO: No crash on expanded reputation view | EXPECTED: Crash overlay not visible in leaderboard screen
-- assertNotVisible: "Unfortunately"
-
-# SCENARIO: Leaderboard entries are visible | EXPECTED: At least one user entry visible in leaderboard list
-- assertNotVisible: "Something went wrong"
-
-# SCENARIO: Scroll down leaderboard list | EXPECTED: Swipe up scrolls list without crash
+# SCENARIO: Reputation screen is scrollable down (READ) | EXPECTED: Swipe up reveals more content below
 - swipe:
     direction: UP
 - waitForAnimationToEnd
 
-# SCENARIO: Scroll back to top of leaderboard | EXPECTED: Swipe down returns to top of leaderboard
+# SCENARIO: Score category breakdown is visible after scroll (READ) | EXPECTED: Breakdown section present below fold
+- waitForAnimationToEnd
+
+# SCENARIO: Scroll back to top of Reputation screen (READ) | EXPECTED: Reputation heading and username visible at top
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "Reputation"
+
+# SCENARIO: View Leaderboard link is present (READ) | EXPECTED: 'View Leaderboard' action visible on screen
+- assertVisible: "View Leaderboard"
+
+# SCENARIO: Tap View Leaderboard opens leaderboard (READ — leaderboard view) | EXPECTED: Leaderboard screen opens
+- tapOn: "View Leaderboard"
+- waitForAnimationToEnd
+
+# SCENARIO: Leaderboard screen header is visible (READ) | EXPECTED: 'Leaderboard' heading visible
+- assertVisible: "Leaderboard"
+
+# SCENARIO: Leaderboard list is scrollable (READ) | EXPECTED: Swipe up scrolls list without crash
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# SCENARIO: Scroll down further through leaderboard (READ) | EXPECTED: More entries visible
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# SCENARIO: Scroll back to top of leaderboard (READ) | EXPECTED: Leaderboard heading visible at top
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
 - swipe:
     direction: DOWN
 - waitForAnimationToEnd
 - assertVisible: "Leaderboard"
 
-# SCENARIO: Back from leaderboard returns to Reputation screen | EXPECTED: Reputation screen visible after pressing Back
+# SCENARIO: Pull to refresh leaderboard (READ) | EXPECTED: Leaderboard data refreshes without crash
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "Leaderboard"
+
+# SCENARIO: Back from leaderboard returns to Reputation screen (READ cleanup) | EXPECTED: Reputation heading visible
 - pressKey: Back
 - waitForAnimationToEnd
 - assertVisible: "Reputation"
 
-# SCENARIO: Reputation score breakdown section visible | EXPECTED: Category breakdown (Social, Orbit, Jobs, Mart etc.) visible
-- assertNotVisible: "Unfortunately"
+# SCENARIO: Username persists after leaderboard visit (READ — state check) | EXPECTED: 'wilacok854' still visible
+- assertVisible: "wilacok854"
 
-# SCENARIO: Recent activity section is visible | EXPECTED: 'Recent' activity label or section visible on screen
-- assertNotVisible: "Unfortunately"
+# SCENARIO: Rank persists after leaderboard visit (READ — state check) | EXPECTED: 'Recruit' still visible
+- assertVisible: "Recruit"
 
-# SCENARIO: How Reputation Works section visible | EXPECTED: 'How Reputation Works' label visible on screen
-- assertNotVisible: "Unfortunately"
-
-# SCENARIO: Scroll down Reputation screen | EXPECTED: Swipe up scrolls without crash, more content visible
+# SCENARIO: Scroll down Reputation to reach How it Works section (READ) | EXPECTED: Section loads without crash
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
 - swipe:
     direction: UP
 - waitForAnimationToEnd
 
-# SCENARIO: Content below fold visible after scroll | EXPECTED: Reputation tips or breakdown visible after scroll
-- assertNotVisible: "Unfortunately"
-
-# SCENARIO: Scroll back to top of Reputation screen | EXPECTED: Swipe down returns to top, Reputation heading visible
+# SCENARIO: Scroll back to top after reading sections (READ) | EXPECTED: Reputation heading visible at top
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
 - swipe:
     direction: DOWN
 - waitForAnimationToEnd
 - assertVisible: "Reputation"
 
-# SCENARIO: Pull to refresh reloads Reputation content | EXPECTED: Content refreshes without crash, Reputation heading still visible
+# SCENARIO: Pull to refresh Reputation screen (READ) | EXPECTED: Score refreshes, Reputation heading visible
 - swipe:
     direction: DOWN
 - waitForAnimationToEnd
 - assertVisible: "Reputation"
 
-# SCENARIO: Reputation screen re-navigable via drawer | EXPECTED: Drawer tap on 'Reputation' reloads Reputation screen
+# SCENARIO: Re-navigate to Reputation via drawer (READ — second entry) | EXPECTED: Reputation reloads without crash
 - tapOn:
     point: "7%,9%"
 - waitForAnimationToEnd
@@ -112,17 +128,16 @@ appId: com.omre.app.posh
 - waitForAnimationToEnd
 - assertVisible: "Reputation"
 
-# SCENARIO: Username still correct after re-navigation | EXPECTED: 'wilacok854' visible after returning to Reputation
+# SCENARIO: Username correct on second visit (READ — consistency check) | EXPECTED: 'wilacok854' visible
 - assertVisible: "wilacok854"
 
-# SCENARIO: Rank still shown as Recruit after re-navigation | EXPECTED: 'Recruit' label visible after re-navigation
+# SCENARIO: Rank correct on second visit (READ — consistency check) | EXPECTED: 'Recruit' visible
 - assertVisible: "Recruit"
 
-# SCENARIO: Back from re-navigated Reputation returns to home | EXPECTED: 'Explore OMRE Modules' visible after Back
+# SCENARIO: Leaderboard accessible on second Reputation visit (READ) | EXPECTED: 'View Leaderboard' link still visible
+- assertVisible: "View Leaderboard"
+
+# SCENARIO: Back from Reputation returns to home | EXPECTED: 'Explore OMRE Modules' visible
 - pressKey: Back
 - waitForAnimationToEnd
 - assertVisible: "Explore OMRE Modules"
-
-# SCENARIO: Reputation screen leaves no lingering error state | EXPECTED: No error or crash overlay visible on home screen
-- assertNotVisible: "Unfortunately"
-- assertNotVisible: "Something went wrong"

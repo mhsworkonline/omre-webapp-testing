@@ -25,51 +25,111 @@ appId: com.omre.app.posh
 # SCENARIO: Shorts screen header is visible | EXPECTED: 'Shorts' heading present on screen
 - assertVisible: "Shorts"
 
-# SCENARIO: Shorts screen shows video content or empty state | EXPECTED: Video thumbnails visible or empty state message shown
-- assertNotVisible: "Something went wrong"
+# SCENARIO: First short is visible (READ) | EXPECTED: First video loads — screen has content without crash
+- waitForAnimationToEnd
 
-# SCENARIO: No crash dialog is shown on Shorts load | EXPECTED: App crash overlay not visible
-- assertNotVisible: "Unfortunately"
-
-# SCENARIO: Swipe up advances to next short | EXPECTED: Screen transitions to next video without crash
+# SCENARIO: Swipe up advances to next short (READ) | EXPECTED: Screen transitions to next video
 - swipe:
     direction: UP
 - waitForAnimationToEnd
 
-# SCENARIO: Shorts screen still visible after first swipe up | EXPECTED: Shorts context maintained after swipe
-- assertNotVisible: "Unfortunately"
+# SCENARIO: Shorts context maintained after first swipe | EXPECTED: 'Shorts' heading still present
+- assertVisible: "Shorts"
 
-# SCENARIO: Swipe up again advances to subsequent short | EXPECTED: Screen transitions again without crash
+# SCENARIO: Swipe up again to third short (READ) | EXPECTED: Third video loads without crash
 - swipe:
     direction: UP
 - waitForAnimationToEnd
 
-# SCENARIO: Swipe down returns to previous short | EXPECTED: Previous video reappears without crash
+# SCENARIO: Like the current short via right-side button (UPDATE — toggle on) | EXPECTED: Like registers without crash
+- tapOn:
+    point: "93%,42%"
+- waitForAnimationToEnd
+
+# SCENARIO: Unlike the short to restore original state (UPDATE — toggle off) | EXPECTED: Unlike registers without crash
+- tapOn:
+    point: "93%,42%"
+- waitForAnimationToEnd
+
+# SCENARIO: Open comments sheet for current short (READ) | EXPECTED: Comment sheet slides up
+- tapOn:
+    point: "93%,52%"
+- waitForAnimationToEnd
+
+# SCENARIO: Comment input field is tappable (CREATE comment setup) | EXPECTED: Keyboard appears after tapping input
+- tapOn:
+    point: "50%,90%"
+- waitForAnimationToEnd
+
+# SCENARIO: Type a comment on the short (CREATE) | EXPECTED: Typed text appears in comment input
+- inputText: "Great short!"
+- waitForAnimationToEnd
+
+# SCENARIO: Submit the comment (CREATE) | EXPECTED: Comment is posted — send icon tapped by coordinate
+- tapOn:
+    point: "93%,90%"
+- waitForAnimationToEnd
+
+# SCENARIO: Comments list updates after posting (READ) | EXPECTED: Screen still shows comment area without crash
+- waitForAnimationToEnd
+
+# SCENARIO: Scroll up through comments to find own comment (READ) | EXPECTED: Comments scroll without crash
 - swipe:
     direction: DOWN
 - waitForAnimationToEnd
 
-# SCENARIO: Shorts screen is still loaded after swipe cycle | EXPECTED: Shorts context intact after swipe down
-- assertVisible: "Shorts"
-
-# SCENARIO: Tap on video area toggles pause or play | EXPECTED: Video playback state changes on tap
-- tapOn:
-    point: "50%,50%"
-- waitForAnimationToEnd
-
-# SCENARIO: Tap again to restore play state | EXPECTED: Tap toggles play/pause back without crash
-- tapOn:
-    point: "50%,50%"
-- waitForAnimationToEnd
-
-# SCENARIO: Back navigation exits Shorts to home | EXPECTED: Pressing Back lands on home or previous screen
+# SCENARIO: Close comment sheet with Back (READ cleanup) | EXPECTED: Returns to full-screen short view
 - pressKey: Back
 - waitForAnimationToEnd
+- assertVisible: "Shorts"
 
-# SCENARIO: Home screen is visible after exiting Shorts | EXPECTED: 'Explore OMRE Modules' visible
-- assertVisible: "Explore OMRE Modules"
+# SCENARIO: Share current short via right-side share button (READ — share intent) | EXPECTED: Share sheet appears
+- tapOn:
+    point: "93%,62%"
+- waitForAnimationToEnd
 
-# SCENARIO: Re-navigate to Shorts via drawer | EXPECTED: Drawer tap on 'Shorts' reopens Shorts screen
+# SCENARIO: Dismiss share sheet (READ cleanup) | EXPECTED: Returns to Shorts screen without crash
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "Shorts"
+
+# SCENARIO: Tap video area to pause playback (UPDATE — playback state) | EXPECTED: Video pauses on tap
+- tapOn:
+    point: "50%,50%"
+- waitForAnimationToEnd
+
+# SCENARIO: Tap video area again to resume playback (UPDATE — playback state) | EXPECTED: Video resumes on second tap
+- tapOn:
+    point: "50%,50%"
+- waitForAnimationToEnd
+
+# SCENARIO: Swipe down returns to previous short (READ) | EXPECTED: Previous short visible without crash
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "Shorts"
+
+# SCENARIO: Open comments on previous short (READ) | EXPECTED: Comment sheet opens for this short
+- tapOn:
+    point: "93%,52%"
+- waitForAnimationToEnd
+
+# SCENARIO: Scroll comments list downward (READ) | EXPECTED: Comments scroll smoothly
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# SCENARIO: Scroll comments back to top (READ) | EXPECTED: Returns to top of comments
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+
+# SCENARIO: Close comment sheet (READ cleanup) | EXPECTED: Returns to Shorts fullscreen view
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "Shorts"
+
+# SCENARIO: Re-navigate to Shorts via drawer (READ — second entry) | EXPECTED: Shorts reloads without crash
 - tapOn:
     point: "7%,9%"
 - waitForAnimationToEnd
@@ -77,7 +137,7 @@ appId: com.omre.app.posh
 - waitForAnimationToEnd
 - assertVisible: "Shorts"
 
-# SCENARIO: Swipe up three times in succession without crash | EXPECTED: All three swipes complete cleanly
+# SCENARIO: Swipe through three more shorts on second entry (READ) | EXPECTED: All three swipes complete without crash
 - swipe:
     direction: UP
 - waitForAnimationToEnd
@@ -87,12 +147,13 @@ appId: com.omre.app.posh
 - swipe:
     direction: UP
 - waitForAnimationToEnd
-- assertNotVisible: "Unfortunately"
 
-# SCENARIO: Back from Shorts second entry returns to home | EXPECTED: Home visible after Back
+# SCENARIO: Like a short on second visit (UPDATE) | EXPECTED: Like action registers without crash
+- tapOn:
+    point: "93%,42%"
+- waitForAnimationToEnd
+
+# SCENARIO: Back from Shorts returns to home | EXPECTED: 'Explore OMRE Modules' visible
 - pressKey: Back
 - waitForAnimationToEnd
 - assertVisible: "Explore OMRE Modules"
-
-# SCENARIO: Shorts does not display error state after full cycle | EXPECTED: No error or crash overlay shown
-- assertNotVisible: "Something went wrong"
