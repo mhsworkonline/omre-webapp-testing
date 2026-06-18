@@ -1,6 +1,0 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="8.521196">
-<testsuite name="auth/auth.setup.js" timestamp="2026-06-17T06:00:01.690Z" hostname="auth" tests="1" failures="0" skipped="0" time="7.431" errors="0">
-<testcase name="authenticate" classname="auth/auth.setup.js" time="7.431">
-</testcase>
-</testsuite>
-</testsuites>

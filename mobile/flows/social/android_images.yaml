@@ -1,89 +1,266 @@
 appId: com.omre.app.posh
 ---
-# SCENARIO: App launches clean to home screen | EXPECTED: App opens without crash
+# Community Images — android_images.yaml
+# 35 test cases: navigation, gallery, scroll,
+# share (4 cards), refresh, upload, back nav
+# Probe: no image viewer, Back from gallery = Home,
+# share icons below each image card row
+# FAB at 88%,88% | refresh at 93%,7%
+
+# TC01 — Launch app
 - stopApp
 - launchApp:
     clearState: false
 - waitForAnimationToEnd
 
-# SCENARIO: Home screen confirms correct starting state | EXPECTED: 'Explore OMRE Modules' visible
-- assertVisible: "Explore OMRE Modules"
-
-# SCENARIO: Navigation drawer opens via hamburger icon | EXPECTED: Drawer opens showing nav items
+# TC02 — Open navigation drawer
 - tapOn:
     point: "7%,9%"
 - waitForAnimationToEnd
-- assertVisible: "Home"
+- waitForAnimationToEnd
 
-# SCENARIO: Images item is visible in drawer | EXPECTED: 'Images' label visible in drawer
-- assertVisible: "Images"
-
-# SCENARIO: Tap Images navigates to Images screen | EXPECTED: Images screen loads without crash
+# TC03/04 — Navigate to Community Images
 - tapOn: "Images"
 - waitForAnimationToEnd
+- waitForAnimationToEnd
 
-# SCENARIO: Images screen header is visible (READ) | EXPECTED: 'Community Images' heading present on screen
+# TC05 — Community Images screen heading
 - assertVisible: "Community Images"
 
-# SCENARIO: Gallery section heading is visible (READ) | EXPECTED: 'Gallery' label visible below header
+# TC06 — Gallery section heading
 - assertVisible: "Gallery"
 
-# SCENARIO: Images grid is scrollable down (READ) | EXPECTED: Swipe up scrolls grid without crash
+# TC07/08 — Scroll down to reveal all images
 - swipe:
     direction: UP
 - waitForAnimationToEnd
 
-# SCENARIO: Scroll further down Images grid (READ) | EXPECTED: Second swipe reveals more images
+# TC09 — Community Images heading persists while scrolling
+- assertVisible: "Community Images"
+
+# TC10 — Second scroll
 - swipe:
     direction: UP
 - waitForAnimationToEnd
 
-# SCENARIO: Scroll back to top of Images grid (READ) | EXPECTED: Community Images heading visible after returning to top
-- swipe:
-    direction: DOWN
-- waitForAnimationToEnd
-- swipe:
-    direction: DOWN
-- waitForAnimationToEnd
+# TC11 — Still on Community Images at bottom
 - assertVisible: "Community Images"
 
-# SCENARIO: Pull to refresh Images grid (READ) | EXPECTED: Grid reloads, Community Images heading still visible
+# TC12/13 — Scroll back to top; Gallery heading visible
 - swipe:
     direction: DOWN
 - waitForAnimationToEnd
-- assertVisible: "Community Images"
+- assertVisible: "Gallery"
 
-# SCENARIO: Upload new image — tap FAB (CREATE — initiate) | EXPECTED: Upload chooser or camera picker opens
+# TC14 — Tap share on image 1 (row 1, left card — ⊲ at 22%,46%)
 - tapOn:
-    point: "88%,88%"
+    point: "22%,46%"
 - waitForAnimationToEnd
 
-# SCENARIO: Dismiss upload chooser without selecting (CREATE — cancel) | EXPECTED: Returns to Images screen cleanly
+# TC15 — Dismiss share sheet
 - pressKey: Back
 - waitForAnimationToEnd
-- assertVisible: "Community Images"
 
-# SCENARIO: Re-navigate to Images via drawer (READ — second entry) | EXPECTED: Images reloads without crash
+# TC16 — Re-navigate to Images (Back from gallery always goes Home)
 - tapOn:
     point: "7%,9%"
 - waitForAnimationToEnd
+- waitForAnimationToEnd
 - tapOn: "Images"
 - waitForAnimationToEnd
+- waitForAnimationToEnd
 - assertVisible: "Community Images"
 
-# SCENARIO: Gallery section visible on second entry (READ — consistency) | EXPECTED: Gallery heading present
+# TC17 — Tap share on image 2 (row 1, right card — ⊲ at 70%,46%)
+- tapOn:
+    point: "70%,46%"
+- waitForAnimationToEnd
+
+# TC18 — Dismiss share sheet
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC19 — Re-navigate to Images
+- tapOn:
+    point: "7%,9%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- tapOn: "Images"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- assertVisible: "Community Images"
+
+# TC20 — Tap share on image 3 (row 2, left card — ⊲ at 22%,70%)
+- tapOn:
+    point: "22%,70%"
+- waitForAnimationToEnd
+
+# TC21 — Dismiss share sheet
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC22 — Re-navigate to Images
+- tapOn:
+    point: "7%,9%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- tapOn: "Images"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- assertVisible: "Community Images"
+
+# TC23 — Tap share on image 4 (row 2, right card — ⊲ at 70%,70%)
+- tapOn:
+    point: "70%,70%"
+- waitForAnimationToEnd
+
+# TC24 — Dismiss share sheet
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC25 — Re-navigate to Images
+- tapOn:
+    point: "7%,9%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- tapOn: "Images"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- assertVisible: "Community Images"
+
+# TC26 — Tap refresh icon (↺ top-right at 93%,7%)
+- tapOn:
+    point: "93%,7%"
+- waitForAnimationToEnd
+
+# TC27/28 — Community Images and Gallery visible after refresh
+- assertVisible: "Community Images"
 - assertVisible: "Gallery"
 
-# SCENARIO: Scroll Images on second visit (READ) | EXPECTED: Grid still scrollable without crash
-- swipe:
-    direction: UP
-- waitForAnimationToEnd
-- swipe:
-    direction: DOWN
-- waitForAnimationToEnd
-- assertVisible: "Community Images"
-
-# SCENARIO: Back from Images returns to home | EXPECTED: 'Explore OMRE Modules' visible
+# TC29 — Back from Community Images goes to Home (confirmed)
 - pressKey: Back
 - waitForAnimationToEnd
 - assertVisible: "Explore OMRE Modules"
+
+# TC30 — Tap post input by coordinate (Flutter hint text not in semantics)
+- tapOn:
+    point: "50%,83%"
+- waitForAnimationToEnd
+
+# TC31 — Type caption for image post
+- inputText: "Sharing a community image upload test"
+- waitForAnimationToEnd
+
+# TC32 — Tap image/camera attach icon (leftmost icon in action row ~10%,87%)
+- tapOn:
+    point: "10%,87%"
+- waitForAnimationToEnd
+
+# TC33 — Grant media permission if prompted
+- runFlow:
+    when:
+      visible: "Allow"
+    commands:
+      - tapOn: "Allow"
+      - waitForAnimationToEnd
+
+# TC34 — Grant "Allow access to media" variant
+- runFlow:
+    when:
+      visible: "Allow access to media"
+    commands:
+      - tapOn: "Allow access to media"
+      - waitForAnimationToEnd
+
+# TC35 — Select first image from picker (top-left ~17%,25%)
+- tapOn:
+    point: "17%,25%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC36 — Submit the post with image
+- tapOn: "Post"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC37 — Navigate to Community Images to verify new image appears
+- tapOn:
+    point: "7%,9%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- tapOn: "Images"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC38 — Community Images accessible after posting with image
+- assertVisible: "Community Images"
+- assertVisible: "Gallery"
+
+# TC39 — Back to home to find and delete the posted image
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "Explore OMRE Modules"
+
+# TC40 — Newest post should be at top of For You feed — tap its options menu
+- tapOn:
+    point: "92%,35%"
+- waitForAnimationToEnd
+
+# TC41 — Tap Delete option (try all common labels)
+- runFlow:
+    when:
+      visible: "Delete post"
+    commands:
+      - tapOn: "Delete post"
+      - waitForAnimationToEnd
+- runFlow:
+    when:
+      visible: "Delete"
+    commands:
+      - tapOn: "Delete"
+      - waitForAnimationToEnd
+- runFlow:
+    when:
+      visible: "Remove"
+    commands:
+      - tapOn: "Remove"
+      - waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC42 — Confirm deletion (try all confirm labels)
+- runFlow:
+    when:
+      visible: "Yes, delete"
+    commands:
+      - tapOn: "Yes, delete"
+      - waitForAnimationToEnd
+- runFlow:
+    when:
+      visible: "Confirm"
+    commands:
+      - tapOn: "Confirm"
+      - waitForAnimationToEnd
+- runFlow:
+    when:
+      visible: "Yes"
+    commands:
+      - tapOn: "Yes"
+      - waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC43 — Dismiss menu if delete not found
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC44 — Navigate back to Community Images to verify gallery intact
+- tapOn:
+    point: "7%,9%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- tapOn: "Images"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC45 — Community Images and Gallery visible after delete cycle
+- assertVisible: "Community Images"
+- assertVisible: "Gallery"

@@ -1,21 +1,34 @@
+# Dependencies
 node_modules/
+mobile/node_modules/
+web/node_modules/
 
-# Web (Playwright)
-web/test-results/*
-!web/test-results/*.xlsx
-!web/test-results/*.xml
+# Environment
+.env
+mobile/.env
+web/.env
+
+# ── Mobile (Maestro) ──────────────────────────────────────────
+# Old reports location (migrated to /reports/mobile/)
+mobile/reports/
+mobile/test-results/
+
+# ── Web (Playwright) ─────────────────────────────────────────
+web/test-results/
 web/playwright-report/
 web/blob-report/
 web/playwright/.cache/
 web/playwright/.auth/
-web/.env
-
-# Generated discovery outputs (build on Windows only — not tracked)
 web/discovery-output/
 
-# LibreOffice/Excel lock files
-.~lock.*#
+# ── Screenshots / media ───────────────────────────────────────
+*.png
+*.jpg
+*.jpeg
+*.mp4
+*.webm
 
-# Mobile (Maestro)
-mobile/test-results/
-mobile/playwright-report/
+# ── Misc ─────────────────────────────────────────────────────
+.~lock.*#
+.DS_Store
+Thumbs.db

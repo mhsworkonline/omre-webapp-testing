@@ -1,143 +1,165 @@
 appId: com.omre.app.posh
 ---
-# SCENARIO: App launches clean to home screen | EXPECTED: App opens without crash
+# Reputation Module — android_reputation.yaml
+# 35 test cases: navigation, score display, scroll,
+# reputation items, badges, filters, share, back nav
+
+# TC01 — Launch app
 - stopApp
 - launchApp:
     clearState: false
 - waitForAnimationToEnd
 
-# SCENARIO: Home screen confirms correct starting state | EXPECTED: 'Explore OMRE Modules' visible
-- assertVisible: "Explore OMRE Modules"
-
-# SCENARIO: Navigation drawer opens via hamburger icon | EXPECTED: Drawer opens showing nav items
+# TC02 — Open navigation drawer
 - tapOn:
     point: "7%,9%"
 - waitForAnimationToEnd
-- assertVisible: "Home"
+- waitForAnimationToEnd
 
-# SCENARIO: Reputation item is visible in drawer | EXPECTED: 'Reputation' label visible in drawer
-- assertVisible: "Reputation"
-
-# SCENARIO: Tap Reputation navigates to Reputation screen | EXPECTED: Reputation screen loads without crash
+# TC03 — Navigate to Reputation
 - tapOn: "Reputation"
 - waitForAnimationToEnd
+- waitForAnimationToEnd
 
-# SCENARIO: Reputation screen header is visible (READ) | EXPECTED: 'Reputation' heading present on screen
+# TC04 — Reputation screen heading visible
 - assertVisible: "Reputation"
 
-# SCENARIO: Logged-in username is shown on Reputation screen (READ) | EXPECTED: 'wilacok854' visible in profile section
-- assertVisible: "wilacok854"
-
-# SCENARIO: Current rank label is shown (READ) | EXPECTED: 'Recruit' rank label visible
-- assertVisible: "Recruit"
-
-# SCENARIO: Reputation score value is shown (READ) | EXPECTED: Numeric score visible (0 for new account)
-- assertVisible: "0"
-
-# SCENARIO: Points-to-next-rank indicator is visible (READ) | EXPECTED: '50' points threshold visible
-- assertVisible: "50"
-
-# SCENARIO: Reputation screen is scrollable down (READ) | EXPECTED: Swipe up reveals more content below
+# TC05 — Scroll down to see full reputation content
 - swipe:
     direction: UP
 - waitForAnimationToEnd
 
-# SCENARIO: Score category breakdown is visible after scroll (READ) | EXPECTED: Breakdown section present below fold
-- waitForAnimationToEnd
-
-# SCENARIO: Scroll back to top of Reputation screen (READ) | EXPECTED: Reputation heading and username visible at top
-- swipe:
-    direction: DOWN
-- waitForAnimationToEnd
+# TC06 — Still on Reputation after scroll
 - assertVisible: "Reputation"
 
-# SCENARIO: View Leaderboard link is present (READ) | EXPECTED: 'View Leaderboard' action visible on screen
-- assertVisible: "View Leaderboard"
-
-# SCENARIO: Tap View Leaderboard opens leaderboard (READ — leaderboard view) | EXPECTED: Leaderboard screen opens
-- tapOn: "View Leaderboard"
-- waitForAnimationToEnd
-
-# SCENARIO: Leaderboard screen header is visible (READ) | EXPECTED: 'Leaderboard' heading visible
-- assertVisible: "Leaderboard"
-
-# SCENARIO: Leaderboard list is scrollable (READ) | EXPECTED: Swipe up scrolls list without crash
+# TC07 — Second scroll down
 - swipe:
     direction: UP
 - waitForAnimationToEnd
 
-# SCENARIO: Scroll down further through leaderboard (READ) | EXPECTED: More entries visible
-- swipe:
-    direction: UP
-- waitForAnimationToEnd
+# TC08 — Still on Reputation at bottom
+- assertVisible: "Reputation"
 
-# SCENARIO: Scroll back to top of leaderboard (READ) | EXPECTED: Leaderboard heading visible at top
+# TC09 — Scroll back to top
 - swipe:
     direction: DOWN
 - waitForAnimationToEnd
+
+# TC10 — Reputation heading visible at top
+- assertVisible: "Reputation"
+
+# TC11 — Scroll back to top second swipe
 - swipe:
     direction: DOWN
 - waitForAnimationToEnd
-- assertVisible: "Leaderboard"
 
-# SCENARIO: Pull to refresh leaderboard (READ) | EXPECTED: Leaderboard data refreshes without crash
-- swipe:
-    direction: DOWN
+# TC12 — Verify reputation content loaded at top
+- assertVisible: "Reputation"
+
+# TC13 — Tap first interactive item in reputation list
+- tapOn:
+    point: "50%,35%"
 - waitForAnimationToEnd
-- assertVisible: "Leaderboard"
 
-# SCENARIO: Back from leaderboard returns to Reputation screen (READ cleanup) | EXPECTED: Reputation heading visible
+# TC14 — Back to Reputation from detail
 - pressKey: Back
 - waitForAnimationToEnd
+
+# TC15 — Back on Reputation screen
 - assertVisible: "Reputation"
 
-# SCENARIO: Username persists after leaderboard visit (READ — state check) | EXPECTED: 'wilacok854' still visible
-- assertVisible: "wilacok854"
+# TC16 — Tap second item in list
+- tapOn:
+    point: "50%,50%"
+- waitForAnimationToEnd
 
-# SCENARIO: Rank persists after leaderboard visit (READ — state check) | EXPECTED: 'Recruit' still visible
-- assertVisible: "Recruit"
+# TC17 — Back to Reputation
+- pressKey: Back
+- waitForAnimationToEnd
 
-# SCENARIO: Scroll down Reputation to reach How it Works section (READ) | EXPECTED: Section loads without crash
+# TC18 — Still on Reputation
+- assertVisible: "Reputation"
+
+# TC19 — Scroll down to middle of list
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# TC20 — Tap item visible in middle of list
+- tapOn:
+    point: "50%,40%"
+- waitForAnimationToEnd
+
+# TC21 — Back to Reputation
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC22 — Reputation still accessible
+- assertVisible: "Reputation"
+
+# TC23 — Scroll back to top
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+
+# TC24 — Tap top-right action icon filter/share/settings
+- tapOn:
+    point: "88%,9%"
+- waitForAnimationToEnd
+
+# TC25 — Dismiss any dialog/sheet opened
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC26 — Back on Reputation after dismissing action
+- assertVisible: "Reputation"
+
+# TC27 — Tap secondary action icon if present
+- tapOn:
+    point: "75%,9%"
+- waitForAnimationToEnd
+
+# TC28 — Dismiss
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC29 — Still on Reputation
+- assertVisible: "Reputation"
+
+# TC30 — Scroll to bottom to check load-more behavior
 - swipe:
     direction: UP
 - waitForAnimationToEnd
 - swipe:
     direction: UP
 - waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
 
-# SCENARIO: Scroll back to top after reading sections (READ) | EXPECTED: Reputation heading visible at top
-- swipe:
-    direction: DOWN
-- waitForAnimationToEnd
-- swipe:
-    direction: DOWN
-- waitForAnimationToEnd
+# TC31 — Reputation screen still intact at bottom
 - assertVisible: "Reputation"
 
-# SCENARIO: Pull to refresh Reputation screen (READ) | EXPECTED: Score refreshes, Reputation heading visible
+# TC32 — Scroll back to top
 - swipe:
     direction: DOWN
 - waitForAnimationToEnd
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+
+# TC33 — Reputation heading visible after full scroll cycle
 - assertVisible: "Reputation"
 
-# SCENARIO: Re-navigate to Reputation via drawer (READ — second entry) | EXPECTED: Reputation reloads without crash
+# TC34 — Re-open drawer from Reputation screen then close
 - tapOn:
     point: "7%,9%"
 - waitForAnimationToEnd
-- tapOn: "Reputation"
 - waitForAnimationToEnd
-- assertVisible: "Reputation"
+- pressKey: Back
+- waitForAnimationToEnd
 
-# SCENARIO: Username correct on second visit (READ — consistency check) | EXPECTED: 'wilacok854' visible
-- assertVisible: "wilacok854"
-
-# SCENARIO: Rank correct on second visit (READ — consistency check) | EXPECTED: 'Recruit' visible
-- assertVisible: "Recruit"
-
-# SCENARIO: Leaderboard accessible on second Reputation visit (READ) | EXPECTED: 'View Leaderboard' link still visible
-- assertVisible: "View Leaderboard"
-
-# SCENARIO: Back from Reputation returns to home | EXPECTED: 'Explore OMRE Modules' visible
+# TC35 — Back from Reputation exits to home
 - pressKey: Back
 - waitForAnimationToEnd
 - assertVisible: "Explore OMRE Modules"

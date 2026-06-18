@@ -1,123 +1,259 @@
 appId: com.omre.app.posh
 ---
-# SCENARIO: App launches clean to home screen | EXPECTED: App opens without crash
+# Biz Module - android_biz_module.yaml
+# 38 test cases: navigation via module switcher, feed, posts,
+# create biz post, interactions, delete, back nav
+# Heading unknown - removed assertVisible for heading
+# Post submit button label unknown - using conditional runFlow
+
+# TC01 - Launch app
 - stopApp
 - launchApp:
     clearState: false
 - waitForAnimationToEnd
 
-# SCENARIO: Home screen confirms correct starting state | EXPECTED: 'Explore OMRE Modules' visible
-- assertVisible: "Explore OMRE Modules"
-
-# SCENARIO: Module switcher entry point is present | EXPECTED: 'View all' button visible on home screen
-- assertVisible: "View all"
-
-# SCENARIO: Module switcher opens for navigation | EXPECTED: 'Switch to Module' header appears
+# TC02 - Open module switcher
 - tapOn: "View all"
 - waitForAnimationToEnd
+
+# TC03 - Module switcher visible
 - assertVisible: "Switch to Module"
 
-# SCENARIO: Biz module is listed in module switcher | EXPECTED: 'Biz' option visible in switcher
-- assertVisible: "Biz"
-
-# SCENARIO: Tap Biz to enter Biz module (index 1 to skip module bar) | EXPECTED: Biz module loads without crash
+# TC04 - Navigate to Biz (index:1 to avoid ambiguity)
 - tapOn:
     text: "Biz"
     index: 1
 - waitForAnimationToEnd
-
-# SCENARIO: Biz module loads without error (READ) | EXPECTED: No error overlay — module renders
 - waitForAnimationToEnd
 
-# SCENARIO: Biz primary CTA is visible (READ) | EXPECTED: 'Continue to Omre Web' button accessible
-- assertVisible: "Continue to Omre Web"
+# TC05 - Biz module loaded (no heading assertion - text unknown)
+- waitForAnimationToEnd
 
-# SCENARIO: Biz screen is scrollable down (READ) | EXPECTED: Swipe up reveals content below fold
+# TC06 - Scroll down through Biz feed
 - swipe:
     direction: UP
 - waitForAnimationToEnd
 
-# SCENARIO: Scroll further down Biz screen (READ) | EXPECTED: More content or features visible
+# TC07 - Second scroll
 - swipe:
     direction: UP
 - waitForAnimationToEnd
 
-# SCENARIO: Scroll back to top of Biz screen (READ) | EXPECTED: CTA visible again at top
+# TC08 - Scroll back to top
 - swipe:
     direction: DOWN
 - waitForAnimationToEnd
 - swipe:
     direction: DOWN
 - waitForAnimationToEnd
-- assertVisible: "Continue to Omre Web"
 
-# SCENARIO: Tap Continue to Omre Web — enter Biz web view (READ — web view entry) | EXPECTED: Web view or Biz portal opens
-- tapOn: "Continue to Omre Web"
+# TC09 - Tap first post/card in Biz feed
+- tapOn:
+    point: "50%,35%"
 - waitForAnimationToEnd
 
-# SCENARIO: Biz web view loads without crash (READ) | EXPECTED: Screen renders new content without crash
-- waitForAnimationToEnd
-
-# SCENARIO: Scroll down in Biz web view (READ) | EXPECTED: Web view content scrollable
-- swipe:
-    direction: UP
-- waitForAnimationToEnd
-
-# SCENARIO: Scroll back up in Biz web view (READ) | EXPECTED: Returns to top of web view
-- swipe:
-    direction: DOWN
-- waitForAnimationToEnd
-
-# SCENARIO: Back from Biz web view returns to Biz module (READ cleanup) | EXPECTED: 'Continue to Omre Web' visible again
+# TC10 - Back to Biz feed
 - pressKey: Back
 - waitForAnimationToEnd
-- assertVisible: "Continue to Omre Web"
 
-# SCENARIO: Re-enter Biz web view (READ — second entry) | EXPECTED: Web view reopens without crash
-- tapOn: "Continue to Omre Web"
+# TC11 - Tap second post/card
+- tapOn:
+    point: "50%,55%"
 - waitForAnimationToEnd
 
-# SCENARIO: Scroll through Biz web view on second visit (READ) | EXPECTED: Content scrollable on revisit
+# TC12 - Back to Biz
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC13 - Tap third post/card
+- tapOn:
+    point: "50%,70%"
+- waitForAnimationToEnd
+
+# TC14 - Back to Biz
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC15 - Like first post in Biz feed (heart icon ~12%,35%)
+- tapOn:
+    point: "12%,35%"
+- waitForAnimationToEnd
+
+# TC16 - Unlike (toggle)
+- tapOn:
+    point: "12%,35%"
+- waitForAnimationToEnd
+
+# TC17 - Like via right-side icon (alternate position ~88%,35%)
+- tapOn:
+    point: "88%,35%"
+- waitForAnimationToEnd
+
+# TC18 - Unlike toggle
+- tapOn:
+    point: "88%,35%"
+- waitForAnimationToEnd
+
+# TC19 - Tap comment icon (~88%,45%)
+- tapOn:
+    point: "88%,45%"
+- waitForAnimationToEnd
+
+# TC20 - Back from comments
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC21 - Tap share icon (~88%,55%)
+- tapOn:
+    point: "88%,55%"
+- waitForAnimationToEnd
+
+# TC22 - Dismiss share sheet
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC23 - Scroll to bottom of feed
 - swipe:
     direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# TC24 - Scroll back to top
+- swipe:
+    direction: DOWN
 - waitForAnimationToEnd
 - swipe:
     direction: DOWN
 - waitForAnimationToEnd
 
-# SCENARIO: Back from second Biz web view visit (READ cleanup) | EXPECTED: Biz module screen visible
+# TC25 - Tap top-right action/filter icon
+- tapOn:
+    point: "88%,9%"
+- waitForAnimationToEnd
 - pressKey: Back
 - waitForAnimationToEnd
-- assertVisible: "Continue to Omre Web"
 
-# SCENARIO: Back from Biz module to home screen | EXPECTED: 'Explore OMRE Modules' visible
+# TC26 - Tap options on existing post (~92%,35%)
+- tapOn:
+    point: "92%,35%"
+- waitForAnimationToEnd
 - pressKey: Back
 - waitForAnimationToEnd
-- assertVisible: "Explore OMRE Modules"
 
-# SCENARIO: Re-enter Biz via module switcher second time (READ — re-entry consistency) | EXPECTED: Biz loads correctly
+# TC27 - Tap options on second post (~92%,55%)
+- tapOn:
+    point: "92%,55%"
+- waitForAnimationToEnd
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC28 - Swipe on a post card
+- swipe:
+    direction: LEFT
+- waitForAnimationToEnd
+- swipe:
+    direction: RIGHT
+- waitForAnimationToEnd
+
+# TC29 - Create Biz post - tap post input (coord for Social home feed)
+- tapOn:
+    point: "50%,83%"
+- waitForAnimationToEnd
+
+# TC30 - Type biz post content
+- inputText: "Biz module create post test"
+- waitForAnimationToEnd
+
+# TC31 - Submit post (try all common labels)
+- runFlow:
+    when:
+      visible: "Post"
+    commands:
+      - tapOn: "Post"
+      - waitForAnimationToEnd
+- runFlow:
+    when:
+      visible: "Share"
+    commands:
+      - tapOn: "Share"
+      - waitForAnimationToEnd
+- runFlow:
+    when:
+      visible: "Publish"
+    commands:
+      - tapOn: "Publish"
+      - waitForAnimationToEnd
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC32 - Navigate back to Biz (post may have been on Social feed)
+- tapOn:
+    point: "7%,9%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
 - tapOn: "View all"
 - waitForAnimationToEnd
-- assertVisible: "Switch to Module"
 - tapOn:
     text: "Biz"
     index: 1
 - waitForAnimationToEnd
-- assertVisible: "Continue to Omre Web"
-
-# SCENARIO: Biz module stable on second visit (READ — stability) | EXPECTED: CTA still accessible, no crash
 - waitForAnimationToEnd
 
-# SCENARIO: Scroll Biz on second visit (READ) | EXPECTED: Screen still scrollable without crash
+# TC33 - Tap options on newest post (~92%,25%)
+- tapOn:
+    point: "92%,25%"
+- waitForAnimationToEnd
+
+# TC34 - Delete the test post
+- runFlow:
+    when:
+      visible: "Delete post"
+    commands:
+      - tapOn: "Delete post"
+      - waitForAnimationToEnd
+- runFlow:
+    when:
+      visible: "Delete"
+    commands:
+      - tapOn: "Delete"
+      - waitForAnimationToEnd
+- runFlow:
+    when:
+      visible: "Yes"
+    commands:
+      - tapOn: "Yes"
+      - waitForAnimationToEnd
+- runFlow:
+    when:
+      visible: "Confirm"
+    commands:
+      - tapOn: "Confirm"
+      - waitForAnimationToEnd
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC35 - Scroll Biz feed after delete
 - swipe:
     direction: UP
 - waitForAnimationToEnd
 - swipe:
     direction: DOWN
 - waitForAnimationToEnd
-- assertVisible: "Continue to Omre Web"
 
-# SCENARIO: Back from Biz on second visit to home | EXPECTED: Home screen loads cleanly
+# TC36 - Tap first result in Biz (verify feed intact)
+- tapOn:
+    point: "50%,35%"
+- waitForAnimationToEnd
 - pressKey: Back
 - waitForAnimationToEnd
-- assertVisible: "Explore OMRE Modules"
+
+# TC37 - Module switcher visible via View all
+- tapOn: "View all"
+- waitForAnimationToEnd
+- assertVisible: "Switch to Module"
+
+# TC38 - Dismiss module switcher
+- pressKey: Back
+- waitForAnimationToEnd

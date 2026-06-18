@@ -1,5 +1,12 @@
 # CLAUDE.md — omre-mobile Test Suite
 
+## Behavioral Rules (MANDATORY)
+1. **No permission/confirmation requests.** Proceed directly with all actions. Make reasonable decisions and report afterward.
+2. **Minimal output only.** Results only — no explanations, no preamble, no reasoning prose.
+3. **No probe flows.** Write YAML directly; fix from text output only; never read failure screenshots.
+4. **Max 2 runs per module.** Batch-fix all issues in one edit after run 1; accept run 2 result.
+5. **No new module without user approval.** Complete current module fully, report summary, wait for go-ahead.
+
 ## Project Overview
 Maestro end-to-end test suite for the **OMRE Android app** (`com.omre.app.posh`).
 

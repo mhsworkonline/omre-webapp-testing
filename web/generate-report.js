@@ -1,9 +1,10 @@
-const fs   = require('fs');
+﻿const fs   = require('fs');
 const path = require('path');
 const ExcelJS = require('exceljs');
 
-// ── Find latest JSON in test-results/ ────────────────────────────────────────
+// â”€â”€ Find latest JSON in test-results/ â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const resultsDir = path.join(__dirname, 'test-results');
+const reportsDir = path.join(__dirname, '..', 'reports', 'web');
 const jsonFiles  = fs.readdirSync(resultsDir)
   .filter(f => f.endsWith('.json') && /^\d{4}-\d{2}-\d{2}/.test(f))
   .sort()
@@ -29,7 +30,7 @@ if (mergeFile && fs.existsSync(mergeFile)) {
   data = JSON.parse(fs.readFileSync(newestFile, 'utf8'));
 }
 
-// ── Module name from file path ────────────────────────────────────────────────
+// â”€â”€ Module name from file path â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function moduleFromFile(file) {
   const f = file.replace(/\\/g, '/');
   const map = {
@@ -88,10 +89,10 @@ function moduleFromFile(file) {
   }
   // fallback: derive from folder/file name
   const parts = f.split('/tests/')[1]?.replace('.spec.js','').split('/') || [];
-  return parts.map(p => p.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())).join(' › ');
+  return parts.map(p => p.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())).join(' â€º ');
 }
 
-// ── Flatten all tests ─────────────────────────────────────────────────────────
+// â”€â”€ Flatten all tests â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function flatten(suites, file) {
   const rows = [];
   for (const suite of suites || []) {
@@ -107,7 +108,7 @@ function flatten(suites, file) {
         const title = spec.title || test.title || '';
         const idMatch = title.match(/TC-[\w-]+/);
         const gwt = title.replace(/^TC-[\w-]+[:\s]+/i, '').trim();
-        // Split "Given X, When Y, Then Z" → action = "Given X, When Y", expected = "Z"
+        // Split "Given X, When Y, Then Z" â†’ action = "Given X, When Y", expected = "Z"
         const thenMatch = gwt.match(/^(.*?),?\s*Then\s+(.+)$/i);
         const action   = thenMatch ? thenMatch[1].trim() : gwt;
         const expected = thenMatch ? thenMatch[2].trim() : '(see test name)';
@@ -141,14 +142,14 @@ function flatten(suites, file) {
 
 const rows = flatten(data.suites || []);
 
-// ── Group by module ───────────────────────────────────────────────────────────
+// â”€â”€ Group by module â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const grouped = {};
 for (const row of rows) {
   if (!grouped[row.module]) grouped[row.module] = [];
   grouped[row.module].push(row);
 }
 
-// ── Build Excel ───────────────────────────────────────────────────────────────
+// â”€â”€ Build Excel â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const wb = new ExcelJS.Workbook();
 wb.creator = 'OMRE QA Suite';
 wb.created = new Date();
@@ -213,7 +214,7 @@ for (const [mod, tests] of Object.entries(grouped).sort()) {
   }
 }
 
-// ── Coverage sheets: cross-reference each module's crawl output against what's actually tested ──
+// â”€â”€ Coverage sheets: cross-reference each module's crawl output against what's actually tested â”€â”€
 const CRAWL_MODULE_TO_GROUP = {
   biz: 'Biz', link: 'Link (Jobs)', learn: 'Learn', orbit: 'Orbit',
   townhall: 'Town Hall', happycorner: 'Happy Corner', virtualworld: 'Virtual World',
@@ -235,7 +236,7 @@ for (const file of crawlFiles) {
   const crawl = JSON.parse(fs.readFileSync(path.join(discoveryDir, file), 'utf8')).filter(p => !p.skipped);
   const testedText = grouped[groupKey].map(t => `${t.action} ${t.expected} ${t.name || ''}`.toLowerCase()).join(' | ');
 
-  const cov = wb.addWorksheet(`Coverage — ${groupKey}`.slice(0, 31));
+  const cov = wb.addWorksheet(`Coverage â€” ${groupKey}`.slice(0, 31));
   cov.columns = [
     { header: 'Page Path',        key: 'path',    width: 38 },
     { header: 'Heading',          key: 'heading', width: 30 },
@@ -252,7 +253,7 @@ for (const file of crawlFiles) {
       || (generic.endsWith('/view') && testedText.includes('job detail'))
       || (generic.endsWith('/companies') && testedText.includes('company detail'))
       || (generic.endsWith('/courses') && testedText.includes('course detail'))
-      || (generic.endsWith('/profile') && testedText.includes('profile'))) ? 'YES' : 'NO — gap';
+      || (generic.endsWith('/profile') && testedText.includes('profile'))) ? 'YES' : 'NO â€” gap';
     const row = cov.addRow({ path: p.path, heading: p.heading, found: 'Recursive crawl', tested });
     const cell = row.getCell(4);
     cell.fill = tested === 'YES' ? PASS_FILL : FAIL_FILL;
@@ -260,12 +261,14 @@ for (const file of crawlFiles) {
   }
 }
 
-// ── Save with same timestamp as JSON ─────────────────────────────────────────
+// â”€â”€ Save with same timestamp as JSON â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const ts      = jsonFiles[0].replace('.json', '');
-let outFile = path.join(resultsDir, `${ts}.xlsx`);
+require('fs').mkdirSync(reportsDir, { recursive: true });
+let outFile = path.join(reportsDir, `${ts}.xlsx`);
 if (fs.existsSync(outFile)) {
-  outFile = path.join(resultsDir, `${ts}-${Date.now()}.xlsx`);
+  outFile = path.join(reportsDir, `${ts}-${Date.now()}.xlsx`);
 }
 wb.xlsx.writeFile(outFile).then(() => {
   console.log('Excel report saved:', outFile);
 });
+

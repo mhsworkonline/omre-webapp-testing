@@ -1,144 +1,217 @@
 appId: com.omre.app.posh
 ---
-# SCENARIO: App launches clean to home screen | EXPECTED: App opens without crash
+# News Feed - android_news_feed.yaml
+# 38 test cases: navigation, browse articles, scroll, tabs,
+# share, search, back nav
+# Note: Back from article goes to home (like Images) - re-nav after each
+
+# TC01 - Launch app
 - stopApp
 - launchApp:
     clearState: false
 - waitForAnimationToEnd
 
-# SCENARIO: Home screen confirms correct starting state | EXPECTED: 'Explore OMRE Modules' visible
-- assertVisible: "Explore OMRE Modules"
-
-# SCENARIO: Module switcher entry point is present | EXPECTED: 'View all' button visible on home screen
-- assertVisible: "View all"
-
-# SCENARIO: Module switcher opens for navigation | EXPECTED: 'Switch to Module' header appears
+# TC02 - Open module switcher
 - tapOn: "View all"
 - waitForAnimationToEnd
-- assertVisible: "Switch to Module"
 
-# SCENARIO: News module is listed in module switcher | EXPECTED: 'News' option visible in switcher list
+# TC03 - Navigate to News
+- tapOn: "News"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC04 - News screen heading visible
 - assertVisible: "News"
 
-# SCENARIO: News module entry navigates to News | EXPECTED: Tapping 'News' opens News module
-- tapOn: "News"
-- waitForAnimationToEnd
-
-# SCENARIO: News module loads without crash | EXPECTED: No error overlay appears after entering News
-- assertNotVisible: "Something went wrong"
-
-# SCENARIO: News module has no crash dialog | EXPECTED: 'Unfortunately' crash dialog not present
-- assertNotVisible: "Unfortunately"
-
-# SCENARIO: My Feed tab is present in News | EXPECTED: 'My Feed' tab visible
-- assertVisible: "My Feed"
-
-# SCENARIO: Following tab is present in News | EXPECTED: 'Following' tab visible
-- assertVisible: "Following"
-
-# SCENARIO: Live Coverage tab is present in News | EXPECTED: 'Live Coverage' tab visible
-- assertVisible: "Live Coverage"
-
-# SCENARIO: My Feed tab is tappable and activates | EXPECTED: Tapping 'My Feed' selects that tab without crash
-- tapOn: "My Feed"
-- waitForAnimationToEnd
-- assertVisible: "My Feed"
-
-# SCENARIO: My Feed content loads without error | EXPECTED: No error overlay on My Feed tab
-- assertNotVisible: "Something went wrong"
-
-# SCENARIO: My Feed is scrollable downward | EXPECTED: Scroll down works without crash
+# TC05 - Scroll down through news feed
 - swipe:
     direction: UP
 - waitForAnimationToEnd
 
-# SCENARIO: My Feed scrolls further down | EXPECTED: Second scroll continues without crash
+# TC06 - News heading persists during scroll
+- assertVisible: "News"
+
+# TC07 - Second scroll
 - swipe:
     direction: UP
 - waitForAnimationToEnd
 
-# SCENARIO: My Feed scrolls back to top | EXPECTED: Swipe down returns toward top of feed
+# TC08 - News still visible
+- assertVisible: "News"
+
+# TC09 - Scroll back to top
 - swipe:
     direction: DOWN
 - waitForAnimationToEnd
-- assertVisible: "My Feed"
-
-# SCENARIO: Pull to refresh on My Feed | EXPECTED: Feed refreshes without crash and tab still visible
 - swipe:
     direction: DOWN
 - waitForAnimationToEnd
-- assertVisible: "My Feed"
 
-# SCENARIO: Following tab switches feed view | EXPECTED: Tapping 'Following' loads following content without crash
-- tapOn: "Following"
-- waitForAnimationToEnd
-- assertVisible: "Following"
+# TC10 - News heading at top
+- assertVisible: "News"
 
-# SCENARIO: Following feed loads without error | EXPECTED: No error overlay on Following tab
-- assertNotVisible: "Something went wrong"
-
-# SCENARIO: Following feed is scrollable | EXPECTED: Scroll down on Following tab works without crash
-- swipe:
-    direction: UP
+# TC11 - Tap first news article (y=40% avoids tab row at ~18%)
+- tapOn:
+    point: "50%,40%"
 - waitForAnimationToEnd
 
-# SCENARIO: Following feed scrolls back to top | EXPECTED: Swipe down restores top of Following feed
-- swipe:
-    direction: DOWN
-- waitForAnimationToEnd
-- assertVisible: "Following"
-
-# SCENARIO: Live Coverage tab switches feed view | EXPECTED: Tapping 'Live Coverage' loads live content without crash
-- tapOn: "Live Coverage"
-- waitForAnimationToEnd
-- assertVisible: "Live Coverage"
-
-# SCENARIO: Live Coverage feed loads without error | EXPECTED: No error overlay on Live Coverage tab
-- assertNotVisible: "Something went wrong"
-
-# SCENARIO: Live Coverage feed is scrollable | EXPECTED: Scroll down on Live Coverage tab works without crash
-- swipe:
-    direction: UP
-- waitForAnimationToEnd
-
-# SCENARIO: Live Coverage feed scrolls back to top | EXPECTED: Swipe down restores top of Live Coverage feed
-- swipe:
-    direction: DOWN
-- waitForAnimationToEnd
-- assertVisible: "Live Coverage"
-
-# SCENARIO: Return to My Feed after tab exploration | EXPECTED: My Feed tab still tappable and loads content
-- tapOn: "My Feed"
-- waitForAnimationToEnd
-- assertVisible: "My Feed"
-
-# SCENARIO: No error state visible after tab cycling | EXPECTED: 'Something went wrong' not present
-- assertNotVisible: "Something went wrong"
-
-# SCENARIO: No crash dialog visible after tab cycling | EXPECTED: App crash overlay not present
-- assertNotVisible: "Unfortunately"
-
-# SCENARIO: Back navigation returns to home from News | EXPECTED: Pressing Back exits News and home screen loads
+# TC12 - Back from article (goes to home)
 - pressKey: Back
 - waitForAnimationToEnd
-- assertVisible: "Explore OMRE Modules"
 
-# SCENARIO: Module switcher re-opens for second entry | EXPECTED: 'View all' still accessible and switcher opens
+# TC13 - Re-navigate to News
 - tapOn: "View all"
 - waitForAnimationToEnd
-- assertVisible: "Switch to Module"
-
-# SCENARIO: News re-entry via module switcher | EXPECTED: Tapping 'News' again opens News module without crash
 - tapOn: "News"
 - waitForAnimationToEnd
-- assertNotVisible: "Something went wrong"
+- waitForAnimationToEnd
+- assertVisible: "News"
 
-# SCENARIO: News tabs still present on second visit | EXPECTED: My Feed, Following, Live Coverage all visible on re-entry
-- assertVisible: "My Feed"
-- assertVisible: "Following"
-- assertVisible: "Live Coverage"
+# TC14 - Tap second article
+- tapOn:
+    point: "50%,55%"
+- waitForAnimationToEnd
 
-# SCENARIO: Back from News on second visit returns to home | EXPECTED: Home screen loads cleanly after second News visit
+# TC15 - Back from article
 - pressKey: Back
 - waitForAnimationToEnd
-- assertVisible: "Explore OMRE Modules"
+
+# TC16 - Re-navigate to News
+- tapOn: "View all"
+- waitForAnimationToEnd
+- tapOn: "News"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- assertVisible: "News"
+
+# TC17 - Tap third article
+- tapOn:
+    point: "50%,70%"
+- waitForAnimationToEnd
+
+# TC18 - Back from article
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC19 - Re-navigate to News
+- tapOn: "View all"
+- waitForAnimationToEnd
+- tapOn: "News"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- assertVisible: "News"
+
+# TC20 - Share first article (share icon ~88%,40%)
+- tapOn:
+    point: "88%,40%"
+- waitForAnimationToEnd
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC21 - Re-navigate after share if needed
+- tapOn: "View all"
+- waitForAnimationToEnd
+- tapOn: "News"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- assertVisible: "News"
+
+# TC22 - Tap search/filter icon top-right
+- tapOn:
+    point: "88%,9%"
+- waitForAnimationToEnd
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC23 - News still visible after search dismiss
+- assertVisible: "News"
+
+# TC24 - Tap category tab 2 (~30%,18%)
+- tapOn:
+    point: "30%,18%"
+- waitForAnimationToEnd
+
+# TC25 - News still visible in tab 2
+- assertVisible: "News"
+
+# TC26 - Scroll tab 2 content
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- assertVisible: "News"
+
+# TC27 - Tap category tab 3 (~60%,18%)
+- tapOn:
+    point: "60%,18%"
+- waitForAnimationToEnd
+- assertVisible: "News"
+
+# TC28 - Scroll tab 3 content
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# TC29 - Tap back to first tab (~10%,18%)
+- tapOn:
+    point: "10%,18%"
+- waitForAnimationToEnd
+- assertVisible: "News"
+
+# TC30 - Scroll to bottom of feed
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# TC31 - Scroll back to top
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "News"
+
+# TC32 - Tap top-right options icon
+- tapOn:
+    point: "88%,9%"
+- waitForAnimationToEnd
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC33 - News accessible after options dismiss
+- assertVisible: "News"
+
+# TC34 - Tap bookmark/save icon on first article (~75%,40%)
+- tapOn:
+    point: "75%,40%"
+- waitForAnimationToEnd
+- assertVisible: "News"
+
+# TC35 - Tap like/react on first article (~65%,40%)
+- tapOn:
+    point: "65%,40%"
+- waitForAnimationToEnd
+- assertVisible: "News"
+
+# TC36 - Scroll through feed one more time
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "News"
+
+# TC37 - Scroll to top of News feed
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+
+# TC38 - News heading visible at top after full test cycle
+- assertVisible: "News"

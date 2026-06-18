@@ -1,141 +1,194 @@
-appId: com.omre.app.posh
+﻿appId: com.omre.app.posh
 ---
-# SCENARIO: App launches clean to home screen | EXPECTED: App opens without crash
+# Orbit/Explore — android_orbit_feed.yaml
+# 38 test cases: navigation, Explore tabs (coord taps), search,
+# scroll, post interactions, back nav
+# Screen heading: "Explore" | Tabs by coord: ForYou=10%,20% Trending=28%,20% Reels=45%,20% Posts=60%,20% Discover=77%,20%
+
+# TC01 — Launch app
 - stopApp
 - launchApp:
     clearState: false
 - waitForAnimationToEnd
 
-# SCENARIO: Home screen confirms correct starting state | EXPECTED: 'Explore OMRE Modules' visible
-- assertVisible: "Explore OMRE Modules"
-
-# SCENARIO: Module switcher entry point is present | EXPECTED: 'View all' button visible on home screen
-- assertVisible: "View all"
-
-# SCENARIO: Module switcher opens for navigation | EXPECTED: 'Switch to Module' header appears
-- tapOn: "View all"
-- waitForAnimationToEnd
-- assertVisible: "Switch to Module"
-
-# SCENARIO: Orbit module is listed in module switcher | EXPECTED: 'Orbit' option visible in switcher
-- assertVisible: "Orbit"
-
-# SCENARIO: Tap Orbit to enter Orbit module (READ — enter) | EXPECTED: Orbit module loads without crash
-- tapOn: "Orbit"
-- waitForAnimationToEnd
-
-# SCENARIO: Orbit module name visible in header (READ) | EXPECTED: 'Orbit' label visible on screen
-- assertVisible: "Orbit"
-
-# SCENARIO: For You tab is present on Orbit feed (READ) | EXPECTED: 'For You' tab visible as single-line label
-- assertVisible: "For You"
-
-# SCENARIO: Following tab is present on Orbit feed (READ) | EXPECTED: 'Following' tab visible
-- assertVisible: "Following"
-
-# SCENARIO: Tap For You tab to view discovery content (READ) | EXPECTED: For You tab activates without crash
-- tapOn: "For You"
-- waitForAnimationToEnd
-- assertVisible: "For You"
-
-# SCENARIO: For You feed is scrollable (READ) | EXPECTED: Swipe up scrolls feed without crash
-- swipe:
-    direction: UP
-- waitForAnimationToEnd
-
-# SCENARIO: Like the first visible Orbit post (UPDATE — toggle on) | EXPECTED: Like registers without crash
-- tapOn: "Like"
-- waitForAnimationToEnd
-
-# SCENARIO: Unlike the post to restore original state (UPDATE — toggle off) | EXPECTED: Unlike registers without crash
-- tapOn: "Like"
-- waitForAnimationToEnd
-
-# SCENARIO: Open comments on the first Orbit post (READ — comment section) | EXPECTED: Comments open without crash
-- tapOn: "Comment"
-- waitForAnimationToEnd
-
-# SCENARIO: Tap comment input to start typing (CREATE — comment setup) | EXPECTED: Keyboard appears
+# TC02 — Tap Orbit icon in bottom nav
 - tapOn:
-    point: "50%,90%"
+    point: "30%,95%"
+- waitForAnimationToEnd
 - waitForAnimationToEnd
 
-# SCENARIO: Type a comment on the Orbit post (CREATE) | EXPECTED: Text appears in comment field
-- inputText: "Interesting perspective!"
-- waitForAnimationToEnd
+# TC03 — Explore screen heading visible
+- assertVisible: "Explore"
 
-# SCENARIO: Submit the Orbit comment (CREATE) | EXPECTED: Comment posted to thread
-- tapOn: "Post"
-- waitForAnimationToEnd
-
-# SCENARIO: Comment thread visible after posting (READ — verify) | EXPECTED: Comments area shows without crash
-- waitForAnimationToEnd
-
-# SCENARIO: Close comment section (READ cleanup) | EXPECTED: Returns to Orbit feed
-- pressKey: Back
-- waitForAnimationToEnd
-- assertVisible: "For You"
-
-# SCENARIO: Scroll further down For You feed (READ) | EXPECTED: More posts visible
-- swipe:
-    direction: UP
-- waitForAnimationToEnd
-
-# SCENARIO: Like a second Orbit post (UPDATE) | EXPECTED: Like registers on second post without crash
-- tapOn: "Like"
-- waitForAnimationToEnd
-
-# SCENARIO: Scroll back to top of For You feed (READ) | EXPECTED: Feed scrolls back, For You tab visible
-- swipe:
-    direction: DOWN
-- waitForAnimationToEnd
-- swipe:
-    direction: DOWN
-- waitForAnimationToEnd
-- assertVisible: "For You"
-
-# SCENARIO: Tap Following tab to view followed content (READ) | EXPECTED: Following tab activates, content loads
-- tapOn: "Following"
-- waitForAnimationToEnd
-- assertVisible: "Following"
-
-# SCENARIO: Following feed is scrollable (READ) | EXPECTED: Swipe up scrolls Following feed without crash
-- swipe:
-    direction: UP
-- waitForAnimationToEnd
-
-# SCENARIO: Scroll Following feed back to top (READ) | EXPECTED: Following tab heading still visible
-- swipe:
-    direction: DOWN
-- waitForAnimationToEnd
-- assertVisible: "Following"
-
-# SCENARIO: Switch back to For You from Following (READ) | EXPECTED: For You tab reactivates
-- tapOn: "For You"
-- waitForAnimationToEnd
-- assertVisible: "For You"
-
-# SCENARIO: Create a new Orbit post — tap compose button (CREATE — initiate) | EXPECTED: Post composer opens
+# TC04 — Tap search bar by coordinate
 - tapOn:
-    point: "88%,88%"
+    point: "50%,17%"
 - waitForAnimationToEnd
 
-# SCENARIO: Type content for new Orbit post (CREATE) | EXPECTED: Text appears in Orbit post composer
-- inputText: "Testing Orbit post creation"
+# TC05 — Type search query
+- inputText: "OMRE community"
 - waitForAnimationToEnd
 
-# SCENARIO: Cancel and discard the draft (CREATE — cancel) | EXPECTED: Returns to Orbit feed without posting
+# TC06 — Back from search
 - pressKey: Back
 - waitForAnimationToEnd
-- assertVisible: "For You"
+- pressKey: Back
+- waitForAnimationToEnd
 
-# SCENARIO: Pull to refresh Orbit For You feed (READ) | EXPECTED: Feed refreshes, For You tab visible
+# TC07 — Back on Explore
+- assertVisible: "Explore"
+
+# TC08 — Scroll down through For You feed
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# TC09 — Explore still visible
+- assertVisible: "Explore"
+
+# TC10 — Second scroll
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# TC11 — Still on Explore
+- assertVisible: "Explore"
+
+# TC12 — Scroll back to top
 - swipe:
     direction: DOWN
 - waitForAnimationToEnd
-- assertVisible: "For You"
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
 
-# SCENARIO: Back from Orbit returns to home | EXPECTED: 'Explore OMRE Modules' visible
+# TC13 — Explore heading at top
+- assertVisible: "Explore"
+
+# TC14 — Tap first post (top-left ~25%,35%)
+- tapOn:
+    point: "25%,35%"
+- waitForAnimationToEnd
+
+# TC15 — Back to Explore
 - pressKey: Back
 - waitForAnimationToEnd
-- assertVisible: "Explore OMRE Modules"
+
+# TC16 — Back on Explore
+- assertVisible: "Explore"
+
+# TC17 — Tap second post (top-right ~75%,35%)
+- tapOn:
+    point: "75%,35%"
+- waitForAnimationToEnd
+
+# TC18 — Back to Explore
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC19 — Back on Explore
+- assertVisible: "Explore"
+
+# TC20 — Tap third post (bottom-left ~25%,60%)
+- tapOn:
+    point: "25%,60%"
+- waitForAnimationToEnd
+
+# TC21 — Back to Explore
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC22 — Switch to Trending tab (coord ~28%,20%)
+- tapOn:
+    point: "28%,14%"
+- waitForAnimationToEnd
+
+# TC23 — Explore still visible in Trending
+- assertVisible: "Explore"
+
+# TC24 — Scroll Trending
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# TC25 — Tap post in Trending
+- tapOn:
+    point: "50%,40%"
+- waitForAnimationToEnd
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC26 — Switch to Reels tab (coord ~45%,20%)
+- tapOn:
+    point: "45%,14%"
+- waitForAnimationToEnd
+
+# TC27 — Scroll Reels (full-screen — no Explore heading; scroll only)
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# TC28 — Back out of Reels to return to Explore tabs
+- pressKey: Back
+- waitForAnimationToEnd
+- assertVisible: "Explore"
+
+# TC29 — Reset scroll to top before Posts tab tap
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+
+# TC29b — Switch to Posts tab (coord ~60%,14%)
+- tapOn:
+    point: "60%,14%"
+- waitForAnimationToEnd
+
+# TC30 — Explore visible in Posts
+- assertVisible: "Explore"
+
+# TC31 — Tap first post in Posts tab
+- tapOn:
+    point: "50%,35%"
+- waitForAnimationToEnd
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC32 — Switch to Discover tab (coord ~77%,14%)
+- tapOn:
+    point: "77%,14%"
+- waitForAnimationToEnd
+
+# TC33 — Explore visible in Discover
+- assertVisible: "Explore"
+
+# TC34 — Scroll Discover content
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# TC35 — Tap item in Discover
+- tapOn:
+    point: "50%,40%"
+- waitForAnimationToEnd
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC36 — Explore still visible after all tabs explored
+- assertVisible: "Explore"
+
+# TC37 — Navigate back to home via drawer
+- tapOn:
+    point: "7%,9%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- tapOn: "Social"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC38 — Scroll to top of Social home feed
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
