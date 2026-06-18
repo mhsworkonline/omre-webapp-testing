@@ -65,8 +65,8 @@ function parseScenarios(yamlPath) {
       scenarios.push(current);
       continue;
     }
-    // Format 2: # TCxx - description  (our YAML style)
-    const m2 = line.match(/^\s*#\s*(TC\d+[a-z]?)[^-]*[-]+\s*(.+)$/);
+    // Format 2: # TCxx - description  or  # TCxx — description  (our YAML style, hyphen or em-dash)
+    const m2 = line.match(/^\s*#\s*(TC\d+[a-z]?)[\s—\-]+(.+)$/);
     if (m2) {
       current = { name: m2[1] + ' - ' + m2[2].trim(), expected: 'Step completes successfully', commandCount: 0 };
       scenarios.push(current);
@@ -141,7 +141,7 @@ function loadFlows() {
     .filter(d => /^\d{4}-\d{2}-\d{2}/.test(d))
     .sort()
     .reverse()
-    .slice(0, 20); // last 20 runs
+    .slice(0, 200); // cover all modules across many debug runs
 
   const flowMap = new Map();
   for (const dir of dirs) {
