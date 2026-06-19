@@ -73,8 +73,7 @@ test.describe('Tab Switching', () => {
     const tabBtnsVisible = await page.locator('main button, main [role="tab"]').filter({
       hasText: /my groups?|discover|joined|suggested/i
     }).first().isVisible({ timeout: 4000 }).catch(() => false);
-    if (!tablistVisible && !tabBtnsVisible) { test.skip(); return; }
-    expect(tablistVisible || tabBtnsVisible).toBe(true);
+    expect(tablistVisible || tabBtnsVisible, 'BUG: No tab controls (My Groups / Discover) found on the Groups page').toBe(true);
   });
 
   test('TC-GROUPS-07: Given I am authenticated and on the page, When I perform the action, Then My Groups tab is present and clickable', async ({ page }) => {
@@ -126,8 +125,7 @@ test.describe('Groups List and Cards', () => {
   test('TC-GROUPS-11: Given I am authenticated and on the page, When I perform the action, Then joined groups list or empty state renders', async ({ page }) => {
     const cardVisible = await page.locator('main article, main li, main [role="listitem"]').first().isVisible({ timeout: 10000 }).catch(() => false);
     const emptyVisible = await page.locator('body').getByText(/no groups|you haven|join a group/i).first().isVisible({ timeout: 4000 }).catch(() => false);
-    if (!cardVisible && !emptyVisible) { test.skip(); return; }
-    expect(cardVisible || emptyVisible).toBe(true);
+    expect(cardVisible || emptyVisible, 'BUG: Groups page shows neither a groups list nor an empty state message').toBe(true);
   });
 
   test('TC-GROUPS-12: Given I am on the group card, When I view it, Then it shows group name text', async ({ page }) => {
@@ -191,8 +189,7 @@ test.describe('Discover Tab and Join Functionality', () => {
   test('TC-GROUPS-17: Given I am on the discover tab, When I view it, Then it shows browsable group cards', async ({ page }) => {
     const cardVisible = await page.locator('main article, main li, main [role="listitem"]').first().isVisible({ timeout: 10000 }).catch(() => false);
     const emptyVisible = await page.locator('body').getByText(/no groups|nothing to discover/i).first().isVisible({ timeout: 4000 }).catch(() => false);
-    if (!cardVisible && !emptyVisible) { test.skip(); return; }
-    expect(cardVisible || emptyVisible).toBe(true);
+    expect(cardVisible || emptyVisible, 'BUG: Discover tab shows neither group cards nor an empty state message').toBe(true);
   });
 
   test('TC-GROUPS-18: Given I am on the page, When the page renders, Then Join Community button is visible', async ({ page }) => {
@@ -458,11 +455,8 @@ test.describe('Empty State', () => {
     const cards = await page.locator('main article, main li[role="listitem"]').count();
     if (cards === 0) {
       const empty = page.locator('body').getByText(/no groups|join a group|haven.t joined/i).first();
-      const emptyVisible = await empty.isVisible({ timeout: 8000 }).catch(() => false);
-      if (!emptyVisible) { test.skip(); return; }
-      await expect(empty).toBeVisible();
+      await expect(empty, 'BUG: User has no joined groups but no empty state message shown').toBeVisible({ timeout: 8000 });
     }
-    expect(page.isClosed()).toBe(false);
   });
 });
 
@@ -697,27 +691,20 @@ test.describe('Leave Group Confirmation Dialog', () => {
     const moreBtn = page.locator('[aria-label*="more" i], [aria-label*="options" i], [aria-label*="settings" i]').last();
     if (await leaveBtn.isVisible({ timeout: 5000 }).catch(() => false)) {
       await leaveBtn.click();
-    } else if (await moreBtn.isVisible({ timeout: 5000 }).catch(() => false)) {
+    } else {
+      await expect(moreBtn, 'BUG: No Leave button and no options menu found on group detail').toBeVisible({ timeout: 5000 });
       await moreBtn.click();
       await page.waitForTimeout(500);
       const leaveOpt = page.locator('[role="menuitem"], button').filter({ hasText: /leave/i }).first();
-      if (!(await leaveOpt.isVisible({ timeout: 3000 }).catch(() => false))) {
-        await page.keyboard.press('Escape');
-        test.skip();
-        return;
-      }
+      await expect(leaveOpt, 'BUG: Leave option not found in group options menu').toBeVisible({ timeout: 3000 });
       await leaveOpt.click();
-    } else {
-      test.skip();
-      return;
     }
     await page.waitForTimeout(800);
     const confirmDialog = page.locator('[role="dialog"], [role="alertdialog"]').first();
     const confirmText = page.getByText(/are you sure|confirm|leave group/i).first();
     const hasConfirm = await confirmDialog.isVisible({ timeout: 5000 }).catch(() => false)
       || await confirmText.isVisible({ timeout: 5000 }).catch(() => false);
-    expect(hasConfirm || !page.isClosed()).toBe(true);
-    // Cancel to stay in the group
+    expect(hasConfirm, 'BUG: No confirmation dialog appeared before leaving the group').toBe(true);
     const cancelBtn = page.locator('button').filter({ hasText: /cancel|no/i }).first();
     if (await cancelBtn.isVisible({ timeout: 3000 }).catch(() => false)) {
       await cancelBtn.click();
@@ -742,14 +729,14 @@ test.describe('Group Member List Display', () => {
   test('TC-GROUPS-49: Given I am on a group detail page, When I click the Members tab, Then a list of members is displayed', async ({ page }) => {
     if (page.url().endsWith('/app/groups')) { test.skip(); return; }
     const membersTab = page.locator('[role="tab"]').filter({ hasText: /members?/i }).first();
-    if (!(await membersTab.isVisible({ timeout: 6000 }).catch(() => false))) { test.skip(); return; }
+    await expect(membersTab, 'BUG: Members tab not found on group detail page').toBeVisible({ timeout: 6000 });
     await membersTab.click();
     await page.waitForTimeout(1200);
     const memberItem = page.locator('main li, main [role="listitem"]').first();
     const memberEmpty = page.locator('main').getByText(/no members/i).first();
     const hasContent = await memberItem.isVisible({ timeout: 6000 }).catch(() => false)
       || await memberEmpty.isVisible({ timeout: 4000 }).catch(() => false);
-    expect(hasContent || !page.isClosed()).toBe(true);
+    expect(hasContent, 'BUG: Members tab shows neither member list nor empty state').toBe(true);
   });
 });
 
@@ -800,18 +787,15 @@ test.describe('Group Invite Link Generation', () => {
       const inviteLink = page.locator('input[value*="omre" i], a[href*="omre" i]').first();
       const hasInviteUI = await inviteDialog.isVisible({ timeout: 5000 }).catch(() => false)
         || await inviteLink.isVisible({ timeout: 5000 }).catch(() => false);
-      expect(hasInviteUI || !page.isClosed()).toBe(true);
+      expect(hasInviteUI, 'BUG: Invite dialog did not open or invite link not shown').toBe(true);
       await page.keyboard.press('Escape');
-    } else if (await moreBtn.isVisible({ timeout: 5000 }).catch(() => false)) {
+    } else {
+      await expect(moreBtn, 'BUG: No Invite/Share Link button and no options menu found on group detail').toBeVisible({ timeout: 5000 });
       await moreBtn.click();
       await page.waitForTimeout(500);
       const inviteOpt = page.locator('[role="menuitem"]').filter({ hasText: /invite|share link/i }).first();
-      if (await inviteOpt.isVisible({ timeout: 3000 }).catch(() => false)) {
-        await expect(inviteOpt).toBeVisible();
-      }
+      await expect(inviteOpt, 'BUG: No Invite or Share Link option found in group options menu').toBeVisible({ timeout: 3000 });
       await page.keyboard.press('Escape');
-    } else {
-      test.skip();
     }
   });
 });
@@ -841,20 +825,13 @@ test.describe('Group Privacy Toggle', () => {
     const moreBtn = page.locator('[aria-label*="more" i], [aria-label*="options" i]').last();
     if (await settingsBtn.isVisible({ timeout: 5000 }).catch(() => false)) {
       await settingsBtn.click();
-    } else if (await moreBtn.isVisible({ timeout: 5000 }).catch(() => false)) {
+    } else {
+      await expect(moreBtn, 'BUG: No Settings button and no options menu found on group detail').toBeVisible({ timeout: 5000 });
       await moreBtn.click();
       await page.waitForTimeout(500);
       const settingsOpt = page.locator('[role="menuitem"]').filter({ hasText: /settings/i }).first();
-      if (await settingsOpt.isVisible({ timeout: 3000 }).catch(() => false)) {
-        await settingsOpt.click();
-      } else {
-        await page.keyboard.press('Escape');
-        test.skip();
-        return;
-      }
-    } else {
-      test.skip();
-      return;
+      await expect(settingsOpt, 'BUG: Settings option not found in group options menu').toBeVisible({ timeout: 3000 });
+      await settingsOpt.click();
     }
     await page.waitForTimeout(1000);
     const privacyControl = page.locator(
@@ -863,7 +840,7 @@ test.describe('Group Privacy Toggle', () => {
     const privacyText = page.getByText(/public|private/i).first();
     const hasPrivacy = await privacyControl.isVisible({ timeout: 5000 }).catch(() => false)
       || await privacyText.isVisible({ timeout: 5000 }).catch(() => false);
-    expect(hasPrivacy || !page.isClosed()).toBe(true);
+    expect(hasPrivacy, 'BUG: No privacy toggle or Public/Private control found in group settings').toBe(true);
     await page.keyboard.press('Escape');
   });
 });

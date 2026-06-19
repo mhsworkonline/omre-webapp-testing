@@ -2822,18 +2822,12 @@ test.describe('Group Conversation Creation Workflow', () => {
     const newBtn = page.locator(
       '[aria-label*="new message" i], [aria-label*="compose" i], [aria-label*="new chat" i]'
     ).first();
-    if (!(await newBtn.isVisible({ timeout: 5000 }).catch(() => false))) { test.skip(); return; }
+    await expect(newBtn, 'BUG: New message/compose button not found on messages page').toBeVisible({ timeout: 5000 });
     await newBtn.click();
     await page.waitForTimeout(800);
     const groupOpt = page.locator('button, [role="menuitem"], li')
       .filter({ hasText: /new group|group chat|create group/i }).first();
-    const groupOptVisible = await groupOpt.isVisible({ timeout: 4000 }).catch(() => false);
-    if (!groupOptVisible) {
-      await page.keyboard.press('Escape');
-      test.skip();
-      return;
-    }
-    await expect(groupOpt).toBeVisible();
+    await expect(groupOpt, 'BUG: New Group option not found after clicking compose button').toBeVisible({ timeout: 4000 });
     await page.keyboard.press('Escape');
   });
 });
@@ -2960,14 +2954,15 @@ test.describe('Call Recording', () => {
 test.describe('Multiline Message Formatting', () => {
   test.beforeEach(async ({ page }) => {
     await goMessages(page);
+    await page.locator('[role="listitem"], ul li, [aria-label*="conversation" i]').first().waitFor({ state: 'visible', timeout: 12000 }).catch(() => {});
     await openFirstConversation(page);
   });
 
   test('TC-MSG-181: Given I am in a chat, When I type a multiline message using Shift+Enter, Then the newlines are preserved in the input', async ({ page }) => {
     const msgInput = page.locator(
-      'input[placeholder*="message" i]:not([readonly]), textarea[placeholder*="message" i]:not([readonly]), [contenteditable="true"][role="textbox"]'
+      'input[placeholder*="message" i], textarea[placeholder*="message" i], [contenteditable="true"][role="textbox"]'
     ).first();
-    if (!(await msgInput.isVisible({ timeout: 6000 }).catch(() => false))) { test.skip(); return; }
+    await expect(msgInput, 'BUG: Message input not found in chat').toBeVisible({ timeout: 10000 });
     await msgInput.click({ force: true });
     await msgInput.fill('');
     await page.keyboard.type('Line one');
@@ -2977,10 +2972,8 @@ test.describe('Multiline Message Formatting', () => {
     const value = await msgInput.inputValue().catch(() =>
       msgInput.textContent().catch(() => '')
     );
-    // The input should contain both lines or at least the typed text
     const hasMultiline = value.includes('Line one') && value.includes('Line two');
-    expect(hasMultiline || value.length > 0).toBe(true);
-    // Clear input so we don't send it
+    expect(hasMultiline, 'BUG: Shift+Enter did not preserve newlines in message input; both lines not found in value').toBe(true);
     await msgInput.click({ force: true });
     await page.keyboard.press('Control+a');
     await page.keyboard.press('Delete');

@@ -1,0 +1,82 @@
+appId: com.omre.app.posh
+---
+# Social Module — Follow / Unfollow (12 TCs)
+# Device-agnostic: all taps use content-desc labels (fully labeled by app)
+# Strategy: Find Follow button in For You feed → follow → check Following tab → unfollow
+
+# TC01 - Launch app
+- stopApp
+- launchApp:
+    clearState: false
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC02 - Scroll to top of For You feed
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+
+# TC03 - Scroll into feed to find a Follow button (other users' posts)
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# TC04 - Follow button visible on a post in For You feed
+- assertVisible: "Follow"
+
+# TC05 - Tap Follow
+- tapOn: "Follow"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC06 - Button state changes to Following (successfully followed)
+- assertVisible: "Following"
+
+# TC07 - Scroll to top so feed tab is first "Following" match, then navigate to Following tab
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- tapOn: "Following"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC08 - Following tab loads (Post compose bar visible = social feed context)
+- assertVisible: "Post"
+
+# TC09 - Navigate back to For You tab
+- tapOn: "For You"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC10 - For You feed reloads with content
+- assertVisible: "Post"
+
+# TC11 - Scroll to find followed user's post (Following button visible)
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- assertVisible: "Following"
+
+# TC12 - Tap Following to unfollow, assert reverted to Follow
+- tapOn: "Following"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- assertVisible: "Follow"

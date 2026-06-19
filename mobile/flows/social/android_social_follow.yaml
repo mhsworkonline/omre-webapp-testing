@@ -1,0 +1,83 @@
+appId: com.omre.app.posh
+---
+# Social Module — Follow / Unfollow
+# Strategy: Tap post author name in For You feed → their profile opens → Follow → Unfollow
+# All taps label-based (fully device-agnostic)
+
+# TC01 - Launch app
+- stopApp
+- launchApp:
+    clearState: false
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC02 - Scroll to top of For You feed
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+
+# TC03 - Scroll down to find posts from other users with Follow buttons
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# TC04 - Follow button visible on a post card in the feed
+- assertVisible: "Follow"
+
+# TC05 - Follow the user
+- tapOn: "Follow"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC06 - Button immediately changes to Following
+- assertVisible: "Following"
+
+# TC07 - Scroll back to top
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+
+# TC08 - Navigate to Following tab to verify new follower appears
+- tapOn: "Following"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC09 - Following tab loads with social feed context
+- assertVisible: "Post"
+
+# TC10 - Return to For You tab
+- tapOn: "For You"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC11 - Scroll to find the user we just followed (Following button now visible)
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- assertVisible: "Following"
+
+# TC12 - Unfollow (no confirmation dialog)
+- tapOn: "Following"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC13 - Button reverts to Follow (unfollow confirmed)
+- assertVisible: "Follow"

@@ -753,3 +753,179 @@ test.describe('Comment Sort Options', () => {
     expect(page.isClosed()).toBe(false);
   });
 });
+
+// ── CRUD — Create / Read / Update / Delete ────────────────────────────────────
+
+function postCardLocator(page, text) {
+  return page.locator('main article, main [role="article"], main > div > div > div').filter({ hasText: text }).first();
+}
+
+async function clickPostOptions(page, postText) {
+  await page.keyboard.press('Escape');
+  await page.waitForTimeout(300);
+
+  const card = postCardLocator(page, postText);
+  await card.scrollIntoViewIfNeeded();
+  await page.waitForTimeout(300);
+
+  const box = await card.boundingBox().catch(() => null);
+  if (!box) return false;
+
+  // Hover top-right corner of the card (where ••• button typically renders)
+  await page.mouse.move(box.x + box.width - 40, box.y + 20);
+  await page.waitForTimeout(700);
+
+  // Try scoped to card first, then globally
+  const moreBtn = card.locator('button[aria-label*="option" i], button[aria-label*="more" i]').first();
+  if (await moreBtn.isVisible().catch(() => false)) {
+    await moreBtn.click({ force: true });
+    await page.waitForTimeout(700);
+    return true;
+  }
+  const globalBtn = page.locator('button[aria-label*="option" i], button[aria-label*="more" i]').first();
+  if (await globalBtn.isVisible().catch(() => false)) {
+    await globalBtn.click({ force: true });
+    await page.waitForTimeout(700);
+    return true;
+  }
+  return false;
+}
+
+async function createPost(page, text) {
+  await page.goto('https://omre.ai/app/home', { waitUntil: 'domcontentloaded' });
+  await page.waitForTimeout(2000);
+  // Composer trigger: try placeholder attribute first, then data-placeholder, then visible text
+  let trigger = page.locator(
+    '[placeholder*="mind" i], [placeholder*="what" i], ' +
+    '[data-placeholder*="mind" i], [data-placeholder*="what" i], ' +
+    'button[aria-label*="create post" i]'
+  ).first();
+  if (!(await trigger.isVisible({ timeout: 4000 }).catch(() => false))) {
+    trigger = page.getByText(/what.s on your mind/i, { exact: false }).first();
+  }
+  await expect(trigger, 'BUG: Post composer or create-post trigger not found on home feed').toBeVisible({ timeout: 8000 });
+  await trigger.click();
+  await page.waitForTimeout(800);
+  const input = page.locator(
+    '[role="dialog"] [contenteditable="true"], [role="dialog"] textarea, [contenteditable="true"]:not([aria-label*="comment" i]), textarea[placeholder*="mind" i]'
+  ).first();
+  await expect(input, 'BUG: Post text input not found after clicking composer').toBeVisible({ timeout: 6000 });
+  await input.fill(text);
+  await page.waitForTimeout(300);
+  // Submit button scoped to dialog first, then fall back to page-level
+  const submitBtn = page.locator('[role="dialog"] button[type="submit"], [role="dialog"] button').filter({ hasText: /^post$|^share$|^publish$/i }).first();
+  const submitFallback = page.locator('button[type="submit"], button').filter({ hasText: /^post$|^share$|^publish$/i }).last();
+  const btnToClick = await submitBtn.isVisible({ timeout: 3000 }).catch(() => false) ? submitBtn : submitFallback;
+  await expect(btnToClick, 'BUG: Post submit button not found after entering text').toBeVisible({ timeout: 5000 });
+  await btnToClick.click();
+  await page.locator('[role="dialog"]').waitFor({ state: 'hidden', timeout: 8000 }).catch(() => {});
+  await page.waitForTimeout(1000);
+  // Reload to clear the composer — post is now findable as a real feed card
+  await page.goto('https://omre.ai/app/home', { waitUntil: 'domcontentloaded' });
+  await page.waitForTimeout(2000);
+  return postCardLocator(page, text);
+}
+
+
+test.describe.serial('Posts CRUD', () => {
+  test.setTimeout(90000);
+
+  test('TC-POSTS-47: Create — submitted text post appears in home feed with exact content', async ({ page }) => {
+    const text = `QA-CRUD-CREATE-${Date.now()}`;
+    const post = await createPost(page, text);
+    await expect(post, `BUG: Created post "${text}" did not appear in home feed after submission`).toBeVisible({ timeout: 10000 });
+  });
+
+  test('TC-POSTS-48: Read — created post shows correct author name, body text, and timestamp', async ({ page }) => {
+    const text = `QA-CRUD-READ-${Date.now()}`;
+    const post = await createPost(page, text);
+    await expect(post, 'BUG: Created post not found in feed').toBeVisible({ timeout: 10000 });
+    const author = post.locator('h3, h4, [class*="author"], [class*="name"], [class*="username"]').first();
+    await expect(author, 'BUG: Author name not visible on created post card').toBeVisible({ timeout: 4000 });
+    const authorText = await author.textContent();
+    expect(authorText?.trim().length, 'BUG: Author name is empty on created post').toBeGreaterThan(0);
+    const content = post.locator('p, span, div').filter({ hasText: text }).first();
+    await expect(content, 'BUG: Post body text not found in created post card').toBeVisible({ timeout: 4000 });
+    const timestamp = post.locator('time, [datetime], [class*="time"], [class*="date"]').first();
+    await expect(timestamp, 'BUG: Timestamp not visible on created post').toBeVisible({ timeout: 4000 });
+  });
+
+  test('TC-POSTS-49: Update — editing post text replaces old content with new content in feed', async ({ page }) => {
+    await page.goto(HOME_URL, { waitUntil: 'domcontentloaded' });
+    await page.locator('main [placeholder*="mind" i]').waitFor({ state: 'visible', timeout: 15000 }).catch(() => {});
+    await page.waitForTimeout(500);
+
+    // Find an own post with Edit option — ••• is visible on existing articles without hover
+    const articles = page.locator('main article');
+    let editArticle = null;
+    let editOpt = null;
+    const count = await articles.count().catch(() => 0);
+    expect(count, 'BUG: No post articles found in home feed').toBeGreaterThan(0);
+    for (let i = 0; i < Math.min(count, 15); i++) {
+      const art = articles.nth(i);
+      const moreBtn = art.locator('button[aria-label*="more" i], button[aria-label*="option" i]').first();
+      if (!(await moreBtn.isVisible({ timeout: 1500 }).catch(() => false))) continue;
+      await moreBtn.click({ force: true });
+      await page.waitForTimeout(400);
+      const opt = page.locator('[role="menuitem"]').filter({ hasText: /edit/i }).first();
+      if (await opt.isVisible({ timeout: 2000 }).catch(() => false)) {
+        editArticle = art;
+        editOpt = opt;
+        break;
+      }
+      await page.keyboard.press('Escape');
+      await page.waitForTimeout(200);
+    }
+    expect(editArticle, 'BUG: No own post with Edit option found in home feed — edit feature inaccessible').not.toBeNull();
+
+    const updatedText = `QA-UPDATED-${Date.now()}`;
+    await editOpt.click();
+    await page.waitForTimeout(800);
+    const editor = page.locator('[role="dialog"] [contenteditable], [role="dialog"] textarea').first();
+    await expect(editor, 'BUG: Edit text input did not open after clicking Edit').toBeVisible({ timeout: 6000 });
+    await editor.fill(updatedText);
+    await page.waitForTimeout(300);
+    const saveBtn = page.locator('[role="dialog"] button').filter({ hasText: /save|update|done/i }).first();
+    await expect(saveBtn, 'BUG: Save/Update button not found in edit dialog').toBeVisible({ timeout: 4000 });
+    await saveBtn.click();
+    await page.waitForTimeout(2500);
+    await expect(page.locator('main').getByText(updatedText, { exact: false }).first(), `BUG: Updated text not found in feed after saving edit`).toBeVisible({ timeout: 8000 });
+  });
+
+  test('TC-POSTS-50: Delete — deleted post is removed from home feed after confirmation', async ({ page }) => {
+    await page.goto(HOME_URL, { waitUntil: 'domcontentloaded' });
+    await page.locator('main [placeholder*="mind" i]').waitFor({ state: 'visible', timeout: 15000 }).catch(() => {});
+    await page.waitForTimeout(500);
+
+    // Prefer QA-CRUD posts for deletion; fall back to any own post
+    const articles = page.locator('main article');
+    const count = await articles.count().catch(() => 0);
+    expect(count, 'BUG: No post articles found in home feed').toBeGreaterThan(0);
+    let deleteArticle = null;
+    let deleteOpt = null;
+    for (let i = 0; i < Math.min(count, 15); i++) {
+      const art = articles.nth(i);
+      const moreBtn = art.locator('button[aria-label*="more" i], button[aria-label*="option" i]').first();
+      if (!(await moreBtn.isVisible({ timeout: 1500 }).catch(() => false))) continue;
+      await moreBtn.click({ force: true });
+      await page.waitForTimeout(400);
+      const opt = page.locator('[role="menuitem"]').filter({ hasText: /delete/i }).first();
+      if (await opt.isVisible({ timeout: 2000 }).catch(() => false)) {
+        deleteArticle = art;
+        deleteOpt = opt;
+        break;
+      }
+      await page.keyboard.press('Escape');
+      await page.waitForTimeout(200);
+    }
+    expect(deleteArticle, 'BUG: No own post with Delete option found in home feed — delete feature inaccessible').not.toBeNull();
+
+    await deleteOpt.click();
+    await page.waitForTimeout(500);
+    const confirmBtn = page.locator('[role="dialog"] button').filter({ hasText: /confirm|yes|delete/i }).first();
+    await expect(confirmBtn, 'BUG: No confirmation dialog appeared before post deletion').toBeVisible({ timeout: 5000 });
+    await confirmBtn.click();
+    await page.waitForTimeout(2500);
+    await expect(deleteArticle, 'BUG: Deleted post still appears in home feed after deletion confirmation').not.toBeVisible({ timeout: 8000 });
+  });
+});

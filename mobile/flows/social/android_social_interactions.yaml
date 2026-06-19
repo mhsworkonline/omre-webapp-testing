@@ -1,0 +1,96 @@
+appId: com.omre.app.posh
+---
+# Social Module — Interactions (Like/Unlike, Comment, Repost)
+# Feed card action button order: Comment(index 0), Repost(index 1), Like(index 2)
+# NO-LABEL coordinates (M11 720x1560):
+#   Comment input:  50%,92%   comment sheet text field
+#   Send button:    90%,92%   comment sheet send icon
+
+# TC01 - Launch app
+- stopApp
+- launchApp:
+    clearState: false
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC02 - Scroll to top then scroll down to reveal feed posts with action buttons
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# TC03 - Feed has posts visible
+- assertVisible: "Post"
+
+# ─── LIKE / UNLIKE ───
+
+# TC04 - Like a post (3rd action button, index 2 of "0" count labels)
+- tapOn:
+    text: "0"
+    index: 2
+- waitForAnimationToEnd
+
+# TC05 - Like count incremented to 1
+- assertVisible: "1"
+
+# TC06 - Unlike (tap the "1" to toggle off)
+- tapOn: "1"
+- waitForAnimationToEnd
+
+# TC07 - Like count back to 0
+- assertVisible: "0"
+
+# ─── COMMENT ───
+
+# TC08 - Tap Comment button (1st action button, index 0 of "0" count labels)
+- tapOn:
+    text: "0"
+    index: 0
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC09 - Tap comment input field
+# NO-LABEL: comment text field missing Semantics in Flutter
+- tapOn:
+    point: "50%,92%"
+- waitForAnimationToEnd
+
+# TC10 - Type comment
+- inputText: "Great post! #morningvibes"
+- waitForAnimationToEnd
+
+# TC11 - Send comment
+# NO-LABEL: send button missing Semantics in Flutter
+- tapOn:
+    point: "90%,92%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC12 - Comment appears in the comment section
+- assertVisible: "Great post! #morningvibes"
+
+# ─── REPOST ───
+
+# TC13 - Close comment sheet and scroll to find Repost button
+- pressKey: Back
+- waitForAnimationToEnd
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# TC14 - Repost a post (2nd action button, index 1 of "0" count labels)
+- tapOn:
+    text: "0"
+    index: 1
+- waitForAnimationToEnd
+
+# TC15 - Repost count incremented to 1
+- assertVisible: "1"

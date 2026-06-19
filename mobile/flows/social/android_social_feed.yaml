@@ -1,0 +1,87 @@
+appId: com.omre.app.posh
+---
+# Social Module — Feed Navigation & Display
+# Device: Samsung S23 FE (1080x2340)
+# Tab content-descs include newlines ("For You\nTab 2 of 2") — use coord taps, not text assertions
+
+# TC01 - Launch app clean
+- stopApp
+- launchApp:
+    clearState: false
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC02 - Social Home loaded: module switcher accessible
+- assertVisible: "View all"
+
+# TC03 - User greeting visible
+- assertVisible: "MHS"
+
+# TC04 - Stories row visible with Create Story option
+- assertVisible: "Create Story"
+
+# TC05 - At least one story from another user present
+- assertVisible: "Ashish"
+
+# TC06 - Inline compose area visible (privacy selector and post button)
+- assertVisible: "Social"
+- assertVisible: "Post"
+
+# TC07 - Switch to Following tab (center of [45,910][319,1045] = 17%,42%)
+- tapOn:
+    point: "17%,42%"
+- waitForAnimationToEnd
+- assertNotVisible: "Something went wrong"
+
+# TC08 - Following tab content loads without crash
+- assertNotVisible: "Unfortunately"
+
+# TC09 - Switch back to For You tab (center of [319,910][550,1045] = 40%,42%)
+- tapOn:
+    point: "40%,42%"
+- waitForAnimationToEnd
+- assertNotVisible: "Something went wrong"
+- assertVisible: "View all"
+
+# TC10 - Scroll down — posts load below compose
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
+
+# TC11 - More posts visible as scroll continues
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- assertNotVisible: "Something went wrong"
+
+# TC12 - Scroll back to top — compose and stories visible again
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "Create Story"
+- assertVisible: "View all"
+
+# TC13 - Pull to refresh works without crash
+- swipe:
+    start: "50%,35%"
+    end: "50%,70%"
+    duration: 600
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- assertNotVisible: "Something went wrong"
+- assertVisible: "View all"
+
+# TC14 - Refresh feed button works
+- tapOn: "Refresh feed"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- assertNotVisible: "Something went wrong"
+- assertVisible: "View all"
+
+# TC15 - Feed loads successfully with no errors
+- assertNotVisible: "Unfortunately"

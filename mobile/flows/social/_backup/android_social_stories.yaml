@@ -1,0 +1,70 @@
+appId: com.omre.app.posh
+---
+# Social Module — Stories (View + Create)
+# Device-agnostic: labels used where available; NO-LABEL for unlabeled controls
+# NO-LABEL elements: story viewer nav (left/right), gallery icon, photo picker item, publish button
+
+# TC01 - Launch app, preserve Google session
+- stopApp
+- launchApp:
+    clearState: false
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC02 - Stories row visible: Create Story and Ashish both present
+- assertVisible: "Create Story"
+- assertVisible: "Ashish"
+
+# TC03 - Tap Ashish's story to open fullscreen viewer
+- tapOn: "Ashish"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC04 - Story plays fullscreen — tap right side to advance
+# NO-LABEL: Story viewer right-advance area — add Semantics(label:'Next') in Flutter to fix
+- tapOn:
+    point: "80%,50%"
+- waitForAnimationToEnd
+
+# TC05 - Tap left side to go back one frame
+# NO-LABEL: Story viewer left-back area — add Semantics(label:'Previous') in Flutter to fix
+- tapOn:
+    point: "20%,50%"
+- waitForAnimationToEnd
+
+# TC06 - Close story viewer with Back
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC07 - Home feed restored — Create Story visible
+- assertVisible: "Create Story"
+
+# TC08 - Tap Create Story to open story creator
+- tapOn: "Create Story"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC09 - Tap gallery icon to open photo picker
+# NO-LABEL: Gallery icon in story creator — add Semantics(label:'Gallery') in Flutter to fix
+- tapOn:
+    point: "15%,90%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC10 - Select first photo from picker grid
+# NO-LABEL: Photo picker grid item — dynamic content, no stable label
+- tapOn:
+    point: "18%,35%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC11 - Tap post/share button to publish story
+# NO-LABEL: Story publish button — add Semantics(label:'Post story') in Flutter to fix
+- tapOn:
+    point: "85%,90%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC12 - Back on home feed after story published
+- assertVisible: "Create Story"

@@ -1,0 +1,106 @@
+appId: com.omre.app.posh
+---
+# Social Module — Photo Post (Create with photo → Read in Profile → Delete)
+# TC-SOCIAL-BUG-01: Posts don't appear in For You/Following feed immediately
+# NO-LABEL coordinates (M11 720x1560):
+#   Photo icon:        11%,77%   bounds [51,1180][109,1221]
+#   First photo:       17%,42%   Samsung Files Recent grid first cell (y=650px confirmed)
+#   Compose field:     37%,72%   bounds [135,1075][669,1148]
+#   Profile nav tab:   90%,97%   bottom nav rightmost icon
+#   Profile 1st card:  17%,38%   first column after swipe:UP
+#   Post "..." menu:   90%,16%   post detail top-right
+
+# TC01 - Launch app
+- stopApp
+- launchApp:
+    clearState: false
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC02 - Social feed visible
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "Post"
+
+# TC03 - Tap photo icon to open Samsung Files picker
+# NO-LABEL: Flutter missing Semantics on photo icon
+- tapOn:
+    point: "11%,77%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC04 - Samsung Files opens on Recent images
+- assertVisible: "Recent"
+
+# TC05 - Select first photo from Recent grid
+# NO-LABEL: photo grid items have no accessibility labels in Samsung Files
+- tapOn:
+    point: "17%,42%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC06 - Returned to compose screen with photo attached
+- assertVisible: "Post"
+
+# TC07 - Add caption to the photo post
+# NO-LABEL: Flutter TextField exposes only hintText
+- tapOn:
+    point: "37%,72%"
+- waitForAnimationToEnd
+- inputText: "Loving this beautiful view! #morningvibes"
+- waitForAnimationToEnd
+
+# TC08 - Submit photo post
+- pressKey: Back
+- waitForAnimationToEnd
+- tapOn: "Post"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC09 - Navigate to Profile
+# NO-LABEL: bottom nav rightmost icon
+- tapOn:
+    point: "90%,97%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC10 - Profile loaded
+- assertVisible: "MHS"
+
+# TC11 - Scroll to reveal post grid
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC12 - Tap newest post card (photo post is first in grid)
+# NO-LABEL: profile grid cards have no text in accessibility tree when scrolled
+- tapOn:
+    point: "17%,38%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC13 - Post detail opens — verify author and caption
+- assertVisible: "MHS"
+- assertVisible: "Loving this beautiful view! #morningvibes"
+
+# TC14 - Delete photo post
+# NO-LABEL: post menu icon
+- tapOn:
+    point: "90%,16%"
+- waitForAnimationToEnd
+- assertVisible: "Delete post"
+- tapOn: "Delete post"
+- waitForAnimationToEnd
+- assertVisible: "Are you sure you want to delete this post?"
+- tapOn: "Delete"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC15 - Account intact after deletion
+- assertVisible: "MHS"

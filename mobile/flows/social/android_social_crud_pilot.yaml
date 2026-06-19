@@ -1,0 +1,98 @@
+appId: com.omre.app.posh
+---
+# Social Module — Create / Read / Delete pilot
+# Device: Samsung M11 (720x1560) — LOCKED
+#
+# TC-SOCIAL-BUG-01: New posts do not appear in For You or Following feed immediately
+# TC-SOCIAL-BUG-02: No "Edit post" option in post actions menu (only Delete post)
+# Read verification done via Profile grid → post detail (profile grid cards have no
+# accessible text in scrolled state — Flutter Semantics missing on SliverGrid cells)
+#
+# NO-LABEL coordinates (M11, confirmed empty accessibilityText):
+#   Compose field:       37%,72%   bounds [135,1075][669,1148]
+#   Profile nav tab:     90%,97%   bottom nav rightmost icon
+#   Post "..." menu:     90%,16%   post detail view top-right
+#   Profile 1st card:    17%,38%   first column after swipe:UP (~260px scroll)
+
+# ─── CREATE ───
+
+# TC01 - Launch app, preserve Google session
+- stopApp
+- launchApp:
+    clearState: false
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC02 - Confirm social feed compose bar visible
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "Post"
+
+# TC03 - Tap compose field (NO-LABEL: Flutter hintText only)
+- tapOn:
+    point: "37%,72%"
+- waitForAnimationToEnd
+
+# TC04 - Type post (natural text, #morningvibes marks test posts)
+- inputText: "Good morning everyone! Feeling grateful for another beautiful day #morningvibes"
+- waitForAnimationToEnd
+
+# TC05 - Submit post
+- pressKey: Back
+- waitForAnimationToEnd
+- tapOn: "Post"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# ─── READ ───
+
+# TC06 - Navigate to Profile (NO-LABEL: bottom nav rightmost icon)
+- tapOn:
+    point: "90%,97%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC07 - Profile loaded
+- assertVisible: "MHS"
+
+# TC08 - Scroll to reveal post grid
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC09 - Tap newest post card (NO-LABEL: grid cards have no text in accessibility tree)
+- tapOn:
+    point: "17%,38%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC10 - Post detail opens with correct content
+- assertVisible: "MHS"
+- assertVisible: "Good morning everyone! Feeling grateful for another beautiful day #morningvibes"
+
+# ─── DELETE ───
+
+# TC11 - Open post actions menu (NO-LABEL: three-dot icon)
+- tapOn:
+    point: "90%,16%"
+- waitForAnimationToEnd
+
+# TC12 - [BUG TC-SOCIAL-BUG-02] Edit option absent — only Delete post available
+- assertVisible: "Delete post"
+
+# TC13 - Delete the post (confirmation dialog appears)
+- tapOn: "Delete post"
+- waitForAnimationToEnd
+- assertVisible: "Are you sure you want to delete this post?"
+- tapOn: "Delete"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC14 - After deletion, profile or feed loads — account intact
+- assertVisible: "MHS"

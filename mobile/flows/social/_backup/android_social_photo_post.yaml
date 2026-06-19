@@ -1,0 +1,90 @@
+appId: com.omre.app.posh
+---
+# Social Module — Photo Attachment Post (CRUD)
+# Device-agnostic: all taps use content-desc labels where available
+# NO-LABEL elements (Flutter missing Semantics): photo icon, photo picker item, "..." menu
+# These use coordinates until dev team adds accessibility labels
+
+# TC01 - Launch app, preserve Google session
+- stopApp
+# Press Home to escape any lingering system picker (file picker stays alive after stopApp)
+- pressKey: Home
+- waitForAnimationToEnd
+- launchApp:
+    clearState: false
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC02 - Scroll to top so compose bar is visible
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "Post"
+
+# TC03 - Tap photo icon in compose bar
+# NO-LABEL: Photo/camera icon — add Semantics(label:'Add photo') in Flutter to fix
+- tapOn:
+    point: "11%,77%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC04 - Photo picker opens (Recent files view visible — Samsung uses "Recent" not "Recents")
+- assertVisible: "Recent"
+
+# TC05 - Select first photo from Recents grid
+# NO-LABEL: Photo picker grid item — dynamic content, no stable label
+- tapOn:
+    point: "18%,58%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC06 - Tap compose field and type caption
+# NO-LABEL: Compose TextField hintText not in accessibilityText — add Semantics(label:) in Flutter to fix
+- tapOn:
+    point: "37%,72%"
+- waitForAnimationToEnd
+- eraseText: 200
+- inputText: "Morning snapshot #phototest"
+- waitForAnimationToEnd
+
+# TC07 - Dismiss keyboard before tapping Post
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC08 - Submit post
+- tapOn: "Post"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC09 - Scroll into feed (posts appear below Suggested Shorts)
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# TC10 - Post text visible in feed
+- assertVisible: "Morning snapshot #phototest"
+
+# TC11 - Tap "..." on own post to open action menu
+# NO-LABEL: Post menu "..." button — add Semantics(label:'More options') in Flutter to fix
+- tapOn:
+    point: "87%,24%"
+- waitForAnimationToEnd
+
+# TC12 - Edit and Delete options are visible
+- assertVisible: "Edit"
+- assertVisible: "Delete"
+
+# TC13 - Tap Delete
+- tapOn: "Delete"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC14 - Feed still loads after deletion (Post button visible after scroll to top)
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "Post"

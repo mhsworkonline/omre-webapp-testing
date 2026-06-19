@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites>
+  <testsuite name="Test Suite" device="RZCX32483YX" tests="1" failures="0" time="15.0">
+    <testcase id="_temp_drawer" name="_temp_drawer" classname="_temp_drawer" file="flows\_temp_drawer.yaml" time="15.0" status="SUCCESS"/>
+  </testsuite>
+</testsuites>

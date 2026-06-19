@@ -57,21 +57,21 @@ test.describe('Pages List and Empty State', () => {
   test.beforeEach(async ({ page }) => { await goPages(page); });
 
   test('TC-PAGES-05: Given I am authenticated and on the page, When I perform the action, Then pages list or empty state renders', async ({ page }) => {
-    const cardVisible  = await page.locator('main article, main li, main [role="listitem"]').first().isVisible({ timeout: 10000 }).catch(() => false);
+    await page.locator('main').getByText(/loading/i).waitFor({ state: 'hidden', timeout: 15000 }).catch(() => {});
+    const cardVisible  = await page.locator('main article, main li, main [role="listitem"]').first().isVisible({ timeout: 5000 }).catch(() => false);
+    const altCardVisible = await page.locator('main').getByText(/follower|fan|like/i).first().isVisible({ timeout: 5000 }).catch(() => false);
     const emptyVisible = await page.locator('body').getByText(/no pages|create your first|haven.t created/i).first().isVisible({ timeout: 4000 }).catch(() => false);
-    if (!cardVisible && !emptyVisible) { test.skip(); return; }
-    expect(cardVisible || emptyVisible).toBe(true);
+    expect(cardVisible || altCardVisible || emptyVisible, 'BUG: Pages module shows neither a pages list nor an empty state message').toBe(true);
   });
 
   test('TC-PAGES-06: Given I am on the page, When I inspect the content, Then empty state is displayed when user has no pages', async ({ page }) => {
+    await page.locator('main').getByText(/loading/i).waitFor({ state: 'hidden', timeout: 15000 }).catch(() => {});
     const cards = await page.locator('main article, main li[role="listitem"]').count();
-    if (cards === 0) {
+    const altCards = await page.locator('main').getByText(/follower|fan|like/i).count();
+    if (cards === 0 && altCards === 0) {
       const empty = page.locator('body').getByText(/no pages|create your first|haven.t created/i).first();
-      const emptyVisible = await empty.isVisible({ timeout: 8000 }).catch(() => false);
-      if (!emptyVisible) { test.skip(); return; }
-      await expect(empty).toBeVisible();
+      await expect(empty, 'BUG: User has no pages but no empty state message is shown').toBeVisible({ timeout: 8000 });
     }
-    expect(page.isClosed()).toBe(false);
   });
 
   test('TC-PAGES-07: Given I am on the page cards, When I view it, Then it shows the page name', async ({ page }) => {
@@ -128,11 +128,10 @@ test.describe('Create Page', () => {
     const modal = page.locator('[role="dialog"], [aria-modal="true"]').first();
     if (!(await modal.isVisible({ timeout: 6000 }).catch(() => false))) return;
     const nameInput = modal.locator(
-      'input[placeholder*="name" i], input[aria-label*="name" i], input[name*="name" i], input'
+      'input[placeholder*="name" i], input[aria-label*="name" i], input[name*="name" i], input:not([type="file"]):not(.hidden):not([hidden])'
     ).first();
-    const inputVisible = await nameInput.isVisible({ timeout: 6000 }).catch(() => false);
-    if (!inputVisible) { test.skip(); return; }
-    await expect(nameInput).toBeVisible();
+    await nameInput.scrollIntoViewIfNeeded();
+    await expect(nameInput, 'BUG: No page name input field found in Create Page modal').toBeVisible({ timeout: 6000 });
   });
 
   test('TC-PAGES-13: Given I am authenticated and on the page, When I perform the action, Then page name input accepts and retains typed text', async ({ page }) => {
@@ -209,14 +208,15 @@ test.describe('Create Page', () => {
     await createBtn.click();
     const modal = page.locator('[role="dialog"], [aria-modal="true"]').first();
     if (!(await modal.isVisible({ timeout: 6000 }).catch(() => false))) return;
-    const cancelBtn = modal.locator('button').filter({ hasText: /cancel|close|dismiss/i }).first();
-    if (await cancelBtn.isVisible({ timeout: 4000 }).catch(() => false)) {
-      await cancelBtn.click();
-      await expect(modal).not.toBeVisible({ timeout: 5000 });
-    } else {
-      await page.keyboard.press('Escape');
-      await expect(modal).not.toBeVisible({ timeout: 5000 });
-    }
+    const cancelBtn = page.locator('[data-slot="dialog-close"]').first();
+    await expect(cancelBtn, 'BUG: Cancel/close button not found in Create Page modal').toBeVisible({ timeout: 4000 });
+    await page.evaluate(() => {
+      const d = document.querySelector('[role="dialog"], [aria-modal="true"]');
+      if (d) d.scrollTop = 0;
+    });
+    await page.evaluate(() => window.scrollTo(0, 0));
+    await cancelBtn.evaluate(el => el.click());
+    await expect(modal).not.toBeVisible({ timeout: 5000 });
   });
 
   test('TC-PAGES-18: Given I am authenticated and on the page, When I perform the action, Then Escape key dismisses the Create Page modal', async ({ page }) => {
@@ -429,21 +429,22 @@ test.describe('Page Name and Description Length Validation', () => {
 
   test('TC-PAGES-31: Given I am in the Create Page modal, When I fill in a very long page name (>200 chars), Then a validation error or character limit is shown', async ({ page }) => {
     const createBtn = page.locator('button').filter({ hasText: /create/i }).first();
-    if (!(await createBtn.isVisible({ timeout: 6000 }).catch(() => false))) { test.skip(); return; }
+    await expect(createBtn, 'BUG: Create Page button not found').toBeVisible({ timeout: 6000 });
     await createBtn.click();
     const modal = page.locator('[role="dialog"], [aria-modal="true"]').first();
-    if (!(await modal.isVisible({ timeout: 6000 }).catch(() => false))) { test.skip(); return; }
+    await expect(modal, 'BUG: Create Page modal did not open').toBeVisible({ timeout: 6000 });
     const nameInput = modal.locator(
-      'input[placeholder*="name" i], input[aria-label*="name" i], input[name*="name" i]'
+      'input[placeholder*="name" i], input[aria-label*="name" i], input[name*="name" i], input:not([type="file"]):not(.hidden):not([hidden])'
     ).first();
-    if (!(await nameInput.isVisible({ timeout: 5000 }).catch(() => false))) { test.skip(); return; }
+    await nameInput.scrollIntoViewIfNeeded();
+    await expect(nameInput, 'BUG: No name input found in Create Page modal').toBeVisible({ timeout: 5000 });
     const longName = 'A'.repeat(250);
     await nameInput.fill(longName);
     await page.waitForTimeout(500);
     const errorMsg = page.locator('[role="alert"], [aria-live]').filter({ hasText: /too long|max|limit|character/i }).first();
     const truncated = (await nameInput.inputValue()).length < longName.length;
     const hasError = await errorMsg.isVisible({ timeout: 3000 }).catch(() => false);
-    expect(truncated || hasError || !page.isClosed()).toBe(true);
+    expect(truncated || hasError, 'BUG: Input accepted >200 chars with no validation error and no character truncation').toBe(true);
     await page.keyboard.press('Escape');
   });
 });
@@ -473,26 +474,20 @@ test.describe('Page Edit Workflow', () => {
     const moreBtn = page.locator('[aria-label*="more" i], [aria-label*="options" i]').last();
     if (await editBtn.isVisible({ timeout: 5000 }).catch(() => false)) {
       await editBtn.click();
-    } else if (await moreBtn.isVisible({ timeout: 5000 }).catch(() => false)) {
+    } else {
+      await expect(moreBtn, 'BUG: No Edit button and no options/more button found on page detail').toBeVisible({ timeout: 5000 });
       await moreBtn.click();
       await page.waitForTimeout(500);
       const editOpt = page.locator('[role="menuitem"]').filter({ hasText: /edit/i }).first();
-      if (!(await editOpt.isVisible({ timeout: 3000 }).catch(() => false))) {
-        await page.keyboard.press('Escape');
-        test.skip();
-        return;
-      }
+      await expect(editOpt, 'BUG: Edit option not found in page options menu').toBeVisible({ timeout: 3000 });
       await editOpt.click();
-    } else {
-      test.skip();
-      return;
     }
     await page.waitForTimeout(1000);
     const editModal = page.locator('[role="dialog"], [aria-modal="true"]').first();
     const editForm = page.locator('form, [aria-label*="edit page" i]').first();
     const hasUI = await editModal.isVisible({ timeout: 5000 }).catch(() => false)
       || await editForm.isVisible({ timeout: 5000 }).catch(() => false);
-    expect(hasUI || !page.isClosed()).toBe(true);
+    expect(hasUI, 'BUG: Edit modal/form did not open after clicking Edit').toBe(true);
     await page.keyboard.press('Escape');
   });
 });
@@ -513,23 +508,18 @@ test.describe('Page Deletion Confirmation', () => {
     const navigated = await navigateToFirstPage(page);
     if (!navigated) { test.skip(); return; }
     const moreBtn = page.locator('[aria-label*="more" i], [aria-label*="options" i], [aria-label*="settings" i]').last();
-    if (!(await moreBtn.isVisible({ timeout: 5000 }).catch(() => false))) { test.skip(); return; }
+    await expect(moreBtn, 'BUG: No options/settings button found on page detail').toBeVisible({ timeout: 5000 });
     await moreBtn.click();
     await page.waitForTimeout(500);
     const deleteOpt = page.locator('[role="menuitem"]').filter({ hasText: /delete/i }).first();
-    if (!(await deleteOpt.isVisible({ timeout: 3000 }).catch(() => false))) {
-      await page.keyboard.press('Escape');
-      test.skip();
-      return;
-    }
+    await expect(deleteOpt, 'BUG: Delete option not found in page options menu').toBeVisible({ timeout: 3000 });
     await deleteOpt.click();
     await page.waitForTimeout(800);
     const confirmDialog = page.locator('[role="dialog"], [role="alertdialog"]').first();
     const confirmText = page.getByText(/are you sure|confirm delete|cannot be undone/i).first();
     const hasConfirm = await confirmDialog.isVisible({ timeout: 5000 }).catch(() => false)
       || await confirmText.isVisible({ timeout: 5000 }).catch(() => false);
-    expect(hasConfirm || !page.isClosed()).toBe(true);
-    // Cancel to avoid deleting
+    expect(hasConfirm, 'BUG: No confirmation dialog appeared before page deletion').toBe(true);
     await page.keyboard.press('Escape');
   });
 });
@@ -550,16 +540,11 @@ test.describe('Page Visibility Toggle', () => {
     const navigated = await navigateToFirstPage(page);
     if (!navigated) { test.skip(); return; }
     const settingsBtn = page.locator('[aria-label*="settings" i], [aria-label*="more" i]').last();
-    if (!(await settingsBtn.isVisible({ timeout: 5000 }).catch(() => false))) { test.skip(); return; }
+    await expect(settingsBtn, 'BUG: No settings/more button found on page detail').toBeVisible({ timeout: 5000 });
     await settingsBtn.click();
     await page.waitForTimeout(500);
     const visibilityOpt = page.locator('[role="menuitem"], button').filter({ hasText: /visibility|public|private/i }).first();
-    if (!(await visibilityOpt.isVisible({ timeout: 3000 }).catch(() => false))) {
-      await page.keyboard.press('Escape');
-      test.skip();
-      return;
-    }
-    await expect(visibilityOpt).toBeVisible();
+    await expect(visibilityOpt, 'BUG: No visibility/privacy option found in page settings menu').toBeVisible({ timeout: 3000 });
     await page.keyboard.press('Escape');
   });
 });
@@ -583,13 +568,10 @@ test.describe('Page Cover Photo Upload', () => {
       '[aria-label*="upload cover" i], [aria-label*="change cover" i], [aria-label*="cover photo" i]'
     ).first();
     const cameraIcon = page.locator('button[aria-label*="camera" i], header button').first();
-    if (!(await uploadBtn.isVisible({ timeout: 5000 }).catch(() => false))
-      && !(await cameraIcon.isVisible({ timeout: 5000 }).catch(() => false))) {
-      test.skip();
-      return;
-    }
-    const visible = await uploadBtn.isVisible({ timeout: 2000 }).catch(() => false);
-    await expect(visible ? uploadBtn : cameraIcon).toBeVisible({ timeout: 5000 });
+    const uploadVisible = await uploadBtn.isVisible({ timeout: 5000 }).catch(() => false);
+    const cameraVisible = await cameraIcon.isVisible({ timeout: 5000 }).catch(() => false);
+    expect(uploadVisible || cameraVisible, 'BUG: No cover photo upload button or camera icon found on page detail').toBe(true);
+    await expect(uploadVisible ? uploadBtn : cameraIcon).toBeVisible({ timeout: 5000 });
   });
 });
 

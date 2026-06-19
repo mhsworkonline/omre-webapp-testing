@@ -442,12 +442,10 @@ test.describe('Notification Muting', () => {
       '[aria-label*="notification settings" i], [aria-label*="preferences" i], button[aria-label*="settings" i]'
     ).first();
     const muteOpt = page.locator('button').filter({ hasText: /mute|manage notifications/i }).first();
-    const found = await settingsBtn.isVisible({ timeout: 5000 }).catch(() => false)
-      || await muteOpt.isVisible({ timeout: 5000 }).catch(() => false);
-    if (!found) { test.skip(); return; }
-    await expect(
-      (await settingsBtn.isVisible({ timeout: 2000 }).catch(() => false)) ? settingsBtn : muteOpt
-    ).toBeVisible({ timeout: 5000 });
+    const settingsVisible = await settingsBtn.isVisible({ timeout: 5000 }).catch(() => false);
+    const muteVisible = await muteOpt.isVisible({ timeout: 5000 }).catch(() => false);
+    expect(settingsVisible || muteVisible, 'BUG: No notification settings or mute control found on notifications page').toBe(true);
+    await expect(settingsVisible ? settingsBtn : muteOpt).toBeVisible({ timeout: 5000 });
   });
 });
 

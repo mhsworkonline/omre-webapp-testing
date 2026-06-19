@@ -1,0 +1,226 @@
+appId: com.omre.app.posh
+---
+# Social Module — Like/Unlike, Comment (add+delete), Repost, Share, Bookmark
+# Device-agnostic: labels used where available; NO-LABEL for unlabeled icon buttons
+# NO-LABEL elements: Share icon, Bookmark icon, "..." menu, comment input, comment send
+# Comment/Repost/Like tapped by their count text (index-based)
+
+# TC01 - Launch app
+- stopApp
+- launchApp:
+    clearState: false
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC02 - Scroll to top, assert compose Post button visible
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "Post"
+
+# TC03 - Open compose field
+# NO-LABEL: Compose TextField hintText not in accessibilityText — add Semantics(label:) in Flutter to fix
+- tapOn:
+    point: "37%,72%"
+- waitForAnimationToEnd
+
+# TC04 - Type test post text
+- inputText: "Testing interactions today! #morningvibes"
+- waitForAnimationToEnd
+
+# TC05 - Dismiss keyboard and submit post
+- pressKey: Back
+- waitForAnimationToEnd
+- tapOn: "Post"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC06 - Scroll past Suggested Shorts to find own post
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# TC07 - Own post visible in feed
+- assertVisible: "Testing interactions today! #morningvibes"
+
+# TC08 - Author name visible on post
+- assertVisible: "MHS"
+
+# ─── LIKE / UNLIKE CYCLE ───
+
+# TC09 - Like count starts at 0 before any interaction
+# Like is the 3rd action button (index 2 of "0" count labels)
+- assertVisible:
+    text: "0"
+    index: 2
+
+# TC10 - Tap Like icon — count increments to 1
+# Like button = 3rd "0" element (index 2); tapping the count area triggers like
+- tapOn:
+    text: "0"
+    index: 2
+- waitForAnimationToEnd
+- assertVisible: "1"
+
+# TC11 - Tap Like again (unlike) — count decrements back to 0
+- tapOn: "1"
+- waitForAnimationToEnd
+- assertVisible:
+    text: "0"
+    index: 2
+
+# TC12 - Re-like to leave post in liked state
+- tapOn:
+    text: "0"
+    index: 2
+- waitForAnimationToEnd
+- assertVisible: "1"
+
+# ─── COMMENTS ───
+
+# TC13 - Tap Comment icon — Comments sheet opens
+# Comment is the 1st action button (index 0 of "0" count labels, or "1" after like)
+- tapOn:
+    text: "0"
+    index: 0
+- waitForAnimationToEnd
+- assertVisible: "Comments"
+
+# TC14 - Tap comment input field at bottom of sheet
+# NO-LABEL: Comment input field — add Semantics(label:'Write a comment') in Flutter to fix
+- tapOn:
+    point: "50%,92%"
+- waitForAnimationToEnd
+
+# TC15 - Type a comment
+- inputText: "Great post! #morningvibes"
+- waitForAnimationToEnd
+
+# TC16 - Submit comment via send button
+# NO-LABEL: Comment send button — add Semantics(label:'Send') in Flutter to fix
+- tapOn:
+    point: "90%,92%"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC17 - Comment appears in list
+- assertVisible: "Great post! #morningvibes"
+
+# TC18 - Author name on comment
+- assertVisible: "MHS"
+
+# TC19 - Close comments sheet
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC20 - Comment count on post card shows 1
+- assertVisible: "1"
+
+# TC21 - Re-open Comments to delete own comment
+- tapOn:
+    text: "1"
+- waitForAnimationToEnd
+- assertVisible: "Comments"
+
+# TC22 - Long-press own comment to get delete option
+- longPressOn: "Great post! #morningvibes"
+- waitForAnimationToEnd
+
+# TC23 - Delete option appears in action menu
+- assertVisible: "Delete"
+
+# TC24 - Tap Delete to remove comment
+- tapOn: "Delete"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC25 - Empty state restored after deletion
+- assertVisible: "No comments yet"
+
+# TC26 - Close comments sheet
+- pressKey: Back
+- waitForAnimationToEnd
+
+# ─── REPOST ───
+
+# TC27 - Tap Repost icon — no crash
+# Repost is the 2nd action button (index 1 of "0" count labels)
+- tapOn:
+    text: "0"
+    index: 1
+- waitForAnimationToEnd
+- assertVisible: "MHS"
+
+# ─── SHARE ───
+
+# TC28 - Tap Share icon — share sheet opens with Send option
+# NO-LABEL: Share icon — add Semantics(label:'Share') in Flutter to fix
+- tapOn:
+    point: "54%,73%"
+- waitForAnimationToEnd
+- assertVisible: "Send"
+
+# TC29 - Dismiss share sheet
+- pressKey: Back
+- waitForAnimationToEnd
+
+# TC30 - Feed still shows own post after share dismissal
+- assertVisible: "Testing interactions today! #morningvibes"
+
+# ─── BOOKMARK ───
+
+# TC31 - Tap Bookmark icon — bookmark applied (no crash)
+# NO-LABEL: Bookmark icon — add Semantics(label:'Bookmark') in Flutter to fix
+- tapOn:
+    point: "89%,73%"
+- waitForAnimationToEnd
+- assertVisible: "MHS"
+
+# TC32 - Tap Bookmark again — un-bookmark (no crash)
+- tapOn:
+    point: "89%,73%"
+- waitForAnimationToEnd
+- assertVisible: "MHS"
+
+# ─── CLEANUP ───
+
+# TC33 - Scroll back to top
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+
+# TC34 - Scroll back to own post (below Suggested Shorts)
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# TC35 - Own post still present before deletion
+- assertVisible: "Testing interactions today! #morningvibes"
+
+# TC36 - Open "..." on own post card
+# NO-LABEL: Post menu "..." button — add Semantics(label:'More options') in Flutter to fix
+- tapOn:
+    point: "87%,24%"
+- waitForAnimationToEnd
+
+# TC37 - Edit and Delete options present (own post)
+- assertVisible: "Edit"
+- assertVisible: "Delete"
+
+# TC38 - Delete the test post
+- tapOn: "Delete"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC39 - Feed loads normally after deletion (compose still accessible)
+- assertVisible: "Post"

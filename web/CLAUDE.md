@@ -44,6 +44,7 @@ web/
 - **Parallel edits** — apply all fixes in a single message where files are independent
 - **Skip guards over hard assertions** — all optional UI checks must use `isVisible().catch(() => false)` + `test.skip(); return;` pattern before `expect(...).toBeVisible()`
 - **Never explain tool calls** — tool usage is not visible to user; only final results matter
+- **NO SHALLOW TESTING. FULL CRUD ONLY.** Every spec must exercise the complete create → read → update → delete lifecycle. Assertions must verify real state changes — not just "no crash" or "element visible". A test that only navigates and asserts visibility without mutating state is rejected.
 
 ## Current Status (as of 2026-06-14)
 - **~1500+ tests passing**, 0 failures in home module (149 passed, 34 skipped)
@@ -150,6 +151,20 @@ node rename-tests.js
 | Mart | /app/mart |
 | Meetings | /app/meetings |
 | Wallet | /app/wallet |
+
+## Rules
+- Code only
+- No prose
+- /compact after each task
+- /clear between projects
+
+## Token Efficiency Rules
+- Run one spec file at a time, never the full suite unless explicitly asked
+- Use `--grep "TC-XXX"` to re-run only failing tests
+- Read failure output only — grep for `failed|×` lines, never read full output files
+- Fix one file → run → fix next file; never batch all files then run
+- After each spec file is fixed and green, /clear before moving to the next
+- Never re-read a spec file already in context
 
 ## Notes on Navigation Structure
 - Top nav bar has sections: SOCIAL, NEWS, VIDEO, CHAT, BIZ, LINK, LEARN, STUDIO, ORBIT, GAMES, MART, MEETINGS, WALLET

@@ -1,0 +1,213 @@
+appId: com.omre.app.posh
+---
+# Social Module — Create / Edit / Delete Post (Full CRUD)
+# Device-agnostic: all taps use content-desc labels
+# NO-LABEL elements (Flutter missing Semantics): "..." post menu, Feeling icon, Photo icon
+# These use coordinates until dev team adds accessibility labels
+
+# TC01 - Launch app
+- stopApp
+- launchApp:
+    clearState: false
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC02 - Scroll to top, compose bar visible
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertVisible: "Post"
+
+# TC03 - Tap compose text field
+# NO-LABEL: Compose TextField hintText not in accessibilityText — add Semantics(label:) in Flutter to fix
+- tapOn:
+    point: "37%,72%"
+- waitForAnimationToEnd
+
+# TC04 - Empty submit blocked (tap Post with no text)
+- pressKey: Back
+- waitForAnimationToEnd
+- tapOn: "Post"
+- waitForAnimationToEnd
+- assertVisible: "Post"
+
+# TC05 - Type post text
+# NO-LABEL: Compose TextField hintText not in accessibilityText — add Semantics(label:) in Flutter to fix
+- tapOn:
+    point: "37%,72%"
+- waitForAnimationToEnd
+- inputText: "Good morning everyone! #morningvibes"
+- waitForAnimationToEnd
+
+# TC06 - Submit post (dismiss keyboard first, then tap Post)
+- pressKey: Back
+- waitForAnimationToEnd
+- tapOn: "Post"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC07 - Scroll down past Suggested Shorts to find post
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+
+# TC08 - Post appears in feed
+- assertVisible: "Good morning everyone! #morningvibes"
+
+# TC09 - Author name visible
+- assertVisible: "MHS"
+
+# ─── FEELING / ACTIVITY PICKER ───
+
+# TC10 - Scroll back to compose, tap feeling icon
+# NO-LABEL: Feeling/Activity icon — add Semantics(label:'Add feeling') in Flutter to fix
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- tapOn:
+    point: "19%,77%"
+- waitForAnimationToEnd
+
+# TC11 - Feeling picker opens
+- assertVisible: "How are you feeling?"
+
+# TC12 - Feeling options visible
+- assertVisible: "Happy"
+- assertVisible: "Sad"
+- assertVisible: "Excited"
+
+# TC13 - Select Happy
+- tapOn: "Happy"
+- waitForAnimationToEnd
+
+# TC14 - Compose still visible after selection
+- assertVisible: "Post"
+
+# TC15 - Type and submit feeling post
+# NO-LABEL: Compose TextField hintText not in accessibilityText — add Semantics(label:) in Flutter to fix
+- tapOn:
+    point: "37%,72%"
+- waitForAnimationToEnd
+- inputText: "Feeling great today! #morningvibes"
+- waitForAnimationToEnd
+- pressKey: Back
+- waitForAnimationToEnd
+- tapOn: "Post"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC16 - Second post in feed
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- assertVisible: "Feeling great today! #morningvibes"
+
+# TC17 - Privacy selector opens
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- tapOn: "Social"
+- waitForAnimationToEnd
+- assertVisible: "Orbit"
+- pressKey: Back
+- waitForAnimationToEnd
+
+# ─── EDIT OWN POST ───
+
+# TC18 - Scroll to own first post
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- assertVisible: "Good morning everyone! #morningvibes"
+
+# TC19 - Open "..." on own post
+# NO-LABEL: Post menu "..." button — add Semantics(label:'More options') in Flutter to fix
+- tapOn:
+    point: "87%,24%"
+- waitForAnimationToEnd
+
+# TC20 - Edit and Delete present on own post
+- assertVisible: "Edit"
+- assertVisible: "Delete"
+
+# TC21 - Tap Edit
+- tapOn: "Edit"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC22 - Compose pre-filled with existing text
+- assertVisible: "Good morning everyone! #morningvibes"
+
+# TC23 - Clear and retype
+- eraseText: 200
+- waitForAnimationToEnd
+- inputText: "Beautiful day today! #morningvibes"
+- waitForAnimationToEnd
+- pressKey: Back
+- waitForAnimationToEnd
+- tapOn: "Post"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC24 - Updated text in feed
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- assertVisible: "Beautiful day today! #morningvibes"
+
+# ─── DELETE ───
+
+# TC25 - Open "..." on updated post
+# NO-LABEL: Post menu "..." button — add Semantics(label:'More options') in Flutter to fix
+- tapOn:
+    point: "87%,24%"
+- waitForAnimationToEnd
+
+# TC26 - Delete option visible
+- assertVisible: "Delete"
+
+# TC27 - Delete post
+- tapOn: "Delete"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC28 - Feed still loads (no crash)
+- assertVisible: "Post"
+
+# TC29 - Scroll to find and delete second post
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- assertVisible: "Feeling great today! #morningvibes"
+
+# TC30 - Delete second post
+# NO-LABEL: Post menu "..." button — add Semantics(label:'More options') in Flutter to fix
+- tapOn:
+    point: "87%,24%"
+- waitForAnimationToEnd
+- assertVisible: "Delete"
+- tapOn: "Delete"
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+
+# TC31 - Feed stable after cleanup
+- assertVisible: "Post"
+- assertVisible: "Create Story"
