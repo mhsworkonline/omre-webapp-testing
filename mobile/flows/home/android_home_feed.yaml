@@ -5,6 +5,8 @@ appId: com.omre.app.posh
 - launchApp:
     clearState: false
 - waitForAnimationToEnd
+- waitForAnimationToEnd
+- waitForAnimationToEnd
 
 # SCENARIO: Home feed header section is visible | EXPECTED: 'Explore OMRE Modules' text appears
 - assertVisible: "Explore OMRE Modules"
@@ -34,6 +36,14 @@ appId: com.omre.app.posh
 - assertVisible: "Social"
 
 # SCENARIO: Notifications bell navigates to notifications screen | EXPECTED: Notifications screen opens
+- tapOn:
+    point: "7%,9%"
+- waitForAnimationToEnd
+- scrollUntilVisible:
+    element:
+      text: "Notifications"
+    direction: UP
+    timeout: 10000
 - tapOn: "Notifications"
 - waitForAnimationToEnd
 - assertVisible: "Mark all as read"

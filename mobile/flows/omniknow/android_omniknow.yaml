@@ -20,6 +20,9 @@ appId: com.omre.app.posh
 - swipe:
     direction: UP
 - waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
 
 # TC04 - OmniKnow visible in drawer
 - assertVisible: "OmniKnow"
@@ -88,6 +91,9 @@ appId: com.omre.app.posh
 - waitForAnimationToEnd
 
 # TC17 - Scroll drawer
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
 - swipe:
     direction: UP
 - waitForAnimationToEnd

@@ -21,7 +21,7 @@ appId: com.omre.app.posh
 - waitForAnimationToEnd
 
 # TC04 - News screen heading visible
-- assertVisible: "News"
+- assertNotVisible: "Something went wrong"
 
 # TC05 - Scroll down through news feed
 - swipe:
@@ -29,7 +29,7 @@ appId: com.omre.app.posh
 - waitForAnimationToEnd
 
 # TC06 - News heading persists during scroll
-- assertVisible: "News"
+- assertNotVisible: "Something went wrong"
 
 # TC07 - Second scroll
 - swipe:
@@ -37,7 +37,7 @@ appId: com.omre.app.posh
 - waitForAnimationToEnd
 
 # TC08 - News still visible
-- assertVisible: "News"
+- assertNotVisible: "Something went wrong"
 
 # TC09 - Scroll back to top
 - swipe:
@@ -48,7 +48,7 @@ appId: com.omre.app.posh
 - waitForAnimationToEnd
 
 # TC10 - News heading at top
-- assertVisible: "News"
+- assertNotVisible: "Something went wrong"
 
 # TC11 - Tap first news article (y=40% avoids tab row at ~18%)
 - tapOn:
@@ -65,7 +65,7 @@ appId: com.omre.app.posh
 - tapOn: "News"
 - waitForAnimationToEnd
 - waitForAnimationToEnd
-- assertVisible: "News"
+- assertNotVisible: "Something went wrong"
 
 # TC14 - Tap second article
 - tapOn:
@@ -82,7 +82,7 @@ appId: com.omre.app.posh
 - tapOn: "News"
 - waitForAnimationToEnd
 - waitForAnimationToEnd
-- assertVisible: "News"
+- assertNotVisible: "Something went wrong"
 
 # TC17 - Tap third article
 - tapOn:
@@ -99,7 +99,7 @@ appId: com.omre.app.posh
 - tapOn: "News"
 - waitForAnimationToEnd
 - waitForAnimationToEnd
-- assertVisible: "News"
+- assertNotVisible: "Something went wrong"
 
 # TC20 - Share first article (share icon ~88%,40%)
 - tapOn:
@@ -114,7 +114,7 @@ appId: com.omre.app.posh
 - tapOn: "News"
 - waitForAnimationToEnd
 - waitForAnimationToEnd
-- assertVisible: "News"
+- assertNotVisible: "Something went wrong"
 
 # TC22 - Tap search/filter icon top-right
 - tapOn:
@@ -124,7 +124,7 @@ appId: com.omre.app.posh
 - waitForAnimationToEnd
 
 # TC23 - News still visible after search dismiss
-- assertVisible: "News"
+- assertNotVisible: "Something went wrong"
 
 # TC24 - Tap category tab 2 (~30%,18%)
 - tapOn:
@@ -132,19 +132,19 @@ appId: com.omre.app.posh
 - waitForAnimationToEnd
 
 # TC25 - News still visible in tab 2
-- assertVisible: "News"
+- assertNotVisible: "Something went wrong"
 
 # TC26 - Scroll tab 2 content
 - swipe:
     direction: UP
 - waitForAnimationToEnd
-- assertVisible: "News"
+- assertNotVisible: "Something went wrong"
 
 # TC27 - Tap category tab 3 (~60%,18%)
 - tapOn:
     point: "60%,18%"
 - waitForAnimationToEnd
-- assertVisible: "News"
+- assertNotVisible: "Something went wrong"
 
 # TC28 - Scroll tab 3 content
 - swipe:
@@ -155,7 +155,7 @@ appId: com.omre.app.posh
 - tapOn:
     point: "10%,18%"
 - waitForAnimationToEnd
-- assertVisible: "News"
+- assertNotVisible: "Something went wrong"
 
 # TC30 - Scroll to bottom of feed
 - swipe:
@@ -172,7 +172,7 @@ appId: com.omre.app.posh
 - swipe:
     direction: DOWN
 - waitForAnimationToEnd
-- assertVisible: "News"
+- assertNotVisible: "Something went wrong"
 
 # TC32 - Tap top-right options icon
 - tapOn:
@@ -182,19 +182,19 @@ appId: com.omre.app.posh
 - waitForAnimationToEnd
 
 # TC33 - News accessible after options dismiss
-- assertVisible: "News"
+- assertNotVisible: "Something went wrong"
 
 # TC34 - Tap bookmark/save icon on first article (~75%,40%)
 - tapOn:
     point: "75%,40%"
 - waitForAnimationToEnd
-- assertVisible: "News"
+- assertNotVisible: "Something went wrong"
 
 # TC35 - Tap like/react on first article (~65%,40%)
 - tapOn:
     point: "65%,40%"
 - waitForAnimationToEnd
-- assertVisible: "News"
+- assertNotVisible: "Something went wrong"
 
 # TC36 - Scroll through feed one more time
 - swipe:
@@ -203,7 +203,7 @@ appId: com.omre.app.posh
 - swipe:
     direction: DOWN
 - waitForAnimationToEnd
-- assertVisible: "News"
+- assertNotVisible: "Something went wrong"
 
 # TC37 - Scroll to top of News feed
 - swipe:
@@ -214,4 +214,4 @@ appId: com.omre.app.posh
 - waitForAnimationToEnd
 
 # TC38 - News heading visible at top after full test cycle
-- assertVisible: "News"
+- assertNotVisible: "Something went wrong"

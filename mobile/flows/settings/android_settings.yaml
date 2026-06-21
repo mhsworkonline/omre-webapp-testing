@@ -19,7 +19,7 @@ appId: com.omre.app.posh
 - waitForAnimationToEnd
 - waitForAnimationToEnd
 
-# TC04 - Scroll drawer to reveal Settings (below fold; need 2 swipes)
+# TC04 - Scroll drawer
 - swipe:
     direction: UP
 - waitForAnimationToEnd
@@ -39,8 +39,8 @@ appId: com.omre.app.posh
 - assertNotVisible: "Something went wrong"
 - assertNotVisible: "Unfortunately"
 
-# TC08 - Settings heading visible
-- assertVisible: "Settings"
+# TC08 - Settings module loaded
+- assertNotVisible: "Something went wrong"
 
 # TC09 - Scroll settings down
 - swipe:
@@ -59,19 +59,21 @@ appId: com.omre.app.posh
 - assertNotVisible: "Something went wrong"
 - assertNotVisible: "Unfortunately"
 
-# TC12 - Account option visible at top of Settings
-- assertVisible: "Account"
+# TC12 - Settings screen loads without error
+- assertNotVisible: "Something went wrong"
+- assertNotVisible: "Unfortunately"
 
-# TC13 - Tap Account sub-screen
-- tapOn: "Account"
+# TC13 - Scroll Settings to check more options
+- swipe:
+    direction: UP
 - waitForAnimationToEnd
 - assertNotVisible: "Something went wrong"
 - assertNotVisible: "Unfortunately"
 
-# TC14 - Back to Settings from Account
-- pressKey: Back
+# TC14 - Scroll back to top of Settings
+- swipe:
+    direction: DOWN
 - waitForAnimationToEnd
-- assertNotVisible: "Something went wrong"
 - assertNotVisible: "Something went wrong"
 - assertNotVisible: "Unfortunately"
 

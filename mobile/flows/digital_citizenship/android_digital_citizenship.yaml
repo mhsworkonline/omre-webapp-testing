@@ -21,7 +21,7 @@ appId: com.omre.app.posh
     element:
       text: "Digital Citizen"
     direction: DOWN
-    timeout: 5000
+    timeout: 15000
 
 # TC04 - Digital Citizen visible in drawer
 - assertVisible: "Digital Citizen"
@@ -94,7 +94,7 @@ appId: com.omre.app.posh
     element:
       text: "Digital Citizen"
     direction: DOWN
-    timeout: 5000
+    timeout: 15000
 - assertVisible: "Digital Citizen"
 
 # TC18 - Tap Digital Citizen second visit

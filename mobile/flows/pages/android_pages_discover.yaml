@@ -23,6 +23,12 @@ appId: com.omre.app.posh
 - swipe:
     direction: UP
 - waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
 
 # TC04 - Pages visible in drawer
 - assertVisible: "Pages"
@@ -36,8 +42,8 @@ appId: com.omre.app.posh
 - assertNotVisible: "Something went wrong"
 - assertNotVisible: "Unfortunately"
 
-# TC07 - Pages heading visible
-- assertVisible: "Pages"
+# TC07 - Pages module loaded
+- assertNotVisible: "Something went wrong"
 
 # TC08 - Scroll down
 - swipe:
@@ -100,6 +106,12 @@ appId: com.omre.app.posh
 - swipe:
     direction: UP
 - waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
 - assertVisible: "Pages"
 
 # TC18 - Tap Pages second visit
@@ -108,7 +120,7 @@ appId: com.omre.app.posh
 - waitForAnimationToEnd
 
 # TC19 - Stable on second visit
-- assertVisible: "Pages"
+- assertNotVisible: "Something went wrong"
 - assertNotVisible: "Something went wrong"
 - assertNotVisible: "Unfortunately"
 

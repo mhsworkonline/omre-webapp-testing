@@ -5,7 +5,7 @@ import path from 'path';
 import { LoginPage } from '../../pages/LoginPage.js';
 
 const authFile = 'playwright/.auth/user.json';
-const SESSION_TTL_MS = 6 * 60 * 60 * 1000; // 6 hours
+const SESSION_TTL_MS = 90 * 60 * 1000; // 90 minutes
 
 // Routes with different path prefixes — visit them before saving storageState
 // so their session cookies are captured alongside /app/* cookies.

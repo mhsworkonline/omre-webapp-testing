@@ -1,0 +1,3005 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="OMRE Mobile (Android)" tests="2884" failures="10" time="33265.788">
+  <testsuite name="android_profile" tests="17" failures="1" time="142.157">
+    <testcase name="Set up test variables" time="0.000"/>
+    <testcase name="Apply flow configuration" time="0.000"/>
+    <testcase name="stopApp" time="0.202"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="5.855"/>
+    <testcase name="Wait for animation" time="11.393"/>
+    <testcase name="Assert visible: &quot;Explore OMRE Modules&quot;" time="7.954"/>
+    <testcase name="tapOnPointV2" time="56.347"/>
+    <testcase name="Wait for animation" time="4.239"/>
+    <testcase name="Assert visible: &quot;Home&quot;" time="3.210"/>
+    <testcase name="Assert visible: &quot;Profile&quot;" time="4.394"/>
+    <testcase name="Tap on &quot;Profile&quot;" time="8.254"/>
+    <testcase name="Wait for animation" time="3.901"/>
+    <testcase name="Wait for animation" time="3.203"/>
+    <testcase name="Wait for animation" time="2.524"/>
+    <testcase name="Swipe UP" time="7.140"/>
+    <testcase name="Wait for animation" time="3.360"/>
+    <testcase name="Assert visible: &quot;Edit Profile&quot;" time="20.181">
+      <failure message="Assert visible: &quot;Edit Profile&quot; did not complete"/>
+    </testcase>
+  </testsuite>
+  <testsuite name="android_settings" tests="71" failures="0" time="329.825">
+    <testcase name="Set up test variables" time="0.005"/>
+    <testcase name="Apply flow configuration" time="0.001"/>
+    <testcase name="stopApp" time="2.368"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="7.609"/>
+    <testcase name="Wait for animation" time="13.744"/>
+    <testcase name="Wait for animation" time="14.811"/>
+    <testcase name="Assert visible: &quot;View all&quot;" time="8.317"/>
+    <testcase name="tapOnPointV2" time="17.745"/>
+    <testcase name="Wait for animation" time="4.245"/>
+    <testcase name="Wait for animation" time="4.542"/>
+    <testcase name="Swipe UP" time="7.034"/>
+    <testcase name="Wait for animation" time="5.126"/>
+    <testcase name="Swipe UP" time="7.066"/>
+    <testcase name="Wait for animation" time="2.601"/>
+    <testcase name="Assert visible: &quot;Settings&quot;" time="2.159"/>
+    <testcase name="Tap on &quot;Settings&quot;" time="12.241"/>
+    <testcase name="Wait for animation" time="4.084"/>
+    <testcase name="Wait for animation" time="4.247"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="1.507"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="1.908"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="1.556"/>
+    <testcase name="Swipe UP" time="3.254"/>
+    <testcase name="Wait for animation" time="3.410"/>
+    <testcase name="Swipe UP" time="2.626"/>
+    <testcase name="Wait for animation" time="3.909"/>
+    <testcase name="Swipe DOWN" time="1.993"/>
+    <testcase name="Wait for animation" time="3.740"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="1.911"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="2.061"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="2.269"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="1.769"/>
+    <testcase name="Swipe UP" time="1.501"/>
+    <testcase name="Wait for animation" time="4.261"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="5.587"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="2.203"/>
+    <testcase name="Swipe DOWN" time="3.008"/>
+    <testcase name="Wait for animation" time="1.863"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.874"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="1.015"/>
+    <testcase name="Swipe UP" time="3.671"/>
+    <testcase name="Wait for animation" time="3.887"/>
+    <testcase name="Swipe DOWN" time="2.737"/>
+    <testcase name="Wait for animation" time="5.246"/>
+    <testcase name="Press key: BACK" time="6.949"/>
+    <testcase name="Wait for animation" time="5.089"/>
+    <testcase name="Swipe DOWN" time="11.026"/>
+    <testcase name="Wait for animation" time="9.056"/>
+    <testcase name="Assert visible: &quot;View all&quot;" time="0.362"/>
+    <testcase name="tapOnPointV2" time="7.290"/>
+    <testcase name="Wait for animation" time="4.102"/>
+    <testcase name="Wait for animation" time="4.568"/>
+    <testcase name="Swipe UP" time="5.539"/>
+    <testcase name="Wait for animation" time="5.469"/>
+    <testcase name="Swipe UP" time="7.214"/>
+    <testcase name="Wait for animation" time="3.291"/>
+    <testcase name="Assert visible: &quot;Settings&quot;" time="1.743"/>
+    <testcase name="Tap on &quot;Settings&quot;" time="10.897"/>
+    <testcase name="Wait for animation" time="4.071"/>
+    <testcase name="Wait for animation" time="3.516"/>
+    <testcase name="Assert visible: &quot;Settings&quot;" time="0.382"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="1.712"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="1.683"/>
+    <testcase name="Swipe UP" time="2.770"/>
+    <testcase name="Wait for animation" time="3.235"/>
+    <testcase name="Swipe DOWN" time="2.545"/>
+    <testcase name="Wait for animation" time="8.098"/>
+    <testcase name="Press key: BACK" time="1.778"/>
+    <testcase name="Wait for animation" time="11.024"/>
+    <testcase name="Swipe DOWN" time="2.442"/>
+    <testcase name="Wait for animation" time="16.255"/>
+    <testcase name="Assert visible: &quot;View all&quot;" time="2.008"/>
+  </testsuite>
+  <testsuite name="android_virtual_world" tests="10" failures="1" time="137.199">
+    <testcase name="Set up test variables" time="0.001"/>
+    <testcase name="Apply flow configuration" time="0.001"/>
+    <testcase name="stopApp" time="0.832"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="6.683"/>
+    <testcase name="Wait for animation" time="11.362"/>
+    <testcase name="Wait for animation" time="1.498"/>
+    <testcase name="tapOnPointV2" time="84.569"/>
+    <testcase name="Wait for animation" time="3.502"/>
+    <testcase name="Wait for animation" time="3.608"/>
+    <testcase name="scrollUntilVisible" time="25.143">
+      <failure message="scrollUntilVisible did not complete"/>
+    </testcase>
+  </testsuite>
+  <testsuite name="android_weather" tests="10" failures="1" time="62.151">
+    <testcase name="Set up test variables" time="0.000"/>
+    <testcase name="Apply flow configuration" time="0.000"/>
+    <testcase name="stopApp" time="0.473"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="7.612"/>
+    <testcase name="Wait for animation" time="11.944"/>
+    <testcase name="Wait for animation" time="1.310"/>
+    <testcase name="tapOnPointV2" time="19.769"/>
+    <testcase name="Wait for animation" time="2.768"/>
+    <testcase name="Wait for animation" time="2.501"/>
+    <testcase name="scrollUntilVisible" time="15.774">
+      <failure message="scrollUntilVisible did not complete"/>
+    </testcase>
+  </testsuite>
+  <testsuite name="android_groups_discover" tests="81" failures="0" time="455.050">
+    <testcase name="Set up test variables" time="0.006"/>
+    <testcase name="Apply flow configuration" time="0.000"/>
+    <testcase name="stopApp" time="0.202"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="5.429"/>
+    <testcase name="Wait for animation" time="16.867"/>
+    <testcase name="Wait for animation" time="2.686"/>
+    <testcase name="tapOnPointV2" time="13.507"/>
+    <testcase name="Wait for animation" time="5.379"/>
+    <testcase name="Wait for animation" time="3.763"/>
+    <testcase name="Swipe UP" time="9.112"/>
+    <testcase name="Wait for animation" time="4.083"/>
+    <testcase name="Swipe UP" time="3.742"/>
+    <testcase name="Wait for animation" time="3.724"/>
+    <testcase name="Swipe UP" time="6.394"/>
+    <testcase name="Wait for animation" time="3.473"/>
+    <testcase name="Swipe UP" time="8.050"/>
+    <testcase name="Wait for animation" time="3.895"/>
+    <testcase name="Swipe UP" time="7.096"/>
+    <testcase name="Wait for animation" time="3.408"/>
+    <testcase name="Assert visible: &quot;Groups&quot;" time="0.459"/>
+    <testcase name="Tap on &quot;Groups&quot;" time="8.139"/>
+    <testcase name="Wait for animation" time="10.442"/>
+    <testcase name="Wait for animation" time="3.458"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="1.311"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="1.856"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="2.925"/>
+    <testcase name="Swipe UP" time="5.341"/>
+    <testcase name="Wait for animation" time="3.251"/>
+    <testcase name="Swipe UP" time="3.428"/>
+    <testcase name="Wait for animation" time="2.190"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="2.098"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="1.256"/>
+    <testcase name="Swipe DOWN" time="2.250"/>
+    <testcase name="Wait for animation" time="3.741"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="1.133"/>
+    <testcase name="tapOnPointV2" time="0.525"/>
+    <testcase name="Wait for animation" time="1.995"/>
+    <testcase name="Wait for animation" time="3.708"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="2.104"/>
+    <testcase name="Press key: BACK" time="6.007"/>
+    <testcase name="Wait for animation" time="5.380"/>
+    <testcase name="tapOnPointV2" time="23.320"/>
+    <testcase name="Wait for animation" time="15.768"/>
+    <testcase name="Wait for animation" time="21.249"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="3.257"/>
+    <testcase name="Press key: BACK" time="11.013"/>
+    <testcase name="Wait for animation" time="6.465"/>
+    <testcase name="Press key: BACK" time="10.572"/>
+    <testcase name="Wait for animation" time="6.524"/>
+    <testcase name="Swipe DOWN" time="36.931"/>
+    <testcase name="Wait for animation" time="3.303"/>
+    <testcase name="Assert visible: &quot;View all&quot;" time="0.991"/>
+    <testcase name="tapOnPointV2" time="6.146"/>
+    <testcase name="Wait for animation" time="3.876"/>
+    <testcase name="Wait for animation" time="4.220"/>
+    <testcase name="Swipe UP" time="4.236"/>
+    <testcase name="Wait for animation" time="3.622"/>
+    <testcase name="Swipe UP" time="5.781"/>
+    <testcase name="Wait for animation" time="4.098"/>
+    <testcase name="Swipe UP" time="7.737"/>
+    <testcase name="Wait for animation" time="4.270"/>
+    <testcase name="Swipe UP" time="8.118"/>
+    <testcase name="Wait for animation" time="4.900"/>
+    <testcase name="Swipe UP" time="8.436"/>
+    <testcase name="Wait for animation" time="5.015"/>
+    <testcase name="Assert visible: &quot;Groups&quot;" time="2.031"/>
+    <testcase name="Tap on &quot;Groups&quot;" time="18.034"/>
+    <testcase name="Wait for animation" time="3.536"/>
+    <testcase name="Wait for animation" time="3.389"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="2.776"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.688"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="2.040"/>
+    <testcase name="Swipe UP" time="3.337"/>
+    <testcase name="Wait for animation" time="4.615"/>
+    <testcase name="Swipe UP" time="2.585"/>
+    <testcase name="Wait for animation" time="2.470"/>
+    <testcase name="Swipe DOWN" time="5.813"/>
+    <testcase name="Wait for animation" time="5.135"/>
+    <testcase name="Press key: BACK" time="5.154"/>
+    <testcase name="Wait for animation" time="5.772"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="4.014"/>
+  </testsuite>
+  <testsuite name="android_home_feed" tests="19" failures="1" time="93.121">
+    <testcase name="Set up test variables" time="0.001"/>
+    <testcase name="Apply flow configuration" time="0.001"/>
+    <testcase name="stopApp" time="0.797"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="6.874"/>
+    <testcase name="Wait for animation" time="12.087"/>
+    <testcase name="Wait for animation" time="2.509"/>
+    <testcase name="Wait for animation" time="18.278"/>
+    <testcase name="Assert visible: &quot;Explore OMRE Modules&quot;" time="0.932"/>
+    <testcase name="Assert visible: &quot;View all&quot;" time="3.527"/>
+    <testcase name="Assert visible: &quot;Social&quot;" time="1.004"/>
+    <testcase name="Assert visible: &quot;Chat&quot;" time="1.231"/>
+    <testcase name="Assert visible: &quot;Biz&quot;" time="7.137"/>
+    <testcase name="Assert visible: &quot;Learn&quot;" time="1.394"/>
+    <testcase name="Assert visible: &quot;Refresh feed&quot;" time="0.803"/>
+    <testcase name="Assert visible: &quot;Post&quot;" time="1.429"/>
+    <testcase name="Assert visible: &quot;Social&quot;" time="0.275"/>
+    <testcase name="tapOnPointV2" time="5.017"/>
+    <testcase name="Wait for animation" time="11.434"/>
+    <testcase name="scrollUntilVisible" time="18.391">
+      <failure message="scrollUntilVisible did not complete"/>
+    </testcase>
+  </testsuite>
+  <testsuite name="android_inbox" tests="9" failures="1" time="59.984">
+    <testcase name="Set up test variables" time="0.001"/>
+    <testcase name="Apply flow configuration" time="0.000"/>
+    <testcase name="stopApp" time="0.610"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="8.160"/>
+    <testcase name="Wait for animation" time="11.573"/>
+    <testcase name="Assert visible: &quot;Explore OMRE Modules&quot;" time="9.604"/>
+    <testcase name="tapOnPointV2" time="9.534"/>
+    <testcase name="Wait for animation" time="4.900"/>
+    <testcase name="scrollUntilVisible" time="15.602">
+      <failure message="scrollUntilVisible did not complete"/>
+    </testcase>
+  </testsuite>
+  <testsuite name="android_omniknow" tests="65" failures="0" time="308.031">
+    <testcase name="Set up test variables" time="0.000"/>
+    <testcase name="Apply flow configuration" time="0.000"/>
+    <testcase name="stopApp" time="0.847"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="6.361"/>
+    <testcase name="Wait for animation" time="10.566"/>
+    <testcase name="Wait for animation" time="15.097"/>
+    <testcase name="tapOnPointV2" time="11.714"/>
+    <testcase name="Wait for animation" time="4.479"/>
+    <testcase name="Wait for animation" time="3.757"/>
+    <testcase name="Swipe UP" time="2.330"/>
+    <testcase name="Wait for animation" time="3.345"/>
+    <testcase name="Swipe UP" time="7.684"/>
+    <testcase name="Wait for animation" time="4.859"/>
+    <testcase name="Assert visible: &quot;OmniKnow&quot;" time="2.000"/>
+    <testcase name="Tap on &quot;OmniKnow&quot;" time="8.976"/>
+    <testcase name="Wait for animation" time="3.878"/>
+    <testcase name="Wait for animation" time="2.984"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="1.148"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="2.381"/>
+    <testcase name="Assert visible: &quot;The World Knowledge Library&quot;" time="0.932"/>
+    <testcase name="Swipe UP" time="3.721"/>
+    <testcase name="Wait for animation" time="3.303"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="1.314"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="2.705"/>
+    <testcase name="Swipe DOWN" time="3.070"/>
+    <testcase name="Wait for animation" time="3.315"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="1.955"/>
+    <testcase name="tapOnPointV2" time="5.222"/>
+    <testcase name="Wait for animation" time="3.716"/>
+    <testcase name="Wait for animation" time="2.905"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="1.509"/>
+    <testcase name="Press key: BACK" time="5.299"/>
+    <testcase name="Wait for animation" time="4.247"/>
+    <testcase name="tapOnPointV2" time="7.503"/>
+    <testcase name="Wait for animation" time="10.858"/>
+    <testcase name="Wait for animation" time="15.968"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="4.401"/>
+    <testcase name="Press key: BACK" time="6.420"/>
+    <testcase name="Wait for animation" time="4.012"/>
+    <testcase name="Press key: BACK" time="3.568"/>
+    <testcase name="Wait for animation" time="5.414"/>
+    <testcase name="Swipe DOWN" time="28.423"/>
+    <testcase name="Wait for animation" time="5.947"/>
+    <testcase name="Assert visible: &quot;View all&quot;" time="1.509"/>
+    <testcase name="tapOnPointV2" time="4.868"/>
+    <testcase name="Wait for animation" time="4.761"/>
+    <testcase name="Wait for animation" time="3.785"/>
+    <testcase name="Swipe UP" time="4.810"/>
+    <testcase name="Wait for animation" time="3.774"/>
+    <testcase name="Swipe UP" time="12.220"/>
+    <testcase name="Wait for animation" time="5.449"/>
+    <testcase name="Assert visible: &quot;OmniKnow&quot;" time="3.476"/>
+    <testcase name="Tap on &quot;OmniKnow&quot;" time="4.963"/>
+    <testcase name="Wait for animation" time="3.752"/>
+    <testcase name="Wait for animation" time="3.804"/>
+    <testcase name="Assert visible: &quot;The World Knowledge Library&quot;" time="0.079"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="1.623"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="1.331"/>
+    <testcase name="Swipe UP" time="2.146"/>
+    <testcase name="Wait for animation" time="2.443"/>
+    <testcase name="Swipe DOWN" time="2.162"/>
+    <testcase name="Wait for animation" time="3.785"/>
+    <testcase name="Press key: BACK" time="3.566"/>
+    <testcase name="Wait for animation" time="3.420"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="2.172"/>
+  </testsuite>
+  <testsuite name="android_shorts" tests="75" failures="0" time="600.597">
+    <testcase name="Set up test variables" time="0.000"/>
+    <testcase name="Apply flow configuration" time="0.000"/>
+    <testcase name="stopApp" time="0.343"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="5.911"/>
+    <testcase name="Wait for animation" time="11.492"/>
+    <testcase name="Assert visible: &quot;Explore OMRE Modules&quot;" time="14.085"/>
+    <testcase name="tapOnPointV2" time="10.965"/>
+    <testcase name="Wait for animation" time="4.587"/>
+    <testcase name="Assert visible: &quot;Home&quot;" time="1.170"/>
+    <testcase name="scrollUntilVisible" time="1.531"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="2.767"/>
+    <testcase name="Tap on &quot;Shorts&quot;" time="11.552"/>
+    <testcase name="Wait for animation" time="3.144"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="1.145"/>
+    <testcase name="Wait for animation" time="4.251"/>
+    <testcase name="Swipe UP" time="2.580"/>
+    <testcase name="Wait for animation" time="2.944"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="1.630"/>
+    <testcase name="Swipe UP" time="1.384"/>
+    <testcase name="Wait for animation" time="3.326"/>
+    <testcase name="tapOnPointV2" time="2.516"/>
+    <testcase name="Wait for animation" time="3.254"/>
+    <testcase name="tapOnPointV2" time="3.069"/>
+    <testcase name="Wait for animation" time="2.970"/>
+    <testcase name="tapOnPointV2" time="2.277"/>
+    <testcase name="Wait for animation" time="3.940"/>
+    <testcase name="tapOnPointV2" time="2.588"/>
+    <testcase name="Wait for animation" time="2.869"/>
+    <testcase name="Input text: &quot;Great short!&quot;" time="8.495"/>
+    <testcase name="Wait for animation" time="1.926"/>
+    <testcase name="tapOnPointV2" time="2.478"/>
+    <testcase name="Wait for animation" time="3.386"/>
+    <testcase name="Wait for animation" time="3.061"/>
+    <testcase name="Swipe DOWN" time="1.955"/>
+    <testcase name="Wait for animation" time="4.527"/>
+    <testcase name="Press key: BACK" time="18.476"/>
+    <testcase name="Wait for animation" time="6.201"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.809"/>
+    <testcase name="tapOnPointV2" time="22.521"/>
+    <testcase name="Wait for animation" time="16.875"/>
+    <testcase name="Press key: BACK" time="5.686"/>
+    <testcase name="Wait for animation" time="5.272"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="5.138"/>
+    <testcase name="tapOnPointV2" time="7.933"/>
+    <testcase name="Wait for animation" time="16.796"/>
+    <testcase name="tapOnPointV2" time="28.274"/>
+    <testcase name="Wait for animation" time="19.212"/>
+    <testcase name="Swipe DOWN" time="24.776"/>
+    <testcase name="Wait for animation" time="16.090"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="5.429"/>
+    <testcase name="tapOnPointV2" time="41.226"/>
+    <testcase name="Wait for animation" time="15.045"/>
+    <testcase name="Swipe UP" time="51.273"/>
+    <testcase name="Wait for animation" time="21.109"/>
+    <testcase name="Swipe DOWN" time="4.572"/>
+    <testcase name="Wait for animation" time="25.129"/>
+    <testcase name="Press key: BACK" time="17.437"/>
+    <testcase name="Wait for animation" time="4.778"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="2.439"/>
+    <testcase name="tapOnPointV2" time="8.321"/>
+    <testcase name="Wait for animation" time="4.669"/>
+    <testcase name="Tap on &quot;Shorts&quot;" time="17.006"/>
+    <testcase name="Wait for animation" time="2.695"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="1.976"/>
+    <testcase name="Swipe UP" time="2.399"/>
+    <testcase name="Wait for animation" time="4.071"/>
+    <testcase name="Swipe UP" time="1.681"/>
+    <testcase name="Wait for animation" time="5.105"/>
+    <testcase name="Swipe UP" time="2.360"/>
+    <testcase name="Wait for animation" time="3.164"/>
+    <testcase name="tapOnPointV2" time="2.704"/>
+    <testcase name="Wait for animation" time="4.238"/>
+    <testcase name="Press key: BACK" time="12.248"/>
+    <testcase name="Wait for animation" time="5.199"/>
+    <testcase name="Assert visible: &quot;Explore OMRE Modules&quot;" time="6.147"/>
+  </testsuite>
+  <testsuite name="android_social_follow" tests="21" failures="1" time="140.207">
+    <testcase name="Set up test variables" time="0.000"/>
+    <testcase name="Apply flow configuration" time="0.000"/>
+    <testcase name="stopApp" time="0.490"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="5.519"/>
+    <testcase name="Wait for animation" time="11.430"/>
+    <testcase name="Wait for animation" time="1.495"/>
+    <testcase name="Swipe DOWN" time="12.057"/>
+    <testcase name="Wait for animation" time="2.703"/>
+    <testcase name="Swipe DOWN" time="12.096"/>
+    <testcase name="Wait for animation" time="5.617"/>
+    <testcase name="Swipe UP" time="6.727"/>
+    <testcase name="Wait for animation" time="20.367"/>
+    <testcase name="Swipe UP" time="13.173"/>
+    <testcase name="Wait for animation" time="15.993"/>
+    <testcase name="Swipe UP" time="4.966"/>
+    <testcase name="Wait for animation" time="3.967"/>
+    <testcase name="Assert visible: &quot;Follow&quot;" time="0.103"/>
+    <testcase name="Tap on &quot;Follow&quot;" time="2.073"/>
+    <testcase name="Wait for animation" time="2.084"/>
+    <testcase name="Wait for animation" time="2.105"/>
+    <testcase name="Assert visible: &quot;Unfollow&quot;" time="17.242">
+      <failure message="Assert visible: &quot;Unfollow&quot; did not complete"/>
+    </testcase>
+  </testsuite>
+  <testsuite name="android_happy_corner" tests="59" failures="0" time="184.472">
+    <testcase name="Set up test variables" time="0.001"/>
+    <testcase name="Apply flow configuration" time="0.000"/>
+    <testcase name="stopApp" time="0.482"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="14.068"/>
+    <testcase name="Wait for animation" time="14.353"/>
+    <testcase name="Wait for animation" time="12.151"/>
+    <testcase name="tapOnPointV2" time="18.082"/>
+    <testcase name="Wait for animation" time="4.626"/>
+    <testcase name="Wait for animation" time="4.102"/>
+    <testcase name="scrollUntilVisible" time="3.201"/>
+    <testcase name="Assert visible: &quot;Happy Corner&quot;" time="0.182"/>
+    <testcase name="Tap on &quot;Happy Corner&quot;" time="2.720"/>
+    <testcase name="Wait for animation" time="1.298"/>
+    <testcase name="Wait for animation" time="1.266"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.637"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="0.788"/>
+    <testcase name="Assert visible: &quot;Community Pulse&quot;" time="0.207"/>
+    <testcase name="Swipe UP" time="3.715"/>
+    <testcase name="Wait for animation" time="1.808"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="0.542"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.606"/>
+    <testcase name="Swipe DOWN" time="2.288"/>
+    <testcase name="Wait for animation" time="1.367"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.676"/>
+    <testcase name="tapOnPointV2" time="0.597"/>
+    <testcase name="Wait for animation" time="1.314"/>
+    <testcase name="Wait for animation" time="1.240"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.671"/>
+    <testcase name="Press key: BACK" time="1.381"/>
+    <testcase name="Wait for animation" time="2.988"/>
+    <testcase name="tapOnPointV2" time="9.709"/>
+    <testcase name="Wait for animation" time="15.858"/>
+    <testcase name="Wait for animation" time="18.914"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="1.519"/>
+    <testcase name="Press key: BACK" time="1.512"/>
+    <testcase name="Wait for animation" time="2.803"/>
+    <testcase name="Press key: BACK" time="0.606"/>
+    <testcase name="Wait for animation" time="1.489"/>
+    <testcase name="Swipe DOWN" time="1.880"/>
+    <testcase name="Wait for animation" time="6.037"/>
+    <testcase name="Assert visible: &quot;View all&quot;" time="0.204"/>
+    <testcase name="tapOnPointV2" time="1.525"/>
+    <testcase name="Wait for animation" time="1.832"/>
+    <testcase name="Wait for animation" time="2.264"/>
+    <testcase name="scrollUntilVisible" time="0.170"/>
+    <testcase name="Assert visible: &quot;Happy Corner&quot;" time="0.196"/>
+    <testcase name="Tap on &quot;Happy Corner&quot;" time="2.991"/>
+    <testcase name="Wait for animation" time="1.540"/>
+    <testcase name="Wait for animation" time="1.430"/>
+    <testcase name="Assert visible: &quot;Community Pulse&quot;" time="0.091"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.547"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="0.650"/>
+    <testcase name="Swipe UP" time="3.878"/>
+    <testcase name="Wait for animation" time="1.690"/>
+    <testcase name="Swipe DOWN" time="2.379"/>
+    <testcase name="Wait for animation" time="1.300"/>
+    <testcase name="Press key: BACK" time="1.388"/>
+    <testcase name="Wait for animation" time="2.000"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.713"/>
+  </testsuite>
+  <testsuite name="android_social_feed" tests="44" failures="0" time="156.064">
+    <testcase name="Set up test variables" time="0.000"/>
+    <testcase name="Apply flow configuration" time="0.000"/>
+    <testcase name="stopApp" time="0.610"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="6.955"/>
+    <testcase name="Wait for animation" time="10.696"/>
+    <testcase name="Wait for animation" time="2.139"/>
+    <testcase name="Assert visible: &quot;View all&quot;" time="11.223"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="5.360"/>
+    <testcase name="Assert visible: &quot;Create Story&quot;" time="3.725"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="1.024"/>
+    <testcase name="Assert visible: &quot;Social&quot;" time="6.844"/>
+    <testcase name="Assert visible: &quot;Post&quot;" time="1.060"/>
+    <testcase name="tapOnPointV2" time="7.783"/>
+    <testcase name="Wait for animation" time="2.970"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.728"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="0.834"/>
+    <testcase name="tapOnPointV2" time="4.065"/>
+    <testcase name="Wait for animation" time="5.143"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="7.432"/>
+    <testcase name="Assert visible: &quot;View all&quot;" time="1.604"/>
+    <testcase name="Swipe UP" time="11.903"/>
+    <testcase name="Wait for animation" time="18.418"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="4.891"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="1.902"/>
+    <testcase name="Swipe UP" time="3.704"/>
+    <testcase name="Wait for animation" time="3.535"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.649"/>
+    <testcase name="Swipe DOWN" time="4.178"/>
+    <testcase name="Wait for animation" time="3.164"/>
+    <testcase name="Swipe DOWN" time="1.751"/>
+    <testcase name="Wait for animation" time="5.063"/>
+    <testcase name="Assert visible: &quot;Create Story&quot;" time="0.115"/>
+    <testcase name="Assert visible: &quot;View all&quot;" time="0.104"/>
+    <testcase name="Swipe" time="1.893"/>
+    <testcase name="Wait for animation" time="4.445"/>
+    <testcase name="Wait for animation" time="1.480"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.605"/>
+    <testcase name="Assert visible: &quot;View all&quot;" time="0.103"/>
+    <testcase name="Tap on &quot;Refresh feed&quot;" time="2.411"/>
+    <testcase name="Wait for animation" time="2.359"/>
+    <testcase name="Wait for animation" time="1.680"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.669"/>
+    <testcase name="Assert visible: &quot;View all&quot;" time="0.146"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="0.701"/>
+  </testsuite>
+  <testsuite name="android_social_interactions" tests="14" failures="1" time="121.329">
+    <testcase name="Set up test variables" time="0.000"/>
+    <testcase name="Apply flow configuration" time="0.000"/>
+    <testcase name="stopApp" time="0.387"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="6.668"/>
+    <testcase name="Wait for animation" time="10.267"/>
+    <testcase name="Wait for animation" time="1.821"/>
+    <testcase name="Swipe DOWN" time="10.919"/>
+    <testcase name="Wait for animation" time="7.881"/>
+    <testcase name="Swipe UP" time="25.059"/>
+    <testcase name="Wait for animation" time="16.291"/>
+    <testcase name="Swipe UP" time="6.367"/>
+    <testcase name="Wait for animation" time="16.898"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="3.735"/>
+    <testcase name="Tap on &quot;0&quot;" time="15.036">
+      <failure message="Tap on &quot;0&quot; did not complete"/>
+    </testcase>
+  </testsuite>
+  <testsuite name="android_social_photo_post" tests="13" failures="1" time="82.630">
+    <testcase name="Set up test variables" time="0.000"/>
+    <testcase name="Apply flow configuration" time="0.000"/>
+    <testcase name="stopApp" time="0.360"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="6.201"/>
+    <testcase name="Wait for animation" time="11.915"/>
+    <testcase name="Wait for animation" time="1.311"/>
+    <testcase name="Swipe DOWN" time="24.036"/>
+    <testcase name="Wait for animation" time="4.114"/>
+    <testcase name="Assert visible: &quot;Post&quot;" time="0.844"/>
+    <testcase name="tapOnPointV2" time="7.769"/>
+    <testcase name="Wait for animation" time="3.595"/>
+    <testcase name="Wait for animation" time="3.690"/>
+    <testcase name="Assert visible: &quot;Recent&quot;" time="18.795">
+      <failure message="Assert visible: &quot;Recent&quot; did not complete"/>
+    </testcase>
+  </testsuite>
+  <testsuite name="android_birthdays" tests="77" failures="0" time="186.547">
+    <testcase name="Set up test variables" time="0.007"/>
+    <testcase name="Apply flow configuration" time="0.001"/>
+    <testcase name="stopApp" time="0.806"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="6.114"/>
+    <testcase name="Wait for animation" time="8.552"/>
+    <testcase name="Wait for animation" time="14.600"/>
+    <testcase name="tapOnPointV2" time="8.722"/>
+    <testcase name="Wait for animation" time="5.306"/>
+    <testcase name="Wait for animation" time="3.218"/>
+    <testcase name="Swipe UP" time="2.794"/>
+    <testcase name="Wait for animation" time="2.713"/>
+    <testcase name="Swipe UP" time="2.886"/>
+    <testcase name="Wait for animation" time="2.058"/>
+    <testcase name="Swipe UP" time="2.951"/>
+    <testcase name="Wait for animation" time="1.968"/>
+    <testcase name="Swipe UP" time="1.422"/>
+    <testcase name="Wait for animation" time="0.992"/>
+    <testcase name="Swipe UP" time="1.998"/>
+    <testcase name="Wait for animation" time="1.558"/>
+    <testcase name="Assert visible: &quot;Birthday&quot;" time="0.220"/>
+    <testcase name="Tap on &quot;Birthday&quot;" time="3.305"/>
+    <testcase name="Wait for animation" time="0.816"/>
+    <testcase name="Wait for animation" time="0.870"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.642"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="0.614"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.600"/>
+    <testcase name="Swipe UP" time="1.585"/>
+    <testcase name="Wait for animation" time="1.702"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="0.592"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.705"/>
+    <testcase name="Swipe DOWN" time="1.160"/>
+    <testcase name="Wait for animation" time="0.826"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.559"/>
+    <testcase name="tapOnPointV2" time="0.400"/>
+    <testcase name="Wait for animation" time="2.906"/>
+    <testcase name="Wait for animation" time="1.648"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.644"/>
+    <testcase name="Press key: BACK" time="1.451"/>
+    <testcase name="Wait for animation" time="3.706"/>
+    <testcase name="tapOnPointV2" time="10.918"/>
+    <testcase name="Wait for animation" time="15.409"/>
+    <testcase name="Wait for animation" time="13.596"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="1.274"/>
+    <testcase name="Press key: BACK" time="1.224"/>
+    <testcase name="Wait for animation" time="2.188"/>
+    <testcase name="Press key: BACK" time="0.811"/>
+    <testcase name="Wait for animation" time="1.866"/>
+    <testcase name="Swipe DOWN" time="5.462"/>
+    <testcase name="Wait for animation" time="1.716"/>
+    <testcase name="Assert visible: &quot;View all&quot;" time="0.433"/>
+    <testcase name="tapOnPointV2" time="1.835"/>
+    <testcase name="Wait for animation" time="1.316"/>
+    <testcase name="Wait for animation" time="2.458"/>
+    <testcase name="Swipe UP" time="1.660"/>
+    <testcase name="Wait for animation" time="1.441"/>
+    <testcase name="Swipe UP" time="1.648"/>
+    <testcase name="Wait for animation" time="1.643"/>
+    <testcase name="Swipe UP" time="1.517"/>
+    <testcase name="Wait for animation" time="1.538"/>
+    <testcase name="Swipe UP" time="1.766"/>
+    <testcase name="Wait for animation" time="1.950"/>
+    <testcase name="Swipe UP" time="1.702"/>
+    <testcase name="Wait for animation" time="1.654"/>
+    <testcase name="Assert visible: &quot;Birthday&quot;" time="0.271"/>
+    <testcase name="Tap on &quot;Birthday&quot;" time="3.049"/>
+    <testcase name="Wait for animation" time="0.866"/>
+    <testcase name="Wait for animation" time="0.824"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.629"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.649"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="0.603"/>
+    <testcase name="Swipe UP" time="1.683"/>
+    <testcase name="Wait for animation" time="0.973"/>
+    <testcase name="Swipe DOWN" time="1.102"/>
+    <testcase name="Wait for animation" time="1.439"/>
+    <testcase name="Press key: BACK" time="1.391"/>
+    <testcase name="Wait for animation" time="1.609"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.817"/>
+  </testsuite>
+  <testsuite name="android_biz_module" tests="110" failures="0" time="379.682">
+    <testcase name="Set up test variables" time="0.001"/>
+    <testcase name="Apply flow configuration" time="0.001"/>
+    <testcase name="stopApp" time="0.797"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="2.844"/>
+    <testcase name="Wait for animation" time="4.708"/>
+    <testcase name="Tap on &quot;View all&quot;" time="11.742"/>
+    <testcase name="Wait for animation" time="2.532"/>
+    <testcase name="Assert visible: &quot;Switch to Module&quot;" time="0.369"/>
+    <testcase name="Tap on &quot;Biz&quot;" time="5.265"/>
+    <testcase name="Wait for animation" time="1.035"/>
+    <testcase name="Wait for animation" time="0.738"/>
+    <testcase name="Wait for animation" time="0.764"/>
+    <testcase name="Swipe UP" time="0.707"/>
+    <testcase name="Wait for animation" time="0.923"/>
+    <testcase name="Swipe UP" time="0.655"/>
+    <testcase name="Wait for animation" time="0.803"/>
+    <testcase name="Swipe DOWN" time="0.660"/>
+    <testcase name="Wait for animation" time="0.670"/>
+    <testcase name="Swipe DOWN" time="0.653"/>
+    <testcase name="Wait for animation" time="0.769"/>
+    <testcase name="tapOnPointV2" time="0.445"/>
+    <testcase name="Wait for animation" time="0.731"/>
+    <testcase name="Press key: BACK" time="9.595"/>
+    <testcase name="Wait for animation" time="3.251"/>
+    <testcase name="tapOnPointV2" time="17.032"/>
+    <testcase name="Wait for animation" time="28.695"/>
+    <testcase name="Press key: BACK" time="1.721"/>
+    <testcase name="Wait for animation" time="1.614"/>
+    <testcase name="tapOnPointV2" time="0.565"/>
+    <testcase name="Wait for animation" time="2.562"/>
+    <testcase name="Press key: BACK" time="0.880"/>
+    <testcase name="Wait for animation" time="1.834"/>
+    <testcase name="tapOnPointV2" time="0.837"/>
+    <testcase name="Wait for animation" time="1.629"/>
+    <testcase name="tapOnPointV2" time="1.306"/>
+    <testcase name="Wait for animation" time="1.999"/>
+    <testcase name="tapOnPointV2" time="3.155"/>
+    <testcase name="Wait for animation" time="1.034"/>
+    <testcase name="tapOnPointV2" time="0.532"/>
+    <testcase name="Wait for animation" time="0.876"/>
+    <testcase name="tapOnPointV2" time="0.500"/>
+    <testcase name="Wait for animation" time="0.736"/>
+    <testcase name="Press key: BACK" time="7.050"/>
+    <testcase name="Wait for animation" time="2.258"/>
+    <testcase name="tapOnPointV2" time="10.775"/>
+    <testcase name="Wait for animation" time="20.598"/>
+    <testcase name="Press key: BACK" time="2.520"/>
+    <testcase name="Wait for animation" time="4.393"/>
+    <testcase name="Swipe UP" time="3.446"/>
+    <testcase name="Wait for animation" time="19.682"/>
+    <testcase name="Swipe UP" time="2.611"/>
+    <testcase name="Wait for animation" time="16.292"/>
+    <testcase name="Swipe DOWN" time="2.791"/>
+    <testcase name="Wait for animation" time="1.414"/>
+    <testcase name="Swipe DOWN" time="1.679"/>
+    <testcase name="Wait for animation" time="3.476"/>
+    <testcase name="tapOnPointV2" time="1.568"/>
+    <testcase name="Wait for animation" time="0.844"/>
+    <testcase name="Press key: BACK" time="1.285"/>
+    <testcase name="Wait for animation" time="1.226"/>
+    <testcase name="tapOnPointV2" time="2.798"/>
+    <testcase name="Wait for animation" time="1.250"/>
+    <testcase name="Press key: BACK" time="9.261"/>
+    <testcase name="Wait for animation" time="2.287"/>
+    <testcase name="tapOnPointV2" time="12.367"/>
+    <testcase name="Wait for animation" time="18.953"/>
+    <testcase name="Press key: BACK" time="1.716"/>
+    <testcase name="Wait for animation" time="1.828"/>
+    <testcase name="Swipe LEFT" time="2.376"/>
+    <testcase name="Wait for animation" time="2.375"/>
+    <testcase name="Swipe RIGHT" time="1.835"/>
+    <testcase name="Wait for animation" time="2.519"/>
+    <testcase name="tapOnPointV2" time="1.411"/>
+    <testcase name="Wait for animation" time="2.041"/>
+    <testcase name="Input text: &quot;Biz module create post test&quot;" time="4.702"/>
+    <testcase name="Wait for animation" time="2.070"/>
+    <testcase name="runFlow" time="0.000"/>
+    <testcase name="runFlow" time="0.000"/>
+    <testcase name="runFlow" time="0.000"/>
+    <testcase name="Wait for animation" time="2.889"/>
+    <testcase name="Wait for animation" time="2.066"/>
+    <testcase name="tapOnPointV2" time="1.926"/>
+    <testcase name="Wait for animation" time="2.958"/>
+    <testcase name="Wait for animation" time="3.292"/>
+    <testcase name="Tap on &quot;View all&quot;" time="3.329"/>
+    <testcase name="Wait for animation" time="2.226"/>
+    <testcase name="Tap on &quot;Biz&quot;" time="6.031"/>
+    <testcase name="Wait for animation" time="1.330"/>
+    <testcase name="Wait for animation" time="0.838"/>
+    <testcase name="tapOnPointV2" time="0.435"/>
+    <testcase name="Wait for animation" time="0.840"/>
+    <testcase name="runFlow" time="0.000"/>
+    <testcase name="runFlow" time="0.000"/>
+    <testcase name="runFlow" time="0.000"/>
+    <testcase name="runFlow" time="0.000"/>
+    <testcase name="Press key: BACK" time="8.436"/>
+    <testcase name="Wait for animation" time="3.092"/>
+    <testcase name="Swipe UP" time="3.477"/>
+    <testcase name="Wait for animation" time="18.452"/>
+    <testcase name="Swipe DOWN" time="1.982"/>
+    <testcase name="Wait for animation" time="1.347"/>
+    <testcase name="tapOnPointV2" time="2.189"/>
+    <testcase name="Wait for animation" time="0.920"/>
+    <testcase name="Press key: BACK" time="7.058"/>
+    <testcase name="Wait for animation" time="2.165"/>
+    <testcase name="Tap on &quot;View all&quot;" time="2.787"/>
+    <testcase name="Wait for animation" time="3.185"/>
+    <testcase name="Assert visible: &quot;Switch to Module&quot;" time="0.435"/>
+    <testcase name="Press key: BACK" time="0.983"/>
+    <testcase name="Wait for animation" time="3.152"/>
+  </testsuite>
+  <testsuite name="android_blogs" tests="69" failures="0" time="157.018">
+    <testcase name="Set up test variables" time="0.001"/>
+    <testcase name="Apply flow configuration" time="0.000"/>
+    <testcase name="stopApp" time="0.221"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="2.853"/>
+    <testcase name="Wait for animation" time="13.153"/>
+    <testcase name="Wait for animation" time="2.709"/>
+    <testcase name="tapOnPointV2" time="2.003"/>
+    <testcase name="Wait for animation" time="1.939"/>
+    <testcase name="Wait for animation" time="1.748"/>
+    <testcase name="Swipe UP" time="1.987"/>
+    <testcase name="Wait for animation" time="1.529"/>
+    <testcase name="Swipe UP" time="1.848"/>
+    <testcase name="Wait for animation" time="1.360"/>
+    <testcase name="Swipe UP" time="1.796"/>
+    <testcase name="Wait for animation" time="1.730"/>
+    <testcase name="Assert visible: &quot;Blogs&quot;" time="0.325"/>
+    <testcase name="Tap on &quot;Blogs&quot;" time="3.598"/>
+    <testcase name="Wait for animation" time="1.433"/>
+    <testcase name="Wait for animation" time="0.926"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.589"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="0.554"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.566"/>
+    <testcase name="Swipe UP" time="1.472"/>
+    <testcase name="Wait for animation" time="1.102"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="0.694"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.561"/>
+    <testcase name="Swipe DOWN" time="1.097"/>
+    <testcase name="Wait for animation" time="1.006"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.640"/>
+    <testcase name="tapOnPointV2" time="0.396"/>
+    <testcase name="Wait for animation" time="1.223"/>
+    <testcase name="Wait for animation" time="1.585"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.630"/>
+    <testcase name="Press key: BACK" time="1.368"/>
+    <testcase name="Wait for animation" time="1.847"/>
+    <testcase name="tapOnPointV2" time="10.284"/>
+    <testcase name="Wait for animation" time="22.076"/>
+    <testcase name="Wait for animation" time="8.556"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="1.772"/>
+    <testcase name="Press key: BACK" time="2.126"/>
+    <testcase name="Wait for animation" time="2.193"/>
+    <testcase name="Press key: BACK" time="1.116"/>
+    <testcase name="Wait for animation" time="3.472"/>
+    <testcase name="Swipe DOWN" time="1.776"/>
+    <testcase name="Wait for animation" time="7.678"/>
+    <testcase name="Assert visible: &quot;View all&quot;" time="0.201"/>
+    <testcase name="tapOnPointV2" time="1.979"/>
+    <testcase name="Wait for animation" time="2.354"/>
+    <testcase name="Wait for animation" time="2.223"/>
+    <testcase name="Swipe UP" time="1.519"/>
+    <testcase name="Wait for animation" time="1.192"/>
+    <testcase name="Swipe UP" time="2.035"/>
+    <testcase name="Wait for animation" time="2.290"/>
+    <testcase name="Swipe UP" time="1.441"/>
+    <testcase name="Wait for animation" time="2.497"/>
+    <testcase name="Assert visible: &quot;Blogs&quot;" time="0.337"/>
+    <testcase name="Tap on &quot;Blogs&quot;" time="3.621"/>
+    <testcase name="Wait for animation" time="2.111"/>
+    <testcase name="Wait for animation" time="1.432"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.659"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.627"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="0.632"/>
+    <testcase name="Swipe UP" time="1.691"/>
+    <testcase name="Wait for animation" time="1.777"/>
+    <testcase name="Swipe DOWN" time="1.250"/>
+    <testcase name="Wait for animation" time="1.876"/>
+    <testcase name="Press key: BACK" time="2.202"/>
+    <testcase name="Wait for animation" time="2.470"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="1.064"/>
+  </testsuite>
+  <testsuite name="android_business_suite" tests="61" failures="0" time="150.611">
+    <testcase name="Set up test variables" time="0.001"/>
+    <testcase name="Apply flow configuration" time="0.000"/>
+    <testcase name="stopApp" time="0.447"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="2.566"/>
+    <testcase name="Wait for animation" time="13.440"/>
+    <testcase name="Wait for animation" time="5.255"/>
+    <testcase name="tapOnPointV2" time="3.845"/>
+    <testcase name="Wait for animation" time="3.544"/>
+    <testcase name="Wait for animation" time="2.097"/>
+    <testcase name="Swipe" time="1.881"/>
+    <testcase name="Wait for animation" time="1.773"/>
+    <testcase name="Assert visible: &quot;Business Suite&quot;" time="0.821"/>
+    <testcase name="Tap on &quot;Business Suite&quot;" time="2.747"/>
+    <testcase name="Wait for animation" time="1.086"/>
+    <testcase name="Wait for animation" time="0.960"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.634"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="1.070"/>
+    <testcase name="Assert visible: &quot;Business Suite&quot;" time="0.145"/>
+    <testcase name="Swipe UP" time="1.755"/>
+    <testcase name="Wait for animation" time="2.179"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="0.776"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.627"/>
+    <testcase name="Swipe DOWN" time="1.654"/>
+    <testcase name="Wait for animation" time="1.149"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.722"/>
+    <testcase name="tapOnPointV2" time="0.475"/>
+    <testcase name="Wait for animation" time="1.068"/>
+    <testcase name="Wait for animation" time="1.031"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.933"/>
+    <testcase name="Press key: BACK" time="1.681"/>
+    <testcase name="Wait for animation" time="1.998"/>
+    <testcase name="tapOnPointV2" time="9.289"/>
+    <testcase name="Wait for animation" time="17.912"/>
+    <testcase name="Wait for animation" time="20.203"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="1.721"/>
+    <testcase name="Press key: BACK" time="1.679"/>
+    <testcase name="Wait for animation" time="1.862"/>
+    <testcase name="Press key: BACK" time="0.861"/>
+    <testcase name="Wait for animation" time="1.810"/>
+    <testcase name="Swipe DOWN" time="3.878"/>
+    <testcase name="Wait for animation" time="4.661"/>
+    <testcase name="Assert visible: &quot;View all&quot;" time="0.204"/>
+    <testcase name="tapOnPointV2" time="2.309"/>
+    <testcase name="Wait for animation" time="2.629"/>
+    <testcase name="Wait for animation" time="1.761"/>
+    <testcase name="Swipe" time="2.158"/>
+    <testcase name="Wait for animation" time="2.323"/>
+    <testcase name="Assert visible: &quot;Business Suite&quot;" time="0.182"/>
+    <testcase name="Tap on &quot;Business Suite&quot;" time="3.335"/>
+    <testcase name="Wait for animation" time="1.352"/>
+    <testcase name="Wait for animation" time="0.989"/>
+    <testcase name="Assert visible: &quot;Business Suite&quot;" time="0.091"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.579"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="0.624"/>
+    <testcase name="Swipe UP" time="1.579"/>
+    <testcase name="Wait for animation" time="1.563"/>
+    <testcase name="Swipe DOWN" time="1.205"/>
+    <testcase name="Wait for animation" time="0.919"/>
+    <testcase name="Press key: BACK" time="1.555"/>
+    <testcase name="Wait for animation" time="2.198"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.820"/>
+  </testsuite>
+  <testsuite name="android_chat_messages" tests="51" failures="0" time="104.103">
+    <testcase name="Set up test variables" time="0.000"/>
+    <testcase name="Apply flow configuration" time="0.000"/>
+    <testcase name="stopApp" time="0.310"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="4.405"/>
+    <testcase name="Wait for animation" time="16.081"/>
+    <testcase name="Assert visible: &quot;Explore OMRE Modules&quot;" time="2.155"/>
+    <testcase name="tapOnPointV2" time="5.009"/>
+    <testcase name="Wait for animation" time="2.652"/>
+    <testcase name="Tap on &quot;Messages&quot;" time="5.409"/>
+    <testcase name="Wait for animation" time="1.827"/>
+    <testcase name="Assert visible: &quot;Messages&quot;" time="0.325"/>
+    <testcase name="Assert visible: &quot;Social&quot;" time="0.251"/>
+    <testcase name="Assert visible: &quot;Orbit&quot;" time="0.264"/>
+    <testcase name="Assert visible: &quot;Business&quot;" time="0.517"/>
+    <testcase name="Assert visible: &quot;Jobs&quot;" time="0.279"/>
+    <testcase name="Tap on &quot;Orbit&quot;" time="3.252"/>
+    <testcase name="Wait for animation" time="1.330"/>
+    <testcase name="Assert visible: &quot;Orbit&quot;" time="0.073"/>
+    <testcase name="Tap on &quot;Business&quot;" time="3.545"/>
+    <testcase name="Wait for animation" time="2.108"/>
+    <testcase name="Assert visible: &quot;Business&quot;" time="0.277"/>
+    <testcase name="Tap on &quot;Jobs&quot;" time="3.835"/>
+    <testcase name="Wait for animation" time="1.882"/>
+    <testcase name="Assert visible: &quot;Jobs&quot;" time="0.247"/>
+    <testcase name="Tap on &quot;Social&quot;" time="4.413"/>
+    <testcase name="Wait for animation" time="2.013"/>
+    <testcase name="Assert visible: &quot;Social&quot;" time="0.180"/>
+    <testcase name="Swipe UP" time="1.250"/>
+    <testcase name="Wait for animation" time="1.170"/>
+    <testcase name="Swipe DOWN" time="1.225"/>
+    <testcase name="Wait for animation" time="2.183"/>
+    <testcase name="Assert visible: &quot;Messages&quot;" time="0.238"/>
+    <testcase name="Assert visible: &quot;No messages found&quot;" time="0.172"/>
+    <testcase name="tapOnPointV2" time="2.077"/>
+    <testcase name="Wait for animation" time="1.984"/>
+    <testcase name="Press key: BACK" time="1.371"/>
+    <testcase name="Wait for animation" time="7.594"/>
+    <testcase name="Assert visible: &quot;Messages&quot;" time="0.079"/>
+    <testcase name="Press key: BACK" time="2.341"/>
+    <testcase name="Wait for animation" time="2.966"/>
+    <testcase name="Assert visible: &quot;Explore OMRE Modules&quot;" time="0.860"/>
+    <testcase name="tapOnPointV2" time="2.530"/>
+    <testcase name="Wait for animation" time="2.653"/>
+    <testcase name="Tap on &quot;Messages&quot;" time="4.506"/>
+    <testcase name="Wait for animation" time="2.359"/>
+    <testcase name="Assert visible: &quot;Messages&quot;" time="0.255"/>
+    <testcase name="Assert visible: &quot;Social&quot;" time="0.123"/>
+    <testcase name="Assert visible: &quot;Orbit&quot;" time="0.280"/>
+    <testcase name="Press key: BACK" time="1.579"/>
+    <testcase name="Wait for animation" time="1.577"/>
+    <testcase name="Assert visible: &quot;Explore OMRE Modules&quot;" time="0.092"/>
+  </testsuite>
+  <testsuite name="android_create_post" tests="65" failures="0" time="318.270">
+    <testcase name="Set up test variables" time="0.000"/>
+    <testcase name="Apply flow configuration" time="0.000"/>
+    <testcase name="stopApp" time="0.690"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="3.785"/>
+    <testcase name="Wait for animation" time="6.457"/>
+    <testcase name="Assert visible: &quot;Explore OMRE Modules&quot;" time="4.554"/>
+    <testcase name="Assert visible: &quot;Post&quot;" time="1.886"/>
+    <testcase name="Assert visible: &quot;Social&quot;" time="2.462"/>
+    <testcase name="Assert visible: &quot;Refresh feed&quot;" time="1.154"/>
+    <testcase name="Assert visible: &quot;Create Story&quot;" time="0.873"/>
+    <testcase name="Assert visible: &quot;For You
+Tab 2 of 2&quot;" time="1.688"/>
+    <testcase name="Assert visible: &quot;Following
+Tab 1 of 2&quot;" time="1.348"/>
+    <testcase name="Tap on &quot;Following
+Tab 1 of 2&quot;" time="6.398"/>
+    <testcase name="Wait for animation" time="1.737"/>
+    <testcase name="Assert visible: &quot;Following
+Tab 1 of 2&quot;" time="0.092"/>
+    <testcase name="Tap on &quot;For You
+Tab 2 of 2&quot;" time="3.356"/>
+    <testcase name="Wait for animation" time="3.395"/>
+    <testcase name="Assert visible: &quot;For You
+Tab 2 of 2&quot;" time="0.530"/>
+    <testcase name="tapOnPointV2" time="8.779"/>
+    <testcase name="Wait for animation" time="5.940"/>
+    <testcase name="Input text: &quot;Test post from Maestro&quot;" time="17.992"/>
+    <testcase name="Assert visible: &quot;Test post from Maestro&quot;" time="1.658"/>
+    <testcase name="Press key: BACK" time="2.915"/>
+    <testcase name="Wait for animation" time="16.259"/>
+    <testcase name="Assert visible: &quot;Post&quot;" time="0.470"/>
+    <testcase name="tapOnPointV2" time="1.939"/>
+    <testcase name="Wait for animation" time="20.129"/>
+    <testcase name="Erase 30 characters" time="7.959"/>
+    <testcase name="Press key: BACK" time="0.617"/>
+    <testcase name="Wait for animation" time="19.018"/>
+    <testcase name="Assert visible: &quot;Post&quot;" time="1.031"/>
+    <testcase name="Tap on &quot;Post&quot;" time="13.877"/>
+    <testcase name="Wait for animation" time="17.802"/>
+    <testcase name="Assert visible: &quot;Post&quot;" time="1.392"/>
+    <testcase name="Tap on &quot;Social&quot;" time="3.272"/>
+    <testcase name="Wait for animation" time="4.071"/>
+    <testcase name="Assert visible: &quot;Social&quot;" time="0.691"/>
+    <testcase name="Assert visible: &quot;Biz&quot;" time="0.672"/>
+    <testcase name="Assert visible: &quot;Chat&quot;" time="0.344"/>
+    <testcase name="Press key: BACK" time="1.134"/>
+    <testcase name="Wait for animation" time="12.015"/>
+    <testcase name="Assert visible: &quot;Post&quot;" time="0.484"/>
+    <testcase name="Assert visible: &quot;Social&quot;" time="0.448"/>
+    <testcase name="Swipe DOWN" time="2.553"/>
+    <testcase name="Wait for animation" time="1.681"/>
+    <testcase name="Assert visible: &quot;Post&quot;" time="0.086"/>
+    <testcase name="tapOnPointV2" time="2.763"/>
+    <testcase name="Wait for animation" time="1.419"/>
+    <testcase name="Input text: &quot;Maestro automated test post&quot;" time="7.819"/>
+    <testcase name="Assert visible: &quot;Maestro automated test post&quot;" time="0.174"/>
+    <testcase name="Press key: BACK" time="1.997"/>
+    <testcase name="Wait for animation" time="16.111"/>
+    <testcase name="Tap on &quot;Post&quot;" time="4.983"/>
+    <testcase name="Wait for animation" time="16.845"/>
+    <testcase name="Assert visible: &quot;Post&quot;" time="0.505"/>
+    <testcase name="Assert visible: &quot;Social&quot;" time="0.635"/>
+    <testcase name="Swipe UP" time="4.013"/>
+    <testcase name="Wait for animation" time="16.658"/>
+    <testcase name="Swipe DOWN" time="1.882"/>
+    <testcase name="Wait for animation" time="15.230"/>
+    <testcase name="Tap on &quot;Create Story&quot;" time="2.191"/>
+    <testcase name="Wait for animation" time="0.982"/>
+    <testcase name="Press key: BACK" time="2.323"/>
+    <testcase name="Wait for animation" time="15.900"/>
+    <testcase name="Assert visible: &quot;Post&quot;" time="0.207"/>
+  </testsuite>
+  <testsuite name="android_digital_citizenship" tests="59" failures="0" time="139.227">
+    <testcase name="Set up test variables" time="0.000"/>
+    <testcase name="Apply flow configuration" time="0.000"/>
+    <testcase name="stopApp" time="0.507"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="2.683"/>
+    <testcase name="Wait for animation" time="9.946"/>
+    <testcase name="Wait for animation" time="1.805"/>
+    <testcase name="tapOnPointV2" time="3.617"/>
+    <testcase name="Wait for animation" time="2.349"/>
+    <testcase name="Wait for animation" time="1.931"/>
+    <testcase name="scrollUntilVisible" time="6.985"/>
+    <testcase name="Assert visible: &quot;Digital Citizen&quot;" time="0.122"/>
+    <testcase name="Tap on &quot;Digital Citizen&quot;" time="3.239"/>
+    <testcase name="Wait for animation" time="1.114"/>
+    <testcase name="Wait for animation" time="1.023"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.626"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="0.558"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="1.074"/>
+    <testcase name="Swipe UP" time="1.625"/>
+    <testcase name="Wait for animation" time="0.988"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="0.628"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.602"/>
+    <testcase name="Swipe DOWN" time="1.138"/>
+    <testcase name="Wait for animation" time="0.951"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.564"/>
+    <testcase name="tapOnPointV2" time="0.947"/>
+    <testcase name="Wait for animation" time="1.452"/>
+    <testcase name="Wait for animation" time="0.998"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.633"/>
+    <testcase name="Press key: BACK" time="1.413"/>
+    <testcase name="Wait for animation" time="2.183"/>
+    <testcase name="tapOnPointV2" time="9.828"/>
+    <testcase name="Wait for animation" time="15.910"/>
+    <testcase name="Wait for animation" time="19.455"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="1.881"/>
+    <testcase name="Press key: BACK" time="1.712"/>
+    <testcase name="Wait for animation" time="2.438"/>
+    <testcase name="Press key: BACK" time="0.725"/>
+    <testcase name="Wait for animation" time="1.714"/>
+    <testcase name="Swipe DOWN" time="1.769"/>
+    <testcase name="Wait for animation" time="7.469"/>
+    <testcase name="Assert visible: &quot;View all&quot;" time="0.223"/>
+    <testcase name="tapOnPointV2" time="2.139"/>
+    <testcase name="Wait for animation" time="2.253"/>
+    <testcase name="Wait for animation" time="2.174"/>
+    <testcase name="scrollUntilVisible" time="0.188"/>
+    <testcase name="Assert visible: &quot;Digital Citizen&quot;" time="0.185"/>
+    <testcase name="Tap on &quot;Digital Citizen&quot;" time="2.913"/>
+    <testcase name="Wait for animation" time="1.116"/>
+    <testcase name="Wait for animation" time="1.105"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.560"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.877"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="0.791"/>
+    <testcase name="Swipe UP" time="1.323"/>
+    <testcase name="Wait for animation" time="1.046"/>
+    <testcase name="Swipe DOWN" time="1.051"/>
+    <testcase name="Wait for animation" time="0.983"/>
+    <testcase name="Press key: BACK" time="2.203"/>
+    <testcase name="Wait for animation" time="2.702"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.793"/>
+  </testsuite>
+  <testsuite name="android_explore" tests="40" failures="0" time="126.042">
+    <testcase name="Set up test variables" time="0.000"/>
+    <testcase name="Apply flow configuration" time="0.000"/>
+    <testcase name="stopApp" time="0.656"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="3.079"/>
+    <testcase name="Wait for animation" time="15.239"/>
+    <testcase name="Assert visible: &quot;Explore OMRE Modules&quot;" time="2.191"/>
+    <testcase name="tapOnPointV2" time="6.142"/>
+    <testcase name="Wait for animation" time="3.336"/>
+    <testcase name="Assert visible: &quot;Home&quot;" time="0.567"/>
+    <testcase name="Assert visible: &quot;Explore&quot;" time="1.489"/>
+    <testcase name="Tap on &quot;Explore&quot;" time="3.902"/>
+    <testcase name="Wait for animation" time="6.656"/>
+    <testcase name="Assert visible: &quot;Explore&quot;" time="0.121"/>
+    <testcase name="tapOnPointV2" time="7.556"/>
+    <testcase name="Wait for animation" time="4.205"/>
+    <testcase name="Input text: &quot;music&quot;" time="7.778"/>
+    <testcase name="Wait for animation" time="2.190"/>
+    <testcase name="Wait for animation" time="2.696"/>
+    <testcase name="Press key: BACK" time="1.777"/>
+    <testcase name="Wait for animation" time="3.798"/>
+    <testcase name="Assert visible: &quot;Explore&quot;" time="1.003"/>
+    <testcase name="tapOnPointV2" time="2.369"/>
+    <testcase name="Wait for animation" time="7.166"/>
+    <testcase name="Input text: &quot;sports&quot;" time="8.010"/>
+    <testcase name="Wait for animation" time="2.345"/>
+    <testcase name="Press key: BACK" time="1.831"/>
+    <testcase name="Wait for animation" time="2.507"/>
+    <testcase name="Swipe UP" time="1.968"/>
+    <testcase name="Wait for animation" time="1.784"/>
+    <testcase name="Swipe DOWN" time="1.366"/>
+    <testcase name="Wait for animation" time="5.243"/>
+    <testcase name="Assert visible: &quot;Explore&quot;" time="0.457"/>
+    <testcase name="Swipe DOWN" time="0.737"/>
+    <testcase name="Wait for animation" time="4.621"/>
+    <testcase name="Assert visible: &quot;Explore&quot;" time="0.178"/>
+    <testcase name="tapOnPointV2" time="1.761"/>
+    <testcase name="Wait for animation" time="1.846"/>
+    <testcase name="Tap on &quot;Explore&quot;" time="2.870"/>
+    <testcase name="Wait for animation" time="3.983"/>
+    <testcase name="Assert visible: &quot;Explore&quot;" time="0.619"/>
+  </testsuite>
+  <testsuite name="android_friends" tests="73" failures="0" time="163.896">
+    <testcase name="Set up test variables" time="0.000"/>
+    <testcase name="Apply flow configuration" time="0.000"/>
+    <testcase name="stopApp" time="0.533"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="2.849"/>
+    <testcase name="Wait for animation" time="12.557"/>
+    <testcase name="Wait for animation" time="3.264"/>
+    <testcase name="tapOnPointV2" time="1.973"/>
+    <testcase name="Wait for animation" time="2.055"/>
+    <testcase name="Wait for animation" time="3.131"/>
+    <testcase name="Swipe UP" time="2.013"/>
+    <testcase name="Wait for animation" time="2.762"/>
+    <testcase name="Swipe UP" time="1.733"/>
+    <testcase name="Wait for animation" time="1.791"/>
+    <testcase name="Swipe UP" time="2.076"/>
+    <testcase name="Wait for animation" time="2.187"/>
+    <testcase name="Swipe UP" time="1.446"/>
+    <testcase name="Wait for animation" time="1.635"/>
+    <testcase name="Swipe UP" time="2.046"/>
+    <testcase name="Wait for animation" time="1.818"/>
+    <testcase name="Assert visible: &quot;Friends&quot;" time="0.191"/>
+    <testcase name="Tap on &quot;Friends&quot;" time="2.932"/>
+    <testcase name="Wait for animation" time="3.844"/>
+    <testcase name="Wait for animation" time="1.076"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="1.090"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="0.819"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.688"/>
+    <testcase name="Swipe UP" time="1.779"/>
+    <testcase name="Wait for animation" time="1.318"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="0.753"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.600"/>
+    <testcase name="Swipe DOWN" time="1.530"/>
+    <testcase name="Wait for animation" time="1.405"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.672"/>
+    <testcase name="tapOnPointV2" time="0.410"/>
+    <testcase name="Wait for animation" time="1.076"/>
+    <testcase name="Wait for animation" time="1.091"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.602"/>
+    <testcase name="Press key: BACK" time="2.579"/>
+    <testcase name="Wait for animation" time="1.911"/>
+    <testcase name="tapOnPointV2" time="9.339"/>
+    <testcase name="Wait for animation" time="20.060"/>
+    <testcase name="Wait for animation" time="9.792"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="1.522"/>
+    <testcase name="Press key: BACK" time="1.780"/>
+    <testcase name="Wait for animation" time="1.902"/>
+    <testcase name="Press key: BACK" time="1.003"/>
+    <testcase name="Wait for animation" time="2.016"/>
+    <testcase name="Swipe DOWN" time="1.725"/>
+    <testcase name="Wait for animation" time="5.124"/>
+    <testcase name="Assert visible: &quot;View all&quot;" time="0.240"/>
+    <testcase name="tapOnPointV2" time="1.917"/>
+    <testcase name="Wait for animation" time="1.759"/>
+    <testcase name="Wait for animation" time="2.806"/>
+    <testcase name="Swipe UP" time="1.500"/>
+    <testcase name="Wait for animation" time="2.275"/>
+    <testcase name="Swipe UP" time="2.045"/>
+    <testcase name="Wait for animation" time="2.128"/>
+    <testcase name="Swipe UP" time="2.037"/>
+    <testcase name="Wait for animation" time="2.443"/>
+    <testcase name="Assert visible: &quot;Friends&quot;" time="0.206"/>
+    <testcase name="Tap on &quot;Friends&quot;" time="3.406"/>
+    <testcase name="Wait for animation" time="1.651"/>
+    <testcase name="Wait for animation" time="1.123"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.625"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.598"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="0.685"/>
+    <testcase name="Swipe UP" time="1.435"/>
+    <testcase name="Wait for animation" time="1.632"/>
+    <testcase name="Swipe DOWN" time="0.671"/>
+    <testcase name="Wait for animation" time="1.114"/>
+    <testcase name="Press key: BACK" time="1.902"/>
+    <testcase name="Wait for animation" time="2.462"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.738"/>
+  </testsuite>
+  <testsuite name="android_gameverse_home" tests="63" failures="0" time="97.707">
+    <testcase name="Set up test variables" time="0.000"/>
+    <testcase name="Apply flow configuration" time="0.000"/>
+    <testcase name="stopApp" time="0.293"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="2.802"/>
+    <testcase name="Wait for animation" time="11.846"/>
+    <testcase name="Wait for animation" time="2.902"/>
+    <testcase name="Assert visible: &quot;View all&quot;" time="1.114"/>
+    <testcase name="Tap on &quot;View all&quot;" time="3.933"/>
+    <testcase name="Wait for animation" time="3.688"/>
+    <testcase name="Assert visible: &quot;Switch to Module&quot;" time="0.241"/>
+    <testcase name="Assert visible: &quot;Games&quot;" time="0.204"/>
+    <testcase name="Tap on &quot;Games&quot;" time="3.966"/>
+    <testcase name="Wait for animation" time="1.416"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="1.066"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="0.701"/>
+    <testcase name="Assert visible: &quot;Games&quot;" time="0.110"/>
+    <testcase name="Assert visible: &quot;Play Games&quot;" time="0.118"/>
+    <testcase name="Assert visible: &quot;Tournaments&quot;" time="0.095"/>
+    <testcase name="Tap on &quot;Play Games&quot;" time="2.219"/>
+    <testcase name="Wait for animation" time="1.342"/>
+    <testcase name="Assert visible: &quot;Games&quot;" time="0.137"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.768"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="0.734"/>
+    <testcase name="Assert visible: &quot;Tournaments&quot;" time="0.175"/>
+    <testcase name="Tap on &quot;Tournaments&quot;" time="2.756"/>
+    <testcase name="Wait for animation" time="0.768"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.643"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.665"/>
+    <testcase name="Press key: BACK" time="1.067"/>
+    <testcase name="Wait for animation" time="0.794"/>
+    <testcase name="Swipe UP" time="1.613"/>
+    <testcase name="Wait for animation" time="0.894"/>
+    <testcase name="Swipe DOWN" time="1.197"/>
+    <testcase name="Wait for animation" time="0.781"/>
+    <testcase name="Assert visible: &quot;Games&quot;" time="0.116"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.631"/>
+    <testcase name="Swipe DOWN" time="1.195"/>
+    <testcase name="Wait for animation" time="0.814"/>
+    <testcase name="Assert visible: &quot;Games&quot;" time="0.086"/>
+    <testcase name="Assert visible: &quot;LFG / Squad Finder&quot;" time="0.084"/>
+    <testcase name="Tap on &quot;LFG / Squad Finder&quot;" time="2.310"/>
+    <testcase name="Wait for animation" time="2.079"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.642"/>
+    <testcase name="Press key: BACK" time="0.987"/>
+    <testcase name="Wait for animation" time="0.757"/>
+    <testcase name="Assert visible: &quot;Games&quot;" time="0.092"/>
+    <testcase name="tapOnPointV2" time="0.465"/>
+    <testcase name="Wait for animation" time="0.846"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.645"/>
+    <testcase name="Press key: BACK" time="8.067"/>
+    <testcase name="Wait for animation" time="1.808"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="0.781"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.962"/>
+    <testcase name="Tap on &quot;View all&quot;" time="3.310"/>
+    <testcase name="Wait for animation" time="2.345"/>
+    <testcase name="Assert visible: &quot;Switch to Module&quot;" time="0.443"/>
+    <testcase name="Tap on &quot;Games&quot;" time="3.725"/>
+    <testcase name="Wait for animation" time="1.442"/>
+    <testcase name="Assert visible: &quot;Games&quot;" time="0.262"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.811"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="0.744"/>
+    <testcase name="Press key: BACK" time="8.089"/>
+    <testcase name="Wait for animation" time="2.121"/>
+  </testsuite>
+  <testsuite name="android_images" tests="118" failures="0" time="362.066">
+    <testcase name="Set up test variables" time="0.000"/>
+    <testcase name="Apply flow configuration" time="0.000"/>
+    <testcase name="stopApp" time="0.539"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="4.286"/>
+    <testcase name="Wait for animation" time="15.593"/>
+    <testcase name="tapOnPointV2" time="6.013"/>
+    <testcase name="Wait for animation" time="7.396"/>
+    <testcase name="Wait for animation" time="3.104"/>
+    <testcase name="Tap on &quot;Images&quot;" time="9.564"/>
+    <testcase name="Wait for animation" time="3.818"/>
+    <testcase name="Wait for animation" time="3.014"/>
+    <testcase name="Assert visible: &quot;Community Images&quot;" time="0.261"/>
+    <testcase name="Assert visible: &quot;Gallery&quot;" time="0.718"/>
+    <testcase name="Swipe UP" time="1.834"/>
+    <testcase name="Wait for animation" time="2.824"/>
+    <testcase name="Assert visible: &quot;Community Images&quot;" time="0.233"/>
+    <testcase name="Swipe UP" time="1.442"/>
+    <testcase name="Wait for animation" time="4.096"/>
+    <testcase name="Assert visible: &quot;Community Images&quot;" time="0.138"/>
+    <testcase name="Swipe DOWN" time="1.179"/>
+    <testcase name="Wait for animation" time="4.076"/>
+    <testcase name="Assert visible: &quot;Gallery&quot;" time="0.385"/>
+    <testcase name="tapOnPointV2" time="1.273"/>
+    <testcase name="Wait for animation" time="4.079"/>
+    <testcase name="Press key: BACK" time="1.685"/>
+    <testcase name="Wait for animation" time="7.724"/>
+    <testcase name="tapOnPointV2" time="4.202"/>
+    <testcase name="Wait for animation" time="2.979"/>
+    <testcase name="Wait for animation" time="3.320"/>
+    <testcase name="Tap on &quot;Images&quot;" time="5.402"/>
+    <testcase name="Wait for animation" time="3.729"/>
+    <testcase name="Wait for animation" time="2.029"/>
+    <testcase name="Assert visible: &quot;Community Images&quot;" time="0.096"/>
+    <testcase name="tapOnPointV2" time="1.303"/>
+    <testcase name="Wait for animation" time="4.200"/>
+    <testcase name="Press key: BACK" time="2.556"/>
+    <testcase name="Wait for animation" time="3.071"/>
+    <testcase name="tapOnPointV2" time="3.701"/>
+    <testcase name="Wait for animation" time="3.029"/>
+    <testcase name="Wait for animation" time="3.017"/>
+    <testcase name="Tap on &quot;Images&quot;" time="4.355"/>
+    <testcase name="Wait for animation" time="6.883"/>
+    <testcase name="Wait for animation" time="3.752"/>
+    <testcase name="Assert visible: &quot;Community Images&quot;" time="0.262"/>
+    <testcase name="tapOnPointV2" time="1.211"/>
+    <testcase name="Wait for animation" time="4.121"/>
+    <testcase name="Press key: BACK" time="1.096"/>
+    <testcase name="Wait for animation" time="8.886"/>
+    <testcase name="tapOnPointV2" time="5.551"/>
+    <testcase name="Wait for animation" time="1.717"/>
+    <testcase name="Wait for animation" time="3.075"/>
+    <testcase name="Tap on &quot;Images&quot;" time="5.190"/>
+    <testcase name="Wait for animation" time="3.558"/>
+    <testcase name="Wait for animation" time="3.568"/>
+    <testcase name="Assert visible: &quot;Community Images&quot;" time="0.069"/>
+    <testcase name="tapOnPointV2" time="1.571"/>
+    <testcase name="Wait for animation" time="3.296"/>
+    <testcase name="Press key: BACK" time="2.393"/>
+    <testcase name="Wait for animation" time="3.258"/>
+    <testcase name="tapOnPointV2" time="4.050"/>
+    <testcase name="Wait for animation" time="3.387"/>
+    <testcase name="Wait for animation" time="3.304"/>
+    <testcase name="Tap on &quot;Images&quot;" time="4.576"/>
+    <testcase name="Wait for animation" time="4.261"/>
+    <testcase name="Wait for animation" time="3.250"/>
+    <testcase name="Assert visible: &quot;Community Images&quot;" time="0.055"/>
+    <testcase name="tapOnPointV2" time="0.384"/>
+    <testcase name="Wait for animation" time="3.675"/>
+    <testcase name="Assert visible: &quot;Community Images&quot;" time="0.494"/>
+    <testcase name="Assert visible: &quot;Gallery&quot;" time="0.917"/>
+    <testcase name="Press key: BACK" time="1.942"/>
+    <testcase name="Wait for animation" time="2.877"/>
+    <testcase name="Assert visible: &quot;Explore OMRE Modules&quot;" time="0.741"/>
+    <testcase name="tapOnPointV2" time="2.778"/>
+    <testcase name="Wait for animation" time="3.269"/>
+    <testcase name="Input text: &quot;Sharing a community image upload test&quot;" time="13.768"/>
+    <testcase name="Wait for animation" time="3.576"/>
+    <testcase name="tapOnPointV2" time="1.860"/>
+    <testcase name="Wait for animation" time="3.692"/>
+    <testcase name="runFlow" time="0.000"/>
+    <testcase name="runFlow" time="0.000"/>
+    <testcase name="tapOnPointV2" time="3.058"/>
+    <testcase name="Wait for animation" time="2.663"/>
+    <testcase name="Wait for animation" time="4.105"/>
+    <testcase name="Tap on &quot;Post&quot;" time="5.941"/>
+    <testcase name="Wait for animation" time="3.044"/>
+    <testcase name="Wait for animation" time="3.105"/>
+    <testcase name="tapOnPointV2" time="5.222"/>
+    <testcase name="Wait for animation" time="3.307"/>
+    <testcase name="Wait for animation" time="3.419"/>
+    <testcase name="Tap on &quot;Images&quot;" time="5.305"/>
+    <testcase name="Wait for animation" time="4.309"/>
+    <testcase name="Wait for animation" time="3.521"/>
+    <testcase name="Assert visible: &quot;Community Images&quot;" time="0.263"/>
+    <testcase name="Assert visible: &quot;Gallery&quot;" time="0.111"/>
+    <testcase name="Press key: BACK" time="2.981"/>
+    <testcase name="Wait for animation" time="3.712"/>
+    <testcase name="Assert visible: &quot;Explore OMRE Modules&quot;" time="1.285"/>
+    <testcase name="tapOnPointV2" time="6.450"/>
+    <testcase name="Wait for animation" time="1.629"/>
+    <testcase name="runFlow" time="0.000"/>
+    <testcase name="runFlow" time="0.000"/>
+    <testcase name="runFlow" time="0.000"/>
+    <testcase name="Wait for animation" time="0.948"/>
+    <testcase name="runFlow" time="0.000"/>
+    <testcase name="runFlow" time="0.000"/>
+    <testcase name="runFlow" time="0.000"/>
+    <testcase name="Wait for animation" time="0.942"/>
+    <testcase name="Press key: BACK" time="17.519"/>
+    <testcase name="Wait for animation" time="2.952"/>
+    <testcase name="tapOnPointV2" time="5.007"/>
+    <testcase name="Wait for animation" time="2.386"/>
+    <testcase name="Wait for animation" time="2.279"/>
+    <testcase name="Tap on &quot;Images&quot;" time="4.726"/>
+    <testcase name="Wait for animation" time="3.980"/>
+    <testcase name="Wait for animation" time="3.076"/>
+    <testcase name="Assert visible: &quot;Community Images&quot;" time="0.155"/>
+    <testcase name="Assert visible: &quot;Gallery&quot;" time="0.090"/>
+  </testsuite>
+  <testsuite name="android_learn_home" tests="167" failures="0" time="347.243">
+    <testcase name="Set up test variables" time="0.000"/>
+    <testcase name="Apply flow configuration" time="0.000"/>
+    <testcase name="stopApp" time="0.527"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="2.719"/>
+    <testcase name="Wait for animation" time="9.735"/>
+    <testcase name="Tap on &quot;View all&quot;" time="13.741"/>
+    <testcase name="Wait for animation" time="2.655"/>
+    <testcase name="Tap on &quot;Learn&quot;" time="3.142"/>
+    <testcase name="Wait for animation" time="2.335"/>
+    <testcase name="Wait for animation" time="2.178"/>
+    <testcase name="Assert visible: &quot;Learn&quot;" time="1.121"/>
+    <testcase name="Swipe UP" time="0.994"/>
+    <testcase name="Wait for animation" time="2.393"/>
+    <testcase name="Assert visible: &quot;Learn&quot;" time="0.281"/>
+    <testcase name="Swipe UP" time="0.863"/>
+    <testcase name="Wait for animation" time="3.613"/>
+    <testcase name="Assert visible: &quot;Learn&quot;" time="0.277"/>
+    <testcase name="Swipe DOWN" time="1.187"/>
+    <testcase name="Wait for animation" time="2.605"/>
+    <testcase name="Swipe DOWN" time="1.506"/>
+    <testcase name="Wait for animation" time="2.286"/>
+    <testcase name="Assert visible: &quot;Learn&quot;" time="0.299"/>
+    <testcase name="tapOnPointV2" time="1.086"/>
+    <testcase name="Wait for animation" time="3.251"/>
+    <testcase name="Wait for animation" time="2.822"/>
+    <testcase name="Press key: BACK" time="0.693"/>
+    <testcase name="Wait for animation" time="3.042"/>
+    <testcase name="Press key: BACK" time="1.194"/>
+    <testcase name="Wait for animation" time="2.211"/>
+    <testcase name="Press key: BACK" time="0.683"/>
+    <testcase name="Wait for animation" time="2.738"/>
+    <testcase name="Swipe DOWN" time="0.915"/>
+    <testcase name="Wait for animation" time="2.363"/>
+    <testcase name="Tap on &quot;View all&quot;" time="3.101"/>
+    <testcase name="Wait for animation" time="2.306"/>
+    <testcase name="Assert visible: &quot;Switch to Module&quot;" time="0.170"/>
+    <testcase name="Tap on &quot;Learn&quot;" time="4.729"/>
+    <testcase name="Wait for animation" time="1.222"/>
+    <testcase name="Wait for animation" time="1.240"/>
+    <testcase name="Assert visible: &quot;Learn&quot;" time="0.091"/>
+    <testcase name="tapOnPointV2" time="0.608"/>
+    <testcase name="Wait for animation" time="1.065"/>
+    <testcase name="Wait for animation" time="1.026"/>
+    <testcase name="Press key: BACK" time="10.650"/>
+    <testcase name="Wait for animation" time="2.575"/>
+    <testcase name="Press key: BACK" time="0.870"/>
+    <testcase name="Wait for animation" time="3.536"/>
+    <testcase name="Press key: BACK" time="1.230"/>
+    <testcase name="Wait for animation" time="2.133"/>
+    <testcase name="Swipe DOWN" time="4.601"/>
+    <testcase name="Wait for animation" time="2.246"/>
+    <testcase name="Tap on &quot;View all&quot;" time="4.499"/>
+    <testcase name="Wait for animation" time="2.046"/>
+    <testcase name="Assert visible: &quot;Switch to Module&quot;" time="1.240"/>
+    <testcase name="Tap on &quot;Learn&quot;" time="4.308"/>
+    <testcase name="Wait for animation" time="1.645"/>
+    <testcase name="Wait for animation" time="1.163"/>
+    <testcase name="Assert visible: &quot;Learn&quot;" time="0.050"/>
+    <testcase name="tapOnPointV2" time="0.530"/>
+    <testcase name="Wait for animation" time="1.116"/>
+    <testcase name="Wait for animation" time="1.212"/>
+    <testcase name="Press key: BACK" time="9.884"/>
+    <testcase name="Wait for animation" time="2.331"/>
+    <testcase name="Press key: BACK" time="1.013"/>
+    <testcase name="Wait for animation" time="2.153"/>
+    <testcase name="Press key: BACK" time="1.747"/>
+    <testcase name="Wait for animation" time="2.293"/>
+    <testcase name="Swipe DOWN" time="5.068"/>
+    <testcase name="Wait for animation" time="2.505"/>
+    <testcase name="Tap on &quot;View all&quot;" time="4.719"/>
+    <testcase name="Wait for animation" time="3.771"/>
+    <testcase name="Assert visible: &quot;Switch to Module&quot;" time="0.448"/>
+    <testcase name="Tap on &quot;Learn&quot;" time="4.338"/>
+    <testcase name="Wait for animation" time="1.500"/>
+    <testcase name="Wait for animation" time="1.091"/>
+    <testcase name="Assert visible: &quot;Learn&quot;" time="0.094"/>
+    <testcase name="tapOnPointV2" time="0.541"/>
+    <testcase name="Wait for animation" time="1.002"/>
+    <testcase name="Wait for animation" time="0.915"/>
+    <testcase name="Press key: BACK" time="8.717"/>
+    <testcase name="Wait for animation" time="1.622"/>
+    <testcase name="Press key: BACK" time="0.656"/>
+    <testcase name="Wait for animation" time="1.376"/>
+    <testcase name="Press key: BACK" time="0.608"/>
+    <testcase name="Wait for animation" time="1.266"/>
+    <testcase name="Swipe DOWN" time="1.505"/>
+    <testcase name="Wait for animation" time="3.778"/>
+    <testcase name="Tap on &quot;View all&quot;" time="2.434"/>
+    <testcase name="Wait for animation" time="1.383"/>
+    <testcase name="Assert visible: &quot;Switch to Module&quot;" time="0.114"/>
+    <testcase name="Tap on &quot;Learn&quot;" time="3.222"/>
+    <testcase name="Wait for animation" time="1.196"/>
+    <testcase name="Wait for animation" time="0.881"/>
+    <testcase name="Assert visible: &quot;Learn&quot;" time="0.084"/>
+    <testcase name="tapOnPointV2" time="1.344"/>
+    <testcase name="Wait for animation" time="0.903"/>
+    <testcase name="Press key: BACK" time="1.019"/>
+    <testcase name="Wait for animation" time="0.835"/>
+    <testcase name="Assert visible: &quot;Learn&quot;" time="0.087"/>
+    <testcase name="tapOnPointV2" time="0.436"/>
+    <testcase name="Wait for animation" time="0.791"/>
+    <testcase name="Wait for animation" time="0.794"/>
+    <testcase name="tapOnPointV2" time="0.452"/>
+    <testcase name="Wait for animation" time="0.788"/>
+    <testcase name="Wait for animation" time="0.866"/>
+    <testcase name="Press key: BACK" time="10.651"/>
+    <testcase name="Wait for animation" time="2.224"/>
+    <testcase name="Press key: BACK" time="1.056"/>
+    <testcase name="Wait for animation" time="1.299"/>
+    <testcase name="Press key: BACK" time="1.378"/>
+    <testcase name="Wait for animation" time="2.160"/>
+    <testcase name="Swipe DOWN" time="1.581"/>
+    <testcase name="Wait for animation" time="7.968"/>
+    <testcase name="Tap on &quot;View all&quot;" time="3.231"/>
+    <testcase name="Wait for animation" time="3.506"/>
+    <testcase name="Assert visible: &quot;Switch to Module&quot;" time="0.546"/>
+    <testcase name="Tap on &quot;Learn&quot;" time="5.766"/>
+    <testcase name="Wait for animation" time="1.404"/>
+    <testcase name="Wait for animation" time="1.089"/>
+    <testcase name="Assert visible: &quot;Learn&quot;" time="0.096"/>
+    <testcase name="tapOnPointV2" time="0.496"/>
+    <testcase name="Wait for animation" time="1.081"/>
+    <testcase name="Wait for animation" time="1.031"/>
+    <testcase name="Swipe UP" time="1.212"/>
+    <testcase name="Wait for animation" time="0.874"/>
+    <testcase name="Swipe DOWN" time="1.143"/>
+    <testcase name="Wait for animation" time="0.823"/>
+    <testcase name="tapOnPointV2" time="0.405"/>
+    <testcase name="Wait for animation" time="0.786"/>
+    <testcase name="Wait for animation" time="0.860"/>
+    <testcase name="Assert visible: &quot;Learn&quot;" time="0.093"/>
+    <testcase name="Swipe UP" time="1.259"/>
+    <testcase name="Wait for animation" time="0.771"/>
+    <testcase name="Swipe UP" time="1.192"/>
+    <testcase name="Wait for animation" time="0.823"/>
+    <testcase name="Swipe DOWN" time="1.186"/>
+    <testcase name="Wait for animation" time="0.811"/>
+    <testcase name="Swipe DOWN" time="1.161"/>
+    <testcase name="Wait for animation" time="0.842"/>
+    <testcase name="Assert visible: &quot;Learn&quot;" time="0.088"/>
+    <testcase name="tapOnPointV2" time="0.392"/>
+    <testcase name="Wait for animation" time="0.768"/>
+    <testcase name="Press key: BACK" time="8.826"/>
+    <testcase name="Wait for animation" time="2.271"/>
+    <testcase name="Assert visible: &quot;Learn&quot;" time="0.275"/>
+    <testcase name="tapOnPointV2" time="0.882"/>
+    <testcase name="Wait for animation" time="1.385"/>
+    <testcase name="tapOnPointV2" time="1.680"/>
+    <testcase name="Wait for animation" time="2.077"/>
+    <testcase name="Assert visible: &quot;Learn&quot;" time="0.230"/>
+    <testcase name="Swipe LEFT" time="3.067"/>
+    <testcase name="Wait for animation" time="3.255"/>
+    <testcase name="Swipe RIGHT" time="1.924"/>
+    <testcase name="Wait for animation" time="1.890"/>
+    <testcase name="Assert visible: &quot;Learn&quot;" time="0.989"/>
+    <testcase name="Swipe UP" time="2.661"/>
+    <testcase name="Wait for animation" time="18.482"/>
+    <testcase name="Swipe DOWN" time="2.681"/>
+    <testcase name="Wait for animation" time="1.551"/>
+    <testcase name="Assert visible: &quot;Learn&quot;" time="0.116"/>
+    <testcase name="Swipe DOWN" time="1.759"/>
+    <testcase name="Wait for animation" time="3.687"/>
+    <testcase name="Tap on &quot;View all&quot;" time="2.619"/>
+    <testcase name="Wait for animation" time="1.410"/>
+    <testcase name="Assert visible: &quot;Switch to Module&quot;" time="0.101"/>
+    <testcase name="Press key: BACK" time="0.647"/>
+    <testcase name="Wait for animation" time="1.493"/>
+  </testsuite>
+  <testsuite name="android_link_jobs" tests="143" failures="0" time="314.044">
+    <testcase name="Set up test variables" time="0.000"/>
+    <testcase name="Apply flow configuration" time="0.000"/>
+    <testcase name="stopApp" time="0.321"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="2.763"/>
+    <testcase name="Wait for animation" time="16.633"/>
+    <testcase name="Tap on &quot;View all&quot;" time="3.952"/>
+    <testcase name="Wait for animation" time="3.762"/>
+    <testcase name="Tap on &quot;Link&quot;" time="4.529"/>
+    <testcase name="Wait for animation" time="1.362"/>
+    <testcase name="Wait for animation" time="1.047"/>
+    <testcase name="Assert visible: &quot;Explore Jobs&quot;" time="0.139"/>
+    <testcase name="Assert visible: &quot;Browse Marketplace&quot;" time="0.130"/>
+    <testcase name="Tap on &quot;Explore Jobs&quot;" time="2.448"/>
+    <testcase name="Wait for animation" time="1.058"/>
+    <testcase name="Wait for animation" time="0.852"/>
+    <testcase name="Assert visible: &quot;Jobs&quot;" time="0.093"/>
+    <testcase name="Assert visible: &quot;Marketplace&quot;" time="0.108"/>
+    <testcase name="Assert visible: &quot;Search Jobs&quot;" time="0.087"/>
+    <testcase name="tapOnPointV2" time="0.446"/>
+    <testcase name="Wait for animation" time="0.854"/>
+    <testcase name="Input text: &quot;Flutter Developer&quot;" time="2.396"/>
+    <testcase name="Wait for animation" time="0.766"/>
+    <testcase name="tapOnPointV2" time="0.447"/>
+    <testcase name="Wait for animation" time="0.836"/>
+    <testcase name="Input text: &quot;Remote&quot;" time="1.048"/>
+    <testcase name="Wait for animation" time="0.892"/>
+    <testcase name="Tap on &quot;Search Jobs&quot;" time="2.990"/>
+    <testcase name="Wait for animation" time="1.515"/>
+    <testcase name="Wait for animation" time="1.359"/>
+    <testcase name="stopApp" time="0.272"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="2.316"/>
+    <testcase name="Wait for animation" time="14.304"/>
+    <testcase name="Tap on &quot;View all&quot;" time="4.491"/>
+    <testcase name="Wait for animation" time="2.896"/>
+    <testcase name="Assert visible: &quot;Switch to Module&quot;" time="0.594"/>
+    <testcase name="Tap on &quot;Link&quot;" time="5.764"/>
+    <testcase name="Wait for animation" time="1.212"/>
+    <testcase name="Wait for animation" time="1.196"/>
+    <testcase name="runFlow" time="3.545"/>
+    <testcase name="Tap on &quot;Explore Jobs&quot;" time="2.615"/>
+    <testcase name="Wait for animation" time="0.837"/>
+    <testcase name="Assert visible: &quot;Jobs&quot;" time="0.096"/>
+    <testcase name="tapOnPointV2" time="0.478"/>
+    <testcase name="Wait for animation" time="0.836"/>
+    <testcase name="Assert visible: &quot;Jobs&quot;" time="0.091"/>
+    <testcase name="Swipe UP" time="1.225"/>
+    <testcase name="Wait for animation" time="0.846"/>
+    <testcase name="Swipe UP" time="3.749"/>
+    <testcase name="Wait for animation" time="0.763"/>
+    <testcase name="Swipe DOWN" time="0.615"/>
+    <testcase name="Wait for animation" time="0.812"/>
+    <testcase name="Swipe DOWN" time="0.624"/>
+    <testcase name="Wait for animation" time="0.864"/>
+    <testcase name="tapOnPointV2" time="0.451"/>
+    <testcase name="Wait for animation" time="0.768"/>
+    <testcase name="Wait for animation" time="0.843"/>
+    <testcase name="stopApp" time="0.200"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="2.286"/>
+    <testcase name="Wait for animation" time="14.252"/>
+    <testcase name="Tap on &quot;View all&quot;" time="4.248"/>
+    <testcase name="Wait for animation" time="2.402"/>
+    <testcase name="Assert visible: &quot;Switch to Module&quot;" time="0.333"/>
+    <testcase name="Tap on &quot;Link&quot;" time="5.346"/>
+    <testcase name="Wait for animation" time="1.419"/>
+    <testcase name="Wait for animation" time="1.035"/>
+    <testcase name="runFlow" time="3.414"/>
+    <testcase name="Tap on &quot;Explore Jobs&quot;" time="2.281"/>
+    <testcase name="Wait for animation" time="1.040"/>
+    <testcase name="Assert visible: &quot;Jobs&quot;" time="0.094"/>
+    <testcase name="Tap on &quot;Marketplace&quot;" time="3.240"/>
+    <testcase name="Wait for animation" time="0.996"/>
+    <testcase name="Wait for animation" time="0.779"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.631"/>
+    <testcase name="Swipe UP" time="1.582"/>
+    <testcase name="Wait for animation" time="0.814"/>
+    <testcase name="tapOnPointV2" time="1.967"/>
+    <testcase name="Wait for animation" time="0.750"/>
+    <testcase name="Wait for animation" time="2.950"/>
+    <testcase name="stopApp" time="0.135"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="2.256"/>
+    <testcase name="Wait for animation" time="10.627"/>
+    <testcase name="Tap on &quot;View all&quot;" time="6.400"/>
+    <testcase name="Wait for animation" time="2.372"/>
+    <testcase name="Assert visible: &quot;Switch to Module&quot;" time="0.484"/>
+    <testcase name="Tap on &quot;Link&quot;" time="5.096"/>
+    <testcase name="Wait for animation" time="1.276"/>
+    <testcase name="Wait for animation" time="2.003"/>
+    <testcase name="runFlow" time="3.092"/>
+    <testcase name="Tap on &quot;Browse Marketplace&quot;" time="2.332"/>
+    <testcase name="Wait for animation" time="0.670"/>
+    <testcase name="Wait for animation" time="0.695"/>
+    <testcase name="Assert visible: &quot;Marketplace&quot;" time="0.075"/>
+    <testcase name="Swipe UP" time="1.492"/>
+    <testcase name="Wait for animation" time="0.653"/>
+    <testcase name="Swipe DOWN" time="0.661"/>
+    <testcase name="Wait for animation" time="0.720"/>
+    <testcase name="tapOnPointV2" time="0.417"/>
+    <testcase name="Wait for animation" time="0.668"/>
+    <testcase name="Wait for animation" time="0.688"/>
+    <testcase name="stopApp" time="0.130"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="2.512"/>
+    <testcase name="Wait for animation" time="11.008"/>
+    <testcase name="Tap on &quot;View all&quot;" time="5.781"/>
+    <testcase name="Wait for animation" time="2.478"/>
+    <testcase name="Assert visible: &quot;Switch to Module&quot;" time="0.431"/>
+    <testcase name="Tap on &quot;Link&quot;" time="5.841"/>
+    <testcase name="Wait for animation" time="1.100"/>
+    <testcase name="Wait for animation" time="1.124"/>
+    <testcase name="runFlow" time="3.593"/>
+    <testcase name="Tap on &quot;Explore Jobs&quot;" time="2.492"/>
+    <testcase name="Wait for animation" time="1.004"/>
+    <testcase name="Assert visible: &quot;Jobs&quot;" time="0.089"/>
+    <testcase name="Tap on &quot;Marketplace&quot;" time="2.645"/>
+    <testcase name="Wait for animation" time="0.853"/>
+    <testcase name="Tap on &quot;Jobs&quot;" time="2.002"/>
+    <testcase name="Wait for animation" time="0.800"/>
+    <testcase name="Assert visible: &quot;Jobs&quot;" time="0.089"/>
+    <testcase name="tapOnPointV2" time="0.427"/>
+    <testcase name="Wait for animation" time="0.791"/>
+    <testcase name="Wait for animation" time="0.850"/>
+    <testcase name="stopApp" time="0.121"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="2.315"/>
+    <testcase name="Wait for animation" time="10.455"/>
+    <testcase name="Tap on &quot;View all&quot;" time="6.587"/>
+    <testcase name="Wait for animation" time="2.298"/>
+    <testcase name="Assert visible: &quot;Switch to Module&quot;" time="0.197"/>
+    <testcase name="Tap on &quot;Link&quot;" time="5.500"/>
+    <testcase name="Wait for animation" time="1.241"/>
+    <testcase name="Wait for animation" time="1.120"/>
+    <testcase name="runFlow" time="3.464"/>
+    <testcase name="Tap on &quot;Explore Jobs&quot;" time="2.348"/>
+    <testcase name="Wait for animation" time="0.992"/>
+    <testcase name="Assert visible: &quot;Jobs&quot;" time="0.094"/>
+    <testcase name="tapOnPointV2" time="1.250"/>
+    <testcase name="Wait for animation" time="0.796"/>
+    <testcase name="stopApp" time="0.145"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="2.610"/>
+    <testcase name="Wait for animation" time="11.307"/>
+    <testcase name="Tap on &quot;View all&quot;" time="7.076"/>
+    <testcase name="Wait for animation" time="2.691"/>
+    <testcase name="Assert visible: &quot;Switch to Module&quot;" time="1.273"/>
+    <testcase name="Press key: BACK" time="0.971"/>
+    <testcase name="Wait for animation" time="2.346"/>
+  </testsuite>
+  <testsuite name="android_link_marketplace" tests="142" failures="0" time="226.418">
+    <testcase name="Set up test variables" time="0.000"/>
+    <testcase name="Apply flow configuration" time="0.000"/>
+    <testcase name="stopApp" time="0.205"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="2.975"/>
+    <testcase name="Wait for animation" time="11.424"/>
+    <testcase name="Wait for animation" time="4.890"/>
+    <testcase name="Tap on &quot;View all&quot;" time="4.147"/>
+    <testcase name="Wait for animation" time="2.156"/>
+    <testcase name="Tap on &quot;Link&quot;" time="4.812"/>
+    <testcase name="Wait for animation" time="1.535"/>
+    <testcase name="Wait for animation" time="1.100"/>
+    <testcase name="Assert visible: &quot;Browse Marketplace&quot;" time="0.119"/>
+    <testcase name="Assert visible: &quot;Explore Jobs&quot;" time="0.140"/>
+    <testcase name="Tap on &quot;Browse Marketplace&quot;" time="2.446"/>
+    <testcase name="Wait for animation" time="0.762"/>
+    <testcase name="Wait for animation" time="0.677"/>
+    <testcase name="Assert visible: &quot;Marketplace&quot;" time="0.077"/>
+    <testcase name="Assert visible: &quot;Jobs&quot;" time="0.072"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.590"/>
+    <testcase name="Tap on &quot;Jobs&quot;" time="1.548"/>
+    <testcase name="Wait for animation" time="0.705"/>
+    <testcase name="Assert visible: &quot;Jobs&quot;" time="0.041"/>
+    <testcase name="Tap on &quot;Marketplace&quot;" time="2.009"/>
+    <testcase name="Wait for animation" time="0.735"/>
+    <testcase name="Assert visible: &quot;Marketplace&quot;" time="0.081"/>
+    <testcase name="Swipe UP" time="1.557"/>
+    <testcase name="Wait for animation" time="0.796"/>
+    <testcase name="Swipe UP" time="1.568"/>
+    <testcase name="Wait for animation" time="0.640"/>
+    <testcase name="Swipe DOWN" time="0.575"/>
+    <testcase name="Wait for animation" time="0.692"/>
+    <testcase name="Swipe DOWN" time="0.613"/>
+    <testcase name="Wait for animation" time="0.709"/>
+    <testcase name="tapOnPointV2" time="0.366"/>
+    <testcase name="Wait for animation" time="0.711"/>
+    <testcase name="Wait for animation" time="0.645"/>
+    <testcase name="tapOnPointV2" time="0.363"/>
+    <testcase name="Wait for animation" time="0.664"/>
+    <testcase name="Wait for animation" time="0.649"/>
+    <testcase name="tapOnPointV2" time="0.423"/>
+    <testcase name="Wait for animation" time="0.635"/>
+    <testcase name="Wait for animation" time="0.656"/>
+    <testcase name="stopApp" time="0.150"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="2.626"/>
+    <testcase name="Wait for animation" time="11.066"/>
+    <testcase name="Wait for animation" time="6.326"/>
+    <testcase name="Tap on &quot;View all&quot;" time="3.932"/>
+    <testcase name="Wait for animation" time="2.978"/>
+    <testcase name="Assert visible: &quot;Switch to Module&quot;" time="0.335"/>
+    <testcase name="Tap on &quot;Link&quot;" time="4.831"/>
+    <testcase name="Wait for animation" time="1.319"/>
+    <testcase name="Wait for animation" time="1.035"/>
+    <testcase name="Tap on &quot;Browse Marketplace&quot;" time="2.319"/>
+    <testcase name="Wait for animation" time="0.727"/>
+    <testcase name="Wait for animation" time="0.677"/>
+    <testcase name="Assert visible: &quot;Marketplace&quot;" time="0.084"/>
+    <testcase name="Swipe UP" time="1.511"/>
+    <testcase name="Wait for animation" time="0.695"/>
+    <testcase name="Assert visible: &quot;Marketplace&quot;" time="0.030"/>
+    <testcase name="Swipe DOWN" time="0.625"/>
+    <testcase name="Wait for animation" time="0.768"/>
+    <testcase name="Assert visible: &quot;Marketplace&quot;" time="0.074"/>
+    <testcase name="tapOnPointV2" time="0.373"/>
+    <testcase name="Wait for animation" time="0.643"/>
+    <testcase name="Wait for animation" time="0.703"/>
+    <testcase name="tapOnPointV2" time="0.381"/>
+    <testcase name="Wait for animation" time="0.715"/>
+    <testcase name="Wait for animation" time="0.731"/>
+    <testcase name="stopApp" time="0.073"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="2.540"/>
+    <testcase name="Wait for animation" time="10.808"/>
+    <testcase name="Wait for animation" time="5.072"/>
+    <testcase name="Tap on &quot;View all&quot;" time="3.459"/>
+    <testcase name="Wait for animation" time="3.680"/>
+    <testcase name="Assert visible: &quot;Switch to Module&quot;" time="0.227"/>
+    <testcase name="Tap on &quot;Link&quot;" time="4.327"/>
+    <testcase name="Wait for animation" time="1.144"/>
+    <testcase name="Wait for animation" time="1.081"/>
+    <testcase name="Tap on &quot;Browse Marketplace&quot;" time="2.348"/>
+    <testcase name="Wait for animation" time="0.703"/>
+    <testcase name="Wait for animation" time="0.708"/>
+    <testcase name="Assert visible: &quot;Marketplace&quot;" time="0.109"/>
+    <testcase name="Swipe UP" time="1.581"/>
+    <testcase name="Wait for animation" time="0.684"/>
+    <testcase name="Swipe UP" time="1.530"/>
+    <testcase name="Wait for animation" time="0.649"/>
+    <testcase name="Swipe DOWN" time="0.607"/>
+    <testcase name="Wait for animation" time="0.699"/>
+    <testcase name="Swipe DOWN" time="0.610"/>
+    <testcase name="Wait for animation" time="0.741"/>
+    <testcase name="Tap on &quot;Jobs&quot;" time="1.462"/>
+    <testcase name="Wait for animation" time="0.654"/>
+    <testcase name="Assert visible: &quot;Jobs&quot;" time="0.043"/>
+    <testcase name="Tap on &quot;Marketplace&quot;" time="2.086"/>
+    <testcase name="Wait for animation" time="0.695"/>
+    <testcase name="Assert visible: &quot;Marketplace&quot;" time="0.089"/>
+    <testcase name="tapOnPointV2" time="0.338"/>
+    <testcase name="Wait for animation" time="0.721"/>
+    <testcase name="Wait for animation" time="0.673"/>
+    <testcase name="tapOnPointV2" time="0.395"/>
+    <testcase name="Wait for animation" time="0.712"/>
+    <testcase name="Wait for animation" time="0.599"/>
+    <testcase name="stopApp" time="0.112"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="2.484"/>
+    <testcase name="Wait for animation" time="10.357"/>
+    <testcase name="Wait for animation" time="2.086"/>
+    <testcase name="Tap on &quot;View all&quot;" time="5.339"/>
+    <testcase name="Wait for animation" time="2.148"/>
+    <testcase name="Assert visible: &quot;Switch to Module&quot;" time="0.209"/>
+    <testcase name="Tap on &quot;Link&quot;" time="5.444"/>
+    <testcase name="Wait for animation" time="1.143"/>
+    <testcase name="Wait for animation" time="1.905"/>
+    <testcase name="Tap on &quot;Browse Marketplace&quot;" time="2.307"/>
+    <testcase name="Wait for animation" time="0.689"/>
+    <testcase name="Wait for animation" time="0.671"/>
+    <testcase name="Assert visible: &quot;Marketplace&quot;" time="0.077"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.615"/>
+    <testcase name="Swipe UP" time="1.542"/>
+    <testcase name="Wait for animation" time="0.642"/>
+    <testcase name="Swipe DOWN" time="0.622"/>
+    <testcase name="Wait for animation" time="0.704"/>
+    <testcase name="Assert visible: &quot;Marketplace&quot;" time="0.074"/>
+    <testcase name="Tap on &quot;Jobs&quot;" time="1.551"/>
+    <testcase name="Wait for animation" time="0.678"/>
+    <testcase name="Tap on &quot;Marketplace&quot;" time="1.995"/>
+    <testcase name="Wait for animation" time="0.657"/>
+    <testcase name="Assert visible: &quot;Marketplace&quot;" time="0.074"/>
+    <testcase name="tapOnPointV2" time="0.393"/>
+    <testcase name="Wait for animation" time="0.633"/>
+    <testcase name="Wait for animation" time="0.591"/>
+    <testcase name="tapOnPointV2" time="0.427"/>
+    <testcase name="Wait for animation" time="0.747"/>
+    <testcase name="Wait for animation" time="0.645"/>
+    <testcase name="stopApp" time="0.083"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="2.036"/>
+    <testcase name="Wait for animation" time="11.160"/>
+    <testcase name="Wait for animation" time="1.680"/>
+    <testcase name="Tap on &quot;View all&quot;" time="5.010"/>
+    <testcase name="Wait for animation" time="2.043"/>
+    <testcase name="Assert visible: &quot;Switch to Module&quot;" time="0.333"/>
+    <testcase name="Press key: BACK" time="0.644"/>
+    <testcase name="Wait for animation" time="2.859"/>
+  </testsuite>
+  <testsuite name="android_live" tests="76" failures="0" time="368.327">
+    <testcase name="Set up test variables" time="0.000"/>
+    <testcase name="Apply flow configuration" time="0.000"/>
+    <testcase name="stopApp" time="0.185"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="3.317"/>
+    <testcase name="Wait for animation" time="9.354"/>
+    <testcase name="Assert visible: &quot;Explore OMRE Modules&quot;" time="3.242"/>
+    <testcase name="tapOnPointV2" time="6.513"/>
+    <testcase name="Wait for animation" time="7.293"/>
+    <testcase name="Assert visible: &quot;Home&quot;" time="0.791"/>
+    <testcase name="Assert visible: &quot;Live&quot;" time="1.462"/>
+    <testcase name="Tap on &quot;Live&quot;" time="3.952"/>
+    <testcase name="Wait for animation" time="4.021"/>
+    <testcase name="Assert visible: &quot;Live&quot;" time="0.230"/>
+    <testcase name="Swipe UP" time="1.264"/>
+    <testcase name="Wait for animation" time="1.435"/>
+    <testcase name="Swipe DOWN" time="0.750"/>
+    <testcase name="Wait for animation" time="2.072"/>
+    <testcase name="Assert visible: &quot;Live&quot;" time="0.344"/>
+    <testcase name="Swipe DOWN" time="1.459"/>
+    <testcase name="Wait for animation" time="1.355"/>
+    <testcase name="Assert visible: &quot;Live&quot;" time="0.178"/>
+    <testcase name="tapOnPointV2" time="1.012"/>
+    <testcase name="Wait for animation" time="0.872"/>
+    <testcase name="Press key: BACK" time="0.908"/>
+    <testcase name="Wait for animation" time="5.145"/>
+    <testcase name="Assert visible: &quot;Live&quot;" time="0.581"/>
+    <testcase name="tapOnPointV2" time="2.008"/>
+    <testcase name="Wait for animation" time="2.578"/>
+    <testcase name="tapOnPointV2" time="5.887"/>
+    <testcase name="Wait for animation" time="15.121"/>
+    <testcase name="tapOnPointV2" time="15.452"/>
+    <testcase name="Wait for animation" time="19.766"/>
+    <testcase name="tapOnPointV2" time="16.456"/>
+    <testcase name="Wait for animation" time="21.944"/>
+    <testcase name="Input text: &quot;Amazing stream!&quot;" time="19.902"/>
+    <testcase name="Wait for animation" time="15.350"/>
+    <testcase name="tapOnPointV2" time="14.056"/>
+    <testcase name="Wait for animation" time="17.082"/>
+    <testcase name="Wait for animation" time="17.943"/>
+    <testcase name="Press key: BACK" time="7.648"/>
+    <testcase name="Wait for animation" time="2.736"/>
+    <testcase name="tapOnPointV2" time="1.686"/>
+    <testcase name="Wait for animation" time="3.118"/>
+    <testcase name="Input text: &quot;Keep it up!&quot;" time="3.140"/>
+    <testcase name="Wait for animation" time="2.599"/>
+    <testcase name="tapOnPointV2" time="1.627"/>
+    <testcase name="Wait for animation" time="1.842"/>
+    <testcase name="Press key: BACK" time="3.237"/>
+    <testcase name="Wait for animation" time="2.435"/>
+    <testcase name="Swipe DOWN" time="4.979"/>
+    <testcase name="Wait for animation" time="3.299"/>
+    <testcase name="Swipe UP" time="3.556"/>
+    <testcase name="Wait for animation" time="19.455"/>
+    <testcase name="Press key: BACK" time="1.366"/>
+    <testcase name="Wait for animation" time="15.120"/>
+    <testcase name="Assert visible: &quot;Live&quot;" time="1.216"/>
+    <testcase name="Swipe UP" time="3.692"/>
+    <testcase name="Wait for animation" time="17.209"/>
+    <testcase name="Swipe UP" time="2.404"/>
+    <testcase name="Wait for animation" time="3.600"/>
+    <testcase name="Swipe DOWN" time="3.243"/>
+    <testcase name="Wait for animation" time="1.817"/>
+    <testcase name="Swipe DOWN" time="1.809"/>
+    <testcase name="Wait for animation" time="3.762"/>
+    <testcase name="Assert visible: &quot;Live&quot;" time="0.096"/>
+    <testcase name="tapOnPointV2" time="1.377"/>
+    <testcase name="Wait for animation" time="1.449"/>
+    <testcase name="Tap on &quot;Live&quot;" time="2.785"/>
+    <testcase name="Wait for animation" time="0.810"/>
+    <testcase name="Assert visible: &quot;Live&quot;" time="0.028"/>
+    <testcase name="Swipe DOWN" time="0.555"/>
+    <testcase name="Wait for animation" time="0.804"/>
+    <testcase name="Assert visible: &quot;Live&quot;" time="0.026"/>
+    <testcase name="Press key: BACK" time="1.158"/>
+    <testcase name="Wait for animation" time="1.259"/>
+    <testcase name="Assert visible: &quot;Explore OMRE Modules&quot;" time="0.105"/>
+  </testsuite>
+  <testsuite name="android_mart" tests="56" failures="0" time="209.572">
+    <testcase name="Set up test variables" time="0.000"/>
+    <testcase name="Apply flow configuration" time="0.000"/>
+    <testcase name="stopApp" time="0.219"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="3.019"/>
+    <testcase name="Wait for animation" time="14.809"/>
+    <testcase name="Wait for animation" time="2.257"/>
+    <testcase name="Assert visible: &quot;View all&quot;" time="0.240"/>
+    <testcase name="Tap on &quot;View all&quot;" time="3.904"/>
+    <testcase name="Wait for animation" time="3.206"/>
+    <testcase name="Assert visible: &quot;Switch to Module&quot;" time="0.277"/>
+    <testcase name="Assert visible: &quot;Mart&quot;" time="0.414"/>
+    <testcase name="Tap on &quot;Mart&quot;" time="4.780"/>
+    <testcase name="Wait for animation" time="1.025"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.689"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="0.625"/>
+    <testcase name="Assert visible: &quot;Browse Mart&quot;" time="0.101"/>
+    <testcase name="Assert visible: &quot;Categories&quot;" time="0.085"/>
+    <testcase name="Tap on &quot;Browse Mart&quot;" time="2.206"/>
+    <testcase name="Wait for animation" time="0.966"/>
+    <testcase name="Wait for animation" time="0.756"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.636"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.614"/>
+    <testcase name="Swipe UP" time="3.421"/>
+    <testcase name="Wait for animation" time="0.762"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.637"/>
+    <testcase name="Swipe UP" time="3.815"/>
+    <testcase name="Wait for animation" time="0.925"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="0.615"/>
+    <testcase name="Swipe DOWN" time="4.088"/>
+    <testcase name="Wait for animation" time="0.766"/>
+    <testcase name="Swipe DOWN" time="2.178"/>
+    <testcase name="Wait for animation" time="0.782"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.622"/>
+    <testcase name="tapOnPointV2" time="0.486"/>
+    <testcase name="Wait for animation" time="0.816"/>
+    <testcase name="Wait for animation" time="0.747"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.631"/>
+    <testcase name="Press key: BACK" time="9.452"/>
+    <testcase name="Wait for animation" time="2.098"/>
+    <testcase name="tapOnPointV2" time="24.632"/>
+    <testcase name="Wait for animation" time="1.328"/>
+    <testcase name="Wait for animation" time="1.024"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.679"/>
+    <testcase name="Press key: BACK" time="13.840"/>
+    <testcase name="Wait for animation" time="2.483"/>
+    <testcase name="Swipe UP" time="3.638"/>
+    <testcase name="Wait for animation" time="16.421"/>
+    <testcase name="tapOnPointV2" time="5.176"/>
+    <testcase name="Wait for animation" time="18.379"/>
+    <testcase name="Wait for animation" time="16.219"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.837"/>
+    <testcase name="Press key: BACK" time="7.166"/>
+    <testcase name="Wait for animation" time="18.145"/>
+    <testcase name="Swipe DOWN" time="3.766"/>
+    <testcase name="Wait for animation" time="1.569"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.601"/>
+  </testsuite>
+  <testsuite name="android_meetings" tests="56" failures="0" time="121.680">
+    <testcase name="Set up test variables" time="0.000"/>
+    <testcase name="Apply flow configuration" time="0.000"/>
+    <testcase name="stopApp" time="0.120"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="3.375"/>
+    <testcase name="Wait for animation" time="6.614"/>
+    <testcase name="Assert visible: &quot;Explore OMRE Modules&quot;" time="4.571"/>
+    <testcase name="Assert visible: &quot;View all&quot;" time="2.105"/>
+    <testcase name="Tap on &quot;View all&quot;" time="8.118"/>
+    <testcase name="Wait for animation" time="3.289"/>
+    <testcase name="Assert visible: &quot;Switch to Module&quot;" time="0.510"/>
+    <testcase name="Assert visible: &quot;Meeting&quot;" time="0.593"/>
+    <testcase name="Tap on &quot;Meeting&quot;" time="8.188"/>
+    <testcase name="Wait for animation" time="1.250"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.638"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="0.672"/>
+    <testcase name="Assert visible: &quot;New Meeting&quot;" time="0.123"/>
+    <testcase name="Assert visible: &quot;Join&quot;" time="0.088"/>
+    <testcase name="Assert visible: &quot;Schedule&quot;" time="0.163"/>
+    <testcase name="Assert visible: &quot;Upcoming Meetings&quot;" time="0.108"/>
+    <testcase name="Tap on &quot;Join&quot;" time="2.154"/>
+    <testcase name="Wait for animation" time="0.908"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.590"/>
+    <testcase name="Press key: BACK" time="0.893"/>
+    <testcase name="Wait for animation" time="0.904"/>
+    <testcase name="Assert visible: &quot;New Meeting&quot;" time="0.079"/>
+    <testcase name="Tap on &quot;Schedule&quot;" time="2.661"/>
+    <testcase name="Wait for animation" time="0.843"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.747"/>
+    <testcase name="Press key: BACK" time="0.828"/>
+    <testcase name="Wait for animation" time="0.882"/>
+    <testcase name="Assert visible: &quot;New Meeting&quot;" time="0.077"/>
+    <testcase name="Swipe UP" time="1.545"/>
+    <testcase name="Wait for animation" time="0.905"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.584"/>
+    <testcase name="Swipe DOWN" time="1.188"/>
+    <testcase name="Wait for animation" time="0.896"/>
+    <testcase name="Assert visible: &quot;New Meeting&quot;" time="0.084"/>
+    <testcase name="Swipe DOWN" time="1.393"/>
+    <testcase name="Wait for animation" time="2.484"/>
+    <testcase name="Assert visible: &quot;New Meeting&quot;" time="0.076"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="0.648"/>
+    <testcase name="Press key: BACK" time="17.107"/>
+    <testcase name="Wait for animation" time="2.919"/>
+    <testcase name="Assert visible: &quot;Explore OMRE Modules&quot;" time="1.002"/>
+    <testcase name="Tap on &quot;View all&quot;" time="6.489"/>
+    <testcase name="Wait for animation" time="2.995"/>
+    <testcase name="Assert visible: &quot;Switch to Module&quot;" time="0.331"/>
+    <testcase name="Tap on &quot;Meeting&quot;" time="6.774"/>
+    <testcase name="Wait for animation" time="1.585"/>
+    <testcase name="Assert visible: &quot;New Meeting&quot;" time="0.151"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.595"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="0.697"/>
+    <testcase name="Assert visible: &quot;Upcoming Meetings&quot;" time="0.095"/>
+    <testcase name="Press key: BACK" time="14.381"/>
+    <testcase name="Wait for animation" time="3.466"/>
+    <testcase name="Assert visible: &quot;Explore OMRE Modules&quot;" time="1.199"/>
+  </testsuite>
+  <testsuite name="android_news_feed" tests="111" failures="0" time="256.415">
+    <testcase name="Set up test variables" time="0.000"/>
+    <testcase name="Apply flow configuration" time="0.000"/>
+    <testcase name="stopApp" time="0.327"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="3.279"/>
+    <testcase name="Wait for animation" time="7.270"/>
+    <testcase name="Tap on &quot;View all&quot;" time="17.315"/>
+    <testcase name="Wait for animation" time="3.704"/>
+    <testcase name="Tap on &quot;News&quot;" time="7.734"/>
+    <testcase name="Wait for animation" time="1.386"/>
+    <testcase name="Wait for animation" time="1.064"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.592"/>
+    <testcase name="Swipe UP" time="1.347"/>
+    <testcase name="Wait for animation" time="0.918"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.607"/>
+    <testcase name="Swipe UP" time="1.180"/>
+    <testcase name="Wait for animation" time="0.883"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.640"/>
+    <testcase name="Swipe DOWN" time="1.198"/>
+    <testcase name="Wait for animation" time="0.863"/>
+    <testcase name="Swipe DOWN" time="1.247"/>
+    <testcase name="Wait for animation" time="0.922"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.669"/>
+    <testcase name="tapOnPointV2" time="0.398"/>
+    <testcase name="Wait for animation" time="0.865"/>
+    <testcase name="Press key: BACK" time="17.552"/>
+    <testcase name="Wait for animation" time="2.536"/>
+    <testcase name="Tap on &quot;View all&quot;" time="6.968"/>
+    <testcase name="Wait for animation" time="3.815"/>
+    <testcase name="Tap on &quot;News&quot;" time="10.146"/>
+    <testcase name="Wait for animation" time="1.365"/>
+    <testcase name="Wait for animation" time="1.219"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.722"/>
+    <testcase name="tapOnPointV2" time="0.564"/>
+    <testcase name="Wait for animation" time="1.037"/>
+    <testcase name="Press key: BACK" time="6.712"/>
+    <testcase name="Wait for animation" time="2.399"/>
+    <testcase name="Tap on &quot;View all&quot;" time="2.703"/>
+    <testcase name="Wait for animation" time="1.555"/>
+    <testcase name="Tap on &quot;News&quot;" time="6.067"/>
+    <testcase name="Wait for animation" time="1.333"/>
+    <testcase name="Wait for animation" time="0.852"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.699"/>
+    <testcase name="tapOnPointV2" time="0.467"/>
+    <testcase name="Wait for animation" time="0.967"/>
+    <testcase name="Press key: BACK" time="18.237"/>
+    <testcase name="Wait for animation" time="2.668"/>
+    <testcase name="Tap on &quot;View all&quot;" time="7.054"/>
+    <testcase name="Wait for animation" time="3.232"/>
+    <testcase name="Tap on &quot;News&quot;" time="10.440"/>
+    <testcase name="Wait for animation" time="1.293"/>
+    <testcase name="Wait for animation" time="1.003"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.689"/>
+    <testcase name="tapOnPointV2" time="0.428"/>
+    <testcase name="Wait for animation" time="1.066"/>
+    <testcase name="Press key: BACK" time="16.475"/>
+    <testcase name="Wait for animation" time="2.681"/>
+    <testcase name="Tap on &quot;View all&quot;" time="6.251"/>
+    <testcase name="Wait for animation" time="3.127"/>
+    <testcase name="Tap on &quot;News&quot;" time="10.185"/>
+    <testcase name="Wait for animation" time="1.308"/>
+    <testcase name="Wait for animation" time="1.037"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.735"/>
+    <testcase name="tapOnPointV2" time="1.460"/>
+    <testcase name="Wait for animation" time="0.938"/>
+    <testcase name="Press key: BACK" time="1.063"/>
+    <testcase name="Wait for animation" time="0.973"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.590"/>
+    <testcase name="tapOnPointV2" time="0.521"/>
+    <testcase name="Wait for animation" time="0.902"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.633"/>
+    <testcase name="Swipe UP" time="1.222"/>
+    <testcase name="Wait for animation" time="0.882"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.928"/>
+    <testcase name="tapOnPointV2" time="0.486"/>
+    <testcase name="Wait for animation" time="0.884"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.617"/>
+    <testcase name="Swipe UP" time="1.144"/>
+    <testcase name="Wait for animation" time="0.919"/>
+    <testcase name="tapOnPointV2" time="0.456"/>
+    <testcase name="Wait for animation" time="0.869"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.598"/>
+    <testcase name="Swipe UP" time="1.277"/>
+    <testcase name="Wait for animation" time="0.898"/>
+    <testcase name="Swipe UP" time="1.226"/>
+    <testcase name="Wait for animation" time="0.865"/>
+    <testcase name="Swipe DOWN" time="1.335"/>
+    <testcase name="Wait for animation" time="0.933"/>
+    <testcase name="Swipe DOWN" time="1.218"/>
+    <testcase name="Wait for animation" time="0.883"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.595"/>
+    <testcase name="tapOnPointV2" time="1.346"/>
+    <testcase name="Wait for animation" time="0.942"/>
+    <testcase name="Press key: BACK" time="1.773"/>
+    <testcase name="Wait for animation" time="0.890"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.624"/>
+    <testcase name="tapOnPointV2" time="0.410"/>
+    <testcase name="Wait for animation" time="0.944"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.651"/>
+    <testcase name="tapOnPointV2" time="0.499"/>
+    <testcase name="Wait for animation" time="0.858"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.611"/>
+    <testcase name="Swipe UP" time="1.221"/>
+    <testcase name="Wait for animation" time="0.844"/>
+    <testcase name="Swipe DOWN" time="1.252"/>
+    <testcase name="Wait for animation" time="0.832"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.592"/>
+    <testcase name="Swipe DOWN" time="1.218"/>
+    <testcase name="Wait for animation" time="0.872"/>
+    <testcase name="Swipe DOWN" time="1.232"/>
+    <testcase name="Wait for animation" time="0.902"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.592"/>
+  </testsuite>
+  <testsuite name="android_omni_ai" tests="65" failures="0" time="212.931">
+    <testcase name="Set up test variables" time="0.000"/>
+    <testcase name="Apply flow configuration" time="0.000"/>
+    <testcase name="stopApp" time="0.666"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="4.425"/>
+    <testcase name="Wait for animation" time="8.760"/>
+    <testcase name="Wait for animation" time="6.125"/>
+    <testcase name="tapOnPointV2" time="7.517"/>
+    <testcase name="Wait for animation" time="2.730"/>
+    <testcase name="Wait for animation" time="3.417"/>
+    <testcase name="Swipe UP" time="2.722"/>
+    <testcase name="Wait for animation" time="2.059"/>
+    <testcase name="Swipe" time="3.795"/>
+    <testcase name="Wait for animation" time="2.888"/>
+    <testcase name="tapOnPointV2" time="1.592"/>
+    <testcase name="Wait for animation" time="2.220"/>
+    <testcase name="Wait for animation" time="1.663"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.700"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="0.597"/>
+    <testcase name="Swipe UP" time="4.040"/>
+    <testcase name="Wait for animation" time="1.494"/>
+    <testcase name="Swipe UP" time="1.674"/>
+    <testcase name="Wait for animation" time="1.201"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="1.160"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.786"/>
+    <testcase name="Swipe DOWN" time="1.588"/>
+    <testcase name="Wait for animation" time="1.473"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.598"/>
+    <testcase name="tapOnPointV2" time="1.535"/>
+    <testcase name="Wait for animation" time="2.056"/>
+    <testcase name="Wait for animation" time="1.412"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.702"/>
+    <testcase name="Press key: BACK" time="1.602"/>
+    <testcase name="Wait for animation" time="3.022"/>
+    <testcase name="tapOnPointV2" time="13.469"/>
+    <testcase name="Wait for animation" time="16.951"/>
+    <testcase name="Wait for animation" time="19.453"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="3.451"/>
+    <testcase name="Press key: BACK" time="2.925"/>
+    <testcase name="Wait for animation" time="2.130"/>
+    <testcase name="Press key: BACK" time="2.599"/>
+    <testcase name="Wait for animation" time="2.795"/>
+    <testcase name="Swipe DOWN" time="3.656"/>
+    <testcase name="Wait for animation" time="7.631"/>
+    <testcase name="Assert visible: &quot;View all&quot;" time="1.896"/>
+    <testcase name="tapOnPointV2" time="4.465"/>
+    <testcase name="Wait for animation" time="3.002"/>
+    <testcase name="Wait for animation" time="2.684"/>
+    <testcase name="Swipe UP" time="2.694"/>
+    <testcase name="Wait for animation" time="3.276"/>
+    <testcase name="Swipe" time="3.109"/>
+    <testcase name="Wait for animation" time="2.745"/>
+    <testcase name="tapOnPointV2" time="7.695"/>
+    <testcase name="Wait for animation" time="2.456"/>
+    <testcase name="Wait for animation" time="2.078"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.835"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="0.649"/>
+    <testcase name="Swipe UP" time="4.537"/>
+    <testcase name="Wait for animation" time="2.030"/>
+    <testcase name="Swipe UP" time="3.962"/>
+    <testcase name="Wait for animation" time="2.343"/>
+    <testcase name="Swipe DOWN" time="0.886"/>
+    <testcase name="Wait for animation" time="2.333"/>
+    <testcase name="Press key: BACK" time="3.445"/>
+    <testcase name="Wait for animation" time="2.920"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="1.612"/>
+  </testsuite>
+  <testsuite name="android_orbit_feed" tests="88" failures="0" time="400.171">
+    <testcase name="Set up test variables" time="0.000"/>
+    <testcase name="Apply flow configuration" time="0.000"/>
+    <testcase name="stopApp" time="0.485"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="5.458"/>
+    <testcase name="Wait for animation" time="10.700"/>
+    <testcase name="tapOnPointV2" time="5.215"/>
+    <testcase name="Wait for animation" time="18.939"/>
+    <testcase name="Wait for animation" time="17.530"/>
+    <testcase name="Assert visible: &quot;Explore&quot;" time="0.394"/>
+    <testcase name="tapOnPointV2" time="1.449"/>
+    <testcase name="Wait for animation" time="16.817"/>
+    <testcase name="Input text: &quot;OMRE community&quot;" time="6.191"/>
+    <testcase name="Wait for animation" time="15.997"/>
+    <testcase name="Press key: BACK" time="1.472"/>
+    <testcase name="Wait for animation" time="1.652"/>
+    <testcase name="Press key: BACK" time="0.555"/>
+    <testcase name="Wait for animation" time="1.428"/>
+    <testcase name="Assert visible: &quot;Explore&quot;" time="0.096"/>
+    <testcase name="Swipe UP" time="3.191"/>
+    <testcase name="Wait for animation" time="7.684"/>
+    <testcase name="Assert visible: &quot;Explore&quot;" time="0.392"/>
+    <testcase name="Swipe UP" time="1.951"/>
+    <testcase name="Wait for animation" time="2.049"/>
+    <testcase name="Assert visible: &quot;Explore&quot;" time="0.110"/>
+    <testcase name="Swipe DOWN" time="2.185"/>
+    <testcase name="Wait for animation" time="2.569"/>
+    <testcase name="Swipe DOWN" time="1.719"/>
+    <testcase name="Wait for animation" time="3.592"/>
+    <testcase name="Assert visible: &quot;Explore&quot;" time="0.051"/>
+    <testcase name="tapOnPointV2" time="0.586"/>
+    <testcase name="Wait for animation" time="1.393"/>
+    <testcase name="Press key: BACK" time="0.606"/>
+    <testcase name="Wait for animation" time="1.212"/>
+    <testcase name="Assert visible: &quot;Explore&quot;" time="0.084"/>
+    <testcase name="tapOnPointV2" time="3.494"/>
+    <testcase name="Wait for animation" time="1.428"/>
+    <testcase name="Press key: BACK" time="18.007"/>
+    <testcase name="Wait for animation" time="2.139"/>
+    <testcase name="Assert visible: &quot;Explore&quot;" time="0.935"/>
+    <testcase name="tapOnPointV2" time="2.353"/>
+    <testcase name="Wait for animation" time="2.291"/>
+    <testcase name="Press key: BACK" time="2.539"/>
+    <testcase name="Wait for animation" time="3.841"/>
+    <testcase name="tapOnPointV2" time="2.937"/>
+    <testcase name="Wait for animation" time="3.212"/>
+    <testcase name="Assert visible: &quot;Explore&quot;" time="0.139"/>
+    <testcase name="Swipe UP" time="5.433"/>
+    <testcase name="Wait for animation" time="16.019"/>
+    <testcase name="tapOnPointV2" time="11.530"/>
+    <testcase name="Wait for animation" time="16.222"/>
+    <testcase name="Press key: BACK" time="1.767"/>
+    <testcase name="Wait for animation" time="4.063"/>
+    <testcase name="tapOnPointV2" time="7.469"/>
+    <testcase name="Wait for animation" time="1.671"/>
+    <testcase name="Swipe UP" time="0.651"/>
+    <testcase name="Wait for animation" time="0.873"/>
+    <testcase name="Press key: BACK" time="19.461"/>
+    <testcase name="Wait for animation" time="3.231"/>
+    <testcase name="Assert visible: &quot;Explore&quot;" time="0.889"/>
+    <testcase name="Swipe DOWN" time="4.789"/>
+    <testcase name="Wait for animation" time="6.143"/>
+    <testcase name="tapOnPointV2" time="3.624"/>
+    <testcase name="Wait for animation" time="3.814"/>
+    <testcase name="Assert visible: &quot;Explore&quot;" time="1.090"/>
+    <testcase name="tapOnPointV2" time="6.685"/>
+    <testcase name="Wait for animation" time="1.221"/>
+    <testcase name="Press key: BACK" time="13.719"/>
+    <testcase name="Wait for animation" time="2.345"/>
+    <testcase name="tapOnPointV2" time="3.603"/>
+    <testcase name="Wait for animation" time="3.114"/>
+    <testcase name="Assert visible: &quot;Explore&quot;" time="0.158"/>
+    <testcase name="Swipe UP" time="2.534"/>
+    <testcase name="Wait for animation" time="16.492"/>
+    <testcase name="tapOnPointV2" time="11.754"/>
+    <testcase name="Wait for animation" time="17.103"/>
+    <testcase name="Press key: BACK" time="1.069"/>
+    <testcase name="Wait for animation" time="18.264"/>
+    <testcase name="Assert visible: &quot;Explore&quot;" time="0.985"/>
+    <testcase name="tapOnPointV2" time="3.088"/>
+    <testcase name="Wait for animation" time="1.573"/>
+    <testcase name="Wait for animation" time="1.186"/>
+    <testcase name="Tap on &quot;Social&quot;" time="1.757"/>
+    <testcase name="Wait for animation" time="1.107"/>
+    <testcase name="Wait for animation" time="1.091"/>
+    <testcase name="Swipe DOWN" time="1.613"/>
+    <testcase name="Wait for animation" time="1.142"/>
+    <testcase name="Swipe DOWN" time="1.714"/>
+    <testcase name="Wait for animation" time="1.048"/>
+  </testsuite>
+  <testsuite name="android_pages_discover" tests="77" failures="0" time="237.502">
+    <testcase name="Set up test variables" time="0.000"/>
+    <testcase name="Apply flow configuration" time="0.000"/>
+    <testcase name="stopApp" time="0.127"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="3.284"/>
+    <testcase name="Wait for animation" time="5.771"/>
+    <testcase name="Wait for animation" time="13.177"/>
+    <testcase name="tapOnPointV2" time="3.961"/>
+    <testcase name="Wait for animation" time="2.259"/>
+    <testcase name="Wait for animation" time="3.136"/>
+    <testcase name="Swipe UP" time="2.221"/>
+    <testcase name="Wait for animation" time="1.814"/>
+    <testcase name="Swipe UP" time="5.792"/>
+    <testcase name="Wait for animation" time="1.965"/>
+    <testcase name="Swipe UP" time="3.282"/>
+    <testcase name="Wait for animation" time="2.403"/>
+    <testcase name="Swipe UP" time="1.521"/>
+    <testcase name="Wait for animation" time="2.503"/>
+    <testcase name="Assert visible: &quot;Pages&quot;" time="1.110"/>
+    <testcase name="Tap on &quot;Pages&quot;" time="3.708"/>
+    <testcase name="Wait for animation" time="5.758"/>
+    <testcase name="Wait for animation" time="1.374"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="1.034"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="1.067"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.730"/>
+    <testcase name="Swipe UP" time="1.775"/>
+    <testcase name="Wait for animation" time="1.371"/>
+    <testcase name="Swipe UP" time="2.030"/>
+    <testcase name="Wait for animation" time="2.317"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="0.835"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.848"/>
+    <testcase name="Swipe DOWN" time="1.820"/>
+    <testcase name="Wait for animation" time="0.794"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.884"/>
+    <testcase name="tapOnPointV2" time="1.293"/>
+    <testcase name="Wait for animation" time="1.569"/>
+    <testcase name="Wait for animation" time="1.627"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.876"/>
+    <testcase name="Press key: BACK" time="2.615"/>
+    <testcase name="Wait for animation" time="3.055"/>
+    <testcase name="tapOnPointV2" time="13.221"/>
+    <testcase name="Wait for animation" time="22.324"/>
+    <testcase name="Wait for animation" time="18.729"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="1.637"/>
+    <testcase name="Press key: BACK" time="2.175"/>
+    <testcase name="Wait for animation" time="2.159"/>
+    <testcase name="Press key: BACK" time="3.137"/>
+    <testcase name="Wait for animation" time="2.537"/>
+    <testcase name="Swipe DOWN" time="1.879"/>
+    <testcase name="Wait for animation" time="3.647"/>
+    <testcase name="Assert visible: &quot;View all&quot;" time="1.804"/>
+    <testcase name="tapOnPointV2" time="4.075"/>
+    <testcase name="Wait for animation" time="2.670"/>
+    <testcase name="Wait for animation" time="3.029"/>
+    <testcase name="Swipe UP" time="2.702"/>
+    <testcase name="Wait for animation" time="3.277"/>
+    <testcase name="Swipe UP" time="3.625"/>
+    <testcase name="Wait for animation" time="2.507"/>
+    <testcase name="Swipe UP" time="4.581"/>
+    <testcase name="Wait for animation" time="2.555"/>
+    <testcase name="Swipe UP" time="1.565"/>
+    <testcase name="Wait for animation" time="6.561"/>
+    <testcase name="Assert visible: &quot;Pages&quot;" time="0.563"/>
+    <testcase name="Tap on &quot;Pages&quot;" time="8.728"/>
+    <testcase name="Wait for animation" time="2.253"/>
+    <testcase name="Wait for animation" time="1.956"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.890"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.591"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="0.800"/>
+    <testcase name="Swipe UP" time="1.438"/>
+    <testcase name="Wait for animation" time="1.920"/>
+    <testcase name="Swipe UP" time="1.594"/>
+    <testcase name="Wait for animation" time="1.179"/>
+    <testcase name="Swipe DOWN" time="2.100"/>
+    <testcase name="Wait for animation" time="2.159"/>
+    <testcase name="Press key: BACK" time="0.857"/>
+    <testcase name="Wait for animation" time="7.107"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="1.265"/>
+  </testsuite>
+  <testsuite name="android_reputation" tests="73" failures="0" time="231.156">
+    <testcase name="Set up test variables" time="0.000"/>
+    <testcase name="Apply flow configuration" time="0.000"/>
+    <testcase name="stopApp" time="0.370"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="4.954"/>
+    <testcase name="Wait for animation" time="7.029"/>
+    <testcase name="tapOnPointV2" time="17.754"/>
+    <testcase name="Wait for animation" time="2.358"/>
+    <testcase name="Wait for animation" time="3.475"/>
+    <testcase name="Tap on &quot;Reputation&quot;" time="4.778"/>
+    <testcase name="Wait for animation" time="5.222"/>
+    <testcase name="Wait for animation" time="2.063"/>
+    <testcase name="Assert visible: &quot;Reputation&quot;" time="0.204"/>
+    <testcase name="Swipe UP" time="1.175"/>
+    <testcase name="Wait for animation" time="2.052"/>
+    <testcase name="Assert visible: &quot;Reputation&quot;" time="0.596"/>
+    <testcase name="Swipe UP" time="2.077"/>
+    <testcase name="Wait for animation" time="1.841"/>
+    <testcase name="Assert visible: &quot;Reputation&quot;" time="0.214"/>
+    <testcase name="Swipe DOWN" time="1.724"/>
+    <testcase name="Wait for animation" time="2.098"/>
+    <testcase name="Assert visible: &quot;Reputation&quot;" time="0.366"/>
+    <testcase name="Swipe DOWN" time="1.534"/>
+    <testcase name="Wait for animation" time="1.095"/>
+    <testcase name="Assert visible: &quot;Reputation&quot;" time="0.296"/>
+    <testcase name="tapOnPointV2" time="1.034"/>
+    <testcase name="Wait for animation" time="2.391"/>
+    <testcase name="Press key: BACK" time="2.385"/>
+    <testcase name="Wait for animation" time="3.434"/>
+    <testcase name="Assert visible: &quot;Reputation&quot;" time="0.556"/>
+    <testcase name="tapOnPointV2" time="4.125"/>
+    <testcase name="Wait for animation" time="2.324"/>
+    <testcase name="Press key: BACK" time="2.110"/>
+    <testcase name="Wait for animation" time="3.397"/>
+    <testcase name="Assert visible: &quot;Reputation&quot;" time="2.022"/>
+    <testcase name="Swipe UP" time="3.010"/>
+    <testcase name="Wait for animation" time="16.877"/>
+    <testcase name="tapOnPointV2" time="2.836"/>
+    <testcase name="Wait for animation" time="9.783"/>
+    <testcase name="Press key: BACK" time="8.651"/>
+    <testcase name="Wait for animation" time="18.706"/>
+    <testcase name="Assert visible: &quot;Reputation&quot;" time="0.523"/>
+    <testcase name="Swipe DOWN" time="2.323"/>
+    <testcase name="Wait for animation" time="1.678"/>
+    <testcase name="tapOnPointV2" time="1.297"/>
+    <testcase name="Wait for animation" time="0.929"/>
+    <testcase name="Press key: BACK" time="1.630"/>
+    <testcase name="Wait for animation" time="1.208"/>
+    <testcase name="Assert visible: &quot;Reputation&quot;" time="0.110"/>
+    <testcase name="tapOnPointV2" time="1.448"/>
+    <testcase name="Wait for animation" time="1.041"/>
+    <testcase name="Press key: BACK" time="1.259"/>
+    <testcase name="Wait for animation" time="1.366"/>
+    <testcase name="Assert visible: &quot;Reputation&quot;" time="0.203"/>
+    <testcase name="Swipe UP" time="5.793"/>
+    <testcase name="Wait for animation" time="17.171"/>
+    <testcase name="Swipe UP" time="2.457"/>
+    <testcase name="Wait for animation" time="2.126"/>
+    <testcase name="Swipe UP" time="1.873"/>
+    <testcase name="Wait for animation" time="2.305"/>
+    <testcase name="Assert visible: &quot;Reputation&quot;" time="0.102"/>
+    <testcase name="Swipe DOWN" time="6.950"/>
+    <testcase name="Wait for animation" time="18.386"/>
+    <testcase name="Swipe DOWN" time="1.616"/>
+    <testcase name="Wait for animation" time="1.941"/>
+    <testcase name="Assert visible: &quot;Reputation&quot;" time="0.102"/>
+    <testcase name="tapOnPointV2" time="1.515"/>
+    <testcase name="Wait for animation" time="1.347"/>
+    <testcase name="Wait for animation" time="1.199"/>
+    <testcase name="Press key: BACK" time="1.258"/>
+    <testcase name="Wait for animation" time="1.286"/>
+    <testcase name="Press key: BACK" time="0.538"/>
+    <testcase name="Wait for animation" time="1.196"/>
+    <testcase name="Assert visible: &quot;Explore OMRE Modules&quot;" time="0.064"/>
+  </testsuite>
+  <testsuite name="android_studio_overview" tests="176" failures="0" time="750.201">
+    <testcase name="Set up test variables" time="0.000"/>
+    <testcase name="Apply flow configuration" time="0.000"/>
+    <testcase name="stopApp" time="0.642"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="4.458"/>
+    <testcase name="Wait for animation" time="9.371"/>
+    <testcase name="Press key: BACK" time="4.126"/>
+    <testcase name="Wait for animation" time="1.815"/>
+    <testcase name="Tap on &quot;View all&quot;" time="6.840"/>
+    <testcase name="Wait for animation" time="3.157"/>
+    <testcase name="Tap on &quot;Studio&quot;" time="5.046"/>
+    <testcase name="Wait for animation" time="2.528"/>
+    <testcase name="Wait for animation" time="3.576"/>
+    <testcase name="Assert visible: &quot;Studio&quot;" time="2.049"/>
+    <testcase name="tapOnPointV2" time="5.916"/>
+    <testcase name="Wait for animation" time="1.096"/>
+    <testcase name="Wait for animation" time="0.850"/>
+    <testcase name="Press key: BACK" time="19.048"/>
+    <testcase name="Wait for animation" time="3.762"/>
+    <testcase name="Swipe DOWN" time="3.294"/>
+    <testcase name="Wait for animation" time="6.186"/>
+    <testcase name="Tap on &quot;View all&quot;" time="4.479"/>
+    <testcase name="Wait for animation" time="6.533"/>
+    <testcase name="Assert visible: &quot;Switch to Module&quot;" time="1.092"/>
+    <testcase name="Tap on &quot;Studio&quot;" time="3.879"/>
+    <testcase name="Wait for animation" time="2.799"/>
+    <testcase name="Wait for animation" time="3.183"/>
+    <testcase name="runFlow" time="0.000"/>
+    <testcase name="Assert visible: &quot;Studio&quot;" time="0.427"/>
+    <testcase name="tapOnPointV2" time="3.306"/>
+    <testcase name="Wait for animation" time="17.758"/>
+    <testcase name="Wait for animation" time="17.976"/>
+    <testcase name="Press key: BACK" time="2.888"/>
+    <testcase name="Wait for animation" time="2.804"/>
+    <testcase name="Swipe DOWN" time="3.076"/>
+    <testcase name="Wait for animation" time="9.235"/>
+    <testcase name="Tap on &quot;View all&quot;" time="5.886"/>
+    <testcase name="Wait for animation" time="3.170"/>
+    <testcase name="Assert visible: &quot;Switch to Module&quot;" time="0.969"/>
+    <testcase name="Tap on &quot;Studio&quot;" time="8.470"/>
+    <testcase name="Wait for animation" time="2.911"/>
+    <testcase name="Wait for animation" time="3.478"/>
+    <testcase name="runFlow" time="0.000"/>
+    <testcase name="Assert visible: &quot;Studio&quot;" time="0.988"/>
+    <testcase name="tapOnPointV2" time="2.387"/>
+    <testcase name="Wait for animation" time="3.231"/>
+    <testcase name="Wait for animation" time="3.869"/>
+    <testcase name="Press key: BACK" time="1.365"/>
+    <testcase name="Wait for animation" time="3.049"/>
+    <testcase name="Swipe DOWN" time="11.018"/>
+    <testcase name="Wait for animation" time="3.233"/>
+    <testcase name="Tap on &quot;View all&quot;" time="6.037"/>
+    <testcase name="Wait for animation" time="3.014"/>
+    <testcase name="Assert visible: &quot;Switch to Module&quot;" time="0.559"/>
+    <testcase name="Tap on &quot;Studio&quot;" time="4.968"/>
+    <testcase name="Wait for animation" time="3.220"/>
+    <testcase name="Wait for animation" time="3.169"/>
+    <testcase name="runFlow" time="0.000"/>
+    <testcase name="Assert visible: &quot;Studio&quot;" time="0.433"/>
+    <testcase name="tapOnPointV2" time="2.709"/>
+    <testcase name="Wait for animation" time="7.319"/>
+    <testcase name="Wait for animation" time="3.056"/>
+    <testcase name="runFlow" time="0.000"/>
+    <testcase name="runFlow" time="0.000"/>
+    <testcase name="runFlow" time="0.000"/>
+    <testcase name="runFlow" time="0.000"/>
+    <testcase name="Press key: BACK" time="4.292"/>
+    <testcase name="Wait for animation" time="2.787"/>
+    <testcase name="Swipe DOWN" time="5.935"/>
+    <testcase name="Wait for animation" time="7.090"/>
+    <testcase name="Tap on &quot;View all&quot;" time="5.372"/>
+    <testcase name="Wait for animation" time="4.005"/>
+    <testcase name="Assert visible: &quot;Switch to Module&quot;" time="0.730"/>
+    <testcase name="Tap on &quot;Studio&quot;" time="8.393"/>
+    <testcase name="Wait for animation" time="2.654"/>
+    <testcase name="Wait for animation" time="3.662"/>
+    <testcase name="runFlow" time="0.000"/>
+    <testcase name="Assert visible: &quot;Studio&quot;" time="1.436"/>
+    <testcase name="tapOnPointV2" time="4.795"/>
+    <testcase name="Wait for animation" time="1.592"/>
+    <testcase name="Press key: BACK" time="3.849"/>
+    <testcase name="Wait for animation" time="2.951"/>
+    <testcase name="Assert visible: &quot;Studio&quot;" time="0.268"/>
+    <testcase name="tapOnPointV2" time="2.922"/>
+    <testcase name="Wait for animation" time="6.722"/>
+    <testcase name="Press key: BACK" time="2.988"/>
+    <testcase name="Wait for animation" time="1.995"/>
+    <testcase name="Assert visible: &quot;Studio&quot;" time="1.139"/>
+    <testcase name="tapOnPointV2" time="4.370"/>
+    <testcase name="Wait for animation" time="3.209"/>
+    <testcase name="Press key: BACK" time="2.402"/>
+    <testcase name="Wait for animation" time="3.048"/>
+    <testcase name="Assert visible: &quot;Studio&quot;" time="2.040"/>
+    <testcase name="tapOnPointV2" time="3.345"/>
+    <testcase name="Wait for animation" time="3.495"/>
+    <testcase name="tapOnPointV2" time="2.757"/>
+    <testcase name="Wait for animation" time="2.867"/>
+    <testcase name="Assert visible: &quot;Studio&quot;" time="0.969"/>
+    <testcase name="tapOnPointV2" time="5.237"/>
+    <testcase name="Wait for animation" time="2.041"/>
+    <testcase name="Press key: BACK" time="20.210"/>
+    <testcase name="Wait for animation" time="3.042"/>
+    <testcase name="Assert visible: &quot;Studio&quot;" time="0.688"/>
+    <testcase name="tapOnPointV2" time="2.938"/>
+    <testcase name="Wait for animation" time="3.065"/>
+    <testcase name="Press key: BACK" time="2.709"/>
+    <testcase name="Wait for animation" time="3.888"/>
+    <testcase name="Swipe DOWN" time="3.859"/>
+    <testcase name="Wait for animation" time="11.355"/>
+    <testcase name="Tap on &quot;View all&quot;" time="7.185"/>
+    <testcase name="Wait for animation" time="3.585"/>
+    <testcase name="Assert visible: &quot;Switch to Module&quot;" time="1.618"/>
+    <testcase name="Tap on &quot;Studio&quot;" time="4.851"/>
+    <testcase name="Wait for animation" time="2.580"/>
+    <testcase name="Wait for animation" time="3.726"/>
+    <testcase name="runFlow" time="0.000"/>
+    <testcase name="Assert visible: &quot;Studio&quot;" time="0.959"/>
+    <testcase name="tapOnPointV2" time="14.104"/>
+    <testcase name="Wait for animation" time="25.088"/>
+    <testcase name="Press key: BACK" time="3.597"/>
+    <testcase name="Wait for animation" time="2.639"/>
+    <testcase name="Assert visible: &quot;Studio&quot;" time="0.150"/>
+    <testcase name="tapOnPointV2" time="7.065"/>
+    <testcase name="Wait for animation" time="1.608"/>
+    <testcase name="Press key: BACK" time="19.870"/>
+    <testcase name="Wait for animation" time="3.688"/>
+    <testcase name="Swipe DOWN" time="4.815"/>
+    <testcase name="Wait for animation" time="3.772"/>
+    <testcase name="Tap on &quot;View all&quot;" time="4.656"/>
+    <testcase name="Wait for animation" time="8.532"/>
+    <testcase name="Assert visible: &quot;Switch to Module&quot;" time="0.981"/>
+    <testcase name="Tap on &quot;Studio&quot;" time="5.693"/>
+    <testcase name="Wait for animation" time="2.462"/>
+    <testcase name="Wait for animation" time="3.721"/>
+    <testcase name="runFlow" time="0.000"/>
+    <testcase name="Assert visible: &quot;Studio&quot;" time="0.452"/>
+    <testcase name="tapOnPointV2" time="2.199"/>
+    <testcase name="Wait for animation" time="3.973"/>
+    <testcase name="Wait for animation" time="3.376"/>
+    <testcase name="Press key: BACK" time="2.439"/>
+    <testcase name="Wait for animation" time="3.833"/>
+    <testcase name="Swipe DOWN" time="6.102"/>
+    <testcase name="Wait for animation" time="7.247"/>
+    <testcase name="Tap on &quot;View all&quot;" time="7.317"/>
+    <testcase name="Wait for animation" time="3.370"/>
+    <testcase name="Assert visible: &quot;Switch to Module&quot;" time="1.119"/>
+    <testcase name="Tap on &quot;Studio&quot;" time="6.798"/>
+    <testcase name="Wait for animation" time="2.622"/>
+    <testcase name="Wait for animation" time="4.407"/>
+    <testcase name="runFlow" time="0.000"/>
+    <testcase name="Assert visible: &quot;Studio&quot;" time="0.221"/>
+    <testcase name="tapOnPointV2" time="2.320"/>
+    <testcase name="Wait for animation" time="3.469"/>
+    <testcase name="Wait for animation" time="2.945"/>
+    <testcase name="Press key: BACK" time="3.866"/>
+    <testcase name="Wait for animation" time="2.746"/>
+    <testcase name="Swipe DOWN" time="4.779"/>
+    <testcase name="Wait for animation" time="7.365"/>
+    <testcase name="Tap on &quot;View all&quot;" time="7.881"/>
+    <testcase name="Wait for animation" time="9.292"/>
+    <testcase name="Assert visible: &quot;Switch to Module&quot;" time="1.149"/>
+    <testcase name="Tap on &quot;Studio&quot;" time="6.048"/>
+    <testcase name="Wait for animation" time="3.611"/>
+    <testcase name="Wait for animation" time="3.223"/>
+    <testcase name="runFlow" time="0.000"/>
+    <testcase name="Assert visible: &quot;Studio&quot;" time="0.949"/>
+    <testcase name="tapOnPointV2" time="18.082"/>
+    <testcase name="Wait for animation" time="24.768"/>
+    <testcase name="Press key: BACK" time="5.072"/>
+    <testcase name="Wait for animation" time="3.401"/>
+    <testcase name="Swipe DOWN" time="10.193"/>
+    <testcase name="Wait for animation" time="4.671"/>
+    <testcase name="Tap on &quot;View all&quot;" time="7.346"/>
+    <testcase name="Wait for animation" time="3.588"/>
+    <testcase name="Assert visible: &quot;Switch to Module&quot;" time="1.713"/>
+    <testcase name="Press key: BACK" time="1.474"/>
+    <testcase name="Wait for animation" time="3.016"/>
+  </testsuite>
+  <testsuite name="android_town_hall" tests="69" failures="0" time="239.060">
+    <testcase name="Set up test variables" time="0.000"/>
+    <testcase name="Apply flow configuration" time="0.000"/>
+    <testcase name="stopApp" time="0.847"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="3.461"/>
+    <testcase name="Wait for animation" time="7.338"/>
+    <testcase name="Wait for animation" time="8.158"/>
+    <testcase name="tapOnPointV2" time="8.372"/>
+    <testcase name="Wait for animation" time="3.332"/>
+    <testcase name="Wait for animation" time="3.545"/>
+    <testcase name="Swipe UP" time="4.039"/>
+    <testcase name="Wait for animation" time="2.601"/>
+    <testcase name="Swipe UP" time="3.568"/>
+    <testcase name="Wait for animation" time="2.163"/>
+    <testcase name="Swipe UP" time="4.084"/>
+    <testcase name="Wait for animation" time="2.460"/>
+    <testcase name="Assert visible: &quot;Town Hall&quot;" time="1.178"/>
+    <testcase name="Tap on &quot;Town Hall&quot;" time="6.847"/>
+    <testcase name="Wait for animation" time="2.354"/>
+    <testcase name="Wait for animation" time="1.595"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="1.056"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="0.800"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.539"/>
+    <testcase name="Swipe UP" time="1.826"/>
+    <testcase name="Wait for animation" time="2.681"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="0.814"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.943"/>
+    <testcase name="Swipe DOWN" time="1.474"/>
+    <testcase name="Wait for animation" time="1.949"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="1.025"/>
+    <testcase name="tapOnPointV2" time="1.272"/>
+    <testcase name="Wait for animation" time="2.369"/>
+    <testcase name="Wait for animation" time="2.108"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.848"/>
+    <testcase name="Press key: BACK" time="2.452"/>
+    <testcase name="Wait for animation" time="8.216"/>
+    <testcase name="tapOnPointV2" time="5.806"/>
+    <testcase name="Wait for animation" time="20.050"/>
+    <testcase name="Wait for animation" time="19.252"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="2.143"/>
+    <testcase name="Press key: BACK" time="3.787"/>
+    <testcase name="Wait for animation" time="2.773"/>
+    <testcase name="Press key: BACK" time="2.032"/>
+    <testcase name="Wait for animation" time="4.051"/>
+    <testcase name="Swipe DOWN" time="7.245"/>
+    <testcase name="Wait for animation" time="7.530"/>
+    <testcase name="Assert visible: &quot;View all&quot;" time="0.394"/>
+    <testcase name="tapOnPointV2" time="4.358"/>
+    <testcase name="Wait for animation" time="8.396"/>
+    <testcase name="Wait for animation" time="2.749"/>
+    <testcase name="Swipe UP" time="3.188"/>
+    <testcase name="Wait for animation" time="2.925"/>
+    <testcase name="Swipe UP" time="4.374"/>
+    <testcase name="Wait for animation" time="3.196"/>
+    <testcase name="Swipe UP" time="3.856"/>
+    <testcase name="Wait for animation" time="2.791"/>
+    <testcase name="Assert visible: &quot;Town Hall&quot;" time="0.451"/>
+    <testcase name="Tap on &quot;Town Hall&quot;" time="5.063"/>
+    <testcase name="Wait for animation" time="5.556"/>
+    <testcase name="Wait for animation" time="1.666"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="1.329"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.728"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="0.723"/>
+    <testcase name="Swipe UP" time="1.298"/>
+    <testcase name="Wait for animation" time="2.043"/>
+    <testcase name="Swipe DOWN" time="1.601"/>
+    <testcase name="Wait for animation" time="1.987"/>
+    <testcase name="Press key: BACK" time="1.236"/>
+    <testcase name="Wait for animation" time="7.022"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="1.147"/>
+  </testsuite>
+  <testsuite name="android_video" tests="149" failures="0" time="594.613">
+    <testcase name="Set up test variables" time="0.000"/>
+    <testcase name="Apply flow configuration" time="0.000"/>
+    <testcase name="stopApp" time="0.148"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="4.635"/>
+    <testcase name="Wait for animation" time="16.175"/>
+    <testcase name="Tap on &quot;View all&quot;" time="13.307"/>
+    <testcase name="Wait for animation" time="3.935"/>
+    <testcase name="Tap on &quot;Video&quot;" time="9.506"/>
+    <testcase name="Wait for animation" time="1.338"/>
+    <testcase name="Wait for animation" time="1.143"/>
+    <testcase name="Assert visible: &quot;Video&quot;" time="0.100"/>
+    <testcase name="Swipe UP" time="0.686"/>
+    <testcase name="Wait for animation" time="1.122"/>
+    <testcase name="Assert visible: &quot;Video&quot;" time="0.107"/>
+    <testcase name="Swipe UP" time="0.679"/>
+    <testcase name="Wait for animation" time="1.016"/>
+    <testcase name="Assert visible: &quot;Video&quot;" time="0.092"/>
+    <testcase name="Swipe DOWN" time="0.696"/>
+    <testcase name="Wait for animation" time="0.941"/>
+    <testcase name="Swipe DOWN" time="0.627"/>
+    <testcase name="Wait for animation" time="0.936"/>
+    <testcase name="Assert visible: &quot;Video&quot;" time="0.061"/>
+    <testcase name="tapOnPointV2" time="0.447"/>
+    <testcase name="Wait for animation" time="0.958"/>
+    <testcase name="Wait for animation" time="1.104"/>
+    <testcase name="Press key: BACK" time="19.337"/>
+    <testcase name="Wait for animation" time="3.303"/>
+    <testcase name="Swipe DOWN" time="4.762"/>
+    <testcase name="Wait for animation" time="2.553"/>
+    <testcase name="Tap on &quot;View all&quot;" time="6.685"/>
+    <testcase name="Wait for animation" time="3.522"/>
+    <testcase name="Tap on &quot;Video&quot;" time="9.201"/>
+    <testcase name="Wait for animation" time="2.126"/>
+    <testcase name="Wait for animation" time="1.669"/>
+    <testcase name="Assert visible: &quot;Video&quot;" time="0.091"/>
+    <testcase name="tapOnPointV2" time="0.517"/>
+    <testcase name="Wait for animation" time="1.112"/>
+    <testcase name="Wait for animation" time="1.068"/>
+    <testcase name="Press key: BACK" time="20.989"/>
+    <testcase name="Wait for animation" time="3.008"/>
+    <testcase name="Swipe DOWN" time="3.642"/>
+    <testcase name="Wait for animation" time="7.193"/>
+    <testcase name="Tap on &quot;View all&quot;" time="6.955"/>
+    <testcase name="Wait for animation" time="9.335"/>
+    <testcase name="Tap on &quot;Video&quot;" time="5.973"/>
+    <testcase name="Wait for animation" time="2.791"/>
+    <testcase name="Wait for animation" time="1.277"/>
+    <testcase name="Assert visible: &quot;Video&quot;" time="0.120"/>
+    <testcase name="tapOnPointV2" time="0.638"/>
+    <testcase name="Wait for animation" time="1.153"/>
+    <testcase name="Wait for animation" time="1.088"/>
+    <testcase name="Press key: BACK" time="19.704"/>
+    <testcase name="Wait for animation" time="3.395"/>
+    <testcase name="Swipe DOWN" time="4.881"/>
+    <testcase name="Wait for animation" time="6.388"/>
+    <testcase name="Tap on &quot;View all&quot;" time="5.228"/>
+    <testcase name="Wait for animation" time="3.447"/>
+    <testcase name="Tap on &quot;Video&quot;" time="8.001"/>
+    <testcase name="Wait for animation" time="1.647"/>
+    <testcase name="Wait for animation" time="1.170"/>
+    <testcase name="Assert visible: &quot;Video&quot;" time="0.115"/>
+    <testcase name="tapOnPointV2" time="0.415"/>
+    <testcase name="Wait for animation" time="1.220"/>
+    <testcase name="tapOnPointV2" time="0.533"/>
+    <testcase name="Wait for animation" time="1.004"/>
+    <testcase name="Assert visible: &quot;Video&quot;" time="0.084"/>
+    <testcase name="tapOnPointV2" time="0.586"/>
+    <testcase name="Wait for animation" time="0.966"/>
+    <testcase name="Press key: BACK" time="20.067"/>
+    <testcase name="Wait for animation" time="3.128"/>
+    <testcase name="Swipe DOWN" time="5.047"/>
+    <testcase name="Wait for animation" time="3.876"/>
+    <testcase name="Tap on &quot;View all&quot;" time="9.497"/>
+    <testcase name="Wait for animation" time="3.638"/>
+    <testcase name="Tap on &quot;Video&quot;" time="9.090"/>
+    <testcase name="Wait for animation" time="1.760"/>
+    <testcase name="Wait for animation" time="1.097"/>
+    <testcase name="Assert visible: &quot;Video&quot;" time="0.099"/>
+    <testcase name="tapOnPointV2" time="1.131"/>
+    <testcase name="Wait for animation" time="0.990"/>
+    <testcase name="Press key: BACK" time="0.847"/>
+    <testcase name="Wait for animation" time="2.497"/>
+    <testcase name="Assert visible: &quot;Video&quot;" time="0.100"/>
+    <testcase name="tapOnPointV2" time="1.893"/>
+    <testcase name="Wait for animation" time="1.020"/>
+    <testcase name="Press key: BACK" time="1.382"/>
+    <testcase name="Wait for animation" time="2.060"/>
+    <testcase name="Assert visible: &quot;Video&quot;" time="0.089"/>
+    <testcase name="tapOnPointV2" time="1.575"/>
+    <testcase name="Wait for animation" time="1.026"/>
+    <testcase name="Press key: BACK" time="1.160"/>
+    <testcase name="Wait for animation" time="2.018"/>
+    <testcase name="Assert visible: &quot;Video&quot;" time="0.079"/>
+    <testcase name="tapOnPointV2" time="0.418"/>
+    <testcase name="Wait for animation" time="2.010"/>
+    <testcase name="Assert visible: &quot;Video&quot;" time="0.082"/>
+    <testcase name="Swipe UP" time="4.073"/>
+    <testcase name="Wait for animation" time="2.318"/>
+    <testcase name="Assert visible: &quot;Video&quot;" time="0.078"/>
+    <testcase name="tapOnPointV2" time="3.753"/>
+    <testcase name="Wait for animation" time="20.280"/>
+    <testcase name="Wait for animation" time="15.011"/>
+    <testcase name="Swipe UP" time="2.891"/>
+    <testcase name="Wait for animation" time="18.976"/>
+    <testcase name="tapOnPointV2" time="4.926"/>
+    <testcase name="Wait for animation" time="15.793"/>
+    <testcase name="Wait for animation" time="0.745"/>
+    <testcase name="Swipe UP" time="0.613"/>
+    <testcase name="Wait for animation" time="0.769"/>
+    <testcase name="Swipe UP" time="0.614"/>
+    <testcase name="Wait for animation" time="0.777"/>
+    <testcase name="Swipe DOWN" time="1.730"/>
+    <testcase name="Wait for animation" time="1.526"/>
+    <testcase name="Swipe DOWN" time="2.326"/>
+    <testcase name="Wait for animation" time="1.892"/>
+    <testcase name="Assert visible: &quot;Video&quot;" time="0.088"/>
+    <testcase name="tapOnPointV2" time="1.152"/>
+    <testcase name="Wait for animation" time="3.457"/>
+    <testcase name="Press key: BACK" time="1.178"/>
+    <testcase name="Wait for animation" time="1.847"/>
+    <testcase name="Assert visible: &quot;Video&quot;" time="0.086"/>
+    <testcase name="tapOnPointV2" time="1.214"/>
+    <testcase name="Wait for animation" time="3.020"/>
+    <testcase name="Press key: BACK" time="1.120"/>
+    <testcase name="Wait for animation" time="1.920"/>
+    <testcase name="Press key: BACK" time="12.444"/>
+    <testcase name="Wait for animation" time="2.711"/>
+    <testcase name="Swipe DOWN" time="4.590"/>
+    <testcase name="Wait for animation" time="5.371"/>
+    <testcase name="Tap on &quot;View all&quot;" time="5.511"/>
+    <testcase name="Wait for animation" time="3.512"/>
+    <testcase name="Tap on &quot;Video&quot;" time="8.257"/>
+    <testcase name="Wait for animation" time="2.700"/>
+    <testcase name="Wait for animation" time="2.397"/>
+    <testcase name="Assert visible: &quot;Video&quot;" time="0.086"/>
+    <testcase name="Swipe LEFT" time="1.273"/>
+    <testcase name="Wait for animation" time="2.010"/>
+    <testcase name="Swipe RIGHT" time="1.217"/>
+    <testcase name="Wait for animation" time="2.041"/>
+    <testcase name="Assert visible: &quot;Video&quot;" time="0.099"/>
+    <testcase name="Press key: BACK" time="31.318"/>
+    <testcase name="Wait for animation" time="18.468"/>
+    <testcase name="Swipe DOWN" time="49.050"/>
+    <testcase name="Wait for animation" time="3.750"/>
+    <testcase name="Tap on &quot;View all&quot;" time="1.994"/>
+    <testcase name="Wait for animation" time="2.237"/>
+    <testcase name="Assert visible: &quot;Switch to Module&quot;" time="0.175"/>
+    <testcase name="Press key: BACK" time="0.707"/>
+    <testcase name="Wait for animation" time="2.195"/>
+  </testsuite>
+  <testsuite name="android_social_crud_pilot" tests="16" failures="1" time="23142.956">
+    <testcase name="Set up test variables" time="0.000"/>
+    <testcase name="Apply flow configuration" time="0.000"/>
+    <testcase name="stopApp" time="0.235"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="8.760"/>
+    <testcase name="Wait for animation" time="8.360"/>
+    <testcase name="Wait for animation" time="16.501"/>
+    <testcase name="Swipe DOWN" time="25.919"/>
+    <testcase name="Wait for animation" time="3.450"/>
+    <testcase name="Assert visible: &quot;Post&quot;" time="1.296"/>
+    <testcase name="tapOnPointV2" time="4.724"/>
+    <testcase name="Wait for animation" time="3.967"/>
+    <testcase name="Input text: &quot;Good morning everyone! Feeling grateful for another beautiful day #morningvibes&quot;" time="51.475"/>
+    <testcase name="Wait for animation" time="7.637"/>
+    <testcase name="Press key: BACK" time="3.337"/>
+    <testcase name="Wait for animation" time="22994.677"/>
+    <testcase name="Tap on &quot;Post&quot;" time="12.618">
+      <failure message="Tap on &quot;Post&quot; did not complete"/>
+    </testcase>
+  </testsuite>
+  <testsuite name="_temp_drawer" tests="7" failures="0" time="25.260">
+    <testcase name="Set up test variables" time="0.009"/>
+    <testcase name="Apply flow configuration" time="0.000"/>
+    <testcase name="stopApp" time="0.630"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="5.203"/>
+    <testcase name="Wait for animation" time="16.085"/>
+    <testcase name="tapOnPointV2" time="2.413"/>
+    <testcase name="Wait for animation" time="0.920"/>
+  </testsuite>
+  <testsuite name="android_social_create_post" tests="31" failures="1" time="233.781">
+    <testcase name="Set up test variables" time="0.008"/>
+    <testcase name="Apply flow configuration" time="0.004"/>
+    <testcase name="stopApp" time="0.210"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="13.120"/>
+    <testcase name="Wait for animation" time="13.514"/>
+    <testcase name="Wait for animation" time="1.947"/>
+    <testcase name="Swipe DOWN" time="5.510"/>
+    <testcase name="Wait for animation" time="1.865"/>
+    <testcase name="Assert visible: &quot;Post&quot;" time="0.299"/>
+    <testcase name="tapOnPointV2" time="1.427"/>
+    <testcase name="Wait for animation" time="3.684"/>
+    <testcase name="Press key: BACK" time="1.757"/>
+    <testcase name="Wait for animation" time="18.024"/>
+    <testcase name="Tap on &quot;Post&quot;" time="2.768"/>
+    <testcase name="Wait for animation" time="15.870"/>
+    <testcase name="Assert visible: &quot;Post&quot;" time="0.349"/>
+    <testcase name="tapOnPointV2" time="3.019"/>
+    <testcase name="Wait for animation" time="16.439"/>
+    <testcase name="Input text: &quot;Good morning everyone! #morningvibes&quot;" time="4.621"/>
+    <testcase name="Wait for animation" time="15.128"/>
+    <testcase name="Press key: BACK" time="3.909"/>
+    <testcase name="Wait for animation" time="17.114"/>
+    <testcase name="Tap on &quot;Post&quot;" time="2.800"/>
+    <testcase name="Wait for animation" time="17.365"/>
+    <testcase name="Wait for animation" time="15.038"/>
+    <testcase name="Wait for animation" time="16.561"/>
+    <testcase name="Swipe UP" time="2.405"/>
+    <testcase name="Wait for animation" time="16.198"/>
+    <testcase name="Swipe UP" time="1.694"/>
+    <testcase name="Wait for animation" time="2.993"/>
+    <testcase name="Assert visible: &quot;Good morning everyone! #morningvibes&quot;" time="18.141">
+      <failure message="Assert visible: &quot;Good morning everyone! #morningvibes&quot; did not complete"/>
+    </testcase>
+  </testsuite>
+  <testsuite name="learn_home" tests="35" failures="0" time="64.257">
+    <testcase name="Set up test variables" time="0.007"/>
+    <testcase name="Apply flow configuration" time="0.002"/>
+    <testcase name="stopApp" time="0.148"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="4.599"/>
+    <testcase name="Wait for animation" time="7.850"/>
+    <testcase name="Wait for animation" time="1.973"/>
+    <testcase name="Assert visible: &quot;View all&quot;" time="0.348"/>
+    <testcase name="Tap on &quot;View all&quot;" time="3.125"/>
+    <testcase name="Wait for animation" time="2.179"/>
+    <testcase name="Assert visible: &quot;Switch to Module&quot;" time="0.210"/>
+    <testcase name="Tap on &quot;Learn&quot;" time="4.149"/>
+    <testcase name="Wait for animation" time="2.322"/>
+    <testcase name="Wait for animation" time="1.037"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.797"/>
+    <testcase name="Assert not visible: &quot;Unfortunately&quot;" time="0.918"/>
+    <testcase name="Assert visible: &quot;Learn&quot;" time="0.349"/>
+    <testcase name="Swipe UP" time="1.444"/>
+    <testcase name="Wait for animation" time="3.854"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="1.062"/>
+    <testcase name="Swipe DOWN" time="1.317"/>
+    <testcase name="Wait for animation" time="3.957"/>
+    <testcase name="Assert visible: &quot;Learn&quot;" time="0.283"/>
+    <testcase name="tapOnPointV2" time="1.074"/>
+    <testcase name="Wait for animation" time="1.237"/>
+    <testcase name="Wait for animation" time="1.260"/>
+    <testcase name="Assert not visible: &quot;Something went wrong&quot;" time="0.986"/>
+    <testcase name="Press key: BACK" time="3.480"/>
+    <testcase name="Wait for animation" time="2.034"/>
+    <testcase name="Press key: BACK" time="1.095"/>
+    <testcase name="Wait for animation" time="1.956"/>
+    <testcase name="Press key: BACK" time="1.069"/>
+    <testcase name="Wait for animation" time="1.942"/>
+    <testcase name="Swipe DOWN" time="1.593"/>
+    <testcase name="Wait for animation" time="4.267"/>
+    <testcase name="Assert visible: &quot;View all&quot;" time="0.334"/>
+  </testsuite>
+  <testsuite name="orbit_nav_check" tests="9" failures="0" time="94.949">
+    <testcase name="Set up test variables" time="0.014"/>
+    <testcase name="Apply flow configuration" time="0.005"/>
+    <testcase name="stopApp" time="1.022"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="4.204"/>
+    <testcase name="Wait for animation" time="15.967"/>
+    <testcase name="tapOnPointV2" time="33.826"/>
+    <testcase name="Wait for animation" time="16.437"/>
+    <testcase name="Wait for animation" time="20.905"/>
+    <testcase name="takeScreenshot" time="2.569"/>
+  </testsuite>
+  <testsuite name="fab_check" tests="15" failures="0" time="46.078">
+    <testcase name="Set up test variables" time="0.009"/>
+    <testcase name="Apply flow configuration" time="0.003"/>
+    <testcase name="stopApp" time="0.092"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="1.843"/>
+    <testcase name="Wait for animation" time="1.982"/>
+    <testcase name="tapOnPointV2" time="21.331"/>
+    <testcase name="Wait for animation" time="3.224"/>
+    <testcase name="Wait for animation" time="3.643"/>
+    <testcase name="Tap on &quot;Images&quot;" time="2.677"/>
+    <testcase name="Wait for animation" time="3.359"/>
+    <testcase name="Wait for animation" time="1.888"/>
+    <testcase name="tapOnPointV2" time="1.080"/>
+    <testcase name="takeScreenshot" time="1.911"/>
+    <testcase name="Wait for animation" time="2.269"/>
+    <testcase name="takeScreenshot" time="0.767"/>
+  </testsuite>
+  <testsuite name="android_images_probe" tests="29" failures="0" time="91.188">
+    <testcase name="Set up test variables" time="0.020"/>
+    <testcase name="Apply flow configuration" time="0.005"/>
+    <testcase name="stopApp" time="1.842"/>
+    <testcase name="Launch app &quot;com.omre.app.posh&quot;" time="4.845"/>
+    <testcase name="Wait for animation" time="3.498"/>
+    <testcase name="takeScreenshot" time="0.354"/>
+    <testcase name="tapOnPointV2" time="29.176"/>
+    <testcase name="Wait for animation" time="3.014"/>
+    <testcase name="takeScreenshot" time="0.946"/>
+    <testcase name="Tap on &quot;Images&quot;" time="5.539"/>
+    <testcase name="Wait for animation" time="3.172"/>
+    <testcase name="takeScreenshot" time="1.706"/>
+    <testcase name="Swipe UP" time="1.322"/>
+    <testcase name="Wait for animation" time="3.460"/>
+    <testcase name="takeScreenshot" time="2.140"/>
+    <testcase name="Swipe DOWN" time="2.276"/>
+    <testcase name="Wait for animation" time="3.629"/>
+    <testcase name="tapOnPointV2" time="0.552"/>
+    <testcase name="Wait for animation" time="2.955"/>
+    <testcase name="takeScreenshot" time="0.530"/>
+    <testcase name="Press key: BACK" time="3.054"/>
+    <testcase name="Wait for animation" time="3.166"/>
+    <testcase name="takeScreenshot" time="1.774"/>
+    <testcase name="tapOnPointV2" time="1.853"/>
+    <testcase name="Wait for animation" time="2.811"/>
+    <testcase name="takeScreenshot" time="0.820"/>
+    <testcase name="Press key: BACK" time="2.048"/>
+    <testcase name="Wait for animation" time="3.563"/>
+    <testcase name="takeScreenshot" time="1.118"/>
+  </testsuite>
+</testsuites>

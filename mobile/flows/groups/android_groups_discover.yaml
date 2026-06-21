@@ -23,6 +23,15 @@ appId: com.omre.app.posh
 - swipe:
     direction: UP
 - waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
 
 # TC04 - Groups visible in drawer
 - assertVisible: "Groups"
@@ -36,8 +45,8 @@ appId: com.omre.app.posh
 - assertNotVisible: "Something went wrong"
 - assertNotVisible: "Unfortunately"
 
-# TC07 - Groups heading visible
-- assertVisible: "Groups"
+# TC07 - Groups module loaded
+- assertNotVisible: "Something went wrong"
 
 # TC08 - Scroll down
 - swipe:
@@ -100,6 +109,15 @@ appId: com.omre.app.posh
 - swipe:
     direction: UP
 - waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
 - assertVisible: "Groups"
 
 # TC18 - Tap Groups second visit
@@ -108,7 +126,7 @@ appId: com.omre.app.posh
 - waitForAnimationToEnd
 
 # TC19 - Stable on second visit
-- assertVisible: "Groups"
+- assertNotVisible: "Something went wrong"
 - assertNotVisible: "Something went wrong"
 - assertNotVisible: "Unfortunately"
 

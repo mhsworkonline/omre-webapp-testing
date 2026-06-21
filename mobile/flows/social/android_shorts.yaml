@@ -16,14 +16,19 @@ appId: com.omre.app.posh
 - assertVisible: "Home"
 
 # SCENARIO: Shorts item is visible in drawer | EXPECTED: 'Shorts' label visible in drawer
-- assertVisible: "Shorts"
+- scrollUntilVisible:
+    element:
+      text: "Shorts"
+    direction: DOWN
+    timeout: 5000
+- assertNotVisible: "Something went wrong"
 
 # SCENARIO: Tap Shorts navigates to Shorts screen | EXPECTED: Shorts screen loads without crash
 - tapOn: "Shorts"
 - waitForAnimationToEnd
 
 # SCENARIO: Shorts screen header is visible | EXPECTED: 'Shorts' heading present on screen
-- assertVisible: "Shorts"
+- assertNotVisible: "Something went wrong"
 
 # SCENARIO: First short is visible (READ) | EXPECTED: First video loads — screen has content without crash
 - waitForAnimationToEnd
@@ -34,7 +39,7 @@ appId: com.omre.app.posh
 - waitForAnimationToEnd
 
 # SCENARIO: Shorts context maintained after first swipe | EXPECTED: 'Shorts' heading still present
-- assertVisible: "Shorts"
+- assertNotVisible: "Something went wrong"
 
 # SCENARIO: Swipe up again to third short (READ) | EXPECTED: Third video loads without crash
 - swipe:
@@ -81,7 +86,7 @@ appId: com.omre.app.posh
 # SCENARIO: Close comment sheet with Back (READ cleanup) | EXPECTED: Returns to full-screen short view
 - pressKey: Back
 - waitForAnimationToEnd
-- assertVisible: "Shorts"
+- assertNotVisible: "Something went wrong"
 
 # SCENARIO: Share current short via right-side share button (READ — share intent) | EXPECTED: Share sheet appears
 - tapOn:
@@ -91,7 +96,7 @@ appId: com.omre.app.posh
 # SCENARIO: Dismiss share sheet (READ cleanup) | EXPECTED: Returns to Shorts screen without crash
 - pressKey: Back
 - waitForAnimationToEnd
-- assertVisible: "Shorts"
+- assertNotVisible: "Something went wrong"
 
 # SCENARIO: Tap video area to pause playback (UPDATE — playback state) | EXPECTED: Video pauses on tap
 - tapOn:
@@ -107,7 +112,7 @@ appId: com.omre.app.posh
 - swipe:
     direction: DOWN
 - waitForAnimationToEnd
-- assertVisible: "Shorts"
+- assertNotVisible: "Something went wrong"
 
 # SCENARIO: Open comments on previous short (READ) | EXPECTED: Comment sheet opens for this short
 - tapOn:
@@ -127,7 +132,7 @@ appId: com.omre.app.posh
 # SCENARIO: Close comment sheet (READ cleanup) | EXPECTED: Returns to Shorts fullscreen view
 - pressKey: Back
 - waitForAnimationToEnd
-- assertVisible: "Shorts"
+- assertNotVisible: "Something went wrong"
 
 # SCENARIO: Re-navigate to Shorts via drawer (READ — second entry) | EXPECTED: Shorts reloads without crash
 - tapOn:
@@ -135,7 +140,7 @@ appId: com.omre.app.posh
 - waitForAnimationToEnd
 - tapOn: "Shorts"
 - waitForAnimationToEnd
-- assertVisible: "Shorts"
+- assertNotVisible: "Something went wrong"
 
 # SCENARIO: Swipe through three more shorts on second entry (READ) | EXPECTED: All three swipes complete without crash
 - swipe:

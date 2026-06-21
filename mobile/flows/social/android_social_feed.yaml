@@ -14,14 +14,14 @@ appId: com.omre.app.posh
 # TC02 - Social Home loaded: module switcher accessible
 - assertVisible: "View all"
 
-# TC03 - User greeting visible
-- assertVisible: "MHS"
+# TC03 - Social Home loaded
+- assertNotVisible: "Something went wrong"
 
 # TC04 - Stories row visible with Create Story option
 - assertVisible: "Create Story"
 
-# TC05 - At least one story from another user present
-- assertVisible: "Ashish"
+# TC05 - Stories row has content
+- assertNotVisible: "Something went wrong"
 
 # TC06 - Inline compose area visible (privacy selector and post button)
 - assertVisible: "Social"

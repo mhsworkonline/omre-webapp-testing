@@ -16,16 +16,12 @@ appId: com.omre.app.posh
 - waitForAnimationToEnd
 - waitForAnimationToEnd
 
-# TC03 - Scroll drawer
-- swipe:
-    direction: UP
-- waitForAnimationToEnd
-- swipe:
-    direction: UP
-- waitForAnimationToEnd
-- swipe:
-    direction: UP
-- waitForAnimationToEnd
+# TC03 - Scroll drawer to Weather
+- scrollUntilVisible:
+    element:
+      text: "Weather"
+    direction: DOWN
+    timeout: 15000
 
 # TC04 - Weather visible in drawer
 - assertVisible: "Weather"
@@ -93,16 +89,12 @@ appId: com.omre.app.posh
 - waitForAnimationToEnd
 - waitForAnimationToEnd
 
-# TC17 - Scroll drawer
-- swipe:
-    direction: UP
-- waitForAnimationToEnd
-- swipe:
-    direction: UP
-- waitForAnimationToEnd
-- swipe:
-    direction: UP
-- waitForAnimationToEnd
+# TC17 - Scroll drawer to Weather
+- scrollUntilVisible:
+    element:
+      text: "Weather"
+    direction: DOWN
+    timeout: 15000
 - assertVisible: "Weather"
 
 # TC18 - Tap Weather second visit

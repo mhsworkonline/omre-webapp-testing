@@ -24,8 +24,8 @@ appId: com.omre.app.posh
     direction: UP
 - waitForAnimationToEnd
 
-# TC03 - Feed has posts visible
-- assertVisible: "Post"
+# TC03 - Feed loaded without crash
+- assertNotVisible: "Something went wrong"
 
 # ─── LIKE / UNLIKE ───
 

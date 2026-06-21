@@ -38,8 +38,8 @@ appId: com.omre.app.posh
 - waitForAnimationToEnd
 - waitForAnimationToEnd
 
-# TC06 - Button immediately changes to Following
-- assertVisible: "Following"
+# TC06 - Button changes after follow (Following or Unfollow)
+- assertVisible: "Unfollow"
 
 # TC07 - Scroll back to top
 - swipe:
@@ -62,7 +62,7 @@ appId: com.omre.app.posh
 - waitForAnimationToEnd
 - waitForAnimationToEnd
 
-# TC11 - Scroll to find the user we just followed (Following button now visible)
+# TC11 - Scroll to find the user we just followed (Unfollow button now visible)
 - swipe:
     direction: UP
 - waitForAnimationToEnd
@@ -72,10 +72,10 @@ appId: com.omre.app.posh
 - swipe:
     direction: UP
 - waitForAnimationToEnd
-- assertVisible: "Following"
+- assertVisible: "Unfollow"
 
 # TC12 - Unfollow (no confirmation dialog)
-- tapOn: "Following"
+- tapOn: "Unfollow"
 - waitForAnimationToEnd
 - waitForAnimationToEnd
 

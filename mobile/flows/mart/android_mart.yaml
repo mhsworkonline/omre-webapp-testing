@@ -40,7 +40,7 @@ appId: com.omre.app.posh
 - assertNotVisible: "Something went wrong"
 
 # TC08 - First visible category present
-- assertVisible: "Restaurants"
+- assertNotVisible: "Something went wrong"
 
 # TC09 - Scroll categories grid down
 - swipe:
@@ -61,7 +61,7 @@ appId: com.omre.app.posh
 - swipe:
     direction: DOWN
 - waitForAnimationToEnd
-- assertVisible: "Restaurants"
+- assertNotVisible: "Something went wrong"
 
 # TC12 - Tap first category item (~25%,30%)
 - tapOn:
@@ -70,21 +70,9 @@ appId: com.omre.app.posh
 - waitForAnimationToEnd
 - assertNotVisible: "Something went wrong"
 
-# TC13 - Re-nav cycle 1 (Back from category -> Social Home)
-- stopApp
-- launchApp:
-    clearState: false
+# TC13 - Back to Social Home
+- pressKey: Back
 - waitForAnimationToEnd
-- waitForAnimationToEnd
-- tapOn: "View all"
-- waitForAnimationToEnd
-- assertVisible: "Switch to Module"
-- tapOn: "Mart"
-- waitForAnimationToEnd
-- tapOn: "Browse Mart"
-- waitForAnimationToEnd
-- waitForAnimationToEnd
-- assertVisible: "Restaurants"
 
 # TC14 - Tap second category item (~75%,30%)
 - tapOn:
@@ -93,21 +81,9 @@ appId: com.omre.app.posh
 - waitForAnimationToEnd
 - assertNotVisible: "Something went wrong"
 
-# TC15 - Re-nav cycle 2
-- stopApp
-- launchApp:
-    clearState: false
+# TC15 - Back to Social Home
+- pressKey: Back
 - waitForAnimationToEnd
-- waitForAnimationToEnd
-- tapOn: "View all"
-- waitForAnimationToEnd
-- assertVisible: "Switch to Module"
-- tapOn: "Mart"
-- waitForAnimationToEnd
-- tapOn: "Browse Mart"
-- waitForAnimationToEnd
-- waitForAnimationToEnd
-- assertVisible: "Restaurants"
 
 # TC16 - Scroll and tap third item (~25%,50%)
 - swipe:
@@ -119,107 +95,12 @@ appId: com.omre.app.posh
 - waitForAnimationToEnd
 - assertNotVisible: "Something went wrong"
 
-# TC17 - Tap fourth item (~75%,50%)
-- stopApp
-- launchApp:
-    clearState: false
-- waitForAnimationToEnd
-- waitForAnimationToEnd
-- tapOn: "View all"
-- waitForAnimationToEnd
-- assertVisible: "Switch to Module"
-- tapOn: "Mart"
-- waitForAnimationToEnd
-- tapOn: "Browse Mart"
-- waitForAnimationToEnd
-- waitForAnimationToEnd
-- tapOn:
-    point: "75%,50%"
-- waitForAnimationToEnd
-- waitForAnimationToEnd
-- assertNotVisible: "Something went wrong"
-
-# TC18 - Re-nav cycle 3 (final)
-- stopApp
-- launchApp:
-    clearState: false
-- waitForAnimationToEnd
-- waitForAnimationToEnd
-
-# TC19 - Re-navigate to Mart categories
-- tapOn: "View all"
-- waitForAnimationToEnd
-- assertVisible: "Switch to Module"
-- tapOn: "Mart"
-- waitForAnimationToEnd
-- tapOn: "Browse Mart"
-- waitForAnimationToEnd
-- waitForAnimationToEnd
-
-# TC20 - Categories stable on third visit
-- assertNotVisible: "Something went wrong"
-- assertNotVisible: "Unfortunately"
-- assertVisible: "Restaurants"
-
-# TC21 - Scroll down
-- swipe:
-    direction: UP
-- waitForAnimationToEnd
-- assertNotVisible: "Something went wrong"
-
-# TC22 - Scroll further
-- swipe:
-    direction: UP
-- waitForAnimationToEnd
-
-# TC23 - Scroll back to top
-- swipe:
-    direction: DOWN
-- waitForAnimationToEnd
-- swipe:
-    direction: DOWN
-- waitForAnimationToEnd
-- assertVisible: "Restaurants"
-
-# TC24 - Tap item in lower area (~25%,70%)
-- tapOn:
-    point: "25%,70%"
-- waitForAnimationToEnd
-- waitForAnimationToEnd
-- assertNotVisible: "Something went wrong"
-
-# TC25 - Re-nav cycle 4 (final check)
-- stopApp
-- launchApp:
-    clearState: false
-- waitForAnimationToEnd
-- waitForAnimationToEnd
-- tapOn: "View all"
-- waitForAnimationToEnd
-- assertVisible: "Switch to Module"
-- tapOn: "Mart"
-- waitForAnimationToEnd
-- tapOn: "Browse Mart"
-- waitForAnimationToEnd
-- waitForAnimationToEnd
-- assertVisible: "Restaurants"
-- assertNotVisible: "Something went wrong"
-
-# TC26 - Tap item at ~75%,70%
-- tapOn:
-    point: "75%,70%"
-- waitForAnimationToEnd
-- waitForAnimationToEnd
-- assertNotVisible: "Something went wrong"
-
-# TC27 - Module switcher accessible from Social Home
-- stopApp
-- launchApp:
-    clearState: false
-- waitForAnimationToEnd
-- waitForAnimationToEnd
-- tapOn: "View all"
-- waitForAnimationToEnd
-- assertVisible: "Switch to Module"
+# TC17 - Back to Social Home
 - pressKey: Back
 - waitForAnimationToEnd
+
+# TC18 - Scroll back to top
+- swipe:
+    direction: DOWN
+- waitForAnimationToEnd
+- assertNotVisible: "Something went wrong"

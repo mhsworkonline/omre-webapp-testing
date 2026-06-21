@@ -13,6 +13,11 @@ appId: com.omre.app.posh
 - tapOn:
     point: "7%,9%"
 - waitForAnimationToEnd
+- scrollUntilVisible:
+    element:
+      text: "Notifications"
+    direction: UP
+    timeout: 10000
 - tapOn: "Notifications"
 - waitForAnimationToEnd
 
@@ -96,6 +101,11 @@ appId: com.omre.app.posh
 - tapOn:
     point: "7%,9%"
 - waitForAnimationToEnd
+- scrollUntilVisible:
+    element:
+      text: "Notifications"
+    direction: UP
+    timeout: 10000
 - tapOn: "Notifications"
 - waitForAnimationToEnd
 - assertVisible: "Inbox"

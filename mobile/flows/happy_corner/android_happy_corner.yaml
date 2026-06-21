@@ -16,10 +16,12 @@ appId: com.omre.app.posh
 - waitForAnimationToEnd
 - waitForAnimationToEnd
 
-# TC03 - Scroll drawer
-- swipe:
-    direction: UP
-- waitForAnimationToEnd
+# TC03 - Scroll drawer to Happy Corner
+- scrollUntilVisible:
+    element:
+      text: "Happy Corner"
+    direction: DOWN
+    timeout: 10000
 
 # TC04 - Happy Corner visible in drawer
 - assertVisible: "Happy Corner"
@@ -87,10 +89,12 @@ appId: com.omre.app.posh
 - waitForAnimationToEnd
 - waitForAnimationToEnd
 
-# TC17 - Scroll drawer
-- swipe:
-    direction: UP
-- waitForAnimationToEnd
+# TC17 - Scroll drawer to Happy Corner
+- scrollUntilVisible:
+    element:
+      text: "Happy Corner"
+    direction: DOWN
+    timeout: 10000
 - assertVisible: "Happy Corner"
 
 # TC18 - Tap Happy Corner second visit

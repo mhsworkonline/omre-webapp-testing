@@ -16,10 +16,12 @@ appId: com.omre.app.posh
 - waitForAnimationToEnd
 - waitForAnimationToEnd
 
-# TC03 - Scroll drawer
-- swipe:
-    direction: UP
-- waitForAnimationToEnd
+# TC03 - Scroll drawer to Virtual World
+- scrollUntilVisible:
+    element:
+      text: "Virtual World"
+    direction: DOWN
+    timeout: 15000
 
 # TC04 - Virtual World visible in drawer
 - assertVisible: "Virtual World"
@@ -87,10 +89,12 @@ appId: com.omre.app.posh
 - waitForAnimationToEnd
 - waitForAnimationToEnd
 
-# TC17 - Scroll drawer
-- swipe:
-    direction: UP
-- waitForAnimationToEnd
+# TC17 - Scroll drawer to Virtual World
+- scrollUntilVisible:
+    element:
+      text: "Virtual World"
+    direction: DOWN
+    timeout: 15000
 - assertVisible: "Virtual World"
 
 # TC18 - Tap Virtual World second visit

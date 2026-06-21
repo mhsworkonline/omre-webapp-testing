@@ -26,6 +26,12 @@ appId: com.omre.app.posh
 - swipe:
     direction: UP
 - waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
 
 # TC04 - Friends visible in drawer
 - assertVisible: "Friends"

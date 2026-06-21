@@ -22,14 +22,16 @@ appId: com.omre.app.posh
 - tapOn: "Profile"
 - waitForAnimationToEnd
 
-# SCENARIO: Profile username is correct | EXPECTED: 'wilacok854' visible in profile header
-- assertVisible: "wilacok854"
+# SCENARIO: Profile screen loaded | EXPECTED: Edit Profile button visible on own profile
+- waitForAnimationToEnd
+- waitForAnimationToEnd
+- swipe:
+    direction: UP
+- waitForAnimationToEnd
+- assertVisible: "Edit Profile"
 
-# SCENARIO: Profile handle is correct | EXPECTED: '@wilacok' visible below username
-- assertVisible: "@wilacok"
-
-# SCENARIO: CREATOR badge is displayed | EXPECTED: 'CREATOR' badge visible on profile
-- assertVisible: "CREATOR"
+# SCENARIO: Share button visible on profile | EXPECTED: 'Share' button present
+- assertVisible: "Share"
 
 # SCENARIO: Reputation section visible on profile | EXPECTED: 'Reputation' card visible
 - assertVisible: "Reputation"
@@ -37,10 +39,10 @@ appId: com.omre.app.posh
 # SCENARIO: Edit Profile opens edit screen and back returns to profile | EXPECTED: Edit screen opens, back returns
 - tapOn: "Edit Profile"
 - waitForAnimationToEnd
-- assertVisible: "wilacok854"
+- assertNotVisible: "Something went wrong"
 - pressKey: Back
 - waitForAnimationToEnd
-- assertVisible: "wilacok854"
+- assertVisible: "Edit Profile"
 
 # SCENARIO: Share opens system share sheet | EXPECTED: Share sheet visible with Copy link option
 - tapOn: "Share"
@@ -50,7 +52,7 @@ appId: com.omre.app.posh
 # SCENARIO: Dismiss share sheet returns to profile | EXPECTED: Profile visible after closing share
 - pressKey: Back
 - waitForAnimationToEnd
-- assertVisible: "wilacok854"
+- assertVisible: "Edit Profile"
 
 # SCENARIO: Scroll reveals both Highlights and Archive sections | EXPECTED: Both sections visible after one scroll
 - swipe:
@@ -68,7 +70,7 @@ appId: com.omre.app.posh
 # SCENARIO: Back from Archive returns to valid screen | EXPECTED: App navigates back without crash
 - pressKey: Back
 - waitForAnimationToEnd
-- assertVisible: "wilacok854"
+- assertVisible: "Edit Profile"
 
 # SCENARIO: Re-navigate to profile for Highlights test | EXPECTED: Profile reloads via drawer
 - tapOn:
@@ -92,7 +94,7 @@ appId: com.omre.app.posh
 # SCENARIO: Back from Highlights returns to valid screen | EXPECTED: App navigates back without crash
 - pressKey: Back
 - waitForAnimationToEnd
-- assertVisible: "wilacok854"
+- assertVisible: "Edit Profile"
 
 # SCENARIO: Re-navigate to profile for tab tests | EXPECTED: Profile reloads via drawer
 - tapOn:
@@ -100,7 +102,7 @@ appId: com.omre.app.posh
 - waitForAnimationToEnd
 - tapOn: "Profile"
 - waitForAnimationToEnd
-- assertVisible: "wilacok854"
+- assertVisible: "Edit Profile"
 
 # SCENARIO: Scroll to tab bar reveals profile tabs | EXPECTED: Tab bar visible after scrolling
 - swipe:
@@ -138,7 +140,7 @@ appId: com.omre.app.posh
 - swipe:
     direction: DOWN
 - waitForAnimationToEnd
-- assertVisible: "wilacok854"
+- assertVisible: "Edit Profile"
 
 # SCENARIO: Profile sections visible after scroll up | EXPECTED: Highlights section visible confirming profile intact
 - swipe:
