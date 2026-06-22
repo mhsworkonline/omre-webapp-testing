@@ -123,6 +123,32 @@ function flatten(suites, file) {
                      : status === 'FAIL' ? (plainError || 'Did not match expectation')
                      : status === 'SKIP' ? 'Optional UI not present on this account'
                      : 'Unknown';
+
+        // Remarks: human-readable reason for FAIL / SKIP
+        let remarks = '';
+        if (status === 'FAIL') {
+          const bugMatch = rawError.match(/BUG:\s*(.+?)(?:\n|$)/i);
+          if (bugMatch) {
+            remarks = `App bug: ${bugMatch[1].trim()}`;
+          } else if (/net::ERR_NETWORK_CHANGED|net::ERR_INTERNET_DISCONNECTED/i.test(rawError)) {
+            remarks = 'Transient network error during test run — re-run to confirm.';
+          } else if (/429|rate.?limit/i.test(rawError)) {
+            remarks = 'Server rate-limited (HTTP 429) — reduce parallel workers and re-run.';
+          } else if (/timeout.*exceeded|exceeded.*timeout/i.test(rawError)) {
+            remarks = 'Test timed out — element was not interactive or app response was too slow.';
+          } else if (/element.*not found|locator.*resolved to/i.test(rawError)) {
+            remarks = 'UI element not found — selector may not match current app version.';
+          } else if (/intercepts pointer events/i.test(rawError)) {
+            remarks = 'App bug: an overlapping element intercepts click — pointer events blocked.';
+          } else if (/Target page.*closed|browser has been closed/i.test(rawError)) {
+            remarks = 'Browser context closed unexpectedly — likely caused by upstream rate limiting.';
+          } else {
+            remarks = plainError || 'Assertion did not match expected value.';
+          }
+        } else if (status === 'SKIP') {
+          remarks = 'Feature or UI element not available on this test account / environment — test skipped gracefully.';
+        }
+
         rows.push({
           module:   moduleFromFile(f),
           id:       idMatch ? idMatch[0] : '-',
@@ -132,6 +158,7 @@ function flatten(suites, file) {
           actual,
           status,
           duration,
+          remarks,
         });
       }
     }
@@ -197,6 +224,7 @@ details.columns = [
   { header: 'Actual Result',   key: 'actual',   width: 45 },
   { header: 'Status',          key: 'status',   width: 10 },
   { header: 'Duration',        key: 'duration', width: 10 },
+  { header: 'Remarks',         key: 'remarks',  width: 55 },
 ];
 details.getRow(1).font = { bold: true };
 

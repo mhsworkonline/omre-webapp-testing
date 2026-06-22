@@ -127,12 +127,11 @@ test.describe('TC-EXPLORE | Tab Bar', () => {
     const count = await tabs.count();
     if (count < 2) return;
     const firstTabText = await tabs.first().textContent();
-    await tabs.nth(1).click();
+    const clicked = await tabs.nth(1).click({ timeout: 8000 }).then(() => true).catch(() => false);
+    expect(clicked, 'BUG: Second tab button is not clickable — a content div intercepts pointer events on the Explore tab bar').toBe(true);
     await page.waitForTimeout(1200);
-    // After switching, the main area must still render
     await expect(page.locator('main').first()).toBeVisible();
     const secondTabText = await tabs.nth(1).textContent();
-    // They are different tabs
     expect(firstTabText).not.toEqual(secondTabText);
   });
 
